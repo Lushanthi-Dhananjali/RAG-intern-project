@@ -1,0 +1,264 @@
+D:\RAG intern project\bin\Debug\net9.0\appsettings.Development.json
+D:\RAG intern project\bin\Debug\net9.0\appsettings.json
+D:\RAG intern project\bin\Debug\net9.0\RAG intern project.staticwebassets.endpoints.json
+D:\RAG intern project\bin\Debug\net9.0\RAG intern project.exe
+D:\RAG intern project\bin\Debug\net9.0\RAG intern project.deps.json
+D:\RAG intern project\bin\Debug\net9.0\RAG intern project.runtimeconfig.json
+D:\RAG intern project\bin\Debug\net9.0\RAG intern project.dll
+D:\RAG intern project\bin\Debug\net9.0\RAG intern project.pdb
+D:\RAG intern project\bin\Debug\net9.0\Humanizer.dll
+D:\RAG intern project\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+D:\RAG intern project\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\RAG intern project\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+D:\RAG intern project\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+D:\RAG intern project\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\RAG intern project\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\RAG intern project\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\RAG intern project\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+D:\RAG intern project\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+D:\RAG intern project\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+D:\RAG intern project\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\RAG intern project\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\RAG intern project\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\RAG intern project\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\RAG intern project\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+D:\RAG intern project\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\RAG intern project\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+D:\RAG intern project\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\RAG intern project\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+D:\RAG intern project\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+D:\RAG intern project\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\RAG intern project\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+D:\RAG intern project\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+D:\RAG intern project\bin\Debug\net9.0\Microsoft.OpenApi.dll
+D:\RAG intern project\bin\Debug\net9.0\Mono.TextTemplating.dll
+D:\RAG intern project\bin\Debug\net9.0\MySqlConnector.dll
+D:\RAG intern project\bin\Debug\net9.0\Pomelo.EntityFrameworkCore.MySql.dll
+D:\RAG intern project\bin\Debug\net9.0\Scalar.AspNetCore.dll
+D:\RAG intern project\bin\Debug\net9.0\System.CodeDom.dll
+D:\RAG intern project\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+D:\RAG intern project\bin\Debug\net9.0\System.Composition.Convention.dll
+D:\RAG intern project\bin\Debug\net9.0\System.Composition.Hosting.dll
+D:\RAG intern project\bin\Debug\net9.0\System.Composition.Runtime.dll
+D:\RAG intern project\bin\Debug\net9.0\System.Composition.TypedParts.dll
+D:\RAG intern project\bin\Debug\net9.0\System.Text.Json.dll
+D:\RAG intern project\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\RAG intern project\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\RAG intern project\obj\Debug\net9.0\RAG intern project.csproj.AssemblyReference.cache
+D:\RAG intern project\obj\Debug\net9.0\RAG intern project.GeneratedMSBuildEditorConfig.editorconfig
+D:\RAG intern project\obj\Debug\net9.0\RAG intern project.AssemblyInfoInputs.cache
+D:\RAG intern project\obj\Debug\net9.0\RAG intern project.AssemblyInfo.cs
+D:\RAG intern project\obj\Debug\net9.0\RAG intern project.csproj.CoreCompileInputs.cache
+D:\RAG intern project\obj\Debug\net9.0\RAG intern project.MvcApplicationPartsAssemblyInfo.cs
+D:\RAG intern project\obj\Debug\net9.0\RAG intern project.MvcApplicationPartsAssemblyInfo.cache
+D:\RAG intern project\obj\Debug\net9.0\scopedcss\bundle\RAG intern project.styles.css
+D:\RAG intern project\obj\Debug\net9.0\staticwebassets.build.json
+D:\RAG intern project\obj\Debug\net9.0\staticwebassets.development.json
+D:\RAG intern project\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+D:\RAG intern project\obj\Debug\net9.0\staticwebassets\msbuild.RAG intern project.Microsoft.AspNetCore.StaticWebAssets.props
+D:\RAG intern project\obj\Debug\net9.0\staticwebassets\msbuild.RAG intern project.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\RAG intern project\obj\Debug\net9.0\staticwebassets\msbuild.build.RAG intern project.props
+D:\RAG intern project\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.RAG intern project.props
+D:\RAG intern project\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.RAG intern project.props
+D:\RAG intern project\obj\Debug\net9.0\staticwebassets.pack.json
+D:\RAG intern project\obj\Debug\net9.0\RAG inte.F68F2593.Up2Date
+D:\RAG intern project\obj\Debug\net9.0\RAG intern project.dll
+D:\RAG intern project\obj\Debug\net9.0\refint\RAG intern project.dll
+D:\RAG intern project\obj\Debug\net9.0\RAG intern project.pdb
+D:\RAG intern project\obj\Debug\net9.0\RAG intern project.genruntimeconfig.cache
+D:\RAG intern project\obj\Debug\net9.0\ref\RAG intern project.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\appsettings.Development.json
+D:\RAG intern project\backend\bin\Debug\net9.0\RAG intern project.staticwebassets.endpoints.json
+D:\RAG intern project\backend\bin\Debug\net9.0\appsettings.json
+D:\RAG intern project\backend\bin\Debug\net9.0\RAG intern project.exe
+D:\RAG intern project\backend\bin\Debug\net9.0\RAG intern project.deps.json
+D:\RAG intern project\backend\bin\Debug\net9.0\RAG intern project.runtimeconfig.json
+D:\RAG intern project\backend\bin\Debug\net9.0\RAG intern project.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\RAG intern project.pdb
+D:\RAG intern project\backend\bin\Debug\net9.0\Humanizer.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\Microsoft.OpenApi.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\Mono.TextTemplating.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\MySqlConnector.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\Pomelo.EntityFrameworkCore.MySql.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\Scalar.AspNetCore.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\System.CodeDom.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\System.Composition.Convention.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\System.Composition.Hosting.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\System.Composition.Runtime.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\System.Composition.TypedParts.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\System.Text.Json.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\RAG intern project\backend\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\RAG intern project\backend\obj\Debug\net9.0\RAG intern project.csproj.AssemblyReference.cache
+D:\RAG intern project\backend\obj\Debug\net9.0\RAG intern project.GeneratedMSBuildEditorConfig.editorconfig
+D:\RAG intern project\backend\obj\Debug\net9.0\RAG intern project.AssemblyInfoInputs.cache
+D:\RAG intern project\backend\obj\Debug\net9.0\RAG intern project.AssemblyInfo.cs
+D:\RAG intern project\backend\obj\Debug\net9.0\RAG intern project.csproj.CoreCompileInputs.cache
+D:\RAG intern project\backend\obj\Debug\net9.0\RAG intern project.MvcApplicationPartsAssemblyInfo.cs
+D:\RAG intern project\backend\obj\Debug\net9.0\RAG intern project.MvcApplicationPartsAssemblyInfo.cache
+D:\RAG intern project\backend\obj\Debug\net9.0\scopedcss\bundle\RAG intern project.styles.css
+D:\RAG intern project\backend\obj\Debug\net9.0\staticwebassets.build.json
+D:\RAG intern project\backend\obj\Debug\net9.0\staticwebassets.development.json
+D:\RAG intern project\backend\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+D:\RAG intern project\backend\obj\Debug\net9.0\staticwebassets\msbuild.RAG intern project.Microsoft.AspNetCore.StaticWebAssets.props
+D:\RAG intern project\backend\obj\Debug\net9.0\staticwebassets\msbuild.RAG intern project.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\RAG intern project\backend\obj\Debug\net9.0\staticwebassets\msbuild.build.RAG intern project.props
+D:\RAG intern project\backend\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.RAG intern project.props
+D:\RAG intern project\backend\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.RAG intern project.props
+D:\RAG intern project\backend\obj\Debug\net9.0\staticwebassets.pack.json
+D:\RAG intern project\backend\obj\Debug\net9.0\RAG inte.F68F2593.Up2Date
+D:\RAG intern project\backend\obj\Debug\net9.0\RAG intern project.dll
+D:\RAG intern project\backend\obj\Debug\net9.0\refint\RAG intern project.dll
+D:\RAG intern project\backend\obj\Debug\net9.0\RAG intern project.pdb
+D:\RAG intern project\backend\obj\Debug\net9.0\RAG intern project.genruntimeconfig.cache
+D:\RAG intern project\backend\obj\Debug\net9.0\ref\RAG intern project.dll
