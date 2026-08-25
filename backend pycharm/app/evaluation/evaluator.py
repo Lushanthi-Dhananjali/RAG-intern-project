@@ -1,15 +1,49 @@
 import os
-from typing import List, Dict, Any
+import sys
+from typing import List, Dict, Any, Union, Optional
 from dotenv import load_dotenv
 from openai import OpenAI
 
-from schema import LessonPlanSchema
-from evaluator_schema import FactCheckReport
+# =====================================================================
+# PATH RESOLUTION & ENVIRONMENT SETUP
+# =====================================================================
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(CURRENT_DIR, "../.."))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
 
-load_dotenv()
+load_dotenv(os.path.join(PROJECT_ROOT, ".env"))
+
+# Import Schemas
+try:
+    from app.schemas.schema import LessonPlanSchema
+except ModuleNotFoundError:
+    try:
+        from schemas.schema import LessonPlanSchema
+    except ModuleNotFoundError:
+        from schema import LessonPlanSchema
+
+try:
+    from app.schemas.evaluator_schema import FactCheckReport
+except ModuleNotFoundError:
+    try:
+        from app.schemas.evaluator_schema import FactCheckingReport as FactCheckReport
+    except ModuleNotFoundError:
+        try:
+            from schemas.evaluator_schema import FactCheckReport
+        except ModuleNotFoundError:
+            try:
+                from evaluator_schema import FactCheckReport
+            except ModuleNotFoundError:
+                from evaluator_schema import FactCheckingReport as FactCheckReport
+
+# Initialize OpenAI client
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
+# =====================================================================
+# RAG FACT-CHECKING AGENT
+# =====================================================================
 class RAGFactCheckingAgent:
     """
     Evaluation Agent that verifies generated lesson plan claims against retrieved reference docs.
@@ -20,25 +54,41 @@ class RAGFactCheckingAgent:
         self.score_threshold = score_threshold
 
     def evaluate_lesson_plan(
-            self,
-            generated_plan: LessonPlanSchema,
-            retrieved_contexts: List[Dict[str, Any]]
+        self,
+        generated_plan: LessonPlanSchema,
+        retrieved_contexts: List[Union[Dict[str, Any], str]]
     ) -> FactCheckReport:
         """
         Decomposes generated lesson plan into key factual claims and cross-checks with context.
         """
-        # 1. Format retrieved context as reference material
+        # 1. Format retrieved context as reference material (handles dicts or plain text strings)
         reference_text = ""
         for idx, ctx in enumerate(retrieved_contexts, 1):
-            reference_text += f"\n[Reference Doc {idx}] ({ctx['source']}):\n{ctx['content']}\n"
+            if isinstance(ctx, dict):
+                src = ctx.get("source", "Reference Source")
+                content = ctx.get("content", "")
+                reference_text += f"\n[Reference Doc {idx}] ({src}):\n{content}\n"
+            else:
+                reference_text += f"\n[Reference Doc {idx}]:\n{ctx}\n"
 
         # 2. Extract key generation statements
+        outcomes = [getattr(o, "description", str(o)) for o in generated_plan.learning_outcomes]
+        procedures = [
+            f"{getattr(p, 'phase_title', 'Step')}: {getattr(p, 'teacher_action', '')}"
+            for p in generated_plan.procedures
+        ]
+        verification_text = (
+            generated_plan.verification.formative_assessment
+            if hasattr(generated_plan, "verification") and generated_plan.verification
+            else "Standard verification"
+        )
+
         plan_summary = (
             f"Title: {generated_plan.title}\n"
             f"Standard: {generated_plan.educational_goal_or_standard}\n"
-            f"Learning Outcomes: {[o.description for o in generated_plan.learning_outcomes]}\n"
-            f"Procedures Summary: {[f'{p.phase_title}: {p.teacher_action}' for p in generated_plan.procedures]}\n"
-            f"Verification: {generated_plan.verification.formative_assessment}"
+            f"Learning Outcomes: {outcomes}\n"
+            f"Procedures Summary: {procedures}\n"
+            f"Verification: {verification_text}"
         )
 
         system_prompt = (
@@ -52,14 +102,14 @@ class RAGFactCheckingAgent:
         )
 
         user_prompt = f"""
-        EVALUATION THRESHOLD: {self.score_threshold}
+EVALUATION THRESHOLD: {self.score_threshold}
 
-        REFERENCE DOCUMENTS:
-        {reference_text if reference_text.strip() else "NO REFERENCE DOCUMENTS PROVIDED"}
+REFERENCE DOCUMENTS:
+{reference_text if reference_text.strip() else "NO REFERENCE DOCUMENTS PROVIDED"}
 
-        GENERATED LESSON PLAN:
-        {plan_summary}
-        """
+GENERATED LESSON PLAN:
+{plan_summary}
+"""
 
         response = client.beta.chat.completions.parse(
             model="gpt-4o-mini",
@@ -73,38 +123,38 @@ class RAGFactCheckingAgent:
         return response.choices[0].message.parsed
 
 
-# --- Demonstration Run ---
+# =====================================================================
+# STANDALONE TEST
+# =====================================================================
 if __name__ == "__main__":
-    from schema import LessonPlanSchema
-
     evaluator = RAGFactCheckingAgent(score_threshold=0.85)
 
     sample_plan = LessonPlanSchema(
-        title="Grade 9 Civic Education - Fundamental Rights",
+        title="Grade 8 Civic Education - Environmental Protection",
         subject="Civic Education",
-        grade_level="Grade 9",
-        topic="Democratic Governance",
-        educational_goal_or_standard="Grade 9 Civics Standard 9.1: Rights and Duties",
+        grade_level="Grade 8",
+        topic="Environmental Protection",
+        educational_goal_or_standard="Grade 8 Civics Standard 8.1: Environmental Conservation",
         learning_outcomes=[
-            {"id": 1, "description": "Differentiate between fundamental rights and civic duties."}
+            {"id": 1, "description": "Identify methods of waste segregation and tree planting."}
         ],
-        materials=[{"item_name": "Constitutional Extracts", "quantity": "1 per pair"}],
+        materials=[{"item_name": "Color-coded waste bins", "quantity": "4 bins"}],
         procedures=[{
             "step_number": 1,
-            "phase_title": "Direct Instruction",
-            "duration_minutes": 15,
-            "teacher_action": "Explains rights guaranteed under Article 10 of Constitution.",
-            "student_action": "Take notes."
+            "phase_title": "Field Activity",
+            "duration_minutes": 20,
+            "teacher_action": "Guides students in categorizing waste into compost, plastics, and paper.",
+            "student_action": "Sort waste items into designated bins."
         }],
         verification={
-            "formative_assessment": "Exit ticket checking 1 right and 1 duty.",
-            "alignment_check": "Exit ticket tests Learning Outcome 1."
+            "formative_assessment": "Group presentation of waste audit results.",
+            "alignment_check": "Assesses knowledge of practical waste management."
         }
     )
 
     sample_contexts = [{
-        "source": "ChromaDB Knowledge Base",
-        "content": "Grade 9 Civics Standard 9.1 mandates teaching fundamental constitutional rights and citizen duties."
+        "source": "Grade 8 Civic Education Teacher Guide",
+        "content": "Competency 8.1 emphasizes practical waste segregation, maintaining compost pits, and schoolyard tree planting."
     }]
 
     report = evaluator.evaluate_lesson_plan(sample_plan, sample_contexts)
@@ -112,4 +162,4 @@ if __name__ == "__main__":
     print("\n📊 Fact-Checking Evaluation Report:")
     print(f"Grounding Score: {report.grounding_score:.2f} (Threshold: 0.85)")
     print(f"Passed Guardrail: {report.passed}")
-    print(f"Explanation: {report.explanation}")
+    print(f"Explanation: {getattr(report, 'explanation', getattr(report, 'reasoning', 'Evaluation complete'))}")

@@ -1,21 +1,56 @@
 import os
+import sys
 import json
 from typing import List, Dict, Any, Optional
 from dotenv import load_dotenv
 from openai import OpenAI
-import chromadb
 
-from schema import LessonPlanSchema
-from evaluator import RAGFactCheckingAgent
-from alignment_evaluator import AlignmentEvaluator
+# =====================================================================
+# PATH RESOLUTION & ENVIRONMENT SETUP
+# Ensures smooth execution whether run directly or as a FastAPI module
+# =====================================================================
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(CURRENT_DIR, "../.."))
 
-load_dotenv()
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
+load_dotenv(os.path.join(PROJECT_ROOT, ".env"))
+
+# Import Schemas
+try:
+    from app.schemas.schema import LessonPlanSchema
+except ModuleNotFoundError:
+    try:
+        from schemas.schema import LessonPlanSchema
+    except ModuleNotFoundError:
+        from schema import LessonPlanSchema
+
+# Import Evaluators & Guardrails
+try:
+    from app.evaluation.evaluator import RAGFactCheckingAgent
+    from app.evaluation.alignment_evaluator import AlignmentEvaluator
+except ModuleNotFoundError:
+    try:
+        from evaluation.evaluator import RAGFactCheckingAgent
+        from evaluation.alignment_evaluator import AlignmentEvaluator
+    except ModuleNotFoundError:
+        from evaluator import RAGFactCheckingAgent
+        from alignment_evaluator import AlignmentEvaluator
+
+# Import 3-Tier Multi-Grade Boundary Retriever
+try:
+    from app.services.multi_grade_retriever import MultiGradeBoundaryRetriever
+except ModuleNotFoundError:
+    try:
+        from services.multi_grade_retriever import MultiGradeBoundaryRetriever
+    except ModuleNotFoundError:
+        from multi_grade_retriever import MultiGradeBoundaryRetriever
 
 # =====================================================================
 # MODEL & CLIENT CONFIGURATION
-# Set USE_QWEN_72B to True if using vLLM/OpenRouter, or False for OpenAI
 # =====================================================================
-USE_QWEN_72B = False
+USE_QWEN_72B = False  # Set to True when using local/remote vLLM endpoint
 
 if USE_QWEN_72B:
     client = OpenAI(
@@ -29,119 +64,54 @@ else:
 
 
 # =====================================================================
-# MULTI-GRADE BOUNDARY RETRIEVER
-# =====================================================================
-
-class MultiGradeRetriever:
-    """
-    Retrieves multi-grade curriculum boundaries from local ChromaDB:
-    - Target Grade (Core competencies)
-    - Lower Grade (Prerequisites baseline)
-    - Upper Grade (Boundary limits to prevent syllabus creep)
-    - Practical Exemplars (Hands-on reference templates)
-    """
-
-    def __init__(self, chroma_path: str = "./chroma_db", collection_name: str = "curriculum_syllabus"):
-        self.client = chromadb.PersistentClient(path=chroma_path)
-        self.collection = self.client.get_or_create_collection(
-            name=collection_name,
-            metadata={"hnsw:space": "cosine"}
-        )
-
-    def retrieve_bounded_context(
-        self,
-        query: str,
-        grade_level: str = "Grade 8",
-        subject: str = "Civic Education"
-    ) -> Dict[str, List[str]]:
-        # Map grade boundaries
-        lower_grade = "Grade 7" if grade_level == "Grade 8" else None
-        upper_grade = "Grade 9" if grade_level == "Grade 8" else None
-
-        # 1. Target Core Curriculum
-        target_res = self.collection.query(
-            query_texts=[query],
-            n_results=3,
-            where={
-                "$and": [
-                    {"grade_level": grade_level},
-                    {"subject": subject}
-                ]
-            }
-        )
-
-        # 2. Prerequisite Knowledge (Lower Grade)
-        prereq_res = {"documents": [[]]}
-        if lower_grade:
-            prereq_res = self.collection.query(
-                query_texts=[query],
-                n_results=1,
-                where={
-                    "$and": [
-                        {"grade_level": lower_grade},
-                        {"subject": subject}
-                    ]
-                }
-            )
-
-        # 3. Upper Boundary (Next Grade limit)
-        upper_res = {"documents": [[]]}
-        if upper_grade:
-            upper_res = self.collection.query(
-                query_texts=[query],
-                n_results=1,
-                where={
-                    "$and": [
-                        {"grade_level": upper_grade},
-                        {"subject": subject}
-                    ]
-                }
-            )
-
-        # 4. Hands-on / Experiential Exemplar Plan
-        exemplar_res = self.collection.query(
-            query_texts=[query],
-            n_results=1,
-            where={"category": "practical_exemplar"}
-        )
-
-        return {
-            "target_context": target_res.get("documents", [[]])[0],
-            "prerequisite_context": prereq_res.get("documents", [[]])[0],
-            "upper_boundary_context": upper_res.get("documents", [[]])[0],
-            "exemplar_context": exemplar_res.get("documents", [[]])[0]
-        }
-
-
-# =====================================================================
 # RAG LESSON PLAN GENERATOR
 # =====================================================================
 
 class RAGLessonPlanGenerator:
     """
-    Experiential, multi-grade bounded RAG generator.
+    Activity-based, multi-grade bounded RAG lesson plan generation engine.
     Enforces practical student-centered tasks, chronobiological adaptation,
     strict timetable budgeting, and validation guardrails.
     """
 
-    def __init__(self):
-        self.retriever = MultiGradeRetriever()
+    def __init__(self, chroma_path: Optional[str] = None):
+        if chroma_path is None:
+            chroma_path = os.path.join(PROJECT_ROOT, "chroma_db")
+
+        self.retriever = MultiGradeBoundaryRetriever(chroma_path=chroma_path)
         self.evaluator = RAGFactCheckingAgent(score_threshold=0.85)
         self.alignment_evaluator = AlignmentEvaluator(threshold=0.75)
 
     def generate_prompt(
-        self,
-        user_query: str,
-        retrieved_data: Dict[str, List[str]],
-        grade_level: str,
-        subject: str,
-        time_slot: str = "Pre-Interval",
-        duration_minutes: int = 40
+            self,
+            user_query: str,
+            retrieved_data: Dict[str, Any],
+            grade_level: str,
+            subject: str,
+            time_slot: str = "Pre-Interval",
+            duration_minutes: int = 40
     ) -> str:
-        target_docs = "\n".join(retrieved_data.get("target_context", []))
-        prereq_docs = "\n".join(retrieved_data.get("prerequisite_context", []))
-        upper_docs = "\n".join(retrieved_data.get("upper_boundary_context", []))
-        exemplar_docs = "\n".join(retrieved_data.get("exemplar_context", []))
+        """Constructs an activity-centric pedagogical prompt with curriculum boundaries."""
+        # Extract content from 3-tier boundary objects
+        target_docs = "\n\n".join([
+            f"[Target Comp: {item.get('competency', 'General')} | Source: {item.get('source', 'Unknown')}]\n{item.get('content', '')}"
+            for item in retrieved_data.get("tier_1_target_content", [])
+        ])
+
+        prereq_docs = "\n\n".join([
+            f"[Prerequisite Comp: {item.get('competency', 'General')}]\n{item.get('content', '')}"
+            for item in retrieved_data.get("tier_2_prerequisites", [])
+        ])
+
+        upper_docs = "\n\n".join([
+            f"[Upper Boundary Limit]\n{item.get('content', '')}"
+            for item in retrieved_data.get("tier_3_upper_boundaries", [])
+        ])
+
+        exemplar_docs = "\n\n".join([
+            f"[Exemplar Format: {item.get('source', 'Sample Plan')}]\n{item.get('content', '')}"
+            for item in retrieved_data.get("practical_exemplars", [])
+        ])
 
         prompt = f"""
 You are an expert pedagogical designer creating an activity-based Civic Education lesson plan.
@@ -197,21 +167,21 @@ Topic / Goal: {user_query}
         return True
 
     def generate_lesson_plan(
-        self,
-        query: str,
-        grade_level: str = "Grade 8",
-        subject: str = "Civic Education",
-        time_slot: str = "Pre-Interval",
-        duration_minutes: int = 40
+            self,
+            query: str,
+            grade_level: str = "Grade 8",
+            subject: str = "Civic Education",
+            time_slot: str = "Pre-Interval",
+            duration_minutes: int = 40
     ) -> LessonPlanSchema:
         """
-        Runs the full RAG generation pipeline with multi-grade context retrieval,
+        Runs the full RAG generation pipeline with 3-tier multi-grade context retrieval,
         structured JSON formatting, and verification guardrails.
         """
-        # Step 1: Retrieve bounded context from ChromaDB
-        retrieved_data = self.retriever.retrieve_bounded_context(
+        # Step 1: Retrieve 3-tier bounded context from ChromaDB
+        retrieved_data = self.retriever.retrieve_3tier_boundaries(
             query=query,
-            grade_level=grade_level,
+            target_grade=grade_level,
             subject=subject
         )
 
@@ -245,13 +215,19 @@ Topic / Goal: {user_query}
         self.validate_generation_sequence(plan)
 
         # Step 5: Fact-Checking Guardrail
-        all_contexts = retrieved_data.get("target_context", []) + retrieved_data.get("exemplar_context", [])
+        all_contexts = [
+            item.get("content", "")
+            for item in
+            (retrieved_data.get("tier_1_target_content", []) + retrieved_data.get("practical_exemplars", []))
+        ]
         eval_report = self.evaluator.evaluate_lesson_plan(plan, all_contexts)
-        print(f"🛡️ Guardrail Check -> Grounding Score: {eval_report.grounding_score:.2f} | Passed: {eval_report.passed}")
+        print(
+            f"🛡️ Guardrail Check -> Grounding Score: {eval_report.grounding_score:.2f} | Passed: {eval_report.passed}")
 
         # Step 6: Alignment Metric Guardrail
         align_report = self.alignment_evaluator.evaluate_alignment(plan)
-        print(f"🎯 Goal Alignment Score: {align_report.overall_alignment_score:.2f} | Passed: {align_report.passed_alignment_guardrail}")
+        print(
+            f"🎯 Goal Alignment Score: {align_report.overall_alignment_score:.2f} | Passed: {align_report.passed_alignment_guardrail}")
 
         return plan
 
@@ -274,6 +250,7 @@ if __name__ == "__main__":
     print("\n" + "=" * 60)
     print("✅ EXPERIENTIAL LESSON PLAN GENERATED SUCCESSFULLY!")
     print(f"Title: {result.title}")
+    print(f"Topic: {result.topic}")
     print(f"Goal: {result.educational_goal_or_standard}")
     print(f"Duration: {result.estimated_duration_minutes} mins")
     print(f"Total Outcomes: {len(result.learning_outcomes)}")

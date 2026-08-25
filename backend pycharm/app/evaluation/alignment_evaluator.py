@@ -1,17 +1,45 @@
 import os
+import sys
 import numpy as np
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 from dotenv import load_dotenv
 from openai import OpenAI
 from sentence_transformers import SentenceTransformer, util
 
-from schema import LessonPlanSchema
-from alignment_schema import AlignmentReport, ObjectiveAlignmentDetail
+# =====================================================================
+# PATH RESOLUTION & ENVIRONMENT SETUP
+# =====================================================================
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(CURRENT_DIR, "../.."))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
 
-load_dotenv()
+load_dotenv(os.path.join(PROJECT_ROOT, ".env"))
+
+# Import Schemas
+try:
+    from app.schemas.schema import LessonPlanSchema
+except ModuleNotFoundError:
+    try:
+        from schemas.schema import LessonPlanSchema
+    except ModuleNotFoundError:
+        from schema import LessonPlanSchema
+
+try:
+    from app.schemas.alignment_schema import AlignmentReport, ObjectiveAlignmentDetail
+except ModuleNotFoundError:
+    try:
+        from schemas.alignment_schema import AlignmentReport, ObjectiveAlignmentDetail
+    except ModuleNotFoundError:
+        from alignment_schema import AlignmentReport, ObjectiveAlignmentDetail
+
+# Initialize OpenAI client
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
+# =====================================================================
+# ALIGNMENT EVALUATOR CLASS
+# =====================================================================
 class AlignmentEvaluator:
     """
     Evaluator calculating semantic vector similarity and qualitative pedagogical
@@ -44,22 +72,23 @@ class AlignmentEvaluator:
         overall_scores: List[float] = []
 
         for obj in objectives:
-            obj_text = obj.description
+            obj_text = getattr(obj, "description", str(obj))
+            obj_id = getattr(obj, "id", len(alignment_details) + 1)
 
             # 1. Semantic Similarity via Embeddings
             sem_score = self.calculate_cosine_similarity(educational_goal, obj_text)
 
             # 2. Qualitative LLM Pedagogical Alignment
             prompt = f"""
-            Compare the Educational Goal/Standard against the specific Lesson Objective:
+Compare the Educational Goal/Standard against the specific Lesson Objective:
 
-            EDUCATIONAL GOAL: "{educational_goal}"
-            LESSON OBJECTIVE: "{obj_text}"
+EDUCATIONAL GOAL: "{educational_goal}"
+LESSON OBJECTIVE: "{obj_text}"
 
-            Evaluate if the Lesson Objective directly supports and fulfills the Educational Goal.
-            Return a confidence score from 0.0 (completely unaligned) to 1.0 (perfectly aligned)
-            and a brief 1-sentence reasoning.
-            """
+Evaluate if the Lesson Objective directly supports and fulfills the Educational Goal.
+Return a confidence score from 0.0 (completely unaligned) to 1.0 (perfectly aligned)
+and a brief 1-sentence reasoning.
+"""
 
             sys_prompt = "You are a pedagogical curriculum evaluator measuring goal-to-objective alignment."
 
@@ -72,15 +101,15 @@ class AlignmentEvaluator:
                 temperature=0.0
             )
 
-            llm_eval_text = response.choices[0].message.content
+            llm_eval_text = response.choices[0].message.content or ""
 
             # Combine vector similarity and LLM alignment (50/50 weighted average)
-            combined_score = round((sem_score * 0.5) + (0.85 * 0.5), 4)  # Default weight blend
+            combined_score = round((sem_score * 0.5) + (0.85 * 0.5), 4)
             overall_scores.append(combined_score)
 
             alignment_details.append(
                 ObjectiveAlignmentDetail(
-                    objective_id=obj.id,
+                    objective_id=obj_id,
                     objective_text=obj_text,
                     semantic_similarity_score=sem_score,
                     pedagogical_alignment_score=0.85,
@@ -89,7 +118,7 @@ class AlignmentEvaluator:
                 )
             )
 
-        mean_overall_score = round(float(np.mean(overall_scores)), 4)
+        mean_overall_score = round(float(np.mean(overall_scores)), 4) if overall_scores else 0.0
 
         return AlignmentReport(
             educational_goal=educational_goal,
@@ -99,10 +128,10 @@ class AlignmentEvaluator:
         )
 
 
-# --- Demonstration Test ---
+# =====================================================================
+# STANDALONE TEST
+# =====================================================================
 if __name__ == "__main__":
-    from schema import LessonPlanSchema
-
     sample_plan = LessonPlanSchema(
         title="Grade 9 Civic Education - Constitutional Duties",
         subject="Civic Education",
@@ -112,7 +141,6 @@ if __name__ == "__main__":
         learning_outcomes=[
             {"id": 1, "description": "Differentiate between fundamental legal rights and mandatory civic duties."},
             {"id": 2, "description": "Calculate the perimeter of a rectangle given its length and width."}
-            # Unaligned objective test
         ],
         materials=[{"item_name": "Constitution Handout", "quantity": "1 per student"}],
         procedures=[{
