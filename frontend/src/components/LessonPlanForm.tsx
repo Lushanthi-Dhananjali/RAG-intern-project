@@ -1,142 +1,211 @@
 'use client';
 
 import React, { useState } from 'react';
-import { LessonPlanRequest } from '@/types/lessonPlan';
 
 interface LessonPlanFormProps {
-  onSubmit: (formData: LessonPlanRequest) => void;
+  onSubmit: (formData: {
+    competencyLevel: string;
+    gradeLevel: string;
+    subject: string;
+    periods: number;
+    durationMinutes: number;
+    timeSlot: string;
+  }) => void;
   isLoading: boolean;
 }
 
 export default function LessonPlanForm({ onSubmit, isLoading }: LessonPlanFormProps) {
-  const [query, setQuery] = useState('');
-  const [gradeLevel, setGradeLevel] = useState('Grade 9');
-  const [subject, setSubject] = useState<'Civic Education' | 'Science'>('Civic Education');
-  const [useRAG, setUseRAG] = useState(true);
+  const [subject, setSubject] = useState<string>('Civic Education');
+  const [gradeLevel, setGradeLevel] = useState<string>('Grade 8');
+  const [competencyLevel, setCompetencyLevel] = useState<string>('8.1.1');
+  const [periods, setPeriods] = useState<number>(1);
+
+  // Derived calculation: 1 period = 40 minutes (NIE standard)
+  const durationMinutes = periods * 40;
+  const timeSlotString = `${durationMinutes} Minutes (${periods} ${periods === 1 ? 'Period' : 'Periods'})`;
+
+  // Provide helpful example placeholders based on the chosen subject
+  const placeholderText = subject === 'Science' ? 'e.g. 1.6, 1.7, 2.1' : 'e.g. 8.1.1, 8.4.2, 8.6.8';
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSubmit({ query, gradeLevel, subject, useRAG });
+    if (!competencyLevel.trim()) return;
+
+    onSubmit({
+      competencyLevel: competencyLevel.trim(),
+      gradeLevel,
+      subject,
+      periods: Number(periods),
+      durationMinutes,
+      timeSlot: timeSlotString,
+    });
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white/80 backdrop-blur-md p-8 rounded-2xl shadow-xl border border-slate-200/80 mb-10 transition-all">
-      
-      {/* Subject Selection Tabs */}
-      <div className="mb-6">
-        <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">
-          Select Subject
-        </label>
-        <div className="grid grid-cols-2 gap-3 p-1.5 bg-slate-100 rounded-xl">
-          <button
-            type="button"
-            onClick={() => setSubject('Civic Education')}
-            className={`py-3 px-4 rounded-lg font-bold text-sm transition flex items-center justify-center gap-2 ${
-              subject === 'Civic Education'
-                ? 'bg-blue-600 text-white shadow-md'
-                : 'text-slate-600 hover:text-slate-900'
-            }`}
-          >
-            <span>🏛️</span> Civic Education
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setSubject('Science')}
-            className={`py-3 px-4 rounded-lg font-bold text-sm transition flex items-center justify-center gap-2 ${
-              subject === 'Science'
-                ? 'bg-emerald-600 text-white shadow-md'
-                : 'text-slate-600 hover:text-slate-900'
-            }`}
-          >
-            <span>🧪</span> Science
-          </button>
-        </div>
-      </div>
-
-      {/* Grade Level Buttons (6 to 9) */}
-      <div className="mb-6">
-        <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">
-          Grade Level
-        </label>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-          {['Grade 6', 'Grade 7', 'Grade 8', 'Grade 9'].map((grade) => (
-            <button
-              key={grade}
-              type="button"
-              onClick={() => setGradeLevel(grade)}
-              className={`py-2.5 px-4 rounded-xl text-sm font-bold border transition ${
-                gradeLevel === grade
-                  ? 'border-indigo-600 bg-indigo-50 text-indigo-700 shadow-sm ring-2 ring-indigo-500/20'
-                  : 'border-slate-200 text-slate-700 hover:bg-slate-50 bg-white'
-              }`}
-            >
-              {grade}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Goal / Topic Input Prompt */}
-      <div className="mb-6">
-        <div className="flex justify-between items-center mb-2">
-          <label className="block text-sm font-bold text-slate-800">
-            Educational Goal / Topic Details
+    <form
+      onSubmit={handleSubmit}
+      style={{
+        backgroundColor: '#ffffff',
+        padding: '24px',
+        borderRadius: '16px',
+        border: '1px solid #e2e8f0',
+        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '18px',
+        maxWidth: '640px',
+        margin: '0 auto',
+      }}
+    >
+      {/* 1. Subject and Grade Level */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
+        <div>
+          <label style={{ display: 'block', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', color: '#334155', marginBottom: '6px', letterSpacing: '0.05em' }}>
+            Subject
           </label>
-          <span className="text-xs font-semibold text-amber-600 bg-amber-50 border border-amber-200 px-2.5 py-0.5 rounded-full">
-            Optional - Add goal now or later
-          </span>
+          <select
+            value={subject}
+            onChange={(e) => {
+              const newSub = e.target.value;
+              setSubject(newSub);
+              // Set default competency hint on subject change
+              setCompetencyLevel(newSub === 'Science' ? '1.6' : '8.1.1');
+            }}
+            disabled={isLoading}
+            style={{
+              width: '100%',
+              padding: '10px 14px',
+              backgroundColor: '#f8fafc',
+              border: '1px solid #cbd5e1',
+              borderRadius: '10px',
+              fontSize: '14px',
+              fontWeight: '600',
+              color: '#1e293b',
+              outline: 'none',
+              boxSizing: 'border-box',
+            }}
+          >
+            <option value="Civic Education">🏛️ Civic Education</option>
+            <option value="Science">🧪 Science</option>
+          </select>
         </div>
-        <textarea
-          rows={3}
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder={
-            subject === 'Civic Education'
-              ? "e.g., Fundamental human rights, democratic values, or local government structure..."
-              : "e.g., Photosynthesis process, electric circuits, or states of matter..."
-          }
-          className="w-full p-3.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-slate-800 transition placeholder:text-slate-400 text-sm shadow-inner"
-        />
+
+        <div>
+          <label style={{ display: 'block', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', color: '#334155', marginBottom: '6px', letterSpacing: '0.05em' }}>
+            Grade Level
+          </label>
+          <select
+            value={gradeLevel}
+            onChange={(e) => setGradeLevel(e.target.value)}
+            disabled={isLoading}
+            style={{
+              width: '100%',
+              padding: '10px 14px',
+              backgroundColor: '#f8fafc',
+              border: '1px solid #cbd5e1',
+              borderRadius: '10px',
+              fontSize: '14px',
+              fontWeight: '600',
+              color: '#1e293b',
+              outline: 'none',
+              boxSizing: 'border-box',
+            }}
+          >
+            <option value="Grade 6">Grade 6</option>
+            <option value="Grade 7">Grade 7</option>
+            <option value="Grade 8">Grade 8</option>
+            <option value="Grade 9">Grade 9</option>
+          </select>
+        </div>
       </div>
 
-      {/* RAG Toggle & Submit Action Bar */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
-        <label className="flex items-center gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200/80 cursor-pointer w-full sm:w-auto">
-          <input
-            type="checkbox"
-            checked={useRAG}
-            onChange={(e) => setUseRAG(e.target.checked)}
-            className="w-5 h-5 text-indigo-600 rounded focus:ring-indigo-500 cursor-pointer"
-          />
-          <div>
-            <span className="block text-xs font-bold text-slate-800">ChromaDB RAG Grounding</span>
-            <span className="text-[10px] text-slate-500">Retrieve matching syllabus documents</span>
-          </div>
+      {/* 2. Direct Competency Level Input */}
+      <div>
+        <label style={{ display: 'block', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', color: '#334155', marginBottom: '6px', letterSpacing: '0.05em' }}>
+          NIE Competency Level
         </label>
-
-        <button
-          type="submit"
+        <input
+          type="text"
+          required
+          value={competencyLevel}
+          onChange={(e) => setCompetencyLevel(e.target.value)}
+          placeholder={placeholderText}
           disabled={isLoading}
-          className={`w-full sm:w-auto flex-1 py-3.5 px-8 font-bold text-sm text-white rounded-xl shadow-lg transition-all ${
-            isLoading
-              ? 'bg-indigo-300 cursor-not-allowed'
-              : 'bg-linear-to-r from-indigo-600 via-blue-600 to-indigo-700 hover:opacity-95 active:scale-[0.99]'
-          }`}
-        >
-          {isLoading ? (
-            <span className="flex items-center justify-center gap-2">
-              <svg className="animate-spin h-5 w-5 text-white" viewBox="0 0 24 24" fill="none">
-                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
-              </svg>
-              Generating Lesson Plan...
-            </span>
-          ) : (
-            '✨ Generate Lesson Plan'
-          )}
-        </button>
+          style={{
+            width: '100%',
+            padding: '10px 14px',
+            backgroundColor: '#f8fafc',
+            border: '1.5px solid #6366f1',
+            borderRadius: '10px',
+            fontSize: '15px',
+            fontWeight: '600',
+            fontFamily: 'monospace',
+            color: '#4338ca',
+            outline: 'none',
+            boxSizing: 'border-box',
+          }}
+        />
+        <span style={{ display: 'block', fontSize: '11px', color: '#64748b', marginTop: '4px' }}>
+          {subject === 'Science' ? 'Enter Science Competency Level (e.g. 1.6)' : 'Enter Civic Education Competency Code (e.g. 8.1.1, 8.4.2, 8.6.8)'}
+        </span>
       </div>
+
+      {/* 3. Lesson Allocation (Periods & Duration) */}
+      <div>
+        <label style={{ display: 'block', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', color: '#334155', marginBottom: '6px', letterSpacing: '0.05em' }}>
+          Lesson Allocation (Periods & Duration)
+        </label>
+        <select
+          value={periods}
+          onChange={(e) => setPeriods(Number(e.target.value))}
+          disabled={isLoading}
+          style={{
+            width: '100%',
+            padding: '10px 14px',
+            backgroundColor: '#f8fafc',
+            border: '1px solid #cbd5e1',
+            borderRadius: '10px',
+            fontSize: '14px',
+            fontWeight: '500',
+            color: '#1e293b',
+            outline: 'none',
+            boxSizing: 'border-box',
+          }}
+        >
+          <option value={1}>1 Period — 40 Minutes (Min. 2 Development Steps)</option>
+          <option value={2}>2 Periods — 80 Minutes (Min. 3 Development Steps)</option>
+          <option value={3}>3 Periods — 120 Minutes (Min. 4 Development Steps)</option>
+          <option value={4}>4 Periods — 160 Minutes (Min. 5 Development Steps)</option>
+        </select>
+        <span style={{ display: 'block', fontSize: '11px', color: '#64748b', marginTop: '4px' }}>
+          NIE Standard: 40 minutes per period ({durationMinutes} minutes total)
+        </span>
+      </div>
+
+      {/* 4. Submit Button */}
+      <button
+        type="submit"
+        disabled={isLoading || !competencyLevel.trim()}
+        style={{
+          width: '100%',
+          marginTop: '6px',
+          padding: '12px 16px',
+          borderRadius: '10px',
+          backgroundColor: isLoading || !competencyLevel.trim() ? '#94a3b8' : '#4f46e5',
+          color: '#ffffff',
+          fontWeight: '700',
+          fontSize: '14px',
+          border: 'none',
+          cursor: isLoading || !competencyLevel.trim() ? 'not-allowed' : 'pointer',
+          transition: 'background-color 0.2s ease',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '8px',
+        }}
+      >
+        {isLoading ? '⏳ Generating Lesson Plan...' : `✨ Generate ${subject} Lesson Plan (${competencyLevel || '...'})`}
+      </button>
     </form>
   );
 }
