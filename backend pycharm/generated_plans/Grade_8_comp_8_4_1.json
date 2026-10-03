@@ -1,0 +1,69 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "80 Minutes (2 Periods)",
+  "competence": "Contributes to minimize accidents and disasters by identifying them.",
+  "competence_level": "8.4.1",
+  "lesson": "Competency Level 8.4.1: Competency 8.4.1",
+  "unique_learning_outcome": [
+    "Names disasters and accidents",
+    "Explains the causes for disasters and accidents.",
+    "Suggests measures to minimize the damages caused by accidents and disasters.",
+    "Shows the measures to be taken to avoid accidents.",
+    "Names the institutions that can support in disasters and accidents.",
+    "Explains the importance of following instructions given by the institutions that provide support in disasters and accidents."
+  ],
+  "the_entrance": "Introduction to the concept of accidents and disasters, and their impact on society.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Exposition on the concept of accidents and disasters, and their causes.",
+      "student_activities": "Note-taking and concept mapping.",
+      "learning_teaching_method": "Exposition",
+      "learning_teaching_aids": "Textbook diagrams and charts",
+      "assessment_and_feedback": "Formative assessment through concept mapping.",
+      "time_minutes": 10,
+      "other": "Blackboard arrangement"
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Facilitating student group discussions on the causes and effects of accidents and disasters.",
+      "student_activities": "Group analysis and roleplay.",
+      "learning_teaching_method": "Cooperative Group Work",
+      "learning_teaching_aids": "Worksheets and task cards",
+      "assessment_and_feedback": "Monitoring group progress and correcting misconceptions.",
+      "time_minutes": 25,
+      "other": "Differentiation and group roles"
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "Guiding student presentations on the measures to minimize the damages caused by accidents and disasters.",
+      "student_activities": "Presenting group outcomes and comparing notes.",
+      "learning_teaching_method": "Student Presentations",
+      "learning_teaching_aids": "Presentation sheets and whiteboard",
+      "assessment_and_feedback": "Peer feedback and teacher clarification.",
+      "time_minutes": 25,
+      "other": "None"
+    },
+    {
+      "step_number": 4,
+      "teacher_activities": "Consolidating learning and formative evaluation.",
+      "student_activities": "Answering targeted evaluation questions.",
+      "learning_teaching_method": "Review and Synthesis",
+      "learning_teaching_aids": "Evaluation questions sheet",
+      "assessment_and_feedback": "Summative check for all learning outcomes.",
+      "time_minutes": 20,
+      "other": "None"
+    }
+  ],
+  "summary": "Recap of key findings and core principles.",
+  "assessment_and_feedback_whole_lesson": "Summative check or exit questions addressing all learning outcomes.",
+  "post_activity": "Concrete homework or workbook exercise.",
+  "information_sources": [
+    "National Institute of Education (NIE) Teacher Instructional Guide",
+    "Grade 8 Pupil's Textbook"
+  ],
+  "attachments": [
+    "Worksheet on identifying accidents and disasters"
+  ]
+}

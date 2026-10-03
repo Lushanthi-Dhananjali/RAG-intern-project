@@ -1,0 +1,45 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (1 Period)",
+  "competence": "Internalizes the qualities of a good labourer",
+  "competence_level": "8.6.5",
+  "lesson": "Competency Level 8.6.5: Competency 8.6.5",
+  "unique_learning_outcome": [
+    "Explains the good qualities of a worker.",
+    "Expresses the importance of maintaining good qualities in the work place."
+  ],
+  "the_entrance": "Introduction to the importance of good qualities in the workplace",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Introduce the concept of good qualities in the workplace",
+      "student_activities": "Take notes on the importance of good qualities",
+      "learning_teaching_method": "Exposition",
+      "learning_teaching_aids": "Textbook diagrams",
+      "assessment_and_feedback": "Formative assessment on understanding",
+      "time_minutes": 10,
+      "other": "Blackboard notes"
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Facilitate student group discussions on good qualities",
+      "student_activities": "Participate in group discussions and share examples",
+      "learning_teaching_method": "Cooperative Group Work",
+      "learning_teaching_aids": "Worksheet with discussion prompts",
+      "assessment_and_feedback": "Monitor group progress and provide feedback",
+      "time_minutes": 30,
+      "other": "Differentiation for varying group roles"
+    }
+  ],
+  "summary": "Recap the importance of good qualities in the workplace",
+  "assessment_and_feedback_whole_lesson": "Summative check on understanding good qualities",
+  "post_activity": "Complete a worksheet on good qualities in the workplace",
+  "information_sources": [
+    "National Institute of Education (NIE) Teacher Instructional Guide",
+    "Grade 8 Pupil's Textbook"
+  ],
+  "attachments": [
+    "Good Qualities in the Workplace Worksheet"
+  ]
+}

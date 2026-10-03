@@ -1,0 +1,56 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "80 Minutes (2 Periods)",
+  "competence": "Contributes to sustainable development adapting a bearable life style",
+  "competence_level": "8.4.6",
+  "lesson": "Competency Level 8.4.6: Competency 8.4.6",
+  "unique_learning_outcome": [
+    "Explains what is meant by a bearable life style.",
+    "Explains the need of getting used to a bearable consumption style in fulfilling day to day needs.",
+    "Expresses views accepting that the practice of such a consumption style contributes to sustainable development."
+  ],
+  "the_entrance": "Introduction of bearable life style.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Explain the concept of bearable life style and its importance.",
+      "student_activities": "Take notes on the definition and significance of bearable life style.",
+      "learning_teaching_method": "Exposition",
+      "learning_teaching_aids": "Textbook diagrams and charts",
+      "assessment_and_feedback": "Formative assessment check on understanding of bearable life style.",
+      "time_minutes": 15,
+      "other": "Blackboard arrangement"
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Facilitate student group discussions on the need of getting used to a bearable consumption style.",
+      "student_activities": "Participate in group discussions and share views on the need of bearable consumption style.",
+      "learning_teaching_method": "Cooperative Group Work",
+      "learning_teaching_aids": "Worksheets, task cards",
+      "assessment_and_feedback": "Monitor group progress and correct misconceptions.",
+      "time_minutes": 30,
+      "other": "Differentiation or group roles"
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "Guide student presentations on the benefits of bearable life style and its contribution to sustainable development.",
+      "student_activities": "Present group findings and compare notes with peers.",
+      "learning_teaching_method": "Student Presentations",
+      "learning_teaching_aids": "Presentation sheets, whiteboard",
+      "assessment_and_feedback": "Peer feedback and teacher clarification.",
+      "time_minutes": 35,
+      "other": "None"
+    }
+  ],
+  "summary": "Recap of key findings and core principles.",
+  "assessment_and_feedback_whole_lesson": "Summative check or exit questions addressing all learning outcomes.",
+  "post_activity": "Concrete homework or workbook exercise.",
+  "information_sources": [
+    "National Institute of Education (NIE) Teacher Instructional Guide",
+    "Grade 8 Pupil's Textbook"
+  ],
+  "attachments": [
+    "Worksheet on bearable life style"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "80 Minutes (2 Periods)",
+  "competence": "Appreciates the diversity in the world of work",
+  "competence_level": "8.6.1",
+  "lesson": "Competency Level 8.6.1: Competency 8.6.1",
+  "unique_learning_outcome": [
+    "Explains the diversity of world of work.",
+    "Explains that there are many employment opportunities available in the diversity of world of work"
+  ],
+  "the_entrance": "Introduction to world of work",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Introduce the concept of world of work and its diversity",
+      "student_activities": "Listen to the teacher's explanation and take notes",
+      "learning_teaching_method": "Exposition",
+      "learning_teaching_aids": "Textbook diagrams and charts",
+      "assessment_and_feedback": "Formative assessment check on understanding",
+      "time_minutes": 15,
+      "other": "None"
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Facilitate student group work to identify jobs related to different fields",
+      "student_activities": "Participate in group discussions and identify jobs",
+      "learning_teaching_method": "Cooperative Group Work",
+      "learning_teaching_aids": "Worksheets, task cards",
+      "assessment_and_feedback": "Monitor group progress and correct misconceptions",
+      "time_minutes": 30,
+      "other": "Differentiation or group roles"
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "Guide student presentations and structuring findings",
+      "student_activities": "Present group outcomes and compare notes",
+      "learning_teaching_method": "Student Presentations",
+      "learning_teaching_aids": "Presentation sheets, whiteboard",
+      "assessment_and_feedback": "Peer feedback and teacher clarification",
+      "time_minutes": 35,
+      "other": "None"
+    }
+  ],
+  "summary": "Recap of key findings and core principles",
+  "assessment_and_feedback_whole_lesson": "Summative check or exit questions addressing all learning outcomes",
+  "post_activity": "Concrete homework or workbook exercise",
+  "information_sources": [
+    "National Institute of Education (NIE) Teacher Instructional Guide",
+    "Grade 8 Pupil's Textbook"
+  ],
+  "attachments": [
+    "Worksheet for identifying jobs related to different fields"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (1 Period)",
+  "competence": "Describes the importance of working with a sense of dignity of labour.",
+  "competence_level": "8.6.2",
+  "lesson": "Competency Level 8.6.2: Competency 8.6.2",
+  "unique_learning_outcome": [
+    "Describes the importance of working with a sense of dignity of labour.",
+    "Presents facts to show that working with a sense of dignity of labour causes job satisfaction.",
+    "Explains the benefits gained by working with a sense of dignity of labour."
+  ],
+  "the_entrance": "Introduction to dignity of labour.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Introduce the concept of dignity of labour and its importance.",
+      "student_activities": "Listen to the introduction and take notes.",
+      "learning_teaching_method": "Exposition",
+      "learning_teaching_aids": "Textbook diagrams and charts",
+      "assessment_and_feedback": "Formative assessment check on understanding",
+      "time_minutes": 15,
+      "other": "None"
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Facilitate student group discussions on the benefits of dignity of labour.",
+      "student_activities": "Participate in group discussions and present findings.",
+      "learning_teaching_method": "Cooperative Group Work",
+      "learning_teaching_aids": "Worksheets, task cards",
+      "assessment_and_feedback": "Monitor group progress and correct misconceptions",
+      "time_minutes": 25,
+      "other": "Differentiation or group roles"
+    }
+  ],
+  "summary": "Recap the importance of dignity of labour and its benefits.",
+  "assessment_and_feedback_whole_lesson": "Summative check on all learning outcomes.",
+  "post_activity": "Complete a workbook exercise on dignity of labour.",
+  "information_sources": [
+    "National Institute of Education (NIE) Teacher Instructional Guide",
+    "Grade 8 Pupil's Textbook"
+  ],
+  "attachments": [
+    "Worksheet on dignity of labour"
+  ]
+}

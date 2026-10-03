@@ -1,0 +1,45 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (1 Period)",
+  "competence": "Explains the need to be sensitive as a worker to the expectations of the work place.",
+  "competence_level": "8.6.6",
+  "lesson": "Competency Level 8.6.6: Competency 8.6.6",
+  "unique_learning_outcome": [
+    "Explains the need to be sensitive as a worker to the expectations of the work place.",
+    "Explains the fact that the fulfillment of the expectations of a work place is a bounden duty of an employee."
+  ],
+  "the_entrance": "Let the students identify through example that any institution has its specific expectations.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Introduce the concept of work place expectations and provide examples.",
+      "student_activities": "Students will identify and discuss the expectations of different institutions.",
+      "learning_teaching_method": "Exposition",
+      "learning_teaching_aids": "Textbook diagrams and charts",
+      "assessment_and_feedback": "Formative assessment through class discussion",
+      "time_minutes": 10,
+      "other": "Blackboard arrangement"
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Facilitate student group discussions on the importance of fulfilling work place expectations.",
+      "student_activities": "Students will work in groups to identify the expectations of different institutions and discuss the importance of fulfilling them.",
+      "learning_teaching_method": "Cooperative Group Work",
+      "learning_teaching_aids": "Worksheets, task cards",
+      "assessment_and_feedback": "Monitoring group progress and correcting misconceptions",
+      "time_minutes": 30,
+      "other": "Differentiation or group roles"
+    }
+  ],
+  "summary": "Recap the importance of fulfilling work place expectations and the need for sensitivity as a worker.",
+  "assessment_and_feedback_whole_lesson": "Summative check for all learning outcomes",
+  "post_activity": "Concrete homework or workbook exercise",
+  "information_sources": [
+    "National Institute of Education (NIE) Teacher Instructional Guide",
+    "Grade 8 Pupil's Textbook"
+  ],
+  "attachments": [
+    "Worksheet: Identifying Work Place Expectations"
+  ]
+}

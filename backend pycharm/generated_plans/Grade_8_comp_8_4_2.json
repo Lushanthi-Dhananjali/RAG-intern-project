@@ -1,0 +1,45 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (1 Period)",
+  "competence": "Works intelligently in disaster situations",
+  "competence_level": "8.4.2",
+  "lesson": "Competency Level 8.4.2: Competency 8.4.2",
+  "unique_learning_outcome": [
+    "Explains the importance of working to protect self as well as others at disasters.",
+    "Emphasises the need for acting according to the situations in disasters."
+  ],
+  "the_entrance": "The importance of working intelligently and according to the situation at disasters.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Introduce the concept of working intelligently in disaster situations and explain the importance of protecting oneself and others.",
+      "student_activities": "Students will take notes on the importance of working intelligently and according to the situation at disasters.",
+      "learning_teaching_method": "Exposition",
+      "learning_teaching_aids": "Textbook diagrams and charts",
+      "assessment_and_feedback": "Formative assessment check on student understanding",
+      "time_minutes": 10,
+      "other": "Blackboard arrangement"
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Facilitate student group discussions on the importance of acting according to the situation in disasters.",
+      "student_activities": "Students will engage in group discussions and present their findings.",
+      "learning_teaching_method": "Cooperative Group Work",
+      "learning_teaching_aids": "Worksheets, task cards",
+      "assessment_and_feedback": "Monitoring group progress and correcting misconceptions",
+      "time_minutes": 30,
+      "other": "Differentiation or group roles"
+    }
+  ],
+  "summary": "Recap of key findings and core principles",
+  "assessment_and_feedback_whole_lesson": "Summative check or exit questions addressing all learning outcomes",
+  "post_activity": "Concrete homework or workbook exercise",
+  "information_sources": [
+    "National Institute of Education (NIE) Teacher Instructional Guide",
+    "Grade 8 Pupil's Textbook"
+  ],
+  "attachments": [
+    "Worksheet on disaster preparedness"
+  ]
+}

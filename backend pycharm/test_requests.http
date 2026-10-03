@@ -1,0 +1,24 @@
+### Health Check
+GET http://localhost:8000/
+Accept: application/json
+
+### Generate Single Plan by Competency Level
+POST http://localhost:8000/api/v1/generate-by-competency-level
+Content-Type: application/json
+
+{
+  "competency_level": "8.1.1",
+  "topic_query": "Features of Direct Democracy in Ancient Athens",
+  "grade_level": "Grade 8",
+  "subject": "Civic Education"
+}
+
+### Generate Batch Unit Plans
+POST http://localhost:8000/api/v1/generate-by-unit
+Content-Type: application/json
+
+{
+  "unit_query": "Grade 8 Civic Education Unit 1: Democratic Governance and Citizen Participation",
+  "grade_level": "Grade 8",
+  "subject": "Civic Education"
+}

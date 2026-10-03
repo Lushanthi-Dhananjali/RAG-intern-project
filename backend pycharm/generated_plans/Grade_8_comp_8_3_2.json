@@ -1,0 +1,67 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "120 Minutes (3 Periods)",
+  "competence": "Explains that Sri Lanka is a multicultural society.",
+  "competence_level": "8.3.2",
+  "lesson": "Competency Level 8.3.2: Competency 8.3.2",
+  "unique_learning_outcome": [
+    "Explains that Sri Lanka is a multicultural society.",
+    "Presents details of cultural features of different cultures in the Sri Lankan society.",
+    "Expresses views on the importance of living cooperatively as a member of a multicultural society.",
+    "Presents information about the multicultural features of other countries."
+  ],
+  "the_entrance": "Why is it important to understand the concept of multiculturalism in Sri Lanka?",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Introduce the concept of multiculturalism in Sri Lanka and ask students to share their experiences with cultural diversity.",
+      "student_activities": "Students share their experiences and thoughts on cultural diversity.",
+      "learning_teaching_method": "Exposition",
+      "learning_teaching_aids": "Textbook diagrams and charts",
+      "assessment_and_feedback": "Formative assessment through class discussion",
+      "time_minutes": 20,
+      "other": "None"
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Provide students with information on the geographical location, migration, invasion, trade, and cultural relationships that have contributed to Sri Lanka's multicultural society.",
+      "student_activities": "Students analyze the information and identify the cultural features of different cultures in Sri Lanka.",
+      "learning_teaching_method": "Guided Inquiry",
+      "learning_teaching_aids": "Worksheets and task cards",
+      "assessment_and_feedback": "Monitoring student understanding through group work",
+      "time_minutes": 35,
+      "other": "Differentiation or group roles"
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "Have students present their findings on the cultural features of different cultures in Sri Lanka and discuss the importance of living cooperatively in a multicultural society.",
+      "student_activities": "Students present their findings and discuss the importance of living cooperatively.",
+      "learning_teaching_method": "Student Presentations",
+      "learning_teaching_aids": "Presentation sheets and whiteboard",
+      "assessment_and_feedback": "Peer feedback and teacher clarification",
+      "time_minutes": 35,
+      "other": "None"
+    },
+    {
+      "step_number": 4,
+      "teacher_activities": "Consolidate student learning by reviewing the key findings and core principles of multiculturalism in Sri Lanka.",
+      "student_activities": "Students answer targeted evaluation questions.",
+      "learning_teaching_method": "Review and Synthesis",
+      "learning_teaching_aids": "Evaluation questions sheet",
+      "assessment_and_feedback": "Summative check for all learning outcomes",
+      "time_minutes": 30,
+      "other": "None"
+    }
+  ],
+  "summary": "Recap of key findings and core principles of multiculturalism in Sri Lanka.",
+  "assessment_and_feedback_whole_lesson": "Summative check or exit questions addressing all learning outcomes.",
+  "post_activity": "Concrete homework or workbook exercise.",
+  "information_sources": [
+    "National Institute of Education (NIE) Teacher Instructional Guide",
+    "Grade 8 Pupil's Textbook"
+  ],
+  "attachments": [
+    "Multiculturalism in Sri Lanka worksheet"
+  ]
+}

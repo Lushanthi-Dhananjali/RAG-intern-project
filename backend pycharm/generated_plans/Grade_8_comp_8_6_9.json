@@ -1,0 +1,45 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (1 Period)",
+  "competence": "Suggests strategies to satisfy customers.",
+  "competence_level": "8.6.9",
+  "lesson": "Competency Level 8.6.9: Competency 8.6.9",
+  "unique_learning_outcome": [
+    "Suggests strategies to satisfy customers.",
+    "Explains the importance of getting to know the customers and working well."
+  ],
+  "the_entrance": "Introduction to the importance of satisfying customers.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Explain the concept of customer satisfaction and its importance.",
+      "student_activities": "Take notes on the importance of customer satisfaction.",
+      "learning_teaching_method": "Exposition",
+      "learning_teaching_aids": "Textbook diagrams and charts",
+      "assessment_and_feedback": "Formative assessment check on understanding",
+      "time_minutes": 10,
+      "other": "Blackboard arrangement"
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Facilitate student group discussions on strategies to satisfy customers.",
+      "student_activities": "Participate in group discussions and share ideas.",
+      "learning_teaching_method": "Cooperative Group Work",
+      "learning_teaching_aids": "Worksheets, task cards",
+      "assessment_and_feedback": "Monitor group progress and correct misconceptions",
+      "time_minutes": 30,
+      "other": "Differentiation or group roles"
+    }
+  ],
+  "summary": "Recap of key findings and core principles.",
+  "assessment_and_feedback_whole_lesson": "Summative check or exit questions addressing all learning outcomes.",
+  "post_activity": "Concrete homework or workbook exercise.",
+  "information_sources": [
+    "National Institute of Education (NIE) Teacher Instructional Guide",
+    "Grade 8 Pupil's Textbook"
+  ],
+  "attachments": [
+    "Worksheet on customer satisfaction strategies"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (1 Period)",
+  "competence": "Explains the importance of being alert about the situations where accidents and disasters might happen.",
+  "competence_level": "8.4.3",
+  "lesson": "Competency 8.4.3",
+  "unique_learning_outcome": [
+    "Explains the importance of being alert about the situations where accidents and disasters might happen.",
+    "Suggests suitable preventive measures for accidents and disasters.",
+    "Explains the importance of safeguarding from accidents other than situational ones by identifying those situations.",
+    "Explains with examples that bad habits cause accidents and disasters.",
+    "Identifies accidents caused by food and drugs highlights the importance of protection.",
+    "Expresses the importance of getting rid of bad habits for the prevention of accidents and disasters."
+  ],
+  "the_entrance": "Imagine a scenario where a group of friends are on a hike and suddenly, a rockslide occurs. How would they react?",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Introduce the concept of accidents and disasters, and ask students to share their experiences.",
+      "student_activities": "Students will share their experiences and discuss the importance of being alert in situations where accidents and disasters might happen.",
+      "learning_teaching_method": "Exposition",
+      "learning_teaching_aids": "Textbook diagrams and charts",
+      "assessment_and_feedback": "Formative assessment through class discussion",
+      "time_minutes": 10,
+      "other": "None"
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Divide students into groups and ask them to brainstorm suitable preventive measures for accidents and disasters.",
+      "student_activities": "Students will brainstorm and discuss suitable preventive measures for accidents and disasters.",
+      "learning_teaching_method": "Cooperative Group Work",
+      "learning_teaching_aids": "Task cards and worksheets",
+      "assessment_and_feedback": "Monitoring group progress and correcting misconceptions",
+      "time_minutes": 30,
+      "other": "Differentiation and group roles"
+    }
+  ],
+  "summary": "Recap of key findings: Accidents and disasters can happen anywhere, and being alert is crucial in preventing them.",
+  "assessment_and_feedback_whole_lesson": "Summative check through a quiz or class discussion",
+  "post_activity": "Concrete homework: Write a short essay on the importance of being alert in situations where accidents and disasters might happen.",
+  "information_sources": [
+    "National Institute of Education (NIE) Teacher Instructional Guide",
+    "Grade 8 Pupil's Textbook"
+  ],
+  "attachments": [
+    "Worksheet: Preventive Measures for Accidents and Disasters"
+  ]
+}

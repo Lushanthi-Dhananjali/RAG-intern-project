@@ -1,0 +1,66 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "120 Minutes (3 Periods)",
+  "competence": "Faces different problems and challenges in life successfully.",
+  "competence_level": "8.5.2",
+  "lesson": "Competency Level 8.5.2: Competency 8.5.2",
+  "unique_learning_outcome": [
+    "Explains that facing problems is common in life.",
+    "Explains that any challenge or any problem has a solution.",
+    "Explains the need of searching for creative solutions for any challenge or problem for success in life."
+  ],
+  "the_entrance": "Following innovative ways to solve different problems and challenges",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Introduce the concept of facing problems and challenges in life successfully.",
+      "student_activities": "Listen to the teacher's explanation and take notes.",
+      "learning_teaching_method": "Exposition",
+      "learning_teaching_aids": "Textbook diagrams and charts",
+      "assessment_and_feedback": "Formative assessment check on student understanding",
+      "time_minutes": 20,
+      "other": "None"
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Facilitate student group discussions on the importance of facing problems and challenges.",
+      "student_activities": "Participate in group discussions and share thoughts on the topic.",
+      "learning_teaching_method": "Cooperative Group Work",
+      "learning_teaching_aids": "Worksheets and task cards",
+      "assessment_and_feedback": "Monitor group progress and correct misconceptions",
+      "time_minutes": 35,
+      "other": "Differentiation or group roles"
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "Guide student presentations on the solutions to different problems and challenges.",
+      "student_activities": "Present group findings and compare notes with peers.",
+      "learning_teaching_method": "Student Presentations",
+      "learning_teaching_aids": "Presentation sheets and whiteboard",
+      "assessment_and_feedback": "Peer feedback and teacher clarification",
+      "time_minutes": 35,
+      "other": "None"
+    },
+    {
+      "step_number": 4,
+      "teacher_activities": "Consolidate learning and conduct formative evaluation.",
+      "student_activities": "Answer targeted evaluation questions.",
+      "learning_teaching_method": "Review and Synthesis",
+      "learning_teaching_aids": "Evaluation questions sheet",
+      "assessment_and_feedback": "Summative check for all learning outcomes",
+      "time_minutes": 30,
+      "other": "None"
+    }
+  ],
+  "summary": "Recap of key findings and core principles: facing problems and challenges in life successfully.",
+  "assessment_and_feedback_whole_lesson": "Summative check or exit questions addressing all learning outcomes.",
+  "post_activity": "Concrete homework or workbook exercise.",
+  "information_sources": [
+    "National Institute of Education (NIE) Teacher Instructional Guide",
+    "Grade 8 Pupil's Textbook"
+  ],
+  "attachments": [
+    "Worksheet: 'Facing Problems and Challenges in Life Successfully'"
+  ]
+}

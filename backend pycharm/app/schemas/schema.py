@@ -1,66 +1,104 @@
-# schema.py
 from typing import List, Optional
 from pydantic import BaseModel, Field
 
 
-class LearningOutcome(BaseModel):
-    id: int = Field(description="Outcome index starting at 1")
-    description: str = Field(description="Measurable learning objective")
-    blooms_taxonomy_level: Optional[str] = Field(default=None)
-
-
-class MaterialItem(BaseModel):
-    item_name: str = Field(description="Name of resource")
-    quantity: str = Field(description="Amount needed")
-    is_digital: bool = Field(default=False)
-
-
-class ProcedureStep(BaseModel):
-    step_number: int = Field(description="Sequence index")
-    phase_title: str = Field(description="Warm-up, Direct Instruction, Group Activity, Closure")
-    duration_minutes: int = Field(description="Time allocation in minutes")
-    teacher_action: str = Field(description="Teacher action description")
-    student_action: str = Field(description="Student action description")
-
-
-class AssessmentAndVerification(BaseModel):
-    formative_assessment: str = Field(description="In-class check during lesson")
-    summative_assessment: Optional[str] = Field(default=None)
-    alignment_check: str = Field(description="Verification of objective achievement")
+class LessonStep(BaseModel):
+    step_number: int = Field(
+        ...,
+        description="Step sequence number (1, 2, 3, etc.)"
+    )
+    learning_teaching_method: str = Field(
+        ...,
+        description="Pedagogical methodology used (e.g., Direct Instruction, Discussion, Inquiry, Group Activity)"
+    )
+    learning_teaching_aids: str = Field(
+        ...,
+        description="Aids and materials used in this step (e.g., Chalkboard, Flashcards, Textbook page 42)"
+    )
+    teacher_activities: str = Field(
+        ...,
+        description="Specific instructions and actions performed by the teacher"
+    )
+    student_activities: str = Field(
+        ...,
+        description="Specific tasks and actions performed by students"
+    )
+    assessment_and_feedback: str = Field(
+        ...,
+        description="Formative assessment method and immediate feedback mechanism for this step"
+    )
+    time_minutes: str = Field(
+        ...,
+        description="Allocated time duration for this specific step (e.g., '10 mins')"
+    )
+    other: Optional[str] = Field(
+        default="",
+        description="Additional teacher notes, classroom organization, or differentiation details"
+    )
 
 
 class LessonPlanSchema(BaseModel):
-    """
-    MASTER SCHEMA: Fields must remain in this exact sequence to enforce
-    Educational Goals -> Learning Outcomes -> Materials -> Procedures -> Verification.
-    """
-    title: str = Field(description="Title of the lesson plan")
-    subject: str = Field(default="Civic Education", description="Academic subject")
-    grade_level: str = Field(description="Target grade level")
-    topic: str = Field(description="Specific unit/topic name")
+    page_no: str = Field(default="01", description="Page number of the lesson plan")
+    lesson_plan_number: str = Field(default="01", description="Sequential lesson plan index")
+    date: str = Field(..., description="Date of lesson delivery (YYYY-MM-DD)")
+    grade: str = Field(..., description="Grade level (e.g., 'Grade 8')")
+    subject: str = Field(..., description="Subject name (e.g., 'Civic Education')")
+    time_allocation: str = Field(..., description="Total time allocation (e.g., '40 Minutes (1 Period)')")
 
-    # 1. Educational Standard / Goal
-    educational_goal_or_standard: str = Field(
-        description="STEP 1: Educational Goal or Standard governing the lesson"
+    competence: str = Field(
+        ...,
+        description="Broad NIE curriculum competency statement"
     )
-    estimated_duration_minutes: int = Field(default=45)
-
-    # 2. Measurable Objectives / Outcomes
-    learning_outcomes: List[LearningOutcome] = Field(
-        description="STEP 2: Measurable learning objectives derived directly from the goal"
+    competence_level: str = Field(
+        ...,
+        description="Specific 3-digit NIE competency level code and description (e.g., '8.1.1: Identifies direct democracy features')"
     )
-
-    # 3. Materials
-    materials: List[MaterialItem] = Field(
-        description="STEP 3: Required physical and digital instructional resources"
+    lesson_topic: str = Field(
+        ...,
+        description="Specific lesson title or sub-topic name"
     )
 
-    # 4. Sequential Procedures
-    procedures: List[ProcedureStep] = Field(
-        description="STEP 4: Sequential instructional steps executing the learning objectives"
+    unique_learning_outcome: List[str] = Field(
+        ...,
+        description="Specific measurable behavioral learning outcomes to achieve by end of lesson"
     )
 
-    # 5. Verification & Assessment
-    verification: AssessmentAndVerification = Field(
-        description="STEP 5: Assessment check verifying that procedures achieved the learning outcomes"
+    the_entrance: str = Field(
+        ...,
+        description="Introduction/Engagement phase (3-5 mins) to stimulate curiosity and activate prior knowledge"
+    )
+
+    lesson_development_steps: List[LessonStep] = Field(
+        ...,
+        description="7-column tabular development steps following University of Peradeniya format"
+    )
+
+    summary: str = Field(
+        ...,
+        description="Consolidation and recap of key concepts learned (3-5 mins)"
+    )
+
+    assessment_and_feedback_whole_lesson: str = Field(
+        ...,
+        description="Summative or closing formative assessment measuring overall lesson outcome achievement"
+    )
+
+    post_activity: str = Field(
+        ...,
+        description="Homework, extended learning activity, or community assignment"
+    )
+
+    information_sources: List[str] = Field(
+        default_factory=lambda: ["Teacher Instructional Guide (TIG)", "Student Textbook"],
+        description="Curriculum guides, reference textbooks, and external sources cited"
+    )
+
+    attachments: List[str] = Field(
+        default_factory=list,
+        description="List of attached resources, worksheets, charts, or rubrics"
+    )
+
+    reflection: str = Field(
+        default="To be completed post-lesson delivery by the teacher.",
+        description="Post-lesson evaluative notes on student achievement and pedagogical adjustments"
     )

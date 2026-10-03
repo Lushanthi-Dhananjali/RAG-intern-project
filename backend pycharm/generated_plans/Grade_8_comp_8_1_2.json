@@ -1,0 +1,68 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "120 Minutes (3 Periods)",
+  "competence": "Names the public services provided for the area identifying them.",
+  "competence_level": "8.1.2",
+  "lesson": "Competency 8.1.2",
+  "unique_learning_outcome": [
+    "Names the public services provided for the area identifying them.",
+    "Describes institutions that provide public services and the functions of the officers.",
+    "Presents information about other public services provided by the government.",
+    "Gives examples for other organizations that provide public services.",
+    "Expresses ideas appreciating the fact that public services bring about a quality development of human lives."
+  ],
+  "the_entrance": "Let's explore the public services provided in our area and identify their importance.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Introduce the concept of public services and ask students to brainstorm services they are familiar with.",
+      "student_activities": "Students will share their ideas and discuss the importance of public services.",
+      "learning_teaching_method": "Exposition",
+      "learning_teaching_aids": "Whiteboard and markers",
+      "assessment_and_feedback": "Monitor student participation and engagement.",
+      "time_minutes": 25,
+      "other": "None"
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Provide examples of institutions that provide public services and ask students to describe their functions.",
+      "student_activities": "Students will work in groups to research and present information about public services.",
+      "learning_teaching_method": "Cooperative Group Work",
+      "learning_teaching_aids": "Task cards and group worksheets",
+      "assessment_and_feedback": "Monitor group progress and provide feedback.",
+      "time_minutes": 40,
+      "other": "Differentiation and group roles"
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "Have students present their findings and ask questions to clarify their understanding.",
+      "student_activities": "Students will share their presentations and discuss the importance of public services.",
+      "learning_teaching_method": "Student Presentations",
+      "learning_teaching_aids": "Presentation sheets and whiteboard",
+      "assessment_and_feedback": "Provide feedback and ask students to reflect on their learning.",
+      "time_minutes": 25,
+      "other": "None"
+    },
+    {
+      "step_number": 4,
+      "teacher_activities": "Facilitates student presentations and synthesis of findings from Step 3.",
+      "student_activities": "Students present their findings, compare outcomes, and note teacher feedback.",
+      "learning_teaching_method": "Presentation & Discussion",
+      "learning_teaching_aids": "Presentation sheets and whiteboard",
+      "assessment_and_feedback": "Teacher checks clarity of student presentations and corrects misconceptions.",
+      "time_minutes": 30,
+      "other": "Presentation synthesis"
+    }
+  ],
+  "summary": "Recap the importance of public services and how they bring about quality development of human lives.",
+  "assessment_and_feedback_whole_lesson": "Summative check on student understanding of public services.",
+  "post_activity": "Have students create a visual representation of the public services they have learned about.",
+  "information_sources": [
+    "National Institute of Education (NIE) Teacher Instructional Guide",
+    "Grade 8 Pupil's Textbook"
+  ],
+  "attachments": [
+    "Public Services Worksheet"
+  ]
+}

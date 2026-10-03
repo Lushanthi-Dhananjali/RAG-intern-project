@@ -1,0 +1,65 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "80 Minutes (2 Periods)",
+  "competence": "Investigates Workers’ rights and responsibilities.",
+  "competence_level": "8.6.7",
+  "lesson": "Competency Level 8.6.7: Competency 8.6.7",
+  "unique_learning_outcome": [
+    "Lists out workers' rights and duties",
+    "Expresses willingness to enjoy worker rights while fulfilling duties and responsibilities"
+  ],
+  "the_entrance": "Introduction to workers' rights and responsibilities in Sri Lanka",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Explain the importance of safeguarding workers' rights and responsibilities",
+      "student_activities": "Take notes on the importance of workers' rights and responsibilities",
+      "learning_teaching_method": "Exposition",
+      "learning_teaching_aids": "Textbook diagrams and charts",
+      "assessment_and_feedback": "Formative assessment check on understanding",
+      "time_minutes": 10,
+      "other": "Blackboard arrangement"
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Facilitate student group discussions on workers' rights and responsibilities",
+      "student_activities": "Participate in group discussions and take notes",
+      "learning_teaching_method": "Cooperative Group Work",
+      "learning_teaching_aids": "Worksheets and task cards",
+      "assessment_and_feedback": "Monitor group progress and correct misconceptions",
+      "time_minutes": 25,
+      "other": "Differentiation and group roles"
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "Guide student presentations on workers' rights and responsibilities",
+      "student_activities": "Present group findings and compare notes",
+      "learning_teaching_method": "Student Presentations",
+      "learning_teaching_aids": "Presentation sheets and whiteboard",
+      "assessment_and_feedback": "Peer feedback and teacher clarification",
+      "time_minutes": 25,
+      "other": "None"
+    },
+    {
+      "step_number": 4,
+      "teacher_activities": "Consolidate learning and conduct formative evaluation",
+      "student_activities": "Answer targeted evaluation questions",
+      "learning_teaching_method": "Review and Synthesis",
+      "learning_teaching_aids": "Evaluation questions sheet",
+      "assessment_and_feedback": "Summative check for all learning outcomes",
+      "time_minutes": 20,
+      "other": "None"
+    }
+  ],
+  "summary": "Recap of key findings and core principles",
+  "assessment_and_feedback_whole_lesson": "Summative check or exit questions addressing all learning outcomes",
+  "post_activity": "Concrete homework or workbook exercise",
+  "information_sources": [
+    "National Institute of Education (NIE) Teacher Instructional Guide",
+    "Grade 8 Pupil's Textbook"
+  ],
+  "attachments": [
+    "Worker Rights and Responsibilities Worksheet"
+  ]
+}

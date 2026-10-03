@@ -1,0 +1,56 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "80 Minutes (2 Periods)",
+  "competence": "Explains the duties and responsibilities of public service institutions.",
+  "competence_level": "8.1.3",
+  "lesson": "Competency 8.1.3",
+  "unique_learning_outcome": [
+    "Explains the duties and responsibilities of public service institutions.",
+    "Expresses views accepting the fact that fulfillment of duties and responsibilities of the public services institutions bring about the welfare of human beings.",
+    "Explains the importance of providing efficient service of the officers of public services identifying the need."
+  ],
+  "the_entrance": "Understanding the importance of public service institutions in our daily lives.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Introduce the concept of public service institutions and their roles.",
+      "student_activities": "Students will take notes on the importance of public service institutions.",
+      "learning_teaching_method": "Exposition",
+      "learning_teaching_aids": "Textbook diagrams and charts",
+      "assessment_and_feedback": "Formative assessment through class discussion",
+      "time_minutes": 15,
+      "other": "None"
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Facilitate a group discussion on the duties and responsibilities of public service institutions.",
+      "student_activities": "Students will participate in a group discussion and share their views.",
+      "learning_teaching_method": "Cooperative Group Work",
+      "learning_teaching_aids": "Task cards and group roles",
+      "assessment_and_feedback": "Monitoring group progress and correcting misconceptions",
+      "time_minutes": 30,
+      "other": "Differentiation and group roles"
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "Guide students to express their views on the importance of public service institutions.",
+      "student_activities": "Students will present their views and share recorded observations.",
+      "learning_teaching_method": "Student Presentations",
+      "learning_teaching_aids": "Presentation sheets and whiteboard",
+      "assessment_and_feedback": "Peer feedback and teacher clarification",
+      "time_minutes": 35,
+      "other": "None"
+    }
+  ],
+  "summary": "Recap of the importance of public service institutions and their roles.",
+  "assessment_and_feedback_whole_lesson": "Summative check through a class discussion",
+  "post_activity": "Concrete homework assignment on the importance of public service institutions",
+  "information_sources": [
+    "National Institute of Education (NIE) Teacher Instructional Guide",
+    "Grade 8 Pupil's Textbook"
+  ],
+  "attachments": [
+    "Task cards for group discussion"
+  ]
+}

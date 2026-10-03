@@ -1,0 +1,46 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (1 Period)",
+  "competence": "Suggests ways and means to improve income.",
+  "competence_level": "8.6.10",
+  "lesson": "Competency Level 8.6.10: Competency 8.6.10",
+  "unique_learning_outcome": [
+    "Suggests ways and means to improve income.",
+    "Expresses the importance of taking intelligent and society-friendly actions to improve income.",
+    "Explains how getting a good income improves living standards."
+  ],
+  "the_entrance": "The importance of earning a good income in today's society.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Introduce the concept of earning a good income and its benefits.",
+      "student_activities": "Students will take notes on the importance of earning a good income.",
+      "learning_teaching_method": "Exposition",
+      "learning_teaching_aids": "Textbook diagrams and charts",
+      "assessment_and_feedback": "Formative assessment through class discussion",
+      "time_minutes": 10,
+      "other": "Blackboard arrangement"
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Facilitate student group discussions on ways to improve income.",
+      "student_activities": "Students will participate in group discussions and brainstorm ideas.",
+      "learning_teaching_method": "Cooperative Group Work",
+      "learning_teaching_aids": "Worksheets and task cards",
+      "assessment_and_feedback": "Monitoring group progress and correcting misconceptions",
+      "time_minutes": 30,
+      "other": "Differentiation and group roles"
+    }
+  ],
+  "summary": "Recap of key findings and core principles.",
+  "assessment_and_feedback_whole_lesson": "Summative check for all learning outcomes.",
+  "post_activity": "Concrete homework assignment.",
+  "information_sources": [
+    "National Institute of Education (NIE) Teacher Instructional Guide",
+    "Grade 8 Pupil's Textbook"
+  ],
+  "attachments": [
+    "Syllabus Matrix Outcomes"
+  ]
+}

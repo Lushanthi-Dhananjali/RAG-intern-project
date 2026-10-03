@@ -1,0 +1,65 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "120 Minutes (3 Periods)",
+  "competence": "Analyses the features of a multicultural society",
+  "competence_level": "8.3.1",
+  "lesson": "Competency Level 8.3.1: Competency 8.3.1",
+  "unique_learning_outcome": [
+    "Defines the term multicultural society.",
+    "Explains the basic features of a multicultural society."
+  ],
+  "the_entrance": "Introduction of multicultural society. A society with diverse ethnicity, religions, languages, arts, beliefs, and rituals is called a multicultural society. Migration related to tourism, education, trade, and development projects cause the complexity of cultural diversity.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Enter the lesson showing annex 8.3.1.1 and 8.3.1.2. Draw the attention of the students by explaining the nature of a multicultural society.",
+      "student_activities": "Listen to the teacher's explanation and take notes.",
+      "learning_teaching_method": "Exposition",
+      "learning_teaching_aids": "Annex 8.3.1.1 and 8.3.1.2",
+      "assessment_and_feedback": "Formative assessment check during this step.",
+      "time_minutes": 20,
+      "other": "None"
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Group the students and get them to do the task. Give necessary guidance.",
+      "student_activities": "Work in groups to complete the task.",
+      "learning_teaching_method": "Cooperative Group Work",
+      "learning_teaching_aids": "Task sheets",
+      "assessment_and_feedback": "Monitor group progress and correct misconceptions.",
+      "time_minutes": 35,
+      "other": "Differentiation or group roles"
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "Let the students present their group reports to the class. Let each group present. Lead a discussion highlighting the topic.",
+      "student_activities": "Present group reports and participate in class discussion.",
+      "learning_teaching_method": "Student Presentations",
+      "learning_teaching_aids": "Presentation sheets, whiteboard",
+      "assessment_and_feedback": "Peer feedback and teacher clarification.",
+      "time_minutes": 35,
+      "other": "None"
+    },
+    {
+      "step_number": 4,
+      "teacher_activities": "Let the students create posters/pictures/graphs showing the different features of a multicultural society.",
+      "student_activities": "Create posters/pictures/graphs.",
+      "learning_teaching_method": "Student-Centered Activity",
+      "learning_teaching_aids": "Posters, pictures, graphs",
+      "assessment_and_feedback": "Summative check for all learning outcomes.",
+      "time_minutes": 30,
+      "other": "None"
+    }
+  ],
+  "summary": "Recap of key findings and core principles: A multicultural society is a society with diverse ethnicity, religions, languages, arts, beliefs, and rituals. It has different ethnic groups, religions, languages, customs, and cultural heritages.",
+  "assessment_and_feedback_whole_lesson": "Summative check or exit questions addressing all learning outcomes.",
+  "post_activity": "Create a poster/picture/graph showing the different features of a multicultural society.",
+  "information_sources": [
+    "National Institute of Education (NIE) Teacher Instructional Guide",
+    "Grade 8 Pupil's Textbook"
+  ],
+  "attachments": [
+    "Task sheets"
+  ]
+}

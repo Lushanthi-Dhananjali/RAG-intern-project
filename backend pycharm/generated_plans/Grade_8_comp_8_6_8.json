@@ -1,0 +1,56 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "80 Minutes (2 Periods)",
+  "competence": "Explains the importance of maintaining personal performance at a higher level as a worker.",
+  "competence_level": "8.6.8",
+  "lesson": "Competency Level 8.6.8: Competency 8.6.8",
+  "unique_learning_outcome": [
+    "Explains the importance of maintaining personal performance at a higher level as a worker.",
+    "Discusses the skills of the worker and his/her interests with a career guidance counsellor.",
+    "Explains the need of using different learning methods for professional development."
+  ],
+  "the_entrance": "Introduction to the importance of developing personal vocational qualities as a worker.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Explain the concept of personal vocational qualities and their importance.",
+      "student_activities": "Take notes on the importance of developing personal vocational qualities.",
+      "learning_teaching_method": "Exposition",
+      "learning_teaching_aids": "Textbook diagrams and charts",
+      "assessment_and_feedback": "Formative assessment check on understanding",
+      "time_minutes": 15,
+      "other": "Blackboard arrangement"
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Facilitate student group discussions on the skills and interests of workers.",
+      "student_activities": "Participate in group discussions and share thoughts on skills and interests.",
+      "learning_teaching_method": "Cooperative Group Work",
+      "learning_teaching_aids": "Worksheets, task cards",
+      "assessment_and_feedback": "Monitor group progress and correct misconceptions",
+      "time_minutes": 30,
+      "other": "Differentiation or group roles"
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "Guide student presentations on the need of using different learning methods for professional development.",
+      "student_activities": "Prepare and present group findings on the need of using different learning methods.",
+      "learning_teaching_method": "Student Presentations",
+      "learning_teaching_aids": "Presentation sheets, whiteboard",
+      "assessment_and_feedback": "Peer feedback and teacher clarification",
+      "time_minutes": 35,
+      "other": "None"
+    }
+  ],
+  "summary": "Recap of key findings on the importance of developing personal vocational qualities.",
+  "assessment_and_feedback_whole_lesson": "Summative check on understanding of all learning outcomes.",
+  "post_activity": "Concrete homework assignment on the importance of developing personal vocational qualities.",
+  "information_sources": [
+    "National Institute of Education (NIE) Teacher Instructional Guide",
+    "Grade 8 Pupil's Textbook"
+  ],
+  "attachments": [
+    "Worksheet on the importance of developing personal vocational qualities"
+  ]
+}

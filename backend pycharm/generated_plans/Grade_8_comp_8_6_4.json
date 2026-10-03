@@ -1,0 +1,66 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "80 Minutes (2 Periods)",
+  "competence": "Explains the need of getting the training related to one’s field of work as a worker.",
+  "competence_level": "8.6.4",
+  "lesson": "Competency Level 8.6.4: Competency 8.6.4",
+  "unique_learning_outcome": [
+    "Explains the need of getting the training related to one’s field of work as a worker.",
+    "Expresses views about the available opportunities for vocational training.",
+    "Explains the fact that the productivity of labour depends on the training."
+  ],
+  "the_entrance": "The importance of trained labour in the modern world",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Introduce the concept of trained labour and its significance",
+      "student_activities": "Take notes on the importance of trained labour",
+      "learning_teaching_method": "Exposition",
+      "learning_teaching_aids": "Textbook diagrams and charts",
+      "assessment_and_feedback": "Formative assessment through student participation",
+      "time_minutes": 10,
+      "other": "Blackboard arrangement"
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Facilitate student group discussions on vocational training",
+      "student_activities": "Participate in group discussions and share views",
+      "learning_teaching_method": "Cooperative Group Work",
+      "learning_teaching_aids": "Worksheets and task cards",
+      "assessment_and_feedback": "Monitor group progress and correct misconceptions",
+      "time_minutes": 25,
+      "other": "Differentiation and group roles"
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "Guide student presentations on the importance of training",
+      "student_activities": "Present group findings and compare notes",
+      "learning_teaching_method": "Student Presentations",
+      "learning_teaching_aids": "Presentation sheets and whiteboard",
+      "assessment_and_feedback": "Peer feedback and teacher clarification",
+      "time_minutes": 25,
+      "other": "None"
+    },
+    {
+      "step_number": 4,
+      "teacher_activities": "Consolidate learning and conduct formative evaluation",
+      "student_activities": "Answer targeted evaluation questions",
+      "learning_teaching_method": "Review and Synthesis",
+      "learning_teaching_aids": "Evaluation questions sheet",
+      "assessment_and_feedback": "Summative check for all learning outcomes",
+      "time_minutes": 20,
+      "other": "None"
+    }
+  ],
+  "summary": "Recap of key findings and core principles",
+  "assessment_and_feedback_whole_lesson": "Summative check or exit questions addressing all learning outcomes",
+  "post_activity": "Concrete homework or workbook exercise",
+  "information_sources": [
+    "National Institute of Education (NIE) Teacher Instructional Guide",
+    "Grade 8 Pupil's Textbook"
+  ],
+  "attachments": [
+    "Vocational Training Opportunities Handout"
+  ]
+}

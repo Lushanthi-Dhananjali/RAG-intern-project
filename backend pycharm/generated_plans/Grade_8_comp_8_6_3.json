@@ -1,0 +1,45 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (1 Period)",
+  "competence": "Explains that all employments contribute to fulfilling social needs.",
+  "competence_level": "8.6.3",
+  "lesson": "Competency Level 8.6.3: Competency 8.6.3",
+  "unique_learning_outcome": [
+    "Explains that all employments contribute to fulfilling social needs.",
+    "Explains that all employments bring about social development."
+  ],
+  "the_entrance": "Introduction to the importance of different occupations in society",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Introduce the concept of different occupations and their contributions to social needs",
+      "student_activities": "Listen to the teacher's explanation and take notes",
+      "learning_teaching_method": "Exposition",
+      "learning_teaching_aids": "Textbook diagrams and charts",
+      "assessment_and_feedback": "Formative assessment through student participation",
+      "time_minutes": 10,
+      "other": "None"
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Facilitate student group discussions on different occupations and their contributions",
+      "student_activities": "Participate in group discussions and share ideas",
+      "learning_teaching_method": "Cooperative Group Work",
+      "learning_teaching_aids": "Worksheets and task cards",
+      "assessment_and_feedback": "Monitor group progress and correct misconceptions",
+      "time_minutes": 30,
+      "other": "Differentiation and group roles"
+    }
+  ],
+  "summary": "Recap of key findings and core principles",
+  "assessment_and_feedback_whole_lesson": "Summative check for all learning outcomes",
+  "post_activity": "Concrete homework or workbook exercise",
+  "information_sources": [
+    "National Institute of Education (NIE) Teacher Instructional Guide",
+    "Grade 8 Pupil's Textbook"
+  ],
+  "attachments": [
+    "Worksheet on different occupations and their contributions"
+  ]
+}

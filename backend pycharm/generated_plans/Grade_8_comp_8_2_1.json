@@ -1,0 +1,48 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (1 Period)",
+  "competence": "Adapts to the democratic features seen in the family and in school",
+  "competence_level": "8.2.1",
+  "lesson": "Competency Level 8.2.1: Competency 8.2.1",
+  "unique_learning_outcome": [
+    "Names the democratic features in a family.",
+    "Explains how the democratic features in a family help its wellbeing.",
+    "Expresses the importance of developing features of a democratic life as a member of a family.",
+    "Describes the democratic features in a school.",
+    "Explains the importance of working in the school society adapting the democratic values."
+  ],
+  "the_entrance": "The concept of democratic features in family and school will be introduced through a real-life scenario.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Introduce the concept of democratic features in family and school through a real-life scenario.",
+      "student_activities": "Students will take notes and ask questions.",
+      "learning_teaching_method": "Exposition",
+      "learning_teaching_aids": "Textbook diagrams and charts",
+      "assessment_and_feedback": "Formative assessment checks during this step",
+      "time_minutes": 10,
+      "other": "Blackboard arrangement or notes"
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Facilitate student practical group activities from TIG.",
+      "student_activities": "Small group analysis, roleplay, or presentation tasks.",
+      "learning_teaching_method": "Cooperative Group Work",
+      "learning_teaching_aids": "Worksheets, task cards",
+      "assessment_and_feedback": "Monitoring group progress and correcting misconceptions",
+      "time_minutes": 30,
+      "other": "Differentiation or group roles"
+    }
+  ],
+  "summary": "Recap of key findings and core principles.",
+  "assessment_and_feedback_whole_lesson": "Summative check or exit questions addressing all learning outcomes.",
+  "post_activity": "Concrete homework, workbook exercise, or mini-investigation.",
+  "information_sources": [
+    "National Institute of Education (NIE) Teacher Instructional Guide",
+    "Grade Grade 8 Pupil's Textbook"
+  ],
+  "attachments": [
+    "Worksheet: Identifying Democratic Features in Family and School"
+  ]
+}

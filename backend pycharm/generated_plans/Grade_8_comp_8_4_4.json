@@ -1,0 +1,60 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "80 Minutes (2 Periods)",
+  "competence": "Contributes to minimizing road accidents by following road rules.",
+  "competence_level": "8.4.4",
+  "lesson": "Competency 8.4.4",
+  "unique_learning_outcome": [
+    "Presents information about road accidents and disasters caused at present.",
+    "Explains reasons for road accidents.",
+    "Shows with example the preventive measures for accidents.",
+    "Explains road rules using signs and signals.",
+    "Explains causes for railway accidents.",
+    "Shows the measures to be followed avoid railway accidents.",
+    "Explains how to react at a road or railway accident."
+  ],
+  "the_entrance": "Imagine you are driving on a busy highway and suddenly, a car in front of you stops abruptly. What would you do?",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Introduce the concept of road accidents and their causes.",
+      "student_activities": "Students will brainstorm and share their thoughts on what causes road accidents.",
+      "learning_teaching_method": "Exposition",
+      "learning_teaching_aids": "Whiteboard and markers",
+      "assessment_and_feedback": "Monitor student participation and engagement.",
+      "time_minutes": 15,
+      "other": "None"
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Show examples of preventive measures for road accidents.",
+      "student_activities": "Students will work in groups to brainstorm and present their ideas on preventive measures.",
+      "learning_teaching_method": "Cooperative Group Work",
+      "learning_teaching_aids": "Task cards and group worksheets",
+      "assessment_and_feedback": "Monitor group progress and provide feedback.",
+      "time_minutes": 30,
+      "other": "None"
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "Summarize the key findings and explain road rules using signs and signals.",
+      "student_activities": "Students will present their group findings and explain road rules.",
+      "learning_teaching_method": "Student Presentations",
+      "learning_teaching_aids": "Presentation sheets and whiteboard",
+      "assessment_and_feedback": "Provide feedback on student presentations.",
+      "time_minutes": 35,
+      "other": "None"
+    }
+  ],
+  "summary": "Recap of key findings: Road accidents can be prevented by following road rules and taking preventive measures.",
+  "assessment_and_feedback_whole_lesson": "Summative check: Students will complete a quiz on road rules and preventive measures.",
+  "post_activity": "Homework: Students will research and write a short essay on the causes and preventive measures of road accidents.",
+  "information_sources": [
+    "National Institute of Education (NIE) Teacher Instructional Guide",
+    "Grade 8 Pupil's Textbook"
+  ],
+  "attachments": [
+    "Road Accident Prevention Worksheet"
+  ]
+}

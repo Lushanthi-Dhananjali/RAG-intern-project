@@ -1,0 +1,65 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "80 Minutes (2 Periods)",
+  "competence": "Develops qualities that are required for a democratic life.",
+  "competence_level": "8.2.5",
+  "lesson": "Competency Level 8.2.5: Competency 8.2.5",
+  "unique_learning_outcome": [
+    "Explains qualities needed for a democratic life.",
+    "Expresses the fact that the democratic life style brings out the well-being of the society."
+  ],
+  "the_entrance": "Democratic life is working as a good citizen in the society practicing democratic qualities as habits.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Introduce the concept of democratic life and its importance.",
+      "student_activities": "Students will take notes and ask questions.",
+      "learning_teaching_method": "Exposition",
+      "learning_teaching_aids": "Textbook diagrams and charts",
+      "assessment_and_feedback": "Formative assessment through questioning",
+      "time_minutes": 10,
+      "other": "Blackboard arrangement"
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Facilitate student practical group activities to identify the qualities needed for a democratic life.",
+      "student_activities": "Small group analysis and roleplay tasks",
+      "learning_teaching_method": "Cooperative Group Work",
+      "learning_teaching_aids": "Worksheets and task cards",
+      "assessment_and_feedback": "Monitoring group progress and correcting misconceptions",
+      "time_minutes": 25,
+      "other": "Differentiation and group roles"
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "Guide student presentations and structuring findings on the benefits of democratic life.",
+      "student_activities": "Presenting group outcomes and comparing notes",
+      "learning_teaching_method": "Student Presentations",
+      "learning_teaching_aids": "Presentation sheets and whiteboard",
+      "assessment_and_feedback": "Peer feedback and teacher clarification",
+      "time_minutes": 25,
+      "other": "None"
+    },
+    {
+      "step_number": 4,
+      "teacher_activities": "Consolidate learning and formative evaluation on the qualities needed for a democratic life.",
+      "student_activities": "Answering targeted evaluation questions",
+      "learning_teaching_method": "Review and Synthesis",
+      "learning_teaching_aids": "Evaluation questions sheet",
+      "assessment_and_feedback": "Summative check for all learning outcomes",
+      "time_minutes": 20,
+      "other": "None"
+    }
+  ],
+  "summary": "Recap of key findings and core principles: democratic life is essential for a society's well-being.",
+  "assessment_and_feedback_whole_lesson": "Summative check on the understanding of democratic life and its benefits.",
+  "post_activity": "Concrete homework: write a short essay on the importance of democratic life in society.",
+  "information_sources": [
+    "National Institute of Education (NIE) Teacher Instructional Guide",
+    "Grade 8 Pupil's Textbook"
+  ],
+  "attachments": [
+    "Worksheet: Identifying Qualities Needed for a Democratic Life"
+  ]
+}

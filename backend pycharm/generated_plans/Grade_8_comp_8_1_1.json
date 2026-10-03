@@ -1,0 +1,58 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "80 Minutes (2 Periods)",
+  "competence": "Identifies public services and investigates the need and importance of the time.",
+  "competence_level": "8.1.1",
+  "lesson": "Competency 8.1.1",
+  "unique_learning_outcome": [
+    "Identifies the public services.",
+    "Explains the need of public services.",
+    "Investigates information on the beginning and progress of public services.",
+    "Presents views appreciating the importance of public services of the times.",
+    "Explains the common features related to public services."
+  ],
+  "the_entrance": "Understanding the importance of public services in our daily lives.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Introduce the concept of public services and their importance.",
+      "student_activities": "Students will brainstorm and list the public services they use daily.",
+      "learning_teaching_method": "Exposition",
+      "learning_teaching_aids": "Textbook diagrams and charts",
+      "assessment_and_feedback": "Formative assessment through class discussion",
+      "time_minutes": 15,
+      "other": "None"
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Facilitate a group discussion on the need and importance of public services.",
+      "student_activities": "Students will analyze and discuss the role of public services in their community.",
+      "learning_teaching_method": "Cooperative Group Work",
+      "learning_teaching_aids": "Task cards and group roles",
+      "assessment_and_feedback": "Monitoring group progress and correcting misconceptions",
+      "time_minutes": 30,
+      "other": "Differentiation and group roles"
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "Guide students in presenting their findings and summarizing the importance of public services.",
+      "student_activities": "Students will present their group findings and summarize the importance of public services.",
+      "learning_teaching_method": "Student Presentations",
+      "learning_teaching_aids": "Presentation sheets and whiteboard",
+      "assessment_and_feedback": "Peer feedback and teacher clarification",
+      "time_minutes": 35,
+      "other": "None"
+    }
+  ],
+  "summary": "Recap of the importance of public services in our daily lives.",
+  "assessment_and_feedback_whole_lesson": "Summative check through a class discussion",
+  "post_activity": "Concrete homework assignment on the importance of public services",
+  "information_sources": [
+    "National Institute of Education (NIE) Teacher Instructional Guide",
+    "Grade 8 Pupil's Textbook"
+  ],
+  "attachments": [
+    "Worksheet on the importance of public services"
+  ]
+}

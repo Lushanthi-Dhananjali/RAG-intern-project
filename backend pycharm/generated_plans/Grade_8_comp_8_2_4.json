@@ -1,0 +1,58 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "80 Minutes (2 Periods)",
+  "competence": "Develops leadership qualities, identifying the need of leadership",
+  "competence_level": "8.2.4",
+  "lesson": "Competency Level 8.2.4: Competency 8.2.4",
+  "unique_learning_outcome": [
+    "Explains the term leadership briefly.",
+    "Explains the need of moral leadership for the wellbeing of society.",
+    "Names the democratic leadership qualities in leadership.",
+    "Expresses the importance of developing democratic leadership qualities.",
+    "Presents qualities to be developed as a follower for the wellbeing of society."
+  ],
+  "the_entrance": "Introduction to leadership: Explaining the concept of leadership and its importance in society",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Introduce the concept of leadership and its importance in society",
+      "student_activities": "Listen to the teacher's explanation and take notes",
+      "learning_teaching_method": "Exposition",
+      "learning_teaching_aids": "Textbook diagrams or charts",
+      "assessment_and_feedback": "Formative assessment check during this step",
+      "time_minutes": 15,
+      "other": "Blackboard arrangement or notes"
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Facilitating student practical group activities from TIG",
+      "student_activities": "Small group analysis, roleplay, or presentation tasks",
+      "learning_teaching_method": "Cooperative Group Work",
+      "learning_teaching_aids": "Worksheets, task cards",
+      "assessment_and_feedback": "Monitoring group progress and correcting misconceptions",
+      "time_minutes": 30,
+      "other": "Differentiation or group roles"
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "Guiding student presentations and structuring findings",
+      "student_activities": "Presenting group outcomes and comparing notes",
+      "learning_teaching_method": "Student Presentations",
+      "learning_teaching_aids": "Presentation sheets, whiteboard",
+      "assessment_and_feedback": "Peer feedback and teacher clarification",
+      "time_minutes": 35,
+      "other": "None"
+    }
+  ],
+  "summary": "Recap of key findings and core principles",
+  "assessment_and_feedback_whole_lesson": "Summative check or exit questions addressing all learning outcomes",
+  "post_activity": "Concrete homework, workbook exercise, or mini-investigation",
+  "information_sources": [
+    "National Institute of Education (NIE) Teacher Instructional Guide",
+    "Grade Grade 8 Pupil's Textbook"
+  ],
+  "attachments": [
+    "Worksheet: Leadership Qualities"
+  ]
+}

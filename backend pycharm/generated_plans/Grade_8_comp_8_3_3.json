@@ -1,0 +1,78 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "160 Minutes (4 Periods)",
+  "competence": "Contributes to the building of national cohesion and sustainable peace safeguarding one's own cultural identity",
+  "competence_level": "8.3.3",
+  "lesson": "Competency Level 8.3.3: Competency 8.3.3",
+  "unique_learning_outcome": [
+    "Expresses the importance of mutual understanding for the wellbeing of a peaceful society.",
+    "Explains the measures that can be taken for cultural integration in a multicultural society.",
+    "Explains the importance of respecting other cultural identity while retaining one's culture.",
+    "Explains the importance of building sustainable peace in a multicultural society.",
+    "Explains how sustainable peace brings about the national development."
+  ],
+  "the_entrance": "The concept of cultural diversity and its impact on national cohesion and sustainable peace",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Introduce the concept of cultural diversity and its impact on national cohesion and sustainable peace",
+      "student_activities": "Students will take notes on the importance of mutual understanding for the wellbeing of a peaceful society",
+      "learning_teaching_method": "Exposition",
+      "learning_teaching_aids": "Textbook diagrams and charts",
+      "assessment_and_feedback": "Formative assessment check on student understanding",
+      "time_minutes": 30,
+      "other": "Blackboard arrangement"
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Facilitate student practical group activities on cultural integration",
+      "student_activities": "Students will work in groups to brainstorm measures for cultural integration in a multicultural society",
+      "learning_teaching_method": "Cooperative Group Work",
+      "learning_teaching_aids": "Worksheets, task cards",
+      "assessment_and_feedback": "Monitoring group progress and correcting misconceptions",
+      "time_minutes": 25,
+      "other": "Differentiation or group roles"
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "Facilitates student presentations and synthesis of findings from Step 2.",
+      "student_activities": "Students present their findings, compare outcomes, and note teacher feedback.",
+      "learning_teaching_method": "Presentation & Discussion",
+      "learning_teaching_aids": "Worksheets, task cards",
+      "assessment_and_feedback": "Teacher checks clarity of student presentations and corrects misconceptions.",
+      "time_minutes": 30,
+      "other": "Presentation synthesis"
+    },
+    {
+      "step_number": 4,
+      "teacher_activities": "Guide student presentations on cultural identity and respect",
+      "student_activities": "Students will present their findings on the importance of respecting other cultural identity while retaining one's culture",
+      "learning_teaching_method": "Student Presentations",
+      "learning_teaching_aids": "Presentation sheets, whiteboard",
+      "assessment_and_feedback": "Peer feedback and teacher clarification",
+      "time_minutes": 40,
+      "other": "None"
+    },
+    {
+      "step_number": 5,
+      "teacher_activities": "Consolidate learning and formative evaluation",
+      "student_activities": "Students will answer targeted evaluation questions on the importance of building sustainable peace in a multicultural society",
+      "learning_teaching_method": "Review and Synthesis",
+      "learning_teaching_aids": "Evaluation questions sheet",
+      "assessment_and_feedback": "Summative check for all learning outcomes",
+      "time_minutes": 35,
+      "other": "None"
+    }
+  ],
+  "summary": "Recap of key findings and core principles",
+  "assessment_and_feedback_whole_lesson": "Summative check or exit questions addressing all learning outcomes",
+  "post_activity": "Concrete homework or workbook exercise",
+  "information_sources": [
+    "National Institute of Education (NIE) Teacher Instructional Guide",
+    "Grade 8 Pupil's Textbook"
+  ],
+  "attachments": [
+    "Worksheet on cultural diversity and national cohesion"
+  ]
+}

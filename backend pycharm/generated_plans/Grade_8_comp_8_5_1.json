@@ -1,0 +1,66 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "120 Minutes (3 Periods)",
+  "competence": "Defines problems and challenges simply.",
+  "competence_level": "8.5.1",
+  "lesson": "Competency Level 8.5.1: Competency 8.5.1",
+  "unique_learning_outcome": [
+    "Defines problems and challenges simply.",
+    "Explains the importance of being watchful regarding the problems and challenges faced in day-to-day life.",
+    "Expresses the ability to face problems in day-to-day life should be developed."
+  ],
+  "the_entrance": "The concept of problems and challenges in day-to-day life is introduced.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Introduce the concept of problems and challenges in day-to-day life.",
+      "student_activities": "Students will identify and discuss problems and challenges they face in their daily lives.",
+      "learning_teaching_method": "Exposition",
+      "learning_teaching_aids": "Textbook diagrams and charts",
+      "assessment_and_feedback": "Formative assessment through class discussion",
+      "time_minutes": 20,
+      "other": "None"
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Facilitate student practical group activities.",
+      "student_activities": "Students will work in groups to analyze and discuss the problems and challenges they face.",
+      "learning_teaching_method": "Cooperative Group Work",
+      "learning_teaching_aids": "Worksheets, task cards",
+      "assessment_and_feedback": "Monitoring group progress and correcting misconceptions",
+      "time_minutes": 35,
+      "other": "Differentiation or group roles"
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "Guide student presentations and structuring findings.",
+      "student_activities": "Students will present their group findings and compare notes.",
+      "learning_teaching_method": "Student Presentations",
+      "learning_teaching_aids": "Presentation sheets, whiteboard",
+      "assessment_and_feedback": "Peer feedback and teacher clarification",
+      "time_minutes": 35,
+      "other": "None"
+    },
+    {
+      "step_number": 4,
+      "teacher_activities": "Consolidate learning and formative evaluation.",
+      "student_activities": "Students will answer targeted evaluation questions.",
+      "learning_teaching_method": "Review and Synthesis",
+      "learning_teaching_aids": "Evaluation questions sheet",
+      "assessment_and_feedback": "Summative check for all learning outcomes",
+      "time_minutes": 30,
+      "other": "None"
+    }
+  ],
+  "summary": "Recap of key findings and core principles.",
+  "assessment_and_feedback_whole_lesson": "Summative check or exit questions addressing all learning outcomes.",
+  "post_activity": "Concrete homework or workbook exercise.",
+  "information_sources": [
+    "National Institute of Education (NIE) Teacher Instructional Guide",
+    "Grade 8 Pupil's Textbook"
+  ],
+  "attachments": [
+    "Worksheet for identifying problems and challenges"
+  ]
+}

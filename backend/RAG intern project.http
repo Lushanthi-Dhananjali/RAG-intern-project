@@ -1,6 +1,0 @@
-@RAG_intern_project_HostAddress = http://localhost:5161
-
-GET {{RAG_intern_project_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

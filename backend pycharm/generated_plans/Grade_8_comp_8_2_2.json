@@ -1,0 +1,68 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "120 Minutes (3 Periods)",
+  "competence": "Explains the rights of the child and his duties.",
+  "competence_level": "8.2.2",
+  "lesson": "Competency Level 8.2.2: Competency 8.2.2",
+  "unique_learning_outcome": [
+    "Explains rights of the child.",
+    "Explains the importance of enjoying rights of child properly.",
+    "Expresses how enjoying rights of child bring about child development.",
+    "Explains the importance of fulfilling the duties of rights of child.",
+    "Expresses the functions of institutions that work towards safeguarding the rights of the child."
+  ],
+  "the_entrance": "Introduction of rights of the child. In 1989 United Nations declared the Convention of rights of the child.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Exposition on the rights of the child and his duties.",
+      "student_activities": "Note-taking and concept mapping.",
+      "learning_teaching_method": "Exposition",
+      "learning_teaching_aids": "Textbook diagrams and charts.",
+      "assessment_and_feedback": "Formative assessment checks during this step.",
+      "time_minutes": 20,
+      "other": "Blackboard arrangement or notes"
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Facilitating student practical group activities from TIG.",
+      "student_activities": "Small group analysis, roleplay, or presentation tasks.",
+      "learning_teaching_method": "Cooperative Group Work",
+      "learning_teaching_aids": "Worksheets, task cards.",
+      "assessment_and_feedback": "Monitoring group progress and correcting misconceptions.",
+      "time_minutes": 35,
+      "other": "Differentiation or group roles"
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "Guiding student presentations and structuring findings.",
+      "student_activities": "Presenting group outcomes and comparing notes.",
+      "learning_teaching_method": "Student Presentations",
+      "learning_teaching_aids": "Presentation sheets, whiteboard.",
+      "assessment_and_feedback": "Peer feedback and teacher clarification.",
+      "time_minutes": 35,
+      "other": "None"
+    },
+    {
+      "step_number": 4,
+      "teacher_activities": "Consolidating learning and formative evaluation.",
+      "student_activities": "Answering targeted evaluation questions.",
+      "learning_teaching_method": "Review and Synthesis",
+      "learning_teaching_aids": "Evaluation questions sheet.",
+      "assessment_and_feedback": "Summative check for all learning outcomes.",
+      "time_minutes": 30,
+      "other": "None"
+    }
+  ],
+  "summary": "Recap of key findings and core principles.",
+  "assessment_and_feedback_whole_lesson": "Summative check or exit questions addressing all learning outcomes.",
+  "post_activity": "Concrete homework, workbook exercise, or mini-investigation.",
+  "information_sources": [
+    "National Institute of Education (NIE) Teacher Instructional Guide",
+    "Grade Grade 8 Pupil's Textbook"
+  ],
+  "attachments": [
+    "Worksheet on Rights of the Child"
+  ]
+}
