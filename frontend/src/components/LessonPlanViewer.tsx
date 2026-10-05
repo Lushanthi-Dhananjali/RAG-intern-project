@@ -75,9 +75,25 @@ export default function LessonPlanViewer({
     ) || 0;
 
   const handleCopyJson = () => {
-    navigator.clipboard.writeText(JSON.stringify(plan, null, 2));
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    try {
+      const jsonStr = JSON.stringify(plan, null, 2);
+      if (navigator?.clipboard?.writeText) {
+        navigator.clipboard.writeText(jsonStr);
+      } else {
+        const textArea = document.createElement('textarea');
+        textArea.value = jsonStr;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-9999px';
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+      }
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (e) {
+      console.error('Failed to copy JSON:', e);
+    }
   };
 
   const handlePrint = () => {

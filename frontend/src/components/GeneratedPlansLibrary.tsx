@@ -170,9 +170,25 @@ export default function GeneratedPlansLibrary({
 
   const handleCopyJson = () => {
     if (!activePlan) return;
-    navigator.clipboard.writeText(JSON.stringify(activePlan, null, 2));
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    try {
+      const jsonStr = JSON.stringify(activePlan, null, 2);
+      if (navigator?.clipboard?.writeText) {
+        navigator.clipboard.writeText(jsonStr);
+      } else {
+        const textArea = document.createElement('textarea');
+        textArea.value = jsonStr;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-9999px';
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+      }
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (e) {
+      console.error('Failed to copy JSON:', e);
+    }
   };
 
   return (
@@ -485,61 +501,63 @@ export default function GeneratedPlansLibrary({
         </button>
       </div>
 
-      {/* 2. LESSON PLAN VIEWED DIRECTLY BELOW COMPETENCY LEVEL (IN MATCHING CARD BOX) */}
-      {activePlan ? (
-        <LessonPlanViewer
-          plan={activePlan}
-          filename={activeFilename}
-          onEditInGenerator={onPlanLoadedToViewer}
-          onDeletePlan={() => setIsDeleteModalOpen(true)}
-        />
-      ) : (
-        /* Empty / Placeholder State Box matching View Saved Lesson Plan */
-        <div
-          style={{
-            backgroundColor: '#ffffff',
-            padding: '36px 24px',
-            borderRadius: '16px',
-            border: '1.5px dashed #cbd5e1',
-            boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            textAlign: 'center',
-            gap: '12px',
-            maxWidth: '860px',
-            margin: '0 auto',
-            width: '100%',
-            boxSizing: 'border-box',
-          }}
-        >
+      {/* 2. LESSON PLAN VIEWED DIRECTLY BELOW COMPETENCY LEVEL (IN MATCHING CARD BOX WITH SMALL SPACE) */}
+      <div style={{ marginTop: '24px' }}>
+        {activePlan ? (
+          <LessonPlanViewer
+            plan={activePlan}
+            filename={activeFilename}
+            onEditInGenerator={onPlanLoadedToViewer}
+            onDeletePlan={() => setIsDeleteModalOpen(true)}
+          />
+        ) : (
+          /* Empty / Placeholder State Box matching View Saved Lesson Plan */
           <div
             style={{
-              width: '54px',
-              height: '54px',
-              borderRadius: '50%',
-              backgroundColor: '#eef2ff',
+              backgroundColor: '#ffffff',
+              padding: '36px 24px',
+              borderRadius: '16px',
+              border: '1.5px dashed #cbd5e1',
+              boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)',
               display: 'flex',
+              flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              fontSize: '26px',
-              color: '#4f46e5',
+              textAlign: 'center',
+              gap: '12px',
+              maxWidth: '860px',
+              margin: '0 auto',
+              width: '100%',
+              boxSizing: 'border-box',
             }}
           >
-            📄
+            <div
+              style={{
+                width: '54px',
+                height: '54px',
+                borderRadius: '50%',
+                backgroundColor: '#eef2ff',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '26px',
+                color: '#4f46e5',
+              }}
+            >
+              📄
+            </div>
+            <div>
+              <h4 style={{ fontSize: '16px', fontWeight: '800', color: '#0f172a', margin: '0 0 4px 0' }}>
+                View Lesson Plan
+              </h4>
+              <p style={{ fontSize: '13px', color: '#64748b', maxWidth: '440px', margin: '0 auto', lineHeight: '1.5' }}>
+                Select a Subject, Grade, and Competency Level in the box above, then click{' '}
+                <strong style={{ color: '#4f46e5' }}>"👁️ View Plan"</strong> to display the lesson plan here.
+              </p>
+            </div>
           </div>
-          <div>
-            <h4 style={{ fontSize: '16px', fontWeight: '800', color: '#0f172a', margin: '0 0 4px 0' }}>
-              View Lesson Plan
-            </h4>
-            <p style={{ fontSize: '13px', color: '#64748b', maxWidth: '440px', margin: '0 auto', lineHeight: '1.5' }}>
-              Select a Subject, Grade, and Competency Level in the box above, then click{' '}
-              <strong style={{ color: '#4f46e5' }}>"👁️ View Plan"</strong> to display the lesson plan here.
-            </p>
-          </div>
-        </div>
-      )}
+        )}
+      </div>
 
       {/* Delete Confirmation Modal */}
       <DeleteConfirmModal
