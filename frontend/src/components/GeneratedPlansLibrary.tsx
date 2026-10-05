@@ -162,12 +162,12 @@ export default function GeneratedPlansLibrary({
     <section className="space-y-6">
       {/* Action / Notification Alerts */}
       {successMessage && (
-        <div className="p-3.5 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-xs font-semibold flex items-center justify-between animate-in fade-in duration-150">
+        <div className="max-w-[640px] mx-auto p-3.5 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-xs font-semibold flex items-center justify-between shadow-xs animate-in fade-in duration-150">
           <span>{successMessage}</span>
           <button
             type="button"
             onClick={() => setSuccessMessage(null)}
-            className="text-emerald-700 hover:text-emerald-900 font-bold ml-2 text-sm"
+            className="text-emerald-700 hover:text-emerald-900 font-bold ml-2 text-sm cursor-pointer"
           >
             ✕
           </button>
@@ -175,27 +175,65 @@ export default function GeneratedPlansLibrary({
       )}
 
       {error && (
-        <div className="p-3.5 bg-red-50 border border-red-200 text-red-800 rounded-xl text-xs font-semibold flex items-center justify-between animate-in fade-in duration-150">
+        <div className="max-w-[640px] mx-auto p-3.5 bg-red-50 border border-red-200 text-red-800 rounded-xl text-xs font-semibold flex items-center justify-between shadow-xs animate-in fade-in duration-150">
           <span>⚠️ {error}</span>
           <button
             type="button"
             onClick={() => setError(null)}
-            className="text-red-700 hover:text-red-900 font-bold ml-2 text-sm"
+            className="text-red-700 hover:text-red-900 font-bold ml-2 text-sm cursor-pointer"
           >
             ✕
           </button>
         </div>
       )}
 
-      {/* Competency Level Selection Panel */}
-      <div className="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200 shadow-xs space-y-4">
-        {/* Panel Header */}
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 border-b border-slate-100 pb-3">
+      {/* Competency Level Selection Panel: Styled Exactly Like LessonPlanForm Box */}
+      <div
+        style={{
+          backgroundColor: '#ffffff',
+          padding: '24px',
+          borderRadius: '16px',
+          border: '1px solid #e2e8f0',
+          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '18px',
+          maxWidth: '640px',
+          margin: '0 auto',
+        }}
+      >
+        {/* Panel Header with Title and Refresh Button */}
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            borderBottom: '1px solid #f1f5f9',
+            paddingBottom: '12px',
+          }}
+        >
           <div>
-            <h3 className="text-base sm:text-lg font-black text-slate-900 flex items-center gap-2">
-              📚 View Saved Lesson Plan
+            <h3
+              style={{
+                fontSize: '16px',
+                fontWeight: '800',
+                color: '#0f172a',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                margin: 0,
+              }}
+            >
+              <span>📚</span>
+              <span>View Saved Lesson Plan</span>
             </h3>
-            <p className="text-xs text-slate-500">
+            <p
+              style={{
+                fontSize: '12px',
+                color: '#64748b',
+                margin: '2px 0 0 0',
+              }}
+            >
               Select or type the Competency Level to view the lesson plan below
             </p>
           </div>
@@ -204,7 +242,21 @@ export default function GeneratedPlansLibrary({
             type="button"
             onClick={() => loadPlans(true)}
             disabled={isRefreshing || isLoading}
-            className="px-4 py-2 text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-xl transition-colors inline-flex items-center gap-2 self-start sm:self-auto disabled:opacity-50 shadow-2xs"
+            style={{
+              padding: '6px 12px',
+              fontSize: '12px',
+              fontWeight: '700',
+              color: '#334155',
+              backgroundColor: '#f1f5f9',
+              border: '1px solid #e2e8f0',
+              borderRadius: '8px',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              cursor: isRefreshing || isLoading ? 'not-allowed' : 'pointer',
+              opacity: isRefreshing || isLoading ? 0.6 : 1,
+              transition: 'background-color 0.2s',
+            }}
             title="Refresh saved lesson plans from backend storage"
           >
             <span className={isRefreshing ? 'animate-spin inline-block' : ''}>🔄</span>
@@ -212,11 +264,20 @@ export default function GeneratedPlansLibrary({
           </button>
         </div>
 
-        {/* Selectors Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          {/* Subject */}
+        {/* 1. Subject and Grade Level (Grid matching LessonPlanForm) */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
           <div>
-            <label className="block text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1">
+            <label
+              style={{
+                display: 'block',
+                fontSize: '12px',
+                fontWeight: '700',
+                textTransform: 'uppercase',
+                color: '#334155',
+                marginBottom: '6px',
+                letterSpacing: '0.05em',
+              }}
+            >
               Subject
             </label>
             <select
@@ -225,7 +286,20 @@ export default function GeneratedPlansLibrary({
                 setSelectedSubject(e.target.value);
                 setError(null);
               }}
-              className="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 text-slate-900 font-semibold"
+              disabled={isLoading}
+              style={{
+                width: '100%',
+                padding: '10px 14px',
+                backgroundColor: '#f8fafc',
+                border: '1px solid #cbd5e1',
+                borderRadius: '10px',
+                fontSize: '14px',
+                fontWeight: '600',
+                color: '#1e293b',
+                outline: 'none',
+                boxSizing: 'border-box',
+                cursor: 'pointer',
+              }}
             >
               <option value="Civic Education">🏛️ Civic Education</option>
               <option value="Science">🧪 Science</option>
@@ -233,9 +307,18 @@ export default function GeneratedPlansLibrary({
             </select>
           </div>
 
-          {/* Grade */}
           <div>
-            <label className="block text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1">
+            <label
+              style={{
+                display: 'block',
+                fontSize: '12px',
+                fontWeight: '700',
+                textTransform: 'uppercase',
+                color: '#334155',
+                marginBottom: '6px',
+                letterSpacing: '0.05em',
+              }}
+            >
               Grade Level
             </label>
             <select
@@ -244,7 +327,20 @@ export default function GeneratedPlansLibrary({
                 setSelectedGrade(e.target.value);
                 setError(null);
               }}
-              className="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 text-slate-900 font-semibold"
+              disabled={isLoading}
+              style={{
+                width: '100%',
+                padding: '10px 14px',
+                backgroundColor: '#f8fafc',
+                border: '1px solid #cbd5e1',
+                borderRadius: '10px',
+                fontSize: '14px',
+                fontWeight: '600',
+                color: '#1e293b',
+                outline: 'none',
+                boxSizing: 'border-box',
+                cursor: 'pointer',
+              }}
             >
               <option value="Grade 8">Grade 8</option>
               <option value="Grade 6">Grade 6</option>
@@ -253,69 +349,124 @@ export default function GeneratedPlansLibrary({
               <option value="All">All Grades</option>
             </select>
           </div>
-
-          {/* Competency Level Input & Quick Dropdown */}
-          <div>
-            <label className="block text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1">
-              Competency Level
-            </label>
-            <div className="space-y-1.5">
-              <input
-                type="text"
-                value={typedCompetency}
-                onChange={(e) => {
-                  setTypedCompetency(e.target.value);
-                  setError(null);
-                }}
-                placeholder="e.g. 8.1.1, 8.4.2"
-                className="w-full px-3 py-2 text-xs font-mono font-bold bg-slate-50 border border-indigo-200 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 text-indigo-700 placeholder:text-slate-400"
-              />
-
-              {/* Quick Dropdown Picker from Saved Plans */}
-              {filteredPlans.length > 0 && (
-                <select
-                  value={filteredPlans.some((p) => p.competence_level === typedCompetency) ? typedCompetency : ''}
-                  onChange={(e) => {
-                    if (e.target.value) {
-                      setTypedCompetency(e.target.value);
-                      setError(null);
-                    }
-                  }}
-                  className="w-full px-2 py-1 text-[11px] bg-slate-100 border border-slate-200 rounded-lg text-slate-700 focus:outline-hidden cursor-pointer"
-                >
-                  <option value="">-- Or choose from {filteredPlans.length} saved plans --</option>
-                  {filteredPlans.map((p) => (
-                    <option key={p.filename} value={p.competence_level}>
-                      Level {p.competence_level} ({p.lesson || p.competence || p.filename})
-                    </option>
-                  ))}
-                </select>
-              )}
-            </div>
-          </div>
         </div>
 
-        {/* View Plan Button */}
-        <div className="pt-2">
-          <button
-            type="button"
-            onClick={handleViewCompetencyPlan}
-            disabled={isDetailLoading || !typedCompetency.trim()}
-            className="w-full py-2.5 px-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs sm:text-sm font-bold transition-all shadow-xs flex items-center justify-center gap-2 disabled:opacity-50"
+        {/* 2. Competency Level Input & Quick Dropdown (Matching LessonPlanForm input style) */}
+        <div>
+          <label
+            style={{
+              display: 'block',
+              fontSize: '12px',
+              fontWeight: '700',
+              textTransform: 'uppercase',
+              color: '#334155',
+              marginBottom: '6px',
+              letterSpacing: '0.05em',
+            }}
           >
-            {isDetailLoading ? (
-              <>
-                <span className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                Loading Lesson Plan...
-              </>
-            ) : (
-              `👁️ View Plan for Competency Level ${typedCompetency || '...'}`
-            )}
-          </button>
+            NIE Competency Level
+          </label>
+          <input
+            type="text"
+            value={typedCompetency}
+            onChange={(e) => {
+              setTypedCompetency(e.target.value);
+              setError(null);
+            }}
+            placeholder={selectedSubject === 'Science' ? 'e.g. 1.6, 1.7, 2.1' : 'e.g. 8.1.1, 8.4.2, 8.6.8'}
+            disabled={isLoading || isDetailLoading}
+            style={{
+              width: '100%',
+              padding: '10px 14px',
+              backgroundColor: '#f8fafc',
+              border: '1.5px solid #6366f1',
+              borderRadius: '10px',
+              fontSize: '15px',
+              fontWeight: '600',
+              fontFamily: 'monospace',
+              color: '#4338ca',
+              outline: 'none',
+              boxSizing: 'border-box',
+            }}
+          />
+
+          {/* Quick Dropdown Picker from Saved Plans */}
+          {filteredPlans.length > 0 && (
+            <div style={{ marginTop: '8px' }}>
+              <select
+                value={filteredPlans.some((p) => p.competence_level === typedCompetency) ? typedCompetency : ''}
+                onChange={(e) => {
+                  if (e.target.value) {
+                    setTypedCompetency(e.target.value);
+                    setError(null);
+                  }
+                }}
+                style={{
+                  width: '100%',
+                  padding: '8px 12px',
+                  backgroundColor: '#f1f5f9',
+                  border: '1px solid #cbd5e1',
+                  borderRadius: '8px',
+                  fontSize: '12px',
+                  fontWeight: '500',
+                  color: '#334155',
+                  outline: 'none',
+                  boxSizing: 'border-box',
+                  cursor: 'pointer',
+                }}
+              >
+                <option value="">-- Or choose from {filteredPlans.length} saved plans --</option>
+                {filteredPlans.map((p) => (
+                  <option key={p.filename} value={p.competence_level}>
+                    Level {p.competence_level} ({p.lesson || p.competence || p.filename})
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
+
+          <span style={{ display: 'block', fontSize: '11px', color: '#64748b', marginTop: '6px' }}>
+            {selectedSubject === 'Science'
+              ? 'Enter Science Competency Level (e.g. 1.6)'
+              : 'Enter Civic Education Competency Code (e.g. 8.1.1, 8.4.2, 8.6.8)'}
+          </span>
         </div>
+
+        {/* 3. View Plan Button (Matching LessonPlanForm Submit Button) */}
+        <button
+          type="button"
+          onClick={handleViewCompetencyPlan}
+          disabled={isDetailLoading || !typedCompetency.trim()}
+          style={{
+            width: '100%',
+            marginTop: '6px',
+            padding: '12px 16px',
+            borderRadius: '10px',
+            backgroundColor: isDetailLoading || !typedCompetency.trim() ? '#94a3b8' : '#4f46e5',
+            color: '#ffffff',
+            fontWeight: '700',
+            fontSize: '14px',
+            border: 'none',
+            cursor: isDetailLoading || !typedCompetency.trim() ? 'not-allowed' : 'pointer',
+            transition: 'background-color 0.2s ease',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '8px',
+          }}
+        >
+          {isDetailLoading ? (
+            <>
+              <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+              <span>Loading Lesson Plan...</span>
+            </>
+          ) : (
+            `👁️ View Plan for Competency Level ${typedCompetency || '...'}`
+          )}
+        </button>
       </div>
 
-      {/* LESSON PLAN VIEWED DIRECTLY BELOW COMPETENCY LEVEL (NO WALL OF 30 PLANS) */}
+      {/* LESSON PLAN VIEWED DIRECTLY BELOW COMPETENCY LEVEL */}
       {activePlan && (
         <div className="space-y-4 animate-in fade-in duration-200">
           {/* Action Toolbar on Viewed Plan */}
@@ -338,14 +489,14 @@ export default function GeneratedPlansLibrary({
               <button
                 type="button"
                 onClick={() => window.print()}
-                className="px-3 py-1.5 text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors inline-flex items-center gap-1.5"
+                className="px-3 py-1.5 text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors inline-flex items-center gap-1.5 cursor-pointer"
               >
                 🖨️ Print
               </button>
               <button
                 type="button"
                 onClick={handleCopyJson}
-                className="px-3 py-1.5 text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors inline-flex items-center gap-1.5"
+                className="px-3 py-1.5 text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors inline-flex items-center gap-1.5 cursor-pointer"
               >
                 {copied ? '✅ Copied' : '📋 Copy JSON'}
               </button>
@@ -353,7 +504,7 @@ export default function GeneratedPlansLibrary({
                 <button
                   type="button"
                   onClick={() => onPlanLoadedToViewer(activePlan)}
-                  className="px-3 py-1.5 text-xs font-bold text-indigo-700 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 rounded-lg transition-colors inline-flex items-center gap-1.5"
+                  className="px-3 py-1.5 text-xs font-bold text-indigo-700 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 rounded-lg transition-colors inline-flex items-center gap-1.5 cursor-pointer"
                   title="Load into Main Viewer and Structural Editor"
                 >
                   ✏️ Edit in Generator
@@ -364,7 +515,7 @@ export default function GeneratedPlansLibrary({
                   type="button"
                   onClick={() => setIsDeleteModalOpen(true)}
                   disabled={isDeleting}
-                  className="px-3 py-1.5 text-xs font-bold text-red-600 bg-red-50 hover:bg-red-100 border border-red-200 rounded-lg transition-colors inline-flex items-center gap-1.5 disabled:opacity-50"
+                  className="px-3 py-1.5 text-xs font-bold text-red-600 bg-red-50 hover:bg-red-100 border border-red-200 rounded-lg transition-colors inline-flex items-center gap-1.5 disabled:opacity-50 cursor-pointer"
                   title="Delete this generated lesson plan permanently from storage"
                 >
                   🗑️ Delete Plan
