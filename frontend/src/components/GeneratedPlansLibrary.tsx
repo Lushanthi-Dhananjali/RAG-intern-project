@@ -55,6 +55,23 @@ export default function GeneratedPlansLibrary({
       if (manual) {
         setSuccessMessage(`✅ Refreshed! Found ${data.length} saved lesson plans.`);
         setTimeout(() => setSuccessMessage(null), 3500);
+      } else if (data.length > 0) {
+        // Auto-load default or first saved plan on initial page load
+        const defaultMatch =
+          data.find((p) => p.competence_level === '8.1.1') ||
+          data[0];
+        if (defaultMatch) {
+          try {
+            const detail = await fetchGeneratedPlanDetail(defaultMatch.filename);
+            setActivePlan(detail.plan);
+            setActiveFilename(detail.filename);
+            if (detail.plan.competence_level) setTypedCompetency(detail.plan.competence_level);
+            if (detail.plan.grade) setSelectedGrade(detail.plan.grade);
+            if (detail.plan.subject) setSelectedSubject(detail.plan.subject);
+          } catch {
+            // Fallback gracefully
+          }
+        }
       }
     } catch (err: any) {
       setError(err.message || 'Failed to fetch generated lesson plans. Ensure backend is running.');
@@ -162,7 +179,7 @@ export default function GeneratedPlansLibrary({
     <section className="space-y-6">
       {/* Action / Notification Alerts */}
       {successMessage && (
-        <div className="max-w-[640px] mx-auto p-3.5 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-xs font-semibold flex items-center justify-between shadow-xs animate-in fade-in duration-150">
+        <div className="max-w-[860px] mx-auto p-3.5 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-xs font-semibold flex items-center justify-between shadow-xs animate-in fade-in duration-150">
           <span>{successMessage}</span>
           <button
             type="button"
@@ -175,7 +192,7 @@ export default function GeneratedPlansLibrary({
       )}
 
       {error && (
-        <div className="max-w-[640px] mx-auto p-3.5 bg-red-50 border border-red-200 text-red-800 rounded-xl text-xs font-semibold flex items-center justify-between shadow-xs animate-in fade-in duration-150">
+        <div className="max-w-[860px] mx-auto p-3.5 bg-red-50 border border-red-200 text-red-800 rounded-xl text-xs font-semibold flex items-center justify-between shadow-xs animate-in fade-in duration-150">
           <span>⚠️ {error}</span>
           <button
             type="button"
@@ -198,8 +215,10 @@ export default function GeneratedPlansLibrary({
           display: 'flex',
           flexDirection: 'column',
           gap: '18px',
-          maxWidth: '640px',
+          maxWidth: '860px',
           margin: '0 auto',
+          width: '100%',
+          boxSizing: 'border-box',
         }}
       >
         {/* Panel Header with Title and Refresh Button */}
@@ -466,66 +485,59 @@ export default function GeneratedPlansLibrary({
         </button>
       </div>
 
-      {/* LESSON PLAN VIEWED DIRECTLY BELOW COMPETENCY LEVEL */}
-      {activePlan && (
-        <div className="space-y-4 animate-in fade-in duration-200">
-          {/* Action Toolbar on Viewed Plan */}
-          <div className="flex flex-wrap items-center justify-between gap-3 p-3.5 bg-white rounded-xl border border-slate-200 shadow-2xs">
-            <div className="flex items-center gap-2">
-              <span className="text-xs font-extrabold text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded-lg border border-indigo-100">
-                📄 Competency Level {activePlan.competence_level}
-              </span>
-              <span className="text-xs font-semibold text-slate-600">
-                {activePlan.grade} • {activePlan.subject}
-              </span>
-              {activeFilename && (
-                <span className="text-[11px] font-mono text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md hidden sm:inline-block">
-                  {activeFilename}
-                </span>
-              )}
-            </div>
-
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={() => window.print()}
-                className="px-3 py-1.5 text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors inline-flex items-center gap-1.5 cursor-pointer"
-              >
-                🖨️ Print
-              </button>
-              <button
-                type="button"
-                onClick={handleCopyJson}
-                className="px-3 py-1.5 text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors inline-flex items-center gap-1.5 cursor-pointer"
-              >
-                {copied ? '✅ Copied' : '📋 Copy JSON'}
-              </button>
-              {onPlanLoadedToViewer && (
-                <button
-                  type="button"
-                  onClick={() => onPlanLoadedToViewer(activePlan)}
-                  className="px-3 py-1.5 text-xs font-bold text-indigo-700 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 rounded-lg transition-colors inline-flex items-center gap-1.5 cursor-pointer"
-                  title="Load into Main Viewer and Structural Editor"
-                >
-                  ✏️ Edit in Generator
-                </button>
-              )}
-              {activeFilename && (
-                <button
-                  type="button"
-                  onClick={() => setIsDeleteModalOpen(true)}
-                  disabled={isDeleting}
-                  className="px-3 py-1.5 text-xs font-bold text-red-600 bg-red-50 hover:bg-red-100 border border-red-200 rounded-lg transition-colors inline-flex items-center gap-1.5 disabled:opacity-50 cursor-pointer"
-                  title="Delete this generated lesson plan permanently from storage"
-                >
-                  🗑️ Delete Plan
-                </button>
-              )}
-            </div>
+      {/* 2. LESSON PLAN VIEWED DIRECTLY BELOW COMPETENCY LEVEL (IN MATCHING CARD BOX) */}
+      {activePlan ? (
+        <LessonPlanViewer
+          plan={activePlan}
+          filename={activeFilename}
+          onEditInGenerator={onPlanLoadedToViewer}
+          onDeletePlan={() => setIsDeleteModalOpen(true)}
+        />
+      ) : (
+        /* Empty / Placeholder State Box matching View Saved Lesson Plan */
+        <div
+          style={{
+            backgroundColor: '#ffffff',
+            padding: '36px 24px',
+            borderRadius: '16px',
+            border: '1.5px dashed #cbd5e1',
+            boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            textAlign: 'center',
+            gap: '12px',
+            maxWidth: '860px',
+            margin: '0 auto',
+            width: '100%',
+            boxSizing: 'border-box',
+          }}
+        >
+          <div
+            style={{
+              width: '54px',
+              height: '54px',
+              borderRadius: '50%',
+              backgroundColor: '#eef2ff',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '26px',
+              color: '#4f46e5',
+            }}
+          >
+            📄
           </div>
-
-          {/* Full Peradeniya Practice Teaching Table Layout */}
-          <LessonPlanViewer plan={activePlan} />
+          <div>
+            <h4 style={{ fontSize: '16px', fontWeight: '800', color: '#0f172a', margin: '0 0 4px 0' }}>
+              View Lesson Plan
+            </h4>
+            <p style={{ fontSize: '13px', color: '#64748b', maxWidth: '440px', margin: '0 auto', lineHeight: '1.5' }}>
+              Select a Subject, Grade, and Competency Level in the box above, then click{' '}
+              <strong style={{ color: '#4f46e5' }}>"👁️ View Plan"</strong> to display the lesson plan here.
+            </p>
+          </div>
         </div>
       )}
 

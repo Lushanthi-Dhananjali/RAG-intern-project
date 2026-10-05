@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { FactCheckReport, AlignmentReport } from '@/services/lessonPlanApi';
 
 export interface LessonDevelopmentStep {
@@ -40,9 +40,21 @@ interface Props {
   plan: PeradeniyaLessonPlan | any;
   factCheck?: FactCheckReport;
   alignment?: AlignmentReport;
+  filename?: string;
+  onEditInGenerator?: (plan: any) => void;
+  onDeletePlan?: (filename: string) => void;
 }
 
-export default function LessonPlanViewer({ plan, factCheck, alignment }: Props) {
+export default function LessonPlanViewer({
+  plan,
+  factCheck,
+  alignment,
+  filename,
+  onEditInGenerator,
+  onDeletePlan,
+}: Props) {
+  const [copied, setCopied] = useState<boolean>(false);
+
   if (!plan) return null;
 
   const summaryText = plan.summary || (plan as any).Summary || '—';
@@ -55,126 +67,522 @@ export default function LessonPlanViewer({ plan, factCheck, alignment }: Props) 
   const informationSources = plan.information_sources || (plan as any).informationSources;
   const attachmentsList = plan.attachments || (plan as any).Attachments;
 
+  // Calculate total development minutes
+  const totalDevMinutes =
+    plan.lesson_development_steps?.reduce(
+      (acc: number, step: LessonDevelopmentStep) => acc + (step.time_minutes || 0),
+      0
+    ) || 0;
+
+  const handleCopyJson = () => {
+    navigator.clipboard.writeText(JSON.stringify(plan, null, 2));
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handlePrint = () => {
+    window.print();
+  };
+
   return (
-    <article className="bg-white border border-slate-300 rounded-2xl shadow-sm p-6 sm:p-10 space-y-6 text-slate-900 font-serif print:p-0 print:border-none print:shadow-none">
-      {/* 1. Official Header */}
-      <div className="text-center border-b border-slate-300 pb-4">
-        <h2 className="text-xs uppercase tracking-widest text-slate-600 font-bold font-sans">
-          Education Science Division • University of Peradeniya
-        </h2>
-        <h1 className="text-2xl font-black uppercase tracking-tight text-slate-900 mt-1">
-          Lesson Plan Format
-        </h1>
+    <article
+      style={{
+        backgroundColor: '#ffffff',
+        padding: '24px',
+        borderRadius: '16px',
+        border: '1px solid #e2e8f0',
+        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '18px',
+        maxWidth: '860px',
+        margin: '0 auto',
+        width: '100%',
+        boxSizing: 'border-box',
+      }}
+    >
+      {/* Box Header (Matches View Saved Lesson Plan Box Header Style) */}
+      <div
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          borderBottom: '1px solid #f1f5f9',
+          paddingBottom: '14px',
+          gap: '12px',
+        }}
+      >
+        <div>
+          <div
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              padding: '3px 10px',
+              backgroundColor: '#eef2ff',
+              borderRadius: '9999px',
+              border: '1px solid #e0e7ff',
+              color: '#4338ca',
+              fontSize: '11px',
+              fontWeight: '800',
+              textTransform: 'uppercase',
+              marginBottom: '4px',
+            }}
+          >
+            <span>🏛️</span>
+            <span>Education Science Division • University of Peradeniya</span>
+          </div>
+          <h3
+            style={{
+              fontSize: '16px',
+              fontWeight: '800',
+              color: '#0f172a',
+              margin: '2px 0 0 0',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+            }}
+          >
+            <span>📄</span>
+            <span>View Lesson Plan — Level {plan.competence_level}</span>
+          </h3>
+          <p style={{ fontSize: '12px', color: '#64748b', margin: '3px 0 0 0', fontWeight: '500' }}>
+            {plan.grade} • {plan.subject} • {plan.time_allocation}
+            {filename && (
+              <span
+                style={{
+                  marginLeft: '8px',
+                  fontFamily: 'monospace',
+                  backgroundColor: '#f1f5f9',
+                  padding: '2px 8px',
+                  borderRadius: '6px',
+                  fontSize: '11px',
+                  color: '#475569',
+                  border: '1px solid #e2e8f0',
+                }}
+              >
+                {filename}
+              </span>
+            )}
+          </p>
+        </div>
+
+        {/* Action Buttons in Header */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+          <button
+            type="button"
+            onClick={handlePrint}
+            style={{
+              padding: '7px 12px',
+              fontSize: '12px',
+              fontWeight: '700',
+              color: '#334155',
+              backgroundColor: '#f1f5f9',
+              border: '1px solid #e2e8f0',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              transition: 'background-color 0.2s',
+            }}
+            title="Print this lesson plan"
+          >
+            <span>🖨️</span>
+            <span>Print</span>
+          </button>
+          <button
+            type="button"
+            onClick={handleCopyJson}
+            style={{
+              padding: '7px 12px',
+              fontSize: '12px',
+              fontWeight: '700',
+              color: '#334155',
+              backgroundColor: '#f1f5f9',
+              border: '1px solid #e2e8f0',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              transition: 'background-color 0.2s',
+            }}
+            title="Copy lesson plan data as JSON"
+          >
+            <span>{copied ? '✅' : '📋'}</span>
+            <span>{copied ? 'Copied' : 'Copy JSON'}</span>
+          </button>
+          {onEditInGenerator && (
+            <button
+              type="button"
+              onClick={() => onEditInGenerator(plan)}
+              style={{
+                padding: '7px 12px',
+                fontSize: '12px',
+                fontWeight: '700',
+                color: '#4338ca',
+                backgroundColor: '#eef2ff',
+                border: '1px solid #c7d2fe',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                transition: 'background-color 0.2s',
+              }}
+              title="Load into Main Viewer and Structural Editor"
+            >
+              <span>✏️</span>
+              <span>Edit in Generator</span>
+            </button>
+          )}
+          {onDeletePlan && filename && (
+            <button
+              type="button"
+              onClick={() => onDeletePlan(filename)}
+              style={{
+                padding: '7px 12px',
+                fontSize: '12px',
+                fontWeight: '700',
+                color: '#dc2626',
+                backgroundColor: '#fef2f2',
+                border: '1px solid #fecaca',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                transition: 'background-color 0.2s',
+              }}
+              title="Delete this generated lesson plan permanently from storage"
+            >
+              <span>🗑️</span>
+              <span>Delete Plan</span>
+            </button>
+          )}
+        </div>
       </div>
 
-      {/* 2. Top Metadata Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 text-xs border-b border-slate-200 pb-4 font-sans">
-        <div>
-          <span className="font-bold text-slate-500 block uppercase tracking-wider text-[10px]">Date</span>
-          <span className="font-semibold">{plan.date || '—'}</span>
+      {/* Optional Guardrails Summary Boxes */}
+      {(factCheck || alignment) && (
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
+          {factCheck && (
+            <div
+              style={{
+                backgroundColor: factCheck.passed ? '#f0fdf4' : '#fffbeb',
+                border: `1px solid ${factCheck.passed ? '#bbf7d0' : '#fde68a'}`,
+                borderRadius: '10px',
+                padding: '10px 14px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+              }}
+            >
+              <span style={{ fontSize: '12px', fontWeight: '700', color: factCheck.passed ? '#166534' : '#854d0e' }}>
+                Grounding Score: {(factCheck.grounding_score * 100).toFixed(0)}% ({factCheck.passed ? 'Passed' : 'Review Needed'})
+              </span>
+            </div>
+          )}
+          {alignment && (
+            <div
+              style={{
+                backgroundColor: alignment.passed_alignment_guardrail ? '#eff6ff' : '#fef2f2',
+                border: `1px solid ${alignment.passed_alignment_guardrail ? '#bfdbfe' : '#fecaca'}`,
+                borderRadius: '10px',
+                padding: '10px 14px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+              }}
+            >
+              <span style={{ fontSize: '12px', fontWeight: '700', color: alignment.passed_alignment_guardrail ? '#1e40af' : '#991b1b' }}>
+                Goal Alignment: {(alignment.overall_alignment_score * 100).toFixed(0)}%
+              </span>
+            </div>
+          )}
         </div>
-        <div>
-          <span className="font-bold text-slate-500 block uppercase tracking-wider text-[10px]">Grade</span>
-          <span className="font-semibold">{plan.grade || '—'}</span>
+      )}
+
+      {/* 1. Metadata Grid Boxes (Identical to Form Field Boxes) */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(110px, 1fr))', gap: '12px' }}>
+        <div style={{ backgroundColor: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: '10px', padding: '10px 12px' }}>
+          <label style={{ display: 'block', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', color: '#64748b', marginBottom: '4px', letterSpacing: '0.05em' }}>Date</label>
+          <span style={{ fontSize: '13px', fontWeight: '700', color: '#0f172a', display: 'block', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{plan.date || '—'}</span>
         </div>
-        <div>
-          <span className="font-bold text-slate-500 block uppercase tracking-wider text-[10px]">Subject</span>
-          <span className="font-semibold">{plan.subject || '—'}</span>
+        <div style={{ backgroundColor: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: '10px', padding: '10px 12px' }}>
+          <label style={{ display: 'block', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', color: '#64748b', marginBottom: '4px', letterSpacing: '0.05em' }}>Grade</label>
+          <span style={{ fontSize: '13px', fontWeight: '700', color: '#0f172a', display: 'block' }}>{plan.grade || '—'}</span>
         </div>
-        <div>
-          <span className="font-bold text-slate-500 block uppercase tracking-wider text-[10px]">Time</span>
-          <span className="font-semibold">{plan.time_allocation || '—'}</span>
+        <div style={{ backgroundColor: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: '10px', padding: '10px 12px' }}>
+          <label style={{ display: 'block', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', color: '#64748b', marginBottom: '4px', letterSpacing: '0.05em' }}>Subject</label>
+          <span style={{ fontSize: '13px', fontWeight: '700', color: '#0f172a', display: 'block', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{plan.subject || '—'}</span>
         </div>
-        <div>
-          <span className="font-bold text-slate-500 block uppercase tracking-wider text-[10px]">Lesson Plan No</span>
-          <span className="font-semibold font-mono">{plan.lesson_plan_number || '01'}</span>
+        <div style={{ backgroundColor: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: '10px', padding: '10px 12px' }}>
+          <label style={{ display: 'block', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', color: '#64748b', marginBottom: '4px', letterSpacing: '0.05em' }}>Time</label>
+          <span style={{ fontSize: '13px', fontWeight: '700', color: '#0f172a', display: 'block' }}>{plan.time_allocation || '—'}</span>
         </div>
-        <div>
-          <span className="font-bold text-slate-500 block uppercase tracking-wider text-[10px]">Page No</span>
-          <span className="font-semibold font-mono">{plan.page_no || '01'}</span>
+        <div style={{ backgroundColor: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: '10px', padding: '10px 12px' }}>
+          <label style={{ display: 'block', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', color: '#64748b', marginBottom: '4px', letterSpacing: '0.05em' }}>Plan No</label>
+          <span style={{ fontSize: '13px', fontWeight: '700', fontFamily: 'monospace', color: '#0f172a', display: 'block' }}>{plan.lesson_plan_number || '01'}</span>
+        </div>
+        <div style={{ backgroundColor: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: '10px', padding: '10px 12px' }}>
+          <label style={{ display: 'block', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', color: '#64748b', marginBottom: '4px', letterSpacing: '0.05em' }}>Page No</label>
+          <span style={{ fontSize: '13px', fontWeight: '700', fontFamily: 'monospace', color: '#0f172a', display: 'block' }}>{plan.page_no || '01'}</span>
         </div>
       </div>
 
-      {/* 3. Competence & Outcomes */}
-      <div className="space-y-2.5 text-xs border-b border-slate-200 pb-4">
-        <div>
-          <strong className="font-sans uppercase text-slate-700 tracking-wide">Competence: </strong>
-          <span className="leading-relaxed">{plan.competence}</span>
-        </div>
-        <div>
-          <strong className="font-sans uppercase text-slate-700 tracking-wide">Competence level: </strong>
-          <span className="leading-relaxed font-mono font-bold text-indigo-700">{plan.competence_level}</span>
-        </div>
-        <div>
-          <strong className="font-sans uppercase text-slate-700 tracking-wide">Lesson: </strong>
-          <span className="font-semibold text-slate-900 text-sm">{plan.lesson}</span>
-        </div>
-        <div>
-          <strong className="font-sans uppercase text-slate-700 tracking-wide block mb-1">
-            Unique learning outcome:
-          </strong>
-          <ul className="list-disc list-inside space-y-1 ml-2 leading-relaxed text-slate-800">
-            {plan.unique_learning_outcome?.map((outcome: string, idx: number) => (
-              <li key={idx}>{outcome}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* 4. The Entrance */}
-      <div className="text-xs border-b border-slate-200 pb-4">
-        <strong className="font-sans uppercase text-slate-700 tracking-wide block mb-1">
-          The entrance:
-        </strong>
-        <p className="leading-relaxed text-slate-800 whitespace-pre-line bg-slate-50 p-3 rounded-lg border border-slate-200">
-          {plan.the_entrance}
-        </p>
-      </div>
-
-      {/* 5. 7-Column Lesson Development Table */}
+      {/* 2. Competence Box */}
       <div>
-        <h3 className="text-xs font-bold font-sans uppercase tracking-wide text-slate-800 mb-2">
-          Lesson development:
-        </h3>
-        <div className="overflow-x-auto border border-slate-300 rounded-lg">
-          <table className="min-w-full text-left text-xs border-collapse divide-y divide-slate-300">
-            <thead className="bg-slate-100 font-sans font-bold text-slate-700 uppercase tracking-wider">
-              <tr className="divide-x divide-slate-300">
-                <th className="p-2.5 w-12 text-center">Steps</th>
-                <th className="p-2.5 w-1/4">Teacher activities</th>
-                <th className="p-2.5 w-1/4">Student activities</th>
-                <th className="p-2.5">Learning and teaching method</th>
-                <th className="p-2.5">Learning and teaching aids</th>
-                <th className="p-2.5">Assessment and feedback</th>
-                <th className="p-2.5 w-14 text-center">Time</th>
-                <th className="p-2.5 w-16">Other</th>
+        <label
+          style={{
+            display: 'block',
+            fontSize: '12px',
+            fontWeight: '700',
+            textTransform: 'uppercase',
+            color: '#334155',
+            marginBottom: '6px',
+            letterSpacing: '0.05em',
+          }}
+        >
+          Competence
+        </label>
+        <div
+          style={{
+            backgroundColor: '#f8fafc',
+            border: '1px solid #cbd5e1',
+            borderRadius: '10px',
+            padding: '12px 14px',
+            fontSize: '14px',
+            fontWeight: '600',
+            color: '#1e293b',
+            lineHeight: '1.6',
+          }}
+        >
+          {plan.competence}
+        </div>
+      </div>
+
+      {/* 3. Competency Level & Lesson Topic Grid */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
+        <div>
+          <label
+            style={{
+              display: 'block',
+              fontSize: '12px',
+              fontWeight: '700',
+              textTransform: 'uppercase',
+              color: '#334155',
+              marginBottom: '6px',
+              letterSpacing: '0.05em',
+            }}
+          >
+            NIE Competence Level
+          </label>
+          <div
+            style={{
+              backgroundColor: '#f8fafc',
+              border: '1.5px solid #6366f1',
+              borderRadius: '10px',
+              padding: '10px 14px',
+              fontSize: '15px',
+              fontWeight: '700',
+              fontFamily: 'monospace',
+              color: '#4338ca',
+            }}
+          >
+            Level {plan.competence_level}
+          </div>
+        </div>
+
+        <div>
+          <label
+            style={{
+              display: 'block',
+              fontSize: '12px',
+              fontWeight: '700',
+              textTransform: 'uppercase',
+              color: '#334155',
+              marginBottom: '6px',
+              letterSpacing: '0.05em',
+            }}
+          >
+            Lesson
+          </label>
+          <div
+            style={{
+              backgroundColor: '#f8fafc',
+              border: '1px solid #cbd5e1',
+              borderRadius: '10px',
+              padding: '10px 14px',
+              fontSize: '14px',
+              fontWeight: '700',
+              color: '#1e293b',
+            }}
+          >
+            {plan.lesson}
+          </div>
+        </div>
+      </div>
+
+      {/* 4. Unique Learning Outcomes Box */}
+      <div>
+        <label
+          style={{
+            display: 'block',
+            fontSize: '12px',
+            fontWeight: '700',
+            textTransform: 'uppercase',
+            color: '#334155',
+            marginBottom: '6px',
+            letterSpacing: '0.05em',
+          }}
+        >
+          Unique Learning Outcomes ({plan.unique_learning_outcome?.length || 0})
+        </label>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+          {plan.unique_learning_outcome?.map((outcome: string, idx: number) => (
+            <div
+              key={idx}
+              style={{
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '10px',
+                backgroundColor: '#f8fafc',
+                border: '1px solid #cbd5e1',
+                borderRadius: '10px',
+                padding: '10px 14px',
+              }}
+            >
+              <span
+                style={{
+                  flexShrink: 0,
+                  width: '22px',
+                  height: '22px',
+                  borderRadius: '6px',
+                  backgroundColor: '#4f46e5',
+                  color: '#ffffff',
+                  fontSize: '12px',
+                  fontWeight: '800',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginTop: '1px',
+                }}
+              >
+                {idx + 1}
+              </span>
+              <span style={{ fontSize: '13px', fontWeight: '500', color: '#1e293b', lineHeight: '1.5' }}>
+                {outcome}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* 5. The Entrance (Introduction) Box */}
+      <div>
+        <label
+          style={{
+            display: 'block',
+            fontSize: '12px',
+            fontWeight: '700',
+            textTransform: 'uppercase',
+            color: '#334155',
+            marginBottom: '6px',
+            letterSpacing: '0.05em',
+          }}
+        >
+          The Entrance (Introduction)
+        </label>
+        <div
+          style={{
+            backgroundColor: '#f8fafc',
+            border: '1px solid #cbd5e1',
+            borderRadius: '10px',
+            padding: '12px 14px',
+            fontSize: '13px',
+            fontWeight: '500',
+            color: '#1e293b',
+            lineHeight: '1.6',
+            whiteSpace: 'pre-line',
+          }}
+        >
+          {plan.the_entrance}
+        </div>
+      </div>
+
+      {/* 6. Lesson Development (7-Column Schedule) Table Box */}
+      <div>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '6px' }}>
+          <label
+            style={{
+              display: 'block',
+              fontSize: '12px',
+              fontWeight: '700',
+              textTransform: 'uppercase',
+              color: '#334155',
+              letterSpacing: '0.05em',
+            }}
+          >
+            Lesson Development Schedule ({plan.lesson_development_steps?.length || 0} Steps)
+          </label>
+          <span
+            style={{
+              fontSize: '11px',
+              fontWeight: '700',
+              color: '#4f46e5',
+              backgroundColor: '#eef2ff',
+              padding: '3px 8px',
+              borderRadius: '6px',
+            }}
+          >
+            ⏱️ {totalDevMinutes} Minutes Total
+          </span>
+        </div>
+
+        <div style={{ border: '1px solid #cbd5e1', borderRadius: '10px', overflowX: 'auto', backgroundColor: '#ffffff' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '12px' }}>
+            <thead style={{ backgroundColor: '#f1f5f9', borderBottom: '1px solid #cbd5e1' }}>
+              <tr>
+                <th style={{ padding: '10px 8px', width: '48px', textAlign: 'center', borderRight: '1px solid #e2e8f0', fontWeight: '700', color: '#334155', textTransform: 'uppercase', fontSize: '11px' }}>Step</th>
+                <th style={{ padding: '10px 12px', minWidth: '160px', borderRight: '1px solid #e2e8f0', fontWeight: '700', color: '#334155', textTransform: 'uppercase', fontSize: '11px' }}>Teacher Activities</th>
+                <th style={{ padding: '10px 12px', minWidth: '160px', borderRight: '1px solid #e2e8f0', fontWeight: '700', color: '#334155', textTransform: 'uppercase', fontSize: '11px' }}>Student Activities</th>
+                <th style={{ padding: '10px 10px', minWidth: '110px', borderRight: '1px solid #e2e8f0', fontWeight: '700', color: '#334155', textTransform: 'uppercase', fontSize: '11px' }}>Method</th>
+                <th style={{ padding: '10px 10px', minWidth: '110px', borderRight: '1px solid #e2e8f0', fontWeight: '700', color: '#334155', textTransform: 'uppercase', fontSize: '11px' }}>Aids</th>
+                <th style={{ padding: '10px 10px', minWidth: '120px', borderRight: '1px solid #e2e8f0', fontWeight: '700', color: '#334155', textTransform: 'uppercase', fontSize: '11px' }}>Assessment & Feedback</th>
+                <th style={{ padding: '10px 8px', width: '56px', textAlign: 'center', borderRight: '1px solid #e2e8f0', fontWeight: '700', color: '#334155', textTransform: 'uppercase', fontSize: '11px' }}>Time</th>
+                <th style={{ padding: '10px 8px', width: '60px', fontWeight: '700', color: '#334155', textTransform: 'uppercase', fontSize: '11px' }}>Other</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-200 bg-white">
+            <tbody>
               {plan.lesson_development_steps?.map((step: LessonDevelopmentStep, idx: number) => (
-                <tr key={idx} className="divide-x divide-slate-200 align-top hover:bg-slate-50/50">
-                  <td className="p-2.5 text-center font-bold font-mono text-slate-700">
+                <tr key={idx} style={{ borderBottom: '1px solid #f1f5f9', verticalAlign: 'top', backgroundColor: idx % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
+                  <td style={{ padding: '10px 8px', textAlign: 'center', borderRight: '1px solid #e2e8f0', fontWeight: '800', fontFamily: 'monospace', color: '#4f46e5' }}>
                     {step.step_number || idx + 1}
                   </td>
-                  <td className="p-2.5 whitespace-pre-line leading-relaxed text-slate-800">
+                  <td style={{ padding: '10px 12px', borderRight: '1px solid #e2e8f0', color: '#1e293b', lineHeight: '1.5', whiteSpace: 'pre-line' }}>
                     {step.teacher_activities}
                   </td>
-                  <td className="p-2.5 whitespace-pre-line leading-relaxed text-slate-800">
+                  <td style={{ padding: '10px 12px', borderRight: '1px solid #e2e8f0', color: '#1e293b', lineHeight: '1.5', whiteSpace: 'pre-line' }}>
                     {step.student_activities}
                   </td>
-                  <td className="p-2.5 leading-relaxed text-slate-800">
-                    {step.learning_teaching_method}
+                  <td style={{ padding: '10px 10px', borderRight: '1px solid #e2e8f0', color: '#334155' }}>
+                    <span style={{ display: 'inline-block', padding: '2px 8px', backgroundColor: '#e2e8f0', borderRadius: '6px', fontSize: '11px', fontWeight: '600' }}>
+                      {step.learning_teaching_method}
+                    </span>
                   </td>
-                  <td className="p-2.5 leading-relaxed text-slate-800">
+                  <td style={{ padding: '10px 10px', borderRight: '1px solid #e2e8f0', color: '#475569', fontSize: '11px' }}>
                     {step.learning_teaching_aids}
                   </td>
-                  <td className="p-2.5 leading-relaxed text-slate-800">
+                  <td style={{ padding: '10px 10px', borderRight: '1px solid #e2e8f0', color: '#475569', fontSize: '11px' }}>
                     {step.assessment_and_feedback}
                   </td>
-                  <td className="p-2.5 text-center font-mono text-slate-600 whitespace-nowrap">
+                  <td style={{ padding: '10px 8px', textAlign: 'center', borderRight: '1px solid #e2e8f0', fontWeight: '700', fontFamily: 'monospace', color: '#0f172a' }}>
                     {step.time_minutes}m
                   </td>
-                  <td className="p-2.5 text-[11px] text-slate-500">
+                  <td style={{ padding: '10px 8px', color: '#64748b', fontSize: '11px' }}>
                     {step.other || '—'}
                   </td>
                 </tr>
@@ -184,89 +592,238 @@ export default function LessonPlanViewer({ plan, factCheck, alignment }: Props) 
         </div>
       </div>
 
-      {/* 6. Post-Lesson Syntheses & Resources */}
-      <div className="space-y-4 text-xs border-b border-slate-200 pb-5">
+      {/* 7. Summary & Whole Lesson Assessment Grid */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
         <div>
-          <strong className="font-sans uppercase text-slate-700 tracking-wide block mb-1">
-            Summary:
-          </strong>
-          <p className="leading-relaxed text-slate-800 bg-slate-50 p-3 rounded-lg border border-slate-200">
+          <label
+            style={{
+              display: 'block',
+              fontSize: '12px',
+              fontWeight: '700',
+              textTransform: 'uppercase',
+              color: '#334155',
+              marginBottom: '6px',
+              letterSpacing: '0.05em',
+            }}
+          >
+            Summary
+          </label>
+          <div
+            style={{
+              backgroundColor: '#f8fafc',
+              border: '1px solid #cbd5e1',
+              borderRadius: '10px',
+              padding: '12px 14px',
+              fontSize: '13px',
+              color: '#1e293b',
+              lineHeight: '1.6',
+            }}
+          >
             {summaryText}
-          </p>
+          </div>
         </div>
 
         <div>
-          <strong className="font-sans uppercase text-slate-700 tracking-wide block mb-1">
-            Assessment and feedback (whole lesson):
-          </strong>
-          <p className="leading-relaxed text-slate-800 bg-slate-50 p-3 rounded-lg border border-slate-200">
+          <label
+            style={{
+              display: 'block',
+              fontSize: '12px',
+              fontWeight: '700',
+              textTransform: 'uppercase',
+              color: '#334155',
+              marginBottom: '6px',
+              letterSpacing: '0.05em',
+            }}
+          >
+            Assessment & Feedback (Whole Lesson)
+          </label>
+          <div
+            style={{
+              backgroundColor: '#f8fafc',
+              border: '1px solid #cbd5e1',
+              borderRadius: '10px',
+              padding: '12px 14px',
+              fontSize: '13px',
+              color: '#1e293b',
+              lineHeight: '1.6',
+            }}
+          >
             {wholeLessonAssessment}
-          </p>
+          </div>
         </div>
-
-        <div>
-          <strong className="font-sans uppercase text-slate-700 tracking-wide block mb-1">
-            Post activity (relevant to the lesson):
-          </strong>
-          <p className="leading-relaxed text-slate-800 bg-blue-50/60 p-3 rounded-lg border border-blue-100 font-medium">
-            {postActivity}
-          </p>
-        </div>
-
-        <div>
-          <strong className="font-sans uppercase text-slate-700 tracking-wide block mb-1">
-            Information sources:
-          </strong>
-          {Array.isArray(informationSources) && informationSources.length > 0 ? (
-            <ul className="list-disc list-inside space-y-1.5 ml-1 leading-relaxed text-slate-800 bg-slate-50 p-3 rounded-lg border border-slate-200">
-              {informationSources.map((source: string, idx: number) => (
-                <li key={idx} className="font-medium text-slate-800">
-                  {source}
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p className="leading-relaxed text-slate-800 bg-slate-50 p-3 rounded-lg border border-slate-200">
-              {typeof informationSources === 'string' && informationSources.trim()
-                ? informationSources
-                : '—'}
-            </p>
-          )}
-        </div>
-
-        <div>
-          <strong className="font-sans uppercase text-slate-700 tracking-wide block mb-1">
-            Attachments:
-          </strong>
-          {Array.isArray(attachmentsList) && attachmentsList.length > 0 ? (
-            <ul className="list-disc list-inside space-y-1.5 ml-1 leading-relaxed text-slate-800 bg-slate-50 p-3 rounded-lg border border-slate-200">
-              {attachmentsList.map((item: string, idx: number) => (
-                <li key={idx} className="font-medium text-slate-800">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p className="leading-relaxed text-slate-800 bg-slate-50 p-3 rounded-lg border border-slate-200">
-              {typeof attachmentsList === 'string' && attachmentsList.trim()
-                ? attachmentsList
-                : 'None'}
-            </p>
-          )}
-        </div>
-
       </div>
 
-      {/* 8. Action Controls */}
-      <div className="flex justify-end pt-2 print:hidden">
-        <button
-          type="button"
-          onClick={() => window.print()}
-          className="px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold font-sans rounded-xl shadow-sm transition-all flex items-center gap-2 cursor-pointer"
+      {/* 8. Post Activity Box */}
+      <div>
+        <label
+          style={{
+            display: 'block',
+            fontSize: '12px',
+            fontWeight: '700',
+            textTransform: 'uppercase',
+            color: '#334155',
+            marginBottom: '6px',
+            letterSpacing: '0.05em',
+          }}
         >
-          🖨️ Print / Export PDF
-        </button>
+          Post Activity (Relevant to the Lesson)
+        </label>
+        <div
+          style={{
+            backgroundColor: '#f8fafc',
+            border: '1px solid #cbd5e1',
+            borderRadius: '10px',
+            padding: '12px 14px',
+            fontSize: '13px',
+            fontWeight: '500',
+            color: '#1e293b',
+            lineHeight: '1.6',
+          }}
+        >
+          {postActivity}
+        </div>
       </div>
+
+      {/* 9. Information Sources & Attachments Grid */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
+        <div>
+          <label
+            style={{
+              display: 'block',
+              fontSize: '12px',
+              fontWeight: '700',
+              textTransform: 'uppercase',
+              color: '#334155',
+              marginBottom: '6px',
+              letterSpacing: '0.05em',
+            }}
+          >
+            Information Sources
+          </label>
+          <div
+            style={{
+              backgroundColor: '#f8fafc',
+              border: '1px solid #cbd5e1',
+              borderRadius: '10px',
+              padding: '12px 14px',
+              fontSize: '12px',
+              color: '#334155',
+            }}
+          >
+            {Array.isArray(informationSources) && informationSources.length > 0 ? (
+              <ul style={{ margin: 0, paddingLeft: '18px', lineHeight: '1.6' }}>
+                {informationSources.map((source: string, idx: number) => (
+                  <li key={idx}>{source}</li>
+                ))}
+              </ul>
+            ) : (
+              <p style={{ margin: 0 }}>
+                {typeof informationSources === 'string' && informationSources.trim()
+                  ? informationSources
+                  : 'NIE Teacher Guide & Syllabus Guidelines'}
+              </p>
+            )}
+          </div>
+        </div>
+
+        <div>
+          <label
+            style={{
+              display: 'block',
+              fontSize: '12px',
+              fontWeight: '700',
+              textTransform: 'uppercase',
+              color: '#334155',
+              marginBottom: '6px',
+              letterSpacing: '0.05em',
+            }}
+          >
+            Attachments
+          </label>
+          <div
+            style={{
+              backgroundColor: '#f8fafc',
+              border: '1px solid #cbd5e1',
+              borderRadius: '10px',
+              padding: '12px 14px',
+              fontSize: '12px',
+              color: '#334155',
+            }}
+          >
+            {Array.isArray(attachmentsList) && attachmentsList.length > 0 ? (
+              <ul style={{ margin: 0, paddingLeft: '18px', lineHeight: '1.6' }}>
+                {attachmentsList.map((item: string, idx: number) => (
+                  <li key={idx}>{item}</li>
+                ))}
+              </ul>
+            ) : (
+              <p style={{ margin: 0, color: '#64748b' }}>None</p>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Optional Reflection */}
+      {plan.reflection && (
+        <div>
+          <label
+            style={{
+              display: 'block',
+              fontSize: '12px',
+              fontWeight: '700',
+              textTransform: 'uppercase',
+              color: '#334155',
+              marginBottom: '6px',
+              letterSpacing: '0.05em',
+            }}
+          >
+            Teacher Reflection
+          </label>
+          <div
+            style={{
+              backgroundColor: '#f8fafc',
+              border: '1px solid #cbd5e1',
+              borderRadius: '10px',
+              padding: '12px 14px',
+              fontSize: '13px',
+              color: '#1e293b',
+            }}
+          >
+            {plan.reflection}
+          </div>
+        </div>
+      )}
+
+      {/* Optional Supervisor's Notes */}
+      {plan.supervisors_notes && (
+        <div>
+          <label
+            style={{
+              display: 'block',
+              fontSize: '12px',
+              fontWeight: '700',
+              textTransform: 'uppercase',
+              color: '#334155',
+              marginBottom: '6px',
+              letterSpacing: '0.05em',
+            }}
+          >
+            Supervisor's Notes
+          </label>
+          <div
+            style={{
+              backgroundColor: '#f8fafc',
+              border: '1px solid #cbd5e1',
+              borderRadius: '10px',
+              padding: '12px 14px',
+              fontSize: '13px',
+              color: '#1e293b',
+            }}
+          >
+            {plan.supervisors_notes}
+          </div>
+        </div>
+      )}
     </article>
   );
 }
