@@ -14,12 +14,82 @@ interface StructuralEditorProps {
   onSave?: (updatedPlan: LessonPlanSchema) => void;
 }
 
+function normalizeInitialPlan(p: any): LessonPlanSchema {
+  if (!p) {
+    return {
+      title: '',
+      subject: '',
+      grade_level: '',
+      topic: '',
+      educational_goal_or_standard: '',
+      estimated_duration_minutes: 40,
+      learning_outcomes: [],
+      materials: [],
+      procedures: [],
+      verification: {
+        formative_assessment: '',
+        summative_assessment: '',
+        alignment_check: '',
+      },
+    };
+  }
+
+  const outcomes = Array.isArray(p.learning_outcomes)
+    ? p.learning_outcomes
+    : Array.isArray(p.unique_learning_outcome)
+    ? p.unique_learning_outcome.map((u: string, idx: number) => ({
+        id: idx + 1,
+        description: u,
+        blooms_taxonomy_level: 'Apply',
+      }))
+    : [];
+
+  const procedures = Array.isArray(p.procedures)
+    ? p.procedures
+    : Array.isArray(p.lesson_development_steps)
+    ? p.lesson_development_steps.map((s: any, idx: number) => ({
+        step_number: s.step_number || idx + 1,
+        phase_title: s.learning_teaching_method || `Step ${idx + 1}`,
+        duration_minutes: s.time_minutes || 10,
+        teacher_action: s.teacher_activities || '',
+        student_action: s.student_activities || '',
+      }))
+    : [];
+
+  const materials = Array.isArray(p.materials)
+    ? p.materials
+    : Array.isArray(p.information_sources)
+    ? p.information_sources.map((src: string) => ({
+        item_name: src,
+        quantity: '1',
+        is_digital: false,
+      }))
+    : [];
+
+  return {
+    title: p.title || p.lesson || p.competence || '',
+    subject: p.subject || '',
+    grade_level: p.grade_level || p.grade || '',
+    topic: p.topic || p.competence || '',
+    educational_goal_or_standard: p.educational_goal_or_standard || p.competence || '',
+    estimated_duration_minutes: p.estimated_duration_minutes || 40,
+    learning_outcomes: outcomes,
+    materials: materials,
+    procedures: procedures,
+    verification: p.verification || {
+      formative_assessment: p.assessment_and_feedback_whole_lesson || '',
+      summative_assessment: p.summary || '',
+      alignment_check: 'Aligned with Curriculum standards',
+    },
+  };
+}
+
 export default function StructuralEditor({
   initialPlan,
   userId,
   onSave,
 }: StructuralEditorProps) {
-  const [plan, setPlan] = useState<LessonPlanSchema>(initialPlan);
+  const [plan, setPlan] = useState<LessonPlanSchema>(() => normalizeInitialPlan(initialPlan));
   const [isSaving, setIsSaving] = useState(false);
   const [saveStatus, setSaveStatus] = useState<string | null>(null);
 

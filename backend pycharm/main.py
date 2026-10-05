@@ -541,6 +541,33 @@ async def extract_curriculum(
         )
 
 
+
+# =====================================================================
+# GENERATED PLANS STORAGE ROUTERS
+# =====================================================================
+try:
+    from fastapi import APIRouter
+    from app.api.v1.endpoints.generated_plans import router as generated_plans_router
+    app.include_router(generated_plans_router)
+
+    # Also mount alias under /api/generated-plans for convenience
+    alias_router = APIRouter(prefix="/api/generated-plans", tags=["Generated Lesson Plans Storage"])
+    from app.api.v1.endpoints.generated_plans import (
+        get_all_generated_plans,
+        get_plan_by_filename,
+        delete_plan_by_filename,
+        save_plan,
+    )
+    alias_router.add_api_route("", get_all_generated_plans, methods=["GET"])
+    alias_router.add_api_route("/{filename}", get_plan_by_filename, methods=["GET"])
+    alias_router.add_api_route("/{filename}", delete_plan_by_filename, methods=["DELETE"])
+    alias_router.add_api_route("", save_plan, methods=["POST"])
+    app.include_router(alias_router)
+    logger.info("Successfully mounted generated plans storage routers (/api/v1/generated-plans and /api/generated-plans)")
+except Exception as e:
+    logger.warning("Could not include generated_plans router: %s", e)
+
+
 # =====================================================================
 # SERVER RUNNER
 # =====================================================================

@@ -22,22 +22,22 @@
       "learning_teaching_aids": "Textbook diagrams and charts",
       "assessment_and_feedback": "Formative assessment through class discussion",
       "time_minutes": 15,
-      "other": "None"
+      "other": "Blackboard arrangement"
     },
     {
       "step_number": 2,
-      "teacher_activities": "Facilitate a group discussion on the need and importance of public services.",
-      "student_activities": "Students will analyze and discuss the role of public services in their community.",
+      "teacher_activities": "Facilitate student group discussions on the need and importance of public services.",
+      "student_activities": "Students will analyze and discuss the role of public services in their daily lives.",
       "learning_teaching_method": "Cooperative Group Work",
-      "learning_teaching_aids": "Task cards and group roles",
+      "learning_teaching_aids": "Task cards and worksheets",
       "assessment_and_feedback": "Monitoring group progress and correcting misconceptions",
       "time_minutes": 30,
       "other": "Differentiation and group roles"
     },
     {
       "step_number": 3,
-      "teacher_activities": "Guide students in presenting their findings and summarizing the importance of public services.",
-      "student_activities": "Students will present their group findings and summarize the importance of public services.",
+      "teacher_activities": "Guide student presentations on the importance of public services.",
+      "student_activities": "Students will present their findings and share recorded observations.",
       "learning_teaching_method": "Student Presentations",
       "learning_teaching_aids": "Presentation sheets and whiteboard",
       "assessment_and_feedback": "Peer feedback and teacher clarification",
@@ -46,7 +46,7 @@
     }
   ],
   "summary": "Recap of the importance of public services in our daily lives.",
-  "assessment_and_feedback_whole_lesson": "Summative check through a class discussion",
+  "assessment_and_feedback_whole_lesson": "Summative check through class discussion",
   "post_activity": "Concrete homework assignment on the importance of public services",
   "information_sources": [
     "National Institute of Education (NIE) Teacher Instructional Guide",

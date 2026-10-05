@@ -14,7 +14,10 @@ interface LessonPlanFormProps {
   isLoading: boolean;
 }
 
-export default function LessonPlanForm({ onSubmit, isLoading }: LessonPlanFormProps) {
+export default function LessonPlanForm({
+  onSubmit,
+  isLoading,
+}: LessonPlanFormProps) {
   const [subject, setSubject] = useState<string>('Civic Education');
   const [gradeLevel, setGradeLevel] = useState<string>('Grade 8');
   const [competencyLevel, setCompetencyLevel] = useState<string>('8.1.1');
@@ -127,6 +130,7 @@ export default function LessonPlanForm({ onSubmit, isLoading }: LessonPlanFormPr
         <input
           type="text"
           required
+          list="competency-suggestions"
           value={competencyLevel}
           onChange={(e) => setCompetencyLevel(e.target.value)}
           placeholder={placeholderText}
@@ -145,6 +149,21 @@ export default function LessonPlanForm({ onSubmit, isLoading }: LessonPlanFormPr
             boxSizing: 'border-box',
           }}
         />
+        <datalist id="competency-suggestions">
+          <option value="8.1.1">8.1.1 — Public Services</option>
+          <option value="8.1.2">8.1.2 — Public Services Need</option>
+          <option value="8.1.3">8.1.3 — Public Services Features</option>
+          <option value="8.1.4">8.1.4 — Public Services Role</option>
+          <option value="8.2.1">8.2.1 — Democratic Governance</option>
+          <option value="8.2.2">8.2.2 — Rule of Law</option>
+          <option value="8.3.1">8.3.1 — Civic Responsibilities</option>
+          <option value="8.4.1">8.4.1 — Multicultural Society</option>
+          <option value="8.4.2">8.4.2 — Social Harmony</option>
+          <option value="8.5.1">8.5.1 — Environmental Protection</option>
+          <option value="8.6.1">8.6.1 — Global Community</option>
+          <option value="1.6">1.6 — Science Competency</option>
+          <option value="1.7">1.7 — Science Competency</option>
+        </datalist>
         <span style={{ display: 'block', fontSize: '11px', color: '#64748b', marginTop: '4px' }}>
           {subject === 'Science' ? 'Enter Science Competency Level (e.g. 1.6)' : 'Enter Civic Education Competency Code (e.g. 8.1.1, 8.4.2, 8.6.8)'}
         </span>
@@ -182,7 +201,7 @@ export default function LessonPlanForm({ onSubmit, isLoading }: LessonPlanFormPr
         </span>
       </div>
 
-      {/* 4. Submit Button */}
+      {/* 4. Generate Submit Button */}
       <button
         type="submit"
         disabled={isLoading || !competencyLevel.trim()}

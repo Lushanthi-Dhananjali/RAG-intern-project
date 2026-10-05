@@ -251,3 +251,135 @@ export async function checkBackendHealth(): Promise<{ status: string; engine: st
 
   return response.json();
 }
+
+// =====================================================================
+// GENERATED PLANS STORAGE MANAGEMENT (LIST & DELETE)
+// =====================================================================
+
+export interface GeneratedPlanSummary {
+  id: string;
+  filename: string;
+  grade: string;
+  subject: string;
+  competence_level: string;
+  competence: string;
+  lesson: string;
+  time_allocation: string;
+  the_entrance?: string;
+  summary?: string;
+  step_count: number;
+  outcome_count: number;
+  created_at: string;
+  updated_at?: string;
+  file_size_bytes?: number;
+}
+
+export interface GeneratedPlanDetailResponse {
+  filename: string;
+  id: string;
+  created_at: string;
+  file_size_bytes: number;
+  plan: LessonPlanDto;
+}
+
+export interface DeletePlanResponse {
+  success: boolean;
+  message: string;
+  deleted_filename: string;
+}
+
+export async function fetchGeneratedPlans(filters?: {
+  search?: string;
+  grade?: string;
+  subject?: string;
+}): Promise<GeneratedPlanSummary[]> {
+  const params = new URLSearchParams();
+  if (filters?.search) params.append("search", filters.search);
+  if (filters?.grade && filters.grade !== "All") params.append("grade", filters.grade);
+  if (filters?.subject && filters.subject !== "All") params.append("subject", filters.subject);
+  params.append("_t", String(Date.now()));
+
+  const queryString = params.toString() ? `?${params.toString()}` : "";
+  const response = await fetch(`${API_BASE_URL}/api/v1/generated-plans${queryString}`, {
+    method: "GET",
+    headers: { "Content-Type": "application/json" },
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    throw new Error(`Failed to load generated lesson plans (Status ${response.status})`);
+  }
+
+  return response.json();
+}
+
+export async function fetchGeneratedPlanDetail(
+  filename: string
+): Promise<GeneratedPlanDetailResponse> {
+  const response = await fetch(
+    `${API_BASE_URL}/api/v1/generated-plans/${encodeURIComponent(filename)}`,
+    {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+      cache: "no-store",
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error(`Failed to load lesson plan '${filename}' (Status ${response.status})`);
+  }
+
+  return response.json();
+}
+
+export async function deleteGeneratedPlan(
+  filename: string
+): Promise<DeletePlanResponse> {
+  const response = await fetch(
+    `${API_BASE_URL}/api/v1/generated-plans/${encodeURIComponent(filename)}`,
+    {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+    }
+  );
+
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({}));
+    throw new Error(
+      errorData.detail || `Failed to delete lesson plan (Status ${response.status})`
+    );
+  }
+
+  return response.json();
+}
+
+export async function fetchPlanByCompetency(
+  competencyLevel: string,
+  grade?: string,
+  subject?: string
+): Promise<GeneratedPlanDetailResponse> {
+  const params = new URLSearchParams();
+  if (grade) params.append("grade", grade);
+  if (subject) params.append("subject", subject);
+  params.append("_t", String(Date.now()));
+
+  const queryString = params.toString() ? `?${params.toString()}` : "";
+  const response = await fetch(
+    `${API_BASE_URL}/api/v1/generated-plans/by-competency/${encodeURIComponent(competencyLevel.trim())}${queryString}`,
+    {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+      cache: "no-store",
+    }
+  );
+
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({}));
+    throw new Error(
+      errorData.detail || `No saved lesson plan found for Competency Level '${competencyLevel}'.`
+    );
+  }
+
+  return response.json();
+}
+

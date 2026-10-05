@@ -45,42 +45,52 @@ interface Props {
 export default function LessonPlanViewer({ plan, factCheck, alignment }: Props) {
   if (!plan) return null;
 
+  const summaryText = plan.summary || (plan as any).Summary || '—';
+  const wholeLessonAssessment =
+    plan.assessment_and_feedback_whole_lesson ||
+    (plan as any).assessmentAndFeedbackWholeLesson ||
+    (plan as any).assessment_and_feedback ||
+    '—';
+  const postActivity = plan.post_activity || (plan as any).postActivity || '—';
+  const informationSources = plan.information_sources || (plan as any).informationSources;
+  const attachmentsList = plan.attachments || (plan as any).Attachments;
+
   return (
     <article className="bg-white border border-slate-300 rounded-2xl shadow-sm p-6 sm:p-10 space-y-6 text-slate-900 font-serif print:p-0 print:border-none print:shadow-none">
       {/* 1. Official Header */}
       <div className="text-center border-b border-slate-300 pb-4">
         <h2 className="text-xs uppercase tracking-widest text-slate-600 font-bold font-sans">
-          Education Science Division • University of Peradeniya[cite: 1]
+          Education Science Division • University of Peradeniya
         </h2>
         <h1 className="text-2xl font-black uppercase tracking-tight text-slate-900 mt-1">
-          Lesson Plan Format[cite: 1]
+          Lesson Plan Format
         </h1>
       </div>
 
       {/* 2. Top Metadata Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 text-xs border-b border-slate-200 pb-4 font-sans">
         <div>
-          <span className="font-bold text-slate-500 block uppercase tracking-wider text-[10px]">Date[cite: 1]</span>
+          <span className="font-bold text-slate-500 block uppercase tracking-wider text-[10px]">Date</span>
           <span className="font-semibold">{plan.date || '—'}</span>
         </div>
         <div>
-          <span className="font-bold text-slate-500 block uppercase tracking-wider text-[10px]">Grade[cite: 1]</span>
+          <span className="font-bold text-slate-500 block uppercase tracking-wider text-[10px]">Grade</span>
           <span className="font-semibold">{plan.grade || '—'}</span>
         </div>
         <div>
-          <span className="font-bold text-slate-500 block uppercase tracking-wider text-[10px]">Subject[cite: 1]</span>
+          <span className="font-bold text-slate-500 block uppercase tracking-wider text-[10px]">Subject</span>
           <span className="font-semibold">{plan.subject || '—'}</span>
         </div>
         <div>
-          <span className="font-bold text-slate-500 block uppercase tracking-wider text-[10px]">Time[cite: 1]</span>
+          <span className="font-bold text-slate-500 block uppercase tracking-wider text-[10px]">Time</span>
           <span className="font-semibold">{plan.time_allocation || '—'}</span>
         </div>
         <div>
-          <span className="font-bold text-slate-500 block uppercase tracking-wider text-[10px]">Lesson Plan No[cite: 1]</span>
+          <span className="font-bold text-slate-500 block uppercase tracking-wider text-[10px]">Lesson Plan No</span>
           <span className="font-semibold font-mono">{plan.lesson_plan_number || '01'}</span>
         </div>
         <div>
-          <span className="font-bold text-slate-500 block uppercase tracking-wider text-[10px]">Page No[cite: 1]</span>
+          <span className="font-bold text-slate-500 block uppercase tracking-wider text-[10px]">Page No</span>
           <span className="font-semibold font-mono">{plan.page_no || '01'}</span>
         </div>
       </div>
@@ -88,20 +98,20 @@ export default function LessonPlanViewer({ plan, factCheck, alignment }: Props) 
       {/* 3. Competence & Outcomes */}
       <div className="space-y-2.5 text-xs border-b border-slate-200 pb-4">
         <div>
-          <strong className="font-sans uppercase text-slate-700 tracking-wide">Competence: </strong>[cite: 1]
+          <strong className="font-sans uppercase text-slate-700 tracking-wide">Competence: </strong>
           <span className="leading-relaxed">{plan.competence}</span>
         </div>
         <div>
-          <strong className="font-sans uppercase text-slate-700 tracking-wide">Competence level: </strong>[cite: 1]
-          <span className="leading-relaxed">{plan.competence_level}</span>
+          <strong className="font-sans uppercase text-slate-700 tracking-wide">Competence level: </strong>
+          <span className="leading-relaxed font-mono font-bold text-indigo-700">{plan.competence_level}</span>
         </div>
         <div>
-          <strong className="font-sans uppercase text-slate-700 tracking-wide">Lesson: </strong>[cite: 1]
+          <strong className="font-sans uppercase text-slate-700 tracking-wide">Lesson: </strong>
           <span className="font-semibold text-slate-900 text-sm">{plan.lesson}</span>
         </div>
         <div>
           <strong className="font-sans uppercase text-slate-700 tracking-wide block mb-1">
-            Unique learning outcome :[cite: 1]
+            Unique learning outcome:
           </strong>
           <ul className="list-disc list-inside space-y-1 ml-2 leading-relaxed text-slate-800">
             {plan.unique_learning_outcome?.map((outcome: string, idx: number) => (
@@ -114,7 +124,7 @@ export default function LessonPlanViewer({ plan, factCheck, alignment }: Props) 
       {/* 4. The Entrance */}
       <div className="text-xs border-b border-slate-200 pb-4">
         <strong className="font-sans uppercase text-slate-700 tracking-wide block mb-1">
-          The entrance :[cite: 1]
+          The entrance:
         </strong>
         <p className="leading-relaxed text-slate-800 whitespace-pre-line bg-slate-50 p-3 rounded-lg border border-slate-200">
           {plan.the_entrance}
@@ -124,20 +134,20 @@ export default function LessonPlanViewer({ plan, factCheck, alignment }: Props) 
       {/* 5. 7-Column Lesson Development Table */}
       <div>
         <h3 className="text-xs font-bold font-sans uppercase tracking-wide text-slate-800 mb-2">
-          Lesson development :[cite: 1]
+          Lesson development:
         </h3>
         <div className="overflow-x-auto border border-slate-300 rounded-lg">
           <table className="min-w-full text-left text-xs border-collapse divide-y divide-slate-300">
             <thead className="bg-slate-100 font-sans font-bold text-slate-700 uppercase tracking-wider">
               <tr className="divide-x divide-slate-300">
-                <th className="p-2.5 w-12 text-center">Steps[cite: 1]</th>
-                <th className="p-2.5 w-1/4">Teacher activities[cite: 1]</th>
-                <th className="p-2.5 w-1/4">Student activities[cite: 1]</th>
-                <th className="p-2.5">Learning and teaching method[cite: 1]</th>
-                <th className="p-2.5">Learning and teaching aids[cite: 1]</th>
-                <th className="p-2.5">Assessment and feedback[cite: 1]</th>
-                <th className="p-2.5 w-14 text-center">Time[cite: 1]</th>
-                <th className="p-2.5 w-16">Other[cite: 1]</th>
+                <th className="p-2.5 w-12 text-center">Steps</th>
+                <th className="p-2.5 w-1/4">Teacher activities</th>
+                <th className="p-2.5 w-1/4">Student activities</th>
+                <th className="p-2.5">Learning and teaching method</th>
+                <th className="p-2.5">Learning and teaching aids</th>
+                <th className="p-2.5">Assessment and feedback</th>
+                <th className="p-2.5 w-14 text-center">Time</th>
+                <th className="p-2.5 w-16">Other</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200 bg-white">
@@ -175,77 +185,76 @@ export default function LessonPlanViewer({ plan, factCheck, alignment }: Props) 
       </div>
 
       {/* 6. Post-Lesson Syntheses & Resources */}
-      <div className="space-y-3 text-xs border-b border-slate-200 pb-5">
+      <div className="space-y-4 text-xs border-b border-slate-200 pb-5">
         <div>
-          <strong className="font-sans uppercase text-slate-700 tracking-wide block mb-0.5">
-            Summary:[cite: 1]
-          </strong>
-          <p className="leading-relaxed text-slate-800">{plan.summary}</p>
-        </div>
-        <div>
-          <strong className="font-sans uppercase text-slate-700 tracking-wide block mb-0.5">
-            Assessment and feedback (whole lesson):[cite: 1]
-          </strong>
-          <p className="leading-relaxed text-slate-800">{plan.assessment_and_feedback_whole_lesson}</p>
-        </div>
-        <div>
-          <strong className="font-sans uppercase text-slate-700 tracking-wide block mb-0.5">
-            Post activity (relevant to the lesson):[cite: 1]
-          </strong>
-          <p className="leading-relaxed text-slate-800">{plan.post_activity}</p>
-        </div>
-        <div>
-          <strong className="font-sans uppercase text-slate-700 tracking-wide block mb-0.5">
-            Information sources:[cite: 1]
-          </strong>
-          <p className="leading-relaxed text-slate-800">
-            {Array.isArray(plan.information_sources)
-              ? plan.information_sources.join(', ')
-              : plan.information_sources || '—'}
-          </p>
-        </div>
-        <div>
-          <strong className="font-sans uppercase text-slate-700 tracking-wide block mb-0.5">
-            Attachments:[cite: 1]
-          </strong>
-          <p className="leading-relaxed text-slate-800">
-            {Array.isArray(plan.attachments)
-              ? plan.attachments.join(', ')
-              : plan.attachments || 'None'}
-          </p>
-        </div>
-        <div>
-          <strong className="font-sans uppercase text-slate-700 tracking-wide block mb-0.5">
-            Reflection:[cite: 1]
-          </strong>
-          <p className="leading-relaxed text-slate-600 italic">
-            {plan.reflection || 'To be completed post-delivery by the teacher.'}
-          </p>
-        </div>
-      </div>
-
-      {/* 7. Official Signatures and Supervisor's Notes */}
-      <div className="pt-2 text-xs">
-        <div className="grid grid-cols-2 gap-12 font-sans mb-8">
-          <div>
-            <div className="mt-12 border-t border-dashed border-slate-400 pt-1.5 text-center text-slate-700">
-              Teacher&apos;s signature[cite: 1]
-            </div>
-          </div>
-          <div>
-            <div className="mt-12 border-t border-dashed border-slate-400 pt-1.5 text-center text-slate-700">
-              Signature of the principal/head teacher:[cite: 1]
-            </div>
-          </div>
-        </div>
-        <div className="border border-slate-300 rounded-lg p-3 bg-slate-50">
           <strong className="font-sans uppercase text-slate-700 tracking-wide block mb-1">
-            Supervisor&apos;s notes
+            Summary:
           </strong>
-          <p className="text-slate-600 italic text-[11px] min-h-9">
-            {plan.supervisors_notes || '—'}
+          <p className="leading-relaxed text-slate-800 bg-slate-50 p-3 rounded-lg border border-slate-200">
+            {summaryText}
           </p>
         </div>
+
+        <div>
+          <strong className="font-sans uppercase text-slate-700 tracking-wide block mb-1">
+            Assessment and feedback (whole lesson):
+          </strong>
+          <p className="leading-relaxed text-slate-800 bg-slate-50 p-3 rounded-lg border border-slate-200">
+            {wholeLessonAssessment}
+          </p>
+        </div>
+
+        <div>
+          <strong className="font-sans uppercase text-slate-700 tracking-wide block mb-1">
+            Post activity (relevant to the lesson):
+          </strong>
+          <p className="leading-relaxed text-slate-800 bg-blue-50/60 p-3 rounded-lg border border-blue-100 font-medium">
+            {postActivity}
+          </p>
+        </div>
+
+        <div>
+          <strong className="font-sans uppercase text-slate-700 tracking-wide block mb-1">
+            Information sources:
+          </strong>
+          {Array.isArray(informationSources) && informationSources.length > 0 ? (
+            <ul className="list-disc list-inside space-y-1.5 ml-1 leading-relaxed text-slate-800 bg-slate-50 p-3 rounded-lg border border-slate-200">
+              {informationSources.map((source: string, idx: number) => (
+                <li key={idx} className="font-medium text-slate-800">
+                  {source}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="leading-relaxed text-slate-800 bg-slate-50 p-3 rounded-lg border border-slate-200">
+              {typeof informationSources === 'string' && informationSources.trim()
+                ? informationSources
+                : '—'}
+            </p>
+          )}
+        </div>
+
+        <div>
+          <strong className="font-sans uppercase text-slate-700 tracking-wide block mb-1">
+            Attachments:
+          </strong>
+          {Array.isArray(attachmentsList) && attachmentsList.length > 0 ? (
+            <ul className="list-disc list-inside space-y-1.5 ml-1 leading-relaxed text-slate-800 bg-slate-50 p-3 rounded-lg border border-slate-200">
+              {attachmentsList.map((item: string, idx: number) => (
+                <li key={idx} className="font-medium text-slate-800">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="leading-relaxed text-slate-800 bg-slate-50 p-3 rounded-lg border border-slate-200">
+              {typeof attachmentsList === 'string' && attachmentsList.trim()
+                ? attachmentsList
+                : 'None'}
+            </p>
+          )}
+        </div>
+
       </div>
 
       {/* 8. Action Controls */}
