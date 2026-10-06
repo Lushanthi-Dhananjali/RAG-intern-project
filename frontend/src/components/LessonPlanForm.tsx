@@ -56,10 +56,43 @@ export default function LessonPlanForm({
         display: 'flex',
         flexDirection: 'column',
         gap: '18px',
-        maxWidth: '640px',
+        maxWidth: '860px',
         margin: '0 auto',
+        width: '100%',
+        boxSizing: 'border-box',
       }}
     >
+      {/* Panel Header */}
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          borderBottom: '1px solid #f1f5f9',
+          paddingBottom: '12px',
+        }}
+      >
+        <div>
+          <h3
+            style={{
+              fontSize: '16px',
+              fontWeight: '800',
+              color: '#0f172a',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              margin: 0,
+            }}
+          >
+            <span>✨</span>
+            <span>Lesson Plan Generator</span>
+          </h3>
+          <p style={{ fontSize: '12px', color: '#64748b', margin: '2px 0 0 0' }}>
+            Configure curriculum parameters to generate an NIE & Peradeniya aligned lesson plan
+          </p>
+        </div>
+      </div>
+
       {/* 1. Subject and Grade Level */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
         <div>
@@ -201,7 +234,7 @@ export default function LessonPlanForm({
         </span>
       </div>
 
-      {/* 4. Generate Submit Button */}
+      {/* 4. Generate Submit Button (Only Generate Option) */}
       <button
         type="submit"
         disabled={isLoading || !competencyLevel.trim()}
@@ -223,7 +256,17 @@ export default function LessonPlanForm({
           gap: '8px',
         }}
       >
-        {isLoading ? '⏳ Generating Lesson Plan...' : `✨ Generate ${subject} Lesson Plan (${competencyLevel || '...'})`}
+        {isLoading ? (
+          <>
+            <span className="animate-spin inline-block">⏳</span>
+            <span>Generating Lesson Plan...</span>
+          </>
+        ) : (
+          <>
+            <span>✨</span>
+            <span>Generate {subject} Lesson Plan ({competencyLevel || '...'})</span>
+          </>
+        )}
       </button>
     </form>
   );

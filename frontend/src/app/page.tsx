@@ -16,10 +16,9 @@ import {
 } from '@/services/lessonPlanApi';
 
 const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_BASE_URL ||
-  (typeof window !== 'undefined'
+  typeof window !== 'undefined' && window.location.hostname
     ? `http://${window.location.hostname}:8000`
-    : 'http://localhost:8000');
+    : (process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000');
 
 export default function Home() {
   const [activeMainTab, setActiveMainTab] = useState<'generator' | 'library'>('generator');
@@ -306,7 +305,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Generation Form with Dynamic Selectors */}
+          {/* 1. LESSON PLAN GENERATOR BOX */}
           <LessonPlanForm
             onSubmit={handleFormSubmit}
             isLoading={isLoading}
@@ -314,12 +313,12 @@ export default function Home() {
 
           {/* Success / Info Alert */}
           {notificationMessage && (
-            <div className="p-4 my-4 text-emerald-800 bg-emerald-50 rounded-xl border border-emerald-200 shadow-2xs text-xs font-semibold flex items-center justify-between animate-in fade-in duration-150">
+            <div className="max-w-[860px] mx-auto p-3.5 my-3 text-emerald-800 bg-emerald-50 rounded-xl border border-emerald-200 shadow-2xs text-xs font-semibold flex items-center justify-between animate-in fade-in duration-150">
               <span>✅ {notificationMessage}</span>
               <button
                 type="button"
                 onClick={() => setNotificationMessage(null)}
-                className="text-emerald-700 hover:text-emerald-900 font-bold ml-2 text-sm"
+                className="text-emerald-700 hover:text-emerald-900 font-bold ml-2 text-sm cursor-pointer"
               >
                 ✕
               </button>
@@ -328,150 +327,255 @@ export default function Home() {
 
           {/* Error Alert */}
           {error && (
-            <div className="p-4 my-6 text-red-700 bg-red-50 rounded-xl border border-red-200 shadow-sm text-sm font-semibold">
-              ⚠️ {error}
+            <div className="max-w-[860px] mx-auto p-3.5 my-3 text-red-700 bg-red-50 rounded-xl border border-red-200 shadow-sm text-sm font-semibold flex items-center justify-between animate-in fade-in duration-150">
+              <span>⚠️ {error}</span>
+              <button
+                type="button"
+                onClick={() => setError(null)}
+                className="text-red-700 hover:text-red-900 font-bold ml-2 text-sm cursor-pointer"
+              >
+                ✕
+              </button>
             </div>
           )}
 
-          {/* Structured Output Section: Viewed / Generated Lesson Plan Below Competency Level */}
-          {generationMode === 'standard' && planData && (
-            <div className="mt-8 space-y-6">
-              {/* Action Toolbar for the Viewed Plan */}
-              <div className="flex flex-wrap items-center justify-between gap-3 p-3.5 bg-white rounded-xl border border-slate-200 shadow-2xs">
-                <div className="flex items-center gap-2">
-                  <span className="text-xs font-extrabold text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded-lg border border-indigo-100">
-                    📄 Level {planData.competency_level}
+          {/* 2. SEE LESSON PLAN BOX (MATCHING CARD BOX DIRECTLY BELOW GENERATE BOX) */}
+          <div style={{ marginTop: '24px' }}>
+            {/* State A: Currently Loading / Generating */}
+            {isLoading ? (
+              <div
+                style={{
+                  backgroundColor: '#ffffff',
+                  padding: '40px 24px',
+                  borderRadius: '16px',
+                  border: '1.5px solid #818cf8',
+                  boxShadow: '0 10px 25px -5px rgba(99, 102, 241, 0.12), 0 8px 10px -6px rgba(99, 102, 241, 0.08)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  textAlign: 'center',
+                  gap: '16px',
+                  maxWidth: '860px',
+                  margin: '0 auto',
+                  width: '100%',
+                  boxSizing: 'border-box',
+                }}
+              >
+                <div
+                  style={{
+                    width: '60px',
+                    height: '60px',
+                    borderRadius: '50%',
+                    backgroundColor: '#eef2ff',
+                    border: '2px solid #c7d2fe',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '28px',
+                  }}
+                >
+                  <span className="animate-spin inline-block">⏳</span>
+                </div>
+                <div>
+                  <h4 style={{ fontSize: '18px', fontWeight: '800', color: '#1e1b4b', margin: '0 0 6px 0' }}>
+                    Generating Lesson Plan...
+                  </h4>
+                  <p style={{ fontSize: '13px', color: '#64748b', maxWidth: '480px', margin: '0 auto', lineHeight: '1.5' }}>
+                    AI is retrieving official NIE curriculum guidelines, constructing teacher-student activities,
+                    and structuring the Peradeniya 5-column lesson plan.
+                  </p>
+                </div>
+                {/* Visual Step Progress Badges */}
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', justifyContent: 'center', marginTop: '6px' }}>
+                  <span style={{ fontSize: '11px', fontWeight: '700', padding: '4px 10px', borderRadius: '9999px', backgroundColor: '#f1f5f9', color: '#475569' }}>
+                    📚 1. NIE Syllabus Retrieval
                   </span>
-                  <span className="text-xs font-semibold text-slate-600">
-                    {planData.grade_level} • {planData.subject}
+                  <span style={{ fontSize: '11px', fontWeight: '700', padding: '4px 10px', borderRadius: '9999px', backgroundColor: '#f1f5f9', color: '#475569' }}>
+                    🎯 2. Bloom's Taxonomy Outcomes
                   </span>
-                  {currentPlanFilename && (
-                    <span className="text-[11px] font-mono text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md hidden sm:inline-block">
-                      {currentPlanFilename}
-                    </span>
+                  <span style={{ fontSize: '11px', fontWeight: '700', padding: '4px 10px', borderRadius: '9999px', backgroundColor: '#e0e7ff', color: '#4338ca', border: '1px solid #c7d2fe' }}>
+                    ⏱️ 3. Peradeniya Multi-Period Table
+                  </span>
+                </div>
+              </div>
+            ) : generationMode === 'stream' && (streamedText || isLoading) ? (
+              /* State B: Real-time Stream Output in matching 860px box */
+              <div
+                style={{
+                  backgroundColor: '#0f172a',
+                  padding: '24px',
+                  borderRadius: '16px',
+                  border: '1px solid #1e293b',
+                  boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.2)',
+                  maxWidth: '860px',
+                  margin: '0 auto',
+                  width: '100%',
+                  boxSizing: 'border-box',
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid #334155', paddingBottom: '12px', marginBottom: '16px' }}>
+                  <span style={{ fontSize: '13px', fontWeight: '800', color: '#38bdf8', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    ⚡ Real-Time Lesson Plan Stream
+                  </span>
+                  <span style={{ fontSize: '11px', fontFamily: 'monospace', color: '#94a3b8' }}>
+                    Ollama Streaming Output
+                  </span>
+                </div>
+                <div className="text-emerald-400 font-mono text-xs sm:text-sm leading-relaxed whitespace-pre-wrap min-h-56">
+                  {streamedText}
+                  {isLoading && (
+                    <span className="animate-pulse inline-block w-2 h-4 bg-emerald-400 ml-1">▌</span>
                   )}
                 </div>
-
-                <div className="flex items-center gap-2">
-                  <button
-                    type="button"
-                    onClick={() => window.print()}
-                    className="px-3 py-1.5 text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors inline-flex items-center gap-1.5"
-                  >
-                    🖨️ Print
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      navigator.clipboard.writeText(JSON.stringify(planData.lesson_plan, null, 2));
-                      setNotificationMessage("Lesson plan JSON copied to clipboard!");
-                      setTimeout(() => setNotificationMessage(null), 3000);
-                    }}
-                    className="px-3 py-1.5 text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors inline-flex items-center gap-1.5"
-                  >
-                    📋 Copy JSON
-                  </button>
-                  {currentPlanFilename && (
+              </div>
+            ) : planData ? (
+              /* State C: Generated Lesson Plan Displayed (Standard Mode) */
+              <div className="space-y-3" style={{ maxWidth: '860px', margin: '0 auto', width: '100%' }}>
+                {/* Tab Switcher between Viewer and Raw Editor */}
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    padding: '0 4px',
+                  }}
+                >
+                  <div style={{ display: 'flex', gap: '8px' }}>
                     <button
                       type="button"
-                      onClick={() => setIsDeleteModalOpen(true)}
-                      disabled={isDeleting}
-                      className="px-3 py-1.5 text-xs font-bold text-red-600 bg-red-50 hover:bg-red-100 border border-red-200 rounded-lg transition-colors inline-flex items-center gap-1.5 disabled:opacity-50"
-                      title="Permanently delete this generated lesson plan from storage"
+                      onClick={() => setActiveViewTab('viewer')}
+                      style={{
+                        padding: '6px 14px',
+                        borderRadius: '10px',
+                        fontSize: '12px',
+                        fontWeight: '700',
+                        cursor: 'pointer',
+                        border: 'none',
+                        backgroundColor: activeViewTab === 'viewer' ? '#4f46e5' : '#e2e8f0',
+                        color: activeViewTab === 'viewer' ? '#ffffff' : '#334155',
+                        transition: 'all 0.2s',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                      }}
                     >
-                      🗑️ Delete Plan
+                      <span>📄</span>
+                      <span>Peradeniya Table Viewer</span>
                     </button>
-                  )}
+                    <button
+                      type="button"
+                      onClick={() => setActiveViewTab('editor')}
+                      style={{
+                        padding: '6px 14px',
+                        borderRadius: '10px',
+                        fontSize: '12px',
+                        fontWeight: '700',
+                        cursor: 'pointer',
+                        border: 'none',
+                        backgroundColor: activeViewTab === 'editor' ? '#4f46e5' : '#e2e8f0',
+                        color: activeViewTab === 'editor' ? '#ffffff' : '#334155',
+                        transition: 'all 0.2s',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                      }}
+                    >
+                      <span>✏️</span>
+                      <span>Structural Editor</span>
+                    </button>
+                  </div>
+                  <span style={{ fontSize: '11px', color: '#64748b', fontWeight: '600' }}>
+                    Peradeniya Practice Teaching Layout
+                  </span>
+                </div>
+
+                {/* Tab 1: Full Peradeniya Practice Teaching Viewer */}
+                {activeViewTab === 'viewer' && (
+                  <LessonPlanViewer
+                    plan={planData.lesson_plan}
+                    factCheck={planData.fact_check_report}
+                    alignment={planData.alignment_report}
+                    filename={currentPlanFilename || undefined}
+                    onEditInGenerator={() => setActiveViewTab('editor')}
+                    onDeletePlan={currentPlanFilename ? () => setIsDeleteModalOpen(true) : undefined}
+                  />
+                )}
+
+                {/* Tab 2: Interactive Structural Editor */}
+                {activeViewTab === 'editor' && (
+                  <div style={{ maxWidth: '860px', margin: '0 auto', width: '100%' }}>
+                    <StructuralEditor
+                      initialPlan={planData.lesson_plan as any}
+                      onSave={(updated) => {
+                        setPlanData((prev) => (prev ? { ...prev, lesson_plan: updated as any } : null));
+                        setNotificationMessage('Updated lesson plan saved successfully!');
+                        setTimeout(() => setNotificationMessage(null), 3000);
+                      }}
+                    />
+                  </div>
+                )}
+              </div>
+            ) : (
+              /* State D: Empty / Placeholder State Box matching Generator Box */
+              <div
+                style={{
+                  backgroundColor: '#ffffff',
+                  padding: '36px 24px',
+                  borderRadius: '16px',
+                  border: '1.5px dashed #cbd5e1',
+                  boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  textAlign: 'center',
+                  gap: '12px',
+                  maxWidth: '860px',
+                  margin: '0 auto',
+                  width: '100%',
+                  boxSizing: 'border-box',
+                }}
+              >
+                <div
+                  style={{
+                    width: '54px',
+                    height: '54px',
+                    borderRadius: '50%',
+                    backgroundColor: '#eef2ff',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '26px',
+                    color: '#4f46e5',
+                  }}
+                >
+                  📄
+                </div>
+                <div>
+                  <h4 style={{ fontSize: '16px', fontWeight: '800', color: '#0f172a', margin: '0 0 4px 0' }}>
+                    See Lesson Plan
+                  </h4>
+                  <p style={{ fontSize: '13px', color: '#64748b', maxWidth: '480px', margin: '0 auto', lineHeight: '1.5' }}>
+                    Configure the Subject, Grade, and Competency Level in the generator box above, then click{' '}
+                    <strong style={{ color: '#4f46e5' }}>"✨ Generate Lesson Plan"</strong> to generate and see your
+                    lesson plan here.
+                  </p>
+                </div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', justifyContent: 'center', marginTop: '4px' }}>
+                  <span style={{ fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '9999px', backgroundColor: '#f8fafc', color: '#64748b', border: '1px solid #e2e8f0' }}>
+                    🏛️ University of Peradeniya Format
+                  </span>
+                  <span style={{ fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '9999px', backgroundColor: '#f8fafc', color: '#64748b', border: '1px solid #e2e8f0' }}>
+                    ⏱️ Multi-Period Scaling (40 - 160 min)
+                  </span>
+                  <span style={{ fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '9999px', backgroundColor: '#f8fafc', color: '#64748b', border: '1px solid #e2e8f0' }}>
+                    🎯 NIE Syllabus Grounding
+                  </span>
                 </div>
               </div>
-
-              {/* Verification Guardrails Summary */}
-              {(planData.fact_check_report || planData.alignment_report) && (
-                <section className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex flex-wrap gap-4 items-center justify-between text-xs">
-                  {planData.fact_check_report && (
-                    <div>
-                      <span className="font-bold text-slate-700">Fact-Check Grounding: </span>
-                      <span
-                        className={`font-semibold ${
-                          planData.fact_check_report.passed ? 'text-emerald-600' : 'text-amber-600'
-                        }`}
-                      >
-                        {(planData.fact_check_report.grounding_score * 100).toFixed(1)}% (
-                        {planData.fact_check_report.passed ? 'Passed' : 'Review Needed'})
-                      </span>
-                    </div>
-                  )}
-                  {planData.alignment_report && (
-                    <div>
-                      <span className="font-bold text-slate-700">Goal Alignment: </span>
-                      <span
-                        className={`font-semibold ${
-                          planData.alignment_report.passed_alignment_guardrail
-                            ? 'text-emerald-600'
-                            : 'text-amber-600'
-                        }`}
-                      >
-                        {(planData.alignment_report.overall_alignment_score * 100).toFixed(1)}%
-                      </span>
-                    </div>
-                  )}
-                </section>
-              )}
-
-              {/* Tab Switcher between Viewer and Raw Editor */}
-              <div className="flex items-center justify-between border-b border-slate-200 pb-2">
-                <div className="flex gap-2">
-                  <button
-                    type="button"
-                    onClick={() => setActiveViewTab('viewer')}
-                    className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-colors ${
-                      activeViewTab === 'viewer'
-                        ? 'bg-indigo-600 text-white shadow-xs'
-                        : 'bg-slate-200 text-slate-700 hover:bg-slate-300'
-                    }`}
-                  >
-                    📄 Peradeniya Table Viewer
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setActiveViewTab('editor')}
-                    className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-colors ${
-                      activeViewTab === 'editor'
-                        ? 'bg-indigo-600 text-white shadow-xs'
-                        : 'bg-slate-200 text-slate-700 hover:bg-slate-300'
-                    }`}
-                  >
-                    ✏️ Structural Editor
-                  </button>
-                </div>
-                <span className="text-xs text-slate-400 font-medium">Peradeniya Practice Teaching Layout</span>
-              </div>
-
-              {/* Tab 1: Render Peradeniya Practice Teaching Viewer */}
-              {activeViewTab === 'viewer' && (
-                <LessonPlanViewer
-                  plan={planData.lesson_plan}
-                  factCheck={planData.fact_check_report}
-                  alignment={planData.alignment_report}
-                />
-              )}
-
-              {/* Tab 2: Render Interactive Structural Editor */}
-              {activeViewTab === 'editor' && (
-                <StructuralEditor initialPlan={planData.lesson_plan as any} />
-              )}
-            </div>
-          )}
-
-          {/* Real-time Streaming Display */}
-          {generationMode === 'stream' && (streamedText || isLoading) && (
-            <div className="mt-8 bg-slate-900 p-6 rounded-2xl shadow-xl border border-slate-800 text-green-400 font-mono text-sm leading-relaxed whitespace-pre-wrap min-h-56">
-              {streamedText}
-              {isLoading && (
-                <span className="animate-pulse inline-block w-2 h-4 bg-green-400 ml-1">▌</span>
-              )}
-            </div>
-          )}
+            )}
+          </div>
         </div>
       )}
 
