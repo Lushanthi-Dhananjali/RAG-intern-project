@@ -381,4 +381,24 @@ export async function fetchPlanByCompetency(
 
   return response.json();
 }
+
+export async function saveGeneratedPlan(
+  plan: any,
+  filename?: string
+): Promise<{ success: boolean; message: string; filename: string }> {
+  const response = await fetch(`${API_BASE_URL}/api/v1/generated-plans`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ plan, filename }),
+  });
+
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({}));
+    throw new Error(
+      errorData.detail || `Failed to save lesson plan (Status ${response.status})`
+    );
+  }
+
+  return response.json();
+}
 

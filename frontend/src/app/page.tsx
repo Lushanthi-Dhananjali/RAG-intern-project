@@ -618,6 +618,7 @@ export default function Home() {
                   <div style={{ maxWidth: '860px', margin: '0 auto', width: '100%' }}>
                     <StructuralEditor
                       initialPlan={planData.lesson_plan as any}
+                      filename={currentPlanFilename || undefined}
                       onSave={(updated) => {
                         setPlanData((prev) => (prev ? { ...prev, lesson_plan: updated as any } : null));
                         setNotificationMessage('Updated lesson plan saved successfully!');
