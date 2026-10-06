@@ -224,49 +224,187 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-slate-100 py-10 px-4 sm:px-8 max-w-5xl mx-auto">
+    <main className="min-h-screen py-10 px-4 sm:px-8 max-w-5xl mx-auto">
       {/* Header */}
-      <header className="mb-8 text-center space-y-4">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-100/80 border border-indigo-200 text-indigo-700 text-xs font-extrabold tracking-wide uppercase">
-          🚀 NIE & University of Peradeniya Practice Teaching RAG
-        </div>
-        <h1 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight">
+      <header
+        style={{
+          maxWidth: '860px',
+          margin: '0 auto 20px auto',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          textAlign: 'center',
+          width: '100%',
+        }}
+      >
+        <h1
+          className="text-4xl sm:text-5xl font-black tracking-tight"
+          style={{ color: '#2563eb', margin: '0 0 8px 0', textAlign: 'center' }}
+        >
           Lesson Plan Generator
         </h1>
-        <p className="text-slate-600 max-w-lg mx-auto text-sm sm:text-base font-medium">
+        <p
+          className="text-sm sm:text-base font-bold"
+          style={{ color: '#65a30d', margin: '0 0 16px 0', textAlign: 'center', maxWidth: '680px' }}
+        >
           Adaptive multi-period lesson plans scaled to NIE curriculum guidelines (Grades 6-9)
         </p>
 
-        {/* Top-Level Navigation Tabs: Generator vs Saved Plans Library */}
-        <div className="flex items-center justify-center gap-3 pt-2">
+        {/* Buttons Row 1: Main Tabs (2 buttons, Middle Center Aligned in Page) */}
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '12px',
+            width: '100%',
+            margin: '0 auto',
+            flexWrap: 'wrap',
+          }}
+        >
+          {/* Button 1: Lesson Plan Generator */}
           <button
             type="button"
             onClick={() => setActiveMainTab('generator')}
-            className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all inline-flex items-center gap-2 shadow-xs ${
-              activeMainTab === 'generator'
-                ? 'bg-indigo-600 text-white shadow-md shadow-indigo-500/25 ring-2 ring-indigo-600/30'
-                : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-300'
-            }`}
+            style={{
+              padding: '10px 20px',
+              borderRadius: '12px',
+              fontSize: '13.5px',
+              fontWeight: '800',
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '8px',
+              whiteSpace: 'nowrap',
+              flexShrink: 0,
+              backgroundColor: activeMainTab === 'generator' ? '#bbf7d0' : '#f0fdf4',
+              color: activeMainTab === 'generator' ? '#14532d' : '#166534',
+              border: activeMainTab === 'generator' ? '1.5px solid #22c55e' : '1px solid #86efac',
+              boxShadow: activeMainTab === 'generator' ? '0 2px 8px -1px rgba(34, 197, 94, 0.35)' : 'none',
+            }}
           >
-            <span>✨</span>
-            <span>Lesson Plan Generator</span>
+            <span style={{ display: 'inline-flex', alignItems: 'center', fontSize: '15px', lineHeight: 1 }}>✨</span>
+            <span style={{ whiteSpace: 'nowrap' }}>Lesson Plan Generator</span>
           </button>
+
+          {/* Button 2: Generated Plans Library */}
           <button
             type="button"
             onClick={() => setActiveMainTab('library')}
-            className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all inline-flex items-center gap-2 shadow-xs ${
-              activeMainTab === 'library'
-                ? 'bg-indigo-600 text-white shadow-md shadow-indigo-500/25 ring-2 ring-indigo-600/30'
-                : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-300'
-            }`}
+            style={{
+              padding: '10px 20px',
+              borderRadius: '12px',
+              fontSize: '13.5px',
+              fontWeight: '800',
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '8px',
+              whiteSpace: 'nowrap',
+              flexShrink: 0,
+              backgroundColor: activeMainTab === 'library' ? '#bbf7d0' : '#f0fdf4',
+              color: activeMainTab === 'library' ? '#14532d' : '#166534',
+              border: activeMainTab === 'library' ? '1.5px solid #22c55e' : '1px solid #86efac',
+              boxShadow: activeMainTab === 'library' ? '0 2px 8px -1px rgba(34, 197, 94, 0.35)' : 'none',
+            }}
           >
-            <span>📚</span>
-            <span>Generated Plans Library</span>
-            <span className="px-2 py-0.5 text-[10px] font-black rounded-full bg-indigo-100 text-indigo-700 border border-indigo-200">
+            <span style={{ display: 'inline-flex', alignItems: 'center', fontSize: '15px', lineHeight: 1 }}>📚</span>
+            <span style={{ whiteSpace: 'nowrap' }}>Generated Plans Library</span>
+            <span
+              style={{
+                fontSize: '10.5px',
+                fontWeight: '800',
+                padding: '2px 8px',
+                borderRadius: '9999px',
+                backgroundColor: '#dcfce7',
+                color: '#15803d',
+                border: '1px solid #86efac',
+                whiteSpace: 'nowrap',
+                display: 'inline-flex',
+                alignItems: 'center',
+                lineHeight: 1.2,
+              }}
+            >
               Saved
             </span>
           </button>
         </div>
+
+        {/* Buttons Row 2: Mode Toggle (2 buttons, Middle Center Aligned in Page - Only on Generator Page) */}
+        {activeMainTab === 'generator' && (
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '12px',
+              width: '100%',
+              margin: '10px auto 0 auto',
+              flexWrap: 'wrap',
+            }}
+          >
+            {/* Button 3: Structured Plan */}
+            <button
+              type="button"
+              onClick={() => setGenerationMode('standard')}
+              style={{
+                padding: '10px 20px',
+                borderRadius: '12px',
+                fontSize: '13.5px',
+                fontWeight: '800',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '8px',
+                whiteSpace: 'nowrap',
+                flexShrink: 0,
+                backgroundColor: generationMode === 'standard' ? '#bbf7d0' : '#f0fdf4',
+                color: generationMode === 'standard' ? '#14532d' : '#166534',
+                border: generationMode === 'standard' ? '1.5px solid #22c55e' : '1px solid #86efac',
+                boxShadow: generationMode === 'standard' ? '0 2px 8px -1px rgba(34, 197, 94, 0.35)' : 'none',
+              }}
+            >
+              <span style={{ display: 'inline-flex', alignItems: 'center', fontSize: '15px', lineHeight: 1 }}>📋</span>
+              <span style={{ whiteSpace: 'nowrap' }}>Structured Plan</span>
+            </button>
+
+            {/* Button 4: Real-Time Stream */}
+            <button
+              type="button"
+              onClick={() => setGenerationMode('stream')}
+              style={{
+                padding: '10px 20px',
+                borderRadius: '12px',
+                fontSize: '13.5px',
+                fontWeight: '800',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '8px',
+                whiteSpace: 'nowrap',
+                flexShrink: 0,
+                backgroundColor: generationMode === 'stream' ? '#bbf7d0' : '#f0fdf4',
+                color: generationMode === 'stream' ? '#14532d' : '#166534',
+                border: generationMode === 'stream' ? '1.5px solid #22c55e' : '1px solid #86efac',
+                boxShadow: generationMode === 'stream' ? '0 2px 8px -1px rgba(34, 197, 94, 0.35)' : 'none',
+              }}
+            >
+              <span style={{ display: 'inline-flex', alignItems: 'center', fontSize: '15px', lineHeight: 1 }}>⚡</span>
+              <span style={{ whiteSpace: 'nowrap' }}>Real-Time Stream</span>
+            </button>
+          </div>
+        )}
       </header>
 
       {/* VIEW 1: GENERATED PLANS LIBRARY (VIEW & DELETE OPTIONS) */}
@@ -276,34 +414,7 @@ export default function Home() {
 
       {/* VIEW 2: COMPLETE LESSON PLAN GENERATOR (ALL ORIGINAL ELEMENTS PRESERVED) */}
       {activeMainTab === 'generator' && (
-        <div className="space-y-6">
-          {/* Mode Toggle */}
-          <div className="flex justify-center mb-6">
-            <div className="inline-flex p-1.5 bg-slate-200/80 backdrop-blur-md rounded-2xl border border-slate-300/80">
-              <button
-                type="button"
-                onClick={() => setGenerationMode('standard')}
-                className={`px-5 py-2 rounded-xl text-xs font-bold transition-all ${
-                  generationMode === 'standard'
-                    ? 'bg-white text-indigo-700 shadow-md'
-                    : 'text-slate-600 hover:text-slate-900'
-                }`}
-              >
-                📋 Structured Plan
-              </button>
-              <button
-                type="button"
-                onClick={() => setGenerationMode('stream')}
-                className={`px-5 py-2 rounded-xl text-xs font-bold transition-all ${
-                  generationMode === 'stream'
-                    ? 'bg-white text-indigo-700 shadow-md'
-                    : 'text-slate-600 hover:text-slate-900'
-                }`}
-              >
-                ⚡ Real-Time Stream
-              </button>
-            </div>
-          </div>
+        <div className="space-y-4">
 
           {/* 1. LESSON PLAN GENERATOR BOX */}
           <LessonPlanForm
