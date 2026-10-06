@@ -21,20 +21,20 @@ load_dotenv(os.path.join(PROJECT_ROOT, ".env"))
 logger = logging.getLogger("CurriculumExtractor")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 
-# Safe Import for Peradeniya Lesson Plan Schema
+# Safe Import for LEARN Lesson Plan Schema
 try:
-    from app.schemas.lesson_plan_schema_dto import PeradeniyaLessonPlanDto
+    from app.schemas.lesson_plan_schema_dto import LearnLessonPlanDto
 except ModuleNotFoundError:
     try:
-        from schemas.lesson_plan_schema_dto import PeradeniyaLessonPlanDto
+        from schemas.lesson_plan_schema_dto import LearnLessonPlanDto
     except ModuleNotFoundError:
         try:
-            from lesson_plan_schema_dto import PeradeniyaLessonPlanDto
+            from lesson_plan_schema_dto import LearnLessonPlanDto
         except ModuleNotFoundError:
             try:
-                from schema import LessonPlanSchema as PeradeniyaLessonPlanDto
+                from schema import LessonPlanSchema as LearnLessonPlanDto
             except ModuleNotFoundError:
-                PeradeniyaLessonPlanDto = None
+                LearnLessonPlanDto = None
 
 OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3")
@@ -100,16 +100,16 @@ def extract_structured_lesson_plan(
 ) -> Any:
     """
     Parses unstructured syllabus or exemplar lesson plan text into a clean,
-    standardized Peradeniya Practice Teaching structure using local Ollama.
+    standardized LEARN Practice Teaching structure using local Ollama.
     """
-    if not PeradeniyaLessonPlanDto:
-        raise ImportError("PeradeniyaLessonPlanDto could not be imported from schemas.")
+    if not LearnLessonPlanDto:
+        raise ImportError("LearnLessonPlanDto could not be imported from schemas.")
 
-    pydantic_schema = PeradeniyaLessonPlanDto.model_json_schema()
+    pydantic_schema = LearnLessonPlanDto.model_json_schema()
 
     system_prompt = (
         "You are an expert Sri Lankan Civic Education curriculum normalization engine following the "
-        "University of Peradeniya practice teaching framework. "
+        "LEARN Kandy practice teaching framework. "
         "Your task is to parse unstructured curriculum text into a strictly normalized JSON format. "
         "Extract ALL unique learning outcomes without omitting any items across page boundaries, "
         "and structure classroom steps with full teacher, student, method, aids, and assessment fields."
@@ -157,12 +157,12 @@ JSON Output:"""
     )
 
     try:
-        parsed_plan = PeradeniyaLessonPlanDto.model_validate_json(clean_json_str)
+        parsed_plan = LearnLessonPlanDto.model_validate_json(clean_json_str)
         return parsed_plan
     except Exception as validation_err:
         logger.error("Pydantic validation failed for extracted plan: %s", validation_err)
         logger.debug("Raw JSON received: %s", clean_json_str)
-        raise ValueError(f"Extracted output violated PeradeniyaLessonPlanDto: {validation_err}")
+        raise ValueError(f"Extracted output violated LearnLessonPlanDto: {validation_err}")
 
 
 # =====================================================================

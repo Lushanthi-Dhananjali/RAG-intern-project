@@ -200,7 +200,7 @@ class MultiGradeBoundaryRetriever:
         )
         if results.get("documents"):
             return "\n\n".join(results["documents"])
-        return "Standard University of Peradeniya Lesson Plan Structure"
+        return "Standard LEARN Kandy Lesson Plan Structure"
 
     def auto_extract_unit_competency_levels(
         self,

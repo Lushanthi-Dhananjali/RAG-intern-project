@@ -14,7 +14,7 @@ export interface LessonDevelopmentStep {
   other?: string;
 }
 
-export interface PeradeniyaLessonPlan {
+export interface LearnLessonPlan {
   lesson_plan_number?: string;
   page_no?: string;
   date?: string;
@@ -36,8 +36,9 @@ export interface PeradeniyaLessonPlan {
   supervisors_notes?: string;
 }
 
+
 interface Props {
-  plan: PeradeniyaLessonPlan | any;
+  plan: LearnLessonPlan | any;
   factCheck?: FactCheckReport;
   alignment?: AlignmentReport;
   filename?: string;
@@ -147,7 +148,7 @@ export default function LessonPlanViewer({
             }}
           >
             <span>🏛️</span>
-            <span>Education Science Division • University of Peradeniya</span>
+            <span>Education Science Division • LEARN Kandy</span>
           </div>
           <h3
             style={{

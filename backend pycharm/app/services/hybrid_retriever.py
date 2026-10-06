@@ -1,6 +1,27 @@
+import os
+import sys
 from typing import List, Dict, Any, Optional
-from vector_store import ChromaVectorStore
-from search_engine import BingSearchEngine
+
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(CURRENT_DIR, "../.."))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
+try:
+    from app.core.vector_store import ChromaVectorStore
+except ModuleNotFoundError:
+    try:
+        from core.vector_store import ChromaVectorStore
+    except ModuleNotFoundError:
+        from vector_store import ChromaVectorStore
+
+try:
+    from app.services.search_engine import BingSearchEngine
+except ModuleNotFoundError:
+    try:
+        from services.search_engine import BingSearchEngine
+    except ModuleNotFoundError:
+        from search_engine import BingSearchEngine
 
 
 class HybridRAGRetriever:

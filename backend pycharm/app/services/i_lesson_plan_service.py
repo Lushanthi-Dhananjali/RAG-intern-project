@@ -1,8 +1,15 @@
+import os
+import sys
 from abc import ABC, abstractmethod
 from typing import Optional, Any, Dict, List
 from pydantic import BaseModel, Field
 
-# Support both legacy LessonPlanSchema and updated Peradeniya LessonPlanSchemaDto
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(CURRENT_DIR, "../.."))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
+# Support both legacy LessonPlanSchema and updated LEARN LessonPlanSchemaDto
 try:
     from app.schemas.lesson_plan_schema_dto import LessonPlanSchemaDto
 except ModuleNotFoundError:
@@ -12,7 +19,7 @@ except ModuleNotFoundError:
         try:
             from lesson_plan_schema_dto import LessonPlanSchemaDto
         except ModuleNotFoundError:
-            from app.schemas.schema import LessonPlanSchema as LessonPlanSchemaDto
+            from schema import LessonPlanSchema as LessonPlanSchemaDto
 
 
 # =====================================================================

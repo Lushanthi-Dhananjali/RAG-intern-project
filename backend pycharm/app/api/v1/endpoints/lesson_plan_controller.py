@@ -29,7 +29,7 @@ def get_lesson_plan_service() -> LessonPlanMlService:
     "/generate-by-competency-level",
     response_model=LessonPlanGenerateResponse,
     status_code=status.HTTP_200_OK,
-    summary="Generate Peradeniya 5E Lesson Plan by Competency Level"
+    summary="Generate LEARN 5E Lesson Plan by Competency Level"
 )
 async def generate_by_competency_level(
     payload: GenerateByCompetencyRequest,
@@ -37,7 +37,7 @@ async def generate_by_competency_level(
 ):
     """
     1. Queries ChromaDB for exact NIE syllabus and textbook chunks.
-    2. Enforces Peradeniya 5E structure via prompt templates.
+    2. Enforces LEARN 5E structure via prompt templates.
     3. Runs token-constrained grammar decoding via local Llama 3 (Ollama).
     4. Validates schema and guardrails, returning structured JSON to frontend.
     """

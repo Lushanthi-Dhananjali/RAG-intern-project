@@ -105,4 +105,4 @@ class LessonPlanSchemaDto(BaseModel):
         return self
 
 
-PeradeniyaLessonPlanDto = LessonPlanSchemaDto
+LearnLessonPlanDto = LessonPlanSchemaDto

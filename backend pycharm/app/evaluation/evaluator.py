@@ -70,7 +70,7 @@ ActiveFactCheckReport = FactCheckReport or InternalFactCheckReport
 # =====================================================================
 class RAGFactCheckingAgent:
     """
-    Guardrail Agent that audits whether a generated Peradeniya LessonPlanSchema
+    Guardrail Agent that audits whether a generated LEARN LessonPlanSchema
     is strictly grounded in the official Teacher Instructional Guide (TIG) and Textbook context.
     Measures RAG Faithfulness and prevents curriculum hallucinations.
     """
@@ -82,7 +82,7 @@ class RAGFactCheckingAgent:
     def _extract_plan_text_for_evaluation(self, plan: LessonPlanSchema) -> str:
         """
         Extracts all core pedagogical content and teacher-student interactions
-        from the Peradeniya structured lesson plan.
+        from the LEARN structured lesson plan.
         """
         # Outcomes extraction
         outcomes_list = getattr(plan, "unique_learning_outcome", []) or getattr(plan, "learning_outcomes", [])
@@ -215,7 +215,7 @@ AUDIT INSTRUCTIONS:
 if __name__ == "__main__":
     evaluator = RAGFactCheckingAgent(score_threshold=0.85)
 
-    # Sample Peradeniya structured lesson plan for testing
+    # Sample LEARN structured lesson plan for testing
     sample_plan = LessonPlanSchema(
         page_no="01",
         lesson_plan_number="01",

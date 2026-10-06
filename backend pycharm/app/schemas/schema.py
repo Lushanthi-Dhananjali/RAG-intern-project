@@ -70,7 +70,7 @@ class LessonPlanSchema(BaseModel):
 
     lesson_development_steps: List[LessonStep] = Field(
         ...,
-        description="7-column tabular development steps following University of Peradeniya format"
+        description="7-column tabular development steps following LEARN Kandy format"
     )
 
     summary: str = Field(

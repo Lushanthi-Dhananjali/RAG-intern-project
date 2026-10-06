@@ -88,7 +88,7 @@ export default function LessonPlanForm({
             <span>Lesson Plan Generator</span>
           </h3>
           <p style={{ fontSize: '12px', color: '#64748b', margin: '2px 0 0 0' }}>
-            Configure curriculum parameters to generate an NIE & Peradeniya aligned lesson plan
+            Configure curriculum parameters to generate an NIE & LEARN aligned lesson plan
           </p>
         </div>
       </div>

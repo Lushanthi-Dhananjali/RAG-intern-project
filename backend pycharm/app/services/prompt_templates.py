@@ -3,9 +3,9 @@ import re
 from typing import Optional
 
 # =====================================================================
-# SYSTEM INSTRUCTION: UNIVERSITY OF PERADENIYA PRACTICE TEACHING FORMAT
+# SYSTEM INSTRUCTION: LEARN KANDY PRACTICE TEACHING FORMAT
 # =====================================================================
-PERADENIYA_PRACTICE_TEACHING_PROMPT = """You are an expert Sri Lankan School Teacher and Curriculum Specialist preparing a comprehensive lesson plan for Practice Teaching at the University of Peradeniya.
+LEARN_PRACTICE_TEACHING_PROMPT = """You are an expert Sri Lankan School Teacher and Curriculum Specialist preparing a comprehensive lesson plan for Practice Teaching in Kandy (LEARN).
 
 CRITICAL PEDAGOGICAL & GROUNDING DIRECTIVES:
 1. STRICT TIME ALLOCATION: You MUST use the exact total duration and period count requested (Standard: 1 Period = 40 Minutes).
@@ -27,7 +27,7 @@ CRITICAL PEDAGOGICAL & GROUNDING DIRECTIVES:
 8. OUTPUT: Output ONLY a single, valid JSON object matching the requested schema without markdown code fences or conversational preambles.
 """
 
-PERADENIYA_5E_SYSTEM_PROMPT = PERADENIYA_PRACTICE_TEACHING_PROMPT
+LEARN_5E_SYSTEM_PROMPT = LEARN_PRACTICE_TEACHING_PROMPT
 
 
 def build_lesson_plan_prompt(
@@ -42,7 +42,7 @@ def build_lesson_plan_prompt(
     retrieved_outcomes: Optional[list] = None,
 ) -> str:
     """Constructs an authoritative prompt tailored to the Sri Lankan NIE curriculum
-    and the University of Peradeniya Lesson Plan Structure without generating outcomes.
+    and the LEARN Kandy Lesson Plan Structure without generating outcomes.
     """
     subject_clean = subject.strip()
     grade_clean = grade.strip()
@@ -84,7 +84,7 @@ def build_lesson_plan_prompt(
     else:
         outcomes_ref_text = "Refer to the Learning Outcomes column in the TIG syllabus table."
 
-    # 5. University of Peradeniya JSON Schema Specification (WITHOUT unique_learning_outcome)
+    # 5. LEARN Kandy JSON Schema Specification (WITHOUT unique_learning_outcome)
     schema_spec = {
         "grade": grade_clean,
         "subject": subject_clean,
@@ -146,7 +146,7 @@ def build_lesson_plan_prompt(
     )
 
     prompt = f"""### SYSTEM PEDAGOGICAL INSTRUCTION:
-{PERADENIYA_PRACTICE_TEACHING_PROMPT}
+{LEARN_PRACTICE_TEACHING_PROMPT}
 
 ### CONTEXT FROM TEACHER INSTRUCTIONAL GUIDE (TIG) & PUPIL'S TEXTBOOK:
 {retrieved_context.strip() if retrieved_context.strip() else "Extract and generate strictly based on the Sri Lankan National Curriculum."}

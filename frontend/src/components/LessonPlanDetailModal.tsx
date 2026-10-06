@@ -38,7 +38,7 @@ export default function LessonPlanDetailModal({
           <div className="space-y-0.5">
             <div className="flex items-center gap-2">
               <span className="text-xs font-bold uppercase tracking-wider text-indigo-700 bg-indigo-100/90 px-2.5 py-0.5 rounded-full">
-                Peradeniya Practice Teaching Format
+                LEARN Practice Teaching Format
               </span>
               <span className="text-xs font-mono text-slate-500 bg-slate-200/80 px-2 py-0.5 rounded-md">
                 {filename}

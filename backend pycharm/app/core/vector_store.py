@@ -1,10 +1,30 @@
 import os
+import sys
 import uuid
 from typing import List, Dict, Any, Optional
 import chromadb
 from chromadb.config import Settings
-from schema import LessonPlanSchema
-from embeddings import EmbeddingPipeline
+
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(CURRENT_DIR, "../.."))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
+try:
+    from app.schemas.schema import LessonPlanSchema
+except ModuleNotFoundError:
+    try:
+        from schemas.schema import LessonPlanSchema
+    except ModuleNotFoundError:
+        from schema import LessonPlanSchema
+
+try:
+    from app.core.embeddings import EmbeddingPipeline
+except ModuleNotFoundError:
+    try:
+        from core.embeddings import EmbeddingPipeline
+    except ModuleNotFoundError:
+        from embeddings import EmbeddingPipeline
 
 
 class ChromaVectorStore:

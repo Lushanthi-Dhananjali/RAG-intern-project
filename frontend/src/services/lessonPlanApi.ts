@@ -7,7 +7,7 @@ const API_BASE_URL =
     : (process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000');
 
 // =====================================================================
-// TYPE DEFINITIONS (PERADENIYA PRACTICE TEACHING FORMAT & NIE DTOs)
+// TYPE DEFINITIONS (LEARN PRACTICE TEACHING FORMAT & NIE DTOs)
 // =====================================================================
 export interface LessonDevelopmentStepDto {
   step_number: number;
@@ -37,8 +37,8 @@ export interface LessonPlanDto {
   attachments?: string[];
 }
 
-// Backward-compatible alias for UI components
-export type PeradeniyaLessonPlanDto = LessonPlanDto;
+// Type alias for UI components
+export type LearnLessonPlanDto = LessonPlanDto;
 
 export interface FactCheckReport {
   grounding_score: number;

@@ -20,23 +20,23 @@ load_dotenv(os.path.join(PROJECT_ROOT, ".env"))
 
 logger = logging.getLogger("RAGLessonPlanGenerator")
 
-# Import Schemas (Peradeniya Practice Teaching Format)
+# Import Schemas (LEARN Practice Teaching Format)
 try:
     from app.schemas.lesson_plan_schema_dto import (
-        PeradeniyaLessonPlanDto,
+        LearnLessonPlanDto,
         LessonPlanSchemaDto,
         LessonDevelopmentStepDto
     )
 except ModuleNotFoundError:
     try:
         from schemas.lesson_plan_schema_dto import (
-            PeradeniyaLessonPlanDto,
+            LearnLessonPlanDto,
             LessonPlanSchemaDto,
             LessonDevelopmentStepDto
         )
     except ModuleNotFoundError:
         from lesson_plan_schema_dto import (
-            PeradeniyaLessonPlanDto,
+            LearnLessonPlanDto,
             LessonPlanSchemaDto,
             LessonDevelopmentStepDto
         )
@@ -45,18 +45,18 @@ except ModuleNotFoundError:
 try:
     from app.services.prompt_templates import (
         build_lesson_plan_prompt,
-        PERADENIYA_PRACTICE_TEACHING_PROMPT
+        LEARN_PRACTICE_TEACHING_PROMPT
     )
 except ModuleNotFoundError:
     try:
         from services.prompt_templates import (
             build_lesson_plan_prompt,
-            PERADENIYA_PRACTICE_TEACHING_PROMPT
+            LEARN_PRACTICE_TEACHING_PROMPT
         )
     except ModuleNotFoundError:
         from prompt_templates import (
             build_lesson_plan_prompt,
-            PERADENIYA_PRACTICE_TEACHING_PROMPT
+            LEARN_PRACTICE_TEACHING_PROMPT
         )
 
 # Import Evaluators & Guardrails
@@ -100,10 +100,10 @@ class RAGLessonPlanGenerator:
     Dynamically orchestrates:
     1. Retrieval of multi-tier curriculum boundaries (TIG, Textbook, Exemplars).
     2. Dynamic period scaling (1 to 4 periods) and proportional time distribution.
-    3. Prompt generation enforcing Education Science Division, University of Peradeniya pedagogy.
+    3. Prompt generation enforcing Education Science Division, LEARN Kandy pedagogy.
     4. LLM JSON generation via local Ollama endpoint with strict grammar-based schema decoding.
     5. Programmatic verbatim learning outcome injection from official TIG syllabus matrix.
-    6. Validation via PeradeniyaLessonPlanDto.
+    6. Validation via LearnLessonPlanDto.
     7. Persistence of validated plans with outcomes to the local file system.
     8. Safe fact-checking and pedagogical alignment guardrail evaluations with fallback.
     """
@@ -231,9 +231,9 @@ class RAGLessonPlanGenerator:
             retrieved_outcomes=retrieved_outcomes
         )
 
-    def validate_generation_sequence(self, plan: PeradeniyaLessonPlanDto) -> bool:
+    def validate_generation_sequence(self, plan: LearnLessonPlanDto) -> bool:
         """
-        Performs explicit domain validations for the Peradeniya Practice Teaching structure:
+        Performs explicit domain validations for the LEARN Practice Teaching structure:
         - Checks presence of competence, competence_level, lesson title.
         - Verifies at least 1 unique learning outcome is present (after injection).
         - Verifies the entrance section.
@@ -247,7 +247,7 @@ class RAGLessonPlanGenerator:
         if not plan.competence_level or not plan.competence_level.strip():
             raise ValueError("Validation Failure: 'competence_level' is missing.")
         if not plan.unique_learning_outcome or len(plan.unique_learning_outcome) < 1:
-            raise ValueError("Validation Failure: Peradeniya format requires at least 1 distinct unique learning outcome.")
+            raise ValueError("Validation Failure: LEARN format requires at least 1 distinct unique learning outcome.")
         if not plan.the_entrance or not plan.the_entrance.strip():
             raise ValueError("Validation Failure: 'the_entrance' (introductory phase) is missing.")
         if not plan.lesson_development_steps or len(plan.lesson_development_steps) < 2:
@@ -268,12 +268,12 @@ class RAGLessonPlanGenerator:
 
         return True
 
-    def call_ollama_with_strict_schema(self, prompt: str) -> PeradeniyaLessonPlanDto:
+    def call_ollama_with_strict_schema(self, prompt: str) -> LearnLessonPlanDto:
         """
-        Constrains Ollama decoding grammar to PeradeniyaLessonPlanDto schema.
+        Constrains Ollama decoding grammar to LearnLessonPlanDto schema.
         Increased timeout to 360s and optimized token length to avoid read timeouts.
         """
-        pydantic_json_schema = PeradeniyaLessonPlanDto.model_json_schema()
+        pydantic_json_schema = LearnLessonPlanDto.model_json_schema()
 
         payload = {
             "model": self.model_name,
@@ -287,7 +287,7 @@ class RAGLessonPlanGenerator:
             }
         }
 
-        logger.info("Executing Ollama (%s) generation with strict Peradeniya schema enforcement...", self.model_name)
+        logger.info("Executing Ollama (%s) generation with strict LEARN schema enforcement...", self.model_name)
 
         try:
             response = requests.post(
@@ -310,12 +310,12 @@ class RAGLessonPlanGenerator:
         )
 
         try:
-            validated_plan = PeradeniyaLessonPlanDto.model_validate_json(clean_json_str)
+            validated_plan = LearnLessonPlanDto.model_validate_json(clean_json_str)
             return validated_plan
         except Exception as validation_err:
             logger.error("Schema validation failed: %s", validation_err)
             logger.debug("Raw output received:\n%s", clean_json_str)
-            raise ValueError(f"LLM output violated PeradeniyaLessonPlanDto: {validation_err}")
+            raise ValueError(f"LLM output violated LearnLessonPlanDto: {validation_err}")
 
     def generate_lesson_plan(
             self,
@@ -330,11 +330,11 @@ class RAGLessonPlanGenerator:
             retrieved_context: str = "",
     ) -> LessonPlanSchemaDto:
         """
-        Runs the Peradeniya Practice Teaching RAG pipeline:
+        Runs the LEARN Practice Teaching RAG pipeline:
         1. Derives exact period count (1 to 4) and duration (40m per period).
         2. Retrieves boundary context & dual TIG/Textbook context.
-        3. Builds Peradeniya prompt with step-scaling instructions and reference outcomes.
-        4. Calls local Ollama (Llama 3) with PeradeniyaLessonPlanDto JSON schema.
+        3. Builds LEARN prompt with step-scaling instructions and reference outcomes.
+        4. Calls local Ollama (Llama 3) with LearnLessonPlanDto JSON schema.
         5. Injects verbatim retrieved learning outcomes directly.
         6. Validates sequence completeness and auto-balances pacing.
         7. Saves fully populated JSON to disk.
@@ -394,7 +394,7 @@ class RAGLessonPlanGenerator:
         if retrieved_outcomes and len(retrieved_outcomes) > 0:
             validated_plan.unique_learning_outcome = retrieved_outcomes
 
-        # 5. Validate sequence completeness against Peradeniya domain constraints (after outcomes are attached)
+        # 5. Validate sequence completeness against LEARN domain constraints (after outcomes are attached)
         self.validate_generation_sequence(validated_plan)
 
         # 6. Persist generated plan (including outcomes) to file system (JSON)
@@ -457,7 +457,7 @@ class RAGLessonPlanGenerator:
             periods: int = 1,
             time_slot: Optional[str] = None,
             duration_minutes: Optional[int] = None
-    ) -> List[PeradeniyaLessonPlanDto]:
+    ) -> List[LearnLessonPlanDto]:
         print("\n=======================================================")
         print(f"🔎 Scanning Unit: '{unit_query}' [{grade_level} - {subject}]")
         print("=======================================================")
@@ -474,7 +474,7 @@ class RAGLessonPlanGenerator:
 
         print(f"📋 Found {len(competency_levels)} Competency Levels to process: {competency_levels}\n")
 
-        generated_plans: List[PeradeniyaLessonPlanDto] = []
+        generated_plans: List[LearnLessonPlanDto] = []
 
         for index, level in enumerate(competency_levels, start=1):
             print(f"[{index}/{len(competency_levels)}] Processing Competency Level: {level}...")
@@ -544,7 +544,7 @@ if __name__ == "__main__":
         )
 
         print("\n" + "=" * 80)
-        print("🎉 GENERATED PERADENIYA PRACTICE TEACHING LESSON PLAN")
+        print("🎉 GENERATED LEARN KANDY PRACTICE TEACHING LESSON PLAN")
         print("=" * 80)
         print(f"🏷️ Lesson Title: {plan.lesson}")
         print(f"🏛️ Subject: {plan.subject}")

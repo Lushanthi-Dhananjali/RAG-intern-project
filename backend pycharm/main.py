@@ -27,7 +27,7 @@ try:
     from config import settings
 except ModuleNotFoundError:
     class FallbackSettings:
-        APP_NAME: str = "NIE Curriculum & Peradeniya Practice Teaching Lesson Plan Engine"
+        APP_NAME: str = "NIE Curriculum & LEARN Practice Teaching Lesson Plan Engine"
         APP_ENV: str = "development"
         PORT: int = 8000
         HOST: str = "0.0.0.0"
@@ -197,7 +197,7 @@ class UnitGenerateResponse(BaseModel):
 # =====================================================================
 app = FastAPI(
     title=getattr(settings, "APP_NAME", "NIE Curriculum RAG Lesson Plan Engine"),
-    description="Automated Peradeniya Practice Teaching Lesson Plan Generator with dynamic period scaling and local Llama 3.",
+    description="Automated LEARN Practice Teaching Lesson Plan Generator with dynamic period scaling and local Llama 3.",
     version="1.0.0"
 )
 
@@ -261,7 +261,7 @@ async def root():
         "service": getattr(settings, "APP_NAME", "NIE Curriculum RAG Lesson Plan Engine"),
         "environment": getattr(settings, "APP_ENV", "development"),
         "engine": "Ollama / Llama 3",
-        "pedagogy": "University of Peradeniya Practice Teaching Framework",
+        "pedagogy": "LEARN Kandy Practice Teaching Framework",
         "version": "1.0.0",
         "docs_url": "/docs"
     }
@@ -310,7 +310,7 @@ async def get_competencies(
     response_model=CompetencyLevelGenerateResponse,
     status_code=status.HTTP_200_OK,
     tags=["Lesson Plan Generation"],
-    summary="Generate Peradeniya Lesson Plan by Competency Level with Dynamic Periods"
+    summary="Generate LEARN Lesson Plan by Competency Level with Dynamic Periods"
 )
 async def generate_by_competency_level(
     request: GenerateLessonPlanRequest,

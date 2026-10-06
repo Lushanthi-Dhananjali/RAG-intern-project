@@ -20,7 +20,7 @@ router = APIRouter(
 
 
 class SavePlanRequest(BaseModel):
-    plan: Dict[str, Any] = Field(..., description="Full Peradeniya / NIE lesson plan JSON object")
+    plan: Dict[str, Any] = Field(..., description="Full LEARN / NIE lesson plan JSON object")
     filename: Optional[str] = Field(default=None, description="Optional custom filename e.g. Grade_8_comp_8_1_1.json")
 
 
@@ -86,7 +86,7 @@ async def get_plan_by_competency_endpoint(
     "/{filename}",
     response_model=Dict[str, Any],
     status_code=status.HTTP_200_OK,
-    summary="Get full details and Peradeniya table JSON of a specific generated plan"
+    summary="Get full details and LEARN table JSON of a specific generated plan"
 )
 async def get_plan_by_filename(filename: str):
     """

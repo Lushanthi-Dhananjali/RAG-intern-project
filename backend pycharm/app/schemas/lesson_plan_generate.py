@@ -1,7 +1,7 @@
 from typing import Optional, Union
 from pydantic import BaseModel, Field
 
-# Imports for both the legacy C# DTO format and the native Peradeniya schema
+# Imports for both the legacy C# DTO format and the native LEARN schema
 try:
     from app.schemas.schema import LessonPlanSchema
 except ModuleNotFoundError:
@@ -32,7 +32,7 @@ class LessonPlanGenerateRequest(BaseModel):
 class LessonPlanGenerateResponse(BaseModel):
     lesson_plan: Union[LessonPlanSchema, LessonPlanSchemaDto] = Field(
         default_factory=LessonPlanSchema,
-        description="Generated Peradeniya-format or legacy structured lesson plan"
+        description="Generated LEARN-format or legacy structured lesson plan"
     )
     fact_check_report: Optional[FactCheckReportDto] = Field(
         default=None,

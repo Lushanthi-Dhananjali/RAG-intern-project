@@ -494,7 +494,7 @@ export default function Home() {
                   </h4>
                   <p style={{ fontSize: '13px', color: '#64748b', maxWidth: '480px', margin: '0 auto', lineHeight: '1.5' }}>
                     AI is retrieving official NIE curriculum guidelines, constructing teacher-student activities,
-                    and structuring the Peradeniya 5-column lesson plan.
+                    and structuring the LEARN 5-column lesson plan.
                   </p>
                 </div>
                 {/* Visual Step Progress Badges */}
@@ -506,7 +506,7 @@ export default function Home() {
                     🎯 2. Bloom's Taxonomy Outcomes
                   </span>
                   <span style={{ fontSize: '11px', fontWeight: '700', padding: '4px 10px', borderRadius: '9999px', backgroundColor: '#e0e7ff', color: '#4338ca', border: '1px solid #c7d2fe' }}>
-                    ⏱️ 3. Peradeniya Multi-Period Table
+                    ⏱️ 3. LEARN Multi-Period Table
                   </span>
                 </div>
               </div>
@@ -572,7 +572,7 @@ export default function Home() {
                       }}
                     >
                       <span>📄</span>
-                      <span>Peradeniya Table Viewer</span>
+                      <span>LEARN Table Viewer</span>
                     </button>
                     <button
                       type="button"
@@ -597,11 +597,11 @@ export default function Home() {
                     </button>
                   </div>
                   <span style={{ fontSize: '11px', color: '#64748b', fontWeight: '600' }}>
-                    Peradeniya Practice Teaching Layout
+                    LEARN Practice Teaching Layout
                   </span>
                 </div>
 
-                {/* Tab 1: Full Peradeniya Practice Teaching Viewer */}
+                {/* Tab 1: Full LEARN Practice Teaching Viewer */}
                 {activeViewTab === 'viewer' && (
                   <LessonPlanViewer
                     plan={planData.lesson_plan}
@@ -675,7 +675,7 @@ export default function Home() {
                 </div>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', justifyContent: 'center', marginTop: '4px' }}>
                   <span style={{ fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '9999px', backgroundColor: '#f8fafc', color: '#64748b', border: '1px solid #e2e8f0' }}>
-                    🏛️ University of Peradeniya Format
+                    🏛️ LEARN Kandy Format
                   </span>
                   <span style={{ fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '9999px', backgroundColor: '#f8fafc', color: '#64748b', border: '1px solid #e2e8f0' }}>
                     ⏱️ Multi-Period Scaling (40 - 160 min)
