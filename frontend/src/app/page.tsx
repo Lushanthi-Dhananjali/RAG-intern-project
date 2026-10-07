@@ -542,7 +542,7 @@ export default function Home() {
               </div>
             ) : planData ? (
               /* State C: Generated Lesson Plan Displayed (Standard Mode) */
-              <div className="space-y-3" style={{ maxWidth: '860px', margin: '0 auto', width: '100%' }}>
+              <div style={{ maxWidth: '860px', margin: '0 auto', width: '100%', display: 'flex', flexDirection: 'column' }}>
                 {/* Tab Switcher between Viewer and Raw Editor */}
                 <div
                   style={{
@@ -550,6 +550,7 @@ export default function Home() {
                     alignItems: 'center',
                     justifyContent: 'space-between',
                     padding: '0 4px',
+                    marginBottom: '16px',
                   }}
                 >
                   <div style={{ display: 'flex', gap: '8px' }}>
@@ -557,7 +558,7 @@ export default function Home() {
                       type="button"
                       onClick={() => setActiveViewTab('viewer')}
                       style={{
-                        padding: '6px 14px',
+                        padding: '7px 16px',
                         borderRadius: '10px',
                         fontSize: '12px',
                         fontWeight: '700',
@@ -565,6 +566,7 @@ export default function Home() {
                         border: 'none',
                         backgroundColor: activeViewTab === 'viewer' ? '#4f46e5' : '#e2e8f0',
                         color: activeViewTab === 'viewer' ? '#ffffff' : '#334155',
+                        boxShadow: activeViewTab === 'viewer' ? '0 2px 6px rgba(79, 70, 229, 0.25)' : 'none',
                         transition: 'all 0.2s',
                         display: 'inline-flex',
                         alignItems: 'center',
@@ -578,7 +580,7 @@ export default function Home() {
                       type="button"
                       onClick={() => setActiveViewTab('editor')}
                       style={{
-                        padding: '6px 14px',
+                        padding: '7px 16px',
                         borderRadius: '10px',
                         fontSize: '12px',
                         fontWeight: '700',
@@ -586,6 +588,7 @@ export default function Home() {
                         border: 'none',
                         backgroundColor: activeViewTab === 'editor' ? '#4f46e5' : '#e2e8f0',
                         color: activeViewTab === 'editor' ? '#ffffff' : '#334155',
+                        boxShadow: activeViewTab === 'editor' ? '0 2px 6px rgba(79, 70, 229, 0.25)' : 'none',
                         transition: 'all 0.2s',
                         display: 'inline-flex',
                         alignItems: 'center',
@@ -603,29 +606,43 @@ export default function Home() {
 
                 {/* Tab 1: Full LEARN Practice Teaching Viewer */}
                 {activeViewTab === 'viewer' && (
-                  <LessonPlanViewer
-                    plan={planData.lesson_plan}
-                    factCheck={planData.fact_check_report}
-                    alignment={planData.alignment_report}
-                    filename={currentPlanFilename || undefined}
-                    onEditInGenerator={() => setActiveViewTab('editor')}
-                    onDeletePlan={currentPlanFilename ? () => setIsDeleteModalOpen(true) : undefined}
-                  />
+                  <>
+                    <LessonPlanViewer
+                      plan={planData.lesson_plan}
+                      factCheck={planData.fact_check_report}
+                      alignment={planData.alignment_report}
+                      filename={currentPlanFilename || undefined}
+                      onEditInGenerator={() => setActiveViewTab('editor')}
+                      onDeletePlan={currentPlanFilename ? () => setIsDeleteModalOpen(true) : undefined}
+                    />
+
+                    {/* Delete Lesson Plan Box: Directly below View Lesson Plan with a small gap, Middle Center Aligned */}
+                    <DeleteConfirmModal
+                      isOpen={isDeleteModalOpen}
+                      filename={currentPlanFilename || ''}
+                      planTitle={planData?.lesson_plan?.lesson || planData?.lesson_plan?.competence || ''}
+                      grade={planData?.lesson_plan?.grade}
+                      subject={planData?.lesson_plan?.subject}
+                      competenceLevel={planData?.lesson_plan?.competence_level}
+                      timeAllocation={planData?.lesson_plan?.time_allocation}
+                      isDeleting={isDeleting}
+                      onConfirm={handleDeleteCurrentPlan}
+                      onCancel={() => setIsDeleteModalOpen(false)}
+                    />
+                  </>
                 )}
 
                 {/* Tab 2: Interactive Structural Editor */}
                 {activeViewTab === 'editor' && (
-                  <div style={{ maxWidth: '860px', margin: '0 auto', width: '100%' }}>
-                    <StructuralEditor
-                      initialPlan={planData.lesson_plan as any}
-                      filename={currentPlanFilename || undefined}
-                      onSave={(updated) => {
-                        setPlanData((prev) => (prev ? { ...prev, lesson_plan: updated as any } : null));
-                        setNotificationMessage('Updated lesson plan saved successfully!');
-                        setTimeout(() => setNotificationMessage(null), 3000);
-                      }}
-                    />
-                  </div>
+                  <StructuralEditor
+                    initialPlan={planData.lesson_plan as any}
+                    filename={currentPlanFilename || undefined}
+                    onSave={(updated) => {
+                      setPlanData((prev) => (prev ? { ...prev, lesson_plan: updated as any } : null));
+                      setNotificationMessage('Updated lesson plan saved successfully!');
+                      setTimeout(() => setNotificationMessage(null), 3000);
+                    }}
+                  />
                 )}
               </div>
             ) : (
@@ -690,16 +707,6 @@ export default function Home() {
           </div>
         </div>
       )}
-
-      {/* Delete Confirmation Modal */}
-      <DeleteConfirmModal
-        isOpen={isDeleteModalOpen}
-        filename={currentPlanFilename || ''}
-        planTitle={planData?.lesson_plan?.lesson || planData?.lesson_plan?.competence || ''}
-        isDeleting={isDeleting}
-        onConfirm={handleDeleteCurrentPlan}
-        onCancel={() => setIsDeleteModalOpen(false)}
-      />
     </main>
   );
 }

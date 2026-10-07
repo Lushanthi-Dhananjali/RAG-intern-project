@@ -20,34 +20,34 @@
       "student_activities": "Students will take notes on the importance of public services.",
       "learning_teaching_method": "Exposition",
       "learning_teaching_aids": "Textbook diagrams and charts",
-      "assessment_and_feedback": "Formative assessment check on student understanding.",
+      "assessment_and_feedback": "Formative assessment check",
       "time_minutes": 15,
-      "other": "Blackboard arrangement and setup notes"
+      "other": "Blackboard arrangement"
     },
     {
       "step_number": 2,
       "teacher_activities": "Facilitate student group discussions on the need and importance of public services.",
       "student_activities": "Students will participate in group discussions and share their thoughts on the importance of public services.",
       "learning_teaching_method": "Cooperative Group Work",
-      "learning_teaching_aids": "Task cards and group roles",
-      "assessment_and_feedback": "Monitoring group progress and correcting misconceptions.",
+      "learning_teaching_aids": "Task cards",
+      "assessment_and_feedback": "Monitoring group progress",
       "time_minutes": 30,
-      "other": "Differentiation and group roles"
+      "other": "Differentiation"
     },
     {
       "step_number": 3,
       "teacher_activities": "Guide student presentations on the importance of public services.",
       "student_activities": "Students will present their findings and share their thoughts on the importance of public services.",
       "learning_teaching_method": "Student Presentations",
-      "learning_teaching_aids": "Presentation sheets and whiteboard",
-      "assessment_and_feedback": "Peer feedback and teacher clarification.",
+      "learning_teaching_aids": "Presentation sheets",
+      "assessment_and_feedback": "Peer feedback and teacher clarification",
       "time_minutes": 35,
       "other": "None"
     }
   ],
   "summary": "Recap of the importance of public services in our daily lives.",
-  "assessment_and_feedback_whole_lesson": "Summative check on student understanding of the importance of public services.",
-  "post_activity": "Concrete homework assignment on the importance of public services.",
+  "assessment_and_feedback_whole_lesson": "Summative check",
+  "post_activity": "Concrete homework on the importance of public services.",
   "information_sources": [
     "National Institute of Education (NIE) Teacher Instructional Guide",
     "Grade 8 Pupil's Textbook"

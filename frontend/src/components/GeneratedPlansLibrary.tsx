@@ -504,12 +504,28 @@ export default function GeneratedPlansLibrary({
       {/* 2. LESSON PLAN VIEWED DIRECTLY BELOW COMPETENCY LEVEL (IN MATCHING CARD BOX WITH SMALL SPACE) */}
       <div style={{ marginTop: '24px' }}>
         {activePlan ? (
-          <LessonPlanViewer
-            plan={activePlan}
-            filename={activeFilename}
-            onEditInGenerator={onPlanLoadedToViewer}
-            onDeletePlan={() => setIsDeleteModalOpen(true)}
-          />
+          <>
+            <LessonPlanViewer
+              plan={activePlan}
+              filename={activeFilename}
+              onEditInGenerator={onPlanLoadedToViewer}
+              onDeletePlan={() => setIsDeleteModalOpen(true)}
+            />
+
+            {/* 3. DELETE LESSON PLAN BOX: DIRECTLY BELOW VIEW LESSON PLAN WITH SMALL GAP, MIDDLE CENTER ALIGNED */}
+            <DeleteConfirmModal
+              isOpen={isDeleteModalOpen}
+              filename={activeFilename}
+              planTitle={activePlan?.lesson || activePlan?.competence || ''}
+              grade={activePlan?.grade}
+              subject={activePlan?.subject}
+              competenceLevel={activePlan?.competence_level}
+              timeAllocation={activePlan?.time_allocation}
+              isDeleting={isDeleting}
+              onConfirm={handleConfirmDelete}
+              onCancel={() => setIsDeleteModalOpen(false)}
+            />
+          </>
         ) : (
           /* Empty / Placeholder State Box matching View Saved Lesson Plan */
           <div
@@ -558,16 +574,6 @@ export default function GeneratedPlansLibrary({
           </div>
         )}
       </div>
-
-      {/* Delete Confirmation Modal */}
-      <DeleteConfirmModal
-        isOpen={isDeleteModalOpen}
-        filename={activeFilename}
-        planTitle={activePlan?.lesson || activePlan?.competence || ''}
-        isDeleting={isDeleting}
-        onConfirm={handleConfirmDelete}
-        onCancel={() => setIsDeleteModalOpen(false)}
-      />
     </section>
   );
 }
