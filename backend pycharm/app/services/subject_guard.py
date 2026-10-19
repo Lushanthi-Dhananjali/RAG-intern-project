@@ -6,6 +6,7 @@ to Civic Education (Grades 6-9) while safeguarding Science and other subjects.
 
 from typing import Tuple, Optional
 import logging
+import re
 
 logger = logging.getLogger("SubjectGuard")
 
@@ -19,6 +20,23 @@ def normalize_grade(grade_str: str) -> str:
     """Normalizes variations like '8', 'Grade 8', 'grade 8' into standard 'Grade 8'."""
     clean = grade_str.strip().lower().replace("grade", "").strip()
     return f"Grade {clean}" if clean in {"6", "7", "8", "9"} else grade_str.strip()
+
+
+def resolve_civic_grade(grade_str: str, competency_level: str = "") -> str:
+    """Resolve a Civic grade to a supported grade, preferring valid input then competency code."""
+    normalized = normalize_grade(grade_str or "")
+    if normalized.lower() in {f"grade {grade}" for grade in ("6", "7", "8", "9")}:
+        return normalized
+
+    competency_grade = re.match(r"^\s*([6-9])(?:\.|$)", competency_level or "")
+    resolved_grade = competency_grade.group(1) if competency_grade else "8"
+    logger.warning(
+        "Unsupported Civic grade %r; using Grade %s based on competency %r.",
+        grade_str,
+        resolved_grade,
+        competency_level,
+    )
+    return f"Grade {resolved_grade}"
 
 
 def is_civic_creative_pipeline_enabled(subject: str, grade: str) -> bool:

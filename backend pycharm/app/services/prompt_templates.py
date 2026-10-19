@@ -140,6 +140,7 @@ def build_lesson_plan_prompt(
     subject_clean = subject.strip()
     grade_clean = grade.strip()
     is_science = "science" in subject_clean.lower()
+    is_civic_education = subject_clean.casefold() == "civic education"
 
     # Time allocation for a single period plan
     time_allocation_label = f"40 Minutes (Period {current_period} of {total_periods})"
@@ -188,7 +189,9 @@ Cooperative Student-Led Investigation with hands-on task cards and structured pe
                 "student_activities": f"string (Students organize into groups for {student_count} students, review task sheets, assign group roles, and begin investigation)",
                 "learning_teaching_method": "string (e.g., Guided Inquiry, Cooperative Setup)",
                 "learning_teaching_aids": "string (Task cards, problem scenarios, charts, or apparatus)",
-                "assessment_and_feedback": "string (Teacher checks understanding of instructions and group role assignment)",
+                **({} if is_civic_education else {
+                    "assessment_and_feedback": "string (Teacher checks understanding of instructions and group role assignment)"
+                }),
                 "time_minutes": 10,
                 "other": "string (Group seating arrangement, resource distribution notes)",
             },
@@ -198,7 +201,9 @@ Cooperative Student-Led Investigation with hands-on task cards and structured pe
                 "student_activities": "string (Students actively execute the chosen activity—e.g. roleplaying, conducting school inquiry, or analyzing case studies)",
                 "learning_teaching_method": "string (e.g., Roleplay Simulation, Field Investigation, Jigsaw Activity)",
                 "learning_teaching_aids": "string (Activity worksheets, props, observation checklists, or posters)",
-                "assessment_and_feedback": "string (Teacher formatively assesses student collaboration and corrects conceptual misconceptions)",
+                **({} if is_civic_education else {
+                    "assessment_and_feedback": "string (Teacher formatively assesses student collaboration and corrects conceptual misconceptions)"
+                }),
                 "time_minutes": 10,
                 "other": "string (Differentiation for mixed abilities, timekeeping reminders)",
             },
@@ -208,20 +213,28 @@ Cooperative Student-Led Investigation with hands-on task cards and structured pe
                 "student_activities": "string (Student group spokespersons present observations, compare findings with other groups, and record peer feedback)",
                 "learning_teaching_method": "string (Student Presentations & Synthesis Discussion)",
                 "learning_teaching_aids": "string (Presentation boards, student charts, whiteboard)",
-                "assessment_and_feedback": "string (Peer evaluation and teacher reinforcement of core learning outcomes)",
+                **({} if is_civic_education else {
+                    "assessment_and_feedback": "string (Peer evaluation and teacher reinforcement of core learning outcomes)"
+                }),
                 "time_minutes": 10,
                 "other": "None",
             },
         ],
         "summary": "string (Recap of key student discoveries and core concepts formulated during the lesson)",
         "assessment_and_feedback_whole_lesson": (
-            "string (Creative 5-minute active check—e.g. 2-line rhyming verse reciting core duties, rapid sketch review, freeze frame, or pass-the-parcel quiz)"
+            "string (Generated 3-minute active assessment; the summary and assessment together complete the final 5-minute closure)"
+            if is_civic_education
+            else "string (Creative 5-minute active check—e.g. 2-line rhyming verse reciting core duties, rapid sketch review, freeze frame, or pass-the-parcel quiz)"
         ),
         "post_activity": "string (Follow-up inquiry, personal reflection, or observation to bring to the next period)",
-        "information_sources": [
-            "National Institute of Education (NIE) Teacher Instructional Guide",
-            f"{grade_clean} Pupil's Textbook",
-        ],
+        "information_sources": (
+            []
+            if is_civic_education
+            else [
+                "National Institute of Education (NIE) Teacher Instructional Guide",
+                f"{grade_clean} Pupil's Textbook",
+            ]
+        ),
         "attachments": [
             "string (Concrete title of the activity sheet, roleplay cue cards, or observation checklist used)"
         ],
@@ -268,10 +281,12 @@ Cooperative Student-Led Investigation with hands-on task cards and structured pe
    - 'lesson_development_steps': Must produce 2 or 3 distinct student-centered steps.
      * Each step's 'time_minutes' must be a clean multiple of 5 (e.g., 10, 10, 10 or 15, 15).
      * The SUM of all development steps MUST EQUAL EXACTLY 30 MINUTES.
-   - 'assessment_and_feedback_whole_lesson': Must provide a creative, active evaluation lasting EXACTLY 5 minutes (e.g., 2-line rhyming verse reciting core duties, rapid sketch review, freeze frame tableau, pass-the-parcel quiz).
-   - TOTAL PERIOD DURATION: 5m (Entrance) + 30m (Development) + 5m (Assessment) = 40 MINUTES.
+   - 'assessment_and_feedback_whole_lesson': {"Must provide a generated 3-minute active evaluation; together with the 2-minute summary this completes the final 5-minute Assessment & Closure." if is_civic_education else "Must provide a creative, active evaluation lasting EXACTLY 5 minutes (e.g., 2-line rhyming verse reciting core duties, rapid sketch review, freeze frame tableau, pass-the-parcel quiz)."}
+   - TOTAL PERIOD DURATION: 5m (Entrance) + 30m (Development) + 5m ({"Summary & Assessment Closure" if is_civic_education else "Assessment"}) = 40 MINUTES.
 7. CLASS ADAPTATION: Explicitly detail group sizing and tasks tailored for {student_count} students.
 8. Return ONLY a single valid JSON object. No Markdown code fences, no conversational preambles or notes.
+{"9. For Civic Education, do not include assessment_and_feedback inside development steps; the backend fills information_sources with retrieved document filenames." if is_civic_education else ""}
+{"10. For Civic Education, write the Entrance introduction and final Assessment & Closure from the supplied curriculum context and allocated outcomes. Return content only, never URLs or links." if is_civic_education else ""}
 
 OUTPUT SCHEMA:
 {json.dumps(schema_spec, indent=2)}

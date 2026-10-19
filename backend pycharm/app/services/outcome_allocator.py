@@ -40,9 +40,6 @@ def clean_bullet(text: str) -> str:
     """
     cleaned = re.sub(r"\s+", " ", text).strip()
     cleaned = re.sub(r"^[\u2022\u2023\u25E6\u2043\u2219\*\-\–\—\d+\.]\s*", "", cleaned).strip()
-    cleaned = re.sub(r"\s*\([^)]*plan the lesson[^)]*\)", "", cleaned, flags=re.IGNORECASE).strip()
-    if cleaned and not cleaned.endswith((".", ";")):
-        cleaned += "."
     return cleaned
 
 
@@ -103,6 +100,127 @@ def extract_verbatim_tig_outcomes(tig_text: str, competency_level: str = "") -> 
                     outcomes.append(c)
 
     logger.info("Extracted %d verbatim outcome(s) for Competency Level %s", len(outcomes), competency_level)
+    return outcomes
+
+
+def extract_civic_tig_learning_outcomes(
+    tig_text: str,
+    competency_level: str,
+) -> List[str]:
+    """Extract only the selected competency's official TIG Learning Outcomes section."""
+    if not tig_text or not competency_level.strip():
+        return []
+
+    level = re.escape(competency_level.strip())
+    competency_header = re.compile(
+        r"^\s*Competency\s*Level\s*[:;]?\s*(?:\n\s*[:;]?\s*)?"
+        r"(\d+(?:\.\d+)+)\s*$",
+        re.IGNORECASE | re.MULTILINE,
+    )
+    headers = list(competency_header.finditer(tig_text))
+    target_header = next(
+        (header for header in headers if header.group(1) == competency_level.strip()),
+        None,
+    )
+    if target_header is None:
+        inline_header = re.search(
+            rf"^\s*Competency\s*Level\s*[:;]?\s*{level}\s*$",
+            tig_text,
+            re.IGNORECASE | re.MULTILINE,
+        )
+        if inline_header is None:
+            return []
+        section_start = inline_header.start()
+        section_end = len(tig_text)
+    else:
+        section_start = target_header.start()
+        next_header = next(
+            (
+                header
+                for header in headers
+                if header.start() > target_header.start()
+                and header.group(1) != competency_level.strip()
+            ),
+            None,
+        )
+        section_end = next_header.start() if next_header else len(tig_text)
+
+    competency_text = tig_text[section_start:section_end]
+    lines = competency_text.splitlines()
+    outcome_header = re.compile(
+        r"^\s*(?:learning\s+outcomes?|specific\s+outcomes?)\s*:?\s*$",
+        re.IGNORECASE,
+    )
+    section_stop = re.compile(
+        r"^\s*(?:instructions?\s+for\s+lesson\s+planning|"
+        r"suggested\s+learning\s+activities|subject\s+content|"
+        r"quality\s+inputs?|instructions?\s+for\s+assessment)\b",
+        re.IGNORECASE,
+    )
+    action_verb = re.compile(
+        r"^(?:identif(?:y|ies)|explain(?:s)?|investigat(?:e|es)|present(?:s)?|"
+        r"name(?:s)?|describ(?:e|es)|list(?:s)?|suggest(?:s)?|demonstrat(?:e|es)|"
+        r"analy[sz](?:e|es)|evaluat(?:e|es)|compar(?:e|es)|giv(?:e|es)|"
+        r"express(?:es)?|appreciat(?:e|es)|classif(?:y|ies)|defin(?:e|es)|"
+        r"distinguish(?:es)?|show(?:s)?|build(?:s)?|prepar(?:e|es)|stat(?:e|es)|"
+        r"emphasi[sz](?:e|es)|accept(?:s)?|valu(?:e|es)|mak(?:e|es)|"
+        r"formulat(?:e|es)|construct(?:s)?|illustrat(?:e|es)|observ(?:e|es)|"
+        r"record(?:s)?|draw(?:s)?|calculat(?:e|es)|design(?:s)?|measur(?:e|es)|"
+        r"determin(?:e|es)|conduct(?:s)?|inf(?:er|ers)|predict(?:s)?|"
+        r"verify|verifies|recogniz(?:e|es)|participat(?:e|es)|contribut(?:e|es)|"
+        r"practi[cs](?:e|es)|read(?:s)?|writ(?:e|es)|find(?:s)?|perform(?:s)?|"
+        r"understand(?:s)?|us(?:e|es)|act(?:s)?|take\s+part\s+in)\b",
+        re.IGNORECASE,
+    )
+    bullet = re.compile(r"^\s*[\u2022\u2023\u25E6\u2043\u2219\uFFFD*\-–—]\s*(.*)$")
+
+    in_outcomes = False
+    outcomes: List[str] = []
+    current_outcome = ""
+
+    def append_current() -> None:
+        nonlocal current_outcome
+        outcome = re.sub(r"\s+", " ", current_outcome).strip()
+        outcome = re.sub(r"\s+([.,;:])", r"\1", outcome)
+        if outcome and outcome not in outcomes:
+            outcomes.append(outcome)
+        current_outcome = ""
+
+    for line in lines:
+        stripped = line.strip()
+        if not in_outcomes:
+            if outcome_header.match(stripped):
+                in_outcomes = True
+            continue
+        if section_stop.match(stripped):
+            append_current()
+            break
+        if not stripped or stripped == ":":
+            continue
+
+        bullet_match = bullet.match(line)
+        if bullet_match:
+            bullet_text = bullet_match.group(1).strip()
+            if not bullet_text:
+                continue
+            append_current()
+            current_outcome = bullet_text
+            continue
+
+        if action_verb.match(stripped):
+            append_current()
+            current_outcome = stripped
+        elif current_outcome and stripped in {".", ",", ";"}:
+            current_outcome += stripped
+        elif current_outcome:
+            current_outcome = f"{current_outcome} {stripped}"
+
+    append_current()
+    logger.info(
+        "Extracted %d official Civic Education TIG learning outcome(s) for Competency Level %s",
+        len(outcomes),
+        competency_level,
+    )
     return outcomes
 
 
@@ -208,6 +326,41 @@ class MultiPeriodOutcomeAllocationPlan:
             stage = self.progression_matrix[clamped_p].get(o, "Active Learning Stage")
             lines.append(f"• {o} -> Pedagogical Stage: [{stage}]")
         return "\n".join(lines)
+
+    def restore_period_allocations(self, allocations: Dict[int, List[str]]) -> bool:
+        """Restores a previously saved complete allocation when its outcomes still match."""
+        if set(allocations) != set(range(1, self.total_periods + 1)):
+            return False
+        if any(
+            not isinstance(outcomes, list)
+            or any(outcome not in self.all_outcomes for outcome in outcomes)
+            for outcomes in allocations.values()
+        ):
+            return False
+        if set(outcome for outcomes in allocations.values() for outcome in outcomes) != set(self.all_outcomes):
+            return False
+
+        self.period_allocations = {
+            period: list(allocations[period])
+            for period in range(1, self.total_periods + 1)
+        }
+        stage_names = [
+            "Introduced & Explored (Foundational Inquiry)",
+            "Developed & Investigated (Group Deepening / Active Analysis)",
+            "Practiced & Applied (Simulation / Real-world Application)",
+            "Synthesized & Formatively Assessed (Evaluation & Action Plan)",
+        ]
+        self.progression_matrix = {period: {} for period in range(1, self.total_periods + 1)}
+        for period, outcomes in self.period_allocations.items():
+            stage_index = (
+                0
+                if self.total_periods == 1
+                else int(((period - 1) / max(1, self.total_periods - 1)) * 3)
+            )
+            stage = stage_names[stage_index]
+            for outcome in outcomes:
+                self.progression_matrix[period][outcome] = stage
+        return True
 
 
 def allocate_learning_outcomes_across_periods(

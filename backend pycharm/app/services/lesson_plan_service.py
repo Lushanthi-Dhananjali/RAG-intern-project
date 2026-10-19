@@ -16,6 +16,11 @@ from app.services.i_lesson_plan_service import (
     AlignmentReportDto,
 )
 from app.services.rag_generator import RAGLessonPlanGenerator
+from app.services.generated_plans_manager import (
+    get_competency_period_plans,
+    save_generated_plan,
+)
+from app.services.outcome_allocator import extract_civic_tig_learning_outcomes
 from app.services.multi_grade_retriever import (
     extract_verbatim_tig_outcomes,
     split_outcomes_by_periods,
@@ -26,23 +31,21 @@ from app.services.subject_guard import (
     is_civic_creative_pipeline_enabled,
     enforce_civic_period_boundary,
     normalize_grade,
+    resolve_civic_grade,
 )
 
 # Step 3 Outcome Allocator Engine Import
 try:
     from app.services.outcome_allocator import (
         allocate_learning_outcomes_across_periods,
-        extract_verbatim_tig_outcomes as engine_extract_outcomes,
     )
 except ModuleNotFoundError:
     try:
         from services.outcome_allocator import (
             allocate_learning_outcomes_across_periods,
-            extract_verbatim_tig_outcomes as engine_extract_outcomes,
         )
     except ModuleNotFoundError:
         allocate_learning_outcomes_across_periods = None
-        engine_extract_outcomes = None
 
 try:
     from app.ingestion.extractor import extract_structured_lesson_plan
@@ -212,7 +215,7 @@ class LessonPlanMlService(ILessonPlanMlService):
         Discovers 3 independent, period-aware creative activity options.
         Restricted exclusively to Civic Education (Grades 6-9).
         """
-        normalized_grade = normalize_grade(grade_level)
+        normalized_grade = resolve_civic_grade(grade_level, competency_level)
 
         if not is_civic_creative_pipeline_enabled(subject, normalized_grade):
             raise ValueError(
@@ -231,6 +234,21 @@ class LessonPlanMlService(ILessonPlanMlService):
             competency_level, safe_requested, safe_periods, student_count
         )
 
+        previous_activities = list(previous_period_activities or [])
+        saved_period_plans = get_competency_period_plans(
+            grade=normalized_grade,
+            competency_level=competency_level,
+            subject="Civic Education",
+            total_periods=safe_periods,
+        )
+        for period in range(1, safe_requested + 1):
+            saved_plan = saved_period_plans.get(period, {})
+            if saved_plan.get("total_periods", safe_periods) != safe_periods:
+                continue
+            selected_activity = saved_plan.get("selected_activity")
+            if isinstance(selected_activity, str) and selected_activity.strip():
+                previous_activities.append(selected_activity)
+
         return self.rag_engine.generate_activity_options(
             competency_level=competency_level,
             student_count=student_count,
@@ -240,7 +258,7 @@ class LessonPlanMlService(ILessonPlanMlService):
             subject="Civic Education",
             classroom_environment=classroom_environment or "Standard Classroom",
             accessible_resources=accessible_resources or [],
-            previous_activities=previous_period_activities or []
+            previous_activities=list(dict.fromkeys(previous_activities))
         )
 
     async def generate_lesson_plan_async(
@@ -255,7 +273,11 @@ class LessonPlanMlService(ILessonPlanMlService):
         """
         raw_subject = request.subject or "Civic Education"
         raw_grade = request.grade_level or "Grade 8"
-        normalized_grade = normalize_grade(raw_grade)
+        normalized_grade = (
+            resolve_civic_grade(raw_grade, request.competency_level)
+            if raw_subject.strip().casefold() == "civic education"
+            else normalize_grade(raw_grade)
+        )
 
         is_creative_civic = is_civic_creative_pipeline_enabled(raw_subject, normalized_grade)
 
@@ -310,14 +332,37 @@ class LessonPlanMlService(ILessonPlanMlService):
         )
         tig_chunks = dual_context.get("tig_guidelines", [])
         tb_chunks = dual_context.get("textbook_paragraphs", [])
+        curriculum_sources: List[str] = []
+        for item in tig_chunks + tb_chunks:
+            metadata = item.get("metadata") or {}
+            source = (
+                metadata.get("source_file")
+                or metadata.get("source")
+                or item.get("source")
+            )
+            if not source:
+                continue
+            source_name = os.path.basename(str(source).replace("\\", "/")).strip()
+            if (
+                source_name.casefold().endswith(".pdf")
+                and source_name not in curriculum_sources
+            ):
+                curriculum_sources.append(source_name)
 
         extracted_tig_outcomes: List[str] = []
-        extractor_fn = engine_extract_outcomes or extract_verbatim_tig_outcomes
         for chunk in tig_chunks:
             chunk_content = chunk.get("content", "")
-            found = extractor_fn(chunk_content, target_comp)
-            if len(found) > len(extracted_tig_outcomes):
-                extracted_tig_outcomes = found
+            found = extract_civic_tig_learning_outcomes(chunk_content, target_comp)
+            for outcome in found:
+                if outcome not in extracted_tig_outcomes:
+                    extracted_tig_outcomes.append(outcome)
+
+        if not extracted_tig_outcomes:
+            raise ValueError(
+                f"No official learning outcomes were retrieved for Civic Education "
+                f"{normalized_grade}, Competency Level {target_comp}. "
+                "Check that the curriculum data is available before generating a plan."
+            )
 
         # 4. Generate Deterministic Allocation Matrix
         if allocate_learning_outcomes_across_periods is not None:
@@ -333,6 +378,35 @@ class LessonPlanMlService(ILessonPlanMlService):
                     return period_outcomes_map.get(p, extracted_tig_outcomes)
             allocation_plan = SimplePlan()
 
+        saved_period_plans = get_competency_period_plans(
+            grade=normalized_grade,
+            competency_level=target_comp,
+            subject="Civic Education",
+            total_periods=total_periods,
+        )
+        for saved_plan in saved_period_plans.values():
+            saved_allocation = saved_plan.get("outcome_allocation")
+            if saved_plan.get("total_periods") != total_periods or not isinstance(saved_allocation, dict):
+                continue
+            try:
+                normalized_allocation = {
+                    int(period): outcomes
+                    for period, outcomes in saved_allocation.items()
+                }
+            except (TypeError, ValueError):
+                continue
+            if (
+                hasattr(allocation_plan, "restore_period_allocations")
+                and allocation_plan.restore_period_allocations(normalized_allocation)
+            ):
+                logger.info("Restored saved outcome allocation for Competency Level %s", target_comp)
+                break
+            logger.warning(
+                "Ignoring saved period allocation for Competency Level %s because it no longer "
+                "covers exactly the retrieved official outcomes.",
+                target_comp,
+            )
+
         # 5. Determine whether to generate ALL periods or ONLY the single requested period
         periods_to_generate = (
             [requested_period]
@@ -341,9 +415,6 @@ class LessonPlanMlService(ILessonPlanMlService):
         )
 
         generated_plans: List[LessonPlanSchemaDto] = []
-        output_dir = os.path.join(self.chroma_path, "..", "generated_plans")
-        os.makedirs(output_dir, exist_ok=True)
-
         for p_idx in periods_to_generate:
             assigned_outcomes = allocation_plan.get_outcomes_for_period(p_idx)
             period_time_label = f"40 Minutes (Period {p_idx} of {total_periods})"
@@ -369,26 +440,40 @@ class LessonPlanMlService(ILessonPlanMlService):
                 accessible_resources=getattr(request, "accessible_resources", []),
                 student_count=student_count,
                 current_period=p_idx,
-                total_periods=total_periods
+                total_periods=total_periods,
+                progression_context=(
+                    allocation_plan.get_progression_summary_for_period(p_idx)
+                    if hasattr(allocation_plan, "get_progression_summary_for_period")
+                    else ""
+                )
             )
 
             plan.time_allocation = period_time_label
+            plan.grade = normalized_grade
             plan.lesson = f"{clean_topic} (Period {p_idx})" if total_periods > 1 else clean_topic
             if assigned_outcomes:
                 plan.unique_learning_outcome = assigned_outcomes
+            plan.information_sources = curriculum_sources
+            for step in plan.lesson_development_steps:
+                step.assessment_and_feedback = ""
 
-            # Persist each plan to disk
-            try:
-                sanitized_grade = plan.grade.replace(" ", "_")
-                sanitized_comp = target_comp.replace(".", "_")
-                file_path = os.path.join(
-                    output_dir, f"{sanitized_grade}_comp_{sanitized_comp}_p{p_idx}.json"
-                )
-                with open(file_path, "w", encoding="utf-8") as f:
-                    f.write(plan.model_dump_json(indent=2))
-                logger.info("Successfully persisted Period %d plan to %s", p_idx, file_path)
-            except Exception as file_err:
-                logger.warning("Could not persist Period %d file: %s", p_idx, file_err)
+            plan_data = plan.model_dump(mode="json")
+            plan_data["period_number"] = p_idx
+            plan_data["total_periods"] = total_periods
+            plan_data["outcome_allocation"] = {
+                str(period): allocation_plan.get_outcomes_for_period(period)
+                for period in range(1, total_periods + 1)
+            }
+            plan_data["selected_activity"] = (
+                getattr(request, "custom_teacher_activity", None)
+                if getattr(request, "teacher_mode", "suggested") == "own_approach"
+                else getattr(request, "selected_activity_option", None)
+            )
+            sanitized_grade = plan.grade.replace(" ", "_")
+            sanitized_comp = target_comp.replace(".", "_")
+            filename = f"{sanitized_grade}_comp_{sanitized_comp}_p{p_idx}.json"
+            save_generated_plan(plan_data, filename)
+            logger.info("Persisted Period %d plan to generated-plan library as %s", p_idx, filename)
 
             generated_plans.append(plan)
 

@@ -9,7 +9,7 @@ export interface LessonDevelopmentStep {
   student_activities: string;
   learning_teaching_method: string;
   learning_teaching_aids: string;
-  assessment_and_feedback: string;
+  assessment_and_feedback?: string;
   time_minutes: number;
   other?: string;
 }
@@ -59,13 +59,19 @@ export default function LessonPlanViewer({
   if (!plan) return null;
 
   const summaryText = plan.summary || (plan as any).Summary || '—';
+  const isCivicPlan = String(plan.subject || '').trim().toLocaleLowerCase() === 'civic education';
   const wholeLessonAssessment =
     plan.assessment_and_feedback_whole_lesson ||
     (plan as any).assessmentAndFeedbackWholeLesson ||
     (plan as any).assessment_and_feedback ||
     '—';
   const postActivity = plan.post_activity || (plan as any).postActivity || '—';
-  const informationSources = plan.information_sources || (plan as any).informationSources;
+  const rawInformationSources = plan.information_sources || (plan as any).informationSources;
+  const informationSources = isCivicPlan && Array.isArray(rawInformationSources)
+    ? rawInformationSources
+        .filter((source: unknown): source is string => typeof source === 'string' && /\.pdf$/i.test(source))
+        .map((source: string) => source.split(/[\\/]/).pop() || source)
+    : rawInformationSources;
   const attachmentsList = plan.attachments || (plan as any).Attachments;
 
   // Calculate total development minutes
@@ -184,6 +190,22 @@ export default function LessonPlanViewer({
             )}
           </p>
         </div>
+
+        {plan.selected_activity && (
+          <div
+            style={{
+              backgroundColor: '#eff6ff',
+              border: '1px solid #bfdbfe',
+              borderRadius: '10px',
+              padding: '10px 14px',
+              fontSize: '12px',
+              color: '#1e3a8a',
+            }}
+          >
+            <strong>Selected period activity:</strong>
+            <p style={{ margin: '5px 0 0 0', whiteSpace: 'pre-wrap' }}>{plan.selected_activity}</p>
+          </div>
+        )}
 
         {/* Action Buttons in Header */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
@@ -511,7 +533,7 @@ export default function LessonPlanViewer({
             letterSpacing: '0.05em',
           }}
         >
-          The Entrance (Introduction)
+          {isCivicPlan ? 'The Entrance (Introduction) — 5 Minutes' : 'The Entrance (Introduction)'}
         </label>
         <div
           style={{
@@ -568,7 +590,7 @@ export default function LessonPlanViewer({
                 <th style={{ padding: '10px 12px', minWidth: '160px', borderRight: '1px solid #e2e8f0', fontWeight: '700', color: '#334155', textTransform: 'uppercase', fontSize: '11px' }}>Student Activities</th>
                 <th style={{ padding: '10px 10px', minWidth: '110px', borderRight: '1px solid #e2e8f0', fontWeight: '700', color: '#334155', textTransform: 'uppercase', fontSize: '11px' }}>Method</th>
                 <th style={{ padding: '10px 10px', minWidth: '110px', borderRight: '1px solid #e2e8f0', fontWeight: '700', color: '#334155', textTransform: 'uppercase', fontSize: '11px' }}>Aids</th>
-                <th style={{ padding: '10px 10px', minWidth: '120px', borderRight: '1px solid #e2e8f0', fontWeight: '700', color: '#334155', textTransform: 'uppercase', fontSize: '11px' }}>Assessment & Feedback</th>
+                {!isCivicPlan && <th style={{ padding: '10px 10px', minWidth: '120px', borderRight: '1px solid #e2e8f0', fontWeight: '700', color: '#334155', textTransform: 'uppercase', fontSize: '11px' }}>Assessment & Feedback</th>}
                 <th style={{ padding: '10px 8px', width: '56px', textAlign: 'center', borderRight: '1px solid #e2e8f0', fontWeight: '700', color: '#334155', textTransform: 'uppercase', fontSize: '11px' }}>Time</th>
                 <th style={{ padding: '10px 8px', width: '60px', fontWeight: '700', color: '#334155', textTransform: 'uppercase', fontSize: '11px' }}>Other</th>
               </tr>
@@ -593,9 +615,9 @@ export default function LessonPlanViewer({
                   <td style={{ padding: '10px 10px', borderRight: '1px solid #e2e8f0', color: '#475569', fontSize: '11px' }}>
                     {step.learning_teaching_aids}
                   </td>
-                  <td style={{ padding: '10px 10px', borderRight: '1px solid #e2e8f0', color: '#475569', fontSize: '11px' }}>
+                  {!isCivicPlan && <td style={{ padding: '10px 10px', borderRight: '1px solid #e2e8f0', color: '#475569', fontSize: '11px' }}>
                     {step.assessment_and_feedback}
-                  </td>
+                  </td>}
                   <td style={{ padding: '10px 8px', textAlign: 'center', borderRight: '1px solid #e2e8f0', fontWeight: '700', fontFamily: 'monospace', color: '#0f172a' }}>
                     {step.time_minutes}m
                   </td>
@@ -652,7 +674,7 @@ export default function LessonPlanViewer({
               letterSpacing: '0.05em',
             }}
           >
-            Assessment & Feedback (Whole Lesson)
+            {isCivicPlan ? 'Assessment & Closure (5 Minutes)' : 'Assessment & Feedback (Whole Lesson)'}
           </label>
           <div
             style={{
@@ -701,9 +723,9 @@ export default function LessonPlanViewer({
         </div>
       </div>
 
-      {/* 9. Information Sources & Attachments Grid */}
+      {/* 9. Retrieved curriculum document names and attachments */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
-        <div>
+        {(!isCivicPlan || (Array.isArray(informationSources) && informationSources.length > 0)) && <div>
           <label
             style={{
               display: 'block',
@@ -734,14 +756,16 @@ export default function LessonPlanViewer({
                 ))}
               </ul>
             ) : (
-              <p style={{ margin: 0 }}>
-                {typeof informationSources === 'string' && informationSources.trim()
-                  ? informationSources
-                  : 'NIE Teacher Guide & Syllabus Guidelines'}
-              </p>
+              isCivicPlan ? null : (
+                <p style={{ margin: 0 }}>
+                  {typeof informationSources === 'string' && informationSources.trim()
+                    ? informationSources
+                    : 'NIE Teacher Guide & Syllabus Guidelines'}
+                </p>
+              )
             )}
           </div>
-        </div>
+        </div>}
 
         <div>
           <label

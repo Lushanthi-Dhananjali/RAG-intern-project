@@ -215,6 +215,8 @@ function SinglePeriodCard({
   totalPeriods: number;
   onEdit?: (plan: LessonPlanSchemaDto) => void;
 }) {
+  const isCivicPlan = plan.subject.trim().toLocaleLowerCase() === "civic education";
+
   return (
     <div className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-xs space-y-6">
       {/* 4-Column Metadata Header */}
@@ -316,33 +318,35 @@ function SinglePeriodCard({
                 </span>
               </div>
 
-              {/* 2-Column: Teacher Actions vs Student Actions */}
+              {/* 2-Column: Teacher Activities vs Student Activities */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
                 <div className="bg-slate-50/60 p-3 rounded-lg border border-slate-100">
                   <strong className="text-slate-600 block mb-1 font-bold">
-                    👨‍🏫 Teacher Facilitation (TIG Scaffolding):
+                    Teacher Activities:
                   </strong>
                   <p className="text-slate-700 leading-relaxed">{step.teacher_activities}</p>
                 </div>
 
                 <div className="bg-emerald-50/30 p-3 rounded-lg border border-emerald-100">
                   <strong className="text-emerald-900 block mb-1 font-bold">
-                    👥 Student Group Investigations:
+                    Student Activities:
                   </strong>
                   <p className="text-slate-700 leading-relaxed">{step.student_activities}</p>
                 </div>
               </div>
 
-              {/* Aids & Formative Check */}
+              {/* Aids and period time */}
               <div className="flex flex-wrap items-center justify-between pt-2 border-t border-slate-100 text-[11px] text-slate-500 gap-2">
                 <div>
-                  <strong className="text-slate-700 font-semibold">📦 Aids / Materials: </strong>
+                  <strong className="text-slate-700 font-semibold">Learning and Teaching Aids: </strong>
                   {step.learning_teaching_aids || "Standard Classroom Resources"}
                 </div>
-                <div>
-                  <strong className="text-slate-700 font-semibold">🔍 Formative Feedback: </strong>
-                  {step.assessment_and_feedback}
-                </div>
+                {!isCivicPlan && step.assessment_and_feedback && (
+                  <div>
+                    <strong className="text-slate-700 font-semibold">Assessment & Feedback: </strong>
+                    {step.assessment_and_feedback}
+                  </div>
+                )}
               </div>
             </div>
           ))}
@@ -355,7 +359,7 @@ function SinglePeriodCard({
       <div className="p-4 rounded-xl border border-indigo-200 bg-indigo-50/40 space-y-1.5">
         <div className="flex items-center justify-between">
           <h4 className="text-xs font-extrabold uppercase tracking-wide text-indigo-950 flex items-center gap-1.5">
-            <span>⚡ Phase 3: Creative Student Assessment</span>
+            <span>⚡ Assessment & Closure</span>
             <span className="text-[10px] font-normal text-indigo-700">(Active Review / Jingle / Freeze Frame / Quiz)</span>
           </h4>
           <span className="text-[10px] font-extrabold px-2 py-0.5 bg-indigo-100 text-indigo-900 rounded-md border border-indigo-200">

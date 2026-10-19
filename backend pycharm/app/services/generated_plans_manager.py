@@ -167,6 +167,32 @@ def get_generated_plan(filename: str) -> Optional[Dict[str, Any]]:
         return None
 
 
+def get_competency_period_plans(
+    grade: str,
+    competency_level: str,
+    subject: str,
+    total_periods: int,
+) -> Dict[int, Dict[str, Any]]:
+    """Loads saved period plans for one competency sequence, if they exist."""
+    grade_part = grade.strip().replace(" ", "_")
+    competency_part = competency_level.strip().replace(".", "_")
+    plans: Dict[int, Dict[str, Any]] = {}
+
+    for period in range(1, min(max(total_periods, 1), 4) + 1):
+        filename = f"{grade_part}_comp_{competency_part}_p{period}.json"
+        plan_info = get_generated_plan(filename)
+        plan = plan_info.get("plan") if plan_info else None
+        if not isinstance(plan, dict):
+            continue
+        if str(plan.get("grade", "")).strip().lower() != grade.strip().lower():
+            continue
+        if str(plan.get("subject", "")).strip().lower() != subject.strip().lower():
+            continue
+        plans[period] = plan
+
+    return plans
+
+
 def delete_generated_plan(filename: str) -> bool:
     """
     Deletes the target generated plan JSON file safely from the storage directory.
@@ -259,4 +285,3 @@ def find_plan_by_competency(
             return plan_info
 
     return None
-

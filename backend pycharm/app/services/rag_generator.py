@@ -79,6 +79,14 @@ except ModuleNotFoundError:
         build_period_options_prompt = None
         generate_fallback_options = None
 
+try:
+    from app.services.outcome_allocator import extract_civic_tig_learning_outcomes
+except ModuleNotFoundError:
+    try:
+        from services.outcome_allocator import extract_civic_tig_learning_outcomes
+    except ModuleNotFoundError:
+        extract_civic_tig_learning_outcomes = None
+
 # Import Step 6 Mode B Teacher Scaffolding Engine
 try:
     from app.services.teacher_mode_engine import build_mode_b_scaffolding_prompt
@@ -223,11 +231,24 @@ class RAGLessonPlanGenerator:
         # 2. Extract Verbatim Outcomes
         extracted_outcomes: List[str] = []
         for chunk in tig_chunks:
-            found = extract_verbatim_tig_outcomes(chunk.get("content", ""), clean_level)
-            if len(found) > len(extracted_outcomes):
-                extracted_outcomes = found
+            found = (
+                extract_civic_tig_learning_outcomes(chunk.get("content", ""), clean_level)
+                if extract_civic_tig_learning_outcomes is not None
+                else []
+            )
+            for outcome in found:
+                if outcome not in extracted_outcomes:
+                    extracted_outcomes.append(outcome)
+
+        if not extracted_outcomes:
+            raise ValueError(
+                f"No official learning outcomes were retrieved for Civic Education "
+                f"{grade_level}, Competency Level {clean_level}. "
+                "Activity options cannot be generated without curriculum outcomes."
+            )
 
         # 3. Retrieve ONLY outcomes allocated for the requested period
+        progression_context = ""
         if allocate_learning_outcomes_across_periods is not None:
             allocation_plan = allocate_learning_outcomes_across_periods(
                 all_outcomes=extracted_outcomes,
@@ -235,6 +256,7 @@ class RAGLessonPlanGenerator:
                 competency_level=clean_level
             )
             period_outcomes = allocation_plan.get_outcomes_for_period(safe_requested)
+            progression_context = allocation_plan.get_progression_summary_for_period(safe_requested)
         else:
             period_outcomes = extracted_outcomes
 
@@ -252,7 +274,8 @@ class RAGLessonPlanGenerator:
                 grade_level=grade_level,
                 classroom_environment=classroom_environment,
                 accessible_resources=accessible_resources,
-                previous_activities=previous_activities
+                previous_activities=previous_activities,
+                progression_context=progression_context
             )
         else:
             prompt = build_activity_options_prompt(
@@ -362,7 +385,8 @@ class RAGLessonPlanGenerator:
         selected_activity_strategy: Optional[str] = None,
         student_count: int = 35,
         current_period: int = 1,
-        total_periods: int = 1
+        total_periods: int = 1,
+        progression_context: str = "",
     ) -> str:
         exemplar_chunks = [
             item.get("content", "")
@@ -552,7 +576,8 @@ class RAGLessonPlanGenerator:
         accessible_resources: Optional[List[str]] = None,
         student_count: int = 35,
         current_period: int = 1,
-        total_periods: int = 1
+        total_periods: int = 1,
+        progression_context: str = "",
     ) -> LessonPlanSchemaDto:
         """
         Step 7 & 8: Single-Period 40-Minute Assembly with Deterministic Guardrails.
@@ -578,9 +603,27 @@ class RAGLessonPlanGenerator:
         # 2. Extract Outcomes if Missing
         if not retrieved_outcomes:
             for chunk in tig_chunks:
-                found = extract_verbatim_tig_outcomes(chunk.get("content", ""), competency_level)
+                if subject.strip().casefold() == "civic education":
+                    found = (
+                        extract_civic_tig_learning_outcomes(
+                            chunk.get("content", ""), competency_level
+                        )
+                        if extract_civic_tig_learning_outcomes is not None
+                        else []
+                    )
+                else:
+                    found = extract_verbatim_tig_outcomes(
+                        chunk.get("content", ""), competency_level
+                    )
                 if len(found) > len(retrieved_outcomes or []):
                     retrieved_outcomes = found
+
+        if subject.strip().casefold() == "civic education" and not retrieved_outcomes:
+            raise ValueError(
+                f"No official learning outcomes were retrieved for Civic Education "
+                f"{grade_level}, Competency Level {competency_level}. "
+                "A lesson plan cannot be generated without Teacher Guide outcomes."
+            )
 
         # 3. Strategy Resolution (Mode A selected card vs. Mode B custom input)
         effective_activity = (
@@ -602,7 +645,8 @@ class RAGLessonPlanGenerator:
                 lesson_topic=lesson_topic,
                 grade_level=grade_level,
                 classroom_environment=classroom_environment,
-                accessible_resources=accessible_resources
+                accessible_resources=accessible_resources,
+                progression_context=progression_context
             )
         elif build_single_period_assembly_prompt is not None:
             prompt = build_single_period_assembly_prompt(
@@ -618,7 +662,8 @@ class RAGLessonPlanGenerator:
                 classroom_environment=classroom_environment,
                 accessible_resources=accessible_resources,
                 retrieved_tig_context=tig_context,
-                textbook_context=tb_context
+                textbook_context=tb_context,
+                progression_context=progression_context
             )
         else:
             prompt = self.generate_prompt(
@@ -640,6 +685,8 @@ class RAGLessonPlanGenerator:
 
         # 5. Local LLM Generation via Ollama
         validated_plan = self.call_ollama_with_strict_schema(prompt)
+
+        validated_plan.grade = grade_level
 
         # 6. Step 8 Deterministic Guardrail Execution (Timing Auto-Repair & Verbatim Injection)
         if TimingGuardrailEngine is not None:

@@ -9,7 +9,10 @@ class LessonDevelopmentStepDto(BaseModel):
     student_activities: str = Field(..., description="Active student investigations, discussions, and presentations")
     learning_teaching_method: str = Field(..., description="e.g., Guided Inquiry, Cooperative Group Work, Simulation, Jigsaw")
     learning_teaching_aids: str = Field(..., description="Instructional materials used in this step (task cards, sheets, board)")
-    assessment_and_feedback: str = Field(..., description="Formative checks and immediate feedback during activity")
+    assessment_and_feedback: str = Field(
+        default="",
+        description="Legacy formative checks field; the final assessment is in the lesson closure."
+    )
     time_minutes: int = Field(default=10, description="Step duration in minutes (5-minute multiples, sum must equal 30)")
     other: Optional[str] = Field(default="", description="Blackboard layout, grouping remarks, or safety notes")
 
@@ -36,7 +39,7 @@ class LessonPlanSchemaDto(BaseModel):
     summary: str = Field(..., description="Consolidation and synthesis of key student findings")
     assessment_and_feedback_whole_lesson: str = Field(
         ...,
-        description="Creative formative assessment (Strictly 5 Minutes: rhyming verse, freeze frame, sketch duel, pass-the-parcel)"
+        description="Generated formative assessment in the final closure; the summary and assessment together take 5 minutes."
     )
     post_activity: str = Field(..., description="Follow-up reflection, observation, or homework task")
     information_sources: List[str] = Field(default_factory=list, description="Curriculum sources (NIE TIG, Pupil Textbook)")

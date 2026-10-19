@@ -58,6 +58,10 @@ class LessonPlanGenerateRequest(BaseModel):
         default=1,
         description="Specific sequential period number being planned (e.g., Period 2 of 3)"
     )
+    single_period_only: bool = Field(
+        default=False,
+        description="Generate only current_period while allocating outcomes across all periods"
+    )
 
     # Class Dynamics & Environment Adaptation
     student_count: int = Field(

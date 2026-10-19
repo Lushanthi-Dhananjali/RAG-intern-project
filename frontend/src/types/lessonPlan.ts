@@ -58,6 +58,10 @@ export interface LessonPlanSchemaDto {
   post_activity: string;
   information_sources: string[];
   attachments: string[];
+  period_number?: number;
+  total_periods?: number;
+  selected_activity?: string | null;
+  outcome_allocation?: Record<string, string[]>;
 }
 
 // Aliases for compatibility
@@ -74,6 +78,8 @@ export interface GenerateLessonPlanRequest {
   grade_level?: string;
   subject?: string;
   periods?: number;
+  requested_period?: number;
+  single_period_only?: boolean;
   student_count?: number;
   selected_activity_option?: string;
   custom_teacher_activity?: string;

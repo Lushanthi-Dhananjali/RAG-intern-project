@@ -58,6 +58,12 @@ export default function GeneratedPlansLibrary({
       } else if (data.length > 0) {
         // Auto-load default or first saved plan on initial page load
         const defaultMatch =
+          data.find(
+            (p) =>
+              p.competence_level === '8.1.1' &&
+              p.subject === 'Civic Education' &&
+              p.grade === 'Grade 8'
+          ) ||
           data.find((p) => p.competence_level === '8.1.1') ||
           data[0];
         if (defaultMatch) {
@@ -66,7 +72,13 @@ export default function GeneratedPlansLibrary({
             setActivePlan(detail.plan);
             setActiveFilename(detail.filename);
             if (detail.plan.competence_level) setTypedCompetency(detail.plan.competence_level);
-            if (detail.plan.grade) setSelectedGrade(detail.plan.grade);
+            if (
+              detail.plan.grade &&
+              (detail.plan.subject !== 'Civic Education' ||
+                ['Grade 6', 'Grade 7', 'Grade 8', 'Grade 9'].includes(detail.plan.grade))
+            ) {
+              setSelectedGrade(detail.plan.grade);
+            }
             if (detail.plan.subject) setSelectedSubject(detail.plan.subject);
           } catch {
             // Fallback gracefully

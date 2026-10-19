@@ -19,6 +19,12 @@ export default function LessonPlanDetailModal({
   const [copied, setCopied] = useState<boolean>(false);
 
   if (!isOpen || !plan) return null;
+  const isCivicPlan = plan.subject.trim().toLocaleLowerCase() === 'civic education';
+  const informationSources = isCivicPlan
+    ? (plan.information_sources || [])
+        .filter((source) => /\.pdf$/i.test(source))
+        .map((source) => source.split(/[\\/]/).pop() || source)
+    : plan.information_sources || [];
 
   const handleCopyJson = () => {
     navigator.clipboard.writeText(JSON.stringify(plan, null, 2));
@@ -154,7 +160,7 @@ export default function LessonPlanDetailModal({
                       <th className="p-2.5 border-r border-slate-200 min-w-44">Student Activities</th>
                       <th className="p-2.5 border-r border-slate-200 min-w-28">Method</th>
                       <th className="p-2.5 border-r border-slate-200 min-w-28">Aids</th>
-                      <th className="p-2.5 border-r border-slate-200 min-w-36">Assessment & Feedback</th>
+                      {!isCivicPlan && <th className="p-2.5 border-r border-slate-200 min-w-36">Assessment & Feedback</th>}
                       <th className="p-2.5 w-16 text-center">Time</th>
                     </tr>
                   </thead>
@@ -178,9 +184,9 @@ export default function LessonPlanDetailModal({
                         <td className="p-2.5 border-r border-slate-200 text-slate-700 text-[11px]">
                           {step.learning_teaching_aids}
                         </td>
-                        <td className="p-2.5 border-r border-slate-200 text-slate-700 text-[11px]">
+                        {!isCivicPlan && <td className="p-2.5 border-r border-slate-200 text-slate-700 text-[11px]">
                           {step.assessment_and_feedback}
-                        </td>
+                        </td>}
                         <td className="p-2.5 text-center font-extrabold text-slate-900 whitespace-nowrap">
                           {step.time_minutes} m
                         </td>
@@ -204,7 +210,9 @@ export default function LessonPlanDetailModal({
             )}
             {plan.assessment_and_feedback_whole_lesson && (
               <div className="space-y-1">
-                <h4 className="text-xs font-black uppercase tracking-wider text-slate-500">Whole Lesson Assessment</h4>
+                <h4 className="text-xs font-black uppercase tracking-wider text-slate-500">
+                  {isCivicPlan ? 'Assessment & Closure (5 Minutes)' : 'Whole Lesson Assessment'}
+                </h4>
                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs leading-relaxed text-slate-800">
                   {plan.assessment_and_feedback_whole_lesson}
                 </div>
@@ -224,13 +232,13 @@ export default function LessonPlanDetailModal({
 
           {/* Sources and Attachments */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-slate-200">
-            {plan.information_sources && plan.information_sources.length > 0 && (
+            {informationSources.length > 0 && (
               <div>
                 <h5 className="text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">
                   Information Sources
                 </h5>
                 <ul className="list-disc list-inside text-xs text-slate-600 space-y-0.5">
-                  {plan.information_sources.map((src, idx) => (
+                  {informationSources.map((src, idx) => (
                     <li key={idx}>{src}</li>
                   ))}
                 </ul>

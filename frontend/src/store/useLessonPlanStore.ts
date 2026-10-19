@@ -1,18 +1,20 @@
 import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 
 export interface PedagogicalActivityOption {
   id: string;
   title: string;
   pedagogy_type: string;
   description: string;
-  student_action_summary: string;
-  teacher_facilitation_summary: string;
+  student_action_summary?: string;
+  teacher_facilitation_summary?: string;
   student_grouping: string;
   required_materials: string[];
-  approximate_duration_minutes: number;
-  expected_student_output: string;
+  approximate_duration_minutes?: number;
+  expected_student_output?: string;
   creative_assessment_preview: string;
-  low_resource_alternative: string;
+  low_resource_alternative?: string;
+  learning_outcomes_addressed?: string[];
 }
 
 export interface LessonDevelopmentStep {
@@ -39,8 +41,12 @@ export interface LessonPlanSchemaDto {
   summary: string;
   assessment_and_feedback_whole_lesson: string;
   post_activity?: string;
-  information_sources: string[];
-  attachments: string[];
+  information_sources?: string[];
+  attachments?: string[];
+  period_number?: number;
+  total_periods?: number;
+  selected_activity?: string | null;
+  outcome_allocation?: Record<string, string[]>;
 }
 
 export interface MultiPeriodState {
@@ -66,6 +72,7 @@ export interface MultiPeriodState {
   // History & storage
   previousPeriodActivities: string[];
   generatedPlans: Record<number, LessonPlanSchemaDto>;
+  activityByPeriod: Record<number, string>;
   isLoading: boolean;
   error: string | null;
 
@@ -75,13 +82,15 @@ export interface MultiPeriodState {
   selectOption: (option: PedagogicalActivityOption) => void;
   setCustomTeacherActivity: (activity: string) => void;
   setGeneratedPlan: (period: number, plan: LessonPlanSchemaDto, activityTitle: string) => void;
+  priorActivityTitles: (period: number) => string[];
+  otherActivityTitles: (period: number) => string[];
   nextPeriod: () => void;
   previousPeriod: (period: number) => void;
   goToStep: (step: 1 | 2 | 3) => void;
   resetAll: () => void;
 }
 
-export const useLessonPlanStore = create<MultiPeriodState>((set, get) => ({
+export const useLessonPlanStore = create<MultiPeriodState>()(persist((set, get) => ({
   step: 1,
   competencyLevel: '8.1.1',
   gradeLevel: 'Grade 8',
@@ -97,21 +106,61 @@ export const useLessonPlanStore = create<MultiPeriodState>((set, get) => ({
   customTeacherActivity: '',
   previousPeriodActivities: [],
   generatedPlans: {},
+  activityByPeriod: {},
   isLoading: false,
   error: null,
 
-  setInputs: (inputs) => set((state) => ({ ...state, ...inputs })),
-  setOptions: (options) => set({ currentOptions: options, step: 2 }),
+  setInputs: (inputs) => set((state) => {
+    const sequenceChanged =
+      (inputs.competencyLevel !== undefined && inputs.competencyLevel !== state.competencyLevel) ||
+      (inputs.gradeLevel !== undefined && inputs.gradeLevel !== state.gradeLevel) ||
+      (inputs.subject !== undefined && inputs.subject !== state.subject) ||
+      (inputs.totalPeriods !== undefined && inputs.totalPeriods !== state.totalPeriods);
+    return sequenceChanged
+      ? {
+          ...state,
+          ...inputs,
+          step: 1,
+          currentPeriod: 1,
+          currentOptions: [],
+          selectedOption: null,
+          generatedPlans: {},
+          activityByPeriod: {},
+          previousPeriodActivities: [],
+        }
+      : { ...state, ...inputs };
+  }),
+  setOptions: (options) => set({ currentOptions: options, selectedOption: null, step: 2 }),
   selectOption: (option) => set({ selectedOption: option, teacherMode: 'suggested' }),
   setCustomTeacherActivity: (act) => set({ customTeacherActivity: act, teacherMode: 'own_approach' }),
   
   setGeneratedPlan: (period, plan, activityTitle) =>
-    set((state) => ({
-      generatedPlans: { ...state.generatedPlans, [period]: plan },
-      previousPeriodActivities: Array.from(new Set([...state.previousPeriodActivities, activityTitle])),
-      step: 3,
-      isLoading: false,
-    })),
+    set((state) => {
+      const activityByPeriod = { ...state.activityByPeriod, [period]: activityTitle };
+      return {
+        generatedPlans: { ...state.generatedPlans, [period]: plan },
+        activityByPeriod,
+        previousPeriodActivities: Object.keys(activityByPeriod)
+          .map(Number)
+          .sort((a, b) => a - b)
+          .map((periodNumber) => activityByPeriod[periodNumber]),
+        step: 3,
+        isLoading: false,
+      };
+    }),
+
+  priorActivityTitles: (period) => {
+    const activityByPeriod = get().activityByPeriod;
+    return Object.entries(activityByPeriod)
+      .filter(([periodNumber]) => Number(periodNumber) < period)
+      .sort(([periodA], [periodB]) => Number(periodA) - Number(periodB))
+      .map(([, title]) => title);
+  },
+  otherActivityTitles: (period) =>
+    Object.entries(get().activityByPeriod)
+      .filter(([periodNumber]) => Number(periodNumber) !== period)
+      .sort(([periodA], [periodB]) => Number(periodA) - Number(periodB))
+      .map(([, title]) => title),
 
   nextPeriod: () => {
     const { currentPeriod, totalPeriods } = get();
@@ -132,8 +181,10 @@ export const useLessonPlanStore = create<MultiPeriodState>((set, get) => ({
       step: 1,
       currentPeriod: 1,
       generatedPlans: {},
+      activityByPeriod: {},
       previousPeriodActivities: [],
       selectedOption: null,
+      currentOptions: [],
       customTeacherActivity: '',
     }),
-}));
+}), { name: 'civic-multi-period-planner' }));

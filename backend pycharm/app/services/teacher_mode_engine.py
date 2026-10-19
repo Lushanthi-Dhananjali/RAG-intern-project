@@ -25,6 +25,7 @@ def build_mode_b_scaffolding_prompt(
     grade_level: str,
     classroom_environment: str = "Standard Classroom",
     accessible_resources: Optional[List[str]] = None,
+    progression_context: str = "",
 ) -> str:
     """
     Constructs an explicit prompt for local Llama 3 that honors the teacher's custom activity,
@@ -47,7 +48,8 @@ PEDAGOGICAL PACING MANDATE (Total: 40 Minutes):
    - Step 1: Orientation & Group Task Setup (5-7 mins).
    - Step 2: Active Student Collaboration / Production (15-18 mins) using the allocated group structure.
    - Step 3: Synthesis, Plenary Sharing & Cross-Review (7-10 mins).
-3. Summary & Active Assessment (5 mins): Rapid review assessing the verbatim outcomes directly.
+3. Assessment & Closure (5 mins): Write a concise summary and a separate, generated active assessment; together they fit the 5-minute closure and directly assess the verbatim outcomes.
+4. Align the Entrance and Assessment & Closure with the supplied competency outcomes and the teacher's custom activity. Generate content, not URLs or links.
 
 CLASSROOM LOGISTICS & ROLES ({student_count} Students):
 - Partition: {logistics.group_summary_label}.
@@ -66,6 +68,9 @@ LESSON METADATA:
 
 OFFICIAL VERBATIM OUTCOMES TO ACHIEVE:
 {outcomes_formatted}
+
+INTERNAL SEQUENCE GUIDANCE FOR THIS PERIOD:
+{progression_context or "Use the period position to introduce, develop, practise, and assess the allocated outcomes appropriately."}
 
 TEACHER'S CUSTOM ACTIVITY SPECIFICATION (MODE B):
 "{teacher_custom_activity}"

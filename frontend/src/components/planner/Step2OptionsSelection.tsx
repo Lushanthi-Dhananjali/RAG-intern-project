@@ -9,9 +9,11 @@ export default function Step2OptionsSelection() {
   const [customMode, setCustomMode] = useState(false);
   const [customText, setCustomText] = useState('');
 
-  const handleGenerate = async (selectedDesc?: string, isCustom = false) => {
+  const handleGenerate = async (selectedDesc?: string, isCustom = false, activityTitle?: string) => {
     setLoading(true);
-    const chosenTitle = isCustom ? 'Custom Teacher Method' : (store.selectedOption?.title || 'Selected Strategy');
+    const chosenTitle = isCustom
+      ? `Teacher approach: ${customText.trim()}`
+      : (activityTitle || 'Selected Strategy');
     try {
       const plan = await generateSinglePeriodPlan({
         competencyLevel: store.competencyLevel,
@@ -25,7 +27,7 @@ export default function Step2OptionsSelection() {
         customTeacherActivity: isCustom ? customText : undefined,
         classroomEnvironment: store.classroomEnvironment,
         accessibleResources: store.accessibleResources,
-        previousPeriodActivities: store.previousPeriodActivities,
+        previousPeriodActivities: store.priorActivityTitles(store.currentPeriod),
       });
 
       store.setGeneratedPlan(store.currentPeriod, plan, chosenTitle);
@@ -46,9 +48,9 @@ export default function Step2OptionsSelection() {
           <h2 className="text-lg font-bold text-gray-900">
             Planning Period {store.currentPeriod} of {store.totalPeriods} (40-Minute Block)
           </h2>
-          {store.previousPeriodActivities.length > 0 && (
+          {store.priorActivityTitles(store.currentPeriod).length > 0 && (
             <p className="text-xs text-gray-500 mt-1">
-              Previous Methods Avoided: {store.previousPeriodActivities.join(', ')}
+              Previous activities avoided: {store.priorActivityTitles(store.currentPeriod).join(', ')}
             </p>
           )}
         </div>
@@ -78,9 +80,18 @@ export default function Step2OptionsSelection() {
                 </span>
                 <h3 className="font-bold text-gray-900 mb-2">{opt.title}</h3>
                 <p className="text-xs text-gray-600 leading-relaxed mb-4">{opt.description}</p>
+                {opt.learning_outcomes_addressed && opt.learning_outcomes_addressed.length > 0 && (
+                  <div className="mb-4 text-xs text-gray-600">
+                    <strong>Period {store.currentPeriod} learning outcomes:</strong>
+                    <ul className="list-disc pl-4 mt-1">
+                      {opt.learning_outcomes_addressed.map((outcome, index) => (
+                        <li key={index}>{outcome}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
                 <div className="border-t pt-3 space-y-1 text-xs text-gray-500">
                   <p><strong>Grouping:</strong> {opt.student_grouping}</p>
-                  <p><strong>Assessment (5m):</strong> {opt.creative_assessment_preview}</p>
                 </div>
               </div>
               <button
@@ -88,7 +99,18 @@ export default function Step2OptionsSelection() {
                 onClick={(e) => {
                   e.stopPropagation();
                   store.selectOption(opt);
-                  handleGenerate(opt.description, false);
+                  handleGenerate(
+                    [
+                      `Activity: ${opt.title}`,
+                      `Approach: ${opt.description}`,
+                      `Student task: ${opt.student_action_summary || opt.description}`,
+                      `Teacher facilitation: ${opt.teacher_facilitation_summary || 'Facilitate student participation and outcome-focused discussion.'}`,
+                      `Expected output: ${opt.expected_student_output || 'A student-created response demonstrating the allocated learning outcomes.'}`,
+                      `Grouping: ${opt.student_grouping}`,
+                    ].join('\n'),
+                    false,
+                    opt.title
+                  );
                 }}
                 className="mt-6 w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold shadow"
               >
@@ -101,9 +123,8 @@ export default function Step2OptionsSelection() {
         <div className="bg-white p-6 rounded-xl border space-y-4">
           <h3 className="font-bold text-gray-900">Mode B: Teacher's Own Approach</h3>
           <p className="text-xs text-gray-500">
-            Enter your custom idea or video simulation below. The engine will preserve your intent,
-            scaffolding it into the 5m Entrance, 30m Development, and 5m Closure framework while binding
-            it to the allocated learning outcomes.
+            Enter your custom idea or video simulation below. The generated lesson plan will build
+            its introduction and closing assessment around this activity and the allocated learning outcomes.
           </p>
           <textarea
             rows={4}

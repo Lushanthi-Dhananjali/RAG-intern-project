@@ -36,6 +36,10 @@ export interface LessonPlanDto {
   post_activity?: string;
   information_sources?: string[];
   attachments?: string[];
+  period_number?: number;
+  total_periods?: number;
+  selected_activity?: string | null;
+  outcome_allocation?: Record<string, string[]>;
 }
 
 // Type aliases for seamless compatibility across UI components
@@ -102,6 +106,7 @@ export interface LessonPlanPayload {
   subject?: string;
   periods?: number;
   requested_period?: number;
+  single_period_only?: boolean;
   student_count?: number;
   teacher_mode?: 'suggested' | 'own_approach';
   selected_activity_option?: string;
@@ -121,6 +126,7 @@ export interface GeneratePlanPayload {
   subject?: string;
   periods?: number;
   requestedPeriod?: number;
+  singlePeriodOnly?: boolean;
   studentCount?: number;
   teacherMode?: 'suggested' | 'own_approach';
   selectedActivityOption?: string;
@@ -268,7 +274,7 @@ export async function fetchPedagogicalOptions(
 export async function generateSinglePeriodPlan(
   params: GeneratePlanPayload
 ): Promise<LessonPlanDto> {
-  const result = await generateLessonPlan(params);
+  const result = await generateLessonPlan({ ...params, singlePeriodOnly: true });
   return result.lesson_plan;
 }
 
@@ -283,6 +289,7 @@ export async function generateLessonPlan({
   subject = 'Civic Education',
   periods = 1,
   requestedPeriod = 1,
+  singlePeriodOnly = false,
   studentCount = 35,
   teacherMode = 'suggested',
   selectedActivityOption,
@@ -302,6 +309,7 @@ export async function generateLessonPlan({
     subject: subject,
     periods: resolved.periods,
     requested_period: resolved.currentPeriod,
+    single_period_only: singlePeriodOnly,
     student_count: studentCount,
     teacher_mode: teacherMode,
     selected_activity_option: selectedActivityOption,

@@ -64,7 +64,8 @@ def build_single_period_assembly_prompt(
     classroom_environment: str = "Standard Classroom",
     accessible_resources: Optional[List[str]] = None,
     retrieved_tig_context: str = "",
-    textbook_context: str = ""
+    textbook_context: str = "",
+    progression_context: str = "",
 ) -> str:
     """
     Constructs a rigid, single-period prompt for Llama 3 enforcing the 5m-30m-5m LEARN blueprint.
@@ -73,6 +74,12 @@ def build_single_period_assembly_prompt(
     roles_str = ", ".join([f"{r.role_name} ({r.responsibility})" for r in logistics.roles_assigned])
     outcomes_formatted = "\n".join([f"- {o}" for o in period_outcomes]) if period_outcomes else "- Foundational civic concept exploration."
     resources_formatted = ", ".join(accessible_resources) if accessible_resources else "Standard blackboard, student notebooks"
+    is_civic_education = subject.strip().casefold() == "civic education"
+    step_assessment_rule = (
+        "   - Do not include assessment_and_feedback in development steps; the only assessment belongs in Assessment & Closure."
+        if is_civic_education
+        else "   - Every step MUST include distinct: learning_teaching_method, learning_teaching_aids, teacher_activities, student_activities, and assessment_and_feedback."
+    )
 
     strategy_directive = (
         f"CORE PEDAGOGICAL ACTIVITY DIRECTIVE:\n\"{chosen_strategy_description}\"\n"
@@ -93,10 +100,10 @@ STRICT 40-MINUTE LEARN KANDY STRUCTURAL LAWS:
    - Step 1 (Setup/Inquiry Launch: 7-8 mins): Teacher delivers prompts/cue cards; students inspect tasks.
    - Step 2 (Group Investigation & Production: 14-15 mins): Active teamwork executing roles without bystanders.
    - Step 3 (Presentation & Cross-Review: 7-8 mins): Spokespersons present; peer feedback.
-   - Every step MUST include distinct: learning_teaching_method, learning_teaching_aids, teacher_activities, student_activities, and assessment_and_feedback.
+{step_assessment_rule}
 4. Summary & Whole Lesson Assessment (time: exactly 5 minutes):
    - 2-minute summary consolidating key concepts.
-   - 3-minute active assessment directly verifying the allocated outcomes.
+   - Include a generated 3-minute active assessment directly verifying the allocated outcomes; together with the summary this completes the 5-minute Assessment & Closure.
 5. Logistics ({student_count} Students):
    - Partition: {logistics.group_summary_label}.
    - Roles to embed: {roles_str}.
@@ -114,6 +121,9 @@ LESSON METADATA:
 
 TARGET VERBATIM LEARNING OUTCOMES FOR PERIOD {current_period}:
 {outcomes_formatted}
+
+INTERNAL SEQUENCE GUIDANCE FOR THIS PERIOD:
+{progression_context or "Use the period position to introduce, develop, practise, and assess the allocated outcomes appropriately."}
 
 {strategy_directive}
 

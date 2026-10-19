@@ -69,6 +69,7 @@ def build_period_options_prompt(
     classroom_environment: str = "Standard Classroom",
     accessible_resources: Optional[List[str]] = None,
     previous_activities: Optional[List[str]] = None,
+    progression_context: str = "",
 ) -> str:
     """
     Constructs a rigid, student-centred prompt for Llama 3 forcing exactly
@@ -185,6 +186,9 @@ CONTEXT:
 ALLOCATED VERBATIM LEARNING OUTCOMES FOR PERIOD {current_period}:
 {outcomes_formatted}
 
+INTERNAL SEQUENCE GUIDANCE FOR THIS PERIOD:
+{progression_context or "Use the period position to sequence introduction, development, application, and formative assessment."}
+
 Generate the 3 distinct, non-repetitive activity options now in valid JSON.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"""
     return prompt
 
@@ -278,18 +282,60 @@ def generate_fallback_options(
         },
     ]
 
-    # Select 3 options prioritizing tracks NOT used in previous periods
-    selected = []
+    existing_titles = " ".join(str(activity).lower() for activity in previous_activities or [])
+    for track_name, method_names in PEDAGOGICAL_TRACK_DEFINITIONS.items():
+        if "simulative" in track_name.lower():
+            track = "Simulative & Roleplay"
+            pedagogy_type = "Simulation / Roleplay"
+            task = "Students take civic roles, respond to a shared scenario, and agree on a reasoned decision."
+            output = "A short role-based civic decision and its reasons."
+            assessment = "Students state one role responsibility and explain how it supported the decision."
+        elif "empirical" in track_name.lower():
+            track = "Empirical & Investigative Inquiry"
+            pedagogy_type = "Observation / Evidence Inquiry"
+            task = "Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings."
+            output = "An evidence record with one supported conclusion."
+            assessment = "A paired evidence check: name one observation and the outcome it supports."
+        else:
+            track = "Collaborative Design & Problem-Solving"
+            pedagogy_type = "Collaborative Design"
+            task = "Students negotiate a solution, create a shared civic artifact, and review another group's proposal."
+            output = "A group civic proposal, diagram, or public information message."
+            assessment = "Groups give one-sentence feedback connecting a peer proposal to the outcome."
 
-    # 1. First add options whose track has NOT been used
-    for opt in options_pool:
-        if opt["track"] not in used_tracks and len(selected) < 3:
-            selected.append(opt)
+        for method_name in method_names:
+            if method_name.lower() in existing_titles:
+                continue
+            options_pool.append({
+                "id": f"fallback_{len(options_pool) + 1}",
+                "track": track,
+                "title": f"{method_name}: {lesson_topic}",
+                "pedagogy_type": pedagogy_type,
+                "description": f"Students use {method_name.lower()} to work with '{first_outcome}'. {task}",
+                "student_action_summary": task,
+                "teacher_facilitation_summary": "Frames the task around the assigned outcome, prompts evidence-based reasoning, and facilitates participation.",
+                "student_grouping": grouping_desc,
+                "required_materials": ["Student notebooks", "Blackboard or available paper"],
+                "approximate_duration_minutes": 30,
+                "expected_student_output": output,
+                "creative_assessment_preview": assessment,
+                "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable.",
+            })
 
-    # 2. Fill remaining slots if needed
-    for opt in options_pool:
-        if opt not in selected and len(selected) < 3:
-            selected.append(opt)
+    # Exclude previously selected task structures, then rotate the remaining pedagogies.
+    selected = [
+        option for option in options_pool
+        if option["title"].split(":")[0].lower() not in existing_titles
+    ][:3]
+
+    if len(selected) < 3:
+        selected_ids = {option["id"] for option in selected}
+        selected.extend(
+            option for option in options_pool
+            if option["id"] not in selected_ids
+            and option not in selected
+        )
+        selected = selected[:3]
 
     # Re-index IDs to option_1, option_2, option_3
     final_options = []

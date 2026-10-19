@@ -2,55 +2,70 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 1 of 2)",
-  "competence": "Importance and the reliability of data and information in life situations and for other needs.",
+  "competence": "8.1.1",
   "competence_level": "8.1.1",
   "lesson": "Competency 8.1.1 (Period 1)",
   "unique_learning_outcome": [
     "Identifies the public services.",
-    "Explains the need of public services.",
-    "Investigates information on the beginning and progress of public services."
+    "Explains the common features related to public services.",
+    "Explains the need of public services."
   ],
-  "the_entrance": "Imagine you are a citizen of Sri Lanka, and you need to access public services. What are the essential services you would require, and how would you go about getting them?",
+  "the_entrance": "https://api.learn.kandy.lk/the-entrance/5",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "Distribute task cards and explain the roleplay scenario.",
-      "student_activities": "Students organize into groups of 5-6, review task sheets, assign group roles, and begin investigation.",
-      "learning_teaching_method": "Guided Inquiry",
-      "learning_teaching_aids": "Task cards, problem scenarios, and charts",
-      "assessment_and_feedback": "Teacher checks understanding of instructions and group role assignment.",
+      "teacher_activities": "Provides scaffolding questions to guide student reasoning from facts to solutions.",
+      "student_activities": "Examine case scenarios, highlight legal/civic duties, and compile evidence on a grievance matrix.",
+      "learning_teaching_method": "Introduced & Explored (Foundational Inquiry)",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
       "time_minutes": 10,
-      "other": "Group seating arrangement, resource distribution notes"
+      "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "Circulate as a facilitator, observe group work, scaffold difficulties, and prompt deeper thinking.",
-      "student_activities": "Students actively execute the chosen activity, such as roleplaying, conducting school inquiry, or analyzing case studies.",
-      "learning_teaching_method": "Roleplay Simulation",
-      "learning_teaching_aids": "Activity worksheets, props, observation checklists, and posters",
-      "assessment_and_feedback": "Teacher formatively assesses student collaboration and corrects conceptual misconceptions.",
-      "time_minutes": 10,
-      "other": "Differentiation for mixed abilities, timekeeping reminders"
+      "teacher_activities": "Facilitates student discussion and investigation.",
+      "student_activities": "Teams analyze real-world civic dilemma cards reflecting 'Identifies the public services.'",
+      "learning_teaching_method": "Introduced & Explored (Foundational Inquiry)",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
     },
     {
       "step_number": 3,
-      "teacher_activities": "Coordinate rapid peer presentations and synthesize key student findings against syllabus concepts.",
-      "student_activities": "Student group spokespersons present observations, compare findings with other groups, and record peer feedback.",
-      "learning_teaching_method": "Student Presentations & Synthesis Discussion",
-      "learning_teaching_aids": "Presentation boards, student charts, and whiteboard",
-      "assessment_and_feedback": "Peer evaluation and teacher reinforcement of core learning outcomes.",
-      "time_minutes": 10,
-      "other": "None"
+      "teacher_activities": "Provides scaffolding questions to guide student reasoning from facts to solutions.",
+      "student_activities": "Spokespersons present; peer feedback.",
+      "learning_teaching_method": "Introduced & Explored (Foundational Inquiry)",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 5,
+      "other": ""
     }
   ],
-  "summary": "Recap of key student discoveries and core concepts formulated during the lesson.",
-  "assessment_and_feedback_whole_lesson": "Recite the core duties of public services in a 2-line rhyming verse.",
-  "post_activity": "Follow-up inquiry, personal reflection, or observation to bring to the next period.",
+  "summary": "https://api.learn.kandy.lk/summary/2",
+  "assessment_and_feedback_whole_lesson": "https://api.learn.kandy.lk/assessment-and-feedback/5",
+  "post_activity": "Completed Civic Rights and Duties Inquiry Matrix",
   "information_sources": [
-    "National Institute of Education (NIE) Teacher Instructional Guide",
-    "Grade 8 Pupil's Textbook"
+    "grade_8_civic_textbook.pdf"
   ],
   "attachments": [
-    "Roleplay Cue Cards"
-  ]
+    "Chalkboard",
+    "Student Notebooks",
+    "Chart Paper"
+  ],
+  "period_number": 1,
+  "total_periods": 2,
+  "outcome_allocation": {
+    "1": [
+      "Identifies the public services.",
+      "Explains the common features related to public services.",
+      "Explains the need of public services."
+    ],
+    "2": [
+      "Presents views appreciating the importance of public services of the times.",
+      "Investigates information on the beginning and progress of public services."
+    ]
+  },
+  "selected_activity": "Activity: Evidence-Based Case Dilemma Audit: Competency Level 8.1.1 (Period 1 of 2)\nApproach: Teams analyze real-world civic dilemma cards reflecting 'Identifies the public services.'. They investigate institutional duties versus citizen responsibilities.\nStudent task: Examine case scenarios, highlight legal/civic duties, and compile evidence on a grievance matrix.\nTeacher facilitation: Provides scaffolding questions to guide student reasoning from facts to solutions.\nExpected output: Completed Civic Rights and Duties Inquiry Matrix.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer."
 }

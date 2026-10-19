@@ -49,7 +49,7 @@ const API_BASE_URL =
 
 export default function Home() {
   // Main Navigation Tabs: 'wizard' (Existing Wizard), 'planner' (New Step 9 State Machine), 'generator' (Classic Direct), 'library' (Saved Plans)
-  const [activeMainTab, setActiveMainTab] = useState<"wizard" | "planner" | "generator" | "library">("wizard");
+  const [activeMainTab, setActiveMainTab] = useState<"wizard" | "planner" | "generator" | "library">("planner");
 
   // Step 9 Multi-Period Zustand State
   const { step: multiPeriodStep, resetAll: resetMultiPeriodPlanner } = useLessonPlanStore();
@@ -439,44 +439,7 @@ export default function Home() {
             flexWrap: "wrap",
           }}
         >
-          {/* Tab 1: Interactive Wizard */}
-          <button
-            type="button"
-            onClick={() => setActiveMainTab("wizard")}
-            style={{
-              padding: "10px 18px",
-              borderRadius: "12px",
-              fontSize: "13px",
-              fontWeight: "800",
-              cursor: "pointer",
-              transition: "all 0.2s ease",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "8px",
-              backgroundColor: activeMainTab === "wizard" ? "#bbf7d0" : "#f0fdf4",
-              color: activeMainTab === "wizard" ? "#14532d" : "#166534",
-              border: activeMainTab === "wizard" ? "1.5px solid #22c55e" : "1px solid #86efac",
-              boxShadow: activeMainTab === "wizard" ? "0 2px 8px -1px rgba(34, 197, 94, 0.35)" : "none",
-            }}
-          >
-            <span>🎯</span>
-            <span>2-Step Activity Wizard</span>
-            <span
-              style={{
-                fontSize: "10px",
-                fontWeight: "800",
-                padding: "2px 6px",
-                borderRadius: "9999px",
-                backgroundColor: "#dcfce7",
-                color: "#15803d",
-                border: "1px solid #86efac",
-              }}
-            >
-              Classic
-            </span>
-          </button>
-
-          {/* Tab 2 (NEW): Multi-Period Planner (Zustand Step 9) */}
+          {/* Civic Education multi-period planner */}
           <button
             type="button"
             onClick={() => setActiveMainTab("planner")}
@@ -497,7 +460,7 @@ export default function Home() {
             }}
           >
             <span>🚀</span>
-            <span>Multi-Period Planner</span>
+            <span>Multi-Period Lesson Planner</span>
             <span
               style={{
                 fontSize: "10px",
@@ -1075,7 +1038,7 @@ export default function Home() {
                     See Lesson Plan
                   </h4>
                   <p style={{ fontSize: "13px", color: "#64748b", maxWidth: "480px", margin: "0 auto", lineHeight: "1.5" }}>
-                    Use the <strong>"2-Step Activity Wizard"</strong> or <strong>"Multi-Period Planner"</strong> above to pick interactive activities, or configure
+                    Use the <strong>"Multi-Period Lesson Planner"</strong> above to pick period-specific activities, or configure
                     parameters manually in the Classic Generator.
                   </p>
                 </div>

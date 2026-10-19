@@ -153,6 +153,10 @@ class GenerateLessonPlanRequest(BaseModel):
         default=1,
         description="Specific sequential period number to generate (1 to 4)"
     )
+    single_period_only: bool = Field(
+        default=False,
+        description="Generate only the requested period while preserving the full sequence allocation"
+    )
     student_count: int = Field(
         default=35,
         ge=5,
@@ -497,6 +501,7 @@ async def generate_by_competency_level(
         periods=periods,
         total_periods_for_competency=periods,
         current_period=requested_period,
+        single_period_only=request.single_period_only,
         time_slot=time_slot,
         duration_minutes=duration_minutes,
         student_count=request.student_count or 35,
