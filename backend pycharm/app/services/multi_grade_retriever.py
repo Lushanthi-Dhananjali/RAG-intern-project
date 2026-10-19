@@ -1,6 +1,8 @@
 import os
 import sys
 import re
+import math
+import logging
 from typing import List, Dict, Any, Optional
 import chromadb
 from sentence_transformers import SentenceTransformer
@@ -13,8 +15,25 @@ PROJECT_ROOT = os.path.abspath(os.path.join(CURRENT_DIR, "../.."))
 if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
 
+logger = logging.getLogger("MultiGradeRetriever")
 CHROMA_PATH = os.path.join(PROJECT_ROOT, "chroma_db")
 COLLECTION_NAME = "curriculum_syllabus"
+
+# Import Step 3 Multi-Period Outcome Allocator Engine
+try:
+    from app.services.outcome_allocator import (
+        extract_verbatim_tig_outcomes as engine_extract_outcomes,
+        allocate_learning_outcomes_across_periods,
+    )
+except ModuleNotFoundError:
+    try:
+        from services.outcome_allocator import (
+            extract_verbatim_tig_outcomes as engine_extract_outcomes,
+            allocate_learning_outcomes_across_periods,
+        )
+    except ModuleNotFoundError:
+        engine_extract_outcomes = None
+        allocate_learning_outcomes_across_periods = None
 
 
 # =====================================================================
@@ -68,14 +87,20 @@ def isolate_target_competency_content(raw_text: str, target_level: str) -> str:
 
 def extract_verbatim_tig_outcomes(tig_text: str, target_level: str = "") -> List[str]:
     """
-    Hybrid extractor: Extracts outcomes structurally using both bullet patterns
-    and comprehensive multi-subject Bloom's action verbs.
-    Robust against generic stop-word collisions in multi-page NIE tables.
+    Hybrid extractor: Extracts outcomes structurally using regex matching against
+    NIE curriculum tabular structures and comprehensive multi-subject Bloom's action verbs.
+    Prevents hallucination and preserves official wording.
     """
     if not tig_text or len(tig_text.strip()) < 15:
         return []
 
-    # Comprehensive verb list covering both Civic Education & Science (Bloom's Taxonomy)
+    # If the dedicated allocator engine is available, utilize its robust parser
+    if engine_extract_outcomes is not None:
+        extracted = engine_extract_outcomes(tig_text, target_level)
+        if extracted:
+            return extracted
+
+    # Comprehensive verb list covering Civic Education & Science (Bloom's Taxonomy)
     EXPANDED_ACTION_VERBS = (
         # Civic & General
         "identifies", "explains", "investigates", "presents", "names", "describes",
@@ -173,6 +198,67 @@ def extract_verbatim_tig_outcomes(tig_text: str, target_level: str = "") -> List
 
 # Maintain alias for backward compatibility
 extract_outcomes_structurally = extract_verbatim_tig_outcomes
+
+
+# =====================================================================
+# OUTCOME ALLOCATION ENGINE (PERIODS 1 TO 4)
+# =====================================================================
+def split_outcomes_by_periods(
+    outcomes: List[str],
+    periods: int = 1
+) -> Dict[int, List[str]]:
+    """
+    Splits official learning outcomes across 1 to 4 periods using the
+    Bloom's cognitive complexity outcome allocation engine.
+
+    Pedagogical Progression Rules:
+    - Period 1 takes foundational knowledge outcomes (Names, Identifies, Lists).
+    - Middle/Later periods take analytical, creative, and action-oriented outcomes
+      (Explains, Investigates, Evaluates, Proposes).
+    - Balances the chunk distribution evenly so no period is left with 0 outcomes.
+    - Clamped strictly: 1 <= periods <= 4.
+    """
+    safe_periods = min(max(int(periods or 1), 1), 4)
+
+    if not outcomes:
+        return {p: [] for p in range(1, safe_periods + 1)}
+
+    # If the dedicated allocator engine is available, utilize its deterministic matrix
+    if allocate_learning_outcomes_across_periods is not None:
+        plan = allocate_learning_outcomes_across_periods(
+            all_outcomes=outcomes,
+            periods=safe_periods
+        )
+        return plan.period_allocations
+
+    # Fallback algorithmic allocation if engine is decoupled
+    if safe_periods == 1 or len(outcomes) == 1:
+        result = {1: outcomes}
+        for p in range(2, safe_periods + 1):
+            result[p] = outcomes
+        return result
+
+    total_outcomes = len(outcomes)
+    result: Dict[int, List[str]] = {}
+    base_size = total_outcomes // safe_periods
+    remainder = total_outcomes % safe_periods
+
+    start_idx = 0
+    for period_idx in range(1, safe_periods + 1):
+        chunk_size = base_size + (1 if period_idx <= remainder else 0)
+        if chunk_size == 0 and start_idx < total_outcomes:
+            chunk_size = 1
+
+        end_idx = min(start_idx + chunk_size, total_outcomes)
+        period_slice = outcomes[start_idx:end_idx]
+
+        if not period_slice and outcomes:
+            period_slice = [outcomes[-1]]
+
+        result[period_idx] = period_slice
+        start_idx = end_idx
+
+    return result
 
 
 # =====================================================================
@@ -350,7 +436,6 @@ class MultiGradeBoundaryRetriever:
                 "doc_type": meta.get("doc_type", "teacher_guide")
             }
 
-            # Exact competency level match එක පමණක් exact_matrix_docs වලට එකතු කිරීම
             if meta_lvl == target_level and is_matrix_table:
                 exact_matrix_docs.append(item)
             elif is_matrix_table:
@@ -358,7 +443,6 @@ class MultiGradeBoundaryRetriever:
             else:
                 other_docs.append(item)
 
-        # Exact target level chunks ඇතුළත outcomes (bullets) වැඩි chunk එක පළමුව තැබීම
         exact_matrix_docs.sort(
             key=lambda x: len(re.findall(r"^[\u2022\u2023\u25E6\u2043\u2219\*\-\–\—\d+\.]\s*", x["content"], re.MULTILINE)),
             reverse=True
@@ -399,6 +483,37 @@ class MultiGradeBoundaryRetriever:
             "tig_guidelines": tig_items,
             "textbook_paragraphs": textbook_items
         }
+
+    def get_period_split_outcomes(
+        self,
+        competency_level: str,
+        topic: str,
+        grade_level: str = "Grade 8",
+        subject: str = "Civic Education",
+        periods: int = 2
+    ) -> Dict[int, List[str]]:
+        """
+        Retrieves TIG chunks for the target competency level, extracts verbatim
+        outcomes, and splits them pedagogically across the given number of periods.
+        """
+        res = self.retrieve_tig_and_textbook_for_level(
+            competency_level=competency_level,
+            query=topic,
+            grade_level=grade_level,
+            subject=subject
+        )
+
+        tig_chunks = res.get("tig_guidelines", [])
+        extracted_outcomes: List[str] = []
+
+        for chunk in tig_chunks:
+            chunk_content = chunk.get("content", "")
+            found = extract_verbatim_tig_outcomes(chunk_content, competency_level)
+            if len(found) > len(extracted_outcomes):
+                extracted_outcomes = found
+
+        # Split across requested periods (max 4)
+        return split_outcomes_by_periods(extracted_outcomes, periods=periods)
 
     def retrieve_3tier_boundaries(
         self,

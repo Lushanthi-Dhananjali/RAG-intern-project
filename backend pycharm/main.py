@@ -1,10 +1,10 @@
 import os
 import sys
 import logging
-from typing import Optional, List, Dict, Any, Union
+from typing import Optional, List, Dict, Any, Union, Literal
 from fastapi import FastAPI, Depends, HTTPException, status, Query
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 import uvicorn
 
 # =====================================================================
@@ -32,13 +32,8 @@ except ModuleNotFoundError:
         PORT: int = 8000
         HOST: str = "0.0.0.0"
         CHROMA_DB_PATH: str = os.path.join(CURRENT_DIR, "chroma_db")
-        ALLOWED_ORIGINS: list = [
-            "http://localhost:3000",
-            "http://127.0.0.1:3000",
-            "http://10.30.54.14:3000",
-            "http://10.30.5.126:3000",
-            "*"
-        ]
+        ALLOWED_ORIGINS: list = ["*"]
+
     settings = FallbackSettings()
 
 # =====================================================================
@@ -51,6 +46,26 @@ except ModuleNotFoundError:
         from schemas.lesson_plan_schema_dto import LessonPlanSchemaDto
     except ModuleNotFoundError:
         from lesson_plan_schema_dto import LessonPlanSchemaDto
+
+try:
+    from app.schemas.pedagogical_options_dto import (
+        PedagogicalOptionsRequest,
+        PedagogicalOptionsResponse,
+        PedagogicalActivityOption
+    )
+except ModuleNotFoundError:
+    try:
+        from schemas.pedagogical_options_dto import (
+            PedagogicalOptionsRequest,
+            PedagogicalOptionsResponse,
+            PedagogicalActivityOption
+        )
+    except ModuleNotFoundError:
+        from pedagogical_options_dto import (
+            PedagogicalOptionsRequest,
+            PedagogicalOptionsResponse,
+            PedagogicalActivityOption
+        )
 
 try:
     from app.services.i_lesson_plan_service import (
@@ -123,25 +138,82 @@ class GenerateLessonPlanRequest(BaseModel):
     )
     topic_query: Optional[str] = Field(
         default="",
-        examples=["Features of Direct Democracy in Ancient Athens"],
+        examples=["Public Services in Sri Lanka"],
         description="Optional supplementary sub-topic details"
     )
     grade_level: Optional[str] = Field(default="Grade 8", examples=["Grade 8"])
     subject: Optional[str] = Field(default="Civic Education", examples=["Civic Education"])
-    periods: Optional[int] = Field(
+
+    # Strictly clamped periods (1 to 4)
+    periods: int = Field(
         default=1,
-        ge=1,
-        le=4,
-        description="Allocated instructional periods (1 to 4 periods, 40 minutes each)"
+        description="Allocated instructional periods (strictly clamped between 1 and 4 for Civic Education)"
     )
+    requested_period: Optional[int] = Field(
+        default=1,
+        description="Specific sequential period number to generate (1 to 4)"
+    )
+    student_count: int = Field(
+        default=35,
+        ge=5,
+        le=80,
+        description="Total students for grouping & logistics"
+    )
+
+    # Teacher Modes & Context (Mode A: Suggested vs. Mode B: Own Approach)
+    teacher_mode: Literal["suggested", "own_approach"] = Field(
+        default="suggested",
+        description="Teacher interaction mode: 'suggested' for AI activity cards, 'own_approach' for custom strategy"
+    )
+    selected_activity_option: Optional[str] = Field(
+        default=None,
+        description="Description of selected option from suggest-pedagogical-options"
+    )
+    custom_teacher_activity: Optional[str] = Field(
+        default=None,
+        description="Custom activity entered by teacher overriding AI options (Mode B)"
+    )
+    classroom_environment: Optional[str] = Field(
+        default="Standard Classroom",
+        description="Classroom, Hall, or School Grounds"
+    )
+    accessible_resources: Optional[List[str]] = Field(
+        default_factory=list,
+        description="Resources explicitly available in the classroom"
+    )
+    previous_period_activities: Optional[List[str]] = Field(
+        default_factory=list,
+        description="List of activities previously used in this competency sequence to prevent repetition"
+    )
+
     duration_minutes: Optional[int] = Field(
         default=None,
-        description="Optional explicit duration in minutes (computed automatically as periods * 40 if omitted)"
+        description="Computed automatically as periods * 40 if omitted"
     )
     time_slot: Optional[str] = Field(
         default=None,
-        description="Formatted time slot label (e.g., '120 Minutes (3 Periods)')"
+        description="Formatted time slot label"
     )
+
+    @field_validator("periods", mode="before")
+    @classmethod
+    def enforce_clamp(cls, v: Any) -> int:
+        """Auto-clamps periods strictly to [1, 4] for Civic Education."""
+        try:
+            val = int(v) if v is not None else 1
+        except (ValueError, TypeError):
+            val = 1
+        return max(1, min(val, 4))
+
+    @field_validator("requested_period", mode="before")
+    @classmethod
+    def enforce_clamp_requested_period(cls, v: Any) -> int:
+        """Clamps the requested individual period index strictly to [1, 4]."""
+        try:
+            val = int(v) if v is not None else 1
+        except (ValueError, TypeError):
+            val = 1
+        return max(1, min(val, 4))
 
 
 # Backward-compatible alias for existing frontend client calls
@@ -152,9 +224,17 @@ class CompetencyLevelGenerateResponse(BaseModel):
     competency_level: str
     grade_level: str
     subject: str
+    periods: int
+    requested_period: int = 1
+    student_count: int
+    teacher_mode: str = "suggested"
     lesson_plan: LessonPlanSchemaDto
-    fact_check_report: Any
-    alignment_report: Any
+    lesson_plans: List[LessonPlanSchemaDto] = Field(
+        default_factory=list,
+        description="Array of 40-minute plans (1 plan per period)"
+    )
+    fact_check_report: Any = None
+    alignment_report: Any = None
 
 
 class SingleLessonPlanRequest(BaseModel):
@@ -167,8 +247,22 @@ class SingleLessonPlanRequest(BaseModel):
     grade_level: str = Field(default="Grade 8", examples=["Grade 8"])
     subject: str = Field(default="Civic Education", examples=["Civic Education"])
     periods: Optional[int] = Field(default=1, ge=1, le=4)
+    student_count: Optional[int] = Field(default=35, ge=5, le=80)
+    teacher_mode: Optional[Literal["suggested", "own_approach"]] = "suggested"
+    selected_activity_option: Optional[str] = None
+    custom_teacher_activity: Optional[str] = None
+    previous_period_activities: Optional[List[str]] = Field(default_factory=list)
     duration_minutes: Optional[int] = Field(default=None)
     time_slot: Optional[str] = Field(default=None)
+
+    @field_validator("periods", mode="before")
+    @classmethod
+    def clamp_single_plan_periods(cls, v: Any) -> int:
+        try:
+            val = int(v) if v is not None else 1
+        except (ValueError, TypeError):
+            val = 1
+        return max(1, min(val, 4))
 
 
 class UnitGenerateRequest(BaseModel):
@@ -180,8 +274,18 @@ class UnitGenerateRequest(BaseModel):
     grade_level: str = Field(default="Grade 8", examples=["Grade 8"])
     subject: str = Field(default="Civic Education", examples=["Civic Education"])
     periods: Optional[int] = Field(default=1, ge=1, le=4)
+    student_count: Optional[int] = Field(default=35, ge=5, le=80)
     duration_minutes: Optional[int] = Field(default=None)
     time_slot: Optional[str] = Field(default=None)
+
+    @field_validator("periods", mode="before")
+    @classmethod
+    def clamp_unit_periods(cls, v: Any) -> int:
+        try:
+            val = int(v) if v is not None else 1
+        except (ValueError, TypeError):
+            val = 1
+        return max(1, min(val, 4))
 
 
 class UnitGenerateResponse(BaseModel):
@@ -197,28 +301,22 @@ class UnitGenerateResponse(BaseModel):
 # =====================================================================
 app = FastAPI(
     title=getattr(settings, "APP_NAME", "NIE Curriculum RAG Lesson Plan Engine"),
-    description="Automated LEARN Practice Teaching Lesson Plan Generator with dynamic period scaling and local Llama 3.",
+    description="Automated LEARN Practice Teaching Lesson Plan Generator with dynamic period scaling, interactive activity discovery, and local Llama 3.",
     version="1.0.0"
 )
 
 # =====================================================================
-# CORS CONFIGURATION (FULL NETWORK AND FRONTEND ACCESS)
+# CORS CONFIGURATION (ALLOWS ALL ORIGINS, SERVERS, AND IP ADDRESSES)
 # =====================================================================
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
-        "http://10.30.54.14:3000",
-        "http://10.30.5.126:3000",
-        "*"
-    ],
+    allow_origins=["*"],
+    allow_origin_regex=r".*",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
     expose_headers=["*"],
 )
-
 
 # =====================================================================
 # DEPENDENCY INJECTION PROVIDERS
@@ -228,10 +326,6 @@ _retriever_singleton: Optional[MultiGradeBoundaryRetriever] = None
 
 
 def get_lesson_service() -> LessonPlanMlService:
-    """
-    Ensures ChromaDB collections, local embedding functions, and the
-    RAG generator are instantiated once as an in-memory singleton.
-    """
     global _service_singleton
     if _service_singleton is None:
         logger.info("Initializing LessonPlanMlService singleton...")
@@ -240,9 +334,6 @@ def get_lesson_service() -> LessonPlanMlService:
 
 
 def get_retriever_service() -> MultiGradeBoundaryRetriever:
-    """
-    Ensures MultiGradeBoundaryRetriever is instantiated once as an in-memory singleton.
-    """
     global _retriever_singleton
     if _retriever_singleton is None:
         logger.info("Initializing MultiGradeBoundaryRetriever singleton...")
@@ -285,10 +376,6 @@ async def get_competencies(
     search_term: str = Query("", description="Optional unit keyword or general query"),
     retriever: MultiGradeBoundaryRetriever = Depends(get_retriever_service)
 ) -> List[str]:
-    """
-    Returns available competency levels for the selected Subject and Grade
-    directly from ChromaDB index.
-    """
     try:
         query = search_term.strip() if search_term.strip() else f"{subject} {grade}"
         levels = retriever.auto_extract_unit_competency_levels(
@@ -306,6 +393,68 @@ async def get_competencies(
 
 
 @app.post(
+    "/api/v1/suggest-pedagogical-options",
+    response_model=PedagogicalOptionsResponse,
+    status_code=status.HTTP_200_OK,
+    tags=["Interactive Pedagogy"],
+    summary="Suggest 3 Independent Creative Activity Options for Requested Period"
+)
+async def suggest_pedagogical_options(
+    request: PedagogicalOptionsRequest,
+    service: LessonPlanMlService = Depends(get_lesson_service)
+):
+    """
+    Discovers 3 creative student-centered activity themes (Track 1: Simulation, Track 2: Case Inquiry,
+    Track 3: Station Jigsaw) dynamically tailored to the requested period's allocated outcomes,
+    class size, and previous activity history.
+    """
+    if not request.competency_level.strip():
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Field 'competency_level' cannot be empty."
+        )
+
+    try:
+        raw_result = await service.suggest_pedagogical_options_async(
+            competency_level=request.competency_level.strip(),
+            student_count=request.student_count,
+            periods=request.periods,
+            requested_period=request.requested_period or 1,
+            grade_level=request.grade_level,
+            subject=request.subject,
+            classroom_environment=request.classroom_environment or "Standard Classroom",
+            accessible_resources=request.accessible_resources or [],
+            previous_period_activities=request.previous_period_activities or []
+        )
+
+        options = [
+            PedagogicalActivityOption(**opt)
+            for opt in raw_result.get("options", [])
+        ]
+
+        return PedagogicalOptionsResponse(
+            competency_level=request.competency_level,
+            lesson_topic=raw_result.get("topic", f"Competency {request.competency_level}"),
+            student_count=request.student_count,
+            periods=request.periods,
+            requested_period=request.requested_period or 1,
+            teacher_mode=request.teacher_mode or "suggested",
+            options=options
+        )
+    except ValueError as val_err:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=str(val_err)
+        )
+    except Exception as exc:
+        logger.exception("Failed to suggest pedagogical options: %s", exc)
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Options discovery failed: {str(exc)}"
+        )
+
+
+@app.post(
     "/api/v1/generate-by-competency-level",
     response_model=CompetencyLevelGenerateResponse,
     status_code=status.HTTP_200_OK,
@@ -318,9 +467,9 @@ async def generate_by_competency_level(
 ):
     """
     Main endpoint for Frontend delivery:
-    1. Validates and clamps period count (1 to 4) and derives exact duration (40m per period).
-    2. Filters ChromaDB curriculum for target competency code.
-    3. Triggers dynamic step scaling based on period count.
+    1. Validates and strictly clamps period count (1 to 4) and student count.
+    2. Takes selected activity strategy (Mode A) or custom teacher input (Mode B).
+    3. Splits learning outcomes across periods and generates individual 40-minute plans.
     4. Executes generation with safe fallbacks for evaluators.
     """
     if not request.competency_level.strip():
@@ -329,8 +478,8 @@ async def generate_by_competency_level(
             detail="Field 'competency_level' cannot be empty."
         )
 
-    # 1. Enforce 1 to 4 periods range and calculate duration (1 period = 40 minutes)
-    periods = min(max(request.periods or 1, 1), 4)
+    periods = min(max(request.periods, 1), 4)
+    requested_period = min(max(request.requested_period or 1, 1), periods)
     duration_minutes = request.duration_minutes or (periods * 40)
     time_slot = request.time_slot or f"{duration_minutes} Minutes ({periods} {'Period' if periods == 1 else 'Periods'})"
 
@@ -346,18 +495,35 @@ async def generate_by_competency_level(
         grade_level=request.grade_level or "Grade 8",
         subject=request.subject or "Civic Education",
         periods=periods,
+        total_periods_for_competency=periods,
+        current_period=requested_period,
         time_slot=time_slot,
-        duration_minutes=duration_minutes
+        duration_minutes=duration_minutes,
+        student_count=request.student_count or 35,
+        classroom_environment=request.classroom_environment or "Standard Classroom",
+        accessible_resources=request.accessible_resources or [],
+        teacher_mode=request.teacher_mode or "suggested",
+        selected_activity_option=request.selected_activity_option,
+        custom_teacher_activity=request.custom_teacher_activity,
+        previous_period_activities=request.previous_period_activities or []
     )
 
     try:
         response: LessonPlanGenerateResponse = await service.generate_lesson_plan_async(req_dto)
 
+        # Retrieve sequential plans list; fallback to singular plan if missing
+        plans_list = response.lesson_plans if response.lesson_plans else [response.lesson_plan]
+
         return CompetencyLevelGenerateResponse(
             competency_level=request.competency_level,
             grade_level=request.grade_level or "Grade 8",
             subject=request.subject or "Civic Education",
+            periods=periods,
+            student_count=request.student_count or 35,
+            requested_period=requested_period,
+            teacher_mode=request.teacher_mode or "suggested",
             lesson_plan=response.lesson_plan,
+            lesson_plans=plans_list,
             fact_check_report=response.fact_check_report or {
                 "grounding_score": 1.0,
                 "passed": True,
@@ -416,8 +582,14 @@ async def generate_single_plan(
         grade_level=request.grade_level,
         subject=request.subject,
         periods=periods,
+        current_period=1,
         time_slot=time_slot,
-        duration_minutes=duration_minutes
+        duration_minutes=duration_minutes,
+        student_count=request.student_count or 35,
+        teacher_mode=request.teacher_mode or "suggested",
+        selected_activity_option=request.selected_activity_option,
+        custom_teacher_activity=request.custom_teacher_activity,
+        previous_period_activities=request.previous_period_activities or []
     )
 
     try:
@@ -450,8 +622,14 @@ async def generate_lesson_plan_direct(
         grade_level=request.grade_level,
         subject=request.subject,
         periods=periods,
+        current_period=1,
         time_slot=time_slot,
-        duration_minutes=duration_minutes
+        duration_minutes=duration_minutes,
+        student_count=request.student_count or 35,
+        teacher_mode=request.teacher_mode or "suggested",
+        selected_activity_option=request.selected_activity_option,
+        custom_teacher_activity=request.custom_teacher_activity,
+        previous_period_activities=request.previous_period_activities or []
     )
 
     try:
@@ -541,29 +719,17 @@ async def extract_curriculum(
         )
 
 
-
 # =====================================================================
 # GENERATED PLANS STORAGE ROUTERS
 # =====================================================================
 try:
-    from fastapi import APIRouter
     from app.api.v1.endpoints.generated_plans import router as generated_plans_router
-    app.include_router(generated_plans_router)
 
-    # Also mount alias under /api/generated-plans for convenience
-    alias_router = APIRouter(prefix="/api/generated-plans", tags=["Generated Lesson Plans Storage"])
-    from app.api.v1.endpoints.generated_plans import (
-        get_all_generated_plans,
-        get_plan_by_filename,
-        delete_plan_by_filename,
-        save_plan,
+    app.include_router(generated_plans_router)
+    app.include_router(generated_plans_router, prefix="/api/generated-plans")
+    logger.info(
+        "Successfully mounted generated plans storage routers (/api/v1/generated-plans and /api/generated-plans)"
     )
-    alias_router.add_api_route("", get_all_generated_plans, methods=["GET"])
-    alias_router.add_api_route("/{filename}", get_plan_by_filename, methods=["GET"])
-    alias_router.add_api_route("/{filename}", delete_plan_by_filename, methods=["DELETE"])
-    alias_router.add_api_route("", save_plan, methods=["POST"])
-    app.include_router(alias_router)
-    logger.info("Successfully mounted generated plans storage routers (/api/v1/generated-plans and /api/generated-plans)")
 except Exception as e:
     logger.warning("Could not include generated_plans router: %s", e)
 

@@ -1,3 +1,117 @@
+// =====================================================================
+// 1. PEDAGOGICAL ACTIVITY DISCOVERY TYPES (STEP 1 & STEP 2)
+// =====================================================================
+
+export interface PedagogicalActivityOption {
+  id: string;
+  title: string;
+  pedagogy_type: string;
+  description: string;
+  student_grouping: string;
+  required_materials: string[];
+  creative_assessment_preview: string;
+}
+
+export interface PedagogicalOptionsRequest {
+  competency_level: string;
+  grade_level?: string;
+  subject?: string;
+  student_count?: number;
+  periods?: number;
+}
+
+export interface PedagogicalOptionsResponse {
+  competency_level: string;
+  lesson_topic: string;
+  student_count: number;
+  periods: number;
+  options: PedagogicalActivityOption[];
+}
+
+// =====================================================================
+// 2. LEARN KANDY PRACTICE TEACHING FORMAT (PRIMARY SCHEMA)
+// =====================================================================
+
+export interface LessonDevelopmentStep {
+  step_number: number;
+  teacher_activities: string;
+  student_activities: string;
+  learning_teaching_method: string;
+  learning_teaching_aids: string;
+  assessment_and_feedback: string;
+  time_minutes: number;
+  other?: string;
+}
+
+export interface LessonPlanSchemaDto {
+  grade: string;
+  subject: string;
+  time_allocation: string;
+  competence: string;
+  competence_level: string;
+  lesson: string;
+  unique_learning_outcome: string[];
+  the_entrance: string;
+  lesson_development_steps: LessonDevelopmentStep[];
+  summary: string;
+  assessment_and_feedback_whole_lesson: string;
+  post_activity: string;
+  information_sources: string[];
+  attachments: string[];
+}
+
+// Aliases for compatibility
+export type LearnLessonPlanDto = LessonPlanSchemaDto;
+export type PeradeniyaLessonPlanDto = LessonPlanSchemaDto;
+
+// =====================================================================
+// 3. GENERATION REQUEST & RESPONSE TYPES
+// =====================================================================
+
+export interface GenerateLessonPlanRequest {
+  competency_level: string;
+  topic_query?: string;
+  grade_level?: string;
+  subject?: string;
+  periods?: number;
+  student_count?: number;
+  selected_activity_option?: string;
+  custom_teacher_activity?: string;
+  duration_minutes?: number;
+  time_slot?: string;
+}
+
+export type CompetencyLevelGenerateRequest = GenerateLessonPlanRequest;
+
+export interface FactCheckReport {
+  grounding_score?: number;
+  passed?: boolean;
+  unsupported_claims?: string[];
+  explanation?: string;
+}
+
+export interface AlignmentReport {
+  overall_alignment_score?: number;
+  passed_alignment_guardrail?: boolean;
+  details?: Record<string, unknown>;
+}
+
+export interface CompetencyLevelGenerateResponse {
+  competency_level: string;
+  grade_level: string;
+  subject: string;
+  periods: number;
+  student_count: number;
+  lesson_plan: LessonPlanSchemaDto;
+  lesson_plans: LessonPlanSchemaDto[];
+  fact_check_report?: FactCheckReport;
+  alignment_report?: AlignmentReport;
+}
+
+// =====================================================================
+// 4. LEGACY / GENERIC PIPELINE COMPATIBILITY TYPES
+// =====================================================================
+
 export interface LessonPlanRequest {
   query: string;
   gradeLevel: string;
@@ -44,20 +158,9 @@ export interface LessonPlanSchema {
   verification: AssessmentAndVerification;
 }
 
-export interface FactCheckReport {
-  grounding_score: number;
-  passed: boolean;
-  unsupported_claims?: string[];
-  explanation?: string;
-}
-
-export interface AlignmentReport {
-  overall_alignment_score: number;
-  passed_alignment_guardrail: boolean;
-}
-
 export interface LessonPlanGenerateResponse {
-  lesson_plan: LessonPlanSchema;
+  lesson_plan: LessonPlanSchemaDto | LessonPlanSchema;
+  lesson_plans?: LessonPlanSchemaDto[];
   fact_check_report?: FactCheckReport;
   alignment_report?: AlignmentReport;
 }

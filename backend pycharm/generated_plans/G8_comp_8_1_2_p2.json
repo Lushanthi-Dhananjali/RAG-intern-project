@@ -1,0 +1,54 @@
+{
+  "grade": "G8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 2 of 3)",
+  "competence": "8.1.2",
+  "competence_level": "8.1.2",
+  "lesson": "Competency 8.1.2 (Period 2)",
+  "unique_learning_outcome": [
+    "Expresses ideas appreciating the fact that public services bring about a quality development of human lives.",
+    "Gives examples for other organizations that provide public services."
+  ],
+  "the_entrance": "Hook the students with a stimulus question, short story, or real-life civic dilemma. Link prior learning to Period 2's focus.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Delivers prompts/cue cards; students inspect tasks.",
+      "student_activities": "Inspect tasks.",
+      "learning_teaching_method": "Inquiry-based learning",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "None",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Monitors the 30-minute pacing and collects/returns materials from the teacher.",
+      "student_activities": "Active teamwork executing roles without bystanders.",
+      "learning_teaching_method": "Collaborative learning",
+      "learning_teaching_aids": "Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "Peer feedback",
+      "time_minutes": 15,
+      "other": ""
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "Spokespersons present; peer feedback.",
+      "student_activities": "Presents the group's resolution or roleplay dialogue to the whole class.",
+      "learning_teaching_method": "Presentational learning",
+      "learning_teaching_aids": "Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "Peer feedback",
+      "time_minutes": 5,
+      "other": ""
+    }
+  ],
+  "summary": "Consolidates key concepts.",
+  "assessment_and_feedback_whole_lesson": "2-minute summary consolidating key concepts. 3-minute active assessment directly verifying the allocated outcomes.",
+  "post_activity": "None",
+  "information_sources": [],
+  "attachments": [
+    "Chalkboard",
+    "Student Notebooks",
+    "Chart Paper"
+  ]
+}

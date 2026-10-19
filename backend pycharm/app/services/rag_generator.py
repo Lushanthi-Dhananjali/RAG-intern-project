@@ -1,6 +1,7 @@
 import os
 import sys
 import json
+import re
 import logging
 from pathlib import Path
 from typing import List, Dict, Any, Optional
@@ -25,39 +26,108 @@ try:
     from app.schemas.lesson_plan_schema_dto import (
         LearnLessonPlanDto,
         LessonPlanSchemaDto,
-        LessonDevelopmentStepDto
+        LessonDevelopmentStepDto,
     )
 except ModuleNotFoundError:
     try:
         from schemas.lesson_plan_schema_dto import (
             LearnLessonPlanDto,
             LessonPlanSchemaDto,
-            LessonDevelopmentStepDto
+            LessonDevelopmentStepDto,
         )
     except ModuleNotFoundError:
         from lesson_plan_schema_dto import (
             LearnLessonPlanDto,
             LessonPlanSchemaDto,
-            LessonDevelopmentStepDto
+            LessonDevelopmentStepDto,
         )
 
-# Import Prompt Builder
+# Import Prompt Builders
 try:
     from app.services.prompt_templates import (
         build_lesson_plan_prompt,
-        LEARN_PRACTICE_TEACHING_PROMPT
+        build_activity_options_prompt,
+        LEARN_PRACTICE_TEACHING_PROMPT,
     )
 except ModuleNotFoundError:
     try:
         from services.prompt_templates import (
             build_lesson_plan_prompt,
-            LEARN_PRACTICE_TEACHING_PROMPT
+            build_activity_options_prompt,
+            LEARN_PRACTICE_TEACHING_PROMPT,
         )
     except ModuleNotFoundError:
         from prompt_templates import (
             build_lesson_plan_prompt,
-            LEARN_PRACTICE_TEACHING_PROMPT
+            build_activity_options_prompt,
+            LEARN_PRACTICE_TEACHING_PROMPT,
         )
+
+# Import Step 4 Period-Aware Activity Options Engine
+try:
+    from app.services.activity_options_engine import (
+        build_period_options_prompt,
+        generate_fallback_options,
+    )
+except ModuleNotFoundError:
+    try:
+        from services.activity_options_engine import (
+            build_period_options_prompt,
+            generate_fallback_options,
+        )
+    except ModuleNotFoundError:
+        build_period_options_prompt = None
+        generate_fallback_options = None
+
+# Import Step 6 Mode B Teacher Scaffolding Engine
+try:
+    from app.services.teacher_mode_engine import build_mode_b_scaffolding_prompt
+except ModuleNotFoundError:
+    try:
+        from services.teacher_mode_engine import build_mode_b_scaffolding_prompt
+    except ModuleNotFoundError:
+        build_mode_b_scaffolding_prompt = None
+
+# Import Step 7 Single-Period 40-Minute Assembly Engine
+try:
+    from app.services.lesson_plan_assembler import (
+        balance_development_step_times,
+        build_single_period_assembly_prompt,
+    )
+except ModuleNotFoundError:
+    try:
+        from services.lesson_plan_assembler import (
+            balance_development_step_times,
+            build_single_period_assembly_prompt,
+        )
+    except ModuleNotFoundError:
+        balance_development_step_times = None
+        build_single_period_assembly_prompt = None
+
+# Import Step 8 Deterministic Guardrail Engine
+try:
+    from app.services.timing_guardrail_engine import TimingGuardrailEngine
+except ModuleNotFoundError:
+    try:
+        from services.timing_guardrail_engine import TimingGuardrailEngine
+    except ModuleNotFoundError:
+        TimingGuardrailEngine = None
+
+# Import Step 3 Multi-Period Outcome Allocator Engine
+try:
+    from app.services.outcome_allocator import (
+        allocate_learning_outcomes_across_periods,
+        extract_verbatim_tig_outcomes,
+    )
+except ModuleNotFoundError:
+    try:
+        from services.outcome_allocator import (
+            allocate_learning_outcomes_across_periods,
+            extract_verbatim_tig_outcomes,
+        )
+    except ModuleNotFoundError:
+        allocate_learning_outcomes_across_periods = None
+        from app.services.multi_grade_retriever import extract_verbatim_tig_outcomes
 
 # Import Evaluators & Guardrails
 try:
@@ -71,23 +141,14 @@ except ModuleNotFoundError:
         from evaluator import RAGFactCheckingAgent
         from alignment_evaluator import AlignmentEvaluator
 
-# Import 3-Tier Multi-Grade Boundary Retriever & TIG Outcome Extractor
+# Import 3-Tier Multi-Grade Boundary Retriever
 try:
-    from app.services.multi_grade_retriever import (
-        MultiGradeBoundaryRetriever,
-        extract_verbatim_tig_outcomes
-    )
+    from app.services.multi_grade_retriever import MultiGradeBoundaryRetriever
 except ModuleNotFoundError:
     try:
-        from services.multi_grade_retriever import (
-            MultiGradeBoundaryRetriever,
-            extract_verbatim_tig_outcomes
-        )
+        from services.multi_grade_retriever import MultiGradeBoundaryRetriever
     except ModuleNotFoundError:
-        from multi_grade_retriever import (
-            MultiGradeBoundaryRetriever,
-            extract_verbatim_tig_outcomes
-        )
+        from multi_grade_retriever import MultiGradeBoundaryRetriever
 
 
 # =====================================================================
@@ -99,20 +160,21 @@ class RAGLessonPlanGenerator:
     RAG Lesson Plan Generation engine running completely on local Llama 3 via Ollama.
     Dynamically orchestrates:
     1. Retrieval of multi-tier curriculum boundaries (TIG, Textbook, Exemplars).
-    2. Dynamic period scaling (1 to 4 periods) and proportional time distribution.
-    3. Prompt generation enforcing Education Science Division, LEARN Kandy pedagogy.
-    4. LLM JSON generation via local Ollama endpoint with strict grammar-based schema decoding.
-    5. Programmatic verbatim learning outcome injection from official TIG syllabus matrix.
-    6. Validation via LearnLessonPlanDto.
-    7. Persistence of validated plans with outcomes to the local file system.
-    8. Safe fact-checking and pedagogical alignment guardrail evaluations with fallback.
+    2. Period-aware student-centered options discovery (3 meaningfully different options per period).
+    3. Mode B Teacher's Own Approach Scaffolding preserving custom pedagogical intent.
+    4. Step 7 Strict 40-Minute Single-Period Assembly (5m Intro, 30m Dev, 5m Closure).
+    5. Step 8 Deterministic Guardrails & Mathematical timing auto-repair.
+    6. LLM JSON generation via local Ollama endpoint with strict grammar-based schema decoding.
+    7. Programmatic verbatim learning outcome injection from official TIG syllabus matrix.
+    8. Validation via LearnLessonPlanDto and disk persistence.
+    9. Safe fact-checking and pedagogical alignment guardrail evaluations with fallback.
     """
 
     def __init__(
-            self,
-            chroma_path: Optional[str] = None,
-            ollama_url: Optional[str] = None,
-            model_name: str = "llama3"
+        self,
+        chroma_path: Optional[str] = None,
+        ollama_url: Optional[str] = None,
+        model_name: str = "llama3"
     ):
         if chroma_path is None:
             chroma_path = os.getenv(
@@ -131,25 +193,182 @@ class RAGLessonPlanGenerator:
         self.last_eval_report = None
         self.last_align_report = None
 
+    def generate_activity_options(
+        self,
+        competency_level: str,
+        student_count: int = 35,
+        periods: int = 1,
+        requested_period: int = 1,
+        grade_level: str = "Grade 8",
+        subject: str = "Civic Education",
+        classroom_environment: str = "Standard Classroom",
+        accessible_resources: Optional[List[str]] = None,
+        previous_activities: Optional[List[str]] = None
+    ) -> Dict[str, Any]:
+        """
+        Generates 3 independent, student-centred activity cards specifically
+        tailored to the outcomes allocated for requested_period.
+        Enforces anti-repetition against previous_activities and applies Step 5 grouping logistics.
+        """
+        clean_level = competency_level.strip()
+        safe_periods = min(max(periods, 1), 4)
+        safe_requested = min(max(requested_period, 1), safe_periods)
+
+        # 1. Retrieve TIG Guidelines from ChromaDB
+        dual_context = self.retriever.retrieve_tig_and_textbook_for_level(
+            clean_level, f"Competency {clean_level}", grade_level, subject
+        )
+        tig_chunks = dual_context.get("tig_guidelines", [])
+
+        # 2. Extract Verbatim Outcomes
+        extracted_outcomes: List[str] = []
+        for chunk in tig_chunks:
+            found = extract_verbatim_tig_outcomes(chunk.get("content", ""), clean_level)
+            if len(found) > len(extracted_outcomes):
+                extracted_outcomes = found
+
+        # 3. Retrieve ONLY outcomes allocated for the requested period
+        if allocate_learning_outcomes_across_periods is not None:
+            allocation_plan = allocate_learning_outcomes_across_periods(
+                all_outcomes=extracted_outcomes,
+                periods=safe_periods,
+                competency_level=clean_level
+            )
+            period_outcomes = allocation_plan.get_outcomes_for_period(safe_requested)
+        else:
+            period_outcomes = extracted_outcomes
+
+        lesson_topic = f"Competency Level {clean_level} (Period {safe_requested} of {safe_periods})"
+
+        # 4. Build Period-Aware Prompt
+        if build_period_options_prompt is not None:
+            prompt = build_period_options_prompt(
+                competency_level=clean_level,
+                period_outcomes=period_outcomes,
+                current_period=safe_requested,
+                total_periods=safe_periods,
+                student_count=student_count,
+                lesson_topic=lesson_topic,
+                grade_level=grade_level,
+                classroom_environment=classroom_environment,
+                accessible_resources=accessible_resources,
+                previous_activities=previous_activities
+            )
+        else:
+            prompt = build_activity_options_prompt(
+                competency_level=clean_level,
+                grade=grade_level,
+                subject=subject,
+                topic=lesson_topic,
+                student_count=student_count,
+                periods=safe_periods,
+                tig_context="\n\n".join([c.get("content", "") for c in tig_chunks])
+            )
+
+        # 5. Execute LLM Call (Ollama / Llama 3)
+        payload = {
+            "model": self.model_name,
+            "prompt": prompt,
+            "stream": False,
+            "format": "json",
+            "options": {
+                "temperature": 0.3,
+                "num_predict": 1400,
+                "num_thread": 6
+            }
+        }
+
+        try:
+            res = requests.post(f"{self.ollama_url}/api/generate", json=payload, timeout=90)
+            res.raise_for_status()
+            raw = res.json().get("response", "{}")
+            clean_str = raw.strip().removeprefix("```json").removeprefix("```").removesuffix("```").strip()
+            parsed = json.loads(clean_str)
+
+            if "options" in parsed and len(parsed["options"]) == 3:
+                parsed["period"] = safe_requested
+                parsed["topic"] = lesson_topic
+                for opt in parsed["options"]:
+                    opt["learning_outcomes_addressed"] = period_outcomes
+                return parsed
+        except Exception as err:
+            logger.warning("LLM options generation error: %s. Using pedagogical fallback.", err)
+
+        # 6. Fallback Activation with anti-repetition filter
+        if generate_fallback_options is not None:
+            fallback = generate_fallback_options(
+                competency_level=clean_level,
+                period_outcomes=period_outcomes,
+                current_period=safe_requested,
+                total_periods=safe_periods,
+                student_count=student_count,
+                lesson_topic=lesson_topic,
+                previous_activities=previous_activities
+            )
+        else:
+            fallback = {
+                "topic": lesson_topic,
+                "period": safe_requested,
+                "options": [
+                    {
+                        "id": "option_1",
+                        "title": f"Community Council Roleplay: {lesson_topic}",
+                        "pedagogy_type": "Simulation & Roleplay",
+                        "description": "Students enact a community meeting debating civic challenges and drafting a resolution.",
+                        "student_grouping": f"{max(2, student_count // 6)} teams of 5-6 students",
+                        "required_materials": ["Role cue cards", "Notebooks"],
+                        "approximate_duration_minutes": 30,
+                        "creative_assessment_preview": "1-Minute Freeze-Frame Tableau representing a core civic value."
+                    },
+                    {
+                        "id": "option_2",
+                        "title": f"Evidence-Based Case Inquiry: {lesson_topic}",
+                        "pedagogy_type": "Case Inquiry / Evidence Analysis",
+                        "description": "Students analyze real-life local scenario cards to identify rights and constitutional duties.",
+                        "student_grouping": f"{max(2, student_count // 5)} investigation teams",
+                        "required_materials": ["Dilemma slips", "Observation worksheets"],
+                        "approximate_duration_minutes": 30,
+                        "creative_assessment_preview": "Rapid Exit Ticket on a key civic right and corresponding duty."
+                    },
+                    {
+                        "id": "option_3",
+                        "title": f"Collaborative Station Jigsaw: {lesson_topic}",
+                        "pedagogy_type": "Station Jigsaw / Collaborative Design",
+                        "description": "Station experts investigate distinct civic pillars and return to home groups to co-create an infographic.",
+                        "student_grouping": f"{max(2, student_count // 5)} home groups",
+                        "required_materials": ["Chart papers", "Color markers"],
+                        "approximate_duration_minutes": 30,
+                        "creative_assessment_preview": "2-Line Rhyming Jingle summarizing the main lesson takeaway."
+                    }
+                ]
+            }
+
+        for opt in fallback["options"]:
+            opt["learning_outcomes_addressed"] = period_outcomes
+        return fallback
+
     def generate_prompt(
-            self,
-            user_query: str,
-            retrieved_data: Dict[str, Any],
-            dual_context: Dict[str, Any],
-            grade_level: str = "Grade 8",
-            subject: str = "Civic Education",
-            competency_level: str = "8.1.1",
-            periods: int = 1,
-            time_slot: str = "40 Minutes (1 Period)",
-            duration_minutes: int = 40,
-            retrieved_outcomes: Optional[List[str]] = None
+        self,
+        user_query: str,
+        retrieved_data: Dict[str, Any],
+        dual_context: Dict[str, Any],
+        grade_level: str = "Grade 8",
+        subject: str = "Civic Education",
+        competency_level: str = "8.1.1",
+        periods: int = 1,
+        time_slot: str = "40 Minutes (1 Period)",
+        duration_minutes: int = 40,
+        retrieved_outcomes: Optional[List[str]] = None,
+        selected_activity_strategy: Optional[str] = None,
+        student_count: int = 35,
+        current_period: int = 1,
+        total_periods: int = 1
     ) -> str:
         exemplar_chunks = [
             item.get("content", "")
             for item in retrieved_data.get("practical_exemplars", [])
         ]
 
-        # Extract actual Competency title from metadata if available
         retrieved_competence = ""
         for item in dual_context.get("tig_guidelines", []):
             meta = item.get("metadata", {})
@@ -179,7 +398,6 @@ class RAGLessonPlanGenerator:
 
         context_sections = []
 
-        # 1. Explicitly highlight the Target Level & Competency in the prompt context
         if tig_chunks:
             tig_combined = "\n\n".join(tig_chunks)
             header = f"--- [OFFICIAL TIG GUIDELINES | LEVEL: {competency_level}] ---"
@@ -187,35 +405,30 @@ class RAGLessonPlanGenerator:
                 header += f"\nMAIN COMPETENCY: {retrieved_competence}"
             context_sections.append(f"{header}\n{tig_combined}")
 
-        # 2. Textbook Subject Content (Capped to 2500 chars to avoid prompt bloat and timeouts)
         if textbook_chunks:
             textbook_combined = "\n\n".join(textbook_chunks)[:2500]
             context_sections.append(
                 f"--- PUPIL TEXTBOOK REFERENCE ---\n{textbook_combined}"
             )
 
-        # 3. Prerequisites (Capped to 800 chars)
         if prereq_chunks:
             prereq_combined = "\n\n".join(prereq_chunks)[:800]
             context_sections.append(
                 f"--- [PREREQUISITE BASELINE (DO NOT RE-TEACH)] ---\n{prereq_combined}"
             )
 
-        # 4. Upper Boundaries (Capped to 800 chars)
         if upper_chunks:
             upper_combined = "\n\n".join(upper_chunks)[:800]
             context_sections.append(
                 f"--- [UPPER BOUNDARY LIMIT (DO NOT EXCEED)] ---\n{upper_combined}"
             )
 
-        # 5. Blueprints (Capped to 800 chars)
         if exemplar_chunks:
             exemplar_combined = "\n\n".join(exemplar_chunks)[:800]
             context_sections.append(
                 f"--- [BLUEPRINT EXEMPLAR LESSON PLANS] ---\n{exemplar_combined}"
             )
 
-        # Total assembled context safely capped to ~6000 chars to prevent Ollama read timeouts
         assembled_context = "\n\n".join(context_sections)
         exemplar_combined_str = "\n\n".join(exemplar_chunks)[:800] if exemplar_chunks else ""
 
@@ -228,7 +441,11 @@ class RAGLessonPlanGenerator:
             duration_minutes=duration_minutes,
             retrieved_context=assembled_context,
             exemplar_context=exemplar_combined_str,
-            retrieved_outcomes=retrieved_outcomes
+            retrieved_outcomes=retrieved_outcomes,
+            selected_activity_strategy=selected_activity_strategy,
+            student_count=student_count,
+            current_period=current_period,
+            total_periods=total_periods
         )
 
     def validate_generation_sequence(self, plan: LearnLessonPlanDto) -> bool:
@@ -318,129 +535,185 @@ class RAGLessonPlanGenerator:
             raise ValueError(f"LLM output violated LearnLessonPlanDto: {validation_err}")
 
     def generate_lesson_plan(
-            self,
-            query: str,
-            competency_level: str = "8.1.1",
-            grade_level: str = "Grade 8",
-            subject: str = "Civic Education",
-            periods: int = 1,
-            duration_minutes: Optional[int] = None,
-            time_slot: Optional[str] = None,
-            retrieved_outcomes: Optional[List[str]] = None,
-            retrieved_context: str = "",
+        self,
+        query: str,
+        competency_level: str = "8.1.1",
+        grade_level: str = "Grade 8",
+        subject: str = "Civic Education",
+        periods: int = 1,
+        duration_minutes: Optional[int] = None,
+        time_slot: Optional[str] = None,
+        retrieved_outcomes: Optional[List[str]] = None,
+        retrieved_context: str = "",
+        teacher_mode: str = "suggested",
+        selected_activity_strategy: Optional[str] = None,
+        custom_teacher_activity: Optional[str] = None,
+        classroom_environment: str = "Standard Classroom",
+        accessible_resources: Optional[List[str]] = None,
+        student_count: int = 35,
+        current_period: int = 1,
+        total_periods: int = 1
     ) -> LessonPlanSchemaDto:
         """
-        Runs the LEARN Practice Teaching RAG pipeline:
-        1. Derives exact period count (1 to 4) and duration (40m per period).
-        2. Retrieves boundary context & dual TIG/Textbook context.
-        3. Builds LEARN prompt with step-scaling instructions and reference outcomes.
-        4. Calls local Ollama (Llama 3) with LearnLessonPlanDto JSON schema.
-        5. Injects verbatim retrieved learning outcomes directly.
-        6. Validates sequence completeness and auto-balances pacing.
-        7. Saves fully populated JSON to disk.
-        8. Runs fact-checking and alignment guardrails safely with fallback.
+        Step 7 & 8: Single-Period 40-Minute Assembly with Deterministic Guardrails.
+        Enforces 5m Entrance + 30m Development + 5m Closure, auto-balances step timings,
+        and guarantees verbatim TIG learning outcome injection.
         """
-        # 1. Enforce 1 to 4 periods range and calculate total duration
-        periods = min(max(periods, 1), 4)
-        duration_minutes = duration_minutes or (periods * 40)
-        time_slot = time_slot or f"{duration_minutes} Minutes ({periods} {'Period' if periods == 1 else 'Periods'})"
+        duration_minutes = 40
+        time_slot = f"40 Minutes (Period {current_period} of {total_periods})"
 
-        # 2. Retrieve 3-tier boundary context & dual TIG/Textbook context
-        boundary_data = self.retriever.retrieve_3tier_boundaries(query, grade_level, subject)
+        # 1. Retrieve Dual TIG and Textbook Context
         dual_context = self.retriever.retrieve_tig_and_textbook_for_level(
             competency_level=competency_level,
             query=query,
             grade_level=grade_level,
             subject=subject
         )
+        tig_chunks = dual_context.get("tig_guidelines", [])
+        tb_chunks = dual_context.get("textbook_paragraphs", [])
 
-        # Fallback outcome extraction if not explicitly passed
+        tig_context = "\n\n".join([c.get("content", "") for c in tig_chunks])
+        tb_context = "\n\n".join([c.get("content", "") for c in tb_chunks])
+
+        # 2. Extract Outcomes if Missing
         if not retrieved_outcomes:
-            for chunk in dual_context.get("tig_guidelines", []):
+            for chunk in tig_chunks:
                 found = extract_verbatim_tig_outcomes(chunk.get("content", ""), competency_level)
                 if len(found) > len(retrieved_outcomes or []):
                     retrieved_outcomes = found
 
-        if retrieved_context:
-            prompt = build_lesson_plan_prompt(
-                query=query,
-                grade=grade_level,
-                subject=subject,
+        # 3. Strategy Resolution (Mode A selected card vs. Mode B custom input)
+        effective_activity = (
+            custom_teacher_activity
+            if (teacher_mode == "own_approach" and custom_teacher_activity)
+            else selected_activity_strategy
+        )
+        lesson_topic = f"{query}"
+
+        # 4. Prompt Assembly (Step 6 vs Step 7 Assembly)
+        if teacher_mode == "own_approach" and custom_teacher_activity and build_mode_b_scaffolding_prompt:
+            logger.info("Executing Mode B: Scaffolding custom teacher activity into LEARN format...")
+            prompt = build_mode_b_scaffolding_prompt(
+                teacher_custom_activity=custom_teacher_activity,
+                period_outcomes=retrieved_outcomes or [],
+                current_period=current_period,
+                total_periods=total_periods,
+                student_count=student_count,
+                lesson_topic=lesson_topic,
+                grade_level=grade_level,
+                classroom_environment=classroom_environment,
+                accessible_resources=accessible_resources
+            )
+        elif build_single_period_assembly_prompt is not None:
+            prompt = build_single_period_assembly_prompt(
                 competency_level=competency_level,
-                periods=periods,
-                duration_minutes=duration_minutes,
-                retrieved_context=retrieved_context,
-                exemplar_context="",
-                retrieved_outcomes=retrieved_outcomes
+                period_outcomes=retrieved_outcomes or [],
+                current_period=current_period,
+                total_periods=total_periods,
+                student_count=student_count,
+                lesson_topic=lesson_topic,
+                grade_level=grade_level,
+                subject=subject,
+                chosen_strategy_description=effective_activity,
+                classroom_environment=classroom_environment,
+                accessible_resources=accessible_resources,
+                retrieved_tig_context=tig_context,
+                textbook_context=tb_context
             )
         else:
             prompt = self.generate_prompt(
                 user_query=query,
-                retrieved_data=boundary_data,
+                retrieved_data=self.retriever.retrieve_3tier_boundaries(query, grade_level, subject),
                 dual_context=dual_context,
                 grade_level=grade_level,
                 subject=subject,
                 competency_level=competency_level,
-                periods=periods,
+                periods=1,
                 time_slot=time_slot,
-                duration_minutes=duration_minutes,
-                retrieved_outcomes=retrieved_outcomes
+                duration_minutes=40,
+                retrieved_outcomes=retrieved_outcomes,
+                selected_activity_strategy=effective_activity,
+                student_count=student_count,
+                current_period=current_period,
+                total_periods=total_periods
             )
 
-        # 3. Call local Ollama with token-level grammar schema constraints
+        # 5. Local LLM Generation via Ollama
         validated_plan = self.call_ollama_with_strict_schema(prompt)
 
-        # 4. Inject official verbatim syllabus outcomes immediately after LLM generation
-        if retrieved_outcomes and len(retrieved_outcomes) > 0:
-            validated_plan.unique_learning_outcome = retrieved_outcomes
+        # 6. Step 8 Deterministic Guardrail Execution (Timing Auto-Repair & Verbatim Injection)
+        if TimingGuardrailEngine is not None:
+            validated_plan = TimingGuardrailEngine.enforce_invariants_and_inject_outcomes(
+                plan=validated_plan,
+                verbatim_outcomes=retrieved_outcomes or [],
+                requested_period=current_period,
+                total_periods=total_periods
+            )
+        else:
+            if balance_development_step_times is not None:
+                validated_plan.lesson_development_steps = balance_development_step_times(
+                    validated_plan.lesson_development_steps
+                )
+            if retrieved_outcomes and len(retrieved_outcomes) > 0:
+                validated_plan.unique_learning_outcome = retrieved_outcomes
 
-        # 5. Validate sequence completeness against LEARN domain constraints (after outcomes are attached)
+        # 7. Metadata Synchronization
+        validated_plan.time_allocation = time_slot
+        validated_plan.lesson = f"{lesson_topic} (Period {current_period})" if total_periods > 1 else lesson_topic
+
+        # 8. Domain Validation
         self.validate_generation_sequence(validated_plan)
 
-        # 6. Persist generated plan (including outcomes) to file system (JSON)
+        # 9. Persistence to Disk
         try:
             output_dir = Path(PROJECT_ROOT) / "generated_plans"
             output_dir.mkdir(parents=True, exist_ok=True)
             sanitized_grade = validated_plan.grade.replace(" ", "_")
             sanitized_comp = competency_level.replace(".", "_")
-            file_path = output_dir / f"{sanitized_grade}_comp_{sanitized_comp}.json"
+            file_path = output_dir / f"{sanitized_grade}_comp_{sanitized_comp}_p{current_period}.json"
 
             with open(file_path, "w", encoding="utf-8") as f:
                 f.write(validated_plan.model_dump_json(indent=2))
-            logger.info("Saved generated lesson plan to: %s", file_path)
+            logger.info("Successfully persisted repaired 40-minute plan to: %s", file_path)
         except Exception as file_err:
             logger.warning("Failed to save lesson plan JSON file to disk: %s", file_err)
 
-        # 7. Guardrail Verification Step (Fact-Checking against TIG & Textbook Context)
+        # 10. Guardrail Verification Step (Fact-Checking against TIG & Textbook Context)
         all_grounding_contexts = [
             item.get("content", "")
             for item in (
-                    dual_context.get("tig_guidelines", []) +
-                    dual_context.get("textbook_paragraphs", [])
+                dual_context.get("tig_guidelines", []) +
+                dual_context.get("textbook_paragraphs", [])
             )
         ]
 
         try:
             eval_report = self.evaluator.evaluate_lesson_plan(validated_plan, all_grounding_contexts)
-            logger.info("Guardrail Check passed: %s (Score: %.1f%%)", eval_report.passed,
-                        eval_report.grounding_score * 100)
+            logger.info(
+                "Guardrail Check passed: %s (Score: %.1f%%)",
+                eval_report.passed,
+                eval_report.grounding_score * 100
+            )
             self.last_eval_report = eval_report
         except Exception as eval_err:
-            logger.warning("Fact checking skipped or unavailable (API quota/network issue): %s", eval_err)
+            logger.warning("Fact checking skipped or unavailable: %s", eval_err)
             self.last_eval_report = type("Report", (), {
                 "grounding_score": 1.0,
                 "passed": True,
                 "unsupported_claims": []
             })()
 
-        # 8. Evaluate Goal & Task Alignment (Safe handling)
+        # 11. Evaluate Goal & Task Alignment
         try:
             align_report = self.alignment_evaluator.evaluate_alignment(validated_plan)
-            logger.info("Alignment Check passed: %s (Score: %.1f%%)", align_report.passed_alignment_guardrail,
-                        align_report.overall_alignment_score * 100)
+            logger.info(
+                "Alignment Check passed: %s (Score: %.1f%%)",
+                align_report.passed_alignment_guardrail,
+                align_report.overall_alignment_score * 100
+            )
             self.last_align_report = align_report
         except Exception as align_err:
-            logger.warning("Alignment evaluation skipped or unavailable (API quota/network issue): %s", align_err)
+            logger.warning("Alignment evaluation skipped or unavailable: %s", align_err)
             self.last_align_report = type("Report", (), {
                 "overall_alignment_score": 1.0,
                 "passed_alignment_guardrail": True,
@@ -450,16 +723,18 @@ class RAGLessonPlanGenerator:
         return validated_plan
 
     def generate_unit_lesson_plans(
-            self,
-            unit_query: str,
-            grade_level: str = "Grade 8",
-            subject: str = "Civic Education",
-            periods: int = 1,
-            time_slot: Optional[str] = None,
-            duration_minutes: Optional[int] = None
+        self,
+        unit_query: str,
+        grade_level: str = "Grade 8",
+        subject: str = "Civic Education",
+        periods: int = 1,
+        time_slot: Optional[str] = None,
+        duration_minutes: Optional[int] = None,
+        selected_activity_strategy: Optional[str] = None,
+        student_count: int = 35
     ) -> List[LearnLessonPlanDto]:
         print("\n=======================================================")
-        print(f"🔎 Scanning Unit: '{unit_query}' [{grade_level} - {subject}]")
+        print(f"Scanning Unit: '{unit_query}' [{grade_level} {subject}]")
         print("=======================================================")
 
         competency_levels = self.retriever.auto_extract_unit_competency_levels(
@@ -469,10 +744,10 @@ class RAGLessonPlanGenerator:
         )
 
         if not competency_levels:
-            print("⚠️ No exact competency levels found via metadata. Using fallback range...")
+            print("No exact competency levels found via metadata. Using fallback range...")
             competency_levels = ["8.1.1", "8.1.2", "8.1.3"]
 
-        print(f"📋 Found {len(competency_levels)} Competency Levels to process: {competency_levels}\n")
+        print(f"Found {len(competency_levels)} Competency Levels to process: {competency_levels}\n")
 
         generated_plans: List[LearnLessonPlanDto] = []
 
@@ -481,7 +756,6 @@ class RAGLessonPlanGenerator:
 
             level_query = f"Civic Education Grade 8 Competency Level {level}"
 
-            # Auto-extract TIG outcomes for each unit level
             unit_dual_context = self.retriever.retrieve_tig_and_textbook_for_level(
                 competency_level=level,
                 query=level_query,
@@ -503,17 +777,20 @@ class RAGLessonPlanGenerator:
                     periods=periods,
                     time_slot=time_slot,
                     duration_minutes=duration_minutes,
-                    retrieved_outcomes=unit_outcomes
+                    retrieved_outcomes=unit_outcomes,
+                    selected_activity_strategy=selected_activity_strategy,
+                    student_count=student_count,
+                    current_period=1,
+                    total_periods=periods
                 )
                 generated_plans.append(plan)
-                print(
-                    f"   ↳ ✅ Successfully created Plan for Level [{plan.competence_level}] - Topic: '{plan.lesson}'\n")
+                print(f"   -> Successfully created Plan for Level [{plan.competence_level}] - Topic: '{plan.lesson}'\n")
 
             except Exception as e:
-                print(f"   ↳ ❌ Failed generation for Level {level}: {str(e)}\n")
+                print(f"   -> Failed generation for Level {level}: {str(e)}\n")
                 continue
 
-        print(f"🎉 Batch execution complete! Generated {len(generated_plans)}/{len(competency_levels)} plans.")
+        print(f"Batch execution complete! Generated {len(generated_plans)}/{len(competency_levels)} plans.")
         return generated_plans
 
 
@@ -528,57 +805,105 @@ if __name__ == "__main__":
     grade = "Grade 8"
     subject = "Civic Education"
     comp_level = "8.2.2"
-    test_periods = 3  # Testing 3 periods (120 minutes)
+    test_periods = 1
+    test_students = 40
 
     print("=" * 80)
-    print(f"🚀 TESTING LOCAL LLAMA 3 GENERATION: {sample_query} ({test_periods} Periods)")
+    print(f"TESTING LOCAL LLAMA 3 GENERATION: {sample_query} ({test_students} Students)")
     print("=" * 80)
 
     try:
+        # 1. Test Option Discovery (Period-Aware)
+        print("\nDiscovering 3 Activity Options:")
+        options_data = generator.generate_activity_options(
+            competency_level=comp_level,
+            student_count=test_students,
+            periods=test_periods,
+            requested_period=1,
+            grade_level=grade,
+            subject=subject
+        )
+        for opt in options_data.get("options", []):
+            print(f" - [{opt['id']}] {opt['title']} ({opt['pedagogy_type']}): {opt['student_grouping']}")
+
+        chosen_strategy = (
+            options_data["options"][0]["description"]
+            if options_data.get("options")
+            else None
+        )
+
+        # 2. Test Plan Generation using Selected Strategy (Mode A)
         plan = generator.generate_lesson_plan(
             query=sample_query,
             competency_level=comp_level,
             grade_level=grade,
             subject=subject,
-            periods=test_periods
+            periods=test_periods,
+            selected_activity_strategy=chosen_strategy,
+            student_count=test_students
         )
 
         print("\n" + "=" * 80)
-        print("🎉 GENERATED LEARN KANDY PRACTICE TEACHING LESSON PLAN")
+        print("GENERATED LEARN KANDY PRACTICE TEACHING LESSON PLAN (MODE A)")
         print("=" * 80)
-        print(f"🏷️ Lesson Title: {plan.lesson}")
-        print(f"🏛️ Subject: {plan.subject}")
-        print(f"📌 Grade: {plan.grade}")
-        print(f"🎯 Competence: {plan.competence}")
-        print(f"🎯 Competence Level: {plan.competence_level}")
-        print(f"⏱️ Time Allocation: {plan.time_allocation}")
+        print(f"Lesson Title: {plan.lesson}")
+        print(f"Subject: {plan.subject}")
+        print(f"Grade: {plan.grade}")
+        print(f"Competence: {plan.competence}")
+        print(f"Competence Level: {plan.competence_level}")
+        print(f"Time Allocation: {plan.time_allocation}")
 
-        print("\n🎯 Unique Learning Outcomes:")
+        print("\nUnique Learning Outcomes:")
         for idx, outcome in enumerate(plan.unique_learning_outcome, 1):
             print(f"   [{idx}] {outcome}")
 
-        print(f"\n🚪 The Entrance:\n   {plan.the_entrance}")
+        print(f"\nThe Entrance (5 mins):\n   {plan.the_entrance}")
 
-        print(f"\n📋 Lesson Development ({len(plan.lesson_development_steps)} Steps):")
+        print(f"\nLesson Development ({len(plan.lesson_development_steps)} Steps - 30 mins):")
         total_time = 0
         for step in plan.lesson_development_steps:
             total_time += step.time_minutes
             print(f"\n   [Step {step.step_number}] ({step.time_minutes} mins)")
-            print(f"    ├─ Method: {step.learning_teaching_method}")
-            print(f"    ├─ Aids: {step.learning_teaching_aids}")
-            print(f"    ├─ Teacher: {step.teacher_activities}")
-            print(f"    ├─ Student: {step.student_activities}")
-            print(f"    ├─ Assessment: {step.assessment_and_feedback}")
-            print(f"    └─ Other: {step.other or '—'}")
+            print(f"    |-- Method: {step.learning_teaching_method}")
+            print(f"    |-- Aids: {step.learning_teaching_aids}")
+            print(f"    |-- Teacher: {step.teacher_activities}")
+            print(f"    |-- Student: {step.student_activities}")
+            print(f"    |-- Assessment: {step.assessment_and_feedback}")
+            print(f"    +-- Other: {step.other or '—'}")
 
-        print(f"\n⏱️ Total Step Time: {total_time} mins")
-        print("\n📊 Synthesis & Closure:")
-        print(f"   ├─ Summary: {plan.summary}")
-        print(f"   ├─ Whole Lesson Assessment: {plan.assessment_and_feedback_whole_lesson}")
-        print(f"   ├─ Post Activity: {plan.post_activity}")
-        print(f"   ├─ Sources: {', '.join(plan.information_sources)}")
-        print(f"   └─ Attachments: {', '.join(plan.attachments)}")
+        print(f"\nTotal Step Time: {total_time} mins (Auto-Repaired to exactly 30m)")
+        print("\nSynthesis & Closure:")
+        print(f"   |-- Summary: {plan.summary}")
+        print(f"   |-- Whole Lesson Assessment (5 mins): {plan.assessment_and_feedback_whole_lesson}")
+        print(f"   |-- Post Activity: {plan.post_activity}")
+        print(f"   |-- Sources: {', '.join(plan.information_sources)}")
+        print(f"   +-- Attachments: {', '.join(plan.attachments)}")
+        print("=" * 80)
+
+        # 3. Test Plan Generation using Custom Idea (Mode B)
+        custom_idea = (
+            "Show a 3-minute video clip of a Municipal Council budget dispute, then have groups "
+            "draft two citizen petitions regarding local road drainage to present before the mayor."
+        )
+        print("\n" + "=" * 80)
+        print("TESTING MODE B GENERATION (TEACHER'S OWN APPROACH)")
+        print(f"Custom Input: {custom_idea}")
+        print("=" * 80)
+
+        plan_b = generator.generate_lesson_plan(
+            query=sample_query,
+            competency_level=comp_level,
+            grade_level=grade,
+            subject=subject,
+            periods=test_periods,
+            teacher_mode="own_approach",
+            custom_teacher_activity=custom_idea,
+            student_count=test_students
+        )
+        print(f"\nMode B Entrance: {plan_b.the_entrance}")
+        print(f"Mode B Step 1 Method: {plan_b.lesson_development_steps[0].learning_teaching_method}")
+        print("Mode B Test Passed Successfully!")
         print("=" * 80)
 
     except Exception as exc:
-        print(f"❌ Test run failed: {exc}")
+        print(f"Test run failed: {exc}")

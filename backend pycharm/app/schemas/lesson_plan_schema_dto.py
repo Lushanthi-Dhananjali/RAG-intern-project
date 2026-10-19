@@ -5,104 +5,133 @@ from pydantic import BaseModel, Field, model_validator
 
 class LessonDevelopmentStepDto(BaseModel):
     step_number: int = Field(..., description="Step sequence number (1, 2, 3...)")
-    teacher_activities: str = Field(..., description="Pedagogical actions executed by teacher based on TIG")
-    student_activities: str = Field(..., description="Active learning tasks and investigations by students")
-    learning_teaching_method: str = Field(..., description="Method used (e.g., Guided Inquiry, Cooperative Group Work)")
-    learning_teaching_aids: str = Field(..., description="Concrete instructional materials for this step")
-    assessment_and_feedback: str = Field(..., description="Formative checks, oral questions, or teacher feedback")
-    time_minutes: int = Field(default=10, description="Step duration in minutes (aligned with 40 mins/period)")
-    other: Optional[str] = Field(default="", description="Blackboard notes, grouping remarks")
+    teacher_activities: str = Field(..., description="Teacher facilitation and scaffolding actions based on TIG")
+    student_activities: str = Field(..., description="Active student investigations, discussions, and presentations")
+    learning_teaching_method: str = Field(..., description="e.g., Guided Inquiry, Cooperative Group Work, Simulation, Jigsaw")
+    learning_teaching_aids: str = Field(..., description="Instructional materials used in this step (task cards, sheets, board)")
+    assessment_and_feedback: str = Field(..., description="Formative checks and immediate feedback during activity")
+    time_minutes: int = Field(default=10, description="Step duration in minutes (5-minute multiples, sum must equal 30)")
+    other: Optional[str] = Field(default="", description="Blackboard layout, grouping remarks, or safety notes")
 
 
 class LessonPlanSchemaDto(BaseModel):
     grade: str = Field(..., description="Target school grade level (e.g., Grade 8)")
     subject: str = Field(default="Civic Education", description="Academic subject area")
-    time_allocation: str = Field(..., description="e.g., '120 Minutes (3 Periods)', '160 Minutes (4 Periods)'")
-    competence: str = Field(..., description="Main competency standard from syllabus")
-    competence_level: str = Field(..., description="Competency level code and statement")
-    lesson: str = Field(..., description="Lesson topic or unit theme")
+    time_allocation: str = Field(..., description="e.g., '40 Minutes (Period 1 of 2)'")
+    competence: str = Field(..., description="Broad competency statement from official TIG")
+    competence_level: str = Field(..., description="Competency level code and statement (e.g., 8.1.1)")
+    lesson: str = Field(..., description="Lesson title or theme")
     unique_learning_outcome: List[str] = Field(
         default_factory=list,
-        description="All learning outcomes from TIG (programmatically populated)"
+        description="Official syllabus outcomes assigned to this 40-minute period (programmatically injected)"
     )
-    the_entrance: str = Field(..., description="Motivational introduction (5-10 mins)")
+    the_entrance: str = Field(
+        ...,
+        description="Motivational hook / introduction (Strictly 5 Minutes)"
+    )
     lesson_development_steps: List[LessonDevelopmentStepDto] = Field(
         ...,
-        description="Sequential development steps (Enforces periods + 1 steps)"
+        description="Sequential development steps (Sum must strictly equal 30 Minutes)"
     )
-    summary: str = Field(..., description="Synthesis of key concepts at conclusion")
-    assessment_and_feedback_whole_lesson: str = Field(..., description="Summative evaluation check")
-    post_activity: str = Field(..., description="Homework or field inquiry")
-    information_sources: List[str] = Field(default_factory=list, description="Textbook and TIG references")
-    attachments: List[str] = Field(default_factory=list, description="Worksheets or aids")
+    summary: str = Field(..., description="Consolidation and synthesis of key student findings")
+    assessment_and_feedback_whole_lesson: str = Field(
+        ...,
+        description="Creative formative assessment (Strictly 5 Minutes: rhyming verse, freeze frame, sketch duel, pass-the-parcel)"
+    )
+    post_activity: str = Field(..., description="Follow-up reflection, observation, or homework task")
+    information_sources: List[str] = Field(default_factory=list, description="Curriculum sources (NIE TIG, Pupil Textbook)")
+    attachments: List[str] = Field(default_factory=list, description="Concrete titles of worksheets, cue cards, or checklists")
 
     @model_validator(mode="after")
-    def validate_and_balance_dynamic_steps(self):
-        # 1. Learning outcomes check relaxed to allow programmatic enrichment from TIG post-generation
-        # (Outcomes are injected in service layer via extract_verbatim_tig_outcomes)
+    def balance_strict_40_minute_pacing(self):
+        """
+        Enforces the Strict LEARN Kandy 40-Minute Period Architecture:
+        - Entrance: Exactly 5 mins
+        - Development Steps: Exactly 30 mins (Sum across all development steps)
+        - Creative Assessment: Exactly 5 mins
+        - Total Period Duration: 5 + 30 + 5 = 40 Minutes.
+        """
+        TARGET_DEV_MINUTES = 30
 
-        # 2. Extract target minutes & determine minimum required steps (periods + 1)
-        match = re.search(r"(\d+)\s*Minutes", self.time_allocation, re.IGNORECASE)
-        target_minutes = int(match.group(1)) if match else 40
+        # 1. Fallback: If development steps are missing, initialize default scaffolded steps
+        if not self.lesson_development_steps:
+            self.lesson_development_steps = [
+                LessonDevelopmentStepDto(
+                    step_number=1,
+                    teacher_activities="Teacher organizes students into structured inquiry teams and introduces the task scenario.",
+                    student_activities="Students review task cards, assume collaborative group roles, and begin investigations.",
+                    learning_teaching_method="Guided Inquiry",
+                    learning_teaching_aids="Task Cards & Activity Prompts",
+                    assessment_and_feedback="Teacher checks clarity of instructions and initial group comprehension.",
+                    time_minutes=15,
+                    other="Group formation"
+                ),
+                LessonDevelopmentStepDto(
+                    step_number=2,
+                    teacher_activities="Teacher moderates rapid student presentations, highlights key points, and addresses misconceptions.",
+                    student_activities="Student spokespersons present team findings, compare observations, and note feedback.",
+                    learning_teaching_method="Presentation & Discussion",
+                    learning_teaching_aids="Whiteboard & Presentation Charts",
+                    assessment_and_feedback="Formative peer feedback and teacher clarification of concepts.",
+                    time_minutes=15,
+                    other="Peer presentation"
+                )
+            ]
 
-        # Formula: 1 Period (40m) -> 2 steps | 2 Periods (80m) -> 3 steps | 3 Periods (120m) -> 4 steps | 4 Periods (160m) -> 5 steps
-        periods_count = max(1, round(target_minutes / 40))
-        required_min_steps = periods_count + 1
-
-        # 3. Auto-expand/split steps if LLM generated fewer than (periods + 1)
-        # Prevents 422 HTTP crashes by dynamically fulfilling pedagogical requirements
-        while len(self.lesson_development_steps) < required_min_steps:
-            # Find the longest step to split
-            longest_step_idx = max(
-                range(len(self.lesson_development_steps)),
-                key=lambda i: self.lesson_development_steps[i].time_minutes
+        # 2. If only 1 step was generated, split it to ensure at least 2 distinct developmental phases
+        if len(self.lesson_development_steps) == 1:
+            orig = self.lesson_development_steps[0]
+            orig.time_minutes = 15
+            self.lesson_development_steps.append(
+                LessonDevelopmentStepDto(
+                    step_number=2,
+                    teacher_activities=f"Teacher facilitates student presentations and synthesis of findings from Step 1.",
+                    student_activities="Students present their conclusions, compare outcomes with peers, and record feedback.",
+                    learning_teaching_method="Presentation & Synthesis",
+                    learning_teaching_aids=orig.learning_teaching_aids,
+                    assessment_and_feedback="Teacher assesses clarity of student findings and reinforces core syllabus concepts.",
+                    time_minutes=15,
+                    other="Presentation synthesis"
+                )
             )
-            longest_step = self.lesson_development_steps[longest_step_idx]
 
-            orig_time = longest_step.time_minutes
-            half_1 = max(5, (orig_time // 10) * 5)
-            half_2 = max(5, orig_time - half_1)
-
-            longest_step.time_minutes = half_1
-
-            new_step = LessonDevelopmentStepDto(
-                step_number=len(self.lesson_development_steps) + 1,
-                teacher_activities=f"Facilitates student presentations and synthesis of findings from Step {longest_step.step_number}.",
-                student_activities="Students present their findings, compare outcomes, and note teacher feedback.",
-                learning_teaching_method="Presentation & Discussion",
-                learning_teaching_aids=longest_step.learning_teaching_aids,
-                assessment_and_feedback="Teacher checks clarity of student presentations and corrects misconceptions.",
-                time_minutes=half_2,
-                other="Presentation synthesis"
-            )
-            self.lesson_development_steps.insert(longest_step_idx + 1, new_step)
-
-        # 4. Sequentially renumber steps (1, 2, 3, 4, 5...)
-        for idx, step in enumerate(self.lesson_development_steps, start=1):
-            step.step_number = idx
-
-        # 5. Round all step durations to nearest multiple of 5 (minimum 5 minutes)
+        # 3. Round all individual step durations to the nearest multiple of 5 (minimum 5 mins)
         for step in self.lesson_development_steps:
-            raw_minutes = step.time_minutes
-            rounded = round(raw_minutes / 5.0) * 5
+            raw_val = step.time_minutes
+            rounded = round(raw_val / 5.0) * 5
             step.time_minutes = max(5, int(rounded))
 
-        # 6. Balance remaining drift strictly in increments of 5 minutes
-        total_time = sum(s.time_minutes for s in self.lesson_development_steps)
-        drift = target_minutes - total_time
+        # 4. Calculate drift relative to the strict 30-minute development ceiling
+        current_sum = sum(s.time_minutes for s in self.lesson_development_steps)
+        drift = TARGET_DEV_MINUTES - current_sum
 
-        if drift != 0 and self.lesson_development_steps:
-            five_min_units = drift // 5
+        # 5. Deterministically balance drift strictly in 5-minute increments
+        if drift != 0:
+            units = drift // 5
+            direction = 5 if units > 0 else -5
             step_count = len(self.lesson_development_steps)
-            direction = 5 if five_min_units > 0 else -5
 
-            for i in range(abs(five_min_units)):
-                step_idx = i % step_count
-                if direction < 0 and self.lesson_development_steps[step_idx].time_minutes <= 5:
-                    continue
-                self.lesson_development_steps[step_idx].time_minutes += direction
+            for _ in range(abs(units)):
+                if direction < 0:
+                    # Negative drift: trim the longest step that is greater than 5 minutes
+                    candidates = [i for i, s in enumerate(self.lesson_development_steps) if s.time_minutes > 5]
+                    if candidates:
+                        idx = max(candidates, key=lambda k: self.lesson_development_steps[k].time_minutes)
+                        self.lesson_development_steps[idx].time_minutes += direction
+                    else:
+                        break
+                else:
+                    # Positive drift: expand the shortest step
+                    idx = min(range(step_count), key=lambda k: self.lesson_development_steps[k].time_minutes)
+                    self.lesson_development_steps[idx].time_minutes += direction
+
+        # 6. Sequentially renumber step indices (1, 2, 3...)
+        for idx, step in enumerate(self.lesson_development_steps, start=1):
+            step.step_number = idx
 
         return self
 
 
+# Backward-compatibility alias
 LearnLessonPlanDto = LessonPlanSchemaDto
+PeradeniyaLessonPlanDto = LessonPlanSchemaDto
