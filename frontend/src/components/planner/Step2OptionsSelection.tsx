@@ -39,90 +39,103 @@ export default function Step2OptionsSelection() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto space-y-6">
-      <div className="flex justify-between items-center bg-blue-50 border border-blue-200 p-4 rounded-xl">
+    <div className="space-y-5">
+      <div className="flex flex-col justify-between gap-3 rounded-xl border border-indigo-100 bg-indigo-50/60 p-4 sm:flex-row sm:items-center">
         <div>
-          <span className="text-xs font-bold text-blue-600 uppercase tracking-wide">
-            Sequence Progress
+          <span className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-indigo-700">
+            Period {store.currentPeriod} Activity Selection
           </span>
-          <h2 className="text-lg font-bold text-gray-900">
-            Planning Period {store.currentPeriod} of {store.totalPeriods} (40-Minute Block)
+          <h2 className="mt-0.5 text-lg font-extrabold text-slate-900">
+            Choose an activity for Period {store.currentPeriod} of {store.totalPeriods}
           </h2>
+          <p className="mt-1 text-xs text-slate-600">Choose an approach for this 40-minute lesson.</p>
           {store.priorActivityTitles(store.currentPeriod).length > 0 && (
-            <p className="text-xs text-gray-500 mt-1">
-              Previous activities avoided: {store.priorActivityTitles(store.currentPeriod).join(', ')}
+            <p className="mt-2 text-xs text-slate-600">
+              <strong>Activities used in earlier periods:</strong> {store.priorActivityTitles(store.currentPeriod).join(', ')}
             </p>
           )}
         </div>
         <button
+          type="button"
           onClick={() => setCustomMode(!customMode)}
-          className="text-sm font-semibold bg-white border border-gray-300 px-3 py-1.5 rounded-lg hover:bg-gray-50 shadow-sm"
+          className="shrink-0 rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs font-bold text-slate-700 shadow-sm transition hover:border-indigo-300 hover:bg-indigo-50 sm:text-sm"
         >
-          {customMode ? '← Use AI Activity Cards' : 'Switch to Mode B (My Own Idea)'}
+          {customMode ? '← View activity options' : 'Use my own activity'}
         </button>
       </div>
 
       {!customMode ? (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {store.currentOptions.map((opt) => (
-            <div
-              key={opt.id}
-              onClick={() => store.selectOption(opt)}
-              className={`p-6 rounded-xl border-2 transition cursor-pointer flex flex-col justify-between ${
-                store.selectedOption?.id === opt.id
-                  ? 'border-blue-600 bg-blue-50/40 shadow-md'
-                  : 'border-gray-200 bg-white hover:border-blue-300'
-              }`}
-            >
-              <div>
-                <span className="inline-block text-xs font-semibold px-2 py-0.5 rounded bg-gray-100 text-gray-700 mb-2">
-                  {opt.pedagogy_type}
-                </span>
-                <h3 className="font-bold text-gray-900 mb-2">{opt.title}</h3>
-                <p className="text-xs text-gray-600 leading-relaxed mb-4">{opt.description}</p>
+        <div>
+          <div className="mb-3 flex items-center justify-between gap-2">
+            <h3 className="text-sm font-extrabold text-slate-800">Activity options</h3>
+            <span className="text-[11px] font-semibold text-slate-500">{store.currentOptions.length} choices</span>
+          </div>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {store.currentOptions.map((opt, index) => (
+              <article
+                key={opt.id}
+                onClick={() => store.selectOption(opt)}
+                className={`flex h-full flex-col rounded-xl border bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${
+                  store.selectedOption?.id === opt.id
+                    ? 'border-indigo-400 ring-2 ring-indigo-100'
+                    : 'border-slate-200 hover:border-indigo-200'
+                }`}
+              >
+                <div className="mb-3 flex items-start justify-between gap-2">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-50 text-[11px] font-extrabold text-indigo-700">
+                    {index + 1}
+                  </span>
+                  <span className="rounded-full bg-slate-100 px-2 py-1 text-[9px] font-bold uppercase tracking-wide text-slate-600">
+                    {opt.pedagogy_type}
+                  </span>
+                </div>
+                <h4 className="text-sm font-extrabold leading-snug text-slate-900">{opt.title}</h4>
+                <p className="mt-2 text-xs leading-relaxed text-slate-600">{opt.description}</p>
                 {opt.learning_outcomes_addressed && opt.learning_outcomes_addressed.length > 0 && (
-                  <div className="mb-4 text-xs text-gray-600">
-                    <strong>Period {store.currentPeriod} learning outcomes:</strong>
-                    <ul className="list-disc pl-4 mt-1">
-                      {opt.learning_outcomes_addressed.map((outcome, index) => (
-                        <li key={index}>{outcome}</li>
+                  <div className="mt-4 rounded-lg border border-indigo-100 bg-indigo-50/50 p-3 text-xs text-slate-700">
+                    <strong className="text-indigo-900">Period {store.currentPeriod} learning outcomes</strong>
+                    <ul className="mt-2 list-disc space-y-1 pl-4">
+                      {opt.learning_outcomes_addressed.map((outcome, outcomeIndex) => (
+                        <li key={outcomeIndex}>{outcome}</li>
                       ))}
                     </ul>
                   </div>
                 )}
-                <div className="border-t pt-3 space-y-1 text-xs text-gray-500">
-                  <p><strong>Grouping:</strong> {opt.student_grouping}</p>
+                <div className="mt-3 rounded-lg border border-slate-100 bg-slate-50 p-3 text-xs text-slate-600">
+                  <strong className="text-slate-800">Student grouping</strong>
+                  <p className="mt-1">{opt.student_grouping}</p>
                 </div>
-              </div>
-              <button
-                disabled={loading}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  store.selectOption(opt);
-                  handleGenerate(
-                    [
-                      `Activity: ${opt.title}`,
-                      `Approach: ${opt.description}`,
-                      `Student task: ${opt.student_action_summary || opt.description}`,
-                      `Teacher facilitation: ${opt.teacher_facilitation_summary || 'Facilitate student participation and outcome-focused discussion.'}`,
-                      `Expected output: ${opt.expected_student_output || 'A student-created response demonstrating the allocated learning outcomes.'}`,
-                      `Grouping: ${opt.student_grouping}`,
-                    ].join('\n'),
-                    false,
-                    opt.title
-                  );
-                }}
-                className="mt-6 w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold shadow"
-              >
-                {loading && store.selectedOption?.id === opt.id ? 'Assembling...' : 'Assemble 40m Plan →'}
-              </button>
-            </div>
-          ))}
+                <button
+                  type="button"
+                  disabled={loading}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    store.selectOption(opt);
+                    handleGenerate(
+                      [
+                        `Activity: ${opt.title}`,
+                        `Approach: ${opt.description}`,
+                        `Student task: ${opt.student_action_summary || opt.description}`,
+                        `Teacher facilitation: ${opt.teacher_facilitation_summary || 'Facilitate student participation and outcome-focused discussion.'}`,
+                        `Expected output: ${opt.expected_student_output || 'A student-created response demonstrating the allocated learning outcomes.'}`,
+                        `Grouping: ${opt.student_grouping}`,
+                      ].join('\n'),
+                      false,
+                      opt.title
+                    );
+                  }}
+                  className="mt-auto w-full rounded-lg bg-indigo-600 px-3 py-2.5 text-xs font-extrabold text-white shadow-sm transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-60 sm:mt-4"
+                >
+                  {loading && store.selectedOption?.id === opt.id ? 'Generating plan...' : 'Choose & Generate Plan'}
+                </button>
+              </article>
+            ))}
+          </div>
         </div>
       ) : (
-        <div className="bg-white p-6 rounded-xl border space-y-4">
-          <h3 className="font-bold text-gray-900">Mode B: Teacher's Own Approach</h3>
-          <p className="text-xs text-gray-500">
+        <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
+          <h3 className="font-extrabold text-slate-900">Your own activity</h3>
+          <p className="mt-1 text-xs leading-relaxed text-slate-600">
             Enter your custom idea or video simulation below. The generated lesson plan will build
             its introduction and closing assessment around this activity and the allocated learning outcomes.
           </p>
@@ -131,14 +144,15 @@ export default function Step2OptionsSelection() {
             value={customText}
             onChange={(e) => setCustomText(e.target.value)}
             placeholder="e.g. Play a 3-minute clip of a municipal council debate, then ask student groups to draft two formal citizen complaints regarding road drainage..."
-            className="w-full p-3 border rounded-lg outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+            className="mt-4 w-full rounded-lg border border-slate-300 bg-slate-50 p-3 text-sm outline-none transition focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-100"
           />
           <button
+            type="button"
             disabled={loading || !customText.trim()}
             onClick={() => handleGenerate(customText, true)}
-            className="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold text-sm shadow transition"
+            className="mt-3 w-full rounded-lg bg-indigo-600 py-3 text-sm font-extrabold text-white shadow-sm transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-60"
           >
-            {loading ? 'Scaffolding Plan...' : 'Scaffold My Custom Idea into LEARN Plan →'}
+            {loading ? 'Generating plan...' : 'Generate Plan From My Activity'}
           </button>
         </div>
       )}

@@ -10,6 +10,7 @@ export default function Step1Inputs() {
   const selectedGrade = supportedGrades.includes(store.gradeLevel)
     ? store.gradeLevel
     : 'Grade 8';
+  const durationMinutes = store.totalPeriods * 40;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,39 +38,71 @@ export default function Step1Inputs() {
     }
   };
 
+  const fieldLabelStyle: React.CSSProperties = {
+    display: 'block',
+    fontSize: '12px',
+    fontWeight: 700,
+    textTransform: 'uppercase',
+    color: '#334155',
+    marginBottom: '6px',
+    letterSpacing: '0.05em',
+  };
+  const fieldStyle: React.CSSProperties = {
+    width: '100%',
+    padding: '10px 14px',
+    backgroundColor: '#f8fafc',
+    border: '1px solid #cbd5e1',
+    borderRadius: '10px',
+    fontSize: '14px',
+    fontWeight: 600,
+    color: '#1e293b',
+    outline: 'none',
+    boxSizing: 'border-box',
+  };
+
   return (
-    <form onSubmit={handleSubmit} className="mx-auto w-full max-w-4xl space-y-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-lg sm:p-8">
-      <div className="flex items-start gap-4 border-b border-slate-100 pb-5">
-        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-emerald-200 bg-emerald-50 text-2xl">
-          🏛️
-        </span>
+    <form
+      onSubmit={handleSubmit}
+      style={{
+        backgroundColor: '#ffffff',
+        padding: '24px',
+        borderRadius: '16px',
+        border: '1px solid #e2e8f0',
+        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '18px',
+        maxWidth: '860px',
+        margin: '0 auto',
+        width: '100%',
+        boxSizing: 'border-box',
+      }}
+    >
+      <header style={{ borderBottom: '1px solid #f1f5f9', paddingBottom: '12px' }}>
+        <h2 style={{ display: 'flex', alignItems: 'center', gap: '8px', margin: 0, color: '#0f172a', fontSize: '16px', fontWeight: 800 }}>
+          <span aria-hidden="true">✨</span>
+          <span>Lesson Plan Generator</span>
+        </h2>
+        <p style={{ margin: '2px 0 0', color: '#64748b', fontSize: '12px' }}>
+          Configure curriculum parameters to generate an NIE &amp; LEARN aligned lesson plan
+        </p>
+      </header>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
         <div>
-          <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-emerald-700">Multi-Period Lesson Planner</p>
-          <h2 className="mt-1 text-xl font-extrabold text-slate-900 sm:text-2xl">Curriculum & Class Configuration</h2>
-          <p className="mt-1 text-sm text-slate-500">Set the competency, class size, and period sequence for Civic Education (Grades 6–9).</p>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <div className="rounded-xl border border-slate-200 bg-slate-50/70 p-4">
-          <label className="block text-xs font-extrabold uppercase tracking-wide text-slate-600">Competency Level</label>
-          <input
-            type="text"
-            value={store.competencyLevel}
-            onChange={(e) => store.setInputs({ competencyLevel: e.target.value })}
-            placeholder="e.g. 8.1.1"
-            className="mt-2 w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 font-mono font-semibold text-slate-800 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
-            required
-          />
-          <p className="mt-2 text-xs text-slate-500">Use the competency code from the Teacher Guide.</p>
+          <label htmlFor="planner-subject" style={fieldLabelStyle}>Subject</label>
+          <select id="planner-subject" value={store.subject} disabled style={fieldStyle}>
+            <option value={store.subject}>🏛️ {store.subject}</option>
+          </select>
         </div>
 
-        <div className="rounded-xl border border-slate-200 bg-slate-50/70 p-4">
-          <label className="block text-xs font-extrabold uppercase tracking-wide text-slate-600">Grade Level</label>
+        <div>
+          <label htmlFor="planner-grade" style={fieldLabelStyle}>Grade Level</label>
           <select
+            id="planner-grade"
             value={selectedGrade}
             onChange={(e) => store.setInputs({ gradeLevel: e.target.value })}
-            className="mt-2 w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 font-semibold text-slate-800 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
+            style={fieldStyle}
           >
             <option value="Grade 6">Grade 6</option>
             <option value="Grade 7">Grade 7</option>
@@ -79,42 +112,83 @@ export default function Step1Inputs() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <div className="rounded-xl border border-slate-200 bg-slate-50/70 p-4">
-          <label className="block text-xs font-extrabold uppercase tracking-wide text-slate-600">Periods for this Competency Level <span className="text-emerald-700">(Max 4)</span></label>
-          <input
-            type="number"
-            min={1}
-            max={4}
-            value={store.totalPeriods}
-            onChange={(e) => store.setInputs({ totalPeriods: Number(e.target.value) })}
-            className="mt-2 w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 font-semibold text-slate-800 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
-            required
-          />
-          <p className="mt-2 text-xs text-slate-500">Each period is planned separately in a sequence.</p>
-        </div>
+      <div>
+        <label htmlFor="planner-competency" style={fieldLabelStyle}>NIE Competency Level</label>
+        <input
+          id="planner-competency"
+          type="text"
+          value={store.competencyLevel}
+          onChange={(e) => store.setInputs({ competencyLevel: e.target.value })}
+          placeholder="e.g. 8.1.1"
+          required
+          style={{
+            ...fieldStyle,
+            border: '1.5px solid #818cf8',
+            fontSize: '15px',
+            fontWeight: 600,
+            fontFamily: 'monospace',
+            color: '#4338ca',
+          }}
+        />
+        <p style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '8px', margin: '4px 0 0', color: '#64748b', fontSize: '11px' }}>
+          <span>Enter Civic Education Competency Code (e.g. 8.1.1, 8.4.2)</span>
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+            Class size
+            <input
+              aria-label="Student count"
+              type="number"
+              min={5}
+              max={80}
+              value={store.studentCount}
+              onChange={(e) => store.setInputs({ studentCount: Number(e.target.value) })}
+              style={{ width: '64px', padding: '3px 6px', border: '1px solid #cbd5e1', borderRadius: '6px', backgroundColor: '#f8fafc', color: '#334155', fontSize: '11px' }}
+            />
+            students
+          </span>
+        </p>
+      </div>
 
-        <div className="rounded-xl border border-slate-200 bg-slate-50/70 p-4">
-          <label className="block text-xs font-extrabold uppercase tracking-wide text-slate-600">Student Count</label>
-          <input
-            type="number"
-            min={5}
-            max={80}
-            value={store.studentCount}
-            onChange={(e) => store.setInputs({ studentCount: Number(e.target.value) })}
-            className="mt-2 w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 font-semibold text-slate-800 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
-            required
-          />
-          <p className="mt-2 text-xs text-slate-500">Activity options are tailored to your class size.</p>
-        </div>
+      <div>
+        <label htmlFor="planner-periods" style={fieldLabelStyle}>Lesson Allocation (Periods &amp; Duration)</label>
+        <select
+          id="planner-periods"
+          value={store.totalPeriods}
+          onChange={(e) => store.setInputs({ totalPeriods: Number(e.target.value) })}
+          style={fieldStyle}
+        >
+          {[1, 2, 3, 4].map((periodCount) => (
+            <option key={periodCount} value={periodCount}>
+              {periodCount} {periodCount === 1 ? 'Period' : 'Periods'} — {periodCount * 40} Minutes (Max. 4 periods)
+            </option>
+          ))}
+        </select>
+        <span style={{ display: 'block', marginTop: '4px', color: '#64748b', fontSize: '11px' }}>
+          NIE Standard: 40 minutes per period ({durationMinutes} minutes total)
+        </span>
       </div>
 
       <button
         type="submit"
         disabled={loading}
-        className="flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-700 py-3.5 font-bold text-white shadow-md transition hover:bg-emerald-800 disabled:cursor-not-allowed disabled:opacity-60"
+        style={{
+          width: '100%',
+          marginTop: '6px',
+          padding: '12px 16px',
+          borderRadius: '10px',
+          backgroundColor: loading ? '#94a3b8' : '#4f46e5',
+          color: '#ffffff',
+          fontWeight: 700,
+          fontSize: '14px',
+          border: 'none',
+          cursor: loading ? 'not-allowed' : 'pointer',
+          transition: 'background-color 0.2s ease',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '8px',
+        }}
       >
-        {loading ? 'Retrieving curriculum and activities...' : `Get Period ${store.currentPeriod} Activity Options →`}
+        {loading ? 'Retrieving curriculum and activities...' : <>✨ Generate Civic Education Lesson Plan ({store.competencyLevel || '...'})</>}
       </button>
     </form>
   );

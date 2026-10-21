@@ -4,7 +4,7 @@
   "time_allocation": "40 Minutes (Period 1 of 2)",
   "competence": "8.1.1",
   "competence_level": "8.1.1",
-  "lesson": "Competency 8.1.1 (Period 1)",
+  "lesson": "Competency 8.1.1 - Part 1 (Period 1)",
   "unique_learning_outcome": [
     "Identifies the public services.",
     "Explains the common features related to public services.",
@@ -14,9 +14,9 @@
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "Provides scaffolding questions to guide student reasoning from facts to solutions.",
-      "student_activities": "Examine case scenarios, highlight legal/civic duties, and compile evidence on a grievance matrix.",
-      "learning_teaching_method": "Introduced & Explored (Foundational Inquiry)",
+      "teacher_activities": "Delivers prompts/cue cards; students inspect tasks.",
+      "student_activities": "Teams act as ward citizens, community elders, and public officers to present and debate solutions.",
+      "learning_teaching_method": "Participatory Council Hearing",
       "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
       "assessment_and_feedback": "",
       "time_minutes": 10,
@@ -24,9 +24,9 @@
     },
     {
       "step_number": 2,
-      "teacher_activities": "Facilitates student discussion and investigation.",
-      "student_activities": "Teams analyze real-world civic dilemma cards reflecting 'Identifies the public services.'",
-      "learning_teaching_method": "Introduced & Explored (Foundational Inquiry)",
+      "teacher_activities": "Acts as meeting speaker, moderates speaking turns, and enforces time limits.",
+      "student_activities": "Draft 2-minute citizen statements, propose municipal priorities, and vote on a community resolution.",
+      "learning_teaching_method": "Participatory Council Hearing",
       "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
       "assessment_and_feedback": "",
       "time_minutes": 15,
@@ -34,9 +34,9 @@
     },
     {
       "step_number": 3,
-      "teacher_activities": "Provides scaffolding questions to guide student reasoning from facts to solutions.",
+      "teacher_activities": "Acts as meeting speaker, moderates speaking turns, and enforces time limits.",
       "student_activities": "Spokespersons present; peer feedback.",
-      "learning_teaching_method": "Introduced & Explored (Foundational Inquiry)",
+      "learning_teaching_method": "Participatory Council Hearing",
       "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
       "assessment_and_feedback": "",
       "time_minutes": 5,
@@ -45,27 +45,14 @@
   ],
   "summary": "https://api.learn.kandy.lk/summary/2",
   "assessment_and_feedback_whole_lesson": "https://api.learn.kandy.lk/assessment-and-feedback/5",
-  "post_activity": "Completed Civic Rights and Duties Inquiry Matrix",
+  "post_activity": "https://api.learn.kandy.lk/post-activity/0",
   "information_sources": [
-    "grade_8_civic_textbook.pdf"
+    "OFFICIAL NIE TIG SYLLABUS MATRIX",
+    "STUDENT TEXTBOOK SUPPLEMENTARY CONTENT"
   ],
   "attachments": [
     "Chalkboard",
     "Student Notebooks",
     "Chart Paper"
-  ],
-  "period_number": 1,
-  "total_periods": 2,
-  "outcome_allocation": {
-    "1": [
-      "Identifies the public services.",
-      "Explains the common features related to public services.",
-      "Explains the need of public services."
-    ],
-    "2": [
-      "Presents views appreciating the importance of public services of the times.",
-      "Investigates information on the beginning and progress of public services."
-    ]
-  },
-  "selected_activity": "Activity: Evidence-Based Case Dilemma Audit: Competency Level 8.1.1 (Period 1 of 2)\nApproach: Teams analyze real-world civic dilemma cards reflecting 'Identifies the public services.'. They investigate institutional duties versus citizen responsibilities.\nStudent task: Examine case scenarios, highlight legal/civic duties, and compile evidence on a grievance matrix.\nTeacher facilitation: Provides scaffolding questions to guide student reasoning from facts to solutions.\nExpected output: Completed Civic Rights and Duties Inquiry Matrix.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer."
+  ]
 }

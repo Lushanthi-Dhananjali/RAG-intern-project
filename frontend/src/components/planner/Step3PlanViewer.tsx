@@ -60,9 +60,9 @@ export default function Step3PlanViewer() {
   };
 
   return (
-    <div className="max-w-5xl mx-auto space-y-6">
+    <div className="space-y-5">
       {/* Sequence Tabs */}
-      <div className="flex gap-2 border-b pb-2">
+      <div className="flex flex-wrap gap-2 rounded-lg border border-slate-200 bg-slate-50 p-2">
         {Array.from({ length: store.totalPeriods }).map((_, idx) => {
           const pNum = idx + 1;
           const isDone = !!store.generatedPlans[pNum];
@@ -71,12 +71,12 @@ export default function Step3PlanViewer() {
               key={pNum}
               onClick={() => store.previousPeriod(pNum)}
               disabled={!isDone}
-              className={`px-4 py-2 rounded-lg text-sm font-bold ${
+              className={`rounded-lg border px-3 py-2 text-xs font-extrabold transition sm:text-sm ${
                 store.currentPeriod === pNum
-                  ? 'bg-blue-600 text-white'
+                  ? 'border-indigo-600 bg-indigo-600 text-white shadow-sm'
                   : isDone
-                  ? 'bg-gray-100 text-gray-800 hover:bg-gray-200'
-                  : 'bg-gray-50 text-gray-400 cursor-not-allowed'
+                  ? 'border-slate-200 bg-white text-slate-700 hover:border-indigo-200 hover:bg-indigo-50'
+                  : 'cursor-not-allowed border-slate-100 bg-slate-100 text-slate-400'
               }`}
             >
               Period {pNum} {isDone ? '✓' : ''}
@@ -86,75 +86,89 @@ export default function Step3PlanViewer() {
       </div>
 
       {/* Plan Document Container */}
-      <div className="bg-white border border-slate-200 rounded-2xl p-5 sm:p-8 shadow-sm space-y-6">
-        <p className="text-sm text-emerald-700 font-medium">
-          This period plan is saved automatically in the Generated Plans Library.
-        </p>
+      <div className="space-y-5">
+        <div className="flex flex-col justify-between gap-2 rounded-lg border border-indigo-100 bg-indigo-50/50 p-3 sm:flex-row sm:items-center">
+          <div>
+            <p className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-indigo-700">Generated lesson plan</p>
+            <p className="mt-0.5 text-xs text-slate-600">This period is saved automatically in the Generated Plans Library.</p>
+          </div>
+          <span className="w-fit rounded-full border border-indigo-200 bg-white px-3 py-1 text-[11px] font-extrabold text-indigo-800">
+            Period {store.currentPeriod} of {store.totalPeriods}
+          </span>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+          <div className="rounded-lg border border-slate-200 bg-slate-50 p-3">
             <span className="text-[11px] font-bold uppercase tracking-wide text-slate-500">Subject</span>
             <p className="mt-1 font-bold text-slate-900">{currentPlan.subject}</p>
           </div>
-          <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+          <div className="rounded-lg border border-slate-200 bg-slate-50 p-3">
             <span className="text-[11px] font-bold uppercase tracking-wide text-slate-500">Competency Level</span>
             <p className="mt-1 font-bold text-slate-900">{currentPlan.competence_level}</p>
           </div>
-          <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+          <div className="rounded-lg border border-slate-200 bg-slate-50 p-3">
             <span className="text-[11px] font-bold uppercase tracking-wide text-slate-500">Time</span>
             <p className="mt-1 font-bold text-slate-900">{currentPlan.time_allocation}</p>
           </div>
         </div>
-        <div className="border-b border-slate-200 pb-4">
-          <h1 className="text-2xl font-extrabold text-gray-900">{currentPlan.lesson}</h1>
+        <div className="rounded-lg border border-slate-200 bg-white p-4">
+          <p className="text-[10px] font-extrabold uppercase tracking-wide text-slate-500">Lesson focus</p>
+          <h1 className="mt-1 text-xl font-extrabold text-slate-900">{currentPlan.lesson}</h1>
           {store.activityByPeriod[store.currentPeriod] && (
-            <p className="text-sm text-blue-800 mt-2">
+            <p className="mt-2 text-sm text-indigo-800">
               <strong>Selected activity:</strong> {store.activityByPeriod[store.currentPeriod]}
             </p>
           )}
         </div>
 
-        <div className="rounded-xl border border-emerald-200 bg-emerald-50/50 p-4">
-          <h4 className="text-sm font-bold text-emerald-900 uppercase">Teacher Guide Learning Outcomes</h4>
-          <ul className="list-disc pl-5 mt-2 space-y-1 text-sm text-gray-800">
+        <div className="rounded-lg border border-indigo-100 bg-indigo-50/40 p-4">
+          <h4 className="text-xs font-extrabold uppercase tracking-wide text-indigo-900">Teacher Guide Learning Outcomes</h4>
+          <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-relaxed text-slate-800">
             {currentPlan.unique_learning_outcome.map((o, idx) => (
               <li key={idx}>{o}</li>
             ))}
           </ul>
         </div>
 
-        <div className="rounded-xl border border-amber-200 bg-amber-50/60 p-4">
-          <h4 className="text-sm font-bold text-amber-900">The Entrance — Introduction (5 Minutes)</h4>
-          <p className="text-sm text-gray-700 mt-2 whitespace-pre-line">{currentPlan.the_entrance}</p>
+        <div className="rounded-lg border border-amber-200 bg-amber-50/50 p-4">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <h4 className="text-sm font-extrabold text-amber-950">The Entrance — Introduction</h4>
+            <span className="rounded-full border border-amber-200 bg-white px-2.5 py-1 text-[10px] font-bold text-amber-900">5 Minutes</span>
+          </div>
+          <p className="mt-2 whitespace-pre-line text-sm leading-relaxed text-slate-700">{currentPlan.the_entrance}</p>
         </div>
 
-        <div>
-          <h4 className="text-sm font-bold text-gray-900 uppercase tracking-wide">
-            Lesson Development (30 Minutes)
-          </h4>
+        <div className="rounded-lg border border-slate-200 bg-slate-50/60 p-4">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <h4 className="text-sm font-extrabold uppercase tracking-wide text-slate-900">Lesson Development</h4>
+            <span className="rounded-full border border-slate-200 bg-white px-2.5 py-1 text-[10px] font-bold text-slate-700">30 Minutes</span>
+          </div>
           <div className="space-y-4 mt-3">
             {currentPlan.lesson_development_steps.map((st) => (
-              <div key={st.step_number} className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                <h5 className="mb-3 font-bold text-sm text-gray-800">Step {st.step_number}</h5>
+              <div key={st.step_number} className="rounded-lg border border-slate-200 bg-white p-3 shadow-sm sm:p-4">
+                <h5 className="mb-3 flex items-center gap-2 font-extrabold text-sm text-slate-800">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-indigo-100 text-xs text-indigo-800">{st.step_number}</span>
+                  Development Step
+                </h5>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm">
                   <div className="rounded-lg border border-slate-200 bg-slate-50 p-3">
-                    <strong className="block text-xs uppercase tracking-wide text-slate-500">Teacher Activities</strong>
-                    <p className="mt-1 text-slate-800">{st.teacher_activities}</p>
+                    <strong className="block text-[10px] uppercase tracking-wide text-slate-500">Teacher Activities</strong>
+                    <p className="mt-1 text-xs leading-relaxed text-slate-800">{st.teacher_activities}</p>
+                  </div>
+                  <div className="rounded-lg border border-indigo-100 bg-indigo-50/40 p-3">
+                    <strong className="block text-[10px] uppercase tracking-wide text-indigo-700">Student Activities</strong>
+                    <p className="mt-1 text-xs leading-relaxed text-slate-800">{st.student_activities}</p>
                   </div>
                   <div className="rounded-lg border border-slate-200 bg-slate-50 p-3">
-                    <strong className="block text-xs uppercase tracking-wide text-slate-500">Student Activities</strong>
-                    <p className="mt-1 text-slate-800">{st.student_activities}</p>
+                    <strong className="block text-[10px] uppercase tracking-wide text-slate-500">Learning and Teaching Method</strong>
+                    <p className="mt-1 text-xs leading-relaxed text-slate-800">{st.learning_teaching_method}</p>
                   </div>
                   <div className="rounded-lg border border-slate-200 bg-slate-50 p-3">
-                    <strong className="block text-xs uppercase tracking-wide text-slate-500">Learning and Teaching Method</strong>
-                    <p className="mt-1 text-slate-800">{st.learning_teaching_method}</p>
+                    <strong className="block text-[10px] uppercase tracking-wide text-slate-500">Learning and Teaching Aids</strong>
+                    <p className="mt-1 text-xs leading-relaxed text-slate-800">{st.learning_teaching_aids}</p>
                   </div>
-                  <div className="rounded-lg border border-slate-200 bg-slate-50 p-3">
-                    <strong className="block text-xs uppercase tracking-wide text-slate-500">Learning and Teaching Aids</strong>
-                    <p className="mt-1 text-slate-800">{st.learning_teaching_aids}</p>
-                  </div>
-                  <div className="rounded-lg border border-blue-200 bg-blue-50/50 p-3">
-                    <strong className="block text-xs uppercase tracking-wide text-blue-700">Time</strong>
-                    <p className="mt-1 font-bold text-slate-800">{st.time_minutes} Minutes</p>
+                  <div className="rounded-lg border border-indigo-100 bg-indigo-50/40 p-3">
+                    <strong className="block text-[10px] uppercase tracking-wide text-indigo-700">Time</strong>
+                    <p className="mt-1 text-xs font-bold text-slate-800">{st.time_minutes} Minutes</p>
                   </div>
                 </div>
               </div>
@@ -165,13 +179,16 @@ export default function Step3PlanViewer() {
         <button
           onClick={handleChangeActivity}
           disabled={loadingNext}
-          className="w-full bg-white border border-blue-300 text-blue-700 font-semibold py-3 rounded-xl hover:bg-blue-50 disabled:opacity-50"
+          className="w-full rounded-lg border border-indigo-300 bg-white py-3 text-sm font-bold text-indigo-700 transition hover:bg-indigo-50 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {loadingNext ? 'Loading period-specific options...' : `Choose a different activity for Period ${store.currentPeriod}`}
         </button>
 
-        <div className="rounded-xl border border-indigo-200 bg-indigo-50/50 p-4">
-          <h4 className="text-sm font-bold text-indigo-900">Assessment & Closure (5 Minutes)</h4>
+        <div className="rounded-lg border border-indigo-200 bg-indigo-50/50 p-4">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <h4 className="text-sm font-extrabold text-indigo-950">Assessment & Closure</h4>
+            <span className="rounded-full border border-indigo-200 bg-white px-2.5 py-1 text-[10px] font-bold text-indigo-900">5 Minutes</span>
+          </div>
           <div className="mt-3 grid grid-cols-1 md:grid-cols-2 gap-3">
             <div className="rounded-lg border border-indigo-100 bg-white/80 p-3">
               <strong className="text-xs uppercase tracking-wide text-indigo-700">Closure Summary</strong>
@@ -192,14 +209,14 @@ export default function Step3PlanViewer() {
         <button
           onClick={handleNextPeriodClick}
           disabled={loadingNext}
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl shadow-lg transition"
+          className="w-full rounded-lg bg-indigo-600 py-3.5 text-sm font-extrabold text-white shadow-sm transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-60"
         >
           {loadingNext
             ? `Querying Fresh Options for Period ${store.currentPeriod + 1}...`
             : `Plan Next Period (Period ${store.currentPeriod + 1} of ${store.totalPeriods}) →`}
         </button>
       ) : (
-        <div className="p-4 bg-green-100 text-green-800 rounded-xl font-bold text-center">
+        <div className="rounded-lg border border-emerald-200 bg-emerald-50 p-4 text-center font-extrabold text-emerald-800">
           🎉 All {store.totalPeriods} Periods for Competency {store.competencyLevel} Successfully Completed!
         </div>
       )}
