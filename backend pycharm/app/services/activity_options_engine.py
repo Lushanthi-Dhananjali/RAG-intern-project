@@ -459,3 +459,153 @@ def generate_fallback_options(
         "period": current_period,
         "options": final_options,
     }
+
+
+def check_teacher_activity_suitability(
+    custom_activity: str,
+    period_outcomes: List[str],
+    competency_level: str,
+    grade_level: str = "Grade 8",
+    subject: str = "Civic Education",
+    current_period: int = 1,
+    total_periods: int = 1,
+    student_count: int = 35,
+    classroom_environment: str = "Standard Classroom",
+    accessible_resources: Optional[List[str]] = None,
+    ollama_url: Optional[str] = None,
+    model_name: str = "llama3",
+) -> Dict[str, Any]:
+    """
+    RAG-driven evaluator checking whether a teacher's custom activity is suitable
+    for achieving the allocated learning outcomes in a 40-minute period.
+    If suitable: returns is_suitable=True.
+    If not suitable: returns is_suitable=False, explaining why citing outcomes,
+    and provides a concrete alternative activity aligned with the period's outcomes.
+    """
+    clean_activity = (custom_activity or "").strip()
+    outcomes_summary = "; ".join(period_outcomes) if period_outcomes else "Curriculum Outcomes"
+
+    # Pre-generate a high-quality alternative option from the pedagogical engine
+    alt_result = generate_fallback_options(
+        competency_level=competency_level,
+        period_outcomes=period_outcomes,
+        current_period=current_period,
+        total_periods=total_periods,
+        student_count=student_count,
+        lesson_topic=f"Competency {competency_level}",
+        previous_activities=[],
+        classroom_environment=classroom_environment,
+        accessible_resources=accessible_resources or [],
+    )
+    fallback_option = alt_result["options"][0] if alt_result.get("options") else None
+    alt_title = fallback_option["title"] if fallback_option else f"Interactive Civic Investigation for Period {current_period}"
+    alt_desc = fallback_option["description"] if fallback_option else f"Students work in collaborative small groups to examine real-world examples and achieve: {outcomes_summary}."
+
+    # 1. Sanity check: Too short or empty
+    if not clean_activity or len(clean_activity) < 8:
+        return {
+            "is_suitable": False,
+            "reason": (
+                f"The activity description is too brief to confirm alignment with the allocated "
+                f"learning outcome(s) for Period {current_period}: {outcomes_summary}."
+            ),
+            "suggested_activity": alt_desc,
+            "suggested_activity_title": alt_title,
+        }
+
+    # 2. Check for obvious off-topic / non-civic domains (e.g. Science, Mathematics, Biology)
+    UNRELATED_DOMAINS = [
+        "photosynthesis", "chlorophyll", "mitosis", "meiosis", "cellular respiration",
+        "quadratic equation", "pythagorean", "trigonometry", "algebraic expression",
+        "chemical reaction", "titration", "periodic table", "atomic structure",
+        "circulatory system", "digestive system", "newton's laws", "electromagnetism",
+        "magnetism", "gravitational force", "calculus", "geometry proof",
+    ]
+    activity_lower = clean_activity.casefold()
+    for term in UNRELATED_DOMAINS:
+        if term in activity_lower:
+            return {
+                "is_suitable": False,
+                "reason": (
+                    f"The proposed activity focuses on an unrelated scientific or mathematical topic ('{term}') "
+                    f"rather than the Civic Education learning outcome(s) allocated for Period {current_period}: {outcomes_summary}. "
+                    "In Civic Education, activities must guide students to explore democratic governance, public institutions, rights, duties, and community systems."
+                ),
+                "suggested_activity": alt_desc,
+                "suggested_activity_title": alt_title,
+            }
+
+    # 3. LLM-based evaluation via local Ollama endpoint (if reachable)
+    try:
+        import urllib.request
+        endpoint = ollama_url or "http://localhost:11434"
+        prompt = (
+            "You are an official National Institute of Education (NIE) Sri Lanka curriculum validator for Civic Education.\n"
+            f"Subject: {subject} ({grade_level})\n"
+            f"Competency Level: {competency_level}\n"
+            f"Period: Period {current_period} of {total_periods} (40-Minute Duration)\n"
+            f"Allocated Learning Outcomes for this Period:\n" +
+            "\n".join(f"- {o}" for o in (period_outcomes or [])) + "\n\n"
+            f"Teacher's Proposed Activity:\n\"{clean_activity}\"\n\n"
+            "Task: Evaluate whether this activity is SUITABLE for achieving the allocated learning outcomes.\n"
+            "Rules:\n"
+            "1. An activity is SUITABLE if it engages students in learning, exploring, roleplaying, or discussing concepts in the allocated outcomes.\n"
+            "2. An activity is NOT SUITABLE if it is off-topic, contradicts the outcomes, lacks active student participation, or cannot be done in 40 minutes.\n"
+            "3. If NOT SUITABLE, state the exact mismatch in 'reason' citing the outcomes, and provide an engaging alternative classroom activity in 'suggested_activity'.\n\n"
+            "Return ONLY a JSON object:\n"
+            '{\n  "is_suitable": true or false,\n  "reason": "explanation of alignment or mismatch with outcomes",\n  "suggested_activity": "alternative description if unsuitable, else empty",\n  "suggested_activity_title": "alternative title if unsuitable, else empty"\n}'
+        )
+        req = urllib.request.Request(
+            f"{endpoint}/api/generate",
+            data=json.dumps({"model": model_name, "prompt": prompt, "stream": False, "format": "json"}).encode("utf-8"),
+            headers={"Content-Type": "application/json"}
+        )
+        with urllib.request.urlopen(req, timeout=6) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+            parsed = json.loads(data.get("response", "{}"))
+            if "is_suitable" in parsed:
+                is_s = bool(parsed["is_suitable"])
+                reason = parsed.get("reason", "")
+                s_act = parsed.get("suggested_activity") or alt_desc
+                s_title = parsed.get("suggested_activity_title") or alt_title
+                return {
+                    "is_suitable": is_s,
+                    "reason": reason if not is_s else f"Activity aligns with Period {current_period} learning outcome(s): {outcomes_summary}.",
+                    "suggested_activity": s_act if not is_s else "",
+                    "suggested_activity_title": s_title if not is_s else "",
+                }
+    except Exception as exc:
+        logger.debug("Ollama suitability check call skipped or unavailable: %s", exc)
+
+    # 4. Deterministic pedagogical fallback validation
+    civic_keywords = [
+        "civic", "public", "service", "community", "council", "sabha", "pradeshiya",
+        "citizen", "government", "rights", "duties", "law", "rule", "court",
+        "school", "roleplay", "simulation", "debate", "discuss", "video", "clip",
+        "inquiry", "investigat", "poster", "presentation", "case study", "dilemma",
+        "group", "pair", "students", "learn", "activity", "interview", "question",
+    ]
+    # Check if there is semantic or keyword alignment with civic concepts or the outcomes
+    outcome_words = set(re.findall(r"\w{4,}", outcomes_summary.casefold()))
+    activity_words = set(re.findall(r"\w{4,}", activity_lower))
+
+    has_civic_term = any(k in activity_lower for k in civic_keywords)
+    has_outcome_overlap = bool(activity_words & outcome_words)
+
+    if has_civic_term or has_outcome_overlap:
+        return {
+            "is_suitable": True,
+            "reason": f"Activity aligns with Period {current_period} learning outcome(s): {outcomes_summary}.",
+            "suggested_activity": "",
+            "suggested_activity_title": "",
+        }
+
+    return {
+        "is_suitable": False,
+        "reason": (
+            f"The proposed activity lacks clear pedagogical alignment with the allocated learning outcome(s) "
+            f"for Period {current_period}: {outcomes_summary}. Please align the activity with the civic concepts."
+        ),
+        "suggested_activity": alt_desc,
+        "suggested_activity_title": alt_title,
+    }

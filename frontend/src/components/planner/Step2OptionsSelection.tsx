@@ -1,7 +1,11 @@
 'use client';
 import React, { useState } from 'react';
 import { useLessonPlanStore } from '@/store/useLessonPlanStore';
-import { generateSinglePeriodPlan } from '@/services/lessonPlanApi';
+import {
+  generateSinglePeriodPlan,
+  checkActivitySuitability,
+  CheckActivitySuitabilityResponse,
+} from '@/services/lessonPlanApi';
 
 export default function Step2OptionsSelection() {
   const store = useLessonPlanStore();
@@ -9,13 +13,50 @@ export default function Step2OptionsSelection() {
   const [customMode, setCustomMode] = useState(false);
   const [customText, setCustomText] = useState('');
   const [generationError, setGenerationError] = useState<string | null>(null);
+  const [checkingSuitability, setCheckingSuitability] = useState(false);
+  const [suitabilityResult, setSuitabilityResult] = useState<CheckActivitySuitabilityResponse | null>(null);
 
   const handleGenerate = async (selectedDesc?: string, isCustom = false, activityTitle?: string) => {
     setLoading(true);
-    const chosenTitle = isCustom
-      ? `Teacher approach: ${customText.trim()}`
-      : (activityTitle || 'Selected Strategy');
     setGenerationError(null);
+
+    // 1. If custom activity, check suitability against period learning outcomes first
+    if (isCustom) {
+      setCheckingSuitability(true);
+      try {
+        const check = await checkActivitySuitability({
+          customActivity: customText.trim(),
+          competencyLevel: store.competencyLevel,
+          gradeLevel: store.gradeLevel,
+          subject: store.subject,
+          requestedPeriod: store.currentPeriod,
+          totalPeriods: store.totalPeriods,
+          studentCount: store.studentCount,
+          classroomEnvironment: store.classroomEnvironment,
+          accessibleResources: store.accessibleResources,
+        });
+        setSuitabilityResult(check);
+        setCheckingSuitability(false);
+
+        if (!check.is_suitable) {
+          setLoading(false);
+          return;
+        }
+      } catch (err: any) {
+        setCheckingSuitability(false);
+        // If endpoint returned an error message, display it
+        if (err.message && err.message.includes('Activity not suitable')) {
+          setGenerationError(err.message);
+          setLoading(false);
+          return;
+        }
+      }
+    }
+
+    const chosenTitle = isCustom
+      ? (customText.trim().length > 60 ? `Teacher Activity: ${customText.trim().slice(0, 60)}...` : `Teacher Activity: ${customText.trim()}`)
+      : (activityTitle || 'Selected Strategy');
+
     try {
       const plan = await generateSinglePeriodPlan({
         competencyLevel: store.competencyLevel,
@@ -27,11 +68,9 @@ export default function Step2OptionsSelection() {
         subject: store.subject,
         teacherMode: isCustom ? 'own_approach' : 'suggested',
         selectedActivityOption: selectedDesc,
-        selectedActivityTitle: isCustom
-          ? `Teacher approach: ${customText.trim()}`
-          : activityTitle,
+        selectedActivityTitle: chosenTitle,
         customTeacherActivity: isCustom ? customText : undefined,
-        activityOptions: store.currentOptions,
+        activityOptions: isCustom ? [] : store.currentOptions,
         classroomEnvironment: store.classroomEnvironment,
         accessibleResources: store.accessibleResources,
         previousPeriodActivities: store.priorActivityTitles(store.currentPeriod),
@@ -42,6 +81,32 @@ export default function Step2OptionsSelection() {
       setGenerationError(err.message || 'Generation failed. Your activity selection has been kept.');
     } finally {
       setLoading(false);
+      setCheckingSuitability(false);
+    }
+  };
+
+  const handleCheckSuitabilityOnly = async () => {
+    if (!customText.trim()) return;
+    setCheckingSuitability(true);
+    setGenerationError(null);
+    setSuitabilityResult(null);
+    try {
+      const check = await checkActivitySuitability({
+        customActivity: customText.trim(),
+        competencyLevel: store.competencyLevel,
+        gradeLevel: store.gradeLevel,
+        subject: store.subject,
+        requestedPeriod: store.currentPeriod,
+        totalPeriods: store.totalPeriods,
+        studentCount: store.studentCount,
+        classroomEnvironment: store.classroomEnvironment,
+        accessibleResources: store.accessibleResources,
+      });
+      setSuitabilityResult(check);
+    } catch (err: any) {
+      setGenerationError(err.message || 'Suitability check failed.');
+    } finally {
+      setCheckingSuitability(false);
     }
   };
 
@@ -98,7 +163,11 @@ export default function Step2OptionsSelection() {
         </div>
         <button
           type="button"
-          onClick={() => setCustomMode(!customMode)}
+          onClick={() => {
+            setCustomMode(!customMode);
+            setGenerationError(null);
+            setSuitabilityResult(null);
+          }}
           style={{
             padding: '8px 14px',
             backgroundColor: '#ffffff',
@@ -133,7 +202,7 @@ export default function Step2OptionsSelection() {
         </div>
       )}
 
-      {loading && (
+      {(loading || checkingSuitability) && (
         <div
           role="status"
           style={{
@@ -150,7 +219,11 @@ export default function Step2OptionsSelection() {
           }}
         >
           <span className="w-4 h-4 border-2 border-indigo-600 border-t-transparent rounded-full animate-spin" />
-          <span>Generating the Period {store.currentPeriod} plan from your selected activity...</span>
+          <span>
+            {checkingSuitability
+              ? `Checking activity suitability against Period ${store.currentPeriod} learning outcomes...`
+              : `Generating the Period ${store.currentPeriod} plan from your selected activity...`}
+          </span>
         </div>
       )}
 
@@ -318,7 +391,7 @@ export default function Step2OptionsSelection() {
             boxShadow: '0 2px 6px rgba(0, 0, 0, 0.04)',
             display: 'flex',
             flexDirection: 'column',
-            gap: '14px',
+            gap: '16px',
           }}
         >
           <div>
@@ -327,15 +400,20 @@ export default function Step2OptionsSelection() {
               Your Own Classroom Activity or Simulation
             </h3>
             <p style={{ margin: '6px 0 0', fontSize: '13px', color: '#64748b', lineHeight: 1.5 }}>
-              Enter your custom activity idea or video simulation below. The lesson plan introduction,
-              step-by-step development, and closure assessment will be built around your chosen activity.
+              Enter your custom activity idea below. The RAG system will automatically check if this activity
+              is suitable for achieving the <strong>Period {store.currentPeriod}</strong> learning outcomes.
+              If suitable, the lesson plan will be generated; if not suitable, the system will explain why and suggest an alternative.
             </p>
           </div>
 
           <textarea
             rows={4}
             value={customText}
-            onChange={(e) => setCustomText(e.target.value)}
+            onChange={(e) => {
+              setCustomText(e.target.value);
+              setSuitabilityResult(null);
+              setGenerationError(null);
+            }}
             placeholder="e.g. Play a 3-minute clip of a municipal council debate, then ask student groups to draft two formal citizen complaints regarding road drainage..."
             style={{
               width: '100%',
@@ -352,26 +430,140 @@ export default function Step2OptionsSelection() {
             }}
           />
 
-          <button
-            type="button"
-            disabled={loading || !customText.trim()}
-            onClick={() => handleGenerate(customText, true)}
-            style={{
-              width: '100%',
-              padding: '12px 18px',
-              borderRadius: '10px',
-              backgroundColor: loading || !customText.trim() ? '#94a3b8' : '#4f46e5',
-              color: '#ffffff',
-              fontWeight: 700,
-              fontSize: '14px',
-              border: 'none',
-              cursor: loading || !customText.trim() ? 'not-allowed' : 'pointer',
-              boxShadow: '0 2px 4px rgba(79, 70, 229, 0.25)',
-              transition: 'background-color 0.2s ease',
-            }}
-          >
-            {loading ? 'Generating plan...' : '✨ Generate Plan From My Activity'}
-          </button>
+          {/* Suitability Feedback Box */}
+          {suitabilityResult && !suitabilityResult.is_suitable && (
+            <div
+              style={{
+                backgroundColor: '#fffbeb',
+                border: '1.5px solid #fde68a',
+                borderRadius: '12px',
+                padding: '16px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '10px',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <span style={{ fontSize: '18px' }}>⚠️</span>
+                <strong style={{ fontSize: '14px', color: '#92400e' }}>
+                  Activity Not Suitable for Period {store.currentPeriod}
+                </strong>
+              </div>
+              <p style={{ margin: 0, fontSize: '13px', color: '#78350f', lineHeight: 1.55 }}>
+                {suitabilityResult.reason}
+              </p>
+              {suitabilityResult.suggested_activity && (
+                <div
+                  style={{
+                    backgroundColor: '#ffffff',
+                    border: '1px solid #fde68a',
+                    borderRadius: '10px',
+                    padding: '12px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '6px',
+                  }}
+                >
+                  <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', color: '#b45309' }}>
+                    💡 Recommended Alternative Activity for this Period:
+                  </span>
+                  {suitabilityResult.suggested_activity_title && (
+                    <strong style={{ fontSize: '13px', color: '#0f172a' }}>
+                      {suitabilityResult.suggested_activity_title}
+                    </strong>
+                  )}
+                  <p style={{ margin: 0, fontSize: '12px', color: '#475569', lineHeight: 1.5 }}>
+                    {suitabilityResult.suggested_activity}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setCustomText(suitabilityResult.suggested_activity!);
+                      setSuitabilityResult(null);
+                      setGenerationError(null);
+                    }}
+                    style={{
+                      marginTop: '4px',
+                      padding: '7px 12px',
+                      backgroundColor: '#fef3c7',
+                      border: '1px solid #f59e0b',
+                      borderRadius: '8px',
+                      color: '#92400e',
+                      fontSize: '12px',
+                      fontWeight: 700,
+                      cursor: 'pointer',
+                      alignSelf: 'flex-start',
+                    }}
+                  >
+                    👉 Use This Suggested Activity
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
+
+          {suitabilityResult && suitabilityResult.is_suitable && (
+            <div
+              style={{
+                backgroundColor: '#f0fdf4',
+                border: '1px solid #bbf7d0',
+                borderRadius: '10px',
+                padding: '12px 14px',
+                fontSize: '13px',
+                color: '#166534',
+                fontWeight: 600,
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+              }}
+            >
+              <span>✅</span>
+              <span>{suitabilityResult.reason || `Activity is suitable for Period ${store.currentPeriod} learning outcomes.`}</span>
+            </div>
+          )}
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '10px' }}>
+            <button
+              type="button"
+              disabled={loading || checkingSuitability || !customText.trim()}
+              onClick={handleCheckSuitabilityOnly}
+              style={{
+                padding: '12px 16px',
+                borderRadius: '10px',
+                backgroundColor: '#ffffff',
+                border: '1.5px solid #cbd5e1',
+                color: '#334155',
+                fontWeight: 700,
+                fontSize: '13px',
+                cursor: loading || checkingSuitability || !customText.trim() ? 'not-allowed' : 'pointer',
+                boxShadow: '0 1px 2px rgba(0,0,0,0.04)',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              {checkingSuitability ? 'Checking...' : '🔍 Check Suitability'}
+            </button>
+
+            <button
+              type="button"
+              disabled={loading || checkingSuitability || !customText.trim()}
+              onClick={() => handleGenerate(customText, true)}
+              style={{
+                width: '100%',
+                padding: '12px 18px',
+                borderRadius: '10px',
+                backgroundColor: loading || checkingSuitability || !customText.trim() ? '#94a3b8' : '#4f46e5',
+                color: '#ffffff',
+                fontWeight: 700,
+                fontSize: '14px',
+                border: 'none',
+                cursor: loading || checkingSuitability || !customText.trim() ? 'not-allowed' : 'pointer',
+                boxShadow: '0 2px 4px rgba(79, 70, 229, 0.25)',
+                transition: 'background-color 0.2s ease',
+              }}
+            >
+              {loading ? 'Validating & Generating...' : '✨ Generate Plan From My Activity'}
+            </button>
+          </div>
         </div>
       )}
     </div>

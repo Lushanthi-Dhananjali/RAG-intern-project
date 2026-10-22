@@ -435,6 +435,29 @@ class LessonPlanMlService(ILessonPlanMlService):
                 else None
             )
 
+            # 1. RAG Suitability Validation: Check if the custom activity is suitable for this period's learning outcomes
+            if is_own_approach and custom_teacher_act:
+                suitability = self.rag_engine.check_custom_activity_suitability(
+                    custom_activity=custom_teacher_act,
+                    period_outcomes=assigned_outcomes,
+                    competency_level=target_comp,
+                    grade_level=normalized_grade,
+                    subject="Civic Education",
+                    current_period=p_idx,
+                    total_periods=total_periods,
+                    student_count=student_count,
+                    classroom_environment=getattr(request, "classroom_environment", "Standard Classroom"),
+                    accessible_resources=getattr(request, "accessible_resources", []),
+                )
+                if not suitability.get("is_suitable", True):
+                    reason = suitability.get("reason", "Activity is not suitable for the assigned outcomes.")
+                    alt_act = suitability.get("suggested_activity", "")
+                    alt_title = suitability.get("suggested_activity_title", "")
+                    raise ValueError(
+                        f"Activity not suitable for Period {p_idx}: {reason} "
+                        f"Recommended alternative: {alt_title} - {alt_act}"
+                    )
+
             # Resolve activity options for this period
             period_options: List[Dict[str, Any]] = []
             if p_idx == requested_period and getattr(request, "activity_options", None):
@@ -551,7 +574,34 @@ class LessonPlanMlService(ILessonPlanMlService):
 
             # Persist ONLY the selected activity option in activity_options and saved JSON
             filtered_opts = []
-            if period_options:
+            if is_own_approach and custom_teacher_act:
+                # Requirement 2: JSON file activity option gives details of teacher's own activity
+                # as used in the generated lesson plan, NOT the Curriculum-Aligned Activity Options.
+                # If some details cannot be identified, keep space " " as requested.
+                dev_steps = plan.lesson_development_steps or []
+                method = dev_steps[0].learning_teaching_method if (dev_steps and dev_steps[0].learning_teaching_method) else " "
+                std_act = dev_steps[0].student_activities if (dev_steps and dev_steps[0].student_activities) else custom_teacher_act or " "
+                tch_act = dev_steps[0].teacher_activities if (dev_steps and dev_steps[0].teacher_activities) else " "
+                materials = [dev_steps[0].learning_teaching_aids] if (dev_steps and dev_steps[0].learning_teaching_aids) else [" "]
+
+                clean_custom_title = period_selected_title
+                if not clean_custom_title or clean_custom_title == f"Teacher approach: {custom_teacher_act}":
+                    clean_custom_title = f"Teacher Activity: {custom_teacher_act}"
+
+                filtered_opts = [{
+                    "id": f"teacher_custom_activity_p{p_idx}",
+                    "title": clean_custom_title,
+                    "description": custom_teacher_act,
+                    "pedagogy_type": method,
+                    "student_grouping": f"Adaptive Grouping ({student_count} students)" if student_count else " ",
+                    "student_action_summary": std_act,
+                    "teacher_facilitation_summary": tch_act,
+                    "required_materials": materials,
+                    "expected_student_output": plan.post_activity or " ",
+                    "creative_assessment_preview": plan.assessment_and_feedback_whole_lesson or " ",
+                    "learning_outcomes_addressed": assigned_outcomes or [],
+                }]
+            elif period_options:
                 if period_selected_title:
                     filtered_opts = [opt for opt in period_options if opt.get("title") == period_selected_title]
                 if not filtered_opts and period_selected_activity:
@@ -563,12 +613,17 @@ class LessonPlanMlService(ILessonPlanMlService):
                     filtered_opts = [period_options[0]]
             elif custom_teacher_act:
                 filtered_opts = [{
-                    "id": "custom",
+                    "id": f"teacher_custom_activity_p{p_idx}",
                     "title": period_selected_title or "Teacher's Custom Activity",
                     "description": custom_teacher_act,
-                    "pedagogy_type": "Teacher-Designed Activity",
-                    "student_grouping": "Whole Class / Small Group",
-                    "student_action_summary": custom_teacher_act,
+                    "pedagogy_type": " ",
+                    "student_grouping": " ",
+                    "student_action_summary": custom_teacher_act or " ",
+                    "teacher_facilitation_summary": " ",
+                    "required_materials": [" "],
+                    "expected_student_output": " ",
+                    "creative_assessment_preview": " ",
+                    "learning_outcomes_addressed": assigned_outcomes or [],
                 }]
             plan.activity_options = filtered_opts
             plan.outcome_allocation = {

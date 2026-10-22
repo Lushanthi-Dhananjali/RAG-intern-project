@@ -279,6 +279,56 @@ export async function fetchPedagogicalOptions(
   return data.options;
 }
 
+export interface CheckActivitySuitabilityPayload {
+  customActivity: string;
+  competencyLevel: string;
+  gradeLevel?: string;
+  subject?: string;
+  requestedPeriod?: number;
+  totalPeriods?: number;
+  studentCount?: number;
+  classroomEnvironment?: string;
+  accessibleResources?: string[];
+}
+
+export interface CheckActivitySuitabilityResponse {
+  is_suitable: boolean;
+  reason: string;
+  suggested_activity?: string;
+  suggested_activity_title?: string;
+}
+
+/**
+ * Checks whether a teacher's custom activity is suitable for the
+ * allocated learning outcomes in a given period.
+ */
+export async function checkActivitySuitability(
+  payload: CheckActivitySuitabilityPayload
+): Promise<CheckActivitySuitabilityResponse> {
+  const response = await fetch(`${API_BASE_URL}/api/v1/plans/check-activity-suitability`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      custom_activity: payload.customActivity,
+      competency_level: payload.competencyLevel,
+      grade_level: payload.gradeLevel || 'Grade 8',
+      subject: payload.subject || 'Civic Education',
+      requested_period: payload.requestedPeriod || 1,
+      total_periods: payload.totalPeriods || 1,
+      student_count: payload.studentCount || 35,
+      classroom_environment: payload.classroomEnvironment || 'Standard Classroom',
+      accessible_resources: payload.accessibleResources || [],
+    }),
+  });
+
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({}));
+    throw new Error(errorData.detail || `Suitability check failed with status ${response.status}`);
+  }
+
+  return response.json();
+}
+
 // =====================================================================
 // STEP 6, 7 & 8: SINGLE-PERIOD 40-MINUTE PLAN GENERATION API
 // =====================================================================

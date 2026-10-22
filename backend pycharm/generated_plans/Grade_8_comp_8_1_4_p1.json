@@ -1,0 +1,88 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 1 of 3)",
+  "competence": "Explains the importance of the citizens fulfilling duties and rights related to",
+  "competence_level": "Introduced & Explored (Foundational Inquiry)",
+  "lesson": "Explains the importance of the citizens fulfilling duties and rights related to: Teacher Activity: show video for students",
+  "unique_learning_outcome": [
+    "Explains the importance of the citizens fulfilling duties and rights related to"
+  ],
+  "the_entrance": "5-minute introduction: The teacher writes or reads “Explains the importance of the citizens fulfilling duties and rights related to” and asks students to name one example they have seen in everyday life. Students share brief responses; the teacher connects their examples to show video for students and explains how it will help them explore this period's outcome.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "The teacher explains the importance of citizens fulfilling duties and rights, using the video as a starting point.",
+      "student_activities": "Students listen to the teacher's explanation and take notes in their notebooks.",
+      "learning_teaching_method": "Show video for students (Teacher's custom activity)",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Students work in groups of 7, with each group having a leader, scribe, timekeeper, and spokesperson.",
+      "student_activities": "Students discuss and brainstorm the importance of citizens fulfilling duties and rights, using the video as a reference.",
+      "learning_teaching_method": "Group Discussion",
+      "learning_teaching_aids": "Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "The teacher facilitates a plenary session, where students share their group's findings and insights.",
+      "student_activities": "Students share their group's ideas and listen to their peers' perspectives.",
+      "learning_teaching_method": "Plenary Session",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    }
+  ],
+  "summary": "Students will understand the importance of citizens fulfilling duties and rights.",
+  "assessment_and_feedback_whole_lesson": "The teacher will provide feedback on students' participation and engagement during the group discussion and plenary session.",
+  "post_activity": "In-class assignment: Students will write a short paragraph (5 minutes) explaining the importance of citizens fulfilling duties and rights, using their notes and insights from the lesson.",
+  "information_sources": [
+    "grade_8_civic_textbook.pdf (page 1)"
+  ],
+  "attachments": [],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 1,
+  "total_periods": 3,
+  "selected_activity": "show video for students",
+  "selected_activity_title": "Teacher Activity: show video for students",
+  "custom_teacher_activity": "show video for students",
+  "activity_options": [
+    {
+      "id": "teacher_custom_activity_p1",
+      "title": "Teacher Activity: show video for students",
+      "description": "show video for students",
+      "pedagogy_type": "Show video for students (Teacher's custom activity)",
+      "student_grouping": "Adaptive Grouping (35 students)",
+      "student_action_summary": "Students listen to the teacher's explanation and take notes in their notebooks.",
+      "teacher_facilitation_summary": "The teacher explains the importance of citizens fulfilling duties and rights, using the video as a starting point.",
+      "required_materials": [
+        "Chalkboard, Student Notebooks, Chart Paper"
+      ],
+      "expected_student_output": "In-class assignment: Students will write a short paragraph (5 minutes) explaining the importance of citizens fulfilling duties and rights, using their notes and insights from the lesson.",
+      "creative_assessment_preview": "The teacher will provide feedback on students' participation and engagement during the group discussion and plenary session.",
+      "learning_outcomes_addressed": [
+        "Explains the importance of the citizens fulfilling duties and rights related to"
+      ]
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "Explains the importance of the citizens fulfilling duties and rights related to"
+    ],
+    "2": [
+      "Expresses views on fulfilling duties related to public services help to provide an efficient service. Instructions for planning lessons Plan lessons in order to cover the following subject content. Explain each service with examples. Eg. Rights of the public in using public services. rights of using public services right of protecting public services right of using high quality public services Responsibilities and duties of the public in using public services. using services carefully and economically paying for services in time. protecting property related to public services. having positive attitudes in using public services Fulfilling public responsibilities and duties increases efficiency."
+    ],
+    "3": [
+      "use of public services."
+    ]
+  }
+}

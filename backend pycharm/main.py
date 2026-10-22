@@ -249,6 +249,25 @@ class CompetencyLevelGenerateResponse(BaseModel):
     alignment_report: Any = None
 
 
+class CheckActivitySuitabilityRequest(BaseModel):
+    custom_activity: str
+    competency_level: str
+    grade_level: Optional[str] = "Grade 8"
+    subject: Optional[str] = "Civic Education"
+    requested_period: Optional[int] = 1
+    total_periods: Optional[int] = 1
+    student_count: Optional[int] = 35
+    classroom_environment: Optional[str] = "Standard Classroom"
+    accessible_resources: Optional[List[str]] = Field(default_factory=list)
+
+
+class CheckActivitySuitabilityResponse(BaseModel):
+    is_suitable: bool
+    reason: str
+    suggested_activity: Optional[str] = ""
+    suggested_activity_title: Optional[str] = ""
+
+
 class SingleLessonPlanRequest(BaseModel):
     query: str = Field(
         ...,
@@ -468,6 +487,53 @@ async def suggest_pedagogical_options(
 
 
 @app.post(
+    "/api/v1/plans/check-activity-suitability",
+    response_model=CheckActivitySuitabilityResponse,
+    status_code=status.HTTP_200_OK,
+    tags=["Pedagogical Options Discovery"],
+    summary="Validate suitability of teacher's custom activity against period learning outcomes"
+)
+async def check_activity_suitability_endpoint(
+    request: CheckActivitySuitabilityRequest,
+    service: LessonPlanMlService = Depends(get_lesson_service)
+):
+    try:
+        from app.services.outcome_allocator import (
+            extract_civic_tig_learning_outcomes,
+            allocate_learning_outcomes_across_periods,
+        )
+        outcomes = extract_civic_tig_learning_outcomes(request.competency_level, request.grade_level)
+        alloc = allocate_learning_outcomes_across_periods(
+            competency_level=request.competency_level,
+            total_periods=request.total_periods or 1,
+            official_outcomes=outcomes
+        )
+        assigned = alloc.get_outcomes_for_period(request.requested_period or 1)
+    except Exception as exc:
+        logger.warning("Could not allocate outcomes for suitability check: %s", exc)
+        assigned = []
+
+    res = service.rag_engine.check_custom_activity_suitability(
+        custom_activity=request.custom_activity,
+        period_outcomes=assigned,
+        competency_level=request.competency_level,
+        grade_level=request.grade_level or "Grade 8",
+        subject=request.subject or "Civic Education",
+        current_period=request.requested_period or 1,
+        total_periods=request.total_periods or 1,
+        student_count=request.student_count or 35,
+        classroom_environment=request.classroom_environment or "Standard Classroom",
+        accessible_resources=request.accessible_resources or [],
+    )
+    return CheckActivitySuitabilityResponse(
+        is_suitable=res["is_suitable"],
+        reason=res["reason"],
+        suggested_activity=res.get("suggested_activity", ""),
+        suggested_activity_title=res.get("suggested_activity_title", "")
+    )
+
+
+@app.post(
     "/api/v1/generate-by-competency-level",
     response_model=CompetencyLevelGenerateResponse,
     status_code=status.HTTP_200_OK,
@@ -558,10 +624,16 @@ async def generate_by_competency_level(
             detail=f"Local LLM service unavailable: {str(conn_err)}"
         )
     except ValueError as val_err:
-        logger.error("Pydantic schema validation error: %s", val_err)
+        err_msg = str(val_err)
+        logger.warning("Lesson plan generation validation error: %s", err_msg)
+        if "Activity not suitable" in err_msg:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail=err_msg
+            )
         raise HTTPException(
             status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-            detail=f"Validation error: {str(val_err)}"
+            detail=f"Validation error: {err_msg}"
         )
     except Exception as exc:
         logger.exception("Generation failure: %s", exc)

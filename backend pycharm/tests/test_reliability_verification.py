@@ -240,6 +240,121 @@ def test_test_d_custom_teacher_activity_preservation():
     assert serialized["selected_activity"] == custom_idea
 
 
+def test_test_d2_custom_activity_suitability_checks():
+    """Verify check_teacher_activity_suitability rejects off-topic and accepts aligned activities."""
+    from app.services.activity_options_engine import check_teacher_activity_suitability
+
+    period_outcomes = ["Identifies the public services in the local community."]
+
+    # Unsuitable: Completely off-topic biology topic
+    off_topic = "Students set up beakers and observe the rate of photosynthesis in elodea plants under light."
+    result_off = check_teacher_activity_suitability(
+        custom_activity=off_topic,
+        period_outcomes=period_outcomes,
+        competency_level="8.1.1",
+        grade_level="Grade 8",
+        subject="Civic Education",
+        current_period=1,
+    )
+    assert result_off["is_suitable"] is False
+    assert len(result_off["reason"]) > 0
+    assert result_off["suggested_activity"] is not None
+    assert len(result_off["suggested_activity_title"]) > 0
+
+    # Unsuitable: Too brief / gibberish
+    too_short = "do work"
+    result_short = check_teacher_activity_suitability(
+        custom_activity=too_short,
+        period_outcomes=period_outcomes,
+        competency_level="8.1.1",
+        grade_level="Grade 8",
+        subject="Civic Education",
+        current_period=1,
+    )
+    assert result_short["is_suitable"] is False
+    assert "brief" in result_short["reason"].casefold() or "outcome" in result_short["reason"].casefold()
+
+    # Suitable: Directly aligned to public services in civic education
+    aligned = "Students examine local municipal council public service case studies and map how drinking water and waste collection are distributed."
+    result_ok = check_teacher_activity_suitability(
+        custom_activity=aligned,
+        period_outcomes=period_outcomes,
+        competency_level="8.1.1",
+        grade_level="Grade 8",
+        subject="Civic Education",
+        current_period=1,
+    )
+    assert result_ok["is_suitable"] is True
+
+
+@pytest.mark.asyncio
+async def test_test_d3_custom_activity_options_json_padding_and_no_curriculum_leak():
+    """Verify saved JSON activity_options exclusively contains teacher's custom activity with space padding."""
+    from app.services.lesson_plan_service import LessonPlanMlService
+    from app.services.i_lesson_plan_service import LessonPlanGenerateRequest
+
+    service = LessonPlanMlService()
+    custom_act = "Students role-play a village council meeting discussing public services."
+
+    # Mock single period plan return
+    base_plan = make_mock_plan(activity_title=f"Teacher approach: {custom_act}")
+    base_plan.custom_teacher_activity = custom_act
+    base_plan.selected_activity = custom_act
+
+    curriculum_dummy_options = [
+        {
+            "id": "opt_curriculum_leak",
+            "title": "Curriculum Card Option 1 - Should Not Leak",
+            "description": "Curriculum card text",
+            "teaching_method": "Card Method",
+        }
+    ]
+
+    with patch.object(service.rag_engine, "generate_lesson_plan", return_value=base_plan), \
+         patch.object(service.rag_engine.retriever, "retrieve_tig_and_textbook_for_level", return_value={
+             "tig_guidelines": [{"content": "Competency Level 8.1.1\nLearning outcomes:\n- Identifies the public services.\n- Explains the need of public services."}],
+             "textbook_paragraphs": []
+         }), \
+         patch.object(service.rag_engine.evaluator, "evaluate_lesson_plan", return_value={"grounding_score": 1.0, "passed": True, "unsupported_claims": []}), \
+         patch.object(service.rag_engine.alignment_evaluator, "evaluate_alignment", return_value={"overall_alignment_score": 1.0, "passed_alignment_guardrail": True}):
+
+        req = LessonPlanGenerateRequest(
+            query="Public Services",
+            competency_level="8.1.1",
+            grade_level="Grade 8",
+            subject="Civic Education",
+            periods=1,
+            teacher_mode="own_approach",
+            custom_teacher_activity=custom_act,
+            activity_options_per_period=[curriculum_dummy_options],
+        )
+
+        resp = await service.generate_lesson_plan_async(req)
+        assert resp is not None
+        generated = resp.lesson_plan
+
+        # Check activity_options inside generated plan
+        assert len(generated.activity_options) == 1
+        custom_opt = generated.activity_options[0]
+
+        # Must NOT contain curriculum card details
+        assert "Curriculum Card Option 1" not in custom_opt["title"]
+        assert "Curriculum card text" not in custom_opt["description"]
+
+        # Must contain teacher custom activity title/description
+        assert custom_act in custom_opt["title"] or custom_opt["title"] == custom_act
+        assert custom_opt["description"] == custom_act
+
+        # Test JSON serialization: any unassigned fields must be space " " or valid strings
+        dumped = json.loads(generated.model_dump_json())
+        json_opt = dumped["activity_options"][0]
+        assert custom_act in json_opt["title"] or json_opt["title"] == custom_act
+        # None of the fields should be None
+        for k, v in json_opt.items():
+            assert v is not None, f"Field {k} in custom activity option should not be None"
+
+
+
 # =============================================================================
 # TEST E: INTRODUCTION AND ASSIGNMENT (5m introduction + 5m assignment + 30m development)
 # =============================================================================

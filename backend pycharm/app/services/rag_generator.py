@@ -68,16 +68,19 @@ try:
     from app.services.activity_options_engine import (
         build_period_options_prompt,
         generate_fallback_options,
+        check_teacher_activity_suitability,
     )
 except ModuleNotFoundError:
     try:
         from services.activity_options_engine import (
             build_period_options_prompt,
             generate_fallback_options,
+            check_teacher_activity_suitability,
         )
     except ModuleNotFoundError:
         build_period_options_prompt = None
         generate_fallback_options = None
+        check_teacher_activity_suitability = None
 
 try:
     from app.services.outcome_allocator import (
@@ -223,6 +226,45 @@ class RAGLessonPlanGenerator:
 
         self.last_eval_report = None
         self.last_align_report = None
+
+    def check_custom_activity_suitability(
+        self,
+        custom_activity: str,
+        period_outcomes: List[str],
+        competency_level: str,
+        grade_level: str = "Grade 8",
+        subject: str = "Civic Education",
+        current_period: int = 1,
+        total_periods: int = 1,
+        student_count: int = 35,
+        classroom_environment: str = "Standard Classroom",
+        accessible_resources: Optional[List[str]] = None,
+    ) -> Dict[str, Any]:
+        """
+        Validates whether teacher's custom activity is pedagogically suitable
+        for achieving the allocated learning outcomes of the requested period.
+        """
+        if check_teacher_activity_suitability is not None:
+            return check_teacher_activity_suitability(
+                custom_activity=custom_activity,
+                period_outcomes=period_outcomes,
+                competency_level=competency_level,
+                grade_level=grade_level,
+                subject=subject,
+                current_period=current_period,
+                total_periods=total_periods,
+                student_count=student_count,
+                classroom_environment=classroom_environment,
+                accessible_resources=accessible_resources,
+                ollama_url=self.ollama_url,
+                model_name=self.model_name,
+            )
+        return {
+            "is_suitable": True,
+            "reason": "Default suitability check passed.",
+            "suggested_activity": "",
+            "suggested_activity_title": "",
+        }
 
     def generate_activity_options(
         self,
@@ -834,7 +876,31 @@ class RAGLessonPlanGenerator:
         )
         # Persist ONLY the selected activity option in activity_options and saved JSON
         filtered_opts = []
-        if activity_options:
+        if custom_teacher_activity and teacher_mode == "own_approach":
+            dev_steps = validated_plan.lesson_development_steps or []
+            method = dev_steps[0].learning_teaching_method if (dev_steps and dev_steps[0].learning_teaching_method) else " "
+            std_act = dev_steps[0].student_activities if (dev_steps and dev_steps[0].student_activities) else custom_teacher_activity or " "
+            tch_act = dev_steps[0].teacher_activities if (dev_steps and dev_steps[0].teacher_activities) else " "
+            materials = [dev_steps[0].learning_teaching_aids] if (dev_steps and dev_steps[0].learning_teaching_aids) else [" "]
+
+            clean_title = selected_activity_title
+            if not clean_title or clean_title == f"Teacher approach: {custom_teacher_activity}":
+                clean_title = f"Teacher Activity: {custom_teacher_activity[:60]}..." if len(custom_teacher_activity) > 60 else f"Teacher Activity: {custom_teacher_activity}"
+
+            filtered_opts = [{
+                "id": f"teacher_custom_activity_p{current_period}",
+                "title": clean_title,
+                "description": custom_teacher_activity,
+                "pedagogy_type": method,
+                "student_grouping": f"Adaptive Grouping ({student_count} students)" if student_count else " ",
+                "student_action_summary": std_act,
+                "teacher_facilitation_summary": tch_act,
+                "required_materials": materials,
+                "expected_student_output": validated_plan.post_activity or " ",
+                "creative_assessment_preview": validated_plan.assessment_and_feedback_whole_lesson or " ",
+                "learning_outcomes_addressed": retrieved_outcomes or [],
+            }]
+        elif activity_options:
             if selected_activity_title:
                 filtered_opts = [opt for opt in activity_options if opt.get("title") == selected_activity_title]
             if not filtered_opts and effective_activity:
@@ -844,15 +910,6 @@ class RAGLessonPlanGenerator:
                 ]
             if not filtered_opts:
                 filtered_opts = [activity_options[0]]
-        elif custom_teacher_activity and teacher_mode == "own_approach":
-            filtered_opts = [{
-                "id": "custom",
-                "title": selected_activity_title or "Teacher's Custom Activity",
-                "description": custom_teacher_activity,
-                "pedagogy_type": "Teacher-Designed Activity",
-                "student_grouping": "Whole Class / Small Group",
-                "student_action_summary": custom_teacher_activity,
-            }]
         validated_plan.activity_options = filtered_opts
         validated_plan.outcome_allocation = outcome_allocation or {}
 

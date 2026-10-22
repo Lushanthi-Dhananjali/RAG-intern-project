@@ -1056,7 +1056,6 @@ export default function Home() {
         <div className="space-y-4">
           <LessonPlanForm
             onSubmit={handleClassicFormSubmit}
-            onViewPlan={handleViewPlan}
             isLoading={isLoading}
             isViewing={isViewing}
           />

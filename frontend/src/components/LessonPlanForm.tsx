@@ -242,12 +242,13 @@ export default function LessonPlanForm({
         </span>
       </div>
 
-      {/* 4. Action Buttons (Generate + View Saved Plan) */}
-      <div style={{ display: 'grid', gridTemplateColumns: onViewPlan ? '1fr auto' : '1fr', gap: '10px', marginTop: '6px' }}>
+      {/* 4. Action Button (Generate Plan) */}
+      <div style={{ marginTop: '6px' }}>
         <button
           type="submit"
           disabled={isLoading || isViewing || !competencyLevel.trim()}
           style={{
+            width: '100%',
             padding: '12px 16px',
             borderRadius: '10px',
             backgroundColor: isLoading || isViewing || !competencyLevel.trim() ? '#94a3b8' : '#4f46e5',
@@ -275,49 +276,6 @@ export default function LessonPlanForm({
             </>
           )}
         </button>
-
-        {onViewPlan && (
-          <button
-            type="button"
-            onClick={() =>
-              onViewPlan({
-                competencyLevel: competencyLevel.trim(),
-                gradeLevel,
-                subject,
-              })
-            }
-            disabled={isLoading || isViewing || !competencyLevel.trim()}
-            style={{
-              padding: '12px 18px',
-              borderRadius: '10px',
-              backgroundColor: isViewing ? '#e0e7ff' : '#f8fafc',
-              color: isViewing ? '#4338ca' : '#334155',
-              fontWeight: '700',
-              fontSize: '13px',
-              border: '1.5px solid #cbd5e1',
-              cursor: isLoading || isViewing || !competencyLevel.trim() ? 'not-allowed' : 'pointer',
-              transition: 'all 0.2s ease',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '6px',
-              whiteSpace: 'nowrap',
-            }}
-            title="View saved period plans directly for this competency level"
-          >
-            {isViewing ? (
-              <>
-                <span className="animate-spin inline-block">🔄</span>
-                <span>Loading...</span>
-              </>
-            ) : (
-              <>
-                <span>👁️</span>
-                <span>View Saved</span>
-              </>
-            )}
-          </button>
-        )}
       </div>
     </form>
   );
