@@ -832,7 +832,28 @@ class RAGLessonPlanGenerator:
         validated_plan.custom_teacher_activity = (
             custom_teacher_activity if teacher_mode == "own_approach" else None
         )
-        validated_plan.activity_options = activity_options or []
+        # Persist ONLY the selected activity option in activity_options and saved JSON
+        filtered_opts = []
+        if activity_options:
+            if selected_activity_title:
+                filtered_opts = [opt for opt in activity_options if opt.get("title") == selected_activity_title]
+            if not filtered_opts and effective_activity:
+                filtered_opts = [
+                    opt for opt in activity_options
+                    if opt.get("description") == effective_activity or opt.get("title") in str(effective_activity)
+                ]
+            if not filtered_opts:
+                filtered_opts = [activity_options[0]]
+        elif custom_teacher_activity and teacher_mode == "own_approach":
+            filtered_opts = [{
+                "id": "custom",
+                "title": selected_activity_title or "Teacher's Custom Activity",
+                "description": custom_teacher_activity,
+                "pedagogy_type": "Teacher-Designed Activity",
+                "student_grouping": "Whole Class / Small Group",
+                "student_action_summary": custom_teacher_activity,
+            }]
+        validated_plan.activity_options = filtered_opts
         validated_plan.outcome_allocation = outcome_allocation or {}
 
         # 8. Domain Validation

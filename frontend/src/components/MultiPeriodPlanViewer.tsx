@@ -247,53 +247,54 @@ function SinglePeriodCard({
         </div>
       )}
 
-      {plan.selected_activity_title && (
-        <div className="rounded-xl border border-blue-200 bg-blue-50/70 px-4 py-3 text-sm text-blue-950">
-          <strong>Selected activity for Period {periodIndex + 1}: </strong>
-          {plan.selected_activity_title}
-        </div>
-      )}
-      {plan.custom_teacher_activity && (
-        <div className="rounded-xl border border-blue-200 bg-white px-4 py-3 text-sm text-slate-800">
-          <strong className="text-blue-900">Teacher's custom activity: </strong>
-          {plan.custom_teacher_activity}
-        </div>
-      )}
-      {plan.activity_options && plan.activity_options.length > 0 && (
-        <section className="rounded-xl border border-blue-200 bg-blue-50/30 p-4">
-          <h4 className="mb-3 text-xs font-extrabold uppercase tracking-wide text-blue-900">
-            Period {periodIndex + 1} activity options
-          </h4>
-          <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
-            {plan.activity_options.map((option) => {
-              const selected = option.title === plan.selected_activity_title;
-              return (
-                <article
-                  key={option.id}
-                  className={`rounded-lg border p-3 ${
-                    selected
-                      ? "border-blue-500 bg-blue-100/70 ring-1 ring-blue-300"
-                      : "border-slate-200 bg-white"
-                  }`}
-                >
-                  <div className="flex items-start justify-between gap-2">
-                    <h5 className="text-xs font-extrabold text-slate-900">{option.title}</h5>
-                    {selected && (
-                      <span className="shrink-0 rounded-full bg-blue-600 px-2 py-0.5 text-[9px] font-bold text-white">
-                        Selected
-                      </span>
-                    )}
-                  </div>
-                  <p className="mt-2 text-[11px] leading-relaxed text-slate-700">{option.description}</p>
-                  {option.student_action_summary && (
-                    <p className="mt-2 text-[11px] leading-relaxed text-slate-600">
-                      <strong>Student participation: </strong>{option.student_action_summary}
-                    </p>
-                  )}
-                </article>
-              );
-            })}
+      {/* Selected Activity for this Period (Only selected activity displayed) */}
+      {(plan.selected_activity_title || plan.selected_activity || (plan.activity_options && plan.activity_options.length > 0)) && (
+        <section className="rounded-xl border border-blue-200 bg-blue-50/50 p-4">
+          <div className="flex items-center justify-between gap-2">
+            <h4 className="text-xs font-extrabold uppercase tracking-wide text-blue-900">
+              Selected Activity (Period {periodIndex + 1})
+            </h4>
+            <span className="rounded-full bg-blue-600 px-2.5 py-0.5 text-[9px] font-bold text-white uppercase">
+              Active Strategy
+            </span>
           </div>
+
+          <h5 className="mt-2 text-sm font-extrabold text-slate-900">
+            {plan.selected_activity_title || (plan.activity_options && plan.activity_options[0]?.title) || "Selected Learning Activity"}
+          </h5>
+
+          {((plan.activity_options && plan.activity_options[0]?.description) || plan.selected_activity) && (
+            <p className="mt-1.5 text-xs leading-relaxed text-slate-700">
+              {(plan.activity_options && plan.activity_options[0]?.description) || plan.selected_activity}
+            </p>
+          )}
+
+          {plan.activity_options && plan.activity_options[0]?.student_action_summary && (
+            <p className="mt-2 rounded-lg border border-blue-100 bg-white p-2.5 text-xs text-slate-600">
+              <strong className="text-blue-900">Student Participation: </strong>
+              {plan.activity_options[0].student_action_summary}
+            </p>
+          )}
+
+          <div className="mt-2.5 flex flex-wrap gap-2 text-[11px]">
+            {plan.activity_options && plan.activity_options[0]?.student_grouping && (
+              <span className="rounded-md border border-slate-200 bg-white px-2 py-1 font-semibold text-slate-700">
+                <strong>Grouping:</strong> {plan.activity_options[0].student_grouping}
+              </span>
+            )}
+            {plan.activity_options && plan.activity_options[0]?.pedagogy_type && (
+              <span className="rounded-md border border-slate-200 bg-white px-2 py-1 font-semibold text-slate-700">
+                <strong>Pedagogy:</strong> {plan.activity_options[0].pedagogy_type}
+              </span>
+            )}
+          </div>
+
+          {plan.custom_teacher_activity && (
+            <div className="mt-3 rounded-lg border border-blue-200 bg-white p-2.5 text-xs text-slate-800">
+              <strong className="text-blue-900">Teacher's Custom Approach: </strong>
+              <span className="whitespace-pre-line">{plan.custom_teacher_activity}</span>
+            </div>
+          )}
         </section>
       )}
 

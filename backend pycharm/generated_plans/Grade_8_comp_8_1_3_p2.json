@@ -1,0 +1,90 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 2 of 2)",
+  "competence": "Expresses views accepting the fact that fulfillment of duties and responsibilities of the public services institutions bring about the welfare of human beings.",
+  "competence_level": "Formative",
+  "lesson": "Expresses views accepting the fact that fulfillment of duties and responsibilities of the public services institutions bring about the welfare of human beings: Teacher approach: show video for school students",
+  "unique_learning_outcome": [
+    "Expresses views accepting the fact that fulfillment of duties and responsibilities of the public services institutions bring about the welfare of human beings."
+  ],
+  "the_entrance": "5-minute introduction: The teacher introduces the topic by asking students to share their experiences with public services institutions. Students discuss how these institutions impact their daily lives. The teacher then shows a video for school students that highlights the importance of public services institutions in bringing about the welfare of human beings. Students are encouraged to take notes and ask questions.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "The teacher explains the importance of public services institutions and their role in bringing about the welfare of human beings. Students are then divided into groups of 5 and assigned roles: Leader/Facilitator, Scribe/Secretary, Timekeeper & Logistics, Spokesperson/Presenter, and Civic Investigator/Inquirer.",
+      "student_activities": "Students discuss and brainstorm ideas on how public services institutions bring about the welfare of human beings. They are encouraged to use the video as a reference and take notes on key points.",
+      "learning_teaching_method": "Collaborative Learning",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "The teacher facilitates the group discussions and ensures that each student is actively engaged in the activity. Students are encouraged to share their ideas and listen to their peers.",
+      "student_activities": "Students continue to discuss and brainstorm ideas on how public services institutions bring about the welfare of human beings. They are encouraged to use the video as a reference and take notes on key points.",
+      "learning_teaching_method": "Collaborative Learning",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "The teacher summarizes the key points discussed by the groups and asks students to share their findings with the class. Students are encouraged to provide evidence from the video to support their arguments.",
+      "student_activities": "Students share their findings with the class and provide evidence from the video to support their arguments. The teacher facilitates the discussion and encourages students to listen to their peers.",
+      "learning_teaching_method": "Collaborative Learning",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    }
+  ],
+  "summary": "Students will be able to express views accepting the fact that fulfillment of duties and responsibilities of the public services institutions bring about the welfare of human beings.",
+  "assessment_and_feedback_whole_lesson": "The teacher will assess student understanding through their participation in the group discussions and their ability to provide evidence from the video to support their arguments.",
+  "post_activity": "5-minute in-class assignment: Students will write a short paragraph summarizing the importance of public services institutions in bringing about the welfare of human beings. They will also provide one example of how a public services institution has positively impacted their daily life.",
+  "information_sources": [
+    "grade_8_civic_textbook.pdf (page 1)"
+  ],
+  "attachments": [],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 2,
+  "total_periods": 2,
+  "selected_activity": "show video for school students",
+  "selected_activity_title": "Teacher approach: show video for school students",
+  "custom_teacher_activity": "show video for school students",
+  "activity_options": [
+    {
+      "id": "option_1",
+      "title": "Thematic Station Jigsaw & Infographic Wall: Competency Level 8.1.3",
+      "pedagogy_type": "Station Jigsaw / Collaborative Design",
+      "description": "Students explore teacher-designated board or discussion stations about 'Expresses views accepting the fact that fulfillment of duties and responsibilities of the public services institutions bring about the welfare of human beings.'. Home groups reassemble to teach peers and synthesize key ideas.",
+      "learning_outcomes_addressed": [
+        "Expresses views accepting the fact that fulfillment of duties and responsibilities of the public services institutions bring about the welfare of human beings."
+      ],
+      "student_action_summary": "Explore station prompts, return to home groups to teach peers, and co-create a summary. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "teacher_facilitation_summary": "Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.",
+      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks",
+        "Chart Paper"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "Synthesized Civic Action Infographic Poster.",
+      "creative_assessment_preview": "2-Line Rhyming Slogan: Groups chant a summary of their core takeaway.",
+      "low_resource_alternative": "Use notebook pages pinned to desks as station hubs."
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "Explains the duties and responsibilities of public service institutions.",
+      "Explains the importance of providing efficent service of the officers of public services identifying the need."
+    ],
+    "2": [
+      "Expresses views accepting the fact that fulfillment of duties and responsibilities of the public services institutions bring about the welfare of human beings."
+    ]
+  }
+}

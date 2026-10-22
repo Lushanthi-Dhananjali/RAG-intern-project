@@ -199,89 +199,76 @@ export default function LessonPlanViewer({
           </p>
         </div>
 
-        {plan.selected_activity && (
+        {/* Selected Activity for this Period (Only selected activity displayed) */}
+        {(plan.selected_activity || plan.selected_activity_title || (Array.isArray(plan.activity_options) && plan.activity_options.length > 0)) && (
           <div
             style={{
               backgroundColor: '#eff6ff',
               border: '1px solid #bfdbfe',
               borderRadius: '10px',
-              padding: '10px 14px',
+              padding: '12px 16px',
               fontSize: '12px',
               color: '#1e3a8a',
             }}
           >
-            <strong>Selected period activity:</strong>
-            {plan.selected_activity_title && (
-              <p style={{ margin: '5px 0 0 0', fontWeight: 700 }}>
-                {plan.selected_activity_title}
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
+              <strong style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.05em', color: '#1e40af' }}>
+                Selected Period Activity {plan.period_number ? `(Period ${plan.period_number})` : ''}
+              </strong>
+              <span
+                style={{
+                  fontSize: '10px',
+                  fontWeight: 800,
+                  backgroundColor: '#2563eb',
+                  color: '#ffffff',
+                  padding: '2px 8px',
+                  borderRadius: '9999px',
+                  textTransform: 'uppercase',
+                }}
+              >
+                Chosen Strategy
+              </span>
+            </div>
+
+            <p style={{ margin: '4px 0 0 0', fontWeight: 800, fontSize: '14px', color: '#0f172a' }}>
+              {plan.selected_activity_title || (Array.isArray(plan.activity_options) && plan.activity_options[0]?.title) || 'Selected Activity'}
+            </p>
+
+            {((Array.isArray(plan.activity_options) && plan.activity_options[0]?.description) || plan.selected_activity) && (
+              <p style={{ margin: '6px 0 0 0', color: '#334155', lineHeight: '1.5', whiteSpace: 'pre-wrap' }}>
+                {(Array.isArray(plan.activity_options) && plan.activity_options[0]?.description) || plan.selected_activity}
               </p>
             )}
-            <p style={{ margin: '5px 0 0 0', whiteSpace: 'pre-wrap' }}>{plan.selected_activity}</p>
-          </div>
-        )}
 
-        {plan.custom_teacher_activity && (
-          <div
-            style={{
-              backgroundColor: '#f8fafc',
-              border: '1px solid #cbd5e1',
-              borderRadius: '10px',
-              padding: '10px 14px',
-              fontSize: '12px',
-              color: '#334155',
-            }}
-          >
-            <strong>Teacher-provided activity:</strong>
-            <p style={{ margin: '5px 0 0 0', whiteSpace: 'pre-wrap' }}>{plan.custom_teacher_activity}</p>
-          </div>
-        )}
+            {Array.isArray(plan.activity_options) && plan.activity_options[0]?.student_action_summary && (
+              <p style={{ margin: '8px 0 0 0', color: '#475569', fontSize: '11px' }}>
+                <strong>Student Participation: </strong>
+                {plan.activity_options[0].student_action_summary}
+              </p>
+            )}
 
-        {Array.isArray(plan.activity_options) && plan.activity_options.length > 0 && (
-          <section
-            style={{
-              backgroundColor: '#f8fafc',
-              border: '1px solid #cbd5e1',
-              borderRadius: '10px',
-              padding: '12px 14px',
-            }}
-          >
-            <strong style={{ color: '#1e3a8a', fontSize: '12px' }}>
-              Activity options for Period {plan.period_number || ''}
-            </strong>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '10px', marginTop: '10px' }}>
-              {plan.activity_options.map((option: any, index: number) => (
-                <div
-                  key={option.id || index}
-                  style={{
-                    backgroundColor: '#ffffff',
-                    border: '1px solid #bfdbfe',
-                    borderRadius: '8px',
-                    padding: '10px',
-                  }}
-                >
-                  <strong style={{ display: 'block', color: '#1e40af', fontSize: '12px' }}>
-                    {option.title || `Option ${index + 1}`}
-                  </strong>
-                  {option.description && (
-                    <p style={{ margin: '5px 0 0', color: '#334155', fontSize: '12px' }}>
-                      {option.description}
-                    </p>
-                  )}
-                  {option.student_action_summary && (
-                    <p style={{ margin: '5px 0 0', color: '#475569', fontSize: '11px' }}>
-                      <strong>Students:</strong> {option.student_action_summary}
-                    </p>
-                  )}
-                  {option.student_grouping && (
-                    <p style={{ margin: '5px 0 0', color: '#475569', fontSize: '11px' }}>
-                      <strong>Grouping:</strong> {option.student_grouping}
-                    </p>
-                  )}
-                </div>
-              ))}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '8px' }}>
+              {Array.isArray(plan.activity_options) && plan.activity_options[0]?.student_grouping && (
+                <span style={{ backgroundColor: '#ffffff', border: '1px solid #cbd5e1', padding: '2px 8px', borderRadius: '4px', fontSize: '11px', color: '#475569' }}>
+                  <strong>Grouping:</strong> {plan.activity_options[0].student_grouping}
+                </span>
+              )}
+              {Array.isArray(plan.activity_options) && plan.activity_options[0]?.pedagogy_type && (
+                <span style={{ backgroundColor: '#ffffff', border: '1px solid #cbd5e1', padding: '2px 8px', borderRadius: '4px', fontSize: '11px', color: '#475569' }}>
+                  <strong>Pedagogy:</strong> {plan.activity_options[0].pedagogy_type}
+                </span>
+              )}
             </div>
-          </section>
+
+            {plan.custom_teacher_activity && (
+              <div style={{ marginTop: '8px', paddingTop: '8px', borderTop: '1px dashed #bfdbfe', color: '#1e3a8a' }}>
+                <strong>Teacher-provided notes: </strong>
+                <span style={{ whiteSpace: 'pre-wrap' }}>{plan.custom_teacher_activity}</span>
+              </div>
+            )}
+          </div>
         )}
+
 
         {/* Action Buttons in Header */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>

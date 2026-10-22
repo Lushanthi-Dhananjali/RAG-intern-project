@@ -1,12 +1,12 @@
 {
   "grade": "Grade 8",
   "subject": "Civic Education",
-  "time_allocation": "40 Minutes (Period 3 of 4)",
+  "time_allocation": "40 Minutes (Period 3 of 3)",
   "competence": "Democratic Governance",
   "competence_level": "8.1.1",
-  "lesson": "Presents views appreciating the importance of public services of the times: Teacher approach: Watch a 3-minute video on Pradeshiya Sabha...",
+  "lesson": "Investigates information on the beginning and progress of public services: Teacher approach: Watch a 3-minute video on Pradeshiya Sabha...",
   "unique_learning_outcome": [
-    "Presents views appreciating the importance of public services of the times."
+    "Investigates information on the beginning and progress of public services."
   ],
   "the_entrance": "Engage students with a question on local community needs. (5 mins)",
   "lesson_development_steps": [
@@ -53,73 +53,16 @@
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 3,
-  "total_periods": 4,
-  "selected_activity": "Watch a 3-minute video on Pradeshiya Sabha meetings, then conduct group debate.",
+  "total_periods": 3,
+  "selected_activity": "Interactive Local Authority Simulation",
   "selected_activity_title": "Teacher approach: Watch a 3-minute video on Pradeshiya Sabha meetings, then conduct group debate.",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_1",
-      "title": "Citizen-Officer Deliberation Roleplay: Democratic Governance",
-      "pedagogy_type": "Simulation / Roleplay",
-      "description": "Students use citizen-officer deliberation roleplay to explore 'Investigates information on the beginning and progress of public services.'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "student_action_summary": "Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-      "required_materials": [
-        "Blackboard",
-        "Paper",
-        "Student notebooks"
-      ],
-      "approximate_duration_minutes": 30,
-      "expected_student_output": "A short role-based civic decision and its reasons.",
-      "creative_assessment_preview": "Students state one role responsibility and explain how it supported the decision.",
-      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable.",
-      "learning_outcomes_addressed": [
-        "Investigates information on the beginning and progress of public services."
-      ]
-    },
-    {
-      "id": "option_2",
-      "title": "Courtroom / Citizen Grievance Tribunal: Democratic Governance",
-      "pedagogy_type": "Simulation / Roleplay",
-      "description": "Students use courtroom / citizen grievance tribunal to explore 'Investigates information on the beginning and progress of public services.'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "student_action_summary": "Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-      "required_materials": [
-        "Blackboard",
-        "Paper",
-        "Student notebooks"
-      ],
-      "approximate_duration_minutes": 30,
-      "expected_student_output": "A short role-based civic decision and its reasons.",
-      "creative_assessment_preview": "Students state one role responsibility and explain how it supported the decision.",
-      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable.",
-      "learning_outcomes_addressed": [
-        "Investigates information on the beginning and progress of public services."
-      ]
-    },
-    {
-      "id": "option_3",
-      "title": "Thematic Station Jigsaw & Infographic Wall: Democratic Governance",
-      "pedagogy_type": "Station Jigsaw / Collaborative Design",
-      "description": "Students explore teacher-designated board or discussion stations about 'Investigates information on the beginning and progress of public services.'. Home groups reassemble to teach peers and synthesize key ideas.",
-      "student_action_summary": "Explore station prompts, return to home groups to teach peers, and co-create a summary. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-      "required_materials": [
-        "Blackboard",
-        "Paper",
-        "Student notebooks"
-      ],
-      "approximate_duration_minutes": 30,
-      "expected_student_output": "Synthesized Civic Action Infographic Poster.",
-      "creative_assessment_preview": "2-Line Rhyming Slogan: Groups chant a summary of their core takeaway.",
-      "low_resource_alternative": "Use notebook pages pinned to desks as station hubs.",
-      "learning_outcomes_addressed": [
-        "Investigates information on the beginning and progress of public services."
-      ]
+      "id": "selected_activity",
+      "title": "Teacher approach: Watch a 3-minute video on Pradeshiya Sabha meetings, then conduct group debate.",
+      "description": "Watch a 3-minute video on Pradeshiya Sabha meetings, then conduct group debate.",
+      "student_action_summary": "Watch a 3-minute video on Pradeshiya Sabha meetings, then conduct group debate."
     }
   ],
   "outcome_allocation": {
@@ -128,12 +71,10 @@
       "Explains the common features related to public services."
     ],
     "2": [
-      "Explains the need of public services."
-    ],
-    "3": [
+      "Explains the need of public services.",
       "Presents views appreciating the importance of public services of the times."
     ],
-    "4": [
+    "3": [
       "Investigates information on the beginning and progress of public services."
     ]
   }

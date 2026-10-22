@@ -933,71 +933,110 @@ export default function Home() {
       {/* ========================================================================= */}
       {activeMainTab === "planner" && (
         <div className="mx-auto w-full max-w-[860px]">
-          {multiPeriodStep === 1 ? (
-            <Step1Inputs />
-          ) : (
-            <section
-              className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6"
-              style={{ boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)" }}
-            >
-              <header className="mb-5 flex items-start justify-between gap-3 border-b border-slate-100 pb-3">
-                <div>
-                  <h2 className="flex items-center gap-2 text-base font-extrabold text-slate-900">
-                    <span aria-hidden="true">✨</span>
-                    <span>Lesson Plan Generator</span>
-                  </h2>
-                  <p className="mt-1 text-xs text-slate-500 sm:text-sm">
-                    Configure curriculum parameters to generate an NIE &amp; LEARN aligned lesson plan
-                  </p>
-                </div>
+          <section
+            style={{
+              backgroundColor: '#ffffff',
+              padding: '24px',
+              borderRadius: '16px',
+              border: '1px solid #e2e8f0',
+              boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '18px',
+              width: '100%',
+              boxSizing: 'border-box',
+            }}
+          >
+            <header style={{ borderBottom: '1px solid #f1f5f9', paddingBottom: '12px', display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '12px' }}>
+              <div>
+                <h2 style={{ display: 'flex', alignItems: 'center', gap: '8px', margin: 0, color: '#0f172a', fontSize: '16px', fontWeight: 800 }}>
+                  <span aria-hidden="true">✨</span>
+                  <span>Lesson Plan Generator</span>
+                </h2>
+                <p style={{ margin: '2px 0 0', color: '#64748b', fontSize: '12px' }}>
+                  Configure curriculum parameters to generate an NIE &amp; LEARN aligned lesson plan
+                </p>
+              </div>
+              {multiPeriodStep > 1 && (
                 <button
                   type="button"
                   onClick={resetMultiPeriodPlanner}
-                  className="shrink-0 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-bold text-slate-600 transition hover:border-rose-200 hover:bg-rose-50 hover:text-rose-700"
+                  style={{
+                    padding: '6px 12px',
+                    borderRadius: '8px',
+                    border: '1px solid #cbd5e1',
+                    backgroundColor: '#ffffff',
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    color: '#475569',
+                    cursor: 'pointer',
+                  }}
                 >
                   Reset
                 </button>
-              </header>
+              )}
+            </header>
 
-              <nav aria-label="Lesson plan progress" className="mb-5 grid grid-cols-3 gap-2">
-                {[
-                  { number: 1, title: "Lesson Details" },
-                  { number: 2, title: "Choose Activity" },
-                  { number: 3, title: "Generated Plan" },
-                ].map((step) => {
-                  const current = multiPeriodStep === step.number;
-                  const complete = multiPeriodStep > step.number;
-                  return (
-                    <div
-                      key={step.number}
-                      aria-current={current ? "step" : undefined}
-                      className={`flex min-w-0 items-center gap-2 rounded-lg border px-2 py-2 ${
-                        current
-                          ? "border-indigo-200 bg-indigo-50"
-                          : complete
-                          ? "border-slate-200 bg-white"
-                          : "border-slate-100 bg-slate-50"
-                      }`}
+            <nav aria-label="Lesson plan progress" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '8px' }}>
+              {[
+                { number: 1, title: "Lesson Details" },
+                { number: 2, title: "Choose Activity" },
+                { number: 3, title: "Generated Plan" },
+              ].map((step) => {
+                const current = multiPeriodStep === step.number;
+                const complete = multiPeriodStep > step.number;
+                return (
+                  <div
+                    key={step.number}
+                    aria-current={current ? "step" : undefined}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      borderRadius: '8px',
+                      border: current ? '1px solid #c7d2fe' : complete ? '1px solid #e2e8f0' : '1px solid #f1f5f9',
+                      backgroundColor: current ? '#eef2ff' : complete ? '#ffffff' : '#f8fafc',
+                      padding: '8px 10px',
+                    }}
+                  >
+                    <span
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: '24px',
+                        height: '24px',
+                        borderRadius: '50%',
+                        fontSize: '10px',
+                        fontWeight: 800,
+                        backgroundColor: current || complete ? '#4f46e5' : '#e2e8f0',
+                        color: current || complete ? '#ffffff' : '#64748b',
+                        flexShrink: 0,
+                      }}
                     >
-                      <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[10px] font-extrabold ${
-                        current || complete ? "bg-indigo-600 text-white" : "bg-slate-200 text-slate-600"
-                      }`}>
-                        {complete ? "✓" : step.number}
-                      </span>
-                      <span className={`truncate text-[10px] font-bold sm:text-xs ${
-                        current ? "text-indigo-900" : complete ? "text-slate-700" : "text-slate-500"
-                      }`}>
-                        {step.title}
-                      </span>
-                    </div>
-                  );
-                })}
-              </nav>
+                      {complete ? "✓" : step.number}
+                    </span>
+                    <span
+                      style={{
+                        fontSize: '12px',
+                        fontWeight: 700,
+                        color: current ? '#312e81' : complete ? '#334155' : '#64748b',
+                        whiteSpace: 'nowrap',
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                      }}
+                    >
+                      {step.title}
+                    </span>
+                  </div>
+                );
+              })}
+            </nav>
 
-              {multiPeriodStep === 2 && <Step2OptionsSelection />}
-              {multiPeriodStep === 3 && <Step3PlanViewer />}
-            </section>
-          )}
+            {multiPeriodStep === 1 && <Step1Inputs />}
+            {multiPeriodStep === 2 && <Step2OptionsSelection />}
+            {multiPeriodStep === 3 && <Step3PlanViewer />}
+          </section>
         </div>
       )}
 

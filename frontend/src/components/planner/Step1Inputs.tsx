@@ -65,29 +65,13 @@ export default function Step1Inputs() {
     <form
       onSubmit={handleSubmit}
       style={{
-        backgroundColor: '#ffffff',
-        padding: '24px',
-        borderRadius: '16px',
-        border: '1px solid #e2e8f0',
-        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)',
         display: 'flex',
         flexDirection: 'column',
         gap: '18px',
-        maxWidth: '860px',
-        margin: '0 auto',
         width: '100%',
         boxSizing: 'border-box',
       }}
     >
-      <header style={{ borderBottom: '1px solid #f1f5f9', paddingBottom: '12px' }}>
-        <h2 style={{ display: 'flex', alignItems: 'center', gap: '8px', margin: 0, color: '#0f172a', fontSize: '16px', fontWeight: 800 }}>
-          <span aria-hidden="true">✨</span>
-          <span>Lesson Plan Generator</span>
-        </h2>
-        <p style={{ margin: '2px 0 0', color: '#64748b', fontSize: '12px' }}>
-          Configure curriculum parameters to generate an NIE &amp; LEARN aligned lesson plan
-        </p>
-      </header>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
         <div>
@@ -149,17 +133,6 @@ export default function Step1Inputs() {
         </p>
       </div>
 
-      <div>
-        <label htmlFor="planner-topic" style={fieldLabelStyle}>Lesson Topic or Focus (Optional)</label>
-        <input
-          id="planner-topic"
-          type="text"
-          value={store.topicQuery}
-          onChange={(e) => store.setInputs({ topicQuery: e.target.value })}
-          placeholder="e.g. Public services in the local community"
-          style={fieldStyle}
-        />
-      </div>
 
       <div>
         <label htmlFor="planner-periods" style={fieldLabelStyle}>Lesson Allocation (Periods &amp; Duration)</label>

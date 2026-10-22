@@ -161,6 +161,18 @@ def get_generated_plan(filename: str) -> Optional[Dict[str, Any]]:
         with open(filepath, "r", encoding="utf-8") as f:
             plan_data = json.load(f)
 
+        if isinstance(plan_data, dict) and "activity_options" in plan_data:
+            sel_title = plan_data.get("selected_activity_title")
+            sel_act = plan_data.get("selected_activity")
+            opts = plan_data.get("activity_options")
+            if isinstance(opts, list) and len(opts) > 1:
+                matched = []
+                if sel_title:
+                    matched = [o for o in opts if isinstance(o, dict) and o.get("title") == sel_title]
+                if not matched and sel_act:
+                    matched = [o for o in opts if isinstance(o, dict) and (o.get("description") == sel_act or o.get("title") in str(sel_act))]
+                plan_data["activity_options"] = matched if matched else [opts[0]]
+
         plan_id = os.path.splitext(os.path.basename(filepath))[0]
         return {
             "filename": os.path.basename(filepath),

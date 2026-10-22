@@ -548,7 +548,29 @@ class LessonPlanMlService(ILessonPlanMlService):
                 plan.unique_learning_outcome = assigned_outcomes
             plan.selected_activity = period_selected_activity
             plan.custom_teacher_activity = custom_teacher_act
-            plan.activity_options = period_options
+
+            # Persist ONLY the selected activity option in activity_options and saved JSON
+            filtered_opts = []
+            if period_options:
+                if period_selected_title:
+                    filtered_opts = [opt for opt in period_options if opt.get("title") == period_selected_title]
+                if not filtered_opts and period_selected_activity:
+                    filtered_opts = [
+                        opt for opt in period_options
+                        if opt.get("description") == period_selected_activity or opt.get("title") in str(period_selected_activity)
+                    ]
+                if not filtered_opts:
+                    filtered_opts = [period_options[0]]
+            elif custom_teacher_act:
+                filtered_opts = [{
+                    "id": "custom",
+                    "title": period_selected_title or "Teacher's Custom Activity",
+                    "description": custom_teacher_act,
+                    "pedagogy_type": "Teacher-Designed Activity",
+                    "student_grouping": "Whole Class / Small Group",
+                    "student_action_summary": custom_teacher_act,
+                }]
+            plan.activity_options = filtered_opts
             plan.outcome_allocation = {
                 str(period): allocation_plan.get_outcomes_for_period(period)
                 for period in range(1, total_periods + 1)

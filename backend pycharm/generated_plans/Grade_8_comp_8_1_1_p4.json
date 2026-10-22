@@ -59,67 +59,10 @@
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_1",
-      "title": "Station Jigsaw Synthesis Matrix: Democratic Governance",
-      "pedagogy_type": "Collaborative Design",
-      "description": "Students use station jigsaw synthesis matrix to explore 'Investigates information on the beginning and progress of public services.'. Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "student_action_summary": "Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-      "required_materials": [
-        "Blackboard",
-        "Paper",
-        "Student notebooks"
-      ],
-      "approximate_duration_minutes": 30,
-      "expected_student_output": "A group civic proposal, diagram, or public information message.",
-      "creative_assessment_preview": "Groups give one-sentence feedback connecting a peer proposal to the outcome.",
-      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable.",
-      "learning_outcomes_addressed": [
-        "Investigates information on the beginning and progress of public services."
-      ]
-    },
-    {
-      "id": "option_2",
-      "title": "Community Observation Checklist & Mapping: Democratic Governance",
-      "pedagogy_type": "Observation / Evidence Inquiry",
-      "description": "Students use community observation checklist & mapping to explore 'Investigates information on the beginning and progress of public services.'. Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "student_action_summary": "Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-      "required_materials": [
-        "Blackboard",
-        "Paper",
-        "Student notebooks"
-      ],
-      "approximate_duration_minutes": 30,
-      "expected_student_output": "An evidence record with one supported conclusion.",
-      "creative_assessment_preview": "A paired evidence check: name one observation and the outcome it supports.",
-      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable.",
-      "learning_outcomes_addressed": [
-        "Investigates information on the beginning and progress of public services."
-      ]
-    },
-    {
-      "id": "option_3",
-      "title": "Consensus Problem-Solving Carousel: Democratic Governance",
-      "pedagogy_type": "Collaborative Design",
-      "description": "Students use consensus problem-solving carousel to explore 'Investigates information on the beginning and progress of public services.'. Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "student_action_summary": "Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-      "required_materials": [
-        "Blackboard",
-        "Paper",
-        "Student notebooks"
-      ],
-      "approximate_duration_minutes": 30,
-      "expected_student_output": "A group civic proposal, diagram, or public information message.",
-      "creative_assessment_preview": "Groups give one-sentence feedback connecting a peer proposal to the outcome.",
-      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable.",
-      "learning_outcomes_addressed": [
-        "Investigates information on the beginning and progress of public services."
-      ]
+      "id": "selected_activity",
+      "title": "Teacher approach: Watch a 3-minute video on Pradeshiya Sabha meetings, then conduct group debate.",
+      "description": "Watch a 3-minute video on Pradeshiya Sabha meetings, then conduct group debate.",
+      "student_action_summary": "Watch a 3-minute video on Pradeshiya Sabha meetings, then conduct group debate."
     }
   ],
   "outcome_allocation": {

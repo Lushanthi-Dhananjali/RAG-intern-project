@@ -45,19 +45,53 @@ export default function Step2OptionsSelection() {
     }
   };
 
+  const fieldLabelStyle: React.CSSProperties = {
+    display: 'block',
+    fontSize: '12px',
+    fontWeight: 700,
+    textTransform: 'uppercase',
+    color: '#334155',
+    marginBottom: '6px',
+    letterSpacing: '0.05em',
+  };
+
   return (
-    <div className="space-y-5">
-      <div className="flex flex-col justify-between gap-3 rounded-xl border border-indigo-100 bg-indigo-50/60 p-4 sm:flex-row sm:items-center">
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+      {/* Top Banner / Selection Header Box matching Lesson Details Card Style */}
+      <div
+        style={{
+          backgroundColor: '#eff6ff',
+          border: '1px solid #bfdbfe',
+          borderRadius: '12px',
+          padding: '16px 20px',
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '12px',
+        }}
+      >
         <div>
-          <span className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-indigo-700">
+          <span
+            style={{
+              fontSize: '11px',
+              fontWeight: 800,
+              textTransform: 'uppercase',
+              color: '#1e40af',
+              letterSpacing: '0.06em',
+            }}
+          >
             Period {store.currentPeriod} Activity Selection
           </span>
-          <h2 className="mt-0.5 text-lg font-extrabold text-slate-900">
+          <h2 style={{ margin: '4px 0 0', fontSize: '18px', fontWeight: 800, color: '#0f172a' }}>
             Choose an activity for Period {store.currentPeriod} of {store.totalPeriods}
           </h2>
-          <p className="mt-1 text-xs text-slate-600">Choose an approach for this 40-minute lesson.</p>
+          <p style={{ margin: '4px 0 0', fontSize: '13px', color: '#475569' }}>
+            Select an active learning approach for this 40-minute lesson.
+          </p>
           {store.priorActivityTitles(store.currentPeriod).length > 0 && (
-            <p className="mt-2 text-xs text-slate-600">
+            <p style={{ margin: '6px 0 0', fontSize: '12px', color: '#1e3a8a' }}>
               <strong>Activities used in earlier periods:</strong> {store.priorActivityTitles(store.currentPeriod).join(', ')}
             </p>
           )}
@@ -65,112 +99,278 @@ export default function Step2OptionsSelection() {
         <button
           type="button"
           onClick={() => setCustomMode(!customMode)}
-          className="shrink-0 rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs font-bold text-slate-700 shadow-sm transition hover:border-indigo-300 hover:bg-indigo-50 sm:text-sm"
+          style={{
+            padding: '8px 14px',
+            backgroundColor: '#ffffff',
+            border: '1px solid #cbd5e1',
+            borderRadius: '10px',
+            fontSize: '13px',
+            fontWeight: 700,
+            color: '#334155',
+            cursor: 'pointer',
+            boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
+            transition: 'all 0.15s ease',
+          }}
         >
-          {customMode ? '← View activity options' : 'Use my own activity'}
+          {customMode ? '← View activity options' : '✏️ Use my own activity'}
         </button>
       </div>
 
       {generationError && (
-        <div role="alert" className="rounded-lg border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-800">
+        <div
+          role="alert"
+          style={{
+            backgroundColor: '#fef2f2',
+            border: '1px solid #fecaca',
+            borderRadius: '10px',
+            padding: '12px 16px',
+            fontSize: '13px',
+            color: '#991b1b',
+            fontWeight: 600,
+          }}
+        >
           {generationError}
         </div>
       )}
+
       {loading && (
-        <div role="status" className="rounded-lg border border-blue-200 bg-blue-50 px-4 py-3 text-sm font-semibold text-blue-900">
-          Generating the Period {store.currentPeriod} plan from your selected activity. Your selections remain available.
+        <div
+          role="status"
+          style={{
+            backgroundColor: '#eff6ff',
+            border: '1px solid #bfdbfe',
+            borderRadius: '10px',
+            padding: '12px 16px',
+            fontSize: '13px',
+            color: '#1e40af',
+            fontWeight: 700,
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+          }}
+        >
+          <span className="w-4 h-4 border-2 border-indigo-600 border-t-transparent rounded-full animate-spin" />
+          <span>Generating the Period {store.currentPeriod} plan from your selected activity...</span>
         </div>
       )}
 
       {!customMode ? (
         <div>
-          <div className="mb-3 flex items-center justify-between gap-2">
-            <h3 className="text-sm font-extrabold text-slate-800">Activity options</h3>
-            <span className="text-[11px] font-semibold text-slate-500">{store.currentOptions.length} choices</span>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+            <span style={fieldLabelStyle}>Curriculum-Aligned Activity Options</span>
+            <span style={{ fontSize: '12px', fontWeight: 600, color: '#64748b' }}>
+              {store.currentOptions.length} choices available
+            </span>
           </div>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {store.currentOptions.map((opt, index) => (
-              <article
-                key={opt.id}
-                onClick={() => store.selectOption(opt)}
-                className={`flex h-full flex-col rounded-xl border bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${
-                  store.selectedOption?.id === opt.id
-                    ? 'border-indigo-400 ring-2 ring-indigo-100'
-                    : 'border-slate-200 hover:border-indigo-200'
-                }`}
-              >
-                <div className="mb-3 flex items-start justify-between gap-2">
-                  <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-50 text-[11px] font-extrabold text-indigo-700">
-                    {index + 1}
-                  </span>
-                  <span className="rounded-full bg-slate-100 px-2 py-1 text-[9px] font-bold uppercase tracking-wide text-slate-600">
-                    {opt.pedagogy_type}
-                  </span>
-                </div>
-                <h4 className="text-sm font-extrabold leading-snug text-slate-900">{opt.title}</h4>
-                <p className="mt-2 text-xs leading-relaxed text-slate-600">{opt.description}</p>
-                {opt.learning_outcomes_addressed && opt.learning_outcomes_addressed.length > 0 && (
-                  <div className="mt-4 rounded-lg border border-indigo-100 bg-indigo-50/50 p-3 text-xs text-slate-700">
-                    <strong className="text-indigo-900">Period {store.currentPeriod} learning outcomes</strong>
-                    <ul className="mt-2 list-disc space-y-1 pl-4">
-                      {opt.learning_outcomes_addressed.map((outcome, outcomeIndex) => (
-                        <li key={outcomeIndex}>{outcome}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-                <div className="mt-3 rounded-lg border border-slate-100 bg-slate-50 p-3 text-xs text-slate-600">
-                  <strong className="text-slate-800">Student grouping</strong>
-                  <p className="mt-1">{opt.student_grouping}</p>
-                </div>
-                <button
-                  type="button"
-                  disabled={loading}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    store.selectOption(opt);
-                    handleGenerate(
-                      [
-                        `Activity: ${opt.title}`,
-                        `Approach: ${opt.description}`,
-                        `Student task: ${opt.student_action_summary || opt.description}`,
-                        `Teacher facilitation: ${opt.teacher_facilitation_summary || 'Facilitate student participation and outcome-focused discussion.'}`,
-                        `Expected output: ${opt.expected_student_output || 'A student-created response demonstrating the allocated learning outcomes.'}`,
-                        `Grouping: ${opt.student_grouping}`,
-                      ].join('\n'),
-                      false,
-                      opt.title
-                    );
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+              gap: '16px',
+            }}
+          >
+            {store.currentOptions.map((opt, index) => {
+              const isSelected = store.selectedOption?.id === opt.id;
+              return (
+                <article
+                  key={opt.id}
+                  onClick={() => store.selectOption(opt)}
+                  style={{
+                    backgroundColor: '#ffffff',
+                    border: isSelected ? '2px solid #4f46e5' : '1px solid #cbd5e1',
+                    borderRadius: '14px',
+                    padding: '18px',
+                    boxShadow: isSelected
+                      ? '0 4px 12px rgba(79, 70, 229, 0.15)'
+                      : '0 2px 4px rgba(0, 0, 0, 0.04)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '12px',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
                   }}
-                  className="mt-auto w-full rounded-lg bg-indigo-600 px-3 py-2.5 text-xs font-extrabold text-white shadow-sm transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-60 sm:mt-4"
                 >
-                  {loading && store.selectedOption?.id === opt.id ? 'Generating plan...' : 'Choose & Generate Plan'}
-                </button>
-              </article>
-            ))}
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <span
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: '28px',
+                        height: '28px',
+                        borderRadius: '8px',
+                        backgroundColor: '#eef2ff',
+                        color: '#4338ca',
+                        fontSize: '12px',
+                        fontWeight: 800,
+                      }}
+                    >
+                      {index + 1}
+                    </span>
+                    <span
+                      style={{
+                        padding: '3px 8px',
+                        borderRadius: '6px',
+                        backgroundColor: '#f1f5f9',
+                        color: '#475569',
+                        fontSize: '10px',
+                        fontWeight: 800,
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.04em',
+                      }}
+                    >
+                      {opt.pedagogy_type}
+                    </span>
+                  </div>
+
+                  <h3 style={{ margin: 0, fontSize: '15px', fontWeight: 800, color: '#0f172a', lineHeight: 1.35 }}>
+                    {opt.title}
+                  </h3>
+
+                  <p style={{ margin: 0, fontSize: '12px', color: '#475569', lineHeight: 1.55 }}>
+                    {opt.description}
+                  </p>
+
+                  {opt.learning_outcomes_addressed && opt.learning_outcomes_addressed.length > 0 && (
+                    <div
+                      style={{
+                        backgroundColor: '#f8fafc',
+                        border: '1px solid #e2e8f0',
+                        borderRadius: '10px',
+                        padding: '10px 12px',
+                        fontSize: '11px',
+                        color: '#334155',
+                      }}
+                    >
+                      <strong style={{ color: '#1e40af' }}>Period {store.currentPeriod} Outcomes Covered:</strong>
+                      <ul style={{ margin: '6px 0 0', paddingLeft: '16px', lineHeight: 1.45 }}>
+                        {opt.learning_outcomes_addressed.map((outcome, oIdx) => (
+                          <li key={oIdx}>{outcome}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  <div
+                    style={{
+                      backgroundColor: '#f8fafc',
+                      border: '1px solid #e2e8f0',
+                      borderRadius: '8px',
+                      padding: '8px 10px',
+                      fontSize: '11px',
+                      color: '#475569',
+                    }}
+                  >
+                    <strong style={{ color: '#334155' }}>Student Grouping: </strong>
+                    <span>{opt.student_grouping}</span>
+                  </div>
+
+                  <button
+                    type="button"
+                    disabled={loading}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      store.selectOption(opt);
+                      handleGenerate(
+                        [
+                          `Activity: ${opt.title}`,
+                          `Approach: ${opt.description}`,
+                          `Student task: ${opt.student_action_summary || opt.description}`,
+                          `Teacher facilitation: ${opt.teacher_facilitation_summary || 'Facilitate student participation and outcome-focused discussion.'}`,
+                          `Expected output: ${opt.expected_student_output || 'A student-created response demonstrating the allocated learning outcomes.'}`,
+                          `Grouping: ${opt.student_grouping}`,
+                        ].join('\n'),
+                        false,
+                        opt.title
+                      );
+                    }}
+                    style={{
+                      marginTop: 'auto',
+                      width: '100%',
+                      padding: '11px 16px',
+                      borderRadius: '10px',
+                      backgroundColor: loading && isSelected ? '#94a3b8' : '#4f46e5',
+                      color: '#ffffff',
+                      fontWeight: 700,
+                      fontSize: '13px',
+                      border: 'none',
+                      cursor: loading ? 'not-allowed' : 'pointer',
+                      boxShadow: '0 2px 4px rgba(79, 70, 229, 0.25)',
+                      transition: 'background-color 0.2s ease',
+                    }}
+                  >
+                    {loading && isSelected ? 'Generating plan...' : '✨ Choose & Generate Plan'}
+                  </button>
+                </article>
+              );
+            })}
           </div>
         </div>
       ) : (
-        <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
-          <h3 className="font-extrabold text-slate-900">Your own activity</h3>
-          <p className="mt-1 text-xs leading-relaxed text-slate-600">
-            Enter your custom idea or video simulation below. The generated lesson plan will build
-            its introduction and closing assessment around this activity and the allocated learning outcomes.
-          </p>
+        /* Custom Activity Box styled with matching design box */
+        <div
+          style={{
+            backgroundColor: '#ffffff',
+            border: '1px solid #cbd5e1',
+            borderRadius: '14px',
+            padding: '22px',
+            boxShadow: '0 2px 6px rgba(0, 0, 0, 0.04)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '14px',
+          }}
+        >
+          <div>
+            <span style={fieldLabelStyle}>Teacher-Designed Custom Activity</span>
+            <h3 style={{ margin: '2px 0 0', fontSize: '16px', fontWeight: 800, color: '#0f172a' }}>
+              Your Own Classroom Activity or Simulation
+            </h3>
+            <p style={{ margin: '6px 0 0', fontSize: '13px', color: '#64748b', lineHeight: 1.5 }}>
+              Enter your custom activity idea or video simulation below. The lesson plan introduction,
+              step-by-step development, and closure assessment will be built around your chosen activity.
+            </p>
+          </div>
+
           <textarea
             rows={4}
             value={customText}
             onChange={(e) => setCustomText(e.target.value)}
             placeholder="e.g. Play a 3-minute clip of a municipal council debate, then ask student groups to draft two formal citizen complaints regarding road drainage..."
-            className="mt-4 w-full rounded-lg border border-slate-300 bg-slate-50 p-3 text-sm outline-none transition focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-100"
+            style={{
+              width: '100%',
+              padding: '12px 14px',
+              backgroundColor: '#f8fafc',
+              border: '1px solid #cbd5e1',
+              borderRadius: '10px',
+              fontSize: '14px',
+              fontWeight: 500,
+              color: '#1e293b',
+              outline: 'none',
+              boxSizing: 'border-box',
+              resize: 'vertical',
+            }}
           />
+
           <button
             type="button"
             disabled={loading || !customText.trim()}
             onClick={() => handleGenerate(customText, true)}
-            className="mt-3 w-full rounded-lg bg-indigo-600 py-3 text-sm font-extrabold text-white shadow-sm transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-60"
+            style={{
+              width: '100%',
+              padding: '12px 18px',
+              borderRadius: '10px',
+              backgroundColor: loading || !customText.trim() ? '#94a3b8' : '#4f46e5',
+              color: '#ffffff',
+              fontWeight: 700,
+              fontSize: '14px',
+              border: 'none',
+              cursor: loading || !customText.trim() ? 'not-allowed' : 'pointer',
+              boxShadow: '0 2px 4px rgba(79, 70, 229, 0.25)',
+              transition: 'background-color 0.2s ease',
+            }}
           >
-            {loading ? 'Generating plan...' : 'Generate Plan From My Activity'}
+            {loading ? 'Generating plan...' : '✨ Generate Plan From My Activity'}
           </button>
         </div>
       )}

@@ -9,7 +9,21 @@ export default function Step3PlanViewer() {
   const currentPlan = store.generatedPlans[store.currentPeriod];
 
   if (!currentPlan) {
-    return <div>No plan found for Period {store.currentPeriod}.</div>;
+    return (
+      <div
+        style={{
+          backgroundColor: '#ffffff',
+          border: '1px solid #e2e8f0',
+          borderRadius: '14px',
+          padding: '24px',
+          textAlign: 'center',
+          color: '#64748b',
+          fontSize: '14px',
+        }}
+      >
+        No generated plan found for Period {store.currentPeriod}.
+      </div>
+    );
   }
 
   const handleNextPeriodClick = async () => {
@@ -61,25 +75,77 @@ export default function Step3PlanViewer() {
     }
   };
 
+  const sectionLabelStyle: React.CSSProperties = {
+    display: 'block',
+    fontSize: '11px',
+    fontWeight: 800,
+    textTransform: 'uppercase',
+    color: '#4338ca',
+    letterSpacing: '0.06em',
+    marginBottom: '6px',
+  };
+
+  const boxCardStyle: React.CSSProperties = {
+    backgroundColor: '#ffffff',
+    border: '1px solid #cbd5e1',
+    borderRadius: '14px',
+    padding: '20px',
+    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.04)',
+  };
+
+  // Find the selected activity option details from currentPlan.activity_options or store.selectedOption
+  const selectedOpt =
+    (currentPlan.activity_options && currentPlan.activity_options.length > 0 ? currentPlan.activity_options[0] : null) ||
+    store.selectedOption;
+
+  const displaySelectedTitle =
+    currentPlan.selected_activity_title ||
+    store.activityByPeriod[store.currentPeriod] ||
+    selectedOpt?.title ||
+    'Selected Pedagogical Strategy';
+
+  const displaySelectedDesc =
+    (selectedOpt && selectedOpt.description) ||
+    currentPlan.selected_activity ||
+    currentPlan.custom_teacher_activity ||
+    'Interactive curriculum-aligned classroom activity.';
+
   return (
-    <div className="space-y-5">
-      {/* Sequence Tabs */}
-      <div className="flex flex-wrap gap-2 rounded-lg border border-slate-200 bg-slate-50 p-2">
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+      {/* 1. Sequence Tabs for Multi-Period Navigation */}
+      <div
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: '8px',
+          backgroundColor: '#f8fafc',
+          border: '1px solid #cbd5e1',
+          borderRadius: '12px',
+          padding: '8px',
+        }}
+      >
         {Array.from({ length: store.totalPeriods }).map((_, idx) => {
           const pNum = idx + 1;
           const isDone = !!store.generatedPlans[pNum];
+          const isCurrent = store.currentPeriod === pNum;
           return (
             <button
               key={pNum}
+              type="button"
               onClick={() => store.previousPeriod(pNum)}
               disabled={!isDone}
-              className={`rounded-lg border px-3 py-2 text-xs font-extrabold transition sm:text-sm ${
-                store.currentPeriod === pNum
-                  ? 'border-indigo-600 bg-indigo-600 text-white shadow-sm'
-                  : isDone
-                  ? 'border-slate-200 bg-white text-slate-700 hover:border-indigo-200 hover:bg-indigo-50'
-                  : 'cursor-not-allowed border-slate-100 bg-slate-100 text-slate-400'
-              }`}
+              style={{
+                padding: '8px 16px',
+                borderRadius: '8px',
+                fontSize: '13px',
+                fontWeight: 700,
+                border: isCurrent ? '1.5px solid #4f46e5' : '1px solid #cbd5e1',
+                backgroundColor: isCurrent ? '#4f46e5' : isDone ? '#ffffff' : '#f1f5f9',
+                color: isCurrent ? '#ffffff' : isDone ? '#334155' : '#94a3b8',
+                cursor: isDone ? 'pointer' : 'not-allowed',
+                boxShadow: isCurrent ? '0 2px 4px rgba(79, 70, 229, 0.25)' : 'none',
+                transition: 'all 0.15s ease',
+              }}
             >
               Period {pNum} {isDone ? '✓' : ''}
             </button>
@@ -87,181 +153,458 @@ export default function Step3PlanViewer() {
         })}
       </div>
 
-      {/* Plan Document Container */}
-      <div className="space-y-5">
-        <div className="flex flex-col justify-between gap-2 rounded-lg border border-indigo-100 bg-indigo-50/50 p-3 sm:flex-row sm:items-center">
+      {/* 2. Generated Plan Status Banner */}
+      <div
+        style={{
+          backgroundColor: '#eff6ff',
+          border: '1px solid #bfdbfe',
+          borderRadius: '12px',
+          padding: '14px 18px',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '8px',
+        }}
+      >
+        <div>
+          <span style={sectionLabelStyle}>Generated Lesson Plan</span>
+          <p style={{ margin: '2px 0 0', fontSize: '12px', color: '#475569' }}>
+            This period plan is automatically persisted to the Generated Plans Library.
+          </p>
+        </div>
+        <span
+          style={{
+            padding: '4px 12px',
+            backgroundColor: '#ffffff',
+            border: '1px solid #bfdbfe',
+            borderRadius: '9999px',
+            fontSize: '12px',
+            fontWeight: 800,
+            color: '#1e40af',
+          }}
+        >
+          Period {store.currentPeriod} of {store.totalPeriods}
+        </span>
+      </div>
+
+      {/* 3. PROMINENT LESSON TOPIC BOX (Required for Multi Period Planner Generated Plan Page) */}
+      <div style={boxCardStyle}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '8px' }}>
           <div>
-            <p className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-indigo-700">Generated lesson plan</p>
-            <p className="mt-0.5 text-xs text-slate-600">This period is saved automatically in the Generated Plans Library.</p>
+            <span style={sectionLabelStyle}>Lesson Topic</span>
+            <h1 style={{ margin: '4px 0 0', fontSize: '20px', fontWeight: 800, color: '#0f172a', lineHeight: 1.35 }}>
+              {currentPlan.lesson || 'Civic Education Curriculum Topic'}
+            </h1>
           </div>
-          <span className="w-fit rounded-full border border-indigo-200 bg-white px-3 py-1 text-[11px] font-extrabold text-indigo-800">
-            Period {store.currentPeriod} of {store.totalPeriods}
+          <span
+            style={{
+              padding: '4px 10px',
+              backgroundColor: '#eef2ff',
+              border: '1px solid #c7d2fe',
+              borderRadius: '8px',
+              color: '#3730a3',
+              fontSize: '11px',
+              fontWeight: 800,
+              textTransform: 'uppercase',
+            }}
+          >
+            NIE &amp; LEARN Aligned
           </span>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <div className="rounded-lg border border-slate-200 bg-slate-50 p-3">
-            <span className="text-[11px] font-bold uppercase tracking-wide text-slate-500">Subject</span>
-            <p className="mt-1 font-bold text-slate-900">{currentPlan.subject}</p>
-          </div>
-          <div className="rounded-lg border border-slate-200 bg-slate-50 p-3">
-            <span className="text-[11px] font-bold uppercase tracking-wide text-slate-500">Competency Level</span>
-            <p className="mt-1 font-bold text-slate-900">{currentPlan.competence_level}</p>
-          </div>
-          <div className="rounded-lg border border-slate-200 bg-slate-50 p-3">
-            <span className="text-[11px] font-bold uppercase tracking-wide text-slate-500">Time</span>
-            <p className="mt-1 font-bold text-slate-900">{currentPlan.time_allocation}</p>
-          </div>
-        </div>
-        <div className="rounded-lg border border-slate-200 bg-white p-4">
-          <p className="text-[10px] font-extrabold uppercase tracking-wide text-slate-500">Lesson focus</p>
-          <h1 className="mt-1 text-xl font-extrabold text-slate-900">{currentPlan.lesson}</h1>
-          {(currentPlan.selected_activity_title || store.activityByPeriod[store.currentPeriod]) && (
-            <p className="mt-2 text-sm text-indigo-800">
-              <strong>Selected activity:</strong>{" "}
-              {currentPlan.selected_activity_title || store.activityByPeriod[store.currentPeriod]}
-            </p>
-          )}
-          {currentPlan.custom_teacher_activity && (
-            <p className="mt-2 text-sm text-slate-700">
-              <strong>Custom activity details:</strong> {currentPlan.custom_teacher_activity}
-            </p>
-          )}
-        </div>
 
-        {currentPlan.activity_options && currentPlan.activity_options.length > 0 && (
-          <section className="rounded-lg border border-indigo-100 bg-indigo-50/40 p-4">
-            <h3 className="mb-3 text-xs font-extrabold uppercase tracking-wide text-indigo-900">
-              Period {currentPlan.period_number ?? store.currentPeriod} activity options considered
-            </h3>
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-              {currentPlan.activity_options.map((option) => {
-                const selected = option.title === currentPlan.selected_activity_title;
-                return (
-                  <article
-                    key={option.id}
-                    className={`rounded-lg border p-3 ${
-                      selected ? 'border-indigo-400 bg-indigo-50' : 'border-slate-200 bg-white'
-                    }`}
-                  >
-                    <div className="flex items-start justify-between gap-2">
-                      <h4 className="text-xs font-extrabold text-slate-900">{option.title}</h4>
-                      {selected && <span className="rounded-full bg-indigo-600 px-2 py-0.5 text-[9px] font-bold text-white">Selected</span>}
-                    </div>
-                    <p className="mt-2 text-xs leading-relaxed text-slate-600">{option.description}</p>
-                    {option.student_action_summary && (
-                      <p className="mt-2 text-xs leading-relaxed text-slate-600">
-                        <strong>Student participation: </strong>{option.student_action_summary}
-                      </p>
-                    )}
-                  </article>
-                );
-              })}
-            </div>
-          </section>
-        )}
-
-        <div className="rounded-lg border border-indigo-100 bg-indigo-50/40 p-4">
-          <h4 className="text-xs font-extrabold uppercase tracking-wide text-indigo-900">Teacher Guide Learning Outcomes</h4>
-          <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-relaxed text-slate-800">
-            {currentPlan.unique_learning_outcome.map((o, idx) => (
-              <li key={idx}>{o}</li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="rounded-lg border border-amber-200 bg-amber-50/50 p-4">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <h4 className="text-sm font-extrabold text-amber-950">The Entrance — Introduction</h4>
-            <span className="rounded-full border border-amber-200 bg-white px-2.5 py-1 text-[10px] font-bold text-amber-900">{currentPlan.entrance_duration_minutes ?? 5} Minutes</span>
-          </div>
-          <p className="mt-2 whitespace-pre-line text-sm leading-relaxed text-slate-700">{currentPlan.the_entrance}</p>
-        </div>
-
-        <div className="rounded-lg border border-slate-200 bg-slate-50/60 p-4">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <h4 className="text-sm font-extrabold uppercase tracking-wide text-slate-900">Lesson Development</h4>
-            <span className="rounded-full border border-slate-200 bg-white px-2.5 py-1 text-[10px] font-bold text-slate-700">30 Minutes</span>
-          </div>
-          <div className="space-y-4 mt-3">
-            {currentPlan.lesson_development_steps.map((st) => (
-              <div key={st.step_number} className="rounded-lg border border-slate-200 bg-white p-3 shadow-sm sm:p-4">
-                <h5 className="mb-3 flex items-center gap-2 font-extrabold text-sm text-slate-800">
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-indigo-100 text-xs text-indigo-800">{st.step_number}</span>
-                  Development Step
-                </h5>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm">
-                  <div className="rounded-lg border border-slate-200 bg-slate-50 p-3">
-                    <strong className="block text-[10px] uppercase tracking-wide text-slate-500">Teacher Activities</strong>
-                    <p className="mt-1 text-xs leading-relaxed text-slate-800">{st.teacher_activities}</p>
-                  </div>
-                  <div className="rounded-lg border border-indigo-100 bg-indigo-50/40 p-3">
-                    <strong className="block text-[10px] uppercase tracking-wide text-indigo-700">Student Activities</strong>
-                    <p className="mt-1 text-xs leading-relaxed text-slate-800">{st.student_activities}</p>
-                  </div>
-                  <div className="rounded-lg border border-slate-200 bg-slate-50 p-3">
-                    <strong className="block text-[10px] uppercase tracking-wide text-slate-500">Learning and Teaching Method</strong>
-                    <p className="mt-1 text-xs leading-relaxed text-slate-800">{st.learning_teaching_method}</p>
-                  </div>
-                  <div className="rounded-lg border border-slate-200 bg-slate-50 p-3">
-                    <strong className="block text-[10px] uppercase tracking-wide text-slate-500">Learning and Teaching Aids</strong>
-                    <p className="mt-1 text-xs leading-relaxed text-slate-800">{st.learning_teaching_aids}</p>
-                  </div>
-                  <div className="rounded-lg border border-indigo-100 bg-indigo-50/40 p-3">
-                    <strong className="block text-[10px] uppercase tracking-wide text-indigo-700">Time</strong>
-                    <p className="mt-1 text-xs font-bold text-slate-800">{st.time_minutes} Minutes</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <button
-          onClick={handleChangeActivity}
-          disabled={loadingNext}
-          className="w-full rounded-lg border border-indigo-300 bg-white py-3 text-sm font-bold text-indigo-700 transition hover:bg-indigo-50 disabled:cursor-not-allowed disabled:opacity-50"
+        {/* Core Lesson Meta Badges in Design Boxes */}
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
+            gap: '12px',
+            marginTop: '16px',
+          }}
         >
-          {loadingNext ? 'Loading period-specific options...' : `Choose a different activity for Period ${store.currentPeriod}`}
-        </button>
-
-        <div className="rounded-lg border border-indigo-200 bg-indigo-50/50 p-4">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <h4 className="text-sm font-extrabold text-indigo-950">Five-Minute Assignment & Closure</h4>
-            <span className="rounded-full border border-indigo-200 bg-white px-2.5 py-1 text-[10px] font-bold text-indigo-900">{currentPlan.assignment_duration_minutes ?? 5} Minutes</span>
+          <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '10px', padding: '10px 12px' }}>
+            <span style={{ display: 'block', fontSize: '10px', fontWeight: 800, color: '#64748b', textTransform: 'uppercase' }}>Subject</span>
+            <strong style={{ display: 'block', marginTop: '2px', fontSize: '13px', color: '#0f172a' }}>{currentPlan.subject}</strong>
           </div>
-          <div className="mt-3 grid grid-cols-1 md:grid-cols-2 gap-3">
-            <div className="rounded-lg border border-indigo-100 bg-white/80 p-3">
-              <strong className="text-xs uppercase tracking-wide text-indigo-700">Closure Summary</strong>
-              <p className="mt-1 text-sm text-gray-700 whitespace-pre-line">{currentPlan.summary}</p>
-            </div>
-            <div className="rounded-lg border border-indigo-100 bg-white/80 p-3">
-              <strong className="text-xs uppercase tracking-wide text-indigo-700">Assignment / Concluding Task</strong>
-              <p className="mt-1 text-sm text-gray-700 whitespace-pre-line">
-                {currentPlan.post_activity}
-              </p>
-            </div>
-            <p className="mt-3 text-xs leading-relaxed text-slate-600">
-              <strong>Assessment and feedback guidance within this task: </strong>
-              {currentPlan.assessment_and_feedback_whole_lesson}
-            </p>
+          <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '10px', padding: '10px 12px' }}>
+            <span style={{ display: 'block', fontSize: '10px', fontWeight: 800, color: '#64748b', textTransform: 'uppercase' }}>Grade</span>
+            <strong style={{ display: 'block', marginTop: '2px', fontSize: '13px', color: '#0f172a' }}>{currentPlan.grade}</strong>
+          </div>
+          <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '10px', padding: '10px 12px' }}>
+            <span style={{ display: 'block', fontSize: '10px', fontWeight: 800, color: '#64748b', textTransform: 'uppercase' }}>Competency Level</span>
+            <strong style={{ display: 'block', marginTop: '2px', fontSize: '13px', color: '#4338ca', fontFamily: 'monospace' }}>{currentPlan.competence_level}</strong>
+          </div>
+          <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '10px', padding: '10px 12px' }}>
+            <span style={{ display: 'block', fontSize: '10px', fontWeight: 800, color: '#64748b', textTransform: 'uppercase' }}>Time Allocation</span>
+            <strong style={{ display: 'block', marginTop: '2px', fontSize: '13px', color: '#0f172a' }}>{currentPlan.time_allocation}</strong>
           </div>
         </div>
       </div>
 
-      {/* Sequential Progression Action Button */}
+      {/* 4. SELECTED ACTIVITY BOX (Displays ONLY the selected activity — NO unselected option cards) */}
+      <div
+        style={{
+          backgroundColor: '#ffffff',
+          border: '1.5px solid #818cf8',
+          borderRadius: '14px',
+          padding: '20px',
+          boxShadow: '0 2px 6px rgba(99, 102, 241, 0.08)',
+        }}
+      >
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+          <span
+            style={{
+              fontSize: '11px',
+              fontWeight: 800,
+              textTransform: 'uppercase',
+              color: '#4338ca',
+              letterSpacing: '0.06em',
+            }}
+          >
+            Selected Activity (Period {store.currentPeriod})
+          </span>
+          <span
+            style={{
+              padding: '3px 8px',
+              backgroundColor: '#4f46e5',
+              borderRadius: '6px',
+              color: '#ffffff',
+              fontSize: '10px',
+              fontWeight: 800,
+              textTransform: 'uppercase',
+            }}
+          >
+            Active Choice
+          </span>
+        </div>
+
+        <h3 style={{ margin: '4px 0 0', fontSize: '16px', fontWeight: 800, color: '#0f172a' }}>
+          {displaySelectedTitle}
+        </h3>
+
+        <p style={{ margin: '8px 0 0', fontSize: '13px', color: '#475569', lineHeight: 1.55 }}>
+          {displaySelectedDesc}
+        </p>
+
+        {selectedOpt?.student_action_summary && (
+          <div
+            style={{
+              marginTop: '12px',
+              backgroundColor: '#f8fafc',
+              border: '1px solid #e2e8f0',
+              borderRadius: '8px',
+              padding: '10px 12px',
+              fontSize: '12px',
+              color: '#334155',
+            }}
+          >
+            <strong style={{ color: '#1e40af' }}>Student Participation: </strong>
+            <span>{selectedOpt.student_action_summary}</span>
+          </div>
+        )}
+
+        <div
+          style={{
+            marginTop: '10px',
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '8px',
+          }}
+        >
+          {selectedOpt?.student_grouping && (
+            <span
+              style={{
+                fontSize: '11px',
+                backgroundColor: '#f1f5f9',
+                border: '1px solid #cbd5e1',
+                padding: '4px 10px',
+                borderRadius: '6px',
+                color: '#334155',
+                fontWeight: 600,
+              }}
+            >
+              <strong>Grouping:</strong> {selectedOpt.student_grouping}
+            </span>
+          )}
+          {selectedOpt?.pedagogy_type && (
+            <span
+              style={{
+                fontSize: '11px',
+                backgroundColor: '#f1f5f9',
+                border: '1px solid #cbd5e1',
+                padding: '4px 10px',
+                borderRadius: '6px',
+                color: '#334155',
+                fontWeight: 600,
+              }}
+            >
+              <strong>Pedagogy:</strong> {selectedOpt.pedagogy_type}
+            </span>
+          )}
+        </div>
+
+        {currentPlan.custom_teacher_activity && (
+          <div
+            style={{
+              marginTop: '12px',
+              backgroundColor: '#eff6ff',
+              border: '1px solid #bfdbfe',
+              borderRadius: '8px',
+              padding: '10px 12px',
+              fontSize: '12px',
+              color: '#1e3a8a',
+            }}
+          >
+            <strong>Teacher Custom Approach Details: </strong>
+            <p style={{ margin: '4px 0 0', whiteSpace: 'pre-wrap' }}>{currentPlan.custom_teacher_activity}</p>
+          </div>
+        )}
+      </div>
+
+      {/* 5. Allocated Learning Outcomes for THIS Period Box */}
+      <div style={boxCardStyle}>
+        <span style={sectionLabelStyle}>Teacher Guide Allocated Learning Outcomes</span>
+        <ul style={{ margin: '8px 0 0', paddingLeft: '18px', fontSize: '13px', color: '#1e293b', lineHeight: 1.6 }}>
+          {currentPlan.unique_learning_outcome.map((o, idx) => (
+            <li key={idx} style={{ marginBottom: '4px' }}>{o}</li>
+          ))}
+        </ul>
+      </div>
+
+      {/* 6. The Entrance (Introduction) Box */}
+      <div style={boxCardStyle}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 800, color: '#0f172a' }}>
+            The Entrance — Introduction
+          </h4>
+          <span
+            style={{
+              padding: '3px 10px',
+              backgroundColor: '#f8fafc',
+              border: '1px solid #cbd5e1',
+              borderRadius: '9999px',
+              fontSize: '11px',
+              fontWeight: 700,
+              color: '#334155',
+            }}
+          >
+            {currentPlan.entrance_duration_minutes ?? 5} Minutes
+          </span>
+        </div>
+        <p style={{ margin: '10px 0 0', whiteSpace: 'pre-line', fontSize: '13px', color: '#334155', lineHeight: 1.6 }}>
+          {currentPlan.the_entrance}
+        </p>
+      </div>
+
+      {/* 7. Lesson Development Steps Box */}
+      <div style={boxCardStyle}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
+          <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 800, color: '#0f172a' }}>
+            Lesson Development Steps
+          </h4>
+          <span
+            style={{
+              padding: '3px 10px',
+              backgroundColor: '#f8fafc',
+              border: '1px solid #cbd5e1',
+              borderRadius: '9999px',
+              fontSize: '11px',
+              fontWeight: 700,
+              color: '#334155',
+            }}
+          >
+            30 Minutes Total
+          </span>
+        </div>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+          {currentPlan.lesson_development_steps.map((st) => (
+            <div
+              key={st.step_number}
+              style={{
+                backgroundColor: '#f8fafc',
+                border: '1px solid #e2e8f0',
+                borderRadius: '12px',
+                padding: '16px',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
+                <span
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '24px',
+                    height: '24px',
+                    borderRadius: '50%',
+                    backgroundColor: '#eef2ff',
+                    color: '#4338ca',
+                    fontSize: '12px',
+                    fontWeight: 800,
+                  }}
+                >
+                  {st.step_number}
+                </span>
+                <strong style={{ fontSize: '13px', color: '#0f172a' }}>Development Step {st.step_number}</strong>
+                <span style={{ marginLeft: 'auto', fontSize: '12px', fontWeight: 700, color: '#4338ca' }}>
+                  {st.time_minutes} Mins
+                </span>
+              </div>
+
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                  gap: '10px',
+                }}
+              >
+                <div style={{ backgroundColor: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '10px' }}>
+                  <span style={{ display: 'block', fontSize: '10px', fontWeight: 800, textTransform: 'uppercase', color: '#64748b' }}>
+                    Teacher Activities
+                  </span>
+                  <p style={{ margin: '4px 0 0', fontSize: '12px', color: '#1e293b', lineHeight: 1.5 }}>
+                    {st.teacher_activities}
+                  </p>
+                </div>
+
+                <div style={{ backgroundColor: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '10px' }}>
+                  <span style={{ display: 'block', fontSize: '10px', fontWeight: 800, textTransform: 'uppercase', color: '#4338ca' }}>
+                    Student Activities
+                  </span>
+                  <p style={{ margin: '4px 0 0', fontSize: '12px', color: '#1e293b', lineHeight: 1.5 }}>
+                    {st.student_activities}
+                  </p>
+                </div>
+
+                <div style={{ backgroundColor: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '10px' }}>
+                  <span style={{ display: 'block', fontSize: '10px', fontWeight: 800, textTransform: 'uppercase', color: '#64748b' }}>
+                    Method &amp; Aids
+                  </span>
+                  <p style={{ margin: '4px 0 0', fontSize: '12px', color: '#1e293b', lineHeight: 1.5 }}>
+                    <strong>Method:</strong> {st.learning_teaching_method}<br />
+                    <strong>Aids:</strong> {st.learning_teaching_aids}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* 8. Change Activity Option Button */}
+      <button
+        type="button"
+        onClick={handleChangeActivity}
+        disabled={loadingNext}
+        style={{
+          width: '100%',
+          padding: '11px 16px',
+          borderRadius: '10px',
+          backgroundColor: '#ffffff',
+          border: '1.5px solid #cbd5e1',
+          color: '#334155',
+          fontWeight: 700,
+          fontSize: '13px',
+          cursor: loadingNext ? 'not-allowed' : 'pointer',
+          boxShadow: '0 1px 2px rgba(0,0,0,0.04)',
+          transition: 'all 0.15s ease',
+        }}
+      >
+        {loadingNext ? 'Loading period-specific options...' : `🔄 Choose a different activity for Period ${store.currentPeriod}`}
+      </button>
+
+      {/* 9. Five-Minute Assignment & Closure Box */}
+      <div style={boxCardStyle}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 800, color: '#0f172a' }}>
+            Five-Minute Assignment &amp; Closure
+          </h4>
+          <span
+            style={{
+              padding: '3px 10px',
+              backgroundColor: '#f8fafc',
+              border: '1px solid #cbd5e1',
+              borderRadius: '9999px',
+              fontSize: '11px',
+              fontWeight: 700,
+              color: '#334155',
+            }}
+          >
+            {currentPlan.assignment_duration_minutes ?? 5} Minutes
+          </span>
+        </div>
+
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+            gap: '12px',
+            marginTop: '12px',
+          }}
+        >
+          <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '10px', padding: '12px' }}>
+            <span style={{ display: 'block', fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', color: '#4338ca' }}>
+              Closure Summary
+            </span>
+            <p style={{ margin: '6px 0 0', fontSize: '13px', color: '#334155', lineHeight: 1.5, whiteSpace: 'pre-line' }}>
+              {currentPlan.summary}
+            </p>
+          </div>
+
+          <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '10px', padding: '12px' }}>
+            <span style={{ display: 'block', fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', color: '#4338ca' }}>
+              Concluding Task / Assignment
+            </span>
+            <p style={{ margin: '6px 0 0', fontSize: '13px', color: '#334155', lineHeight: 1.5, whiteSpace: 'pre-line' }}>
+              {currentPlan.post_activity}
+            </p>
+          </div>
+        </div>
+
+        <div style={{ marginTop: '12px', padding: '10px 12px', backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px', fontSize: '12px', color: '#475569' }}>
+          <strong style={{ color: '#334155' }}>Assessment &amp; Feedback Guidance: </strong>
+          <span>{currentPlan.assessment_and_feedback_whole_lesson}</span>
+        </div>
+      </div>
+
+      {/* 10. Sequential Progression Action Button */}
       {store.currentPeriod < store.totalPeriods ? (
         <button
+          type="button"
           onClick={handleNextPeriodClick}
           disabled={loadingNext}
-          className="w-full rounded-lg bg-indigo-600 py-3.5 text-sm font-extrabold text-white shadow-sm transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-60"
+          style={{
+            width: '100%',
+            padding: '14px 20px',
+            borderRadius: '10px',
+            backgroundColor: loadingNext ? '#94a3b8' : '#4f46e5',
+            color: '#ffffff',
+            fontWeight: 800,
+            fontSize: '14px',
+            border: 'none',
+            cursor: loadingNext ? 'not-allowed' : 'pointer',
+            boxShadow: '0 2px 6px rgba(79, 70, 229, 0.3)',
+            transition: 'background-color 0.2s ease',
+          }}
         >
           {loadingNext
             ? `Querying Fresh Options for Period ${store.currentPeriod + 1}...`
             : `Plan Next Period (Period ${store.currentPeriod + 1} of ${store.totalPeriods}) →`}
         </button>
       ) : (
-        <div className="rounded-lg border border-emerald-200 bg-emerald-50 p-4 text-center font-extrabold text-emerald-800">
-          🎉 All {store.totalPeriods} Periods for Competency {store.competencyLevel} Successfully Completed!
+        <div
+          style={{
+            backgroundColor: '#f0fdf4',
+            border: '1.5px solid #bbf7d0',
+            borderRadius: '12px',
+            padding: '16px',
+            textAlign: 'center',
+            fontWeight: 800,
+            fontSize: '14px',
+            color: '#166534',
+          }}
+        >
+          🎉 All {store.totalPeriods} Periods for Competency {store.competencyLevel} Successfully Generated &amp; Saved!
         </div>
       )}
     </div>
