@@ -23,6 +23,7 @@ export default function Step3PlanViewer() {
         requestedPeriod: nextP,
         gradeLevel: store.gradeLevel,
         subject: store.subject,
+        topicQuery: store.topicQuery,
         classroomEnvironment: store.classroomEnvironment,
         accessibleResources: store.accessibleResources,
         previousPeriodActivities: store.priorActivityTitles(nextP),
@@ -47,6 +48,7 @@ export default function Step3PlanViewer() {
         requestedPeriod: store.currentPeriod,
         gradeLevel: store.gradeLevel,
         subject: store.subject,
+        topicQuery: store.topicQuery,
         classroomEnvironment: store.classroomEnvironment,
         accessibleResources: store.accessibleResources,
         previousPeriodActivities: store.otherActivityTitles(store.currentPeriod),
@@ -113,12 +115,50 @@ export default function Step3PlanViewer() {
         <div className="rounded-lg border border-slate-200 bg-white p-4">
           <p className="text-[10px] font-extrabold uppercase tracking-wide text-slate-500">Lesson focus</p>
           <h1 className="mt-1 text-xl font-extrabold text-slate-900">{currentPlan.lesson}</h1>
-          {store.activityByPeriod[store.currentPeriod] && (
+          {(currentPlan.selected_activity_title || store.activityByPeriod[store.currentPeriod]) && (
             <p className="mt-2 text-sm text-indigo-800">
-              <strong>Selected activity:</strong> {store.activityByPeriod[store.currentPeriod]}
+              <strong>Selected activity:</strong>{" "}
+              {currentPlan.selected_activity_title || store.activityByPeriod[store.currentPeriod]}
+            </p>
+          )}
+          {currentPlan.custom_teacher_activity && (
+            <p className="mt-2 text-sm text-slate-700">
+              <strong>Custom activity details:</strong> {currentPlan.custom_teacher_activity}
             </p>
           )}
         </div>
+
+        {currentPlan.activity_options && currentPlan.activity_options.length > 0 && (
+          <section className="rounded-lg border border-indigo-100 bg-indigo-50/40 p-4">
+            <h3 className="mb-3 text-xs font-extrabold uppercase tracking-wide text-indigo-900">
+              Period {currentPlan.period_number ?? store.currentPeriod} activity options considered
+            </h3>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+              {currentPlan.activity_options.map((option) => {
+                const selected = option.title === currentPlan.selected_activity_title;
+                return (
+                  <article
+                    key={option.id}
+                    className={`rounded-lg border p-3 ${
+                      selected ? 'border-indigo-400 bg-indigo-50' : 'border-slate-200 bg-white'
+                    }`}
+                  >
+                    <div className="flex items-start justify-between gap-2">
+                      <h4 className="text-xs font-extrabold text-slate-900">{option.title}</h4>
+                      {selected && <span className="rounded-full bg-indigo-600 px-2 py-0.5 text-[9px] font-bold text-white">Selected</span>}
+                    </div>
+                    <p className="mt-2 text-xs leading-relaxed text-slate-600">{option.description}</p>
+                    {option.student_action_summary && (
+                      <p className="mt-2 text-xs leading-relaxed text-slate-600">
+                        <strong>Student participation: </strong>{option.student_action_summary}
+                      </p>
+                    )}
+                  </article>
+                );
+              })}
+            </div>
+          </section>
+        )}
 
         <div className="rounded-lg border border-indigo-100 bg-indigo-50/40 p-4">
           <h4 className="text-xs font-extrabold uppercase tracking-wide text-indigo-900">Teacher Guide Learning Outcomes</h4>
@@ -132,7 +172,7 @@ export default function Step3PlanViewer() {
         <div className="rounded-lg border border-amber-200 bg-amber-50/50 p-4">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <h4 className="text-sm font-extrabold text-amber-950">The Entrance — Introduction</h4>
-            <span className="rounded-full border border-amber-200 bg-white px-2.5 py-1 text-[10px] font-bold text-amber-900">5 Minutes</span>
+            <span className="rounded-full border border-amber-200 bg-white px-2.5 py-1 text-[10px] font-bold text-amber-900">{currentPlan.entrance_duration_minutes ?? 5} Minutes</span>
           </div>
           <p className="mt-2 whitespace-pre-line text-sm leading-relaxed text-slate-700">{currentPlan.the_entrance}</p>
         </div>
@@ -186,8 +226,8 @@ export default function Step3PlanViewer() {
 
         <div className="rounded-lg border border-indigo-200 bg-indigo-50/50 p-4">
           <div className="flex flex-wrap items-center justify-between gap-2">
-            <h4 className="text-sm font-extrabold text-indigo-950">Assessment & Closure</h4>
-            <span className="rounded-full border border-indigo-200 bg-white px-2.5 py-1 text-[10px] font-bold text-indigo-900">5 Minutes</span>
+            <h4 className="text-sm font-extrabold text-indigo-950">Five-Minute Assignment & Closure</h4>
+            <span className="rounded-full border border-indigo-200 bg-white px-2.5 py-1 text-[10px] font-bold text-indigo-900">{currentPlan.assignment_duration_minutes ?? 5} Minutes</span>
           </div>
           <div className="mt-3 grid grid-cols-1 md:grid-cols-2 gap-3">
             <div className="rounded-lg border border-indigo-100 bg-white/80 p-3">
@@ -195,11 +235,15 @@ export default function Step3PlanViewer() {
               <p className="mt-1 text-sm text-gray-700 whitespace-pre-line">{currentPlan.summary}</p>
             </div>
             <div className="rounded-lg border border-indigo-100 bg-white/80 p-3">
-              <strong className="text-xs uppercase tracking-wide text-indigo-700">Generated Assessment</strong>
+              <strong className="text-xs uppercase tracking-wide text-indigo-700">Assignment / Concluding Task</strong>
               <p className="mt-1 text-sm text-gray-700 whitespace-pre-line">
-                {currentPlan.assessment_and_feedback_whole_lesson}
+                {currentPlan.post_activity}
               </p>
             </div>
+            <p className="mt-3 text-xs leading-relaxed text-slate-600">
+              <strong>Assessment and feedback guidance within this task: </strong>
+              {currentPlan.assessment_and_feedback_whole_lesson}
+            </p>
           </div>
         </div>
       </div>

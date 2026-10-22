@@ -20,9 +20,13 @@ from app.services.generated_plans_manager import (
     get_competency_period_plans,
     save_generated_plan,
 )
-from app.services.outcome_allocator import extract_civic_tig_learning_outcomes
+from app.services.outcome_allocator import (
+    extract_civic_tig_learning_outcomes,
+    restore_period_allocation_from_saved_plans,
+)
 from app.services.multi_grade_retriever import (
     extract_verbatim_tig_outcomes,
+    format_retrieved_source_references,
     split_outcomes_by_periods,
 )
 
@@ -79,6 +83,29 @@ def _to_serializable_dict(report_obj: Any, default_fallback: Dict[str, Any]) -> 
     if hasattr(report_obj, "__dict__"):
         return vars(report_obj)
     return default_fallback
+
+
+def _build_period_lesson_topic(
+    allocated_outcomes: List[str],
+    selected_activity_title: Optional[str],
+    selected_activity: Optional[str],
+) -> str:
+    """Build a concise, curriculum-sourced period topic tied to the chosen activity."""
+    curriculum_focus = next(
+        (outcome.strip().rstrip(".") for outcome in allocated_outcomes if outcome.strip()),
+        "",
+    )
+    activity_focus = (selected_activity_title or "").strip()
+    if not activity_focus and selected_activity:
+        first_line = selected_activity.strip().splitlines()[0]
+        activity_focus = re.sub(r"^Activity:\s*", "", first_line, flags=re.IGNORECASE).strip()
+    activity_focus = re.sub(r"\s+", " ", activity_focus)
+    if len(activity_focus) > 72:
+        activity_focus = f"{activity_focus[:69].rsplit(' ', 1)[0]}..."
+
+    if curriculum_focus and activity_focus:
+        return f"{curriculum_focus}: {activity_focus}"
+    return curriculum_focus or activity_focus
 
 
 class LessonPlanMlService(ILessonPlanMlService):
@@ -209,7 +236,8 @@ class LessonPlanMlService(ILessonPlanMlService):
         subject: str = "Civic Education",
         classroom_environment: str = "Standard Classroom",
         accessible_resources: Optional[List[str]] = None,
-        previous_period_activities: Optional[List[str]] = None
+        previous_period_activities: Optional[List[str]] = None,
+        topic_query: str = ""
     ) -> Dict[str, Any]:
         """
         Discovers 3 independent, period-aware creative activity options.
@@ -258,7 +286,8 @@ class LessonPlanMlService(ILessonPlanMlService):
             subject="Civic Education",
             classroom_environment=classroom_environment or "Standard Classroom",
             accessible_resources=accessible_resources or [],
-            previous_activities=list(dict.fromkeys(previous_activities))
+            previous_activities=list(dict.fromkeys(previous_activities)),
+            lesson_topic=topic_query.strip() or f"Competency Level {competency_level}",
         )
 
     async def generate_lesson_plan_async(
@@ -332,22 +361,7 @@ class LessonPlanMlService(ILessonPlanMlService):
         )
         tig_chunks = dual_context.get("tig_guidelines", [])
         tb_chunks = dual_context.get("textbook_paragraphs", [])
-        curriculum_sources: List[str] = []
-        for item in tig_chunks + tb_chunks:
-            metadata = item.get("metadata") or {}
-            source = (
-                metadata.get("source_file")
-                or metadata.get("source")
-                or item.get("source")
-            )
-            if not source:
-                continue
-            source_name = os.path.basename(str(source).replace("\\", "/")).strip()
-            if (
-                source_name.casefold().endswith(".pdf")
-                and source_name not in curriculum_sources
-            ):
-                curriculum_sources.append(source_name)
+        curriculum_sources = format_retrieved_source_references(tig_chunks + tb_chunks)
 
         extracted_tig_outcomes: List[str] = []
         for chunk in tig_chunks:
@@ -384,28 +398,12 @@ class LessonPlanMlService(ILessonPlanMlService):
             subject="Civic Education",
             total_periods=total_periods,
         )
-        for saved_plan in saved_period_plans.values():
-            saved_allocation = saved_plan.get("outcome_allocation")
-            if saved_plan.get("total_periods") != total_periods or not isinstance(saved_allocation, dict):
-                continue
-            try:
-                normalized_allocation = {
-                    int(period): outcomes
-                    for period, outcomes in saved_allocation.items()
-                }
-            except (TypeError, ValueError):
-                continue
-            if (
-                hasattr(allocation_plan, "restore_period_allocations")
-                and allocation_plan.restore_period_allocations(normalized_allocation)
-            ):
-                logger.info("Restored saved outcome allocation for Competency Level %s", target_comp)
-                break
-            logger.warning(
-                "Ignoring saved period allocation for Competency Level %s because it no longer "
-                "covers exactly the retrieved official outcomes.",
-                target_comp,
-            )
+        restore_period_allocation_from_saved_plans(
+            allocation_plan=allocation_plan,
+            saved_period_plans=saved_period_plans,
+            total_periods=total_periods,
+            competency_level=target_comp,
+        )
 
         # 5. Determine whether to generate ALL periods or ONLY the single requested period
         periods_to_generate = (
@@ -414,18 +412,103 @@ class LessonPlanMlService(ILessonPlanMlService):
             else list(range(1, total_periods + 1))
         )
 
+        accumulated_activities = list(request.previous_period_activities or [])
+        for p in range(1, total_periods + 1):
+            s_plan = saved_period_plans.get(p, {})
+            title = s_plan.get("selected_activity_title")
+            if title and title not in accumulated_activities:
+                accumulated_activities.append(title)
+
         generated_plans: List[LessonPlanSchemaDto] = []
         for p_idx in periods_to_generate:
             assigned_outcomes = allocation_plan.get_outcomes_for_period(p_idx)
             period_time_label = f"40 Minutes (Period {p_idx} of {total_periods})"
 
+            # Resolve teacher mode and custom activity for this period
+            is_own_approach = (
+                (p_idx == requested_period and getattr(request, "teacher_mode", "suggested") == "own_approach")
+                or (p_idx == requested_period and bool(getattr(request, "custom_teacher_activity", None) and getattr(request, "custom_teacher_activity", "").strip()))
+            )
+            custom_teacher_act = (
+                getattr(request, "custom_teacher_activity", "").strip()
+                if (is_own_approach and getattr(request, "custom_teacher_activity", None))
+                else None
+            )
+
+            # Resolve activity options for this period
+            period_options: List[Dict[str, Any]] = []
+            if p_idx == requested_period and getattr(request, "activity_options", None):
+                period_options = getattr(request, "activity_options", [])
+            else:
+                saved_opts = saved_period_plans.get(p_idx, {}).get("activity_options", [])
+                if saved_opts:
+                    period_options = saved_opts
+                else:
+                    raw_opts = self.rag_engine.generate_activity_options(
+                        competency_level=target_comp,
+                        student_count=student_count,
+                        periods=total_periods,
+                        requested_period=p_idx,
+                        grade_level=normalized_grade,
+                        subject="Civic Education",
+                        classroom_environment=getattr(request, "classroom_environment", "Standard Classroom"),
+                        accessible_resources=getattr(request, "accessible_resources", []),
+                        previous_activities=list(dict.fromkeys(accumulated_activities)),
+                        lesson_topic=clean_topic,
+                    )
+                    period_options = raw_opts.get("options", [])
+
+            # Resolve selected activity and title for this period
+            if is_own_approach and custom_teacher_act:
+                period_selected_activity = custom_teacher_act
+                period_selected_title = (
+                    getattr(request, "selected_activity_title", None)
+                    or f"Teacher approach: {custom_teacher_act}"
+                )
+            elif p_idx == requested_period and getattr(request, "selected_activity_option", None):
+                period_selected_activity = getattr(request, "selected_activity_option", None)
+                period_selected_title = getattr(request, "selected_activity_title", None)
+                if not period_selected_title and period_options:
+                    period_selected_title = period_options[0].get("title")
+            elif saved_period_plans.get(p_idx, {}).get("selected_activity"):
+                period_selected_activity = saved_period_plans[p_idx]["selected_activity"]
+                period_selected_title = saved_period_plans[p_idx].get("selected_activity_title")
+            elif period_options:
+                opt0 = period_options[0]
+                period_selected_title = opt0.get("title")
+                period_selected_activity = (
+                    f"Activity: {opt0.get('title')}\n"
+                    f"Approach: {opt0.get('description')}\n"
+                    f"Student task: {opt0.get('student_action_summary') or opt0.get('description')}\n"
+                    f"Teacher facilitation: {opt0.get('teacher_facilitation_summary') or 'Facilitate student participation and outcome-focused discussion.'}\n"
+                    f"Expected output: {opt0.get('expected_student_output') or 'A student-created response demonstrating the allocated learning outcomes.'}\n"
+                    f"Grouping: {opt0.get('student_grouping')}"
+                )
+            else:
+                period_selected_activity = f"Interactive inquiry on Competency {target_comp}"
+                period_selected_title = f"Inquiry Activity {p_idx}"
+
+            if period_selected_title and period_selected_title not in accumulated_activities:
+                accumulated_activities.append(period_selected_title)
+
+            period_topic = _build_period_lesson_topic(
+                allocated_outcomes=assigned_outcomes,
+                selected_activity_title=period_selected_title,
+                selected_activity=period_selected_activity,
+            )
+            if not period_topic:
+                raise ValueError(
+                    f"Cannot create a period-specific topic for Period {p_idx}: "
+                    "no allocated curriculum outcome or selected activity was provided."
+                )
+
             logger.info(
-                "--> Generating Period %d/%d Plan (%d outcomes assigned)...",
-                p_idx, total_periods, len(assigned_outcomes)
+                "--> Generating Period %d/%d Plan (%d outcomes assigned, activity: %s)...",
+                p_idx, total_periods, len(assigned_outcomes), period_selected_title
             )
 
             plan: LessonPlanSchemaDto = self.rag_engine.generate_lesson_plan(
-                query=f"{clean_topic} - Part {p_idx}" if total_periods > 1 else clean_topic,
+                query=period_topic,
                 competency_level=target_comp,
                 grade_level=normalized_grade,
                 subject="Civic Education",
@@ -433,14 +516,20 @@ class LessonPlanMlService(ILessonPlanMlService):
                 duration_minutes=40,
                 time_slot=period_time_label,
                 retrieved_outcomes=assigned_outcomes,
-                teacher_mode=getattr(request, "teacher_mode", "suggested"),
-                selected_activity_strategy=getattr(request, "selected_activity_option", None),
-                custom_teacher_activity=getattr(request, "custom_teacher_activity", None),
+                teacher_mode="own_approach" if is_own_approach else "suggested",
+                selected_activity_strategy=period_selected_activity,
+                custom_teacher_activity=custom_teacher_act,
                 classroom_environment=getattr(request, "classroom_environment", "Standard Classroom"),
                 accessible_resources=getattr(request, "accessible_resources", []),
                 student_count=student_count,
                 current_period=p_idx,
                 total_periods=total_periods,
+                activity_options=period_options,
+                selected_activity_title=period_selected_title,
+                outcome_allocation={
+                    str(period): allocation_plan.get_outcomes_for_period(period)
+                    for period in range(1, total_periods + 1)
+                },
                 progression_context=(
                     allocation_plan.get_progression_summary_for_period(p_idx)
                     if hasattr(allocation_plan, "get_progression_summary_for_period")
@@ -448,27 +537,27 @@ class LessonPlanMlService(ILessonPlanMlService):
                 )
             )
 
+            plan = plan.model_copy(deep=True)
             plan.time_allocation = period_time_label
             plan.grade = normalized_grade
-            plan.lesson = f"{clean_topic} (Period {p_idx})" if total_periods > 1 else clean_topic
+            plan.lesson = period_topic
+            plan.period_number = p_idx
+            plan.total_periods = total_periods
+            plan.selected_activity_title = period_selected_title
             if assigned_outcomes:
                 plan.unique_learning_outcome = assigned_outcomes
+            plan.selected_activity = period_selected_activity
+            plan.custom_teacher_activity = custom_teacher_act
+            plan.activity_options = period_options
+            plan.outcome_allocation = {
+                str(period): allocation_plan.get_outcomes_for_period(period)
+                for period in range(1, total_periods + 1)
+            }
             plan.information_sources = curriculum_sources
             for step in plan.lesson_development_steps:
                 step.assessment_and_feedback = ""
 
             plan_data = plan.model_dump(mode="json")
-            plan_data["period_number"] = p_idx
-            plan_data["total_periods"] = total_periods
-            plan_data["outcome_allocation"] = {
-                str(period): allocation_plan.get_outcomes_for_period(period)
-                for period in range(1, total_periods + 1)
-            }
-            plan_data["selected_activity"] = (
-                getattr(request, "custom_teacher_activity", None)
-                if getattr(request, "teacher_mode", "suggested") == "own_approach"
-                else getattr(request, "selected_activity_option", None)
-            )
             sanitized_grade = plan.grade.replace(" ", "_")
             sanitized_comp = target_comp.replace(".", "_")
             filename = f"{sanitized_grade}_comp_{sanitized_comp}_p{p_idx}.json"

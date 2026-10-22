@@ -46,7 +46,12 @@ export interface LessonPlanSchemaDto {
   period_number?: number;
   total_periods?: number;
   selected_activity?: string | null;
+  selected_activity_title?: string | null;
   outcome_allocation?: Record<string, string[]>;
+  custom_teacher_activity?: string | null;
+  activity_options?: PedagogicalActivityOption[];
+  entrance_duration_minutes?: number;
+  assignment_duration_minutes?: number;
 }
 
 export interface MultiPeriodState {
@@ -57,6 +62,7 @@ export interface MultiPeriodState {
   competencyLevel: string;
   gradeLevel: string;
   subject: string;
+  topicQuery: string;
   totalPeriods: number;
   currentPeriod: number;
   studentCount: number;
@@ -95,6 +101,7 @@ export const useLessonPlanStore = create<MultiPeriodState>()(persist((set, get) 
   competencyLevel: '8.1.1',
   gradeLevel: 'Grade 8',
   subject: 'Civic Education',
+  topicQuery: '',
   totalPeriods: 2,
   currentPeriod: 1,
   studentCount: 35,
@@ -115,6 +122,7 @@ export const useLessonPlanStore = create<MultiPeriodState>()(persist((set, get) 
       (inputs.competencyLevel !== undefined && inputs.competencyLevel !== state.competencyLevel) ||
       (inputs.gradeLevel !== undefined && inputs.gradeLevel !== state.gradeLevel) ||
       (inputs.subject !== undefined && inputs.subject !== state.subject) ||
+      (inputs.topicQuery !== undefined && inputs.topicQuery !== state.topicQuery) ||
       (inputs.totalPeriods !== undefined && inputs.totalPeriods !== state.totalPeriods);
     return sequenceChanged
       ? {

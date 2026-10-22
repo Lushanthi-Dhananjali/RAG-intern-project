@@ -173,6 +173,14 @@ class GenerateLessonPlanRequest(BaseModel):
         default=None,
         description="Description of selected option from suggest-pedagogical-options"
     )
+    selected_activity_title: Optional[str] = Field(
+        default=None,
+        description="Title of the activity selected for this individual period"
+    )
+    activity_options: List[Dict[str, Any]] = Field(
+        default_factory=list,
+        description="The activity options displayed to the teacher for this period"
+    )
     custom_teacher_activity: Optional[str] = Field(
         default=None,
         description="Custom activity entered by teacher overriding AI options (Mode B)"
@@ -426,6 +434,7 @@ async def suggest_pedagogical_options(
             requested_period=request.requested_period or 1,
             grade_level=request.grade_level,
             subject=request.subject,
+            topic_query=request.topic_query or "",
             classroom_environment=request.classroom_environment or "Standard Classroom",
             accessible_resources=request.accessible_resources or [],
             previous_period_activities=request.previous_period_activities or []
@@ -509,6 +518,8 @@ async def generate_by_competency_level(
         accessible_resources=request.accessible_resources or [],
         teacher_mode=request.teacher_mode or "suggested",
         selected_activity_option=request.selected_activity_option,
+        selected_activity_title=request.selected_activity_title,
+        activity_options=request.activity_options,
         custom_teacher_activity=request.custom_teacher_activity,
         previous_period_activities=request.previous_period_activities or []
     )
@@ -730,7 +741,7 @@ async def extract_curriculum(
 try:
     from app.api.v1.endpoints.generated_plans import router as generated_plans_router
 
-    app.include_router(generated_plans_router)
+    app.include_router(generated_plans_router, prefix="/api/v1/generated-plans")
     app.include_router(generated_plans_router, prefix="/api/generated-plans")
     logger.info(
         "Successfully mounted generated plans storage routers (/api/v1/generated-plans and /api/generated-plans)"

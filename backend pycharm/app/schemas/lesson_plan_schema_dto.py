@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import Any, Dict, List, Optional
 import re
 from pydantic import BaseModel, Field, model_validator
 
@@ -30,7 +30,7 @@ class LessonPlanSchemaDto(BaseModel):
     )
     the_entrance: str = Field(
         ...,
-        description="Motivational hook / introduction (Strictly 5 Minutes)"
+        description="Five-minute introduction with teacher actions, student actions, and a link to the selected activity"
     )
     lesson_development_steps: List[LessonDevelopmentStepDto] = Field(
         ...,
@@ -41,9 +41,24 @@ class LessonPlanSchemaDto(BaseModel):
         ...,
         description="Generated formative assessment in the final closure; the summary and assessment together take 5 minutes."
     )
-    post_activity: str = Field(..., description="Follow-up reflection, observation, or homework task")
+    post_activity: str = Field(
+        ...,
+        description="A specific five-minute in-class assignment or concluding learning task aligned with this period"
+    )
     information_sources: List[str] = Field(default_factory=list, description="Curriculum sources (NIE TIG, Pupil Textbook)")
     attachments: List[str] = Field(default_factory=list, description="Concrete titles of worksheets, cue cards, or checklists")
+    entrance_duration_minutes: int = Field(default=5, ge=5, le=5)
+    assignment_duration_minutes: int = Field(default=5, ge=5, le=5)
+    period_number: Optional[int] = None
+    total_periods: Optional[int] = None
+    selected_activity: Optional[str] = None
+    selected_activity_title: Optional[str] = Field(
+        default=None,
+        description="Title of the activity selected for this individual period"
+    )
+    custom_teacher_activity: Optional[str] = None
+    activity_options: List[Dict[str, Any]] = Field(default_factory=list)
+    outcome_allocation: Dict[str, List[str]] = Field(default_factory=dict)
 
     @model_validator(mode="after")
     def balance_strict_40_minute_pacing(self):

@@ -23,6 +23,7 @@ export default function Step1Inputs() {
         requestedPeriod: store.currentPeriod,
         gradeLevel: selectedGrade,
         subject: store.subject,
+        topicQuery: store.topicQuery,
         classroomEnvironment: store.classroomEnvironment,
         accessibleResources: store.accessibleResources,
         previousPeriodActivities: store.priorActivityTitles(store.currentPeriod),
@@ -146,6 +147,18 @@ export default function Step1Inputs() {
             students
           </span>
         </p>
+      </div>
+
+      <div>
+        <label htmlFor="planner-topic" style={fieldLabelStyle}>Lesson Topic or Focus (Optional)</label>
+        <input
+          id="planner-topic"
+          type="text"
+          value={store.topicQuery}
+          onChange={(e) => store.setInputs({ topicQuery: e.target.value })}
+          placeholder="e.g. Public services in the local community"
+          style={fieldStyle}
+        />
       </div>
 
       <div>

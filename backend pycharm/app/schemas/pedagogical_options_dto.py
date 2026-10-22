@@ -59,6 +59,10 @@ class PedagogicalOptionsRequest(BaseModel):
     competency_level: str = Field(..., examples=["8.1.1"], description="Target NIE competency level code")
     grade_level: str = Field(default="Grade 8", examples=["Grade 8"], description="School grade level (Grades 6-9)")
     subject: str = Field(default="Civic Education", examples=["Civic Education"], description="Subject name")
+    topic_query: Optional[str] = Field(
+        default="",
+        description="Optional lesson topic to guide activity discovery alongside retrieved curriculum outcomes"
+    )
     student_count: int = Field(default=35, ge=5, le=80, description="Total number of students in the class")
 
     # Strict clamping: 1 <= periods <= 4

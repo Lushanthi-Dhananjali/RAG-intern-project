@@ -374,3 +374,42 @@ def allocate_learning_outcomes_across_periods(
         total_periods=periods,
         all_outcomes=all_outcomes
     )
+
+
+def restore_period_allocation_from_saved_plans(
+    allocation_plan: Any,
+    saved_period_plans: Dict[int, Dict[str, Any]],
+    total_periods: int,
+    competency_level: str,
+) -> bool:
+    """Restore a complete prior allocation when it still matches retrieved outcomes."""
+    for saved_plan in saved_period_plans.values():
+        saved_allocation = saved_plan.get("outcome_allocation")
+        if (
+            saved_plan.get("total_periods") != total_periods
+            or not isinstance(saved_allocation, dict)
+            or not hasattr(allocation_plan, "restore_period_allocations")
+        ):
+            continue
+
+        try:
+            normalized_allocation = {
+                int(period): outcomes
+                for period, outcomes in saved_allocation.items()
+            }
+        except (TypeError, ValueError):
+            continue
+
+        if allocation_plan.restore_period_allocations(normalized_allocation):
+            logger.info(
+                "Restored saved outcome allocation for Competency Level %s",
+                competency_level,
+            )
+            return True
+
+        logger.warning(
+            "Ignoring saved period allocation for Competency Level %s because it no longer "
+            "covers exactly the retrieved official outcomes.",
+            competency_level,
+        )
+    return False

@@ -80,12 +80,35 @@ except ModuleNotFoundError:
         generate_fallback_options = None
 
 try:
-    from app.services.outcome_allocator import extract_civic_tig_learning_outcomes
+    from app.services.outcome_allocator import (
+        extract_civic_tig_learning_outcomes,
+        restore_period_allocation_from_saved_plans,
+    )
 except ModuleNotFoundError:
     try:
-        from services.outcome_allocator import extract_civic_tig_learning_outcomes
+        from services.outcome_allocator import (
+            extract_civic_tig_learning_outcomes,
+            restore_period_allocation_from_saved_plans,
+        )
     except ModuleNotFoundError:
         extract_civic_tig_learning_outcomes = None
+        restore_period_allocation_from_saved_plans = None
+
+try:
+    from app.services.generated_plans_manager import get_competency_period_plans
+except ModuleNotFoundError:
+    try:
+        from services.generated_plans_manager import get_competency_period_plans
+    except ModuleNotFoundError:
+        get_competency_period_plans = None
+
+try:
+    from app.services.multi_grade_retriever import format_retrieved_source_references
+except ModuleNotFoundError:
+    try:
+        from services.multi_grade_retriever import format_retrieved_source_references
+    except ModuleNotFoundError:
+        format_retrieved_source_references = None
 
 # Import Step 6 Mode B Teacher Scaffolding Engine
 try:
@@ -211,7 +234,8 @@ class RAGLessonPlanGenerator:
         subject: str = "Civic Education",
         classroom_environment: str = "Standard Classroom",
         accessible_resources: Optional[List[str]] = None,
-        previous_activities: Optional[List[str]] = None
+        previous_activities: Optional[List[str]] = None,
+        lesson_topic: str = ""
     ) -> Dict[str, Any]:
         """
         Generates 3 independent, student-centred activity cards specifically
@@ -255,12 +279,29 @@ class RAGLessonPlanGenerator:
                 periods=safe_periods,
                 competency_level=clean_level
             )
+            if (
+                get_competency_period_plans is not None
+                and restore_period_allocation_from_saved_plans is not None
+            ):
+                saved_period_plans = get_competency_period_plans(
+                    grade=grade_level,
+                    competency_level=clean_level,
+                    subject=subject,
+                    total_periods=safe_periods,
+                )
+                restore_period_allocation_from_saved_plans(
+                    allocation_plan=allocation_plan,
+                    saved_period_plans=saved_period_plans,
+                    total_periods=safe_periods,
+                    competency_level=clean_level,
+                )
             period_outcomes = allocation_plan.get_outcomes_for_period(safe_requested)
             progression_context = allocation_plan.get_progression_summary_for_period(safe_requested)
         else:
             period_outcomes = extracted_outcomes
 
-        lesson_topic = f"Competency Level {clean_level} (Period {safe_requested} of {safe_periods})"
+        activity_topic = lesson_topic.strip() or f"Competency Level {clean_level}"
+        lesson_topic = f"{activity_topic} (Period {safe_requested} of {safe_periods})"
 
         # 4. Build Period-Aware Prompt
         if build_period_options_prompt is not None:
@@ -301,6 +342,8 @@ class RAGLessonPlanGenerator:
             }
         }
 
+        valid_llm_options: List[Dict[str, Any]] = []
+        fallback_previous_activities = list(previous_activities or [])
         try:
             res = requests.post(f"{self.ollama_url}/api/generate", json=payload, timeout=90)
             res.raise_for_status()
@@ -308,12 +351,42 @@ class RAGLessonPlanGenerator:
             clean_str = raw.strip().removeprefix("```json").removeprefix("```").removesuffix("```").strip()
             parsed = json.loads(clean_str)
 
-            if "options" in parsed and len(parsed["options"]) == 3:
+            parsed_options = parsed.get("options", [])
+            if isinstance(parsed_options, list) and len(parsed_options) == 3:
+                prior_activity_text = " ".join(
+                    str(activity).casefold() for activity in fallback_previous_activities
+                )
+                seen_titles = set()
+                for option in parsed_options:
+                    if not isinstance(option, dict):
+                        continue
+                    title = str(option.get("title", "")).strip()
+                    normalized_title = title.casefold()
+                    if (
+                        not normalized_title
+                        or normalized_title in seen_titles
+                        or normalized_title in prior_activity_text
+                    ):
+                        continue
+                    seen_titles.add(normalized_title)
+                    option["learning_outcomes_addressed"] = period_outcomes
+                    valid_llm_options.append(option)
+
+            if len(valid_llm_options) == 3:
                 parsed["period"] = safe_requested
                 parsed["topic"] = lesson_topic
-                for opt in parsed["options"]:
-                    opt["learning_outcomes_addressed"] = period_outcomes
+                parsed["options"] = valid_llm_options
                 return parsed
+            if valid_llm_options:
+                logger.info(
+                    "Discarded repeated activity options for Competency %s Period %d; "
+                    "completing the options with distinct fallback activities.",
+                    clean_level,
+                    safe_requested,
+                )
+                fallback_previous_activities.extend(
+                    str(option["title"]) for option in valid_llm_options
+                )
         except Exception as err:
             logger.warning("LLM options generation error: %s. Using pedagogical fallback.", err)
 
@@ -326,7 +399,9 @@ class RAGLessonPlanGenerator:
                 total_periods=safe_periods,
                 student_count=student_count,
                 lesson_topic=lesson_topic,
-                previous_activities=previous_activities
+                previous_activities=fallback_previous_activities,
+                classroom_environment=classroom_environment,
+                accessible_resources=accessible_resources,
             )
         else:
             fallback = {
@@ -366,8 +441,22 @@ class RAGLessonPlanGenerator:
                 ]
             }
 
-        for opt in fallback["options"]:
+        combined_options = valid_llm_options + fallback["options"]
+        distinct_options: List[Dict[str, Any]] = []
+        seen_titles = set()
+        for option in combined_options:
+            title = str(option.get("title", "")).strip().casefold()
+            if not title or title in seen_titles:
+                continue
+            seen_titles.add(title)
+            distinct_options.append(option)
+            if len(distinct_options) == 3:
+                break
+
+        for index, opt in enumerate(distinct_options, start=1):
+            opt["id"] = f"option_{index}"
             opt["learning_outcomes_addressed"] = period_outcomes
+        fallback["options"] = distinct_options
         return fallback
 
     def generate_prompt(
@@ -506,6 +595,10 @@ class RAGLessonPlanGenerator:
             raise ValueError("Validation Failure: 'summary' section is missing.")
         if not plan.assessment_and_feedback_whole_lesson.strip():
             raise ValueError("Validation Failure: 'assessment_and_feedback_whole_lesson' criteria is missing.")
+        if not plan.post_activity.strip():
+            raise ValueError("Validation Failure: 'post_activity' five-minute assignment is missing.")
+        if plan.entrance_duration_minutes != 5 or plan.assignment_duration_minutes != 5:
+            raise ValueError("Validation Failure: introduction and assignment must each be 5 minutes.")
 
         return True
 
@@ -578,6 +671,9 @@ class RAGLessonPlanGenerator:
         current_period: int = 1,
         total_periods: int = 1,
         progression_context: str = "",
+        activity_options: Optional[List[Dict[str, Any]]] = None,
+        selected_activity_title: Optional[str] = None,
+        outcome_allocation: Optional[Dict[str, List[str]]] = None,
     ) -> LessonPlanSchemaDto:
         """
         Step 7 & 8: Single-Period 40-Minute Assembly with Deterministic Guardrails.
@@ -684,7 +780,22 @@ class RAGLessonPlanGenerator:
             )
 
         # 5. Local LLM Generation via Ollama
-        validated_plan = self.call_ollama_with_strict_schema(prompt)
+        try:
+            validated_plan = self.call_ollama_with_strict_schema(prompt)
+        except ValueError as first_validation_error:
+            logger.warning(
+                "Lesson plan output was invalid; retrying once with required topic, introduction, "
+                "assignment, and timing constraints: %s",
+                first_validation_error,
+            )
+            corrected_prompt = (
+                f"{prompt}\n\nCORRECTION REQUIRED: Return every required schema field. "
+                "Use the exact period-specific topic above. Include a concrete introduction with "
+                "teacher and student actions, and a relevant in-class five-minute assignment in "
+                "'post_activity'. Do not provide placeholders or external URLs. Development steps "
+                "must total exactly 30 minutes."
+            )
+            validated_plan = self.call_ollama_with_strict_schema(corrected_prompt)
 
         validated_plan.grade = grade_level
 
@@ -694,7 +805,9 @@ class RAGLessonPlanGenerator:
                 plan=validated_plan,
                 verbatim_outcomes=retrieved_outcomes or [],
                 requested_period=current_period,
-                total_periods=total_periods
+                total_periods=total_periods,
+                lesson_topic=lesson_topic,
+                selected_activity=effective_activity,
             )
         else:
             if balance_development_step_times is not None:
@@ -706,7 +819,21 @@ class RAGLessonPlanGenerator:
 
         # 7. Metadata Synchronization
         validated_plan.time_allocation = time_slot
-        validated_plan.lesson = f"{lesson_topic} (Period {current_period})" if total_periods > 1 else lesson_topic
+        validated_plan.lesson = lesson_topic
+        if format_retrieved_source_references is not None:
+            validated_plan.information_sources = format_retrieved_source_references(
+                dual_context.get("tig_guidelines", [])
+                + dual_context.get("textbook_paragraphs", [])
+            )
+        validated_plan.period_number = current_period
+        validated_plan.total_periods = total_periods
+        validated_plan.selected_activity = effective_activity
+        validated_plan.selected_activity_title = selected_activity_title
+        validated_plan.custom_teacher_activity = (
+            custom_teacher_activity if teacher_mode == "own_approach" else None
+        )
+        validated_plan.activity_options = activity_options or []
+        validated_plan.outcome_allocation = outcome_allocation or {}
 
         # 8. Domain Validation
         self.validate_generation_sequence(validated_plan)

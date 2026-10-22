@@ -12,7 +12,11 @@ interface ActivitySelectionStepProps {
   discoveredTopic: string;
   studentCount: number;
   periods: number;
+  currentPeriod: number;
+  completedPeriods: number;
   isLoading: boolean;
+  progressMessage?: string;
+  errorMessage?: string | null;
   onBack: () => void;
   onProceed: () => void;
 }
@@ -26,7 +30,11 @@ export default function ActivitySelectionStep({
   discoveredTopic,
   studentCount,
   periods,
+  currentPeriod,
+  completedPeriods,
   isLoading,
+  progressMessage,
+  errorMessage,
   onBack,
   onProceed,
 }: ActivitySelectionStepProps) {
@@ -39,16 +47,16 @@ export default function ActivitySelectionStep({
       {/* Header bar */}
       <div className="flex flex-wrap items-center justify-between border-b border-slate-100 pb-4 gap-2">
         <div>
-          <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200 uppercase tracking-wide">
-            Step 2 of 3
+          <span className="text-[11px] font-bold text-blue-700 bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-200 uppercase tracking-wide">
+            Period {currentPeriod} of {periods}
           </span>
           <h2 className="text-lg sm:text-xl font-extrabold text-slate-900 mt-1">
-            Choose Student-Centered Activity Strategy
+            Choose an Activity for Period {currentPeriod}
           </h2>
           <p className="text-xs text-slate-500 mt-0.5">
             Topic: <span className="font-semibold text-slate-700">{discoveredTopic}</span> |{" "}
             Class Size: <span className="font-semibold text-slate-700">{studentCount} Students</span> |{" "}
-            Duration: <span className="font-semibold text-slate-700">{periods} x 40m Periods</span>
+            Progress: <span className="font-semibold text-slate-700">{completedPeriods} of {periods} plans generated</span>
           </p>
         </div>
 
@@ -61,10 +69,28 @@ export default function ActivitySelectionStep({
         </button>
       </div>
 
+      {progressMessage && (
+        <div
+          role="status"
+          className="rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-sm font-semibold text-blue-900"
+        >
+          {progressMessage}
+        </div>
+      )}
+
+      {errorMessage && (
+        <div
+          role="alert"
+          className="rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-800"
+        >
+          {errorMessage}
+        </div>
+      )}
+
       {/* 3 AI Generated Interactive Cards */}
       <div>
         <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-3">
-          Recommended Pedagogical Strategies (Select One):
+          Period {currentPeriod} activity options (select one):
         </label>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
@@ -80,7 +106,7 @@ export default function ActivitySelectionStep({
                 }}
                 className={`relative cursor-pointer rounded-2xl p-5 border-2 transition-all flex flex-col justify-between select-none ${
                   isSelected
-                    ? "border-emerald-600 bg-emerald-50/40 shadow-md ring-2 ring-emerald-500/20"
+                    ? "border-blue-600 bg-blue-50/60 shadow-md ring-2 ring-blue-500/20"
                     : "border-slate-200 hover:border-slate-300 hover:bg-slate-50/50 bg-white"
                 }`}
               >
@@ -100,7 +126,7 @@ export default function ActivitySelectionStep({
                           setSelectedOptionId(opt.id);
                           setCustomStrategy("");
                         }}
-                        className="h-4 w-4 text-emerald-600 focus:ring-emerald-500 cursor-pointer"
+                        className="h-4 w-4 text-blue-600 focus:ring-blue-500 cursor-pointer"
                       />
                     </div>
                   </div>
@@ -112,6 +138,16 @@ export default function ActivitySelectionStep({
                   <p className="text-xs text-slate-600 leading-relaxed mb-4">
                     {opt.description}
                   </p>
+                  {opt.learning_outcomes_addressed && opt.learning_outcomes_addressed.length > 0 && (
+                    <div className="mb-4 rounded-lg border border-blue-100 bg-blue-50/70 p-2.5 text-[11px] text-slate-700">
+                      <strong className="text-blue-900">Period {currentPeriod} learning outcomes</strong>
+                      <ul className="mt-1.5 list-disc space-y-1 pl-4">
+                        {opt.learning_outcomes_addressed.map((outcome, index) => (
+                          <li key={index}>{outcome}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
 
                 {/* Bottom: Dynamic Logistics & 5m Creative Assessment Breakdown */}
@@ -130,8 +166,8 @@ export default function ActivitySelectionStep({
                     </div>
                   )}
 
-                  <div className="bg-emerald-50/80 p-2.5 rounded-lg border border-emerald-200 text-emerald-950">
-                    <strong className="text-emerald-900 block font-bold mb-0.5">
+                  <div className="bg-blue-50/80 p-2.5 rounded-lg border border-blue-200 text-blue-950">
+                    <strong className="text-blue-900 block font-bold mb-0.5">
                       ⚡ 5m Creative Assessment:
                     </strong>
                     <span className="italic leading-snug">
@@ -142,7 +178,7 @@ export default function ActivitySelectionStep({
 
                 {/* Selected Indicator Pill */}
                 {isSelected && (
-                  <span className="absolute -top-2.5 right-4 bg-emerald-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-xs">
+                  <span className="absolute -top-2.5 right-4 bg-blue-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-xs">
                     Selected
                   </span>
                 )}
@@ -162,13 +198,13 @@ export default function ActivitySelectionStep({
       </div>
 
       {/* Custom Strategy Textarea */}
-      <div className={`p-4 rounded-xl border-2 transition-all ${isCustomActive ? "border-emerald-600 bg-emerald-50/30" : "border-slate-200 bg-slate-50/40"}`}>
+      <div className={`p-4 rounded-xl border-2 transition-all ${isCustomActive ? "border-blue-600 bg-blue-50/50" : "border-slate-200 bg-white"}`}>
         <div className="flex items-center justify-between mb-1.5">
           <label className="text-xs font-bold text-slate-800 uppercase tracking-wide">
-            Custom Activity Strategy / Practical Idea (Overrides AI options above):
+            Custom Activity for Period {currentPeriod} (overrides the selected option):
           </label>
           {isCustomActive && (
-            <span className="text-[10px] font-extrabold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">
+            <span className="text-[10px] font-extrabold text-blue-700 bg-blue-100 px-2 py-0.5 rounded-full">
               Custom Active
             </span>
           )}
@@ -179,13 +215,13 @@ export default function ActivitySelectionStep({
           placeholder="e.g., Bring actual utility bills (water/electricity) to the classroom; divide 35 students into 7 household teams to verify concession rates, with a 2-line rhyming feedback at the end..."
           value={customStrategy}
           onChange={(e) => setCustomStrategy(e.target.value)}
-          className="w-full rounded-lg border border-slate-300 p-3 text-xs leading-relaxed focus:ring-2 focus:ring-emerald-500 focus:outline-none bg-white placeholder:text-slate-400"
+          className="w-full rounded-lg border border-slate-300 p-3 text-xs leading-relaxed focus:ring-2 focus:ring-blue-500 focus:outline-none bg-white placeholder:text-slate-400"
         />
 
         <p className="text-[11px] text-slate-500 mt-1.5">
           {isCustomActive
-            ? "✓ Your custom strategy will be prioritized during prompt construction."
-            : "Typing here will automatically switch the generator to use your custom pedagogical approach."}
+            ? "✓ This custom activity will be used for this period only."
+            : "A separate custom activity can be entered for each period."}
         </p>
       </div>
 
@@ -203,7 +239,7 @@ export default function ActivitySelectionStep({
           type="button"
           disabled={isLoading || !canProceed}
           onClick={onProceed}
-          className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs transition-all shadow-sm hover:shadow disabled:opacity-50 disabled:cursor-not-allowed"
+          className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs transition-all shadow-sm hover:shadow disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isLoading ? (
             <>
@@ -211,10 +247,12 @@ export default function ActivitySelectionStep({
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
               </svg>
-              Generating {periods} x 40m Sequential Plans...
+              {progressMessage || `Generating Period ${currentPeriod}...`}
             </>
           ) : (
-            `Generate Sequential Plans (${periods} Periods) →`
+            currentPeriod < periods
+              ? `Generate Period ${currentPeriod} & Continue →`
+              : `Generate Final Period & View Plans →`
           )}
         </button>
       </div>

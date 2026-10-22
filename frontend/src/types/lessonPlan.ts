@@ -7,13 +7,19 @@ export interface PedagogicalActivityOption {
   title: string;
   pedagogy_type: string;
   description: string;
+  student_action_summary?: string;
+  teacher_facilitation_summary?: string;
   student_grouping: string;
   required_materials: string[];
+  expected_student_output?: string;
   creative_assessment_preview: string;
+  low_resource_alternative?: string;
+  learning_outcomes_addressed?: string[];
 }
 
 export interface PedagogicalOptionsRequest {
   competency_level: string;
+  topic_query?: string;
   grade_level?: string;
   subject?: string;
   student_count?: number;
@@ -61,7 +67,12 @@ export interface LessonPlanSchemaDto {
   period_number?: number;
   total_periods?: number;
   selected_activity?: string | null;
+  selected_activity_title?: string | null;
+  custom_teacher_activity?: string | null;
+  activity_options?: PedagogicalActivityOption[];
   outcome_allocation?: Record<string, string[]>;
+  entrance_duration_minutes?: number;
+  assignment_duration_minutes?: number;
 }
 
 // Aliases for compatibility

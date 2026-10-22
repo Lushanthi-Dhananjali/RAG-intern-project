@@ -83,6 +83,7 @@ def build_single_period_assembly_prompt(
 
     strategy_directive = (
         f"CORE PEDAGOGICAL ACTIVITY DIRECTIVE:\n\"{chosen_strategy_description}\"\n"
+        "- This teacher-selected activity is authoritative for this period. Do not replace it with another activity; structure the lesson steps, student roles, materials, and assessment around it.\n"
         if chosen_strategy_description
         else "CORE PEDAGOGICAL ACTIVITY DIRECTIVE: Interactive student-centered collaborative investigation."
     )
@@ -94,19 +95,20 @@ Your task is to assemble a complete, single-period lesson plan for Period {curre
 STRICT 40-MINUTE LEARN KANDY STRUCTURAL LAWS:
 1. Total Duration: EXACTLY 40 minutes.
 2. The Entrance (time: exactly 5 minutes):
-   - Hook the students with a stimulus question, short story, or real-life civic dilemma.
-   - Link prior learning to Period {current_period}'s focus.
+   - State exactly what the teacher and students do; connect prior knowledge or everyday experience to this period's topic and allocated outcomes.
+   - Lead directly into the selected activity. Do not rely on unverified external links.
 3. Lesson Development Steps (time: sum MUST equal exactly 30 minutes across 2 or 3 steps):
    - Step 1 (Setup/Inquiry Launch: 7-8 mins): Teacher delivers prompts/cue cards; students inspect tasks.
    - Step 2 (Group Investigation & Production: 14-15 mins): Active teamwork executing roles without bystanders.
    - Step 3 (Presentation & Cross-Review: 7-8 mins): Spokespersons present; peer feedback.
 {step_assessment_rule}
-4. Summary & Whole Lesson Assessment (time: exactly 5 minutes):
-   - 2-minute summary consolidating key concepts.
-   - Include a generated 3-minute active assessment directly verifying the allocated outcomes; together with the summary this completes the 5-minute Assessment & Closure.
+4. Assignment & Closure (time: exactly 5 minutes total):
+   - Put a concrete, age-appropriate in-class assignment/concluding task in 'post_activity'. It must connect to this period's topic, allocated outcomes, and selected activity, and be achievable in five minutes.
+   - The summary and assessment/feedback are brief parts of this same five-minute phase, not additional time.
 5. Logistics ({student_count} Students):
    - Partition: {logistics.group_summary_label}.
    - Roles to embed: {roles_str}.
+   - Use only the available aids listed below, adapt to the stated classroom setting, and ensure every student can participate within the 30-minute development phase.
 
 Respond ONLY with valid JSON conforming to the LearnLessonPlanDto schema.<|eot_id|>
 <|start_header_id|>user<|end_header_id|>
@@ -115,6 +117,7 @@ LESSON METADATA:
 - Grade: {grade_level}
 - Competency Level: {competency_level}
 - Lesson Title: {lesson_topic} (Period {current_period} of {total_periods})
+- Use this period-specific curriculum topic; do not replace it with the broad competency title.
 - Duration: 40 Minutes
 - Classroom Setting: {classroom_environment}
 - Available Aids: {resources_formatted}

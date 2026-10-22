@@ -5,6 +5,7 @@ and guarantees verbatim NIE learning outcomes injection.
 """
 
 import logging
+import re
 from typing import List, Optional
 from app.schemas.lesson_plan_schema_dto import (
     LearnLessonPlanDto,
@@ -116,6 +117,8 @@ class TimingGuardrailEngine:
         verbatim_outcomes: List[str],
         requested_period: int = 1,
         total_periods: int = 1,
+        lesson_topic: str = "",
+        selected_activity: Optional[str] = None,
     ) -> LearnLessonPlanDto:
         """
         Enforces complete Step 8 guardrails:
@@ -138,17 +141,88 @@ class TimingGuardrailEngine:
         # 3. Time Allocation Formatting
         plan.time_allocation = f"40 Minutes (Period {requested_period} of {total_periods})"
 
-        # 4. Phase 1 & Phase 3 Sanitization
-        if not plan.the_entrance or len(plan.the_entrance.strip()) < 10:
-            plan.the_entrance = (
-                "Stimulate student interest through a relevant question or short scenario "
-                "connecting prior community observations to today's civic focus. (5 minutes)"
+        focus = next(
+            (outcome.strip().rstrip(".") for outcome in verbatim_outcomes if outcome.strip()),
+            lesson_topic.strip() or "the period topic",
+        )
+        activity_lines = (selected_activity or "").strip().splitlines()
+        activity = activity_lines[0] if activity_lines else ""
+        activity = re.sub(r"^Activity:\s*", "", activity, flags=re.IGNORECASE).strip()
+        activity = activity or "the selected student activity"
+        relevant_terms = {
+            word.casefold()
+            for word in re.findall(r"[A-Za-z]{4,}", focus)
+        }
+        unavailable_text = re.compile(
+            r"https?://|www\.|unknown|not available|n/?a\b|todo|placeholder",
+            re.IGNORECASE,
+        )
+
+        def needs_repair(text: Optional[str], phase: str) -> bool:
+            normalized = (text or "").strip()
+            if len(normalized) < 30 or unavailable_text.search(normalized):
+                return True
+            if phase == "introduction":
+                has_teacher = "teacher" in normalized.casefold()
+                has_students = any(term in normalized.casefold() for term in ("students", "learners"))
+                return not (has_teacher and has_students) or (
+                    bool(relevant_terms)
+                    and not any(term in normalized.casefold() for term in relevant_terms)
+                )
+            return (
+                any(
+                    phrase in normalized.casefold()
+                    for phrase in ("homework", "take-home", "at home", "next lesson", "outside class")
+                )
+                or not any(
+                    verb in normalized.casefold()
+                    for verb in (
+                        "write", "draw", "answer", "complete", "exit", "quiz", "identify",
+                        "explain", "state", "share", "prepare", "create", "record", "submit",
+                        "respond", "describe",
+                    )
+                )
+                or (
+                    bool(relevant_terms)
+                    and not any(term in normalized.casefold() for term in relevant_terms)
+                )
             )
 
-        if not plan.assessment_and_feedback_whole_lesson or len(plan.assessment_and_feedback_whole_lesson.strip()) < 10:
-            plan.assessment_and_feedback_whole_lesson = (
-                "Conduct a 5-minute formative assessment (rapid exit ticket or quick 3-question peer quiz) "
-                "evaluating the achievement of today's learning outcomes."
+        if needs_repair(plan.the_entrance, "introduction"):
+            plan.the_entrance = (
+                f"5-minute introduction: The teacher writes or reads “{focus}” and asks students "
+                "to name one example they have seen in everyday life. Students share brief responses; "
+                f"the teacher connects their examples to {activity} and explains how it will help "
+                "them explore this period's outcome."
             )
+        elif not re.search(r"\b5\s*[- ]?minutes?\b", plan.the_entrance, re.IGNORECASE):
+            plan.the_entrance = f"5-minute introduction: {plan.the_entrance.strip()}"
+
+        if needs_repair(plan.post_activity, "assignment"):
+            plan.post_activity = (
+                f"5-minute in-class assignment: Each student completes a short exit response explaining "
+                f"one finding about “{focus}” using evidence or an example from {activity}. "
+                "The teacher reviews responses for an accurate link to the period outcome."
+            )
+        elif not re.search(r"\b5\s*[- ]?minutes?\b", plan.post_activity, re.IGNORECASE):
+            plan.post_activity = f"5-minute in-class assignment: {plan.post_activity.strip()}"
+
+        if not plan.assessment_and_feedback_whole_lesson or len(plan.assessment_and_feedback_whole_lesson.strip()) < 10 or unavailable_text.search(plan.assessment_and_feedback_whole_lesson):
+            plan.assessment_and_feedback_whole_lesson = (
+                f"Use the student's five-minute assignment response to check understanding of “{focus}” "
+                "and give one concise correction or affirmation."
+            )
+
+        if not plan.summary or len(plan.summary.strip()) < 15 or unavailable_text.search(plan.summary):
+            plan.summary = (
+                f"Synthesize key student findings from {activity}, emphasizing the core principles "
+                f"of “{focus}” and clarifying any lingering misconceptions."
+            )
+
+        if plan.attachments:
+            plan.attachments = [
+                att.strip() for att in plan.attachments
+                if not unavailable_text.search(att) and len(att.strip()) >= 3
+            ]
 
         return plan

@@ -83,6 +83,9 @@ def list_generated_plans(
             time_alloc = str(content.get("time_allocation", ""))
             steps = content.get("lesson_development_steps", [])
             outcomes = content.get("unique_learning_outcome", [])
+            period_number = content.get("period_number")
+            total_periods = content.get("total_periods")
+            selected_activity_title = content.get("selected_activity_title")
 
             # Apply Grade Filter
             if grade and grade.strip() and grade.lower() != "all":
@@ -110,6 +113,9 @@ def list_generated_plans(
                 "grade": plan_grade,
                 "subject": plan_subject,
                 "competence_level": comp_level,
+                "period_number": period_number,
+                "total_periods": total_periods,
+                "selected_activity_title": selected_activity_title,
                 "competence": competence,
                 "lesson": lesson,
                 "time_allocation": time_alloc,
@@ -125,11 +131,12 @@ def list_generated_plans(
             logger.warning("Could not read or parse plan %s: %s", fname, exc)
             continue
 
-    # Sort plans: first by competence_level natural order, then by filename
+    # Sort plans by competency, then period number when present, then filename.
     def sort_key(item: Dict[str, Any]):
         comp = item.get("competence_level", "")
         parts = [int(p) if p.isdigit() else p for p in comp.split(".")]
-        return (parts, item.get("filename", ""))
+        period = item.get("period_number")
+        return (parts, period if isinstance(period, int) else 0, item.get("filename", ""))
 
     try:
         summaries.sort(key=sort_key)
@@ -224,7 +231,11 @@ def save_generated_plan(plan_data: Dict[str, Any], custom_filename: Optional[str
     else:
         grade = str(plan_data.get("grade", "Grade_8")).strip().replace(" ", "_")
         comp = str(plan_data.get("competence_level", "custom")).strip().replace(".", "_")
-        fname = f"{grade}_comp_{comp}.json"
+        period = plan_data.get("period_number")
+        if period is not None:
+            fname = f"{grade}_comp_{comp}_p{period}.json"
+        else:
+            fname = f"{grade}_comp_{comp}.json"
 
     filepath = _get_safe_filepath(fname)
     if not filepath:
@@ -244,26 +255,21 @@ def find_plan_by_competency(
 ) -> Optional[Dict[str, Any]]:
     """
     Finds a generated lesson plan matching the given competency level, grade, and subject.
+    If multiple period plans exist (e.g. p1, p2, p3, p4), sorts them in order,
+    returns Period 1 as the primary plan, and attaches all_period_plans.
     """
     clean_comp = competency_level.strip()
     if not clean_comp:
         return None
 
-    # Try direct filename match first e.g. Grade_8_comp_8_1_1.json
-    if grade:
-        grade_clean = grade.strip().replace(" ", "_")
-        comp_clean = clean_comp.replace(".", "_")
-        candidate_fname = f"{grade_clean}_comp_{comp_clean}.json"
-        plan = get_generated_plan(candidate_fname)
-        if plan:
-            return plan
-
-    # Fallback: scan all plans in generated_plans directory
     plans_dir = ensure_directory_exists()
     try:
         entries = os.listdir(plans_dir)
     except OSError:
         return None
+
+    matching_period_plans: List[Dict[str, Any]] = []
+    matching_unsuffixed_plans: List[Dict[str, Any]] = []
 
     for fname in entries:
         if not fname.lower().endswith(".json"):
@@ -278,10 +284,31 @@ def find_plan_by_competency(
         p_subj = str(p.get("subject", "")).strip()
 
         if p_comp.lower() == clean_comp.lower():
-            if grade and grade.strip().lower() not in p_grade.lower():
+            if grade and grade.strip().lower() != "all" and grade.strip().lower() != p_grade.lower():
                 continue
-            if subject and subject.strip().lower() not in p_subj.lower():
+            if subject and subject.strip().lower() != "all" and subject.strip().lower() != p_subj.lower():
                 continue
-            return plan_info
+
+            period_num = p.get("period_number")
+            if period_num is not None and isinstance(period_num, int):
+                matching_period_plans.append(plan_info)
+            else:
+                matching_unsuffixed_plans.append(plan_info)
+
+    if matching_period_plans:
+        # Sort period plans strictly by period number (1, 2, 3, 4...)
+        matching_period_plans.sort(key=lambda pi: pi["plan"].get("period_number", 0))
+        primary = matching_period_plans[0]
+        # Attach all period plans so frontend can view every period
+        primary["all_period_plans"] = [pi["plan"] for pi in matching_period_plans]
+        primary["period_count"] = len(matching_period_plans)
+        return primary
+
+    if matching_unsuffixed_plans:
+        matching_unsuffixed_plans.sort(key=lambda pi: pi.get("filename", ""))
+        primary = matching_unsuffixed_plans[0]
+        primary["all_period_plans"] = [pi["plan"] for pi in matching_unsuffixed_plans]
+        primary["period_count"] = len(matching_unsuffixed_plans)
+        return primary
 
     return None

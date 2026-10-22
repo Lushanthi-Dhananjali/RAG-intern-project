@@ -39,7 +39,12 @@ export interface LessonPlanDto {
   period_number?: number;
   total_periods?: number;
   selected_activity?: string | null;
+  selected_activity_title?: string | null;
   outcome_allocation?: Record<string, string[]>;
+  custom_teacher_activity?: string | null;
+  activity_options?: PedagogicalActivityOption[];
+  entrance_duration_minutes?: number;
+  assignment_duration_minutes?: number;
 }
 
 // Type aliases for seamless compatibility across UI components
@@ -110,7 +115,9 @@ export interface LessonPlanPayload {
   student_count?: number;
   teacher_mode?: 'suggested' | 'own_approach';
   selected_activity_option?: string;
+  selected_activity_title?: string;
   custom_teacher_activity?: string;
+  activity_options?: PedagogicalActivityOption[];
   classroom_environment?: string;
   accessible_resources?: string[];
   previous_period_activities?: string[];
@@ -130,7 +137,9 @@ export interface GeneratePlanPayload {
   studentCount?: number;
   teacherMode?: 'suggested' | 'own_approach';
   selectedActivityOption?: string;
+  selectedActivityTitle?: string;
   customTeacherActivity?: string;
+  activityOptions?: PedagogicalActivityOption[];
   classroomEnvironment?: string;
   accessibleResources?: string[];
   previousPeriodActivities?: string[];
@@ -140,6 +149,7 @@ export interface GeneratePlanPayload {
 
 export interface FetchOptionsPayload {
   competencyLevel: string;
+  topicQuery?: string;
   studentCount?: number;
   periods?: number;
   requestedPeriod?: number;
@@ -174,6 +184,9 @@ export interface GeneratedPlanSummary {
   grade: string;
   subject: string;
   competence_level: string;
+  period_number?: number;
+  total_periods?: number;
+  selected_activity_title?: string | null;
   competence: string;
   lesson: string;
   time_allocation: string;
@@ -192,6 +205,8 @@ export interface GeneratedPlanDetailResponse {
   created_at: string;
   file_size_bytes: number;
   plan: LessonPlanDto;
+  all_period_plans?: LessonPlanDto[];
+  period_count?: number;
 }
 
 export interface DeletePlanResponse {
@@ -241,6 +256,7 @@ export async function fetchPedagogicalOptions(
     requested_period: requestedPeriod,
     grade_level: params.gradeLevel || 'Grade 8',
     subject: params.subject || 'Civic Education',
+    topic_query: params.topicQuery || '',
     classroom_environment: params.classroomEnvironment || 'Standard Classroom',
     accessible_resources: params.accessibleResources || [],
     previous_period_activities: params.previousPeriodActivities || [],
@@ -293,7 +309,9 @@ export async function generateLessonPlan({
   studentCount = 35,
   teacherMode = 'suggested',
   selectedActivityOption,
+  selectedActivityTitle,
   customTeacherActivity,
+  activityOptions = [],
   classroomEnvironment = 'Standard Classroom',
   accessibleResources = [],
   previousPeriodActivities = [],
@@ -313,7 +331,9 @@ export async function generateLessonPlan({
     student_count: studentCount,
     teacher_mode: teacherMode,
     selected_activity_option: selectedActivityOption,
+    selected_activity_title: selectedActivityTitle,
     custom_teacher_activity: customTeacherActivity,
+    activity_options: activityOptions,
     classroom_environment: classroomEnvironment,
     accessible_resources: accessibleResources,
     previous_period_activities: previousPeriodActivities,

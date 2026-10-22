@@ -8,15 +8,18 @@ export default function Step2OptionsSelection() {
   const [loading, setLoading] = useState(false);
   const [customMode, setCustomMode] = useState(false);
   const [customText, setCustomText] = useState('');
+  const [generationError, setGenerationError] = useState<string | null>(null);
 
   const handleGenerate = async (selectedDesc?: string, isCustom = false, activityTitle?: string) => {
     setLoading(true);
     const chosenTitle = isCustom
       ? `Teacher approach: ${customText.trim()}`
       : (activityTitle || 'Selected Strategy');
+    setGenerationError(null);
     try {
       const plan = await generateSinglePeriodPlan({
         competencyLevel: store.competencyLevel,
+        topicQuery: store.topicQuery,
         periods: store.totalPeriods,
         requestedPeriod: store.currentPeriod,
         studentCount: store.studentCount,
@@ -24,7 +27,11 @@ export default function Step2OptionsSelection() {
         subject: store.subject,
         teacherMode: isCustom ? 'own_approach' : 'suggested',
         selectedActivityOption: selectedDesc,
+        selectedActivityTitle: isCustom
+          ? `Teacher approach: ${customText.trim()}`
+          : activityTitle,
         customTeacherActivity: isCustom ? customText : undefined,
+        activityOptions: store.currentOptions,
         classroomEnvironment: store.classroomEnvironment,
         accessibleResources: store.accessibleResources,
         previousPeriodActivities: store.priorActivityTitles(store.currentPeriod),
@@ -32,7 +39,7 @@ export default function Step2OptionsSelection() {
 
       store.setGeneratedPlan(store.currentPeriod, plan, chosenTitle);
     } catch (err: any) {
-      alert(`Generation failed: ${err.message}`);
+      setGenerationError(err.message || 'Generation failed. Your activity selection has been kept.');
     } finally {
       setLoading(false);
     }
@@ -63,6 +70,17 @@ export default function Step2OptionsSelection() {
           {customMode ? '← View activity options' : 'Use my own activity'}
         </button>
       </div>
+
+      {generationError && (
+        <div role="alert" className="rounded-lg border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-800">
+          {generationError}
+        </div>
+      )}
+      {loading && (
+        <div role="status" className="rounded-lg border border-blue-200 bg-blue-50 px-4 py-3 text-sm font-semibold text-blue-900">
+          Generating the Period {store.currentPeriod} plan from your selected activity. Your selections remain available.
+        </div>
+      )}
 
       {!customMode ? (
         <div>

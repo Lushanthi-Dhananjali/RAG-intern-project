@@ -67,10 +67,15 @@ export default function LessonPlanViewer({
     '—';
   const postActivity = plan.post_activity || (plan as any).postActivity || '—';
   const rawInformationSources = plan.information_sources || (plan as any).informationSources;
-  const informationSources = isCivicPlan && Array.isArray(rawInformationSources)
+  const informationSources = Array.isArray(rawInformationSources)
     ? rawInformationSources
-        .filter((source: unknown): source is string => typeof source === 'string' && /\.pdf$/i.test(source))
-        .map((source: string) => source.split(/[\\/]/).pop() || source)
+        .filter((source: unknown): source is string => typeof source === 'string' && source.trim().length > 0)
+        .map((source: string) => {
+          const match = source.match(/^(.*?)(\s+\((?:page|pages)\s+[^)]+\))$/i);
+          const sourceName = match ? match[1] : source;
+          const sourcePath = sourceName.split(/[\\/]/).pop() || sourceName;
+          return `${sourcePath}${match ? match[2] : ''}`;
+        })
     : rawInformationSources;
   const attachmentsList = plan.attachments || (plan as any).Attachments;
 
@@ -168,7 +173,10 @@ export default function LessonPlanViewer({
             }}
           >
             <span>📄</span>
-            <span>View Lesson Plan — Level {plan.competence_level}</span>
+            <span>
+              View Lesson Plan — Level {plan.competence_level}
+              {plan.period_number != null && ` • Period ${plan.period_number}${plan.total_periods ? ` of ${plan.total_periods}` : ''}`}
+            </span>
           </h3>
           <p style={{ fontSize: '12px', color: '#64748b', margin: '3px 0 0 0', fontWeight: '500' }}>
             {plan.grade} • {plan.subject} • {plan.time_allocation}
@@ -203,8 +211,76 @@ export default function LessonPlanViewer({
             }}
           >
             <strong>Selected period activity:</strong>
+            {plan.selected_activity_title && (
+              <p style={{ margin: '5px 0 0 0', fontWeight: 700 }}>
+                {plan.selected_activity_title}
+              </p>
+            )}
             <p style={{ margin: '5px 0 0 0', whiteSpace: 'pre-wrap' }}>{plan.selected_activity}</p>
           </div>
+        )}
+
+        {plan.custom_teacher_activity && (
+          <div
+            style={{
+              backgroundColor: '#f8fafc',
+              border: '1px solid #cbd5e1',
+              borderRadius: '10px',
+              padding: '10px 14px',
+              fontSize: '12px',
+              color: '#334155',
+            }}
+          >
+            <strong>Teacher-provided activity:</strong>
+            <p style={{ margin: '5px 0 0 0', whiteSpace: 'pre-wrap' }}>{plan.custom_teacher_activity}</p>
+          </div>
+        )}
+
+        {Array.isArray(plan.activity_options) && plan.activity_options.length > 0 && (
+          <section
+            style={{
+              backgroundColor: '#f8fafc',
+              border: '1px solid #cbd5e1',
+              borderRadius: '10px',
+              padding: '12px 14px',
+            }}
+          >
+            <strong style={{ color: '#1e3a8a', fontSize: '12px' }}>
+              Activity options for Period {plan.period_number || ''}
+            </strong>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '10px', marginTop: '10px' }}>
+              {plan.activity_options.map((option: any, index: number) => (
+                <div
+                  key={option.id || index}
+                  style={{
+                    backgroundColor: '#ffffff',
+                    border: '1px solid #bfdbfe',
+                    borderRadius: '8px',
+                    padding: '10px',
+                  }}
+                >
+                  <strong style={{ display: 'block', color: '#1e40af', fontSize: '12px' }}>
+                    {option.title || `Option ${index + 1}`}
+                  </strong>
+                  {option.description && (
+                    <p style={{ margin: '5px 0 0', color: '#334155', fontSize: '12px' }}>
+                      {option.description}
+                    </p>
+                  )}
+                  {option.student_action_summary && (
+                    <p style={{ margin: '5px 0 0', color: '#475569', fontSize: '11px' }}>
+                      <strong>Students:</strong> {option.student_action_summary}
+                    </p>
+                  )}
+                  {option.student_grouping && (
+                    <p style={{ margin: '5px 0 0', color: '#475569', fontSize: '11px' }}>
+                      <strong>Grouping:</strong> {option.student_grouping}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
         )}
 
         {/* Action Buttons in Header */}
@@ -725,7 +801,7 @@ export default function LessonPlanViewer({
 
       {/* 9. Retrieved curriculum document names and attachments */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
-        {(!isCivicPlan || (Array.isArray(informationSources) && informationSources.length > 0)) && <div>
+        <div>
           <label
             style={{
               display: 'block',
@@ -756,16 +832,14 @@ export default function LessonPlanViewer({
                 ))}
               </ul>
             ) : (
-              isCivicPlan ? null : (
-                <p style={{ margin: 0 }}>
-                  {typeof informationSources === 'string' && informationSources.trim()
-                    ? informationSources
-                    : 'NIE Teacher Guide & Syllabus Guidelines'}
-                </p>
-              )
+              <p style={{ margin: 0 }}>
+                {typeof informationSources === 'string' && informationSources.trim()
+                  ? informationSources
+                  : 'No source metadata was returned for this generated plan.'}
+              </p>
             )}
           </div>
-        </div>}
+        </div>
 
         <div>
           <label

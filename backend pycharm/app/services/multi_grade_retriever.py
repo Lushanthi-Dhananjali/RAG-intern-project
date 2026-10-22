@@ -19,6 +19,40 @@ logger = logging.getLogger("MultiGradeRetriever")
 CHROMA_PATH = os.path.join(PROJECT_ROOT, "chroma_db")
 COLLECTION_NAME = "curriculum_syllabus"
 
+
+def format_retrieved_source_references(retrieved_chunks: List[Dict[str, Any]]) -> List[str]:
+    """Formats only source identifiers and page metadata returned by retrieval."""
+    source_pages: Dict[str, List[str]] = {}
+    for item in retrieved_chunks:
+        metadata = item.get("metadata") or {}
+        source = metadata.get("source_file") or metadata.get("source") or item.get("source")
+        if not source:
+            continue
+
+        source = str(source).strip()
+        if source.casefold() in {"pdf", "unknown", "none"}:
+            continue
+        if not source.casefold().startswith(("http://", "https://")):
+            source = os.path.basename(source.replace("\\", "/")).strip()
+        if not source:
+            continue
+
+        page = metadata.get("page") or metadata.get("page_number")
+        page_ref = str(page).strip() if page is not None else ""
+        pages = source_pages.setdefault(source, [])
+        if page_ref and page_ref not in pages:
+            pages.append(page_ref)
+
+    formatted_sources = []
+    for source, pages in source_pages.items():
+        if pages:
+            page_label = "page" if len(pages) == 1 else "pages"
+            formatted_sources.append(f"{source} ({page_label} {', '.join(pages)})")
+        else:
+            formatted_sources.append(source)
+    return formatted_sources
+
+
 # Import Step 3 Multi-Period Outcome Allocator Engine
 try:
     from app.services.outcome_allocator import (

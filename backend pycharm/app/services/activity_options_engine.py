@@ -5,9 +5,10 @@ Rotates pedagogy tracks (Simulation, Field Inquiry, Collaborative Jigsaw) withou
 and integrates the Step 5 Grouping & Logistics Engine to eliminate passive bystanders.
 """
 
+import hashlib
 import json
-import re
 import logging
+import re
 from typing import List, Dict, Any, Optional
 
 from app.services.grouping_logistics_engine import (
@@ -113,17 +114,21 @@ Your mission is to generate exactly THREE (3) meaningfully distinct student-cent
 
 STRICT PEDAGOGICAL REQUIREMENTS:
 1. Target Outcomes: Address ONLY the outcomes allocated to Period {current_period}. Do not skip ahead or incorporate outcomes meant for other periods.
-2. Distinct Pedagogical Tracks:
-   - Option 1: Simulative / Roleplay / Mock Deliberation (if not already used).
-   - Option 2: Empirical Observation / Case Inquiry / Evidence Analysis.
-   - Option 3: Station Jigsaw / Problem-Solving Carousel / Civic Design Matrix.
-3. Student-Centred Facilitation: Students actively investigate, discuss, and create; the teacher acts strictly as a facilitator, timekeeper, and prompt guide.
-4. Step 5 Grouping & Logistics Mandate:
+2. Competency-Specific Activities: Design every option specifically for Competency Level {competency_level} and its target outcomes below. Do not generate a generic activity set that could be reused for another competency level.
+3. Cross-Level Uniqueness: For the same period, these activities must be different from activities generated for every other competency level. Do not reuse an activity's scenario, student task, teaching approach, or expected output across competency levels; make the differences substantive, not just wording changes.
+4. Period-Specific Design: Make each activity specific to Period {current_period}, its allocated outcomes, and the stated learning progression. Do not copy a period's activities to another period.
+5. Distinct Pedagogical Tracks: Use three different, outcome-relevant approaches chosen from methods such as simulation, roleplay, observation, case inquiry, evidence analysis, jigsaw, problem-solving, debate, creative design, or presentation. Select methods appropriate to these specific outcomes rather than assigning the same three methods to every competency level.
+6. Student-Centred Facilitation: Students actively investigate, discuss, and create; the teacher acts strictly as a facilitator, timekeeper, and prompt guide.
+7. Step 5 Grouping & Logistics Mandate:
    - Partition Scheme: {logistics.group_summary_label}.
    - Roles to Distribute: {role_names_str}.
    - Management Guidance: {logistics.pedagogy_adaptation}.
    - Zero bystanders: Every student must have one of the designated roles above.
-5. 5-Minute Assessment Preview: Include a creative, active 5-minute learning check (e.g., tableau, rhyme, exit slip, pass-the-parcel quiz).
+   - State how all {student_count} students participate, how the teacher supervises the groups, and how the activity fits the 30-minute development period.
+   - Use only these available resources: {resources_formatted}. Do not require unavailable equipment, printing, or off-site access; provide a feasible adaptation for {classroom_environment}.
+8. 5-Minute Assessment Preview: Include a creative, active 5-minute learning check (e.g., tableau, rhyme, exit slip, pass-the-parcel quiz).
+9. Period {current_period} outcomes for Competency Level {competency_level}:
+{outcomes_formatted}
 {anti_repetition_prompt}
 
 Respond ONLY with valid JSON matching this schema:
@@ -201,33 +206,73 @@ def generate_fallback_options(
     student_count: int,
     lesson_topic: str,
     previous_activities: Optional[List[str]] = None,
+    classroom_environment: str = "Standard Classroom",
+    accessible_resources: Optional[List[str]] = None,
 ) -> Dict[str, Any]:
     """
     Deterministic rule-based fallback that programmatically inspects
     previous_activities to ensure no fallback activity repeats earlier tracks
     and strictly applies Step 5 grouping logistics to every card.
     """
+    # Clean base topic to avoid repeated '(Period X)' suffixes
+    clean_topic = re.sub(r"\s*\(Period\s+\d+.*?\)", "", lesson_topic, flags=re.IGNORECASE).strip()
+    if not clean_topic:
+        clean_topic = f"Competency {competency_level}"
+
     # Step 5: Calculate exact grouping partition and roles
     logistics: GroupingLogisticsResult = GroupingLogisticsEngine.calculate_grouping(student_count)
     roles_str = ", ".join([r.role_name for r in logistics.roles_assigned])
     grouping_desc = f"{logistics.group_summary_label} with assigned roles: {roles_str}."
+    available_materials = (
+        list(accessible_resources)
+        if accessible_resources
+        else ["Blackboard", "Paper", "Student notebooks"]
+    )
 
     first_outcome = (
         period_outcomes[0]
         if period_outcomes
         else f"Key concepts of Competency {competency_level}"
     )
-    used_tracks = detect_used_pedagogical_tracks(previous_activities or [])
+
+    # Class-size specific participation and facilitation dynamics
+    if student_count < 15:
+        size_action_note = (
+            f"Small class focus ({student_count} students): Working in {logistics.total_groups} compact seminar teams "
+            f"({logistics.group_summary_label}), each student takes on active direct roles ({roles_str}) with continuous discussion."
+        )
+        size_facilitation_note = (
+            f"Facilitates an intensive seminar circle across {logistics.group_summary_label}, "
+            "directly engaging each student with outcome-focused probing questions."
+        )
+    elif student_count >= 46:
+        size_action_note = (
+            f"Large class management ({student_count} students): Organized into {logistics.total_groups} cluster teams "
+            f"({logistics.group_summary_label}), students collaborate in assigned role pairs ({roles_str}) "
+            "to ensure zero passive bystanders before consolidating team findings."
+        )
+        size_facilitation_note = (
+            f"Monitors {logistics.total_groups} cluster stations, duplicates materials across teams, "
+            "and coordinates timed spokesperson presentations to maintain momentum."
+        )
+    else:
+        size_action_note = (
+            f"Standard class layout ({student_count} students): Desks arranged into {logistics.total_groups} teams "
+            f"({logistics.group_summary_label}), with students rotating responsibilities ({roles_str}) without bystanders."
+        )
+        size_facilitation_note = (
+            f"Circulates across {logistics.total_groups} teams, facilitating role execution and formatively checking progress."
+        )
 
     options_pool = [
         {
             "id": "opt_sim",
             "track": "Simulative & Roleplay",
-            "title": f"Participatory Council Hearing: {lesson_topic}",
+            "title": f"Participatory Council Hearing: {clean_topic}",
             "pedagogy_type": "Simulation & Roleplay",
-            "description": f"Students conduct a simulated community forum addressing '{first_outcome}'. Teams act as ward citizens, community elders, and public officers to present and debate solutions.",
-            "student_action_summary": "Draft 2-minute citizen statements, propose municipal priorities, and vote on a community resolution.",
-            "teacher_facilitation_summary": "Acts as meeting speaker, moderates speaking turns, and enforces time limits.",
+            "description": f"Students conduct a simulated community forum addressing '{first_outcome}'. Teams take civic roles, debate feasible responses, and agree on a resolution using oral discussion or the available board and notebooks.",
+            "student_action_summary": f"Prepare brief citizen statements, propose priorities, and vote on a community resolution. {size_action_note}",
+            "teacher_facilitation_summary": f"{size_facilitation_note} Introduces the scenario, moderates turns, and enforces time limits.",
             "student_grouping": grouping_desc,
             "required_materials": ["Role cue cards", "Blackboard for recording resolutions", "Notebooks"],
             "approximate_duration_minutes": 30,
@@ -238,11 +283,11 @@ def generate_fallback_options(
         {
             "id": "opt_inq",
             "track": "Empirical & Investigative Inquiry",
-            "title": f"Evidence-Based Case Dilemma Audit: {lesson_topic}",
+            "title": f"Evidence-Based Case Dilemma Audit: {clean_topic}",
             "pedagogy_type": "Case Inquiry / Evidence Analysis",
-            "description": f"Teams analyze real-world civic dilemma cards reflecting '{first_outcome}'. They investigate institutional duties versus citizen responsibilities.",
-            "student_action_summary": "Examine case scenarios, highlight legal/civic duties, and compile evidence on a grievance matrix.",
-            "teacher_facilitation_summary": "Provides scaffolding questions to guide student reasoning from facts to solutions.",
+            "description": f"Teams analyze a teacher-presented real-world civic dilemma reflecting '{first_outcome}'. They investigate institutional duties versus citizen responsibilities.",
+            "student_action_summary": f"Discuss the scenario, identify civic duties, and record or report supporting evidence. {size_action_note}",
+            "teacher_facilitation_summary": f"{size_facilitation_note} Provides scaffolding questions to guide student reasoning from facts to solutions.",
             "student_grouping": grouping_desc,
             "required_materials": ["Dilemma scenario sheets", "Observation charts"],
             "approximate_duration_minutes": 30,
@@ -253,11 +298,11 @@ def generate_fallback_options(
         {
             "id": "opt_jig",
             "track": "Collaborative Design & Problem-Solving",
-            "title": f"Thematic Station Jigsaw & Infographic Wall: {lesson_topic}",
+            "title": f"Thematic Station Jigsaw & Infographic Wall: {clean_topic}",
             "pedagogy_type": "Station Jigsaw / Collaborative Design",
-            "description": f"Students rotate through learning stations exploring sub-themes of '{first_outcome}'. Home groups reassemble to create a synthesized infographic.",
-            "student_action_summary": "Master station cards, return to home groups to teach peers, and co-design a poster.",
-            "teacher_facilitation_summary": "Manages station rotation buzzer (7 mins/station) and formatively checks peer teaching.",
+            "description": f"Students explore teacher-designated board or discussion stations about '{first_outcome}'. Home groups reassemble to teach peers and synthesize key ideas.",
+            "student_action_summary": f"Explore station prompts, return to home groups to teach peers, and co-create a summary. {size_action_note}",
+            "teacher_facilitation_summary": f"{size_facilitation_note} Manages station rotation with clear time cues and formatively checks peer teaching.",
             "student_grouping": grouping_desc,
             "required_materials": ["Chart paper / Blackboard sections", "Color chalk/pens"],
             "approximate_duration_minutes": 30,
@@ -268,11 +313,11 @@ def generate_fallback_options(
         {
             "id": "opt_walk",
             "track": "Empirical & Investigative Inquiry",
-            "title": f"School-Ground Field Audit & System Walk: {lesson_topic}",
+            "title": f"School-Ground Field Audit & System Walk: {clean_topic}",
             "pedagogy_type": "Field Investigation / School Walk",
-            "description": f"Students conduct a structured 15-minute observation walk around the school grounds to observe administrative governance systems related to '{first_outcome}'.",
-            "student_action_summary": "Record observations on clipboard sheets, identify system gaps, and present recommendations.",
-            "teacher_facilitation_summary": "Supervises perimeter safety, directs student attention to institutional signage, and facilitates debriefing.",
+            "description": f"Students conduct a structured observation of an accessible school area or classroom example to examine systems related to '{first_outcome}'.",
+            "student_action_summary": f"Record or verbally report observations, identify system gaps, and present recommendations. {size_action_note}",
+            "teacher_facilitation_summary": f"{size_facilitation_note} Supervises movement, directs attention to evidence, and facilitates debriefing.",
             "student_grouping": grouping_desc,
             "required_materials": ["Clipboards or notebooks", "Audit checklist"],
             "approximate_duration_minutes": 30,
@@ -287,19 +332,19 @@ def generate_fallback_options(
         if "simulative" in track_name.lower():
             track = "Simulative & Roleplay"
             pedagogy_type = "Simulation / Roleplay"
-            task = "Students take civic roles, respond to a shared scenario, and agree on a reasoned decision."
+            task = f"Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. {size_action_note}"
             output = "A short role-based civic decision and its reasons."
             assessment = "Students state one role responsibility and explain how it supported the decision."
         elif "empirical" in track_name.lower():
             track = "Empirical & Investigative Inquiry"
             pedagogy_type = "Observation / Evidence Inquiry"
-            task = "Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings."
+            task = f"Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. {size_action_note}"
             output = "An evidence record with one supported conclusion."
             assessment = "A paired evidence check: name one observation and the outcome it supports."
         else:
             track = "Collaborative Design & Problem-Solving"
             pedagogy_type = "Collaborative Design"
-            task = "Students negotiate a solution, create a shared civic artifact, and review another group's proposal."
+            task = f"Students negotiate a solution, create a shared civic artifact, and review another group's proposal. {size_action_note}"
             output = "A group civic proposal, diagram, or public information message."
             assessment = "Groups give one-sentence feedback connecting a peer proposal to the outcome."
 
@@ -309,11 +354,11 @@ def generate_fallback_options(
             options_pool.append({
                 "id": f"fallback_{len(options_pool) + 1}",
                 "track": track,
-                "title": f"{method_name}: {lesson_topic}",
+                "title": f"{method_name}: {clean_topic}",
                 "pedagogy_type": pedagogy_type,
-                "description": f"Students use {method_name.lower()} to work with '{first_outcome}'. {task}",
+                "description": f"Students use {method_name.lower()} to explore '{first_outcome}'. {task}",
                 "student_action_summary": task,
-                "teacher_facilitation_summary": "Frames the task around the assigned outcome, prompts evidence-based reasoning, and facilitates participation.",
+                "teacher_facilitation_summary": f"{size_facilitation_note} Frames the task around '{first_outcome}' and monitors progress.",
                 "student_grouping": grouping_desc,
                 "required_materials": ["Student notebooks", "Blackboard or available paper"],
                 "approximate_duration_minutes": 30,
@@ -322,30 +367,95 @@ def generate_fallback_options(
                 "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable.",
             })
 
-    # Exclude previously selected task structures, then rotate the remaining pedagogies.
-    selected = [
-        option for option in options_pool
-        if option["title"].split(":")[0].lower() not in existing_titles
-    ][:3]
+    # Vary fallback activity sets by the full competency, period, and allocated
+    # outcomes; using only the final competency digit causes unrelated levels to collide.
+    seed = "|".join(
+        [competency_level.strip(), str(current_period), *period_outcomes]
+    )
+    rotated_pool = sorted(
+        options_pool,
+        key=lambda option: hashlib.sha256(
+            f"{seed}|{option['id']}".encode("utf-8")
+        ).digest(),
+    )
+
+    # Exclude previously selected task structures and titles
+    selected = []
+    for option in rotated_pool:
+        opt_base = option["title"].split(":")[0].strip().lower()
+        if opt_base not in existing_titles and option["title"].lower() not in existing_titles:
+            selected.append(option)
+        if len(selected) == 3:
+            break
 
     if len(selected) < 3:
         selected_ids = {option["id"] for option in selected}
-        selected.extend(
-            option for option in options_pool
-            if option["id"] not in selected_ids
-            and option not in selected
-        )
-        selected = selected[:3]
+        for option in rotated_pool:
+            if option["id"] not in selected_ids and option not in selected:
+                selected.append(option)
+            if len(selected) == 3:
+                break
 
-    # Re-index IDs to option_1, option_2, option_3
+    for option in selected:
+        if (
+            (
+                option["id"] == "opt_walk"
+                or any(token in option["title"].casefold() for token in ("school-ground walk", "field audit"))
+            )
+            and "ground" not in classroom_environment.casefold()
+            and "outdoor" not in classroom_environment.casefold()
+        ):
+            outcome_verb = first_outcome.casefold()
+            if "identif" in outcome_verb:
+                activity_focus = "Civic Evidence Classification"
+                task = "classify teacher-presented examples, justify the categories, and check another group's reasoning"
+                output = "A classified set of civic examples with brief justifications."
+            elif "explain" in outcome_verb:
+                activity_focus = "Civic Cause-and-Effect Mapping"
+                task = "map how the presented civic examples connect, explain those relationships, and review a peer map"
+                output = "A cause-and-effect map with student explanations."
+            elif "investigat" in outcome_verb:
+                activity_focus = "Civic Source Investigation"
+                task = "compare teacher-presented evidence, record findings, and support a conclusion with evidence"
+                output = "An evidence-based conclusion with supporting observations."
+            elif "present" in outcome_verb or "appreciat" in outcome_verb:
+                activity_focus = "Civic Recommendation Forum"
+                task = "prepare and present a reasoned viewpoint, listen to peer responses, and refine a recommendation"
+                output = "A supported viewpoint and refined recommendation."
+            else:
+                activity_focus = "Civic Systems Analysis"
+                task = "analyze a teacher-presented civic example, identify its key features, and agree on a supported conclusion"
+                output = "A group analysis with a supported conclusion."
+            option["title"] = f"Competency {competency_level} {activity_focus}: {clean_topic}"
+            option["description"] = (
+                f"Students work with a teacher-presented classroom example about '{first_outcome}' "
+                f"to {task}, without leaving the classroom."
+            )
+            option["student_action_summary"] = f"{task.capitalize()}. {size_action_note}"
+            option["student_grouping"] = grouping_desc
+            option["expected_student_output"] = output
+            option["creative_assessment_preview"] = (
+                f"Each group explains one part of its {activity_focus.casefold()} and links it to the outcome."
+            )
+            option["low_resource_alternative"] = (
+                "Use a spoken teacher prompt and oral group responses if writing materials are unavailable."
+            )
+        option["required_materials"] = available_materials
+        option["teacher_facilitation_summary"] = (
+            f"Organizes all {student_count} students using {grouping_desc} "
+            f"and monitors progress with outcome-focused prompts and time checks. {size_facilitation_note}"
+        )
+
+    # Re-index IDs to option_1, option_2, option_3 and bind outcomes
     final_options = []
     for idx, opt in enumerate(selected, 1):
         clean_opt = {k: v for k, v in opt.items() if k != "track"}
         clean_opt["id"] = f"option_{idx}"
+        clean_opt["learning_outcomes_addressed"] = period_outcomes
         final_options.append(clean_opt)
 
     return {
-        "topic": f"{lesson_topic} (Period {current_period})",
+        "topic": f"{clean_topic} (Period {current_period} of {total_periods})" if total_periods > 1 else clean_topic,
         "period": current_period,
         "options": final_options,
     }

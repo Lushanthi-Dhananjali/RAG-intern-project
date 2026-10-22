@@ -227,14 +227,7 @@ Cooperative Student-Led Investigation with hands-on task cards and structured pe
             else "string (Creative 5-minute active check—e.g. 2-line rhyming verse reciting core duties, rapid sketch review, freeze frame, or pass-the-parcel quiz)"
         ),
         "post_activity": "string (Follow-up inquiry, personal reflection, or observation to bring to the next period)",
-        "information_sources": (
-            []
-            if is_civic_education
-            else [
-                "National Institute of Education (NIE) Teacher Instructional Guide",
-                f"{grade_clean} Pupil's Textbook",
-            ]
-        ),
+        "information_sources": [],
         "attachments": [
             "string (Concrete title of the activity sheet, roleplay cue cards, or observation checklist used)"
         ],
@@ -285,7 +278,8 @@ Cooperative Student-Led Investigation with hands-on task cards and structured pe
    - TOTAL PERIOD DURATION: 5m (Entrance) + 30m (Development) + 5m ({"Summary & Assessment Closure" if is_civic_education else "Assessment"}) = 40 MINUTES.
 7. CLASS ADAPTATION: Explicitly detail group sizing and tasks tailored for {student_count} students.
 8. Return ONLY a single valid JSON object. No Markdown code fences, no conversational preambles or notes.
-{"9. For Civic Education, do not include assessment_and_feedback inside development steps; the backend fills information_sources with retrieved document filenames." if is_civic_education else ""}
+9. Do not invent information_sources; the backend fills this field only from retrieved source metadata.
+{"For Civic Education, do not include assessment_and_feedback inside development steps." if is_civic_education else ""}
 {"10. For Civic Education, write the Entrance introduction and final Assessment & Closure from the supplied curriculum context and allocated outcomes. Return content only, never URLs or links." if is_civic_education else ""}
 
 OUTPUT SCHEMA:

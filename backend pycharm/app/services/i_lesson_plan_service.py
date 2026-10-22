@@ -92,6 +92,14 @@ class LessonPlanGenerateRequest(BaseModel):
         default=None,
         description="Text description of the chosen AI activity option"
     )
+    selected_activity_title: Optional[str] = Field(
+        default=None,
+        description="Title of the activity selected for this individual period"
+    )
+    activity_options: List[Dict[str, Any]] = Field(
+        default_factory=list,
+        description="The three activity options shown for this period"
+    )
     custom_teacher_activity: Optional[str] = Field(
         default=None,
         description="Custom activity entered manually by the teacher overriding AI options"
@@ -196,7 +204,8 @@ class ILessonPlanMlService(ABC):
         subject: str = "Civic Education",
         classroom_environment: str = "Standard Classroom",
         accessible_resources: Optional[List[str]] = None,
-        previous_period_activities: Optional[List[str]] = None
+        previous_period_activities: Optional[List[str]] = None,
+        topic_query: str = ""
     ) -> Dict[str, Any]:
         """Discovers 3 meaningfully distinct student-centered activity options."""
         pass

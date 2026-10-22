@@ -42,14 +42,15 @@ The teacher has provided their OWN custom pedagogical concept (Mode B).
 Your job is NOT to replace their idea, but to scaffold it cleanly into the official 40-minute LEARN Kandy Practice Teaching Framework.
 
 PEDAGOGICAL PACING MANDATE (Total: 40 Minutes):
-1. The Entrance (5 mins): Hook the students, link prior knowledge, and introduce the teacher's activity focus.
+1. The Entrance (exactly 5 mins): State what the teacher and students do; connect prior knowledge or everyday experience to this period's topic and the teacher's activity. Do not depend on unverified external links.
 2. Lesson Development Steps (30 mins across 2 or 3 structured steps):
    - Fully integrate the teacher's custom idea: "{teacher_custom_activity}".
    - Step 1: Orientation & Group Task Setup (5-7 mins).
    - Step 2: Active Student Collaboration / Production (15-18 mins) using the allocated group structure.
    - Step 3: Synthesis, Plenary Sharing & Cross-Review (7-10 mins).
-3. Assessment & Closure (5 mins): Write a concise summary and a separate, generated active assessment; together they fit the 5-minute closure and directly assess the verbatim outcomes.
-4. Align the Entrance and Assessment & Closure with the supplied competency outcomes and the teacher's custom activity. Generate content, not URLs or links.
+3. Assignment & Closure (exactly 5 mins total): Put a specific, age-appropriate in-class assignment/concluding task in 'post_activity'. It must connect to this period's topic, allocated outcome, and custom activity, and be achievable in five minutes. The summary and assessment feedback are brief parts of this same five-minute phase, not extra time.
+4. Align the Entrance and Assignment & Closure with the supplied competency outcomes and the teacher's custom activity. Generate usable classroom content, never placeholders or URLs.
+5. The 'the_entrance' field must describe both teacher and student actions. The 'post_activity' field must describe the in-class five-minute task, not take-home homework.
 
 CLASSROOM LOGISTICS & ROLES ({student_count} Students):
 - Partition: {logistics.group_summary_label}.

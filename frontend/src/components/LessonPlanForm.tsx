@@ -11,12 +11,20 @@ interface LessonPlanFormProps {
     durationMinutes: number;
     timeSlot: string;
   }) => void;
+  onViewPlan?: (formData: {
+    competencyLevel: string;
+    gradeLevel: string;
+    subject: string;
+  }) => void;
   isLoading: boolean;
+  isViewing?: boolean;
 }
 
 export default function LessonPlanForm({
   onSubmit,
+  onViewPlan,
   isLoading,
+  isViewing = false,
 }: LessonPlanFormProps) {
   const [subject, setSubject] = useState<string>('Civic Education');
   const [gradeLevel, setGradeLevel] = useState<string>('Grade 8');
@@ -234,40 +242,83 @@ export default function LessonPlanForm({
         </span>
       </div>
 
-      {/* 4. Generate Submit Button (Only Generate Option) */}
-      <button
-        type="submit"
-        disabled={isLoading || !competencyLevel.trim()}
-        style={{
-          width: '100%',
-          marginTop: '6px',
-          padding: '12px 16px',
-          borderRadius: '10px',
-          backgroundColor: isLoading || !competencyLevel.trim() ? '#94a3b8' : '#4f46e5',
-          color: '#ffffff',
-          fontWeight: '700',
-          fontSize: '14px',
-          border: 'none',
-          cursor: isLoading || !competencyLevel.trim() ? 'not-allowed' : 'pointer',
-          transition: 'background-color 0.2s ease',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '8px',
-        }}
-      >
-        {isLoading ? (
-          <>
-            <span className="animate-spin inline-block">⏳</span>
-            <span>Generating Lesson Plan...</span>
-          </>
-        ) : (
-          <>
-            <span>✨</span>
-            <span>Generate {subject} Lesson Plan ({competencyLevel || '...'})</span>
-          </>
+      {/* 4. Action Buttons (Generate + View Saved Plan) */}
+      <div style={{ display: 'grid', gridTemplateColumns: onViewPlan ? '1fr auto' : '1fr', gap: '10px', marginTop: '6px' }}>
+        <button
+          type="submit"
+          disabled={isLoading || isViewing || !competencyLevel.trim()}
+          style={{
+            padding: '12px 16px',
+            borderRadius: '10px',
+            backgroundColor: isLoading || isViewing || !competencyLevel.trim() ? '#94a3b8' : '#4f46e5',
+            color: '#ffffff',
+            fontWeight: '700',
+            fontSize: '14px',
+            border: 'none',
+            cursor: isLoading || isViewing || !competencyLevel.trim() ? 'not-allowed' : 'pointer',
+            transition: 'background-color 0.2s ease',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '8px',
+          }}
+        >
+          {isLoading ? (
+            <>
+              <span className="animate-spin inline-block">⏳</span>
+              <span>Generating Lesson Plan...</span>
+            </>
+          ) : (
+            <>
+              <span>✨</span>
+              <span>Generate {subject} Lesson Plan ({competencyLevel || '...'})</span>
+            </>
+          )}
+        </button>
+
+        {onViewPlan && (
+          <button
+            type="button"
+            onClick={() =>
+              onViewPlan({
+                competencyLevel: competencyLevel.trim(),
+                gradeLevel,
+                subject,
+              })
+            }
+            disabled={isLoading || isViewing || !competencyLevel.trim()}
+            style={{
+              padding: '12px 18px',
+              borderRadius: '10px',
+              backgroundColor: isViewing ? '#e0e7ff' : '#f8fafc',
+              color: isViewing ? '#4338ca' : '#334155',
+              fontWeight: '700',
+              fontSize: '13px',
+              border: '1.5px solid #cbd5e1',
+              cursor: isLoading || isViewing || !competencyLevel.trim() ? 'not-allowed' : 'pointer',
+              transition: 'all 0.2s ease',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '6px',
+              whiteSpace: 'nowrap',
+            }}
+            title="View saved period plans directly for this competency level"
+          >
+            {isViewing ? (
+              <>
+                <span className="animate-spin inline-block">🔄</span>
+                <span>Loading...</span>
+              </>
+            ) : (
+              <>
+                <span>👁️</span>
+                <span>View Saved</span>
+              </>
+            )}
+          </button>
         )}
-      </button>
+      </div>
     </form>
   );
 }

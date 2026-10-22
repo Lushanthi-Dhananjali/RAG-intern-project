@@ -8,17 +8,17 @@ interface Props {
 }
 
 export default function LessonPlanDisplay({ data }: Props) {
-  const [plan, setPlan] = useState<LessonPlanSchema>(data.lesson_plan);
+  const [plan, setPlan] = useState<any>(data.lesson_plan);
 
-  const handleTextChange = (field: keyof LessonPlanSchema, value: string) => {
-    setPlan((prev) => ({ ...prev, [field]: value }));
+  const handleTextChange = (field: string, value: string) => {
+    setPlan((prev: any) => ({ ...prev, [field]: value }));
   };
 
   return (
     <div className="space-y-6">
       {/* Metrics Banner */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {data.fact_check_report && (
+        {data.fact_check_report && data.fact_check_report.grounding_score != null && (
           <div className={`p-4 rounded-xl border ${data.fact_check_report.passed ? 'bg-green-50 border-green-200 text-green-800' : 'bg-amber-50 border-amber-200 text-amber-800'}`}>
             <h4 className="font-semibold text-sm">Grounding Score (Fact Check)</h4>
             <p className="text-2xl font-bold mt-1">
@@ -27,7 +27,7 @@ export default function LessonPlanDisplay({ data }: Props) {
           </div>
         )}
 
-        {data.alignment_report && (
+        {data.alignment_report && data.alignment_report.overall_alignment_score != null && (
           <div className={`p-4 rounded-xl border ${data.alignment_report.passed_alignment_guardrail ? 'bg-blue-50 border-blue-200 text-blue-800' : 'bg-red-50 border-red-200 text-red-800'}`}>
             <h4 className="font-semibold text-sm">Pedagogical Alignment</h4>
             <p className="text-2xl font-bold mt-1">
@@ -71,7 +71,7 @@ export default function LessonPlanDisplay({ data }: Props) {
             2. Learning Outcomes
           </h3>
           <ul className="space-y-2">
-            {plan.learning_outcomes.map((outcome) => (
+            {plan.learning_outcomes?.map((outcome: any) => (
               <li key={outcome.id} className="flex items-start gap-3 p-2 bg-blue-50/50 rounded-lg">
                 <span className="font-bold text-blue-600">#{outcome.id}</span>
                 <div className="flex-1">
@@ -93,7 +93,7 @@ export default function LessonPlanDisplay({ data }: Props) {
             3. Materials & Resources
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {plan.materials.map((mat, idx) => (
+            {plan.materials?.map((mat: any, idx: number) => (
               <div key={idx} className="p-3 border rounded-lg flex justify-between items-center bg-gray-50">
                 <div>
                   <p className="font-semibold text-sm text-gray-800">{mat.item_name}</p>
@@ -113,7 +113,7 @@ export default function LessonPlanDisplay({ data }: Props) {
             4. Sequential Procedures
           </h3>
           <div className="space-y-3">
-            {plan.procedures.map((step) => (
+            {plan.procedures?.map((step: any) => (
               <div key={step.step_number} className="border border-gray-200 rounded-lg p-4 bg-white shadow-sm">
                 <div className="flex justify-between items-center mb-2">
                   <span className="font-bold text-blue-700 text-sm">

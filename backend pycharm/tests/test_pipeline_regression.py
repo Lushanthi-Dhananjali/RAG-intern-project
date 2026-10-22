@@ -73,6 +73,10 @@ def get_mock_learn_plan(subject: str = "Civic Education", period: int = 1, total
 # 1. SCIENCE REGRESSION TESTS (4 CASES)
 # =====================================================================
 
+def setup_embedder(mock_embedder):
+    mock_embedder.return_value.encode.return_value.tolist.return_value = [0.1] * 384
+
+
 @pytest.mark.parametrize("periods,expected_min", [(1, 40), (2, 80), (3, 120), (4, 160)])
 @patch("app.services.rag_generator.RAGLessonPlanGenerator.generate_lesson_plan")
 @patch("app.services.multi_grade_retriever.SentenceTransformer")
@@ -81,6 +85,7 @@ def test_science_legacy_pipeline_unaffected(mock_embedder, mock_gen, periods: in
     Verifies Science subject routes through the legacy pipeline
     without period-splitting or Civic Education constraints.
     """
+    setup_embedder(mock_embedder)
     mock_gen.return_value = get_mock_learn_plan(subject="Science", period=1, total_periods=periods)
 
     payload = {
@@ -105,13 +110,30 @@ def test_science_legacy_pipeline_unaffected(mock_embedder, mock_gen, periods: in
 # =====================================================================
 
 @pytest.mark.parametrize("periods,req_period", [(1, 1), (2, 2), (3, 2), (4, 3)])
+@patch("app.services.rag_generator.RAGLessonPlanGenerator.generate_activity_options")
 @patch("app.services.rag_generator.RAGLessonPlanGenerator.generate_lesson_plan")
 @patch("app.services.multi_grade_retriever.SentenceTransformer")
-def test_civic_mode_a_timing_and_outcomes(mock_embedder, mock_gen, periods: int, req_period: int):
+def test_civic_mode_a_timing_and_outcomes(mock_embedder, mock_gen, mock_options, periods: int, req_period: int):
     """
     Verifies Civic Education generates single 40-minute period plans
     adhering to 5m (Entrance) + 30m (Development) + 5m (Assessment).
     """
+    setup_embedder(mock_embedder)
+    mock_options.return_value = {
+        "topic": "Democratic Governance",
+        "period": req_period,
+        "options": [
+            {
+                "id": f"option_{i}",
+                "title": f"Activity Option {i}",
+                "pedagogy_type": "Simulation",
+                "description": "Engage in civic activity",
+                "student_grouping": "Teams of 5",
+                "creative_assessment_preview": "Exit quiz"
+            }
+            for i in range(1, 4)
+        ]
+    }
     mock_gen.return_value = get_mock_learn_plan(subject="Civic Education", period=req_period, total_periods=periods)
 
     payload = {
@@ -159,6 +181,7 @@ def test_civic_mode_b_custom_strategy_scaffolding(mock_embedder, mock_gen, perio
     Verifies that teacher's custom input is scaffolded into the
     LEARN 5m-30m-5m format.
     """
+    setup_embedder(mock_embedder)
     mock_gen.return_value = get_mock_learn_plan(subject="Civic Education", period=req_period, total_periods=periods)
 
     custom_idea = "Watch a 3-minute video on Pradeshiya Sabha meetings, then conduct group debate."
@@ -191,6 +214,7 @@ def test_civic_mode_b_custom_strategy_scaffolding(mock_embedder, mock_gen, perio
 @patch("app.services.multi_grade_retriever.SentenceTransformer")
 def test_period_clamping_boundary(mock_embedder, mock_gen):
     """Verifies that period inputs outside [1, 4] are clamped correctly."""
+    setup_embedder(mock_embedder)
     mock_gen.return_value = get_mock_learn_plan(subject="Civic Education", period=4, total_periods=4)
 
     payload = {
@@ -250,6 +274,7 @@ def test_student_grouping_odd_count_logistics():
 @patch("app.services.multi_grade_retriever.SentenceTransformer")
 def test_anti_repetition_pedagogy_rotation(mock_embedder, mock_options):
     """Verifies options discovery receives previous activities and excludes them."""
+    setup_embedder(mock_embedder)
     mock_options.return_value = {
         "topic": "Democratic Governance",
         "period": 2,
@@ -258,7 +283,9 @@ def test_anti_repetition_pedagogy_rotation(mock_embedder, mock_options):
                 "id": "option_1",
                 "title": "School-Ground Facility Audit",
                 "pedagogy_type": "Empirical Inquiry",
-                "student_grouping": "7 teams of 5"
+                "description": "Students inspect and audit local school facility access.",
+                "student_grouping": "7 teams of 5",
+                "creative_assessment_preview": "Exit ticket summarizing findings."
             }
         ]
     }

@@ -14,7 +14,6 @@ from app.services.generated_plans_manager import (
 logger = logging.getLogger("GeneratedPlansApi")
 
 router = APIRouter(
-    prefix="/api/v1/generated-plans",
     tags=["Generated Lesson Plans Storage"]
 )
 

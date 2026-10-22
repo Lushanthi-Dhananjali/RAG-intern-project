@@ -1,6 +1,5 @@
 import os
 import re
-import uuid
 from pypdf import PdfReader
 import chromadb
 from chromadb.utils import embedding_functions
@@ -18,7 +17,8 @@ embedding_fn = embedding_functions.SentenceTransformerEmbeddingFunction(
 )
 
 collection = chroma_client.get_or_create_collection(
-    name="curriculum_knowledge_base",
+    name="curriculum_syllabus",
+    metadata={"hnsw:space": "cosine"},
     embedding_function=embedding_fn
 )
 
@@ -37,6 +37,9 @@ splitter = RecursiveCharacterTextSplitter(
 
 def ingest_pdf_file(file_path: str, grade: str, subject: str, doc_type: str):
     print(f"\nProcessing [{grade} - {doc_type}]: {os.path.basename(file_path)}")
+    doc_type_key = re.sub(r"[^a-z0-9]+", "_", doc_type.strip().casefold()).strip("_")
+    if doc_type_key in {"exemplar_plan", "exemplar_lesson_plan"}:
+        doc_type_key = "exemplar_lesson_plan"
     try:
         reader = PdfReader(file_path)
     except Exception as e:
@@ -63,26 +66,29 @@ def ingest_pdf_file(file_path: str, grade: str, subject: str, doc_type: str):
 
         chunks = splitter.split_text(page_text)
 
-        for chunk in chunks:
+        for chunk_index, chunk in enumerate(chunks, start=1):
             chunk_match = COMPETENCY_HEADING_PATTERN.search(chunk)
             chunk_competency = chunk_match.group(1).strip() if chunk_match else active_competency
 
             documents.append(chunk)
             metadatas.append({
-                "grade": grade,
+                "grade_level": grade,
                 "subject": subject,
                 "competency_level": chunk_competency,
-                "document_type": doc_type,
-                "source_file": os.path.basename(file_path),
-                "page": page_idx + 1
+                "doc_type": doc_type_key,
+                "source": os.path.basename(file_path),
+                "page_number": page_idx + 1
             })
-            ids.append(str(uuid.uuid4()))
+            file_key = re.sub(r"[^a-zA-Z0-9_]", "_", os.path.splitext(os.path.basename(file_path))[0])
+            ids.append(
+                f"{grade}_{file_key}_p{page_idx + 1}_comp_{chunk_competency}_c{chunk_index}"
+            )
 
     if documents:
         # ChromaDB batch limit safe insertion
         batch_size = 500
         for i in range(0, len(documents), batch_size):
-            collection.add(
+            collection.upsert(
                 documents=documents[i:i + batch_size],
                 metadatas=metadatas[i:i + batch_size],
                 ids=ids[i:i + batch_size]
@@ -120,13 +126,13 @@ def scan_and_ingest_all():
 
             # 2. Determine Document Type
             if "teacher_guide" in file_name or "tig" in file_name:
-                doc_type = "Teacher Guide"
+                doc_type = "teacher_guide"
             elif "textbook" in file_name:
-                doc_type = "Textbook"
+                doc_type = "textbook"
             elif "lesson_plan" in file_name or "exemplar" in folder_name:
-                doc_type = "Exemplar Plan"
+                doc_type = "exemplar_lesson_plan"
             else:
-                doc_type = "Reference"
+                doc_type = "reference"
 
             # 3. Ingest
             ingest_pdf_file(

@@ -31,6 +31,7 @@ import {
   fetchLessonPlan,
   fetchPlanByCompetency,
   deleteGeneratedPlan,
+  generateLessonPlan,
   LessonPlanResponse,
   LessonPlanPayload,
   LessonPlanDto,
@@ -38,7 +39,6 @@ import {
 import {
   PedagogicalActivityOption,
   PedagogicalOptionsResponse,
-  CompetencyLevelGenerateResponse,
   LessonPlanSchemaDto,
 } from "@/types/lessonPlan";
 
@@ -68,9 +68,17 @@ export default function Home() {
   // Activity Discovery State
   const [isLoadingOptions, setIsLoadingOptions] = useState<boolean>(false);
   const [discoveredTopic, setDiscoveredTopic] = useState<string>("");
-  const [activityOptions, setActivityOptions] = useState<PedagogicalActivityOption[]>([]);
-  const [selectedOptionId, setSelectedOptionId] = useState<string>("");
-  const [customStrategy, setCustomStrategy] = useState<string>("");
+  const [activityOptionsByPeriod, setActivityOptionsByPeriod] = useState<
+    Record<number, PedagogicalActivityOption[]>
+  >({});
+  const [selectedOptionIdsByPeriod, setSelectedOptionIdsByPeriod] = useState<
+    Record<number, string>
+  >({});
+  const [customStrategiesByPeriod, setCustomStrategiesByPeriod] = useState<
+    Record<number, string>
+  >({});
+  const [wizardCurrentPeriod, setWizardCurrentPeriod] = useState(1);
+  const [wizardGenerationProgress, setWizardGenerationProgress] = useState("");
 
   // Plan Generation & Execution State
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -107,19 +115,29 @@ export default function Home() {
           subject: wizardSubject,
           student_count: Number(wizardStudentCount),
           periods: Number(wizardPeriods),
+          requested_period: 1,
+          topic_query: wizardTopicQuery.trim(),
         }),
       });
 
       if (!res.ok) {
-        throw new Error(`Activity discovery failed with status: ${res.status}`);
+        const errorData = await res.json().catch(() => ({}));
+        throw new Error(
+          errorData.detail || `Activity discovery failed with status: ${res.status}`
+        );
       }
 
       const data: PedagogicalOptionsResponse = await res.json();
-      setDiscoveredTopic(data.lesson_topic);
-      setActivityOptions(data.options || []);
-      if (data.options && data.options.length > 0) {
-        setSelectedOptionId(data.options[0].id);
+      if (!Array.isArray(data.options) || data.options.length !== 3) {
+        throw new Error("Activity discovery did not return exactly three options for Period 1.");
       }
+      setDiscoveredTopic(data.lesson_topic);
+      setActivityOptionsByPeriod({ 1: data.options });
+      setSelectedOptionIdsByPeriod({ 1: data.options[0].id });
+      setCustomStrategiesByPeriod({});
+      setWizardCurrentPeriod(1);
+      setWizardGenerationProgress("");
+      setMultiPeriodPlans([]);
       setWizardStep(2);
     } catch (err: any) {
       setError(err.message || "Failed to connect to backend pedagogical discovery endpoint.");
@@ -132,52 +150,157 @@ export default function Home() {
     setError(null);
     setIsLoading(true);
 
-    const selectedOptionObj = activityOptions.find((o) => o.id === selectedOptionId);
-    const chosenDescription = selectedOptionObj
-      ? `[${selectedOptionObj.title}] ${selectedOptionObj.description} (Grouping: ${selectedOptionObj.student_grouping})`
-      : undefined;
-
     try {
-      const res = await fetch(`${API_BASE_URL}/api/v1/generate-by-competency-level`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          competency_level: wizardCompetency.trim(),
-          topic_query: wizardTopicQuery.trim() || discoveredTopic,
-          grade_level: wizardGrade,
-          subject: wizardSubject,
-          periods: Number(wizardPeriods),
-          student_count: Number(wizardStudentCount),
-          selected_activity_option: customStrategy.trim() ? undefined : chosenDescription,
-          custom_teacher_activity: customStrategy.trim() ? customStrategy.trim() : undefined,
-        }),
-      });
+      const currentPeriod = wizardCurrentPeriod;
+      const customActivity = (customStrategiesByPeriod[currentPeriod] || "").trim();
+      const selectedOption = (activityOptionsByPeriod[currentPeriod] || []).find(
+        (option) => option.id === selectedOptionIdsByPeriod[currentPeriod]
+      );
 
-      if (!res.ok) {
-        throw new Error(`Sequential plan generation failed with status: ${res.status}`);
+      if (!customActivity && !selectedOption) {
+        throw new Error(`Choose an activity for Period ${currentPeriod} before generating its plan.`);
       }
 
-      const data: CompetencyLevelGenerateResponse = await res.json();
-      const plans = data.lesson_plans && data.lesson_plans.length > 0
-        ? data.lesson_plans
-        : [data.lesson_plan];
+      let nextPeriodOptions: PedagogicalActivityOption[] = [];
+      if (currentPeriod < wizardPeriods) {
+        const nextPeriod = currentPeriod + 1;
+        setWizardGenerationProgress(`Preparing distinct activity options for Period ${nextPeriod}...`);
+        const optionsResponse = await fetch(
+          `${API_BASE_URL}/api/v1/suggest-pedagogical-options`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              competency_level: wizardCompetency.trim(),
+              grade_level: wizardGrade,
+              subject: wizardSubject,
+              student_count: Number(wizardStudentCount),
+              periods: Number(wizardPeriods),
+              requested_period: nextPeriod,
+              topic_query: wizardTopicQuery.trim(),
+              previous_period_activities: [
+                ...Array.from({ length: currentPeriod }, (_, index) => {
+                  const period = index + 1;
+                  const custom = (customStrategiesByPeriod[period] || "").trim();
+                  if (custom) return `Period ${period}: ${custom}`;
+                  const option = (activityOptionsByPeriod[period] || []).find(
+                    (candidate) => candidate.id === selectedOptionIdsByPeriod[period]
+                  );
+                  return option ? `Period ${period}: ${option.title}` : "";
+                }).filter(Boolean),
+              ],
+            }),
+          }
+        );
 
-      setMultiPeriodPlans(plans);
+        if (!optionsResponse.ok) {
+          const errorData = await optionsResponse.json().catch(() => ({}));
+          throw new Error(
+            errorData.detail ||
+              `Activity discovery failed for Period ${nextPeriod} (Status ${optionsResponse.status})`
+          );
+        }
+
+        const optionsData: PedagogicalOptionsResponse = await optionsResponse.json();
+        if (!Array.isArray(optionsData.options) || optionsData.options.length !== 3) {
+          throw new Error(
+            `Activity discovery did not return exactly three options for Period ${nextPeriod}.`
+          );
+        }
+        nextPeriodOptions = optionsData.options;
+      }
+
+      setWizardGenerationProgress(`Generating the Period ${currentPeriod} lesson plan...`);
+      const chosenDescription = selectedOption
+        ? [
+            `Activity: ${selectedOption.title}`,
+            `Approach: ${selectedOption.description}`,
+            `Student task: ${selectedOption.student_action_summary || selectedOption.description}`,
+            `Teacher facilitation: ${selectedOption.teacher_facilitation_summary || "Facilitate student participation and outcome-focused discussion."}`,
+            `Expected output: ${selectedOption.expected_student_output || "A student-created response demonstrating the allocated learning outcomes."}`,
+            `Grouping: ${selectedOption.student_grouping}`,
+          ].join("\n")
+        : undefined;
+      const previousActivities = Array.from(
+        { length: currentPeriod - 1 },
+        (_, index) => {
+          const period = index + 1;
+          const custom = (customStrategiesByPeriod[period] || "").trim();
+          if (custom) return `Period ${period}: ${custom}`;
+          const option = (activityOptionsByPeriod[period] || []).find(
+            (candidate) => candidate.id === selectedOptionIdsByPeriod[period]
+          );
+          return option ? `Period ${period}: ${option.title}` : "";
+        }
+      ).filter(Boolean);
+
+      const data = await generateLessonPlan({
+        competencyLevel: wizardCompetency.trim(),
+        topicQuery: wizardTopicQuery.trim() || discoveredTopic,
+        gradeLevel: wizardGrade,
+        subject: wizardSubject,
+        periods: Number(wizardPeriods),
+        requestedPeriod: currentPeriod,
+        singlePeriodOnly: true,
+        studentCount: Number(wizardStudentCount),
+        teacherMode: customActivity ? "own_approach" : "suggested",
+        selectedActivityOption: customActivity ? undefined : chosenDescription,
+        selectedActivityTitle: customActivity
+          ? `Teacher approach: ${customActivity}`
+          : selectedOption?.title,
+        customTeacherActivity: customActivity || undefined,
+        activityOptions: activityOptionsByPeriod[currentPeriod] || [],
+        previousPeriodActivities: previousActivities,
+      });
+
+      const generatedPlan: LessonPlanSchemaDto = {
+        ...data.lesson_plan,
+        period_number: currentPeriod,
+        total_periods: wizardPeriods,
+        post_activity: data.lesson_plan.post_activity || "",
+        information_sources: data.lesson_plan.information_sources || [],
+        attachments: data.lesson_plan.attachments || [],
+      };
+      const updatedPlans = [
+        ...multiPeriodPlans.filter(
+          (plan) => (plan.period_number || 1) !== currentPeriod
+        ),
+        generatedPlan,
+      ].sort((left, right) => (left.period_number || 1) - (right.period_number || 1));
+      setMultiPeriodPlans(updatedPlans);
 
       setPlanData({
         competency_level: data.competency_level,
         grade_level: data.grade_level,
         subject: data.subject,
-        lesson_plan: plans[0] as any,
+        lesson_plan: generatedPlan,
         fact_check_report: data.fact_check_report || null,
         alignment_report: data.alignment_report || null,
       });
-
       setCurrentPlanFilename(null);
-      setWizardStep(3);
-      setNotificationMessage(`Successfully generated ${plans.length} sequential 40-minute lesson plan(s).`);
+
+      if (nextPeriodOptions.length === 3 && currentPeriod < wizardPeriods) {
+        const nextPeriod = currentPeriod + 1;
+        setActivityOptionsByPeriod((previous) => ({
+          ...previous,
+          [nextPeriod]: nextPeriodOptions,
+        }));
+        setSelectedOptionIdsByPeriod((previous) => ({
+          ...previous,
+          [nextPeriod]: nextPeriodOptions[0].id,
+        }));
+        setWizardCurrentPeriod(nextPeriod);
+        setWizardGenerationProgress("");
+      } else {
+        setWizardStep(3);
+        setWizardGenerationProgress("");
+        setNotificationMessage(
+          `Successfully generated ${updatedPlans.length} period-specific lesson plan(s).`
+        );
+      }
     } catch (err: any) {
       setError(err.message || "Failed to generate sequential lesson plans.");
+      setWizardGenerationProgress("");
     } finally {
       setIsLoading(false);
     }
@@ -203,20 +326,28 @@ export default function Home() {
         formData.subject
       );
 
+      const periodPlans =
+        Array.isArray((result as any).all_period_plans) && (result as any).all_period_plans.length > 0
+          ? (result as any).all_period_plans
+          : [result.plan];
+
       setPlanData({
         competency_level: result.plan.competence_level,
         grade_level: result.plan.grade,
         subject: result.plan.subject,
         lesson_plan: result.plan,
+        lesson_plans: periodPlans,
         fact_check_report: null,
         alignment_report: null,
       });
-      setMultiPeriodPlans([result.plan as any]);
+      setMultiPeriodPlans(periodPlans as any);
       setCurrentPlanFilename(result.filename);
       setGenerationMode("standard");
       setActiveViewTab("viewer");
       setNotificationMessage(
-        `Showing saved lesson plan for Competency Level ${formData.competencyLevel} (${result.filename})`
+        periodPlans.length > 1
+          ? `Showing ${periodPlans.length} saved period plans for Competency Level ${formData.competencyLevel}`
+          : `Showing saved lesson plan for Competency Level ${formData.competencyLevel} (${result.filename})`
       );
     } catch (err: any) {
       setError(
@@ -260,7 +391,11 @@ export default function Home() {
 
       const result: LessonPlanResponse = await fetchLessonPlan(payload);
       setPlanData(result);
-      setMultiPeriodPlans([result.lesson_plan as any]);
+      const plans =
+        Array.isArray(result.lesson_plans) && result.lesson_plans.length > 0
+          ? result.lesson_plans
+          : [result.lesson_plan as any];
+      setMultiPeriodPlans(plans as any);
       setCurrentPlanFilename(null);
       setActiveViewTab("viewer");
     } catch (err: any) {
@@ -610,28 +745,28 @@ export default function Home() {
           {/* Stepper Navigation Indicator */}
           <div className="flex items-center justify-between bg-white px-5 py-3 rounded-xl border border-slate-200 text-xs font-bold">
             <div className="flex items-center space-x-2">
-              <span className={`px-2.5 py-1 rounded-full ${wizardStep === 1 ? "bg-emerald-600 text-white" : "bg-slate-100 text-slate-600"}`}>
+              <span className={`px-2.5 py-1 rounded-full ${wizardStep === 1 ? "bg-blue-600 text-white" : "bg-slate-100 text-slate-600"}`}>
                 1
               </span>
-              <span className={wizardStep === 1 ? "text-emerald-800 font-extrabold" : "text-slate-500"}>
+              <span className={wizardStep === 1 ? "text-blue-800 font-extrabold" : "text-slate-500"}>
                 Class & Curriculum
               </span>
             </div>
             <span className="text-slate-300">→</span>
             <div className="flex items-center space-x-2">
-              <span className={`px-2.5 py-1 rounded-full ${wizardStep === 2 ? "bg-emerald-600 text-white" : "bg-slate-100 text-slate-600"}`}>
+              <span className={`px-2.5 py-1 rounded-full ${wizardStep === 2 ? "bg-blue-600 text-white" : "bg-slate-100 text-slate-600"}`}>
                 2
               </span>
-              <span className={wizardStep === 2 ? "text-emerald-800 font-extrabold" : "text-slate-500"}>
+              <span className={wizardStep === 2 ? "text-blue-800 font-extrabold" : "text-slate-500"}>
                 Activity Strategy
               </span>
             </div>
             <span className="text-slate-300">→</span>
             <div className="flex items-center space-x-2">
-              <span className={`px-2.5 py-1 rounded-full ${wizardStep === 3 ? "bg-emerald-600 text-white" : "bg-slate-100 text-slate-600"}`}>
+              <span className={`px-2.5 py-1 rounded-full ${wizardStep === 3 ? "bg-blue-600 text-white" : "bg-slate-100 text-slate-600"}`}>
                 3
               </span>
-              <span className={wizardStep === 3 ? "text-emerald-800 font-extrabold" : "text-slate-500"}>
+              <span className={wizardStep === 3 ? "text-blue-800 font-extrabold" : "text-slate-500"}>
                 Sequential 40m Plans
               </span>
             </div>
@@ -655,7 +790,7 @@ export default function Home() {
                   <select
                     value={wizardGrade}
                     onChange={(e) => setWizardGrade(e.target.value)}
-                    className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                    className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-2 focus:ring-blue-500 focus:outline-none"
                   >
                     <option value="Grade 6">Grade 6</option>
                     <option value="Grade 7">Grade 7</option>
@@ -669,7 +804,7 @@ export default function Home() {
                   <select
                     value={wizardSubject}
                     onChange={(e) => setWizardSubject(e.target.value)}
-                    className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                    className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-2 focus:ring-blue-500 focus:outline-none"
                   >
                     <option value="Civic Education">Civic Education</option>
                     <option value="Science">Science</option>
@@ -684,7 +819,7 @@ export default function Home() {
                     placeholder="e.g. 8.1.1, 8.2.2, 8.4.4"
                     value={wizardCompetency}
                     onChange={(e) => setWizardCompetency(e.target.value)}
-                    className="w-full rounded-lg border border-slate-300 p-2.5 text-xs font-mono font-bold focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                    className="w-full rounded-lg border border-slate-300 p-2.5 text-xs font-mono font-bold focus:ring-2 focus:ring-blue-500 focus:outline-none"
                   />
                 </div>
 
@@ -699,7 +834,7 @@ export default function Home() {
                     required
                     value={wizardStudentCount}
                     onChange={(e) => setWizardStudentCount(Number(e.target.value))}
-                    className="w-full rounded-lg border border-slate-300 p-2.5 text-xs font-bold focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                    className="w-full rounded-lg border border-slate-300 p-2.5 text-xs font-bold focus:ring-2 focus:ring-blue-500 focus:outline-none"
                   />
                   <span className="text-[11px] text-slate-400">Class logistics & task cards scale to this count.</span>
                 </div>
@@ -711,7 +846,7 @@ export default function Home() {
                   <select
                     value={wizardPeriods}
                     onChange={(e) => setWizardPeriods(Number(e.target.value))}
-                    className="w-full rounded-lg border border-slate-300 p-2.5 text-xs font-bold focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                    className="w-full rounded-lg border border-slate-300 p-2.5 text-xs font-bold focus:ring-2 focus:ring-blue-500 focus:outline-none"
                   >
                     <option value={1}>1 Period (40 Minutes)</option>
                     <option value={2}>2 Periods (80 Minutes Sequential)</option>
@@ -727,7 +862,7 @@ export default function Home() {
                     placeholder="e.g. Public services, Democratic councils"
                     value={wizardTopicQuery}
                     onChange={(e) => setWizardTopicQuery(e.target.value)}
-                    className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                    className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-2 focus:ring-blue-500 focus:outline-none"
                   />
                 </div>
               </div>
@@ -736,7 +871,7 @@ export default function Home() {
                 <button
                   type="submit"
                   disabled={isLoadingOptions}
-                  className="px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs transition-all shadow-sm hover:shadow disabled:opacity-50"
+                  className="px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs transition-all shadow-sm hover:shadow disabled:opacity-50"
                 >
                   {isLoadingOptions ? "🔎 Querying Syllabus Guidelines..." : "Discover Pedagogical Activities →"}
                 </button>
@@ -747,15 +882,29 @@ export default function Home() {
           {/* WIZARD STEP 2: CHOOSE ACTIVITY THEME (MODULAR COMPONENT) */}
           {wizardStep === 2 && (
             <ActivitySelectionStep
-              activityOptions={activityOptions}
-              selectedOptionId={selectedOptionId}
-              setSelectedOptionId={setSelectedOptionId}
-              customStrategy={customStrategy}
-              setCustomStrategy={setCustomStrategy}
+              activityOptions={activityOptionsByPeriod[wizardCurrentPeriod] || []}
+              selectedOptionId={selectedOptionIdsByPeriod[wizardCurrentPeriod] || ""}
+              setSelectedOptionId={(id) =>
+                setSelectedOptionIdsByPeriod((previous) => ({
+                  ...previous,
+                  [wizardCurrentPeriod]: id,
+                }))
+              }
+              customStrategy={customStrategiesByPeriod[wizardCurrentPeriod] || ""}
+              setCustomStrategy={(value) =>
+                setCustomStrategiesByPeriod((previous) => ({
+                  ...previous,
+                  [wizardCurrentPeriod]: value,
+                }))
+              }
               discoveredTopic={discoveredTopic}
               studentCount={wizardStudentCount}
               periods={wizardPeriods}
+              currentPeriod={wizardCurrentPeriod}
+              completedPeriods={multiPeriodPlans.length}
               isLoading={isLoading}
+              progressMessage={wizardGenerationProgress}
+              errorMessage={error}
               onBack={() => setWizardStep(1)}
               onProceed={handleGenerateWizardPlans}
             />
@@ -986,14 +1135,30 @@ export default function Home() {
 
                 {activeViewTab === "viewer" && (
                   <>
-                    <LessonPlanViewer
-                      plan={planData.lesson_plan}
-                      factCheck={planData.fact_check_report}
-                      alignment={planData.alignment_report}
-                      filename={currentPlanFilename || undefined}
-                      onEditInGenerator={() => setActiveViewTab("editor")}
-                      onDeletePlan={currentPlanFilename ? () => setIsDeleteModalOpen(true) : undefined}
-                    />
+                    {multiPeriodPlans && multiPeriodPlans.length > 1 ? (
+                      <MultiPeriodPlanViewer
+                        plans={multiPeriodPlans}
+                        onNewPlan={() => {
+                          setPlanData(null);
+                          setMultiPeriodPlans([]);
+                        }}
+                        onEditPlan={(chosenPlan) => {
+                          setPlanData((prev) =>
+                            prev ? { ...prev, lesson_plan: chosenPlan as any } : null
+                          );
+                          setActiveViewTab("editor");
+                        }}
+                      />
+                    ) : (
+                      <LessonPlanViewer
+                        plan={planData.lesson_plan}
+                        factCheck={planData.fact_check_report}
+                        alignment={planData.alignment_report}
+                        filename={currentPlanFilename || undefined}
+                        onEditInGenerator={() => setActiveViewTab("editor")}
+                        onDeletePlan={currentPlanFilename ? () => setIsDeleteModalOpen(true) : undefined}
+                      />
+                    )}
 
                     <DeleteConfirmModal
                       isOpen={isDeleteModalOpen}

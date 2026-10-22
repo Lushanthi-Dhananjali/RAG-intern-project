@@ -106,6 +106,31 @@ export default function GeneratedPlansLibrary({
     });
   }, [plans, selectedGrade, selectedSubject]);
 
+  const periodPlans = useMemo(() => {
+    return filteredPlans.filter((plan) => {
+      if (!Number.isInteger(plan.period_number)) return false;
+      if (typedCompetency.trim()) {
+        return plan.competence_level.toLowerCase() === typedCompetency.trim().toLowerCase();
+      }
+      return true;
+    });
+  }, [filteredPlans, typedCompetency]);
+
+  const handleViewSavedPlan = async (filename: string) => {
+    setIsDetailLoading(true);
+    setError(null);
+    try {
+      const detail = await fetchGeneratedPlanDetail(filename);
+      setActivePlan(detail.plan);
+      setActiveFilename(detail.filename);
+      if (detail.plan.competence_level) setTypedCompetency(detail.plan.competence_level);
+    } catch (err: any) {
+      setError(err.message || `Failed to load saved lesson plan "${filename}".`);
+    } finally {
+      setIsDetailLoading(false);
+    }
+  };
+
   // Handle viewing plan for the chosen competency level
   const handleViewCompetencyPlan = async () => {
     const comp = typedCompetency.trim();
@@ -119,11 +144,11 @@ export default function GeneratedPlansLibrary({
     setSuccessMessage(null);
 
     // 1. Try local cache from matching plans first
-    const localMatch = filteredPlans.find(
-      (p) => p.competence_level.toLowerCase() === comp.toLowerCase()
-    ) || plans.find(
+    const competencyPlans = filteredPlans.filter(
       (p) => p.competence_level.toLowerCase() === comp.toLowerCase()
     );
+    const localMatch = competencyPlans.find((plan) => plan.period_number == null)
+      || competencyPlans.find((plan) => plan.period_number === 1);
 
     if (localMatch) {
       try {
@@ -465,7 +490,9 @@ export default function GeneratedPlansLibrary({
                 <option value="">-- Or choose from {filteredPlans.length} saved plans --</option>
                 {filteredPlans.map((p) => (
                   <option key={p.filename} value={p.competence_level}>
-                    Level {p.competence_level} ({p.lesson || p.competence || p.filename})
+                    Level {p.competence_level}
+                    {p.period_number != null ? ` • Period ${p.period_number}` : ''}
+                    {' '}({p.lesson || p.competence || p.filename})
                   </option>
                 ))}
               </select>
@@ -512,6 +539,73 @@ export default function GeneratedPlansLibrary({
           )}
         </button>
       </div>
+
+      {periodPlans.length > 0 && (
+        <div
+          style={{
+            maxWidth: '860px',
+            margin: '24px auto 0',
+            padding: '20px',
+            borderRadius: '16px',
+            border: '1px solid #bfdbfe',
+            backgroundColor: '#eff6ff',
+            boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)',
+          }}
+        >
+          <h3 style={{ margin: '0 0 12px', color: '#1e3a8a', fontSize: '15px', fontWeight: 800 }}>
+            Saved Period-wise Lesson Plans
+          </h3>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))', gap: '12px' }}>
+            {periodPlans.map((plan) => (
+              <article
+                key={plan.filename}
+                style={{
+                  backgroundColor: '#ffffff',
+                  border: '1px solid #bfdbfe',
+                  borderRadius: '12px',
+                  padding: '14px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '8px',
+                }}
+              >
+                <strong style={{ color: '#1e40af', fontSize: '12px' }}>
+                  Level {plan.competence_level} • Period {plan.period_number}
+                  {plan.total_periods ? ` of ${plan.total_periods}` : ''}
+                </strong>
+                <span style={{ color: '#0f172a', fontWeight: 700, fontSize: '14px' }}>
+                  {plan.lesson || 'Period lesson plan'}
+                </span>
+                {plan.selected_activity_title && (
+                  <span style={{ color: '#475569', fontSize: '12px' }}>
+                    Activity: {plan.selected_activity_title}
+                  </span>
+                )}
+                <span style={{ color: '#64748b', fontSize: '11px' }}>
+                  {plan.grade} • {plan.subject}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => handleViewSavedPlan(plan.filename)}
+                  disabled={isDetailLoading}
+                  style={{
+                    marginTop: 'auto',
+                    padding: '9px 12px',
+                    backgroundColor: '#2563eb',
+                    color: '#ffffff',
+                    border: 'none',
+                    borderRadius: '8px',
+                    fontWeight: 700,
+                    cursor: isDetailLoading ? 'wait' : 'pointer',
+                  }}
+                >
+                  {isDetailLoading && activeFilename === plan.filename ? 'Loading…' : 'View this period plan'}
+                </button>
+              </article>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* 2. LESSON PLAN VIEWED DIRECTLY BELOW COMPETENCY LEVEL (IN MATCHING CARD BOX WITH SMALL SPACE) */}
       <div style={{ marginTop: '24px' }}>
