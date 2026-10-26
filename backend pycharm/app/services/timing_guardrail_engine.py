@@ -225,4 +225,76 @@ class TimingGuardrailEngine:
                 if not unavailable_text.search(att) and len(att.strip()) >= 3
             ]
 
+        # 5. Sanitize all developmental steps from URLs and placeholders
+        for idx, step in enumerate(plan.lesson_development_steps, start=1):
+            # Sanitize learning_teaching_method
+            method_str = (step.learning_teaching_method or "").strip()
+            if not method_str or len(method_str) < 3 or unavailable_text.search(method_str):
+                if "learning-teaching-method" in method_str:
+                    slug = re.sub(r"^https?://[^\s/]+/learning-teaching-method/?", "", method_str)
+                    step.learning_teaching_method = slug.replace("-", " ").strip().title() or "Guided Inquiry & Discussion"
+                elif idx == 1:
+                    step.learning_teaching_method = "Task Orientation & Guided Inquiry Setup"
+                elif idx == 2:
+                    step.learning_teaching_method = activity if len(activity) < 50 else "Interactive Inquiry & Problem-Solving"
+                else:
+                    step.learning_teaching_method = "Plenary Presentation & Review"
+
+            # Sanitize learning_teaching_aids
+            aids_str = (step.learning_teaching_aids or "").strip()
+            if not aids_str or len(aids_str) < 3 or unavailable_text.search(aids_str):
+                if "learning-teaching-aids" in aids_str:
+                    slug = re.sub(r"^https?://[^\s/]+/learning-teaching-aids/?", "", aids_str)
+                    step.learning_teaching_aids = slug.replace("-", ", ").strip().title() or "Chalkboard, student notebooks, task prompt cards"
+                elif idx == 1:
+                    step.learning_teaching_aids = "Inquiry prompt cards, chalkboard, student notebooks"
+                elif idx == 2:
+                    step.learning_teaching_aids = "Activity scenario cards, observation sheets, chart paper"
+                else:
+                    step.learning_teaching_aids = "Presentation board, student summary sheets, whiteboard"
+
+            # Sanitize teacher_activities
+            t_str = (step.teacher_activities or "").strip()
+            if not t_str or len(t_str) < 20 or unavailable_text.search(t_str):
+                if idx == 1:
+                    step.teacher_activities = (
+                        f"The teacher introduces the lesson inquiry on '{focus}', organizes students into collaborative teams "
+                        "with designated roles, and distributes inquiry task prompt cards."
+                    )
+                elif idx == 2:
+                    step.teacher_activities = (
+                        f"The teacher actively circulates among the groups to facilitate {activity}, scaffolds student "
+                        f"discussions around '{focus}', prompts critical thinking, and formatively monitors student engagement."
+                    )
+                else:
+                    step.teacher_activities = (
+                        f"The teacher facilitates group presentations, synthesizes student discoveries regarding '{focus}', "
+                        "highlights core civic values, and formatively clarifies any conceptual misconceptions."
+                    )
+
+            # Sanitize student_activities
+            s_str = (step.student_activities or "").strip()
+            if not s_str or len(s_str) < 20 or unavailable_text.search(s_str):
+                if idx == 1:
+                    step.student_activities = (
+                        f"Students arrange themselves in assigned group roles, examine the inquiry prompt concerning '{focus}', "
+                        "and prepare materials for their investigation."
+                    )
+                elif idx == 2:
+                    step.student_activities = (
+                        f"Students actively carry out {activity}, collaborating in teams to analyze real-world civic situations "
+                        f"related to '{focus}' without passive bystanders."
+                    )
+                else:
+                    step.student_activities = (
+                        f"Team spokespersons present their group's findings on '{focus}' to the class, compare conclusions with peers, "
+                        "and record constructive feedback in their notebooks."
+                    )
+
+            # Sanitize other and assessment_and_feedback
+            if step.other and unavailable_text.search(step.other):
+                step.other = ""
+            if step.assessment_and_feedback and unavailable_text.search(step.assessment_and_feedback):
+                step.assessment_and_feedback = f"Checks student participation and understanding of '{focus}'."
+
         return plan

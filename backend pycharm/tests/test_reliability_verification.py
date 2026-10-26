@@ -389,6 +389,75 @@ def test_test_e_introduction_and_assignment_5m_invariants():
     assert dev_time == 30
 
 
+def test_test_e2_no_fabricated_links_and_outcome_integrated():
+    """Verify that any fabricated external links/URLs in development steps are eradicated and replaced with outcome-aligned pedagogical text."""
+    plan = make_mock_plan()
+    # Inject fabricated URLs into development steps as reported by user
+    plan.lesson_development_steps = [
+        LessonDevelopmentStepDto(
+            step_number=1,
+            time_minutes=10,
+            teacher_activities="https://api.learn.kandy.lk/teacher-activities/7-8",
+            student_activities="https://api.learn.kandy.lk/student-activities/7-8",
+            learning_teaching_method="https://api.learn.kandy.lk/learning-teaching-method/1-minute-frozen-tableau-drama",
+            learning_teaching_aids="https://api.learn.kandy.lk/learning-teaching-aids/chalkboard-student-notebooks-chart-paper",
+            assessment_and_feedback="",
+        ),
+        LessonDevelopmentStepDto(
+            step_number=2,
+            time_minutes=10,
+            teacher_activities="https://api.learn.kandy.lk/teacher-activities/14-15",
+            student_activities="https://api.learn.kandy.lk/student-activities/14-15",
+            learning_teaching_method="https://api.learn.kandy.lk/learning-teaching-method/1-minute-frozen-tableau-drama",
+            learning_teaching_aids="https://api.learn.kandy.lk/learning-teaching-aids/chalkboard-student-notebooks-chart-paper",
+            assessment_and_feedback="",
+        ),
+        LessonDevelopmentStepDto(
+            step_number=3,
+            time_minutes=10,
+            teacher_activities="https://api.learn.kandy.lk/teacher-activities/7-8",
+            student_activities="https://api.learn.kandy.lk/student-activities/7-8",
+            learning_teaching_method="https://api.learn.kandy.lk/learning-teaching-method/1-minute-frozen-tableau-drama",
+            learning_teaching_aids="https://api.learn.kandy.lk/learning-teaching-aids/chalkboard-student-notebooks-chart-paper",
+            assessment_and_feedback="",
+        ),
+    ]
+
+    target_outcome = "Explains the importance of the citizens fulfilling duties and rights related to"
+    repaired = TimingGuardrailEngine.enforce_invariants_and_inject_outcomes(
+        plan=plan,
+        verbatim_outcomes=[target_outcome],
+        requested_period=1,
+        total_periods=3,
+        lesson_topic="Duties and Rights of Citizens",
+        selected_activity="1-Minute Frozen Tableau Drama",
+    )
+
+    # 1. Zero URLs or http/https links anywhere in development steps
+    for step in repaired.lesson_development_steps:
+        assert "http://" not in step.teacher_activities
+        assert "https://" not in step.teacher_activities
+        assert "http://" not in step.student_activities
+        assert "https://" not in step.student_activities
+        assert "http://" not in step.learning_teaching_method
+        assert "https://" not in step.learning_teaching_method
+        assert "http://" not in step.learning_teaching_aids
+        assert "https://" not in step.learning_teaching_aids
+
+        # 2. Method and aids are converted to human-readable text
+        assert "Tableau" in step.learning_teaching_method or "Inquiry" in step.learning_teaching_method or "Presentation" in step.learning_teaching_method
+        assert "Chalkboard" in step.learning_teaching_aids or "notebooks" in step.learning_teaching_aids
+
+        # 3. Teacher and student activities are substantive (> 30 chars) and integrate the learning outcome
+        assert len(step.teacher_activities) > 30
+        assert len(step.student_activities) > 30
+        assert "teacher" in step.teacher_activities.casefold()
+        assert "students" in step.student_activities.casefold() or "spokespersons" in step.student_activities.casefold()
+        assert "duties" in step.teacher_activities.casefold() or "rights" in step.teacher_activities.casefold()
+        assert "duties" in step.student_activities.casefold() or "rights" in step.student_activities.casefold()
+
+
+
 # =============================================================================
 # TEST F: JSON CONSISTENCY (All fields serialized and match)
 # =============================================================================

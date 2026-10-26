@@ -1,0 +1,90 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 2 of 2)",
+  "competence": "8.2.3",
+  "competence_level": "8.2.3",
+  "lesson": "Explains how the emotions impact on personal behaviour in varying ways: Citizen-Officer Deliberation Roleplay: Competency Level 8.2.3",
+  "unique_learning_outcome": [
+    "Explains how the emotions impact on personal behaviour in varying ways."
+  ],
+  "the_entrance": "5-minute introduction: The teacher greets the students and briefly reviews the previous lesson's topic. The teacher then explains that today, they will be exploring how emotions impact personal behavior in varying ways. The teacher asks students to think about a time when they felt strongly about something and how it affected their behavior. The students share their thoughts, and the teacher connects this to the topic of the lesson. The teacher then distributes the role cards and explains the activity.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "The teacher delivers the role cards and explains the activity. Students inspect the tasks and begin to discuss the scenario.",
+      "student_activities": "Students take civic roles, respond to a shared scenario, and agree on a reasoned decision.",
+      "learning_teaching_method": "Roleplay",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "The teacher circulates across the 7 teams, facilitating role execution and formatively checking progress.",
+      "student_activities": "Students take civic roles, respond to a shared scenario, and agree on a reasoned decision.",
+      "learning_teaching_method": "Roleplay",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "The teacher circulates across the 7 teams, facilitating role execution and formatively checking progress.",
+      "student_activities": "Spokespersons present; peer feedback.",
+      "learning_teaching_method": "Roleplay",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 5,
+      "other": ""
+    }
+  ],
+  "summary": "The teacher summarizes the key points of the lesson, highlighting the importance of understanding how emotions impact personal behavior.",
+  "assessment_and_feedback_whole_lesson": "The teacher assesses the students' understanding of the topic through the roleplay activity and their ability to apply the concepts to real-life scenarios.",
+  "post_activity": "5-minute in-class assignment: The teacher asks students to write a short reflection on what they learned about how emotions impact personal behavior and how they can apply this knowledge in their daily lives.",
+  "information_sources": [
+    "grade_8_civic_textbook.pdf (page 1)"
+  ],
+  "attachments": [],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 2,
+  "total_periods": 2,
+  "selected_activity": "Activity: Citizen-Officer Deliberation Roleplay: Competency Level 8.2.3\nApproach: Students use citizen-officer deliberation roleplay to explore 'Explains how the emotions impact on personal behaviour in varying ways.'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.\nExpected output: A short role-based civic decision and its reasons.\nGrouping: 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+  "selected_activity_title": "Citizen-Officer Deliberation Roleplay: Competency Level 8.2.3",
+  "custom_teacher_activity": null,
+  "activity_options": [
+    {
+      "id": "option_3",
+      "title": "Citizen-Officer Deliberation Roleplay: Competency Level 8.2.3",
+      "pedagogy_type": "Simulation / Roleplay",
+      "description": "Students use citizen-officer deliberation roleplay to explore 'Explains how the emotions impact on personal behaviour in varying ways.'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "learning_outcomes_addressed": [
+        "Explains how the emotions impact on personal behaviour in varying ways."
+      ],
+      "student_action_summary": "Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "teacher_facilitation_summary": "Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.",
+      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks",
+        "Chart Paper"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "A short role-based civic decision and its reasons.",
+      "creative_assessment_preview": "Students state one role responsibility and explain how it supported the decision.",
+      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society.",
+      "Describes giving examples the nature of various kinds of emotions occuring in a person."
+    ],
+    "2": [
+      "Explains how the emotions impact on personal behaviour in varying ways."
+    ]
+  }
+}

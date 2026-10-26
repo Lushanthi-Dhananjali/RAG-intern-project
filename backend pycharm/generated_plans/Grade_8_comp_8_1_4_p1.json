@@ -2,19 +2,19 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 1 of 3)",
-  "competence": "Explains the importance of the citizens fulfilling duties and rights related to",
-  "competence_level": "Introduced & Explored (Foundational Inquiry)",
-  "lesson": "Explains the importance of the citizens fulfilling duties and rights related to: Teacher Activity: show video for students",
+  "competence": "https://api.learn.kandy.lk/competence/8.1.4",
+  "competence_level": "https://api.learn.kandy.lk/competence-level/8.1.4",
+  "lesson": "Explains the importance of the citizens fulfilling duties and rights related to: Competency 8.1.4 Civic Cause-and-Effect Mapping: Competency Level 8.1.4",
   "unique_learning_outcome": [
     "Explains the importance of the citizens fulfilling duties and rights related to"
   ],
-  "the_entrance": "5-minute introduction: The teacher writes or reads “Explains the importance of the citizens fulfilling duties and rights related to” and asks students to name one example they have seen in everyday life. Students share brief responses; the teacher connects their examples to show video for students and explains how it will help them explore this period's outcome.",
+  "the_entrance": "5-minute introduction: The teacher writes or reads “Explains the importance of the citizens fulfilling duties and rights related to” and asks students to name one example they have seen in everyday life. Students share brief responses; the teacher connects their examples to Competency 8.1.4 Civic Cause-and-Effect Mapping: Competency Level 8.1.4 and explains how it will help them explore this period's outcome.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "The teacher explains the importance of citizens fulfilling duties and rights, using the video as a starting point.",
-      "student_activities": "Students listen to the teacher's explanation and take notes in their notebooks.",
-      "learning_teaching_method": "Show video for students (Teacher's custom activity)",
+      "teacher_activities": "Teacher delivers prompts/cue cards; students inspect tasks.",
+      "student_activities": "Students work with a teacher-presented classroom example about 'Explains the importance of the citizens fulfilling duties and rights related to' to map how the presented civic examples connect, explain those relationships, and review a peer map, without leaving the classroom.",
+      "learning_teaching_method": "Introduced & Explored (Foundational Inquiry)",
       "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
       "assessment_and_feedback": "",
       "time_minutes": 10,
@@ -22,28 +22,28 @@
     },
     {
       "step_number": 2,
-      "teacher_activities": "Students work in groups of 7, with each group having a leader, scribe, timekeeper, and spokesperson.",
-      "student_activities": "Students discuss and brainstorm the importance of citizens fulfilling duties and rights, using the video as a reference.",
-      "learning_teaching_method": "Group Discussion",
-      "learning_teaching_aids": "Student Notebooks, Chart Paper",
+      "teacher_activities": "Teacher facilitates role execution and formatively checks progress.",
+      "student_activities": "Students work in teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "learning_teaching_method": "Group Investigation & Production",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 15,
       "other": ""
     },
     {
       "step_number": 3,
-      "teacher_activities": "The teacher facilitates a plenary session, where students share their group's findings and insights.",
-      "student_activities": "Students share their group's ideas and listen to their peers' perspectives.",
-      "learning_teaching_method": "Plenary Session",
+      "teacher_activities": "Teacher circulates across 7 teams, facilitating role execution and formatively checking progress.",
+      "student_activities": "Spokespersons present; peer feedback.",
+      "learning_teaching_method": "Presentation & Cross-Review",
       "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 5,
       "other": ""
     }
   ],
-  "summary": "Students will understand the importance of citizens fulfilling duties and rights.",
-  "assessment_and_feedback_whole_lesson": "The teacher will provide feedback on students' participation and engagement during the group discussion and plenary session.",
-  "post_activity": "In-class assignment: Students will write a short paragraph (5 minutes) explaining the importance of citizens fulfilling duties and rights, using their notes and insights from the lesson.",
+  "summary": "A cause-and-effect map with student explanations.",
+  "assessment_and_feedback_whole_lesson": "Teacher monitors progress with outcome-focused prompts and time checks.",
+  "post_activity": "5-minute in-class assignment: Each student completes a short exit response explaining one finding about “Explains the importance of the citizens fulfilling duties and rights related to” using evidence or an example from Competency 8.1.4 Civic Cause-and-Effect Mapping: Competency Level 8.1.4. The teacher reviews responses for an accurate link to the period outcome.",
   "information_sources": [
     "grade_8_civic_textbook.pdf (page 1)"
   ],
@@ -52,26 +52,30 @@
   "assignment_duration_minutes": 5,
   "period_number": 1,
   "total_periods": 3,
-  "selected_activity": "show video for students",
-  "selected_activity_title": "Teacher Activity: show video for students",
-  "custom_teacher_activity": "show video for students",
+  "selected_activity": "Activity: Competency 8.1.4 Civic Cause-and-Effect Mapping: Competency Level 8.1.4\nApproach: Students work with a teacher-presented classroom example about 'Explains the importance of the citizens fulfilling duties and rights related to' to map how the presented civic examples connect, explain those relationships, and review a peer map, without leaving the classroom.\nStudent task: Map how the presented civic examples connect, explain those relationships, and review a peer map. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.\nExpected output: A cause-and-effect map with student explanations.\nGrouping: 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+  "selected_activity_title": "Competency 8.1.4 Civic Cause-and-Effect Mapping: Competency Level 8.1.4",
+  "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "teacher_custom_activity_p1",
-      "title": "Teacher Activity: show video for students",
-      "description": "show video for students",
-      "pedagogy_type": "Show video for students (Teacher's custom activity)",
-      "student_grouping": "Adaptive Grouping (35 students)",
-      "student_action_summary": "Students listen to the teacher's explanation and take notes in their notebooks.",
-      "teacher_facilitation_summary": "The teacher explains the importance of citizens fulfilling duties and rights, using the video as a starting point.",
-      "required_materials": [
-        "Chalkboard, Student Notebooks, Chart Paper"
-      ],
-      "expected_student_output": "In-class assignment: Students will write a short paragraph (5 minutes) explaining the importance of citizens fulfilling duties and rights, using their notes and insights from the lesson.",
-      "creative_assessment_preview": "The teacher will provide feedback on students' participation and engagement during the group discussion and plenary session.",
+      "id": "option_3",
+      "title": "Competency 8.1.4 Civic Cause-and-Effect Mapping: Competency Level 8.1.4",
+      "pedagogy_type": "Field Investigation / School Walk",
+      "description": "Students work with a teacher-presented classroom example about 'Explains the importance of the citizens fulfilling duties and rights related to' to map how the presented civic examples connect, explain those relationships, and review a peer map, without leaving the classroom.",
       "learning_outcomes_addressed": [
         "Explains the importance of the citizens fulfilling duties and rights related to"
-      ]
+      ],
+      "student_action_summary": "Map how the presented civic examples connect, explain those relationships, and review a peer map. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "teacher_facilitation_summary": "Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.",
+      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks",
+        "Chart Paper"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "A cause-and-effect map with student explanations.",
+      "creative_assessment_preview": "Each group explains one part of its civic cause-and-effect mapping and links it to the outcome.",
+      "low_resource_alternative": "Use a spoken teacher prompt and oral group responses if writing materials are unavailable."
     }
   ],
   "outcome_allocation": {

@@ -885,7 +885,7 @@ class RAGLessonPlanGenerator:
 
             clean_title = selected_activity_title
             if not clean_title or clean_title == f"Teacher approach: {custom_teacher_activity}":
-                clean_title = f"Teacher Activity: {custom_teacher_activity[:60]}..." if len(custom_teacher_activity) > 60 else f"Teacher Activity: {custom_teacher_activity}"
+                clean_title = f"Teacher Activity: {custom_teacher_activity}"
 
             filtered_opts = [{
                 "id": f"teacher_custom_activity_p{current_period}",
