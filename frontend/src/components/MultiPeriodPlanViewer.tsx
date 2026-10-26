@@ -112,6 +112,7 @@ export default function MultiPeriodPlanViewer({
             <div className="flex border-b border-slate-200 bg-white px-3 pt-2 rounded-t-2xl space-x-2 overflow-x-auto shadow-2xs">
               {plans.map((p, idx) => {
                 const isActive = activeTab === idx;
+                const periodNum = p.period_number ?? (idx + 1);
                 return (
                   <button
                     key={idx}
@@ -123,7 +124,7 @@ export default function MultiPeriodPlanViewer({
                         : "border-transparent text-slate-500 hover:text-slate-800 hover:border-slate-300"
                     }`}
                   >
-                    <span>Period {idx + 1}</span>
+                    <span>Period {periodNum}</span>
                     <span
                       className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono ${
                         isActive ? "bg-blue-200 text-blue-900 font-extrabold" : "bg-slate-200 text-slate-600"
@@ -140,8 +141,8 @@ export default function MultiPeriodPlanViewer({
           {/* Render Active Plan */}
           <SinglePeriodCard
             plan={plans[activeTab] || plans[0]}
-            periodIndex={activeTab}
-            totalPeriods={plans.length}
+            periodIndex={(plans[activeTab] || plans[0]).period_number ? ((plans[activeTab] || plans[0]).period_number! - 1) : activeTab}
+            totalPeriods={(plans[activeTab] || plans[0]).total_periods || plans.length}
             onEdit={onEditPlan}
           />
         </div>
@@ -154,6 +155,7 @@ export default function MultiPeriodPlanViewer({
         <div className="space-y-4">
           {plans.map((p, idx) => {
             const isOpen = !!openAccordions[idx];
+            const periodNum = p.period_number ?? (idx + 1);
             return (
               <div key={idx} className="border border-slate-200 rounded-2xl bg-white shadow-xs overflow-hidden transition-all">
                 {/* Accordion Trigger Header */}
@@ -164,11 +166,11 @@ export default function MultiPeriodPlanViewer({
                 >
                   <div className="flex items-center gap-3">
                     <span className="h-7 w-7 rounded-full bg-blue-100 text-blue-800 font-extrabold text-xs flex items-center justify-center border border-blue-200">
-                      {idx + 1}
+                      {periodNum}
                     </span>
                     <div>
                       <h3 className="text-sm font-bold text-slate-900">
-                        Period {idx + 1}: {p.lesson}
+                        Period {periodNum}: {p.lesson}
                       </h3>
                       <p className="text-[11px] text-slate-500 font-medium">
                         Allocation: {p.time_allocation} | Steps: {p.lesson_development_steps?.length || 0} Phases
@@ -186,8 +188,8 @@ export default function MultiPeriodPlanViewer({
                   <div className="px-6 pb-6 pt-2 border-t border-slate-100">
                     <SinglePeriodCard
                       plan={p}
-                      periodIndex={idx}
-                      totalPeriods={plans.length}
+                      periodIndex={p.period_number ? p.period_number - 1 : idx}
+                      totalPeriods={p.total_periods || plans.length}
                       onEdit={onEditPlan}
                     />
                   </div>

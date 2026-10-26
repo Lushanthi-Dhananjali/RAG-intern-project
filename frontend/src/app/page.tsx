@@ -106,6 +106,7 @@ export default function Home() {
     setIsLoadingOptions(true);
 
     try {
+      const targetP = wizardCurrentPeriod || 1;
       const res = await fetch(`${API_BASE_URL}/api/v1/suggest-pedagogical-options`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -115,7 +116,7 @@ export default function Home() {
           subject: wizardSubject,
           student_count: Number(wizardStudentCount),
           periods: Number(wizardPeriods),
-          requested_period: 1,
+          requested_period: targetP,
           topic_query: wizardTopicQuery.trim(),
         }),
       });
@@ -129,13 +130,13 @@ export default function Home() {
 
       const data: PedagogicalOptionsResponse = await res.json();
       if (!Array.isArray(data.options) || data.options.length !== 3) {
-        throw new Error("Activity discovery did not return exactly three options for Period 1.");
+        throw new Error(`Activity discovery did not return exactly three options for Period ${targetP}.`);
       }
       setDiscoveredTopic(data.lesson_topic);
-      setActivityOptionsByPeriod({ 1: data.options });
-      setSelectedOptionIdsByPeriod({ 1: data.options[0].id });
+      setActivityOptionsByPeriod({ [targetP]: data.options });
+      setSelectedOptionIdsByPeriod({ [targetP]: data.options[0].id });
       setCustomStrategiesByPeriod({});
-      setWizardCurrentPeriod(1);
+      setWizardCurrentPeriod(targetP);
       setWizardGenerationProgress("");
       setMultiPeriodPlans([]);
       setWizardStep(2);
@@ -845,15 +846,51 @@ export default function Home() {
                   </label>
                   <select
                     value={wizardPeriods}
-                    onChange={(e) => setWizardPeriods(Number(e.target.value))}
+                    onChange={(e) => {
+                      const newP = Number(e.target.value);
+                      setWizardPeriods(newP);
+                      if (wizardCurrentPeriod > newP) {
+                        setWizardCurrentPeriod(newP);
+                      }
+                    }}
                     className="w-full rounded-lg border border-slate-300 p-2.5 text-xs font-bold focus:ring-2 focus:ring-blue-500 focus:outline-none"
                   >
                     <option value={1}>1 Period (40 Minutes)</option>
-                    <option value={2}>2 Periods (80 Minutes Sequential)</option>
-                    <option value={3}>3 Periods (120 Minutes Sequential)</option>
-                    <option value={4}>4 Periods (160 Minutes Sequential)</option>
+                    <option value={2}>2 Periods (80 Minutes Total)</option>
+                    <option value={3}>3 Periods (120 Minutes Total)</option>
+                    <option value={4}>4 Periods (160 Minutes Total)</option>
                   </select>
                 </div>
+
+                {wizardPeriods > 1 && (
+                  <div className="col-span-full bg-blue-50/70 border border-blue-200 rounded-xl p-3">
+                    <label className="block text-[11px] font-bold text-blue-900 uppercase tracking-wide mb-1.5">
+                      Select Period to Plan (Skip previous periods if desired):
+                    </label>
+                    <div className="flex flex-wrap gap-2">
+                      {Array.from({ length: wizardPeriods }, (_, i) => i + 1).map((pNum) => {
+                        const isSelected = wizardCurrentPeriod === pNum;
+                        return (
+                          <button
+                            key={pNum}
+                            type="button"
+                            onClick={() => setWizardCurrentPeriod(pNum)}
+                            className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                              isSelected
+                                ? "bg-blue-600 text-white shadow-xs"
+                                : "bg-white text-slate-700 border border-slate-300 hover:bg-slate-50"
+                            }`}
+                          >
+                            Period {pNum}
+                          </button>
+                        );
+                      })}
+                    </div>
+                    <span className="block text-[10px] text-blue-700 mt-1">
+                      You can generate any period directly. Outcomes are divided equally according to curriculum priority.
+                    </span>
+                  </div>
+                )}
 
                 <div>
                   <label className="block font-bold text-slate-700 uppercase tracking-wide mb-1">Topic Query (Optional focus)</label>

@@ -54,15 +54,26 @@
   "assignment_duration_minutes": 5,
   "period_number": 3,
   "total_periods": 3,
-  "selected_activity": "Interactive Local Authority Simulation",
+  "selected_activity": "Watch a 3-minute video on Pradeshiya Sabha meetings, then conduct group debate.",
   "selected_activity_title": "Teacher approach: Watch a 3-minute video on Pradeshiya Sabha meetings, then conduct group debate.",
-  "custom_teacher_activity": null,
+  "custom_teacher_activity": "Watch a 3-minute video on Pradeshiya Sabha meetings, then conduct group debate.",
   "activity_options": [
     {
-      "id": "selected_activity",
-      "title": "Teacher approach: Watch a 3-minute video on Pradeshiya Sabha meetings, then conduct group debate.",
+      "id": "teacher_custom_activity_p3",
+      "title": "Teacher Activity: Watch a 3-minute video on Pradeshiya Sabha meetings, then conduct group debate.",
       "description": "Watch a 3-minute video on Pradeshiya Sabha meetings, then conduct group debate.",
-      "student_action_summary": "Watch a 3-minute video on Pradeshiya Sabha meetings, then conduct group debate."
+      "pedagogy_type": "Task Assignment",
+      "student_grouping": "Adaptive Grouping (40 students)",
+      "student_action_summary": "Read task roles.",
+      "teacher_facilitation_summary": "Explains roleplay goals.",
+      "required_materials": [
+        "Worksheets"
+      ],
+      "expected_student_output": "Record public services observed at home.",
+      "creative_assessment_preview": "5-minute rapid peer review quiz.",
+      "learning_outcomes_addressed": [
+        "Investigates information on the beginning and progress of public services."
+      ]
     }
   ],
   "outcome_allocation": {

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useLessonPlanStore } from '@/store/useLessonPlanStore';
 import {
   generateSinglePeriodPlan,
+  fetchPedagogicalOptions,
   checkActivitySuitability,
   CheckActivitySuitabilityResponse,
 } from '@/services/lessonPlanApi';
@@ -15,6 +16,35 @@ export default function Step2OptionsSelection() {
   const [generationError, setGenerationError] = useState<string | null>(null);
   const [checkingSuitability, setCheckingSuitability] = useState(false);
   const [suitabilityResult, setSuitabilityResult] = useState<CheckActivitySuitabilityResponse | null>(null);
+
+  const handleSwitchPeriod = async (targetPeriod: number) => {
+    if (targetPeriod === store.currentPeriod) return;
+    if (store.generatedPlans[targetPeriod]) {
+      store.viewPeriodPlan(targetPeriod);
+      return;
+    }
+    setLoading(true);
+    setGenerationError(null);
+    try {
+      const options = await fetchPedagogicalOptions({
+        competencyLevel: store.competencyLevel,
+        studentCount: store.studentCount,
+        periods: store.totalPeriods,
+        requestedPeriod: targetPeriod,
+        gradeLevel: store.gradeLevel,
+        subject: store.subject,
+        topicQuery: store.topicQuery,
+        classroomEnvironment: store.classroomEnvironment,
+        accessibleResources: store.accessibleResources,
+        previousPeriodActivities: store.otherActivityTitles(targetPeriod),
+      });
+      store.startPlanningPeriod(targetPeriod, options);
+    } catch (err: any) {
+      setGenerationError(`Failed to fetch options for Period ${targetPeriod}: ${err.message}`);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleGenerate = async (selectedDesc?: string, isCustom = false, activityTitle?: string) => {
     setLoading(true);
@@ -122,6 +152,63 @@ export default function Step2OptionsSelection() {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+      {/* Period Selection Bar */}
+      {store.totalPeriods > 1 && (
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '8px',
+            backgroundColor: '#f8fafc',
+            border: '1px solid #e2e8f0',
+            borderRadius: '12px',
+            padding: '10px 14px',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+            <span style={{ fontSize: '12px', fontWeight: 800, color: '#334155' }}>
+              Planning Periods:
+            </span>
+            {Array.from({ length: store.totalPeriods }, (_, i) => i + 1).map((pNum) => {
+              const isCurrent = store.currentPeriod === pNum;
+              const hasPlan = !!store.generatedPlans[pNum];
+              return (
+                <button
+                  key={pNum}
+                  type="button"
+                  disabled={loading}
+                  onClick={() => handleSwitchPeriod(pNum)}
+                  style={{
+                    padding: '6px 12px',
+                    borderRadius: '8px',
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    cursor: loading ? 'not-allowed' : 'pointer',
+                    border: isCurrent ? '1.5px solid #4f46e5' : '1px solid #cbd5e1',
+                    backgroundColor: isCurrent ? '#4f46e5' : hasPlan ? '#dcfce7' : '#ffffff',
+                    color: isCurrent ? '#ffffff' : hasPlan ? '#166534' : '#475569',
+                    boxShadow: isCurrent ? '0 2px 4px rgba(79, 70, 229, 0.25)' : 'none',
+                    transition: 'all 0.15s ease',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '5px',
+                  }}
+                >
+                  <span>Period {pNum}</span>
+                  {hasPlan && <span style={{ fontSize: '10px' }}>✓</span>}
+                  {isCurrent && <span style={{ fontSize: '10px', opacity: 0.9 }}>(Active)</span>}
+                </button>
+              );
+            })}
+          </div>
+          <span style={{ fontSize: '11px', color: '#64748b' }}>
+            Click any period to switch &amp; plan independently
+          </span>
+        </div>
+      )}
+
       {/* Top Banner / Selection Header Box matching Lesson Details Card Style */}
       <div
         style={{

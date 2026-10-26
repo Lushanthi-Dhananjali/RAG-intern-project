@@ -84,6 +84,9 @@ export interface MultiPeriodState {
 
   // Actions
   setInputs: (inputs: Partial<MultiPeriodState>) => void;
+  setCurrentPeriod: (period: number) => void;
+  startPlanningPeriod: (period: number, options: PedagogicalActivityOption[]) => void;
+  viewPeriodPlan: (period: number) => void;
   setOptions: (options: PedagogicalActivityOption[]) => void;
   selectOption: (option: PedagogicalActivityOption) => void;
   setCustomTeacherActivity: (activity: string) => void;
@@ -124,20 +127,45 @@ export const useLessonPlanStore = create<MultiPeriodState>()(persist((set, get) 
       (inputs.subject !== undefined && inputs.subject !== state.subject) ||
       (inputs.topicQuery !== undefined && inputs.topicQuery !== state.topicQuery) ||
       (inputs.totalPeriods !== undefined && inputs.totalPeriods !== state.totalPeriods);
+
+    const targetTotal = inputs.totalPeriods !== undefined ? inputs.totalPeriods : state.totalPeriods;
+    const targetPeriod = inputs.currentPeriod !== undefined
+      ? Math.max(1, Math.min(inputs.currentPeriod, targetTotal))
+      : (sequenceChanged ? 1 : Math.max(1, Math.min(state.currentPeriod, targetTotal)));
+
     return sequenceChanged
       ? {
           ...state,
           ...inputs,
           step: 1,
-          currentPeriod: 1,
+          totalPeriods: targetTotal,
+          currentPeriod: targetPeriod,
           currentOptions: [],
           selectedOption: null,
           generatedPlans: {},
           activityByPeriod: {},
           previousPeriodActivities: [],
         }
-      : { ...state, ...inputs };
+      : { ...state, ...inputs, currentPeriod: targetPeriod };
   }),
+
+  setCurrentPeriod: (period) => set((state) => ({
+    currentPeriod: Math.max(1, Math.min(period, state.totalPeriods)),
+  })),
+
+  startPlanningPeriod: (period, options) => set((state) => ({
+    currentPeriod: Math.max(1, Math.min(period, state.totalPeriods)),
+    currentOptions: options,
+    selectedOption: null,
+    customTeacherActivity: '',
+    step: 2,
+  })),
+
+  viewPeriodPlan: (period) => set((state) => ({
+    currentPeriod: Math.max(1, Math.min(period, state.totalPeriods)),
+    step: 3,
+  })),
+
   setOptions: (options) => set({ currentOptions: options, selectedOption: null, step: 2 }),
   selectOption: (option) => set({ selectedOption: option, teacherMode: 'suggested' }),
   setCustomTeacherActivity: (act) => set({ customTeacherActivity: act, teacherMode: 'own_approach' }),
@@ -171,15 +199,18 @@ export const useLessonPlanStore = create<MultiPeriodState>()(persist((set, get) 
       .map(([, title]) => title),
 
   nextPeriod: () => {
-    const { currentPeriod, totalPeriods } = get();
-    if (currentPeriod < totalPeriods) {
-      set({
-        currentPeriod: currentPeriod + 1,
-        selectedOption: null,
-        customTeacherActivity: '',
-        step: 2,
-      });
+    const { currentPeriod, totalPeriods, generatedPlans } = get();
+    // Look for next ungenerated period first, otherwise increment or wrap
+    let nextP = currentPeriod + 1;
+    if (nextP > totalPeriods) {
+      nextP = 1;
     }
+    set({
+      currentPeriod: nextP,
+      selectedOption: null,
+      customTeacherActivity: '',
+      step: 2,
+    });
   },
 
   previousPeriod: (p) => set({ currentPeriod: p, step: 3 }),

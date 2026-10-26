@@ -1,0 +1,94 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 3 of 3)",
+  "competence": "8.1.2",
+  "competence_level": "8.1.2",
+  "lesson": "Presents information about other public services provided by the government: Public Issue Tree / Cause-Effect Diagram: Competency Level 8.1.2",
+  "unique_learning_outcome": [
+    "Presents information about other public services provided by the government."
+  ],
+  "the_entrance": "5-minute introduction: Teacher introduces the topic of public services provided by the government. Students are asked to recall any public services they are familiar with. The teacher then distributes the prompts/cue cards and students inspect the tasks. This leads directly into the selected activity.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Teacher delivers prompts/cue cards; students inspect tasks.",
+      "student_activities": "Students negotiate a solution, create a shared civic artifact, and review another group's proposal.",
+      "learning_teaching_method": "Public Issue Tree / Cause-Effect Diagram",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Teacher facilitates role execution and formatively checks progress.",
+      "student_activities": "Students negotiate a solution, create a shared civic artifact, and review another group's proposal.",
+      "learning_teaching_method": "Public Issue Tree / Cause-Effect Diagram",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "Teacher facilitates role execution and formatively checks progress.",
+      "student_activities": "Spokespersons present; peer feedback.",
+      "learning_teaching_method": "Public Issue Tree / Cause-Effect Diagram",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 5,
+      "other": ""
+    }
+  ],
+  "summary": "Students will present their group's proposal and receive feedback from their peers.",
+  "assessment_and_feedback_whole_lesson": "Teacher formatively assesses student understanding and progress throughout the lesson.",
+  "post_activity": "5-minute in-class assignment: Students will write a short reflection on what they learned about public services provided by the government and how they can contribute to their community.",
+  "information_sources": [
+    "grade_8_civic_textbook.pdf (page 1)"
+  ],
+  "attachments": [],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 3,
+  "total_periods": 3,
+  "selected_activity": "Activity: Public Issue Tree / Cause-Effect Diagram: Competency Level 8.1.2\nApproach: Students use public issue tree / cause-effect diagram to explore 'Presents information about other public services provided by the government.'. Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.\nExpected output: A group civic proposal, diagram, or public information message.\nGrouping: 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+  "selected_activity_title": "Public Issue Tree / Cause-Effect Diagram: Competency Level 8.1.2",
+  "custom_teacher_activity": null,
+  "activity_options": [
+    {
+      "id": "option_2",
+      "title": "Public Issue Tree / Cause-Effect Diagram: Competency Level 8.1.2",
+      "pedagogy_type": "Collaborative Design",
+      "description": "Students use public issue tree / cause-effect diagram to explore 'Presents information about other public services provided by the government.'. Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "learning_outcomes_addressed": [
+        "Presents information about other public services provided by the government."
+      ],
+      "student_action_summary": "Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "teacher_facilitation_summary": "Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.",
+      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks",
+        "Chart Paper"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "A group civic proposal, diagram, or public information message.",
+      "creative_assessment_preview": "Groups give one-sentence feedback connecting a peer proposal to the outcome.",
+      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "Names the public services provided for the area identifying them.",
+      "Describes institutions that provide public services and the functions of the officers."
+    ],
+    "2": [
+      "Expresses ideas appreciating the fact that public services bring about a quality development of human lives.",
+      "Gives examples for other organizations that provide public services."
+    ],
+    "3": [
+      "Presents information about other public services provided by the government."
+    ]
+  }
+}

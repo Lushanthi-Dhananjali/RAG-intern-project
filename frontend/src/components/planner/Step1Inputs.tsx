@@ -135,11 +135,17 @@ export default function Step1Inputs() {
 
 
       <div>
-        <label htmlFor="planner-periods" style={fieldLabelStyle}>Lesson Allocation (Periods &amp; Duration)</label>
+        <label htmlFor="planner-periods" style={fieldLabelStyle}>Total Lesson Allocation (Periods &amp; Duration)</label>
         <select
           id="planner-periods"
           value={store.totalPeriods}
-          onChange={(e) => store.setInputs({ totalPeriods: Number(e.target.value) })}
+          onChange={(e) => {
+            const newTotal = Number(e.target.value);
+            store.setInputs({
+              totalPeriods: newTotal,
+              currentPeriod: Math.min(store.currentPeriod, newTotal),
+            });
+          }}
           style={fieldStyle}
         >
           {[1, 2, 3, 4].map((periodCount) => (
@@ -152,6 +158,48 @@ export default function Step1Inputs() {
           NIE Standard: 40 minutes per period ({durationMinutes} minutes total)
         </span>
       </div>
+
+      {store.totalPeriods > 1 && (
+        <div style={{ backgroundColor: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '12px', padding: '12px 14px' }}>
+          <label style={{ ...fieldLabelStyle, color: '#166534', marginBottom: '8px' }}>
+            🎯 Select Period to Plan / Generate (Skip previous periods if desired):
+          </label>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+            {Array.from({ length: store.totalPeriods }, (_, i) => i + 1).map((pNum) => {
+              const isSelected = store.currentPeriod === pNum;
+              const hasPlan = !!store.generatedPlans[pNum];
+              return (
+                <button
+                  key={pNum}
+                  type="button"
+                  onClick={() => store.setInputs({ currentPeriod: pNum })}
+                  style={{
+                    padding: '8px 14px',
+                    borderRadius: '8px',
+                    fontSize: '13px',
+                    fontWeight: 800,
+                    cursor: 'pointer',
+                    border: isSelected ? '2px solid #16a34a' : '1px solid #cbd5e1',
+                    backgroundColor: isSelected ? '#15803d' : hasPlan ? '#dcfce7' : '#ffffff',
+                    color: isSelected ? '#ffffff' : hasPlan ? '#166534' : '#334155',
+                    boxShadow: isSelected ? '0 2px 4px rgba(22, 163, 74, 0.3)' : 'none',
+                    transition: 'all 0.15s ease',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                  }}
+                >
+                  <span>Period {pNum}</span>
+                  {hasPlan && <span style={{ fontSize: '10px' }}>✓</span>}
+                </button>
+              );
+            })}
+          </div>
+          <p style={{ margin: '8px 0 0', fontSize: '11px', color: '#15803d', lineHeight: 1.4 }}>
+            💡 <strong>Flexible period planning:</strong> You can generate any period (e.g. Period 2 or Period 4) without generating previous periods. Learning outcomes are divided equally and deterministically across all {store.totalPeriods} periods following NIE curriculum priority.
+          </p>
+        </div>
+      )}
 
       <button
         type="submit"
@@ -174,7 +222,9 @@ export default function Step1Inputs() {
           gap: '8px',
         }}
       >
-        {loading ? 'Retrieving curriculum and activities...' : <>✨ Generate Civic Education Lesson Plan ({store.competencyLevel || '...'})</>}
+        {loading
+          ? `Retrieving curriculum and activities for Period ${store.currentPeriod}...`
+          : <>✨ Plan Period {store.currentPeriod} of {store.totalPeriods} ({store.competencyLevel || '...'})</>}
       </button>
     </form>
   );

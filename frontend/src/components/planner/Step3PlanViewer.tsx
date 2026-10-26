@@ -8,49 +8,130 @@ export default function Step3PlanViewer() {
   const [loadingNext, setLoadingNext] = useState(false);
   const currentPlan = store.generatedPlans[store.currentPeriod];
 
-  if (!currentPlan) {
-    return (
-      <div
-        style={{
-          backgroundColor: '#ffffff',
-          border: '1px solid #e2e8f0',
-          borderRadius: '14px',
-          padding: '24px',
-          textAlign: 'center',
-          color: '#64748b',
-          fontSize: '14px',
-        }}
-      >
-        No generated plan found for Period {store.currentPeriod}.
-      </div>
-    );
-  }
-
-  const handleNextPeriodClick = async () => {
+  const handlePlanPeriod = async (targetPeriod: number) => {
     setLoadingNext(true);
-    const nextP = store.currentPeriod + 1;
     try {
       const options = await fetchPedagogicalOptions({
         competencyLevel: store.competencyLevel,
         studentCount: store.studentCount,
         periods: store.totalPeriods,
-        requestedPeriod: nextP,
+        requestedPeriod: targetPeriod,
         gradeLevel: store.gradeLevel,
         subject: store.subject,
         topicQuery: store.topicQuery,
         classroomEnvironment: store.classroomEnvironment,
         accessibleResources: store.accessibleResources,
-        previousPeriodActivities: store.priorActivityTitles(nextP),
+        previousPeriodActivities: store.otherActivityTitles(targetPeriod),
       });
 
-      store.setOptions(options);
-      store.nextPeriod();
+      store.startPlanningPeriod(targetPeriod, options);
     } catch (err: any) {
-      alert(`Could not fetch options for Period ${nextP}: ${err.message}`);
+      alert(`Could not fetch options for Period ${targetPeriod}: ${err.message}`);
     } finally {
       setLoadingNext(false);
     }
   };
+
+  const handleNextPeriodClick = async () => {
+    const ungenerated = Array.from({ length: store.totalPeriods }, (_, i) => i + 1)
+      .filter((p) => !store.generatedPlans[p]);
+    const nextP = ungenerated.find((p) => p > store.currentPeriod) || ungenerated[0] || (store.currentPeriod + 1);
+    await handlePlanPeriod(nextP);
+  };
+
+  if (!currentPlan) {
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+        {/* Sequence Tabs for Multi-Period Navigation */}
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '8px',
+            backgroundColor: '#f8fafc',
+            border: '1px solid #cbd5e1',
+            borderRadius: '12px',
+            padding: '8px',
+          }}
+        >
+          {Array.from({ length: store.totalPeriods }).map((_, idx) => {
+            const pNum = idx + 1;
+            const isDone = !!store.generatedPlans[pNum];
+            const isCurrent = store.currentPeriod === pNum;
+            return (
+              <button
+                key={pNum}
+                type="button"
+                onClick={() => store.viewPeriodPlan(pNum)}
+                style={{
+                  padding: '8px 16px',
+                  borderRadius: '8px',
+                  fontSize: '13px',
+                  fontWeight: 700,
+                  border: isCurrent ? '1.5px solid #4f46e5' : isDone ? '1px solid #cbd5e1' : '1px dashed #cbd5e1',
+                  backgroundColor: isCurrent ? '#4f46e5' : isDone ? '#ffffff' : '#f8fafc',
+                  color: isCurrent ? '#ffffff' : isDone ? '#334155' : '#64748b',
+                  cursor: 'pointer',
+                  boxShadow: isCurrent ? '0 2px 4px rgba(79, 70, 229, 0.25)' : 'none',
+                  transition: 'all 0.15s ease',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                }}
+              >
+                <span>Period {pNum}</span>
+                {isDone ? <span style={{ fontSize: '11px' }}>✓</span> : <span style={{ fontSize: '10px', opacity: 0.8 }}>(Not Generated)</span>}
+              </button>
+            );
+          })}
+        </div>
+
+        <div
+          style={{
+            backgroundColor: '#ffffff',
+            border: '1.5px dashed #cbd5e1',
+            borderRadius: '14px',
+            padding: '36px 20px',
+            textAlign: 'center',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '12px',
+          }}
+        >
+          <span style={{ fontSize: '32px' }}>📝</span>
+          <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 800, color: '#0f172a' }}>
+            Period {store.currentPeriod} Lesson Plan Not Yet Generated
+          </h3>
+          <p style={{ margin: 0, fontSize: '13px', color: '#64748b', maxWidth: '480px', lineHeight: 1.5 }}>
+            You skipped or haven't planned Period {store.currentPeriod} yet. Its curriculum learning outcomes are already determined. You can generate it independently now.
+          </p>
+          <button
+            type="button"
+            onClick={() => handlePlanPeriod(store.currentPeriod)}
+            disabled={loadingNext}
+            style={{
+              marginTop: '8px',
+              padding: '12px 24px',
+              borderRadius: '10px',
+              backgroundColor: '#4f46e5',
+              color: '#ffffff',
+              fontWeight: 800,
+              fontSize: '14px',
+              border: 'none',
+              cursor: loadingNext ? 'not-allowed' : 'pointer',
+              boxShadow: '0 2px 6px rgba(79, 70, 229, 0.3)',
+              transition: 'background-color 0.2s ease',
+            }}
+          >
+            {loadingNext
+              ? `Loading options for Period ${store.currentPeriod}...`
+              : `✨ Choose Activity & Generate Period ${store.currentPeriod} Plan →`}
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   const handleChangeActivity = async () => {
     setLoadingNext(true);
@@ -132,22 +213,25 @@ export default function Step3PlanViewer() {
             <button
               key={pNum}
               type="button"
-              onClick={() => store.previousPeriod(pNum)}
-              disabled={!isDone}
+              onClick={() => store.viewPeriodPlan(pNum)}
               style={{
                 padding: '8px 16px',
                 borderRadius: '8px',
                 fontSize: '13px',
                 fontWeight: 700,
-                border: isCurrent ? '1.5px solid #4f46e5' : '1px solid #cbd5e1',
-                backgroundColor: isCurrent ? '#4f46e5' : isDone ? '#ffffff' : '#f1f5f9',
-                color: isCurrent ? '#ffffff' : isDone ? '#334155' : '#94a3b8',
-                cursor: isDone ? 'pointer' : 'not-allowed',
+                border: isCurrent ? '1.5px solid #4f46e5' : isDone ? '1px solid #cbd5e1' : '1px dashed #cbd5e1',
+                backgroundColor: isCurrent ? '#4f46e5' : isDone ? '#ffffff' : '#f8fafc',
+                color: isCurrent ? '#ffffff' : isDone ? '#334155' : '#64748b',
+                cursor: 'pointer',
                 boxShadow: isCurrent ? '0 2px 4px rgba(79, 70, 229, 0.25)' : 'none',
                 transition: 'all 0.15s ease',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
               }}
             >
-              Period {pNum} {isDone ? '✓' : ''}
+              <span>Period {pNum}</span>
+              {isDone ? <span style={{ fontSize: '11px' }}>✓</span> : <span style={{ fontSize: '10px', opacity: 0.8 }}>(Not Generated)</span>}
             </button>
           );
         })}
@@ -567,46 +651,85 @@ export default function Step3PlanViewer() {
         </div>
       </div>
 
-      {/* 10. Sequential Progression Action Button */}
-      {store.currentPeriod < store.totalPeriods ? (
-        <button
-          type="button"
-          onClick={handleNextPeriodClick}
-          disabled={loadingNext}
-          style={{
-            width: '100%',
-            padding: '14px 20px',
-            borderRadius: '10px',
-            backgroundColor: loadingNext ? '#94a3b8' : '#4f46e5',
-            color: '#ffffff',
-            fontWeight: 800,
-            fontSize: '14px',
-            border: 'none',
-            cursor: loadingNext ? 'not-allowed' : 'pointer',
-            boxShadow: '0 2px 6px rgba(79, 70, 229, 0.3)',
-            transition: 'background-color 0.2s ease',
-          }}
-        >
-          {loadingNext
-            ? `Querying Fresh Options for Period ${store.currentPeriod + 1}...`
-            : `Plan Next Period (Period ${store.currentPeriod + 1} of ${store.totalPeriods}) →`}
-        </button>
-      ) : (
-        <div
-          style={{
-            backgroundColor: '#f0fdf4',
-            border: '1.5px solid #bbf7d0',
-            borderRadius: '12px',
-            padding: '16px',
-            textAlign: 'center',
-            fontWeight: 800,
-            fontSize: '14px',
-            color: '#166534',
-          }}
-        >
-          🎉 All {store.totalPeriods} Periods for Competency {store.competencyLevel} Successfully Generated &amp; Saved!
-        </div>
-      )}
+      {/* 10. Sequential Progression & Remaining Periods Action Block */}
+      {(() => {
+        const ungeneratedPeriods = Array.from({ length: store.totalPeriods }, (_, i) => i + 1)
+          .filter((p) => !store.generatedPlans[p]);
+
+        if (ungeneratedPeriods.length === 0) {
+          return (
+            <div
+              style={{
+                backgroundColor: '#f0fdf4',
+                border: '1.5px solid #bbf7d0',
+                borderRadius: '12px',
+                padding: '16px',
+                textAlign: 'center',
+                fontWeight: 800,
+                fontSize: '14px',
+                color: '#166534',
+              }}
+            >
+              🎉 All {store.totalPeriods} Periods for Competency {store.competencyLevel} Successfully Generated &amp; Saved!
+            </div>
+          );
+        }
+
+        const nextSequential = ungeneratedPeriods.find((p) => p > store.currentPeriod) || ungeneratedPeriods[0];
+
+        return (
+          <div
+            style={{
+              backgroundColor: '#f8fafc',
+              border: '1px solid #e2e8f0',
+              borderRadius: '14px',
+              padding: '16px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '12px',
+            }}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
+              <span style={{ fontSize: '12px', fontWeight: 800, color: '#334155', textTransform: 'uppercase' }}>
+                Remaining Periods to Plan ({ungeneratedPeriods.length} of {store.totalPeriods} pending)
+              </span>
+              <span style={{ fontSize: '11px', color: '#64748b' }}>
+                Generate in any order you choose
+              </span>
+            </div>
+
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+              {ungeneratedPeriods.map((pNum) => (
+                <button
+                  key={pNum}
+                  type="button"
+                  onClick={() => handlePlanPeriod(pNum)}
+                  disabled={loadingNext}
+                  style={{
+                    flex: '1 1 200px',
+                    padding: '12px 16px',
+                    borderRadius: '10px',
+                    backgroundColor: pNum === nextSequential ? '#4f46e5' : '#ffffff',
+                    color: pNum === nextSequential ? '#ffffff' : '#334155',
+                    border: pNum === nextSequential ? 'none' : '1.5px solid #cbd5e1',
+                    fontWeight: 800,
+                    fontSize: '13px',
+                    cursor: loadingNext ? 'not-allowed' : 'pointer',
+                    boxShadow: pNum === nextSequential ? '0 2px 6px rgba(79, 70, 229, 0.3)' : '0 1px 2px rgba(0,0,0,0.05)',
+                    transition: 'all 0.15s ease',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '6px',
+                  }}
+                >
+                  {loadingNext ? 'Fetching options...' : <>✨ Plan Period {pNum} of {store.totalPeriods} →</>}
+                </button>
+              ))}
+            </div>
+          </div>
+        );
+      })()}
     </div>
   );
 }
