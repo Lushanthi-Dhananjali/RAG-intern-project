@@ -1,80 +1,65 @@
 {
   "grade": "Grade 8",
   "subject": "Civic Education",
-  "time_allocation": "40 Minutes (Period 1 of 3)",
+  "time_allocation": "40 Minutes (Period 1 of 1)",
   "competence": "Democratic Governance",
   "competence_level": "8.1.1",
-  "lesson": "Identifies the public services: Teacher approach: Watch a 3-minute video on Pradeshiya Sabha...",
+  "lesson": "Identifies the public services: Teacher approach: Students role-play a village council meeting...",
   "unique_learning_outcome": [
     "Identifies the public services.",
-    "Explains the common features related to public services."
+    "Explains the need of public services."
   ],
-  "the_entrance": "Engage students with a question on local community needs. (5 mins)",
+  "the_entrance": "5-minute introduction: The teacher poses a real-world civic prompt and students discuss in pairs.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "Explains roleplay goals.",
-      "student_activities": "Read task roles.",
-      "learning_teaching_method": "Task Assignment",
-      "learning_teaching_aids": "Worksheets",
+      "teacher_activities": "Organizes teams and guides investigative tasks.",
+      "student_activities": "Collaborate in assigned roles to analyze evidence.",
+      "learning_teaching_method": "Guided Inquiry",
+      "learning_teaching_aids": "Task Cards",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 15,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "Monitors group debates.",
-      "student_activities": "Enact council hearing.",
-      "learning_teaching_method": "Collaborative Roleplay",
-      "learning_teaching_aids": "Role cue cards",
-      "assessment_and_feedback": "",
-      "time_minutes": 10,
-      "other": ""
-    },
-    {
-      "step_number": 3,
-      "teacher_activities": "Consolidates findings.",
-      "student_activities": "Spokespersons share resolutions.",
-      "learning_teaching_method": "Plenary Synthesis",
+      "teacher_activities": "Facilitates group presentations and highlights key insights.",
+      "student_activities": "Present team findings and record feedback.",
+      "learning_teaching_method": "Plenary Discussion",
       "learning_teaching_aids": "Blackboard",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 15,
       "other": ""
     }
   ],
-  "summary": "Summarizes local government roles.",
-  "assessment_and_feedback_whole_lesson": "5-minute rapid peer review quiz.",
-  "post_activity": "Record public services observed at home.",
-  "information_sources": [
-    "grade_8_civic_textbook.pdf (pages 1, 150)"
-  ],
-  "attachments": [
-    "Worksheet 1"
-  ],
+  "summary": "Synthesizes core student findings and civic values.",
+  "assessment_and_feedback_whole_lesson": "5-minute rapid formative exit check.",
+  "post_activity": "5-minute in-class assignment: Each student writes an exit response on Identifies the public services..",
+  "information_sources": [],
+  "attachments": [],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 1,
-  "total_periods": 3,
-  "selected_activity": "Watch a 3-minute video on Pradeshiya Sabha meetings, then conduct group debate.",
-  "selected_activity_title": "Teacher approach: Watch a 3-minute video on Pradeshiya Sabha meetings, then conduct group debate.",
-  "custom_teacher_activity": null,
+  "total_periods": 1,
+  "selected_activity": "Students role-play a village council meeting discussing public services.",
+  "selected_activity_title": "Teacher approach: Students role-play a village council meeting discussing public services.",
+  "custom_teacher_activity": "Students role-play a village council meeting discussing public services.",
   "activity_options": [
     {
       "id": "teacher_custom_activity_p1",
-      "title": "Teacher Activity: Watch a 3-minute video on Pradeshiya Sabha meetings, then conduct group debate.",
-      "description": "Watch a 3-minute video on Pradeshiya Sabha meetings, then conduct group debate.",
-      "pedagogy_type": "Task Assignment",
-      "student_grouping": "Adaptive Grouping (40 students)",
-      "student_action_summary": "Read task roles.",
-      "teacher_facilitation_summary": "Explains roleplay goals.",
+      "title": "Teacher Activity: Students role-play a village council meeting discussing public services.",
+      "description": "Students role-play a village council meeting discussing public services.",
+      "pedagogy_type": "Guided Inquiry",
+      "student_grouping": "Adaptive Grouping (35 students)",
+      "student_action_summary": "Collaborate in assigned roles to analyze evidence.",
+      "teacher_facilitation_summary": "Organizes teams and guides investigative tasks.",
       "required_materials": [
-        "Worksheets"
+        "Task Cards"
       ],
-      "expected_student_output": "Record public services observed at home.",
-      "creative_assessment_preview": "5-minute rapid peer review quiz.",
+      "expected_student_output": "5-minute in-class assignment: Each student writes an exit response on Identifies the public services..",
+      "creative_assessment_preview": "5-minute rapid formative exit check.",
       "learning_outcomes_addressed": [
         "Identifies the public services.",
-        "Explains the common features related to public services.",
         "Explains the need of public services."
       ]
     }
@@ -82,14 +67,7 @@
   "outcome_allocation": {
     "1": [
       "Identifies the public services.",
-      "Explains the common features related to public services."
-    ],
-    "2": [
-      "Explains the need of public services.",
-      "Presents views appreciating the importance of public services of the times."
-    ],
-    "3": [
-      "Investigates information on the beginning and progress of public services."
+      "Explains the need of public services."
     ]
   }
 }

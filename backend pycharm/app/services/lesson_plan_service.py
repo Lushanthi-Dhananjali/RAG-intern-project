@@ -269,9 +269,7 @@ class LessonPlanMlService(ILessonPlanMlService):
             subject="Civic Education",
             total_periods=safe_periods,
         )
-        for period in range(1, safe_periods + 1):
-            if period == safe_requested:
-                continue
+        for period in range(1, safe_requested + 1):
             saved_plan = saved_period_plans.get(period, {})
             if saved_plan.get("total_periods", safe_periods) != safe_periods:
                 continue

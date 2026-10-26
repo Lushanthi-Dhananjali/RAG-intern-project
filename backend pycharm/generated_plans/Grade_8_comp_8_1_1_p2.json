@@ -1,13 +1,12 @@
 {
   "grade": "Grade 8",
   "subject": "Civic Education",
-  "time_allocation": "40 Minutes (Period 2 of 3)",
+  "time_allocation": "40 Minutes (Period 2 of 4)",
   "competence": "Democratic Governance",
   "competence_level": "8.1.1",
   "lesson": "Explains the need of public services: 1-Minute Frozen Tableau Drama: Democratic Governance",
   "unique_learning_outcome": [
-    "Explains the need of public services.",
-    "Presents views appreciating the importance of public services of the times."
+    "Explains the need of public services."
   ],
   "the_entrance": "Engage students with a question on local community needs. (5 mins)",
   "lesson_development_steps": [
@@ -54,7 +53,7 @@
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 2,
-  "total_periods": 3,
+  "total_periods": 4,
   "selected_activity": "Interactive Local Authority Simulation",
   "selected_activity_title": "1-Minute Frozen Tableau Drama: Democratic Governance",
   "custom_teacher_activity": null,
@@ -88,10 +87,12 @@
       "Explains the common features related to public services."
     ],
     "2": [
-      "Explains the need of public services.",
-      "Presents views appreciating the importance of public services of the times."
+      "Explains the need of public services."
     ],
     "3": [
+      "Presents views appreciating the importance of public services of the times."
+    ],
+    "4": [
       "Investigates information on the beginning and progress of public services."
     ]
   }
