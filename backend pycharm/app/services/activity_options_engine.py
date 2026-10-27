@@ -535,10 +535,9 @@ def check_teacher_activity_suitability(
                 "suggested_activity_title": alt_title,
             }
 
-    # 3. LLM-based evaluation via local Ollama endpoint (if reachable)
+    # 3. LLM-based evaluation via Unified LLM Client (Ollama or Cloud API)
     try:
-        import urllib.request
-        endpoint = ollama_url or "http://localhost:11434"
+        from app.services.llm_client import execute_llm_json
         prompt = (
             "You are an official National Institute of Education (NIE) Sri Lanka curriculum validator for Civic Education.\n"
             f"Subject: {subject} ({grade_level})\n"
@@ -555,27 +554,26 @@ def check_teacher_activity_suitability(
             "Return ONLY a JSON object:\n"
             '{\n  "is_suitable": true or false,\n  "reason": "explanation of alignment or mismatch with outcomes",\n  "suggested_activity": "alternative description if unsuitable, else empty",\n  "suggested_activity_title": "alternative title if unsuitable, else empty"\n}'
         )
-        req = urllib.request.Request(
-            f"{endpoint}/api/generate",
-            data=json.dumps({"model": model_name, "prompt": prompt, "stream": False, "format": "json"}).encode("utf-8"),
-            headers={"Content-Type": "application/json"}
+        parsed = execute_llm_json(
+            prompt=prompt,
+            system_prompt="You are an official NIE Sri Lanka curriculum validator. Return strictly valid JSON.",
+            model=model_name,
+            ollama_url=ollama_url,
+            timeout=15,
         )
-        with urllib.request.urlopen(req, timeout=6) as resp:
-            data = json.loads(resp.read().decode("utf-8"))
-            parsed = json.loads(data.get("response", "{}"))
-            if "is_suitable" in parsed:
-                is_s = bool(parsed["is_suitable"])
-                reason = parsed.get("reason", "")
-                s_act = parsed.get("suggested_activity") or alt_desc
-                s_title = parsed.get("suggested_activity_title") or alt_title
-                return {
-                    "is_suitable": is_s,
-                    "reason": reason if not is_s else f"Activity aligns with Period {current_period} learning outcome(s): {outcomes_summary}.",
-                    "suggested_activity": s_act if not is_s else "",
-                    "suggested_activity_title": s_title if not is_s else "",
-                }
+        if "is_suitable" in parsed:
+            is_s = bool(parsed["is_suitable"])
+            reason = parsed.get("reason", "")
+            s_act = parsed.get("suggested_activity") or alt_desc
+            s_title = parsed.get("suggested_activity_title") or alt_title
+            return {
+                "is_suitable": is_s,
+                "reason": reason if not is_s else f"Activity aligns with Period {current_period} learning outcome(s): {outcomes_summary}.",
+                "suggested_activity": s_act if not is_s else "",
+                "suggested_activity_title": s_title if not is_s else "",
+            }
     except Exception as exc:
-        logger.debug("Ollama suitability check call skipped or unavailable: %s", exc)
+        logger.debug("LLM suitability check call skipped or unavailable: %s", exc)
 
     # 4. Deterministic pedagogical fallback validation
     civic_keywords = [

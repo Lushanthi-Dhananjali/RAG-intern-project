@@ -11,20 +11,40 @@ import {
 export default function Step2OptionsSelection() {
   const store = useLessonPlanStore();
   const [loading, setLoading] = useState(false);
+  const [switchingToPeriod, setSwitchingToPeriod] = useState<number | null>(null);
+  const [isGeneratingPlan, setIsGeneratingPlan] = useState(false);
   const [customMode, setCustomMode] = useState(false);
   const [customText, setCustomText] = useState('');
   const [generationError, setGenerationError] = useState<string | null>(null);
   const [checkingSuitability, setCheckingSuitability] = useState(false);
   const [suitabilityResult, setSuitabilityResult] = useState<CheckActivitySuitabilityResponse | null>(null);
 
+  // Sync custom activity text when switching periods
+  React.useEffect(() => {
+    const savedCustom = store.customActivityByPeriod[store.currentPeriod] || '';
+    if (savedCustom) {
+      setCustomText(savedCustom);
+      setCustomMode(true);
+    } else {
+      setCustomMode(false);
+      setCustomText('');
+    }
+  }, [store.currentPeriod]);
+
   const handleSwitchPeriod = async (targetPeriod: number) => {
     if (targetPeriod === store.currentPeriod) return;
-    if (store.generatedPlans[targetPeriod]) {
-      store.viewPeriodPlan(targetPeriod);
+
+    // If options for targetPeriod already exist in store, switch immediately without fetching
+    if (store.optionsByPeriod[targetPeriod]?.length > 0) {
+      store.goToChooseActivity(targetPeriod);
+      setGenerationError(null);
+      setSuitabilityResult(null);
       return;
     }
-    setLoading(true);
+
+    setSwitchingToPeriod(targetPeriod);
     setGenerationError(null);
+    setSuitabilityResult(null);
     try {
       const options = await fetchPedagogicalOptions({
         competencyLevel: store.competencyLevel,
@@ -42,11 +62,12 @@ export default function Step2OptionsSelection() {
     } catch (err: any) {
       setGenerationError(`Failed to fetch options for Period ${targetPeriod}: ${err.message}`);
     } finally {
-      setLoading(false);
+      setSwitchingToPeriod(null);
     }
   };
 
   const handleGenerate = async (selectedDesc?: string, isCustom = false, activityTitle?: string) => {
+    setIsGeneratingPlan(true);
     setLoading(true);
     setGenerationError(null);
 
@@ -70,6 +91,7 @@ export default function Step2OptionsSelection() {
 
         if (!check.is_suitable) {
           setLoading(false);
+          setIsGeneratingPlan(false);
           return;
         }
       } catch (err: any) {
@@ -78,6 +100,7 @@ export default function Step2OptionsSelection() {
         if (err.message && err.message.includes('Activity not suitable')) {
           setGenerationError(err.message);
           setLoading(false);
+          setIsGeneratingPlan(false);
           return;
         }
       }
@@ -111,6 +134,7 @@ export default function Step2OptionsSelection() {
       setGenerationError(err.message || 'Generation failed. Your activity selection has been kept.');
     } finally {
       setLoading(false);
+      setIsGeneratingPlan(false);
       setCheckingSuitability(false);
     }
   };
@@ -178,7 +202,7 @@ export default function Step2OptionsSelection() {
                 <button
                   key={pNum}
                   type="button"
-                  disabled={loading}
+                  disabled={loading || switchingToPeriod !== null || isGeneratingPlan}
                   onClick={() => handleSwitchPeriod(pNum)}
                   style={{
                     padding: '6px 12px',
@@ -289,7 +313,58 @@ export default function Step2OptionsSelection() {
         </div>
       )}
 
-      {(loading || checkingSuitability) && (
+      {/* Existing Generated Plan Quick View Banner */}
+      {store.generatedPlans[store.currentPeriod] && (
+        <div
+          style={{
+            backgroundColor: '#f0fdf4',
+            border: '1.5px solid #86efac',
+            borderRadius: '12px',
+            padding: '12px 18px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '10px',
+            boxShadow: '0 2px 6px rgba(22, 163, 74, 0.08)',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <span style={{ fontSize: '18px' }}>📋</span>
+            <div>
+              <span style={{ fontSize: '13px', fontWeight: 800, color: '#166534', display: 'block' }}>
+                Period {store.currentPeriod} Lesson Plan Already Generated
+              </span>
+              <span style={{ fontSize: '12px', color: '#15803d' }}>
+                Active strategy: {store.activityByPeriod[store.currentPeriod] || 'Planned'}. You can choose another activity to regenerate, or return to the plan.
+              </span>
+            </div>
+          </div>
+          <button
+            type="button"
+            onClick={() => store.viewPeriodPlan(store.currentPeriod)}
+            style={{
+              padding: '7px 16px',
+              backgroundColor: '#16a34a',
+              color: '#ffffff',
+              border: 'none',
+              borderRadius: '8px',
+              fontSize: '12px',
+              fontWeight: 800,
+              cursor: 'pointer',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              boxShadow: '0 2px 4px rgba(22, 163, 74, 0.25)',
+              transition: 'background-color 0.15s ease',
+            }}
+          >
+            <span>View Period {store.currentPeriod} Plan →</span>
+          </button>
+        </div>
+      )}
+
+      {(switchingToPeriod !== null || isGeneratingPlan || checkingSuitability) && (
         <div
           role="status"
           style={{
@@ -309,6 +384,8 @@ export default function Step2OptionsSelection() {
           <span>
             {checkingSuitability
               ? `Checking activity suitability against Period ${store.currentPeriod} learning outcomes...`
+              : switchingToPeriod !== null
+              ? `Loading curriculum-aligned activity options for Period ${switchingToPeriod}...`
               : `Generating the Period ${store.currentPeriod} plan from your selected activity...`}
           </span>
         </div>
@@ -460,7 +537,11 @@ export default function Step2OptionsSelection() {
                       transition: 'background-color 0.2s ease',
                     }}
                   >
-                    {loading && isSelected ? 'Generating plan...' : '✨ Choose & Generate Plan'}
+                    {isGeneratingPlan && isSelected
+                      ? 'Generating plan...'
+                      : store.generatedPlans[store.currentPeriod]
+                      ? '✨ Choose & Regenerate Plan'
+                      : '✨ Choose & Generate Plan'}
                   </button>
                 </article>
               );
@@ -648,7 +729,7 @@ export default function Step2OptionsSelection() {
                 transition: 'background-color 0.2s ease',
               }}
             >
-              {loading ? 'Validating & Generating...' : '✨ Generate Plan From My Activity'}
+              {isGeneratingPlan ? 'Validating & Generating...' : store.generatedPlans[store.currentPeriod] ? '✨ Regenerate Plan From My Activity' : '✨ Generate Plan From My Activity'}
             </button>
           </div>
         </div>

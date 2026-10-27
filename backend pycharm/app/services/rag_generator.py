@@ -371,28 +371,18 @@ class RAGLessonPlanGenerator:
                 tig_context="\n\n".join([c.get("content", "") for c in tig_chunks])
             )
 
-        # 5. Execute LLM Call (Ollama / Llama 3)
-        payload = {
-            "model": self.model_name,
-            "prompt": prompt,
-            "stream": False,
-            "format": "json",
-            "options": {
-                "temperature": 0.3,
-                "num_predict": 1400,
-                "num_thread": 6
-            }
-        }
-
+        # 5. Execute LLM Call (Unified Client: Local Ollama or Cloud API Key)
         valid_llm_options: List[Dict[str, Any]] = []
         fallback_previous_activities = list(previous_activities or [])
         try:
-            res = requests.post(f"{self.ollama_url}/api/generate", json=payload, timeout=90)
-            res.raise_for_status()
-            raw = res.json().get("response", "{}")
-            clean_str = raw.strip().removeprefix("```json").removeprefix("```").removesuffix("```").strip()
-            parsed = json.loads(clean_str)
-
+            from app.services.llm_client import execute_llm_json
+            parsed = execute_llm_json(
+                prompt=prompt,
+                system_prompt="You are an expert NIE Sri Lanka curriculum planner. Output strictly valid JSON containing an 'options' array with 3 distinct active learning strategies.",
+                model=self.model_name,
+                ollama_url=self.ollama_url,
+                timeout=90,
+            )
             parsed_options = parsed.get("options", [])
             if isinstance(parsed_options, list) and len(parsed_options) == 3:
                 prior_activity_text = " ".join(
@@ -646,51 +636,30 @@ class RAGLessonPlanGenerator:
 
     def call_ollama_with_strict_schema(self, prompt: str) -> LearnLessonPlanDto:
         """
-        Constrains Ollama decoding grammar to LearnLessonPlanDto schema.
-        Increased timeout to 360s and optimized token length to avoid read timeouts.
+        Executes LLM generation with LearnLessonPlanDto schema enforcement.
+        Works across configured LLM Provider (Cloud OpenAI/Gemini API key or local Ollama).
         """
         pydantic_json_schema = LearnLessonPlanDto.model_json_schema()
 
-        payload = {
-            "model": self.model_name,
-            "prompt": prompt,
-            "stream": False,
-            "format": pydantic_json_schema,
-            "options": {
-                "temperature": 0.1,
-                "num_predict": 2500,
-                "num_thread": 6
-            }
-        }
-
-        logger.info("Executing Ollama (%s) generation with strict LEARN schema enforcement...", self.model_name)
+        logger.info("Executing LLM generation with strict LEARN schema enforcement...")
 
         try:
-            response = requests.post(
-                f"{self.ollama_url}/api/generate",
-                json=payload,
-                timeout=360
+            from app.services.llm_client import execute_llm_json
+            plan_dict = execute_llm_json(
+                prompt=prompt,
+                json_schema=pydantic_json_schema,
+                system_prompt=(
+                    "You are an expert Sri Lankan pedagogical curriculum assistant following the LEARN and NIE framework. "
+                    "You must output valid JSON strictly matching the requested schema."
+                ),
+                model=self.model_name,
+                ollama_url=self.ollama_url,
+                timeout=360,
             )
-            response.raise_for_status()
-            raw_output = response.json().get("response", "{}")
-        except requests.RequestException as err:
-            logger.error("Failed to connect to local Ollama server at %s: %s", self.ollama_url, err)
-            raise ConnectionError(f"Ollama connection failure: {err}")
-
-        clean_json_str = (
-            raw_output.strip()
-            .removeprefix("```json")
-            .removeprefix("```")
-            .removesuffix("```")
-            .strip()
-        )
-
-        try:
-            validated_plan = LearnLessonPlanDto.model_validate_json(clean_json_str)
+            validated_plan = LearnLessonPlanDto.model_validate(plan_dict)
             return validated_plan
         except Exception as validation_err:
-            logger.error("Schema validation failed: %s", validation_err)
-            logger.debug("Raw output received:\n%s", clean_json_str)
+            logger.error("Schema validation or LLM execution failed: %s", validation_err)
             raise ValueError(f"LLM output violated LearnLessonPlanDto: {validation_err}")
 
     def generate_lesson_plan(

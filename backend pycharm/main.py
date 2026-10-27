@@ -349,6 +349,29 @@ app.add_middleware(
     expose_headers=["*"],
 )
 
+@app.middleware("http")
+async def extract_llm_client_headers(request, call_next):
+    from app.services.llm_client import client_api_key_ctx, client_provider_ctx
+    header_key = request.headers.get("x-llm-api-key")
+    header_provider = request.headers.get("x-llm-provider")
+    
+    token_key = client_api_key_ctx.set(header_key) if header_key else None
+    token_prov = client_provider_ctx.set(header_provider) if header_provider else None
+    try:
+        response = await call_next(request)
+        return response
+    finally:
+        if token_key:
+            client_api_key_ctx.reset(token_key)
+        if token_prov:
+            client_provider_ctx.reset(token_prov)
+
+
+@app.get("/api/v1/llm-status", tags=["LLM Provider"])
+async def get_llm_status():
+    from app.services.llm_client import get_active_provider_info
+    return get_active_provider_info()
+
 # =====================================================================
 # DEPENDENCY INJECTION PROVIDERS
 # =====================================================================

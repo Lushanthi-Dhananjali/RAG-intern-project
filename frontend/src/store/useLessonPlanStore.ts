@@ -72,9 +72,16 @@ export interface MultiPeriodState {
   // Teacher mode & options
   teacherMode: 'suggested' | 'own_approach';
   currentOptions: PedagogicalActivityOption[];
+  optionsByPeriod: Record<number, PedagogicalActivityOption[]>;
   selectedOption: PedagogicalActivityOption | null;
+  selectedOptionByPeriod: Record<number, PedagogicalActivityOption | null>;
   customTeacherActivity: string;
+  customActivityByPeriod: Record<number, string>;
   
+  // API Key & Provider settings
+  apiKey: string;
+  llmProvider: 'auto' | 'openai' | 'gemini' | 'ollama';
+
   // History & storage
   previousPeriodActivities: string[];
   generatedPlans: Record<number, LessonPlanSchemaDto>;
@@ -87,9 +94,12 @@ export interface MultiPeriodState {
   setCurrentPeriod: (period: number) => void;
   startPlanningPeriod: (period: number, options: PedagogicalActivityOption[]) => void;
   viewPeriodPlan: (period: number) => void;
+  goToChooseActivity: (period?: number) => void;
   setOptions: (options: PedagogicalActivityOption[]) => void;
   selectOption: (option: PedagogicalActivityOption) => void;
   setCustomTeacherActivity: (activity: string) => void;
+  setApiKey: (key: string) => void;
+  setLlmProvider: (provider: 'auto' | 'openai' | 'gemini' | 'ollama') => void;
   setGeneratedPlan: (period: number, plan: LessonPlanSchemaDto, activityTitle: string) => void;
   priorActivityTitles: (period: number) => string[];
   otherActivityTitles: (period: number) => string[];
@@ -112,8 +122,13 @@ export const useLessonPlanStore = create<MultiPeriodState>()(persist((set, get) 
   accessibleResources: ['Chalkboard', 'Student Notebooks', 'Chart Paper'],
   teacherMode: 'suggested',
   currentOptions: [],
+  optionsByPeriod: {},
   selectedOption: null,
+  selectedOptionByPeriod: {},
   customTeacherActivity: '',
+  customActivityByPeriod: {},
+  apiKey: '',
+  llmProvider: 'auto',
   previousPeriodActivities: [],
   generatedPlans: {},
   activityByPeriod: {},
@@ -141,7 +156,11 @@ export const useLessonPlanStore = create<MultiPeriodState>()(persist((set, get) 
           totalPeriods: targetTotal,
           currentPeriod: targetPeriod,
           currentOptions: [],
+          optionsByPeriod: {},
           selectedOption: null,
+          selectedOptionByPeriod: {},
+          customTeacherActivity: '',
+          customActivityByPeriod: {},
           generatedPlans: {},
           activityByPeriod: {},
           previousPeriodActivities: [],
@@ -149,26 +168,69 @@ export const useLessonPlanStore = create<MultiPeriodState>()(persist((set, get) 
       : { ...state, ...inputs, currentPeriod: targetPeriod };
   }),
 
-  setCurrentPeriod: (period) => set((state) => ({
-    currentPeriod: Math.max(1, Math.min(period, state.totalPeriods)),
-  })),
+  setCurrentPeriod: (period) => set((state) => {
+    const targetPeriod = Math.max(1, Math.min(period, state.totalPeriods));
+    const cachedOptions = state.optionsByPeriod[targetPeriod] || [];
+    return {
+      currentPeriod: targetPeriod,
+      currentOptions: cachedOptions.length > 0 ? cachedOptions : state.currentOptions,
+      selectedOption: state.selectedOptionByPeriod[targetPeriod] || null,
+      customTeacherActivity: state.customActivityByPeriod[targetPeriod] || '',
+    };
+  }),
 
-  startPlanningPeriod: (period, options) => set((state) => ({
-    currentPeriod: Math.max(1, Math.min(period, state.totalPeriods)),
-    currentOptions: options,
-    selectedOption: null,
-    customTeacherActivity: '',
-    step: 2,
-  })),
+  startPlanningPeriod: (period, options) => set((state) => {
+    const targetPeriod = Math.max(1, Math.min(period, state.totalPeriods));
+    const updatedOptionsByPeriod = { ...state.optionsByPeriod, [targetPeriod]: options };
+    return {
+      currentPeriod: targetPeriod,
+      currentOptions: options,
+      optionsByPeriod: updatedOptionsByPeriod,
+      selectedOption: state.selectedOptionByPeriod[targetPeriod] || options[0] || null,
+      customTeacherActivity: state.customActivityByPeriod[targetPeriod] || '',
+      step: 2,
+    };
+  }),
 
   viewPeriodPlan: (period) => set((state) => ({
     currentPeriod: Math.max(1, Math.min(period, state.totalPeriods)),
     step: 3,
   })),
 
-  setOptions: (options) => set({ currentOptions: options, selectedOption: null, step: 2 }),
-  selectOption: (option) => set({ selectedOption: option, teacherMode: 'suggested' }),
-  setCustomTeacherActivity: (act) => set({ customTeacherActivity: act, teacherMode: 'own_approach' }),
+  goToChooseActivity: (period) => set((state) => {
+    const targetPeriod = period !== undefined ? Math.max(1, Math.min(period, state.totalPeriods)) : state.currentPeriod;
+    const cachedOptions = state.optionsByPeriod[targetPeriod] || state.currentOptions;
+    return {
+      currentPeriod: targetPeriod,
+      currentOptions: cachedOptions,
+      selectedOption: state.selectedOptionByPeriod[targetPeriod] || state.selectedOption || (cachedOptions.length > 0 ? cachedOptions[0] : null),
+      customTeacherActivity: state.customActivityByPeriod[targetPeriod] || state.customTeacherActivity,
+      teacherMode: state.customActivityByPeriod[targetPeriod] ? 'own_approach' : 'suggested',
+      step: 2,
+    };
+  }),
+
+  setOptions: (options) => set((state) => ({
+    currentOptions: options,
+    optionsByPeriod: { ...state.optionsByPeriod, [state.currentPeriod]: options },
+    selectedOption: options.length > 0 ? options[0] : null,
+    step: 2
+  })),
+
+  selectOption: (option) => set((state) => ({
+    selectedOption: option,
+    selectedOptionByPeriod: { ...state.selectedOptionByPeriod, [state.currentPeriod]: option },
+    teacherMode: 'suggested'
+  })),
+
+  setCustomTeacherActivity: (act) => set((state) => ({
+    customTeacherActivity: act,
+    customActivityByPeriod: { ...state.customActivityByPeriod, [state.currentPeriod]: act },
+    teacherMode: 'own_approach'
+  })),
+
+  setApiKey: (key) => set({ apiKey: key }),
+  setLlmProvider: (prov) => set({ llmProvider: prov }),
   
   setGeneratedPlan: (period, plan, activityTitle) =>
     set((state) => {
@@ -200,21 +262,33 @@ export const useLessonPlanStore = create<MultiPeriodState>()(persist((set, get) 
 
   nextPeriod: () => {
     const { currentPeriod, totalPeriods, generatedPlans } = get();
-    // Look for next ungenerated period first, otherwise increment or wrap
     let nextP = currentPeriod + 1;
     if (nextP > totalPeriods) {
       nextP = 1;
     }
+    const cachedOptions = get().optionsByPeriod[nextP] || [];
     set({
       currentPeriod: nextP,
-      selectedOption: null,
-      customTeacherActivity: '',
+      currentOptions: cachedOptions,
+      selectedOption: get().selectedOptionByPeriod[nextP] || (cachedOptions[0] || null),
+      customTeacherActivity: get().customActivityByPeriod[nextP] || '',
       step: 2,
     });
   },
 
   previousPeriod: (p) => set({ currentPeriod: p, step: 3 }),
-  goToStep: (step) => set({ step }),
+  goToStep: (step) => set((state) => {
+    if (step === 2) {
+      const cachedOptions = state.optionsByPeriod[state.currentPeriod] || state.currentOptions;
+      return {
+        step: 2,
+        currentOptions: cachedOptions,
+        selectedOption: state.selectedOptionByPeriod[state.currentPeriod] || state.selectedOption || (cachedOptions[0] || null),
+        customTeacherActivity: state.customActivityByPeriod[state.currentPeriod] || state.customTeacherActivity,
+      };
+    }
+    return { step };
+  }),
   resetAll: () =>
     set({
       step: 1,
@@ -223,7 +297,10 @@ export const useLessonPlanStore = create<MultiPeriodState>()(persist((set, get) 
       activityByPeriod: {},
       previousPeriodActivities: [],
       selectedOption: null,
+      selectedOptionByPeriod: {},
       currentOptions: [],
+      optionsByPeriod: {},
       customTeacherActivity: '',
+      customActivityByPeriod: {},
     }),
 }), { name: 'civic-multi-period-planner' }));

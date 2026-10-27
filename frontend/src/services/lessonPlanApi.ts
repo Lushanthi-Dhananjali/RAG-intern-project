@@ -6,6 +6,45 @@ export const API_BASE_URL =
     ? `http://${window.location.hostname}:8000`
     : (process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000');
 
+export function getLlmHeaders(): Record<string, string> {
+  const headers: Record<string, string> = {
+    'Content-Type': 'application/json',
+  };
+  if (typeof window !== 'undefined') {
+    try {
+      const persisted = localStorage.getItem('multi_period_lesson_plan_storage');
+      if (persisted) {
+        const parsed = JSON.parse(persisted);
+        const state = parsed.state || {};
+        if (state.apiKey && typeof state.apiKey === 'string' && state.apiKey.trim()) {
+          headers['X-LLM-API-Key'] = state.apiKey.trim();
+        }
+        if (state.llmProvider && typeof state.llmProvider === 'string' && state.llmProvider.trim()) {
+          headers['X-LLM-Provider'] = state.llmProvider.trim();
+        }
+      }
+    } catch {}
+  }
+  return headers;
+}
+
+export async function fetchLlmStatus(): Promise<{
+  active_provider: string;
+  active_model: string;
+  has_openai_key: boolean;
+  has_gemini_key: boolean;
+  ollama_url: string;
+  ollama_model: string;
+}> {
+  const response = await fetch(`${API_BASE_URL}/api/v1/llm-status`, {
+    headers: getLlmHeaders(),
+  });
+  if (!response.ok) {
+    throw new Error(`Failed to fetch LLM status: ${response.status}`);
+  }
+  return response.json();
+}
+
 // =====================================================================
 // TYPE DEFINITIONS (LEARN PRACTICE TEACHING FORMAT & NIE DTOs)
 // =====================================================================
@@ -264,7 +303,7 @@ export async function fetchPedagogicalOptions(
 
   const response = await fetch(`${API_BASE_URL}/api/v1/suggest-pedagogical-options`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: getLlmHeaders(),
     body: JSON.stringify(payload),
   });
 
@@ -307,7 +346,7 @@ export async function checkActivitySuitability(
 ): Promise<CheckActivitySuitabilityResponse> {
   const response = await fetch(`${API_BASE_URL}/api/v1/plans/check-activity-suitability`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: getLlmHeaders(),
     body: JSON.stringify({
       custom_activity: payload.customActivity,
       competency_level: payload.competencyLevel,
@@ -393,7 +432,7 @@ export async function generateLessonPlan({
 
   const response = await fetch(`${API_BASE_URL}/api/v1/generate-by-competency-level`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: getLlmHeaders(),
     body: JSON.stringify(payload),
   });
 
@@ -421,7 +460,7 @@ export async function fetchLessonPlan(
 
   const response = await fetch(`${API_BASE_URL}/api/v1/generate-by-competency-level`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: getLlmHeaders(),
     body: JSON.stringify({
       ...payload,
       periods: resolved.periods,

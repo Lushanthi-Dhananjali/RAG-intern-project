@@ -9,6 +9,12 @@ export default function Step3PlanViewer() {
   const currentPlan = store.generatedPlans[store.currentPeriod];
 
   const handlePlanPeriod = async (targetPeriod: number) => {
+    // If options for targetPeriod already exist in store, move immediately to Choose Activity without fetching!
+    if (store.optionsByPeriod[targetPeriod]?.length > 0) {
+      store.goToChooseActivity(targetPeriod);
+      return;
+    }
+
     setLoadingNext(true);
     try {
       const options = await fetchPedagogicalOptions({
@@ -62,7 +68,13 @@ export default function Step3PlanViewer() {
               <button
                 key={pNum}
                 type="button"
-                onClick={() => store.viewPeriodPlan(pNum)}
+                onClick={() => {
+                  if (isDone) {
+                    store.viewPeriodPlan(pNum);
+                  } else {
+                    handlePlanPeriod(pNum);
+                  }
+                }}
                 style={{
                   padding: '8px 16px',
                   borderRadius: '8px',
@@ -134,6 +146,12 @@ export default function Step3PlanViewer() {
   }
 
   const handleChangeActivity = async () => {
+    // If options for store.currentPeriod already exist in store, move immediately to Choose Activity without fetching!
+    if (store.optionsByPeriod[store.currentPeriod]?.length > 0) {
+      store.goToChooseActivity(store.currentPeriod);
+      return;
+    }
+
     setLoadingNext(true);
     try {
       const options = await fetchPedagogicalOptions({
@@ -148,9 +166,9 @@ export default function Step3PlanViewer() {
         accessibleResources: store.accessibleResources,
         previousPeriodActivities: store.otherActivityTitles(store.currentPeriod),
       });
-      store.setOptions(options);
+      store.startPlanningPeriod(store.currentPeriod, options);
     } catch (err: any) {
-      alert(`Could not fetch new options for Period ${store.currentPeriod}: ${err.message}`);
+      alert(`Could not fetch options for Period ${store.currentPeriod}: ${err.message}`);
     } finally {
       setLoadingNext(false);
     }
@@ -213,7 +231,13 @@ export default function Step3PlanViewer() {
             <button
               key={pNum}
               type="button"
-              onClick={() => store.viewPeriodPlan(pNum)}
+              onClick={() => {
+                if (isDone) {
+                  store.viewPeriodPlan(pNum);
+                } else {
+                  handlePlanPeriod(pNum);
+                }
+              }}
               style={{
                 padding: '8px 16px',
                 borderRadius: '8px',

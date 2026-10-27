@@ -52,7 +52,30 @@ export default function Home() {
   const [activeMainTab, setActiveMainTab] = useState<"wizard" | "planner" | "generator" | "library">("planner");
 
   // Step 9 Multi-Period Zustand State
-  const { step: multiPeriodStep, resetAll: resetMultiPeriodPlanner } = useLessonPlanStore();
+  const {
+    step: multiPeriodStep,
+    resetAll: resetMultiPeriodPlanner,
+    goToStep,
+    goToChooseActivity,
+    viewPeriodPlan,
+    currentPeriod,
+    optionsByPeriod,
+    currentOptions,
+    generatedPlans,
+    apiKey,
+    llmProvider,
+    setApiKey,
+    setLlmProvider,
+  } = useLessonPlanStore();
+
+  const [isAiSettingsOpen, setIsAiSettingsOpen] = useState(false);
+  const [tempApiKey, setTempApiKey] = useState(apiKey || "");
+  const [showKeyText, setShowKeyText] = useState(false);
+
+  // Sync tempApiKey when modal opens or apiKey changes
+  React.useEffect(() => {
+    setTempApiKey(apiKey || "");
+  }, [apiKey]);
 
   // Wizard Sub-steps: 1 = Inputs, 2 = Select Activity, 3 = View Plans
   const [wizardStep, setWizardStep] = useState<1 | 2 | 3>(1);
@@ -994,10 +1017,10 @@ export default function Home() {
                   Configure curriculum parameters to generate an NIE &amp; LEARN aligned lesson plan
                 </p>
               </div>
-              {multiPeriodStep > 1 && (
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <button
                   type="button"
-                  onClick={resetMultiPeriodPlanner}
+                  onClick={() => setIsAiSettingsOpen(true)}
                   style={{
                     padding: '6px 12px',
                     borderRadius: '8px',
@@ -1005,13 +1028,50 @@ export default function Home() {
                     backgroundColor: '#ffffff',
                     fontSize: '12px',
                     fontWeight: 700,
-                    color: '#475569',
+                    color: '#334155',
                     cursor: 'pointer',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    boxShadow: '0 1px 2px rgba(0,0,0,0.04)',
                   }}
+                  title="Configure LLM Provider & API Key"
                 >
-                  Reset
+                  <span>⚙️</span>
+                  <span>AI Model &amp; Key</span>
+                  <span
+                    style={{
+                      fontSize: '10px',
+                      fontWeight: 800,
+                      padding: '2px 6px',
+                      borderRadius: '9999px',
+                      backgroundColor: llmProvider === 'ollama' ? '#f1f5f9' : '#e0e7ff',
+                      color: llmProvider === 'ollama' ? '#475569' : '#3730a3',
+                    }}
+                  >
+                    {llmProvider === 'openai' ? 'OpenAI' : llmProvider === 'gemini' ? 'Gemini' : llmProvider === 'ollama' ? 'Ollama' : apiKey ? 'Cloud API' : 'Auto'}
+                  </span>
                 </button>
-              )}
+
+                {multiPeriodStep > 1 && (
+                  <button
+                    type="button"
+                    onClick={resetMultiPeriodPlanner}
+                    style={{
+                      padding: '6px 12px',
+                      borderRadius: '8px',
+                      border: '1px solid #cbd5e1',
+                      backgroundColor: '#ffffff',
+                      fontSize: '12px',
+                      fontWeight: 700,
+                      color: '#475569',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    Reset
+                  </button>
+                )}
+              </div>
             </header>
 
             <nav aria-label="Lesson plan progress" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '8px' }}>
@@ -1022,18 +1082,41 @@ export default function Home() {
               ].map((step) => {
                 const current = multiPeriodStep === step.number;
                 const complete = multiPeriodStep > step.number;
+                const canClick =
+                  step.number === 1 ||
+                  (step.number === 2 && (currentOptions.length > 0 || (optionsByPeriod[currentPeriod]?.length ?? 0) > 0)) ||
+                  (step.number === 3 && (!!generatedPlans[currentPeriod] || Object.keys(generatedPlans).length > 0));
+
+                const handleStepClick = () => {
+                  if (step.number === 1) {
+                    goToStep(1);
+                  } else if (step.number === 2 && canClick) {
+                    goToChooseActivity(currentPeriod);
+                  } else if (step.number === 3 && canClick) {
+                    const targetP = generatedPlans[currentPeriod] ? currentPeriod : Number(Object.keys(generatedPlans)[0]);
+                    viewPeriodPlan(targetP);
+                  }
+                };
+
                 return (
-                  <div
+                  <button
                     key={step.number}
+                    type="button"
+                    disabled={!canClick}
+                    onClick={handleStepClick}
                     aria-current={current ? "step" : undefined}
                     style={{
                       display: 'flex',
                       alignItems: 'center',
                       gap: '8px',
                       borderRadius: '8px',
-                      border: current ? '1px solid #c7d2fe' : complete ? '1px solid #e2e8f0' : '1px solid #f1f5f9',
+                      border: current ? '1.5px solid #6366f1' : complete ? '1px solid #cbd5e1' : '1px solid #f1f5f9',
                       backgroundColor: current ? '#eef2ff' : complete ? '#ffffff' : '#f8fafc',
                       padding: '8px 10px',
+                      cursor: canClick ? 'pointer' : 'default',
+                      textAlign: 'left',
+                      transition: 'all 0.15s ease',
+                      boxShadow: current ? '0 2px 4px rgba(99, 102, 241, 0.15)' : 'none',
                     }}
                   >
                     <span
@@ -1057,7 +1140,7 @@ export default function Home() {
                       style={{
                         fontSize: '12px',
                         fontWeight: 700,
-                        color: current ? '#312e81' : complete ? '#334155' : '#64748b',
+                        color: current ? '#312e81' : complete ? '#334155' : '#94a3b8',
                         whiteSpace: 'nowrap',
                         overflow: 'hidden',
                         textOverflow: 'ellipsis',
@@ -1065,7 +1148,7 @@ export default function Home() {
                     >
                       {step.title}
                     </span>
-                  </div>
+                  </button>
                 );
               })}
             </nav>
@@ -1074,6 +1157,188 @@ export default function Home() {
             {multiPeriodStep === 2 && <Step2OptionsSelection />}
             {multiPeriodStep === 3 && <Step3PlanViewer />}
           </section>
+
+          {/* AI Model & API Key Configuration Modal */}
+          {isAiSettingsOpen && (
+            <div
+              role="dialog"
+              aria-modal="true"
+              style={{
+                position: "fixed",
+                inset: 0,
+                backgroundColor: "rgba(15, 23, 42, 0.6)",
+                backdropFilter: "blur(4px)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                zIndex: 9999,
+                padding: "16px",
+              }}
+            >
+              <div
+                style={{
+                  backgroundColor: "#ffffff",
+                  borderRadius: "16px",
+                  padding: "24px",
+                  width: "100%",
+                  maxWidth: "520px",
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                  border: "1px solid #e2e8f0",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "18px",
+                }}
+              >
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                    <span style={{ fontSize: "20px" }}>⚡</span>
+                    <h3 style={{ margin: 0, fontSize: "16px", fontWeight: 800, color: "#0f172a" }}>
+                      AI Model &amp; API Key Settings
+                    </h3>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setIsAiSettingsOpen(false)}
+                    style={{
+                      border: "none",
+                      backgroundColor: "transparent",
+                      fontSize: "18px",
+                      color: "#64748b",
+                      cursor: "pointer",
+                      padding: "4px 8px",
+                    }}
+                  >
+                    ✕
+                  </button>
+                </div>
+
+                <p style={{ margin: 0, fontSize: "13px", color: "#64748b", lineHeight: 1.5 }}>
+                  Choose your preferred AI execution provider. The project supports both cloud API keys (OpenAI / Google Gemini) and local offline Ollama (llama3).
+                </p>
+
+                <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+                  <label style={{ fontSize: "12px", fontWeight: 700, color: "#334155" }}>
+                    LLM Provider
+                  </label>
+                  <select
+                    value={llmProvider}
+                    onChange={(e) => setLlmProvider(e.target.value as any)}
+                    style={{
+                      padding: "10px 12px",
+                      borderRadius: "8px",
+                      border: "1px solid #cbd5e1",
+                      fontSize: "13px",
+                      fontWeight: 600,
+                      color: "#1e293b",
+                      backgroundColor: "#f8fafc",
+                      outline: "none",
+                    }}
+                  >
+                    <option value="auto">Auto (Cloud API if key present, else local Ollama)</option>
+                    <option value="openai">OpenAI (GPT-4o-mini)</option>
+                    <option value="gemini">Google Gemini (Gemini 1.5 Flash)</option>
+                    <option value="ollama">Local Ollama (Llama 3 - Offline)</option>
+                  </select>
+                </div>
+
+                <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <label style={{ fontSize: "12px", fontWeight: 700, color: "#334155" }}>
+                      API Key (OpenAI or Gemini)
+                    </label>
+                    <button
+                      type="button"
+                      onClick={() => setShowKeyText(!showKeyText)}
+                      style={{
+                        border: "none",
+                        backgroundColor: "transparent",
+                        fontSize: "11px",
+                        fontWeight: 700,
+                        color: "#4f46e5",
+                        cursor: "pointer",
+                      }}
+                    >
+                      {showKeyText ? "Hide Key" : "Show Key"}
+                    </button>
+                  </div>
+                  <input
+                    type={showKeyText ? "text" : "password"}
+                    placeholder="sk-proj-... or AIzaSy..."
+                    value={tempApiKey}
+                    onChange={(e) => setTempApiKey(e.target.value)}
+                    style={{
+                      padding: "10px 12px",
+                      borderRadius: "8px",
+                      border: "1px solid #cbd5e1",
+                      fontSize: "13px",
+                      fontFamily: "monospace",
+                      color: "#1e293b",
+                      backgroundColor: "#ffffff",
+                      outline: "none",
+                    }}
+                  />
+                  <span style={{ fontSize: "11px", color: "#64748b" }}>
+                    Keys can also be permanently stored in <code>backend pycharm/.env</code>.
+                  </span>
+                </div>
+
+                <div
+                  style={{
+                    backgroundColor: "#eff6ff",
+                    border: "1px solid #bfdbfe",
+                    borderRadius: "10px",
+                    padding: "10px 12px",
+                    fontSize: "12px",
+                    color: "#1e40af",
+                    lineHeight: 1.4,
+                  }}
+                >
+                  💡 <strong>Tip:</strong> If using <strong>Local Ollama</strong>, ensure Ollama is running (<code>ollama run llama3</code>). If using <strong>OpenAI</strong> or <strong>Gemini</strong>, enter your API key above or save in <code>backend pycharm/.env</code>.
+                </div>
+
+                <div style={{ display: "flex", justifyContent: "flex-end", gap: "10px", marginTop: "8px" }}>
+                  <button
+                    type="button"
+                    onClick={() => setIsAiSettingsOpen(false)}
+                    style={{
+                      padding: "8px 16px",
+                      borderRadius: "8px",
+                      border: "1px solid #cbd5e1",
+                      backgroundColor: "#ffffff",
+                      fontSize: "13px",
+                      fontWeight: 700,
+                      color: "#475569",
+                      cursor: "pointer",
+                    }}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setApiKey(tempApiKey.trim());
+                      setIsAiSettingsOpen(false);
+                      setNotificationMessage("AI Model and API Key settings saved successfully!");
+                      setTimeout(() => setNotificationMessage(null), 3500);
+                    }}
+                    style={{
+                      padding: "8px 18px",
+                      borderRadius: "8px",
+                      border: "none",
+                      backgroundColor: "#4f46e5",
+                      fontSize: "13px",
+                      fontWeight: 700,
+                      color: "#ffffff",
+                      cursor: "pointer",
+                      boxShadow: "0 2px 4px rgba(79, 70, 229, 0.25)",
+                    }}
+                  >
+                    Save Settings
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       )}
 
