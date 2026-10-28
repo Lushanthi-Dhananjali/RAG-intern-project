@@ -1,7 +1,6 @@
 import uuid
 from datetime import datetime, timezone
 from sqlalchemy import Column, String, Text, DateTime, ForeignKey
-from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 
 from app.db.session import Base
@@ -11,13 +10,13 @@ class SavedLessonPlan(Base):
     __tablename__ = "saved_lesson_plans"
 
     id = Column(
-        UUID(as_uuid=True),
+        String(36),
         primary_key=True,
-        default=uuid.uuid4,
+        default=lambda: str(uuid.uuid4()),
         index=True
     )
     user_id = Column(
-        UUID(as_uuid=True),
+        String(36),
         ForeignKey("users.id", ondelete="CASCADE"),
         nullable=False,
         index=True
@@ -49,5 +48,5 @@ class SavedLessonPlan(Base):
         default=lambda: datetime.now(timezone.utc)
     )
 
-    # Navigation Property (EF Core WithMany relationship)
-    user = relationship("User", back_populates="saved_lesson_plans")
+    # Standalone navigation reference without back_populates
+    user = relationship("User")

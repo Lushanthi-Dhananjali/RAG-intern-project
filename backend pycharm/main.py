@@ -846,6 +846,24 @@ except Exception as e:
 
 
 # =====================================================================
+# AUTHENTICATION ROUTERS & DATABASE INITIALIZATION
+# =====================================================================
+try:
+    from app.api.v1.endpoints.auth import router as auth_router
+    app.include_router(auth_router, prefix="/api/v1")
+    app.include_router(auth_router, prefix="/api")
+    logger.info("Successfully mounted Auth router (/api/v1/auth and /api/auth)")
+except Exception as e:
+    logger.warning("Could not include auth router: %s", e)
+
+try:
+    from app.db.base import init_db
+    init_db()
+except Exception as e:
+    logger.warning("Could not execute init_db: %s", e)
+
+
+# =====================================================================
 # SERVER RUNNER
 # =====================================================================
 if __name__ == "__main__":

@@ -1,14 +1,27 @@
-from app.db.session import Base, engine
-
-# Import all entity models so metadata is registered to Base
+import logging
+from app.db.session import engine
 from app.models.user import User
-from app.models.saved_lesson_plan import SavedLessonPlan
-from app.models.generation_history import GenerationHistory
+
+logger = logging.getLogger("DatabaseInit")
 
 
 def init_db():
     """
-    Creates tables directly if running without migrations
-    (equivalent to dbContext.Database.EnsureCreated()).
+    Creates ONLY the User table in MySQL for login and signup authentication.
+    No other project tables or lesson plans are placed in MySQL.
     """
-    Base.metadata.create_all(bind=engine)
+    try:
+        logger.info("Verifying MySQL users table for login and signup...")
+        User.__table__.create(bind=engine, checkfirst=True)
+        logger.info("MySQL 'users' table is ready.")
+    except Exception as exc:
+        logger.error(
+            "MySQL connection/initialization error: %s\n"
+            "Action required:\n"
+            "1. Make sure MariaDB/MySQL is running.\n"
+            "2. Make sure the database exists: CREATE DATABASE IF NOT EXISTS rag_lesson_planner;\n"
+            "3. If your MySQL 'root' user has a password, set it in backend .env:\n"
+            "   DATABASE_URL=mysql+pymysql://root:YOUR_PASSWORD@localhost:3306/rag_lesson_planner\n"
+            "   (Or if no password: mysql+pymysql://root:@localhost:3306/rag_lesson_planner)",
+            exc
+        )

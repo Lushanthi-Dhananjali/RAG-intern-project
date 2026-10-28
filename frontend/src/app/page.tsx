@@ -1,7 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
+import Link from "next/link";
+import { getStoredAuth, clearStoredAuth, UserDto } from "@/services/authApi";
 
 import LessonPlanForm from "../components/LessonPlanForm";
 import StructuralEditor from "../components/StructuralEditor";
@@ -48,6 +50,19 @@ const API_BASE_URL =
     : process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000";
 
 export default function Home() {
+  // Authentication user state
+  const [currentUser, setCurrentUser] = useState<UserDto | null>(null);
+
+  useEffect(() => {
+    const auth = getStoredAuth();
+    setCurrentUser(auth.user);
+  }, []);
+
+  const handleLogout = () => {
+    clearStoredAuth();
+    setCurrentUser(null);
+  };
+
   // Main Navigation Tabs: 'wizard' (Existing Wizard), 'planner' (New Step 9 State Machine), 'generator' (Classic Direct), 'library' (Saved Plans)
   const [activeMainTab, setActiveMainTab] = useState<"wizard" | "planner" | "generator" | "library">("planner");
 
@@ -541,7 +556,108 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen py-10 px-4 sm:px-8 max-w-5xl mx-auto font-sans">
+    <main className="min-h-screen py-8 px-4 sm:px-8 max-w-5xl mx-auto font-sans">
+      {/* Top Utility Bar with Authentication Status */}
+      <div
+        style={{
+          maxWidth: "860px",
+          margin: "0 auto 16px auto",
+          display: "flex",
+          justifyContent: "flex-end",
+          alignItems: "center",
+          gap: "10px",
+          width: "100%",
+        }}
+      >
+        {currentUser ? (
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "12px",
+              backgroundColor: "#ffffff",
+              padding: "6px 14px",
+              borderRadius: "12px",
+              border: "1px solid #e2e8f0",
+              boxShadow: "0 2px 4px rgba(0,0,0,0.03)",
+              fontSize: "13px",
+            }}
+          >
+            <span style={{ color: "#334155", fontWeight: "600" }}>
+              👤 Logged in as <strong style={{ color: "#4f46e5" }}>{currentUser.username}</strong>
+            </span>
+            <button
+              type="button"
+              onClick={handleLogout}
+              style={{
+                background: "none",
+                border: "1px solid #cbd5e1",
+                borderRadius: "6px",
+                padding: "3px 8px",
+                fontSize: "11px",
+                fontWeight: "700",
+                color: "#64748b",
+                cursor: "pointer",
+                transition: "all 0.15s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = "#dc2626";
+                e.currentTarget.style.borderColor = "#fca5a5";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = "#64748b";
+                e.currentTarget.style.borderColor = "#cbd5e1";
+              }}
+            >
+              Sign Out
+            </button>
+          </div>
+        ) : (
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <Link
+              href="/login"
+              style={{
+                textDecoration: "none",
+                fontSize: "12px",
+                fontWeight: "700",
+                color: "#4f46e5",
+                backgroundColor: "#ffffff",
+                border: "1px solid #c7d2fe",
+                padding: "6px 14px",
+                borderRadius: "8px",
+                boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "5px",
+              }}
+            >
+              <span>🔐</span>
+              <span>Log In</span>
+            </Link>
+            <Link
+              href="/signup"
+              style={{
+                textDecoration: "none",
+                fontSize: "12px",
+                fontWeight: "700",
+                color: "#ffffff",
+                backgroundColor: "#4f46e5",
+                border: "1px solid #4338ca",
+                padding: "6px 14px",
+                borderRadius: "8px",
+                boxShadow: "0 2px 4px rgba(79, 70, 229, 0.2)",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "5px",
+              }}
+            >
+              <span>👤</span>
+              <span>Sign Up</span>
+            </Link>
+          </div>
+        )}
+      </div>
+
       {/* Header */}
       <header
         style={{

@@ -1,7 +1,6 @@
 import uuid
 from datetime import datetime, timezone
 from sqlalchemy import Column, String, Float, DateTime, ForeignKey
-from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 
 from app.db.session import Base
@@ -11,13 +10,13 @@ class GenerationHistory(Base):
     __tablename__ = "generation_history"
 
     id = Column(
-        UUID(as_uuid=True),
+        String(36),
         primary_key=True,
-        default=uuid.uuid4,
+        default=lambda: str(uuid.uuid4()),
         index=True
     )
     user_id = Column(
-        UUID(as_uuid=True),
+        String(36),
         ForeignKey("users.id", ondelete="CASCADE"),
         nullable=False,
         index=True
@@ -43,5 +42,5 @@ class GenerationHistory(Base):
         default=lambda: datetime.now(timezone.utc)
     )
 
-    # Navigation Property (EF Core WithMany relationship)
-    user = relationship("User", back_populates="history_logs")
+    # Standalone navigation reference without back_populates
+    user = relationship("User")

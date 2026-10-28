@@ -36,8 +36,9 @@ except ModuleNotFoundError:
         except ModuleNotFoundError:
             FactCheckReport = None
 
-# Initialize OpenAI client
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+# Initialize OpenAI client safely
+_api_key = os.getenv("OPENAI_API_KEY")
+client = OpenAI(api_key=_api_key) if _api_key else None
 
 
 # =====================================================================
