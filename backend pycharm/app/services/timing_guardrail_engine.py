@@ -22,6 +22,51 @@ STANDARD_DEVELOPMENT_STEP_PRESETS = {
     4: [6, 10, 8, 6],
 }
 
+KNOWN_COMPETENCY_TITLES = {
+    "8.1.1": "Identifies public services and investigates the need and importance of the time.",
+    "8.1.2": "Names the public services provided for the area identifying them.",
+    "8.1.3": "Explains the duties and responsibilities of public service institutions.",
+    "8.1.4": "Explains the importance of citizens fulfilling duties and rights related to use of public services.",
+    "8.2.1": "Introduces himself/herself correctly and socializes.",
+    "8.2.2": "Understands the abilities and skills and uses them for self development.",
+    "8.2.3": "Controls the emotions in such a way that it safeguards the existence of a democratic society.",
+    "8.2.4": "Builds healthy relationships appreciating and respecting differences and diversity.",
+    "8.2.5": "Develops qualities that are required for a democratic life.",
+    "8.3.1": "Analyses the features of a multicultural society",
+    "8.3.2": "Explains that Sri Lanka is a multicultural society.",
+    "8.3.3": "Contributes to the building of national cohesion and sustainable peace safeguarding one's own cultural identity",
+    "8.4.1": "Contributes to minimize accidents and disasters by identifying them.",
+    "8.4.2": "Works intelligently in disaster situations",
+    "8.4.3": "Explains the importance of being alert about the situations where accidents and disasters might happen.",
+    "8.4.4": "Contributes to minimizing road accidents by following road rules.",
+    "8.4.5": "Contributes to minimize dangers caused by chemicals.",
+    "8.4.6": "Contributes to sustainable development adapting a bearable life style",
+    "8.5.1": "Defines problems and challenges simply.",
+    "8.5.2": "Faces different problems and challenges in life successfully.",
+    "8.6.1": "Appreciates the diversity in the world of work",
+    "8.6.2": "Describes the importance of working with a sense of dignity of labour.",
+    "8.6.3": "Explains that all employments contribute to fulfilling social needs.",
+    "8.6.4": "Explains the need of getting the training related to one's field of work as a worker.",
+    "8.6.5": "Internalizes the qualities of a good labourer",
+    "8.6.6": "Explains the need to be sensitive as a worker to the expectations of the work place.",
+    "8.6.7": "Investigates Workers' rights and responsibilities.",
+    "8.6.8": "Explains the importance of maintaining personal performance at a higher level as a worker.",
+    "8.6.9": "Suggests strategies to satisfy customers.",
+    "8.6.10": "Suggests ways and means to improve income.",
+}
+
+
+def resolve_clean_competence_title(competence_code: str, fallback_text: str = "") -> str:
+    """Returns official syllabus competence standard title, never a URL."""
+    clean_code = re.search(r"\b(\d+\.\d+(?:\.\d+)?)\b", competence_code or "")
+    code_val = clean_code.group(1) if clean_code else (competence_code or "").strip()
+    if code_val in KNOWN_COMPETENCY_TITLES:
+        return KNOWN_COMPETENCY_TITLES[code_val]
+    if fallback_text and not re.search(r"https?://|www\.", fallback_text, re.IGNORECASE):
+        return fallback_text.strip()
+    return f"Explores and investigates core curriculum concepts for Competency {code_val or 'Standard'}."
+
+
 
 class TimingGuardrailEngine:
     """
@@ -119,6 +164,8 @@ class TimingGuardrailEngine:
         total_periods: int = 1,
         lesson_topic: str = "",
         selected_activity: Optional[str] = None,
+        competency_level: Optional[str] = None,
+        broad_competence: Optional[str] = None,
     ) -> LearnLessonPlanDto:
         """
         Enforces complete Step 8 guardrails:
@@ -296,5 +343,43 @@ class TimingGuardrailEngine:
                 step.other = ""
             if step.assessment_and_feedback and unavailable_text.search(step.assessment_and_feedback):
                 step.assessment_and_feedback = f"Checks student participation and understanding of '{focus}'."
+
+        # 6. Sanitize Competence Level and Competence Statement from URLs and unknown links
+        # Competence Level sanitization
+        if competency_level and competency_level.strip() and not unavailable_text.search(competency_level):
+            plan.competence_level = competency_level.strip()
+        elif not plan.competence_level or unavailable_text.search(plan.competence_level):
+            code_match = re.search(r"\b(\d+\.\d+(?:\.\d+)?)\b", plan.competence_level or "")
+            if code_match:
+                plan.competence_level = code_match.group(1)
+            elif competency_level and competency_level.strip():
+                plan.competence_level = competency_level.strip()
+            else:
+                plan.competence_level = "8.1.1"
+        else:
+            plan.competence_level = plan.competence_level.strip()
+
+        # Competence Statement sanitization
+        if broad_competence and broad_competence.strip() and not unavailable_text.search(broad_competence):
+            if not plan.competence or unavailable_text.search(plan.competence):
+                plan.competence = broad_competence.strip()
+
+        if not plan.competence or unavailable_text.search(plan.competence):
+            code_str = plan.competence_level or competency_level or ""
+            plan.competence = resolve_clean_competence_title(code_str, fallback_text=lesson_topic)
+        else:
+            plan.competence = plan.competence.strip()
+
+        # Sanitize lesson title if it contains any URL
+        if plan.lesson and unavailable_text.search(plan.lesson):
+            clean_lesson = re.sub(r"https?://\S+", "", plan.lesson).strip()
+            plan.lesson = clean_lesson or focus
+
+        # Sanitize information_sources if it contains fabricated api links
+        if plan.information_sources:
+            plan.information_sources = [
+                s for s in plan.information_sources
+                if not re.search(r"https?://|api\.learn\.kandy\.lk", s, re.IGNORECASE)
+            ]
 
         return plan

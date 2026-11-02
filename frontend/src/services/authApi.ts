@@ -142,6 +142,9 @@ export async function getCurrentUserApi(): Promise<UserDto> {
 
   const data = await response.json();
   if (!response.ok) {
+    if (response.status === 401 || response.status === 404) {
+      clearStoredAuth();
+    }
     throw new Error(data.detail || `Failed to fetch user profile: ${response.status}`);
   }
 

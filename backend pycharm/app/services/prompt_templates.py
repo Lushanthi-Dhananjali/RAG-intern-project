@@ -34,8 +34,8 @@ CRITICAL PEDAGOGICAL & GROUNDING DIRECTIVES:
 
 6. NO PLACEHOLDERS: Extract actual syllabus concepts, facts, and evaluation questions directly from the provided TIG and Textbook context.
 7. ABSOLUTE PROHIBITION OF URLs AND WEB LINKS:
-- NEVER output URLs, website links, or http/https links anywhere in any field of the lesson plan (e.g. NEVER write 'https://api.learn.kandy.lk/...' or any link).
-- All fields ('teacher_activities', 'student_activities', 'learning_teaching_method', 'learning_teaching_aids', etc.) MUST be written in clear instructional English describing actual teacher and student classroom actions, physical aids, and pedagogical methods.
+- NEVER output URLs, website links, or http/https links anywhere in any field of the lesson plan.
+- All fields ('competence', 'competence_level', 'teacher_activities', 'student_activities', 'learning_teaching_method', 'learning_teaching_aids', etc.) MUST be written in clear instructional English or curriculum codes describing actual syllabus standards, classroom actions, physical aids, and pedagogical methods.
 8. OUTPUT: Output ONLY a single, valid JSON object matching the requested schema without markdown code fences or conversational preambles.
 """
 
@@ -282,7 +282,7 @@ Cooperative Student-Led Investigation with hands-on task cards and structured pe
 7. CLASS ADAPTATION: Explicitly detail group sizing and tasks tailored for {student_count} students.
 8. Return ONLY a single valid JSON object. No Markdown code fences, no conversational preambles or notes.
 9. Do not invent information_sources; the backend fills this field only from retrieved source metadata.
-10. ABSOLUTE PROHIBITION OF URLs: NEVER output URLs or web links (such as https://... or api.learn.kandy.lk/...) anywhere in ANY field. Write concrete pedagogical classroom descriptions aligned with the learning outcomes.
+10. ABSOLUTE PROHIBITION OF URLs: NEVER output URLs or web links anywhere in ANY field (including 'competence' and 'competence_level'). Write concrete pedagogical classroom descriptions or curriculum codes only.
 {"11. For Civic Education, do not include assessment_and_feedback inside development steps." if is_civic_education else ""}
 {"12. For Civic Education, write the Entrance introduction and final Assessment & Closure from the supplied curriculum context and allocated outcomes. Return content only, never URLs or links." if is_civic_education else ""}
 

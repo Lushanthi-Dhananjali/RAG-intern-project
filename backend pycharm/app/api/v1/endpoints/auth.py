@@ -1,11 +1,12 @@
 import logging
+import uuid
+from datetime import datetime, timezone
 from typing import Optional
-from fastapi import APIRouter, Depends, HTTPException, status, Header
-from sqlalchemy.orm import Session
-from sqlalchemy import or_, text
+from fastapi import APIRouter, HTTPException, status, Header
+from pymongo.collection import Collection
+from pymongo.errors import DuplicateKeyError, PyMongoError
 
-from app.db.session import get_db, engine
-from app.models.user import User
+from app.db.mongo import get_auth_users_collection
 from app.schemas.auth_dto import SignupRequest, LoginRequest, AuthResponse, UserResponse
 from app.core.security import (
     hash_password,
@@ -19,22 +20,39 @@ logger = logging.getLogger("AuthAPI")
 router = APIRouter(prefix="/auth", tags=["Authentication"])
 
 
+def _user_response(user: dict) -> UserResponse:
+    return UserResponse(
+        id=user["_id"],
+        username=user["username"],
+        email=user["email"],
+        full_name=user.get("full_name", ""),
+        created_at=user.get("created_at"),
+    )
+
+
+def _database_unavailable(exc: PyMongoError, operation: str) -> HTTPException:
+    logger.error("MongoDB error during %s: %s", operation, exc)
+    return HTTPException(
+        status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+        detail="Authentication database is currently unavailable. Please verify MongoDB is running.",
+    )
+
+
 @router.post(
     "/signup",
     response_model=AuthResponse,
     status_code=status.HTTP_201_CREATED,
     summary="User Registration"
 )
-def signup(payload: SignupRequest, db: Session = Depends(get_db)):
+def signup(payload: SignupRequest):
     """
     Register a new user:
     - Validates passwords match
     - Checks for duplicate username or email
     - Securely hashes password with bcrypt
-    - Persists user to database (MySQL)
+    - Persists the user to MongoDB
     - Returns JWT auth token and user profile
     """
-    # 1. Check passwords match
     if payload.password != payload.confirm_password:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
@@ -44,72 +62,78 @@ def signup(payload: SignupRequest, db: Session = Depends(get_db)):
     clean_username = payload.username.strip().lower()
     clean_email = payload.email.strip().lower()
 
-    # 2. Check if username or email already registered
     try:
-        existing_user = db.query(User).filter(
-            or_(
-                User.username.ilike(clean_username),
-                User.email.ilike(clean_email)
-            )
-        ).first()
-    except Exception as db_err:
-        logger.error("Database connection error during signup: %s", db_err)
-        raise HTTPException(
-            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
-            detail="Database is currently unavailable. Please verify MySQL is running."
-        )
+        users: Collection = get_auth_users_collection()
+        existing_user = users.find_one({
+            "$or": [
+                {"username": clean_username},
+                {"email": clean_email},
+            ]
+        })
+    except PyMongoError as db_err:
+        raise _database_unavailable(db_err, "signup lookup") from db_err
 
     if existing_user:
-        if existing_user.username.lower() == clean_username:
+        if existing_user["username"] == clean_username:
             raise HTTPException(
                 status_code=status.HTTP_400_BAD_REQUEST,
                 detail="A user with this username already exists."
             )
-        if existing_user.email.lower() == clean_email:
+        if existing_user["email"] == clean_email:
             raise HTTPException(
                 status_code=status.HTTP_400_BAD_REQUEST,
                 detail="A user with this email address already exists."
             )
 
-    # 3. Hash password
     hashed = hash_password(payload.password)
-
-    # 4. Create and persist user
+    new_user = {
+        "_id": str(uuid.uuid4()),
+        "username": clean_username,
+        "email": clean_email,
+        "password_hash": hashed,
+        "full_name": payload.username.strip(),
+        "created_at": datetime.now(timezone.utc),
+    }
     try:
-        new_user = User(
-            username=clean_username,
-            email=clean_email,
-            password_hash=hashed,
-            full_name=payload.username.strip()
-        )
-        db.add(new_user)
-        db.commit()
-        db.refresh(new_user)
-    except Exception as save_err:
-        db.rollback()
-        logger.error("Failed to persist user: %s", save_err)
+        users.insert_one(new_user)
+    except DuplicateKeyError as save_err:
+        try:
+            existing_user = users.find_one({
+                "$or": [
+                    {"username": clean_username},
+                    {"email": clean_email},
+                ]
+            })
+        except PyMongoError as db_err:
+            raise _database_unavailable(db_err, "signup duplicate check") from db_err
+
+        if existing_user and existing_user["username"] == clean_username:
+            detail = "A user with this username already exists."
+        elif existing_user and existing_user["email"] == clean_email:
+            detail = "A user with this email address already exists."
+        else:
+            logger.error("MongoDB rejected signup due to a duplicate key: %s", save_err)
+            raise HTTPException(
+                status_code=status.HTTP_409_CONFLICT,
+                detail="A user with these details already exists.",
+            ) from save_err
         raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to create user in database: {str(save_err)}"
-        )
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=detail,
+        ) from save_err
+    except PyMongoError as save_err:
+        raise _database_unavailable(save_err, "signup save") from save_err
 
-    logger.info("New user registered successfully: %s (%s)", new_user.username, new_user.email)
+    logger.info("New user registered successfully: %s (%s)", clean_username, clean_email)
 
-    # 5. Generate JWT token
     token = create_access_token(
-        data={"sub": new_user.id, "username": new_user.username, "email": new_user.email}
+        data={"sub": new_user["_id"], "username": clean_username, "email": clean_email}
     )
 
     return AuthResponse(
         access_token=token,
         token_type="bearer",
-        user=UserResponse(
-            id=new_user.id,
-            username=new_user.username,
-            email=new_user.email,
-            full_name=new_user.full_name,
-            created_at=new_user.created_at,
-        ),
+        user=_user_response(new_user),
         message="Registration successful! Welcome to Lesson Planner."
     )
 
@@ -120,7 +144,7 @@ def signup(payload: SignupRequest, db: Session = Depends(get_db)):
     status_code=status.HTTP_200_OK,
     summary="User Login"
 )
-def login(payload: LoginRequest, db: Session = Depends(get_db)):
+def login(payload: LoginRequest):
     """
     Authenticate a user:
     - Accepts username or email
@@ -130,18 +154,15 @@ def login(payload: LoginRequest, db: Session = Depends(get_db)):
     identifier = payload.username.strip().lower()
 
     try:
-        user = db.query(User).filter(
-            or_(
-                User.username.ilike(identifier),
-                User.email.ilike(identifier)
-            )
-        ).first()
-    except Exception as db_err:
-        logger.error("Database error during login: %s", db_err)
-        raise HTTPException(
-            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
-            detail="Database connection error. Please verify MySQL is running."
-        )
+        users: Collection = get_auth_users_collection()
+        user = users.find_one({
+            "$or": [
+                {"username": identifier},
+                {"email": identifier},
+            ]
+        })
+    except PyMongoError as db_err:
+        raise _database_unavailable(db_err, "login lookup") from db_err
 
     if not user:
         raise HTTPException(
@@ -149,28 +170,22 @@ def login(payload: LoginRequest, db: Session = Depends(get_db)):
             detail="Invalid username or password."
         )
 
-    if not verify_password(payload.password, user.password_hash):
+    if not verify_password(payload.password, user["password_hash"]):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Invalid username or password."
         )
 
     token = create_access_token(
-        data={"sub": user.id, "username": user.username, "email": user.email}
+        data={"sub": user["_id"], "username": user["username"], "email": user["email"]}
     )
 
-    logger.info("User logged in successfully: %s", user.username)
+    logger.info("User logged in successfully: %s", user["username"])
 
     return AuthResponse(
         access_token=token,
         token_type="bearer",
-        user=UserResponse(
-            id=user.id,
-            username=user.username,
-            email=user.email,
-            full_name=user.full_name,
-            created_at=user.created_at,
-        ),
+        user=_user_response(user),
         message="Login successful."
     )
 
@@ -182,7 +197,6 @@ def login(payload: LoginRequest, db: Session = Depends(get_db)):
 )
 def get_current_user(
     authorization: Optional[str] = Header(None),
-    db: Session = Depends(get_db)
 ):
     """
     Validates the bearer token and returns the current user profile.
@@ -202,46 +216,45 @@ def get_current_user(
             detail="Token is invalid or has expired."
         )
 
-    user = db.query(User).filter(User.id == payload["sub"]).first()
+    try:
+        users: Collection = get_auth_users_collection()
+        user = users.find_one({"_id": payload["sub"]})
+    except PyMongoError as db_err:
+        raise _database_unavailable(db_err, "profile lookup") from db_err
+
     if not user:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail="User not found."
         )
 
-    return UserResponse(
-        id=user.id,
-        username=user.username,
-        email=user.email,
-        full_name=user.full_name,
-        created_at=user.created_at,
-    )
+    return _user_response(user)
 
 
 @router.get(
     "/db-status",
     summary="Database Connectivity Check"
 )
-def check_db_status(db: Session = Depends(get_db)):
+def check_db_status():
     """
-    Verifies database connection (MySQL / SQLite), driver, and table setup.
+    Verifies MongoDB connectivity and reports the number of registered users.
     """
     try:
-        dialect_name = engine.dialect.name
-        db.execute(text("SELECT 1"))
-        user_count = db.query(User).count()
+        users: Collection = get_auth_users_collection()
+        users.database.client.admin.command("ping")
+        user_count = users.count_documents({})
 
         return {
             "status": "connected",
-            "dialect": dialect_name,
-            "database_url_type": "mysql" if "mysql" in str(engine.url) else dialect_name,
+            "dialect": "mongodb",
+            "database_url_type": "mongodb",
             "registered_users": user_count,
-            "message": f"Successfully connected to {dialect_name.upper()} database."
+            "message": "Successfully connected to MongoDB authentication database."
         }
-    except Exception as exc:
+    except PyMongoError as exc:
         logger.error("Database connection check failed: %s", exc)
         return {
             "status": "error",
-            "error": str(exc),
-            "message": "Could not connect to database. Please check your credentials in .env."
+            "error": "MongoDB connection failed.",
+            "message": "Could not connect to MongoDB. Please check MONGODB_URI in the backend .env file."
         }

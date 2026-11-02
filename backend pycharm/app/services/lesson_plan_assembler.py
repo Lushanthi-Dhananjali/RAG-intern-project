@@ -109,13 +109,17 @@ STRICT 40-MINUTE LEARN KANDY STRUCTURAL LAWS:
    - Partition: {logistics.group_summary_label}.
    - Roles to embed: {roles_str}.
    - Use only the available aids listed below, adapt to the stated classroom setting, and ensure every student can participate within the 30-minute development phase.
+6. ABSOLUTE PROHIBITION OF URLs AND EXTERNAL LINKS:
+   - NEVER output URLs, website links, or http/https links anywhere in ANY field of the lesson plan.
+   - 'competence' MUST be the broad curriculum competency standard in plain English text. Never output a URL or web link.
+   - 'competence_level' MUST be strictly the curriculum code string "{competency_level}". Never output a URL or web link.
 
 Respond ONLY with valid JSON conforming to the LearnLessonPlanDto schema.<|eot_id|>
 <|start_header_id|>user<|end_header_id|>
 LESSON METADATA:
 - Subject: {subject}
 - Grade: {grade_level}
-- Competency Level: {competency_level}
+- Competency Level: {competency_level} (plain string code, never a URL)
 - Lesson Title: {lesson_topic} (Period {current_period} of {total_periods})
 - Use this period-specific curriculum topic; do not replace it with the broad competency title.
 - Duration: 40 Minutes

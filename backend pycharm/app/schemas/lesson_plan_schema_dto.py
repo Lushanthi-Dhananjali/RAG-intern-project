@@ -147,6 +147,17 @@ class LessonPlanSchemaDto(BaseModel):
         for idx, step in enumerate(self.lesson_development_steps, start=1):
             step.step_number = idx
 
+        # 7. Strip forbidden URLs from competence_level and competence
+        URL_PATTERN = re.compile(r"https?://|www\.", re.IGNORECASE)
+        if self.competence_level and URL_PATTERN.search(self.competence_level):
+            code_match = re.search(r"\b(\d+\.\d+(?:\.\d+)?)\b", self.competence_level)
+            self.competence_level = code_match.group(1) if code_match else "8.1.1"
+
+        if self.competence and URL_PATTERN.search(self.competence):
+            slug = re.sub(r"^https?://[^\s/]+/(?:competence/?)?", "", self.competence)
+            cleaned_slug = slug.replace("-", " ").strip().title()
+            self.competence = cleaned_slug if len(cleaned_slug) > 3 else "Curriculum Competency Standard"
+
         return self
 
 

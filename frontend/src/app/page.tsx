@@ -3,7 +3,8 @@
 import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { getStoredAuth, clearStoredAuth, UserDto } from "@/services/authApi";
+import { useRouter } from "next/navigation";
+import { getStoredAuth, getCurrentUserApi, clearStoredAuth, UserDto } from "@/services/authApi";
 
 import LessonPlanForm from "../components/LessonPlanForm";
 import StructuralEditor from "../components/StructuralEditor";
@@ -50,17 +51,51 @@ const API_BASE_URL =
     : process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000";
 
 export default function Home() {
-  // Authentication user state
+  const router = useRouter();
   const [currentUser, setCurrentUser] = useState<UserDto | null>(null);
+  const [authStatus, setAuthStatus] = useState<"checking" | "authenticated" | "error">("checking");
+  const [authError, setAuthError] = useState<string | null>(null);
+  const [authRetry, setAuthRetry] = useState(0);
 
   useEffect(() => {
-    const auth = getStoredAuth();
-    setCurrentUser(auth.user);
-  }, []);
+    let active = true;
+    const { token } = getStoredAuth();
+
+    if (!token) {
+      router.replace("/login");
+      return () => {
+        active = false;
+      };
+    }
+
+    getCurrentUserApi()
+      .then((user) => {
+        if (active) {
+          setCurrentUser(user);
+          setAuthStatus("authenticated");
+          setAuthError(null);
+        }
+      })
+      .catch((err: unknown) => {
+        if (!active) return;
+        if (!getStoredAuth().token) {
+          router.replace("/login");
+          return;
+        }
+        setAuthError(err instanceof Error ? err.message : "Could not verify your account.");
+        setAuthStatus("error");
+      });
+
+    return () => {
+      active = false;
+    };
+  }, [authRetry, router]);
 
   const handleLogout = () => {
     clearStoredAuth();
     setCurrentUser(null);
+    setAuthStatus("checking");
+    router.replace("/login");
   };
 
   // Main Navigation Tabs: 'wizard' (Existing Wizard), 'planner' (New Step 9 State Machine), 'generator' (Classic Direct), 'library' (Saved Plans)
@@ -554,6 +589,40 @@ export default function Home() {
       setIsDeleting(false);
     }
   };
+
+  if (authStatus !== "authenticated") {
+    return (
+      <main className="min-h-screen flex items-center justify-center px-4">
+        <section className="w-full max-w-md rounded-xl border border-slate-200 bg-white p-8 text-center shadow-sm">
+          <h1 className="text-xl font-bold text-slate-900">Sign in to Lesson Planner</h1>
+          {authStatus === "checking" ? (
+            <p className="mt-3 text-sm text-slate-600">Verifying your account…</p>
+          ) : (
+            <>
+              <p className="mt-3 text-sm text-red-700">
+                {authError || "Your account could not be verified. Please try again."}
+              </p>
+              <button
+                type="button"
+                onClick={() => {
+                  setAuthStatus("checking");
+                  setAuthRetry((attempt) => attempt + 1);
+                }}
+                className="mt-5 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700"
+              >
+                Try again
+              </button>
+            </>
+          )}
+          <p className="mt-5 text-sm text-slate-600">
+            <Link href="/login" className="font-semibold text-indigo-600 hover:text-indigo-700">
+              Go to login
+            </Link>
+          </p>
+        </section>
+      </main>
+    );
+  }
 
   return (
     <main className="min-h-screen py-8 px-4 sm:px-8 max-w-5xl mx-auto font-sans">

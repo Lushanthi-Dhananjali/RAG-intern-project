@@ -1,4 +1,5 @@
 import os
+import re
 import json
 import logging
 from datetime import datetime, timezone
@@ -24,6 +25,32 @@ def _sanitize_filename(filename: str) -> str:
     if not clean_name.lower().endswith(".json"):
         clean_name += ".json"
     return clean_name
+
+
+URL_PATTERN = re.compile(r"https?://|www\.", re.IGNORECASE)
+
+
+def _sanitize_plan_dict(content: Dict[str, Any]) -> Dict[str, Any]:
+    """Sanitizes plan dictionary to ensure competence and competence_level never contain URLs."""
+    if not isinstance(content, dict):
+        return content
+
+    comp_level = str(content.get("competence_level", "")).strip()
+    if URL_PATTERN.search(comp_level):
+        code_match = re.search(r"\b(\d+\.\d+(?:\.\d+)?)\b", comp_level)
+        content["competence_level"] = code_match.group(1) if code_match else "8.1.1"
+
+    competence = str(content.get("competence", "")).strip()
+    if URL_PATTERN.search(competence):
+        clean_code = str(content.get("competence_level", "8.1.1")).strip()
+        from app.services.timing_guardrail_engine import resolve_clean_competence_title
+        content["competence"] = resolve_clean_competence_title(clean_code, fallback_text=str(content.get("lesson", "")))
+
+    lesson = str(content.get("lesson", "")).strip()
+    if URL_PATTERN.search(lesson):
+        content["lesson"] = re.sub(r"https?://\S+", "", lesson).strip() or "Lesson Plan"
+
+    return content
 
 
 def _get_safe_filepath(filename: str) -> Optional[str]:
@@ -72,6 +99,7 @@ def list_generated_plans(
 
             with open(filepath, "r", encoding="utf-8") as f:
                 content = json.load(f)
+            content = _sanitize_plan_dict(content)
 
             plan_grade = str(content.get("grade", "Grade 8"))
             plan_subject = str(content.get("subject", "Civic Education"))
@@ -160,6 +188,7 @@ def get_generated_plan(filename: str) -> Optional[Dict[str, Any]]:
 
         with open(filepath, "r", encoding="utf-8") as f:
             plan_data = json.load(f)
+        plan_data = _sanitize_plan_dict(plan_data)
 
         if isinstance(plan_data, dict) and "activity_options" in plan_data:
             sel_title = plan_data.get("selected_activity_title")
@@ -237,6 +266,7 @@ def save_generated_plan(plan_data: Dict[str, Any], custom_filename: Optional[str
     Returns the saved filename.
     """
     ensure_directory_exists()
+    plan_data = _sanitize_plan_dict(plan_data)
 
     if custom_filename and custom_filename.strip():
         fname = _sanitize_filename(custom_filename)

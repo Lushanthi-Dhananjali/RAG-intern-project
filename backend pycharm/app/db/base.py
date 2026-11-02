@@ -7,16 +7,16 @@ logger = logging.getLogger("DatabaseInit")
 
 def init_db():
     """
-    Creates ONLY the User table in MySQL for login and signup authentication.
-    No other project tables or lesson plans are placed in MySQL.
+    Creates the SQL user table required by legacy lesson-history relationships.
+    Signup and login profiles are stored separately in MongoDB.
     """
     try:
-        logger.info("Verifying MySQL users table for login and signup...")
+        logger.info("Verifying SQL users table for lesson-history relationships...")
         User.__table__.create(bind=engine, checkfirst=True)
-        logger.info("MySQL 'users' table is ready.")
+        logger.info("SQL 'users' compatibility table is ready.")
     except Exception as exc:
         logger.error(
-            "MySQL connection/initialization error: %s\n"
+            "SQL compatibility database initialization error: %s\n"
             "Action required:\n"
             "1. Make sure MariaDB/MySQL is running.\n"
             "2. Make sure the database exists: CREATE DATABASE IF NOT EXISTS rag_lesson_planner;\n"

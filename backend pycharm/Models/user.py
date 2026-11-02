@@ -6,8 +6,8 @@ from app.db.session import Base
 
 class User(Base):
     """
-    User entity dedicated solely to MySQL login and signup authentication.
-    No other project tables or lesson plans are linked here.
+    Legacy SQL user table used by lesson-history foreign-key relationships.
+    Signup and login profiles are stored in the separate MongoDB collection.
     """
     __tablename__ = "users"
 

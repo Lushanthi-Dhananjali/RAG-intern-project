@@ -73,27 +73,6 @@ export default function LoginPage() {
           marginBottom: '20px',
         }}
       >
-        <Link
-          href="/"
-          style={{
-            textDecoration: 'none',
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '8px',
-            fontSize: '13px',
-            fontWeight: '700',
-            color: '#475569',
-            backgroundColor: '#ffffff',
-            padding: '8px 14px',
-            borderRadius: '10px',
-            border: '1px solid #e2e8f0',
-            boxShadow: '0 2px 4px rgba(0,0,0,0.03)',
-            transition: 'all 0.15s ease',
-          }}
-        >
-          <span>←</span> Back to Lesson Planner
-        </Link>
-
         {/* Database Status Badge */}
         {dbStatus && (
           <div
@@ -122,7 +101,7 @@ export default function LoginPage() {
             />
             <span>
               {dbStatus.status === 'connected'
-                ? `DB: ${dbStatus.dialect?.toUpperCase() || 'MYSQL'}`
+                ? `DB: ${dbStatus.dialect?.toUpperCase() || 'MONGODB'}`
                 : 'DB Offline'}
             </span>
           </div>

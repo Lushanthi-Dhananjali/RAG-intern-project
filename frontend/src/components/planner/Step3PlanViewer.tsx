@@ -340,7 +340,11 @@ export default function Step3PlanViewer() {
           </div>
           <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '10px', padding: '10px 12px' }}>
             <span style={{ display: 'block', fontSize: '10px', fontWeight: 800, color: '#64748b', textTransform: 'uppercase' }}>Competency Level</span>
-            <strong style={{ display: 'block', marginTop: '2px', fontSize: '13px', color: '#4338ca', fontFamily: 'monospace' }}>{currentPlan.competence_level}</strong>
+            <strong style={{ display: 'block', marginTop: '2px', fontSize: '13px', color: '#4338ca', fontFamily: 'monospace' }}>
+              {currentPlan.competence_level?.includes('http')
+                ? (currentPlan.competence_level.match(/\b\d+\.\d+(?:\.\d+)?\b/)?.[0] || currentPlan.competence_level.split('/').filter(Boolean).pop())
+                : currentPlan.competence_level}
+            </strong>
           </div>
           <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '10px', padding: '10px 12px' }}>
             <span style={{ display: 'block', fontSize: '10px', fontWeight: 800, color: '#64748b', textTransform: 'uppercase' }}>Time Allocation</span>

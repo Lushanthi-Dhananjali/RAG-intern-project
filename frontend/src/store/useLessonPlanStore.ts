@@ -54,6 +54,26 @@ export interface LessonPlanSchemaDto {
   assignment_duration_minutes?: number;
 }
 
+export const sanitizePlanUrls = (p: LessonPlanSchemaDto): LessonPlanSchemaDto => {
+  if (!p) return p;
+  let competence_level = p.competence_level;
+  if (competence_level && (competence_level.includes('http://') || competence_level.includes('https://'))) {
+    const match = competence_level.match(/\b(\d+\.\d+(?:\.\d+)?)\b/);
+    competence_level = match ? match[1] : competence_level.split('/').filter(Boolean).pop() || '8.1.1';
+  }
+  let competence = p.competence;
+  if (competence && (competence.includes('http://') || competence.includes('https://'))) {
+    const slug = competence.replace(/^https?:\/\/[^/]+\/(?:competence\/?)?/, '');
+    const cleanSlug = slug.replace(/-/g, ' ').trim();
+    competence = cleanSlug ? cleanSlug.charAt(0).toUpperCase() + cleanSlug.slice(1) : 'Curriculum Competence Standard';
+  }
+  return {
+    ...p,
+    competence_level,
+    competence,
+  };
+};
+
 export interface MultiPeriodState {
   // Step indicator (1 = Inputs, 2 = Option Selection, 3 = Viewer)
   step: 1 | 2 | 3;
@@ -236,7 +256,7 @@ export const useLessonPlanStore = create<MultiPeriodState>()(persist((set, get) 
     set((state) => {
       const activityByPeriod = { ...state.activityByPeriod, [period]: activityTitle };
       return {
-        generatedPlans: { ...state.generatedPlans, [period]: plan },
+        generatedPlans: { ...state.generatedPlans, [period]: sanitizePlanUrls(plan) },
         activityByPeriod,
         previousPeriodActivities: Object.keys(activityByPeriod)
           .map(Number)

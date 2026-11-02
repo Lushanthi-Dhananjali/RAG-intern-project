@@ -457,6 +457,31 @@ def test_test_e2_no_fabricated_links_and_outcome_integrated():
         assert "duties" in step.student_activities.casefold() or "rights" in step.student_activities.casefold()
 
 
+def test_no_urls_in_competence_and_competence_level():
+    """Verify that unknown URLs in competence and competence_level are sanitized to clean codes and titles."""
+    plan = make_mock_plan()
+    plan.competence = "https://api.learn.kandy.lk/competence/8.1.2"
+    plan.competence_level = "https://api.learn.kandy.lk/competence-level/8.1.2"
+
+    target_outcome = "Names the public services provided for the area identifying them."
+    repaired = TimingGuardrailEngine.enforce_invariants_and_inject_outcomes(
+        plan=plan,
+        verbatim_outcomes=[target_outcome],
+        requested_period=1,
+        total_periods=3,
+        lesson_topic="Public Services in Our Area",
+        selected_activity="Courtroom / Citizen Grievance Tribunal",
+        competency_level="8.1.2",
+    )
+
+    assert "http" not in repaired.competence_level
+    assert "kandy" not in repaired.competence_level
+    assert repaired.competence_level == "8.1.2"
+
+    assert "http" not in repaired.competence
+    assert "kandy" not in repaired.competence
+    assert repaired.competence == "Names the public services provided for the area identifying them."
+
 
 # =============================================================================
 # TEST F: JSON CONSISTENCY (All fields serialized and match)

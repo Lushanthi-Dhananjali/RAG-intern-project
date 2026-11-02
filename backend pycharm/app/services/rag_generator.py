@@ -608,6 +608,10 @@ class RAGLessonPlanGenerator:
             raise ValueError("Validation Failure: 'competence' standard is missing.")
         if not plan.competence_level or not plan.competence_level.strip():
             raise ValueError("Validation Failure: 'competence_level' is missing.")
+        if re.search(r"https?://|www\.", plan.competence, re.IGNORECASE):
+            raise ValueError("Validation Failure: 'competence' contains forbidden URL.")
+        if re.search(r"https?://|www\.", plan.competence_level, re.IGNORECASE):
+            raise ValueError("Validation Failure: 'competence_level' contains forbidden URL.")
         if not plan.unique_learning_outcome or len(plan.unique_learning_outcome) < 1:
             raise ValueError("Validation Failure: LEARN format requires at least 1 distinct unique learning outcome.")
         if not plan.the_entrance or not plan.the_entrance.strip():
@@ -706,6 +710,14 @@ class RAGLessonPlanGenerator:
 
         tig_context = "\n\n".join([c.get("content", "") for c in tig_chunks])
         tb_context = "\n\n".join([c.get("content", "") for c in tb_chunks])
+
+        retrieved_competence = ""
+        for item in tig_chunks:
+            meta = item.get("metadata", {})
+            comp_val = meta.get("competence") or meta.get("competency")
+            if comp_val and comp_val not in ["General", ""]:
+                retrieved_competence = comp_val.strip()
+                break
 
         # 2. Extract Outcomes if Missing
         if not retrieved_outcomes:
@@ -819,6 +831,8 @@ class RAGLessonPlanGenerator:
                 total_periods=total_periods,
                 lesson_topic=lesson_topic,
                 selected_activity=effective_activity,
+                competency_level=competency_level,
+                broad_competence=retrieved_competence,
             )
         else:
             if balance_development_step_times is not None:
@@ -829,6 +843,10 @@ class RAGLessonPlanGenerator:
                 validated_plan.unique_learning_outcome = retrieved_outcomes
 
         # 7. Metadata Synchronization
+        validated_plan.competence_level = competency_level.strip()
+        if not validated_plan.competence or re.search(r"https?://|www\.", validated_plan.competence, re.IGNORECASE):
+            if retrieved_competence:
+                validated_plan.competence = retrieved_competence
         validated_plan.time_allocation = time_slot
         validated_plan.lesson = lesson_topic
         if format_retrieved_source_references is not None:

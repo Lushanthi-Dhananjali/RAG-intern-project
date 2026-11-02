@@ -561,6 +561,10 @@ class LessonPlanMlService(ILessonPlanMlService):
             )
 
             plan = plan.model_copy(deep=True)
+            plan.competence_level = target_comp
+            if not plan.competence or re.search(r"https?://|www\.", plan.competence, re.IGNORECASE):
+                from app.services.timing_guardrail_engine import resolve_clean_competence_title
+                plan.competence = resolve_clean_competence_title(target_comp, fallback_text=period_topic)
             plan.time_allocation = period_time_label
             plan.grade = normalized_grade
             plan.lesson = period_topic
