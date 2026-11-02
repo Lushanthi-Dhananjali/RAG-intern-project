@@ -53,7 +53,7 @@ const API_BASE_URL =
 export default function Home() {
   const router = useRouter();
   const [currentUser, setCurrentUser] = useState<UserDto | null>(null);
-  const [authStatus, setAuthStatus] = useState<"checking" | "authenticated" | "error">("checking");
+  const [authStatus, setAuthStatus] = useState<"checking" | "authenticated" | "unauthenticated" | "error">("checking");
   const [authError, setAuthError] = useState<string | null>(null);
   const [authRetry, setAuthRetry] = useState(0);
 
@@ -62,6 +62,7 @@ export default function Home() {
     const { token } = getStoredAuth();
 
     if (!token) {
+      setAuthStatus("unauthenticated");
       router.replace("/login");
       return () => {
         active = false;
@@ -79,6 +80,7 @@ export default function Home() {
       .catch((err: unknown) => {
         if (!active) return;
         if (!getStoredAuth().token) {
+          setAuthStatus("unauthenticated");
           router.replace("/login");
           return;
         }
@@ -94,8 +96,8 @@ export default function Home() {
   const handleLogout = () => {
     clearStoredAuth();
     setCurrentUser(null);
-    setAuthStatus("checking");
-    router.replace("/login");
+    setAuthStatus("unauthenticated");
+    window.location.href = "/login";
   };
 
   // Main Navigation Tabs: 'wizard' (Existing Wizard), 'planner' (New Step 9 State Machine), 'generator' (Classic Direct), 'library' (Saved Plans)
@@ -592,34 +594,313 @@ export default function Home() {
 
   if (authStatus !== "authenticated") {
     return (
-      <main className="min-h-screen flex items-center justify-center px-4">
-        <section className="w-full max-w-md rounded-xl border border-slate-200 bg-white p-8 text-center shadow-sm">
-          <h1 className="text-xl font-bold text-slate-900">Sign in to Lesson Planner</h1>
-          {authStatus === "checking" ? (
-            <p className="mt-3 text-sm text-slate-600">Verifying your account…</p>
-          ) : (
-            <>
-              <p className="mt-3 text-sm text-red-700">
-                {authError || "Your account could not be verified. Please try again."}
-              </p>
-              <button
-                type="button"
-                onClick={() => {
-                  setAuthStatus("checking");
-                  setAuthRetry((attempt) => attempt + 1);
+      <main
+        style={{
+          minHeight: "100vh",
+          backgroundColor: "#eef2f7",
+          backgroundImage: "radial-gradient(circle at 50% 20%, #ffffff 0%, #eef2f7 75%)",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "24px 16px",
+          fontFamily:
+            "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+          boxSizing: "border-box",
+        }}
+      >
+        <div
+          style={{
+            width: "100%",
+            maxWidth: "500px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          {/* Header Tag Badge */}
+          <span
+            style={{
+              fontSize: "11px",
+              fontWeight: "800",
+              textTransform: "uppercase",
+              letterSpacing: "0.08em",
+              color: "#059669",
+              backgroundColor: "#ecfdf5",
+              border: "1px solid #a7f3d0",
+              padding: "4px 12px",
+              borderRadius: "9999px",
+              marginBottom: "14px",
+            }}
+          >
+            LEARN Kandy Practice Teaching Pedagogy
+          </span>
+
+          {/* Main Box - Styled matching Lesson Plan Generator / Login Box */}
+          <section
+            style={{
+              backgroundColor: "#ffffff",
+              padding: "32px 28px",
+              borderRadius: "16px",
+              border: "1px solid #e2e8f0",
+              boxShadow:
+                "0 10px 25px -5px rgba(0, 0, 0, 0.06), 0 8px 10px -6px rgba(0, 0, 0, 0.04)",
+              width: "100%",
+              boxSizing: "border-box",
+              display: "flex",
+              flexDirection: "column",
+              gap: "20px",
+            }}
+          >
+            {/* Box Header */}
+            <div
+              style={{
+                borderBottom: "1px solid #f1f5f9",
+                paddingBottom: "16px",
+                display: "flex",
+                alignItems: "center",
+                gap: "12px",
+              }}
+            >
+              <span
+                style={{
+                  backgroundColor: "#eef2ff",
+                  color: "#4f46e5",
+                  padding: "10px",
+                  borderRadius: "12px",
+                  fontSize: "22px",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                 }}
-                className="mt-5 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700"
               >
-                Try again
-              </button>
-            </>
-          )}
-          <p className="mt-5 text-sm text-slate-600">
-            <Link href="/login" className="font-semibold text-indigo-600 hover:text-indigo-700">
-              Go to login
-            </Link>
-          </p>
-        </section>
+                🔐
+              </span>
+              <div>
+                <h1
+                  style={{
+                    fontSize: "20px",
+                    fontWeight: "800",
+                    color: "#0f172a",
+                    margin: 0,
+                    letterSpacing: "-0.01em",
+                  }}
+                >
+                  Civic Education AI Planner
+                </h1>
+                <p
+                  style={{
+                    fontSize: "13px",
+                    color: "#64748b",
+                    margin: "4px 0 0 0",
+                  }}
+                >
+                  Multi-Period Lesson Plan Generator
+                </p>
+              </div>
+            </div>
+
+            {/* Inner Status Box based on auth state */}
+            {authStatus === "checking" ? (
+              <div
+                style={{
+                  backgroundColor: "#f8fafc",
+                  border: "1px solid #e2e8f0",
+                  borderRadius: "12px",
+                  padding: "24px 16px",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  textAlign: "center",
+                  gap: "12px",
+                }}
+              >
+                <div
+                  style={{
+                    width: "32px",
+                    height: "32px",
+                    border: "3px solid #e2e8f0",
+                    borderTopColor: "#4f46e5",
+                    borderRadius: "50%",
+                    animation: "authSpin 0.8s linear infinite",
+                  }}
+                />
+                <style>{`@keyframes authSpin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }`}</style>
+                <div>
+                  <h3
+                    style={{
+                      fontSize: "15px",
+                      fontWeight: "700",
+                      color: "#1e293b",
+                      margin: "0 0 4px 0",
+                    }}
+                  >
+                    Verifying your session…
+                  </h3>
+                  <p
+                    style={{
+                      fontSize: "13px",
+                      color: "#64748b",
+                      margin: 0,
+                    }}
+                  >
+                    Checking authentication credentials and permissions.
+                  </p>
+                </div>
+              </div>
+            ) : authStatus === "unauthenticated" ? (
+              <div
+                style={{
+                  backgroundColor: "#f8fafc",
+                  border: "1px solid #e2e8f0",
+                  borderRadius: "12px",
+                  padding: "20px 16px",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  textAlign: "center",
+                  gap: "8px",
+                }}
+              >
+                <span style={{ fontSize: "24px" }}>👋</span>
+                <h3
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: "700",
+                    color: "#1e293b",
+                    margin: 0,
+                  }}
+                >
+                  Sign In Required
+                </h3>
+                <p
+                  style={{
+                    fontSize: "13px",
+                    color: "#64748b",
+                    margin: 0,
+                  }}
+                >
+                  Please sign in to access and generate curriculum lesson plans.
+                </p>
+              </div>
+            ) : (
+              <div
+                style={{
+                  backgroundColor: "#fef2f2",
+                  border: "1px solid #fecaca",
+                  borderRadius: "12px",
+                  padding: "16px",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "10px",
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                  <span style={{ fontSize: "16px" }}>⚠️</span>
+                  <span
+                    style={{
+                      fontSize: "13px",
+                      fontWeight: "700",
+                      color: "#b91c1c",
+                    }}
+                  >
+                    Authentication Notice
+                  </span>
+                </div>
+                <p
+                  style={{
+                    fontSize: "13px",
+                    color: "#991b1b",
+                    margin: 0,
+                    lineHeight: "1.4",
+                  }}
+                >
+                  {authError || "Your session could not be verified or has expired. Please sign in again."}
+                </p>
+                <div style={{ display: "flex", gap: "10px", marginTop: "6px" }}>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setAuthStatus("checking");
+                      setAuthRetry((attempt) => attempt + 1);
+                    }}
+                    style={{
+                      padding: "8px 14px",
+                      borderRadius: "8px",
+                      backgroundColor: "#ffffff",
+                      border: "1px solid #cbd5e1",
+                      fontSize: "12px",
+                      fontWeight: "700",
+                      color: "#334155",
+                      cursor: "pointer",
+                    }}
+                  >
+                    🔄 Retry Check
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* Action Buttons */}
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "10px",
+              }}
+            >
+              <Link
+                href="/login"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "8px",
+                  padding: "12px 18px",
+                  borderRadius: "10px",
+                  backgroundColor: "#4f46e5",
+                  color: "#ffffff",
+                  fontSize: "14px",
+                  fontWeight: "700",
+                  textDecoration: "none",
+                  boxShadow: "0 4px 10px rgba(79, 70, 229, 0.25)",
+                  transition: "background-color 0.15s ease",
+                }}
+              >
+                <span>🔐</span>
+                <span>Sign In to Your Account</span>
+                <span>→</span>
+              </Link>
+            </div>
+
+            {/* Footer / Alternate Link */}
+            <div
+              style={{
+                borderTop: "1px solid #f1f5f9",
+                paddingTop: "14px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                fontSize: "12px",
+                color: "#64748b",
+              }}
+            >
+              <span>Need an account?</span>
+              <Link
+                href="/signup"
+                style={{
+                  color: "#4f46e5",
+                  fontWeight: "700",
+                  textDecoration: "none",
+                }}
+              >
+                Create Account →
+              </Link>
+            </div>
+          </section>
+        </div>
       </main>
     );
   }
