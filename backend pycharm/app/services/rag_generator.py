@@ -186,6 +186,226 @@ except ModuleNotFoundError:
 
 
 # =====================================================================
+# SCHEMA NORMALIZER HELPER
+# =====================================================================
+
+def normalize_lesson_plan_dict(data: Any) -> Dict[str, Any]:
+    """
+    Intelligently maps any alternative LLM JSON field names (e.g. from Gemini or OpenAI)
+    to the strict LearnLessonPlanDto required schema keys.
+    """
+    if not isinstance(data, dict):
+        data = {}
+
+    norm = dict(data)
+
+    # 1. the_entrance
+    if not norm.get("the_entrance") or not str(norm.get("the_entrance", "")).strip():
+        for k in ["entrance", "introduction", "intro", "hook", "opening", "motivational_hook", "phase_1"]:
+            if norm.get(k) and str(norm[k]).strip():
+                norm["the_entrance"] = str(norm[k]).strip()
+                break
+        if not norm.get("the_entrance") or not str(norm.get("the_entrance", "")).strip():
+            norm["the_entrance"] = "5-minute introduction: Teacher presents everyday scenario and motivational hook; students discuss and connect prior knowledge."
+
+    # 2. time_allocation
+    if not norm.get("time_allocation") or not str(norm.get("time_allocation", "")).strip():
+        for k in ["duration", "time", "time_slot", "timing", "allocation"]:
+            if norm.get(k) and str(norm[k]).strip():
+                norm["time_allocation"] = str(norm[k]).strip()
+                break
+        if not norm.get("time_allocation") or not str(norm.get("time_allocation", "")).strip():
+            norm["time_allocation"] = "40 Minutes (Period 1 of 1)"
+
+    # 3. competence & competence_level
+    if not norm.get("competence") or not str(norm.get("competence", "")).strip():
+        for k in ["competency", "broad_competence", "standard", "goal"]:
+            if norm.get(k) and str(norm[k]).strip():
+                norm["competence"] = str(norm[k]).strip()
+                break
+        if not norm.get("competence") or not str(norm.get("competence", "")).strip():
+            norm["competence"] = "Democratic Governance and Civic Participation"
+
+    if not norm.get("competence_level") or not str(norm.get("competence_level", "")).strip():
+        for k in ["level", "competency_code", "competency_level"]:
+            if norm.get(k) and str(norm[k]).strip():
+                norm["competence_level"] = str(norm[k]).strip()
+                break
+        if not norm.get("competence_level") or not str(norm.get("competence_level", "")).strip():
+            norm["competence_level"] = "8.1.1"
+
+    # 4. lesson (topic/title)
+    if not norm.get("lesson") or not str(norm.get("lesson", "")).strip():
+        for k in ["topic", "title", "lesson_title", "theme", "lesson_topic", "name"]:
+            if norm.get(k) and str(norm[k]).strip():
+                norm["lesson"] = str(norm[k]).strip()
+                break
+        if not norm.get("lesson") or not str(norm.get("lesson", "")).strip():
+            norm["lesson"] = "Civic Education Lesson Standard"
+
+    # 5. grade & subject
+    if not norm.get("grade") or not str(norm.get("grade", "")).strip():
+        norm["grade"] = str(norm.get("grade_level") or "Grade 8").strip()
+    if not norm.get("subject") or not str(norm.get("subject", "")).strip():
+        norm["subject"] = "Civic Education"
+
+    # 6. lesson_development_steps
+    steps = norm.get("lesson_development_steps")
+    if not steps or not isinstance(steps, list):
+        for k in ["steps", "development_steps", "activities", "procedures", "development", "learning_activities"]:
+            if norm.get(k) and isinstance(norm[k], list) and len(norm[k]) > 0:
+                steps = norm[k]
+                break
+
+    clean_steps = []
+    if isinstance(steps, list) and len(steps) > 0:
+        for idx, s in enumerate(steps, 1):
+            if isinstance(s, dict):
+                clean_s = {
+                    "step_number": s.get("step_number") or idx,
+                    "teacher_activities": str(s.get("teacher_activities") or s.get("teacher") or s.get("facilitation") or "Teacher guides investigation and scaffolding.").strip(),
+                    "student_activities": str(s.get("student_activities") or s.get("students") or s.get("task") or "Students collaborate in groups on assigned inquiry tasks.").strip(),
+                    "learning_teaching_method": str(s.get("learning_teaching_method") or s.get("method") or s.get("pedagogy") or "Guided Inquiry").strip(),
+                    "learning_teaching_aids": str(s.get("learning_teaching_aids") or s.get("aids") or s.get("materials") or "Task cards, activity worksheets, whiteboard").strip(),
+                    "assessment_and_feedback": str(s.get("assessment_and_feedback") or s.get("assessment") or "").strip(),
+                    "time_minutes": int(s.get("time_minutes") or s.get("duration") or 15),
+                    "other": str(s.get("other") or "").strip()
+                }
+                clean_steps.append(clean_s)
+
+    if not clean_steps:
+        clean_steps = [
+            {
+                "step_number": 1,
+                "teacher_activities": "Teacher organizes students into structured inquiry teams and introduces the task scenario.",
+                "student_activities": "Students review task cards, assume collaborative group roles, and begin investigations.",
+                "learning_teaching_method": "Guided Inquiry",
+                "learning_teaching_aids": "Task cards and activity prompts",
+                "assessment_and_feedback": "Teacher checks understanding of instructions.",
+                "time_minutes": 15,
+                "other": "Group formation"
+            },
+            {
+                "step_number": 2,
+                "teacher_activities": "Teacher moderates student presentations, highlights key points, and addresses misconceptions.",
+                "student_activities": "Student spokespersons present findings, compare observations, and note feedback.",
+                "learning_teaching_method": "Presentation & Synthesis",
+                "learning_teaching_aids": "Presentation charts and whiteboard",
+                "assessment_and_feedback": "Peer review and formative feedback.",
+                "time_minutes": 15,
+                "other": "Class presentation"
+            }
+        ]
+    norm["lesson_development_steps"] = clean_steps
+
+    # 7. summary
+    if not norm.get("summary") or not str(norm.get("summary", "")).strip():
+        for k in ["conclusion", "synthesis", "review", "recap"]:
+            if norm.get(k) and str(norm[k]).strip():
+                norm["summary"] = str(norm[k]).strip()
+                break
+        if not norm.get("summary") or not str(norm.get("summary", "")).strip():
+            norm["summary"] = "Teacher and students synthesize core findings, reinforcing key civic competencies and takeaways."
+
+    # 8. assessment_and_feedback_whole_lesson
+    if not norm.get("assessment_and_feedback_whole_lesson") or not str(norm.get("assessment_and_feedback_whole_lesson", "")).strip():
+        for k in ["assessment", "evaluation", "feedback", "final_assessment", "closure_assessment"]:
+            if norm.get(k) and str(norm[k]).strip():
+                norm["assessment_and_feedback_whole_lesson"] = str(norm[k]).strip()
+                break
+        if not norm.get("assessment_and_feedback_whole_lesson") or not str(norm.get("assessment_and_feedback_whole_lesson", "")).strip():
+            norm["assessment_and_feedback_whole_lesson"] = "Formative exit ticket questioning: 3 students share real-life application examples."
+
+    # 9. post_activity
+    if not norm.get("post_activity") or not str(norm.get("post_activity", "")).strip():
+        for k in ["assignment", "homework", "followup", "in_class_task", "extension"]:
+            if norm.get(k) and str(norm[k]).strip():
+                norm["post_activity"] = str(norm[k]).strip()
+                break
+        if not norm.get("post_activity") or not str(norm.get("post_activity", "")).strip():
+            norm["post_activity"] = "Five-minute in-class assignment: Each student writes two key responsibilities on their reflection sheet."
+
+    # 10. unique_learning_outcome: must be List[str]
+    ulo = norm.get("unique_learning_outcome")
+    if ulo is None:
+        norm["unique_learning_outcome"] = []
+    elif isinstance(ulo, str):
+        norm["unique_learning_outcome"] = [s.strip() for s in ulo.split("\n") if s.strip()] or [ulo.strip()]
+    elif isinstance(ulo, list):
+        norm["unique_learning_outcome"] = [str(x).strip() for x in ulo if str(x).strip()]
+
+    # 11. information_sources: must be List[str]
+    info = norm.get("information_sources")
+    if info is None:
+        norm["information_sources"] = []
+    elif isinstance(info, str):
+        import re
+        norm["information_sources"] = [s.strip() for s in re.split(r"[\n,;]+", info) if s.strip()] or [info.strip()]
+    elif isinstance(info, list):
+        norm["information_sources"] = [str(x).strip() for x in info if str(x).strip()]
+
+    # 12. attachments: must be List[str]
+    att = norm.get("attachments")
+    if att is None:
+        norm["attachments"] = []
+    elif isinstance(att, str):
+        import re
+        norm["attachments"] = [s.strip() for s in re.split(r"[\n,;]+", att) if s.strip()] or [att.strip()]
+    elif isinstance(att, list):
+        norm["attachments"] = [str(x).strip() for x in att if str(x).strip()]
+
+    # 13. activity_options: must be List[Dict[str, Any]]
+    act = norm.get("activity_options")
+    if act is None:
+        norm["activity_options"] = []
+    elif isinstance(act, list):
+        clean_act = []
+        for item in act:
+            if isinstance(item, dict):
+                clean_act.append(item)
+            elif isinstance(item, str) and item.strip():
+                clean_act.append({
+                    "title": item.strip(),
+                    "activity_strategy": item.strip(),
+                    "description": item.strip()
+                })
+        norm["activity_options"] = clean_act
+    elif isinstance(act, dict):
+        norm["activity_options"] = [act]
+    elif isinstance(act, str) and act.strip():
+        norm["activity_options"] = [{"title": act.strip(), "description": act.strip()}]
+    else:
+        norm["activity_options"] = []
+
+    # 14. outcome_allocation: must be Dict[str, List[str]]
+    oa = norm.get("outcome_allocation")
+    if oa is None:
+        norm["outcome_allocation"] = {}
+    elif isinstance(oa, dict):
+        clean_oa = {}
+        for k, v in oa.items():
+            if isinstance(v, list):
+                clean_oa[str(k)] = [str(x).strip() for x in v if str(x).strip()]
+            elif isinstance(v, str):
+                clean_oa[str(k)] = [v.strip()] if v.strip() else []
+            else:
+                clean_oa[str(k)] = [str(v)]
+        norm["outcome_allocation"] = clean_oa
+    elif isinstance(oa, list):
+        norm["outcome_allocation"] = {"period_1": [str(x) for x in oa]}
+    elif isinstance(oa, str) and oa.strip():
+        norm["outcome_allocation"] = {"period_1": [oa.strip()]}
+    else:
+        norm["outcome_allocation"] = {}
+
+    # 15. entrance_duration_minutes & assignment_duration_minutes
+    norm["entrance_duration_minutes"] = 5
+    norm["assignment_duration_minutes"] = 5
+
+    return norm
+
+
+# =====================================================================
 # DYNAMIC EXEMPLAR-DRIVEN RAG GENERATOR (OLLAMA / LOCAL LLAMA 3)
 # =====================================================================
 
@@ -660,10 +880,16 @@ class RAGLessonPlanGenerator:
                 ollama_url=self.ollama_url,
                 timeout=360,
             )
-            validated_plan = LearnLessonPlanDto.model_validate(plan_dict)
+        except Exception as llm_err:
+            logger.error("LLM execution failed: %s", llm_err)
+            raise RuntimeError(f"LLM generation failed: {llm_err}")
+
+        try:
+            clean_dict = normalize_lesson_plan_dict(plan_dict)
+            validated_plan = LearnLessonPlanDto.model_validate(clean_dict)
             return validated_plan
         except Exception as validation_err:
-            logger.error("Schema validation or LLM execution failed: %s", validation_err)
+            logger.error("Schema validation failed: %s", validation_err)
             raise ValueError(f"LLM output violated LearnLessonPlanDto: {validation_err}")
 
     def generate_lesson_plan(

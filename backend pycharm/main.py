@@ -352,8 +352,19 @@ app.add_middleware(
 @app.middleware("http")
 async def extract_llm_client_headers(request, call_next):
     from app.services.llm_client import client_api_key_ctx, client_provider_ctx
-    header_key = request.headers.get("x-llm-api-key")
-    header_provider = request.headers.get("x-llm-provider")
+    header_key = (
+        request.headers.get("x-llm-api-key")
+        or request.headers.get("x-api-key")
+        or request.headers.get("llm-api-key")
+    )
+    if header_key:
+        header_key = header_key.strip()
+    header_provider = (
+        request.headers.get("x-llm-provider")
+        or request.headers.get("llm-provider")
+    )
+    if header_provider:
+        header_provider = header_provider.strip()
     
     token_key = client_api_key_ctx.set(header_key) if header_key else None
     token_prov = client_provider_ctx.set(header_provider) if header_provider else None

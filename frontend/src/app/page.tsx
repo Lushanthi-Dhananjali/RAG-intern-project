@@ -31,6 +31,7 @@ const Step3PlanViewer = dynamic(() => import("../components/planner/Step3PlanVie
 import { useLessonPlanStore } from "@/store/useLessonPlanStore";
 
 import {
+  getLlmHeaders,
   fetchLessonPlan,
   fetchPlanByCompetency,
   deleteGeneratedPlan,
@@ -184,7 +185,7 @@ export default function Home() {
       const targetP = wizardCurrentPeriod || 1;
       const res = await fetch(`${API_BASE_URL}/api/v1/suggest-pedagogical-options`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: getLlmHeaders(),
         body: JSON.stringify({
           competency_level: wizardCompetency.trim(),
           grade_level: wizardGrade,
@@ -245,7 +246,7 @@ export default function Home() {
           `${API_BASE_URL}/api/v1/suggest-pedagogical-options`,
           {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: getLlmHeaders(),
             body: JSON.stringify({
               competency_level: wizardCompetency.trim(),
               grade_level: wizardGrade,
@@ -504,7 +505,7 @@ export default function Home() {
     try {
       const response = await fetch(`${API_BASE_URL}/api/v1/lessonplan/generate-stream`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: getLlmHeaders(),
         body: JSON.stringify({
           query: `Competency ${competency}`,
           competency_level: competency,
@@ -1688,7 +1689,13 @@ export default function Home() {
                   </label>
                   <select
                     value={llmProvider}
-                    onChange={(e) => setLlmProvider(e.target.value as any)}
+                    onChange={(e) => {
+                      const val = e.target.value as any;
+                      setLlmProvider(val);
+                      if (typeof window !== "undefined") {
+                        localStorage.setItem("x-llm-provider", val);
+                      }
+                    }}
                     style={{
                       padding: "10px 12px",
                       borderRadius: "8px",
@@ -1702,7 +1709,7 @@ export default function Home() {
                   >
                     <option value="auto">Auto (Cloud API if key present, else local Ollama)</option>
                     <option value="openai">OpenAI (GPT-4o-mini)</option>
-                    <option value="gemini">Google Gemini (Gemini 1.5 Flash)</option>
+                    <option value="gemini">Google Gemini (Gemini 3.8 Flash)</option>
                     <option value="ollama">Local Ollama (Llama 3 - Offline)</option>
                   </select>
                 </div>
@@ -1729,7 +1736,7 @@ export default function Home() {
                   </div>
                   <input
                     type={showKeyText ? "text" : "password"}
-                    placeholder="sk-proj-... or AIzaSy..."
+                    placeholder="sk-proj-..., AIzaSy..., or AQ...."
                     value={tempApiKey}
                     onChange={(e) => setTempApiKey(e.target.value)}
                     style={{
@@ -1782,7 +1789,12 @@ export default function Home() {
                   <button
                     type="button"
                     onClick={() => {
-                      setApiKey(tempApiKey.trim());
+                      const trimmed = tempApiKey.trim();
+                      setApiKey(trimmed);
+                      if (typeof window !== "undefined") {
+                        localStorage.setItem("x-llm-api-key", trimmed);
+                        localStorage.setItem("x-llm-provider", llmProvider);
+                      }
                       setIsAiSettingsOpen(false);
                       setNotificationMessage("AI Model and API Key settings saved successfully!");
                       setTimeout(() => setNotificationMessage(null), 3500);

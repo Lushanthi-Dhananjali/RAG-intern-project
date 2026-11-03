@@ -1,0 +1,81 @@
+{
+  "grade": "Grade 8",
+  "subject": "Science",
+  "time_allocation": "40 Minutes (Period 1 of 1)",
+  "competence": "Investigates the transport of water, minerals, and food in plants, plant adaptations, transpiration, photosynthesis, and life cycles of organisms.",
+  "competence_level": "1.6",
+  "lesson": "Competency Level 1.6: Competency 1.6",
+  "unique_learning_outcome": [
+    "Transport of water",
+    "Transport of minerals",
+    "Transport of food",
+    "Adaptations of plants to",
+    "Importance of transpiration",
+    "Life cycle of an organism",
+    "Different types of life cycles",
+    "Life cycles with",
+    "state appropriate examples for transport",
+    "accept the importance of material",
+    "design and conduct suitable activities to",
+    "investigate and report the adaptations of",
+    "accept the importance of transpiration",
+    "distinguish between guttation and",
+    "conduct simple experiments to show the",
+    "illustrate photosynthesis using a word",
+    "collect and compile a report on global",
+    "accept the importance of photosynthesis"
+  ],
+  "the_entrance": "5-minute introduction: Teacher greets the 35 students divided into 7 teams of 5. Teacher asks students to recall how they feel thirsty on a hot day and how wilted potted plants recover after watering, connecting daily observations to plant transport systems. Students share their prior experiences with watering plants. Teacher introduces the collaborative group investigation activity on plant transport and transpiration.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Teacher assigns roles within the 7 teams (Leader, Scribe, Timekeeper, Spokesperson, Civic Investigator) and distributes task prompts regarding water, mineral, and food transport, as well as plant adaptations for transpiration.",
+      "student_activities": "Students organize into their teams of 5, assign roles (Leader/Facilitator, Scribe/Secretary, Timekeeper & Logistics, Spokesperson/Presenter, Civic Investigator/Inquirer), and inspect the task prompts in their notebooks.",
+      "learning_teaching_method": "Guided Inquiry and Task Distribution",
+      "learning_teaching_aids": "Standard blackboard and student notebooks",
+      "assessment_and_feedback": "Teacher walks around to ensure all teams understand their assigned roles and tasks without bystanders.",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Teacher monitors group discussions, guiding the Civic Investigators to check textbook facts and ensuring that all team members actively participate in drafting notes on material transport, transpiration, and photosynthesis.",
+      "student_activities": "Teams actively investigate the prompts: Scribes record arguments and findings in notebooks; Leaders keep the focus; Timekeepers monitor pacing; Civic Investigators check textbook facts; members collaborate on drafting explanations for transpiration and word equations for photosynthesis.",
+      "learning_teaching_method": "Group Investigation and Collaborative Production",
+      "learning_teaching_aids": "Standard blackboard and student notebooks",
+      "assessment_and_feedback": "Teacher provides formative guidance and corrects misconceptions on plant transport mechanisms during group checks.",
+      "time_minutes": 15,
+      "other": ""
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "Teacher invites team Spokespersons to share their group resolutions and manages peer feedback from other teams.",
+      "student_activities": "Spokespersons present their findings to the class. Other groups ask questions and provide peer feedback on plant adaptations and photosynthesis word equations.",
+      "learning_teaching_method": "Presentation and Cross-Review",
+      "learning_teaching_aids": "Standard blackboard and student notebooks",
+      "assessment_and_feedback": "Teacher evaluates presentation clarity and peer critique quality, offering constructive feedback.",
+      "time_minutes": 5,
+      "other": ""
+    }
+  ],
+  "summary": "Teacher consolidates key points on plant transport systems, the importance of transpiration, and the raw materials and products of photosynthesis, synthesizing the group findings.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation based on active group participation, role execution, and accuracy of student notebook records during presentations.",
+  "post_activity": "5-minute in-class assignment: Each student completes a short exit response explaining one finding about “Transport of water” using evidence or an example from the selected student activity. The teacher reviews responses for an accurate link to the period outcome.",
+  "information_sources": [
+    "grade_8_science_teacher_guide.pdf (pages 20, 19, 45)",
+    "grade_8_science_textbook_2.pdf",
+    "grade_8_science_textbook_1.pdf (page 8)"
+  ],
+  "attachments": [
+    "Task prompt sheet for 7 teams"
+  ],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 1,
+  "total_periods": 1,
+  "selected_activity": null,
+  "selected_activity_title": null,
+  "custom_teacher_activity": null,
+  "activity_options": [],
+  "outcome_allocation": {}
+}

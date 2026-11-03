@@ -114,7 +114,41 @@ STRICT 40-MINUTE LEARN KANDY STRUCTURAL LAWS:
    - 'competence' MUST be the broad curriculum competency standard in plain English text. Never output a URL or web link.
    - 'competence_level' MUST be strictly the curriculum code string "{competency_level}". Never output a URL or web link.
 
-Respond ONLY with valid JSON conforming to the LearnLessonPlanDto schema.<|eot_id|>
+7. REQUIRED JSON SCHEMA KEYS - YOUR OUTPUT JSON MUST CONTAIN EXACTLY THESE FIELD NAMES:
+{{
+  "grade": "{grade_level}",
+  "subject": "{subject}",
+  "time_allocation": "40 Minutes (Period {current_period} of {total_periods})",
+  "competence": "Broad curriculum competency standard",
+  "competence_level": "{competency_level}",
+  "lesson": "{lesson_topic}",
+  "the_entrance": "Detailed 5-minute introduction: teacher and student actions linking prior knowledge to this period topic and activity...",
+  "lesson_development_steps": [
+    {{
+      "step_number": 1,
+      "time_minutes": 15,
+      "learning_teaching_method": "Guided Inquiry",
+      "learning_teaching_aids": "Task cards and worksheets",
+      "teacher_activities": "Teacher facilitates and explains task...",
+      "student_activities": "Students work in groups on task...",
+      "assessment_and_feedback": "Teacher checks understanding..."
+    }},
+    {{
+      "step_number": 2,
+      "time_minutes": 15,
+      "learning_teaching_method": "Presentation & Synthesis",
+      "learning_teaching_aids": "Charts and whiteboard",
+      "teacher_activities": "Teacher coordinates peer presentations...",
+      "student_activities": "Students present group findings...",
+      "assessment_and_feedback": "Formative peer feedback..."
+    }}
+  ],
+  "summary": "Consolidation and synthesis of key concepts...",
+  "assessment_and_feedback_whole_lesson": "Final closure formative assessment criteria...",
+  "post_activity": "Five-minute in-class assignment or concluding task..."
+}}
+
+Respond ONLY with valid JSON conforming strictly to the above keys.<|eot_id|>
 <|start_header_id|>user<|end_header_id|>
 LESSON METADATA:
 - Subject: {subject}

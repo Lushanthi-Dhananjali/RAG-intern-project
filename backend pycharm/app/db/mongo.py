@@ -1,12 +1,15 @@
 import logging
 import os
+from pathlib import Path
 from threading import Lock
 
 from dotenv import load_dotenv
 from pymongo import MongoClient
 from pymongo.collection import Collection
 
-load_dotenv()
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+ENV_PATH = BASE_DIR / ".env"
+load_dotenv(dotenv_path=ENV_PATH)
 
 logger = logging.getLogger("MongoAuthDatabase")
 
@@ -26,15 +29,19 @@ def get_auth_users_collection() -> Collection:
         if _client is None:
             _client = MongoClient(
                 MONGODB_URI,
-                serverSelectionTimeoutMS=5000,
+                serverSelectionTimeoutMS=10000,
+                connectTimeoutMS=10000,
                 tz_aware=True,
             )
 
         collection = _client[MONGODB_DATABASE]["users"]
         if not _indexes_ready:
-            collection.create_index("username", unique=True)
-            collection.create_index("email", unique=True)
-            _indexes_ready = True
-            logger.info("MongoDB authentication indexes are ready.")
+            try:
+                collection.create_index("username", unique=True)
+                collection.create_index("email", unique=True)
+                _indexes_ready = True
+                logger.info("MongoDB authentication indexes are ready.")
+            except Exception as e:
+                logger.warning("Could not create MongoDB indexes yet: %s", e)
 
     return collection

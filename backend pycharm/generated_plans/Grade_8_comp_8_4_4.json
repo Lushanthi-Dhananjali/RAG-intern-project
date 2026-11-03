@@ -1,60 +1,124 @@
 {
   "grade": "Grade 8",
   "subject": "Civic Education",
-  "time_allocation": "80 Minutes (2 Periods)",
+  "time_allocation": "40 Minutes (Period 1 of 2)",
   "competence": "Contributes to minimizing road accidents by following road rules.",
   "competence_level": "8.4.4",
-  "lesson": "Competency 8.4.4",
+  "lesson": "Explains causes for railway accidents: Road & Rail Hazard Mapping & Sign Interpretation",
   "unique_learning_outcome": [
-    "Presents information about road accidents and disasters caused at present.",
-    "Explains reasons for road accidents.",
-    "Shows with example the preventive measures for accidents.",
-    "Explains road rules using signs and signals.",
     "Explains causes for railway accidents.",
-    "Shows the measures to be followed avoid railway accidents.",
-    "Explains how to react at a road or railway accident."
+    "Explains how to react at a road or railway accident.",
+    "Explains reasons for road accidents.",
+    "Explains road rules using signs and signals."
   ],
-  "the_entrance": "Imagine you are driving on a busy highway and suddenly, a car in front of you stops abruptly. What would you do?",
+  "the_entrance": "5-minute introduction: The teacher greets the 40 students and draws two distinct scenarios on the chalkboard: a car ignoring a traffic signal and pedestrians walking dangerously near a railway track. The teacher asks students to share personal observations of near-misses on roads or railways. Students respond by discussing everyday experiences with reckless driving and unguarded railway crossings. The teacher connects these real-life observations to the core topic of road and rail hazard mapping, introducing the 8 group islands and assigning roles (Leader, Scribe, Timekeeper, Spokesperson, Civic Investigator) to prepare students for the structured inquiry activity.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "Introduce the concept of road accidents and their causes.",
-      "student_activities": "Students will brainstorm and share their thoughts on what causes road accidents.",
-      "learning_teaching_method": "Exposition",
-      "learning_teaching_aids": "Whiteboard and markers",
-      "assessment_and_feedback": "Monitor student participation and engagement.",
-      "time_minutes": 15,
-      "other": "None"
+      "time_minutes": 10,
+      "learning_teaching_method": "Guided Inquiry & Setup",
+      "teacher_activities": "The teacher explains the task, distributes prompt instructions to the 8 groups, and outlines the roles of the Leader, Scribe, Timekeeper, Spokesperson, and Civic Investigator. The teacher sets up the 8 island desks and acts as a timekeeper.",
+      "student_activities": "Students organize themselves into 8 teams of 5, assign their specific roles, inspect the chalkboard sign scenarios, and clarify task requirements with their group members.",
+      "learning_teaching_aids": "Chalkboard-drawn sign scenarios, Student Notebooks",
+      "assessment_and_feedback": "Teacher observation",
+      "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "Show examples of preventive measures for road accidents.",
-      "student_activities": "Students will work in groups to brainstorm and present their ideas on preventive measures.",
-      "learning_teaching_method": "Cooperative Group Work",
-      "learning_teaching_aids": "Task cards and group worksheets",
-      "assessment_and_feedback": "Monitor group progress and provide feedback.",
-      "time_minutes": 30,
-      "other": "None"
+      "time_minutes": 15,
+      "learning_teaching_method": "Group Investigation & Production",
+      "teacher_activities": "The teacher circulates among the 8 islands, posing guiding questions about why railway gate crossings are breached and prompting deeper critical thinking regarding root causes of road and rail accidents.",
+      "student_activities": "Teams actively investigate root causes of local road and railway accidents. Scribes record findings, Civic Investigators check facts against textbook scenarios, Leaders maintain focus, and Timekeepers monitor the 15-minute pacing to produce a collaborative cause-and-effect chart on chart paper.",
+      "learning_teaching_aids": "Chart Paper, Student Notebooks, Chalkboard",
+      "assessment_and_feedback": "Teacher observation",
+      "other": ""
     },
     {
       "step_number": 3,
-      "teacher_activities": "Summarize the key findings and explain road rules using signs and signals.",
-      "student_activities": "Students will present their group findings and explain road rules.",
-      "learning_teaching_method": "Student Presentations",
-      "learning_teaching_aids": "Presentation sheets and whiteboard",
-      "assessment_and_feedback": "Provide feedback on student presentations.",
-      "time_minutes": 35,
-      "other": "None"
+      "time_minutes": 5,
+      "learning_teaching_method": "Presentation & Cross-Review",
+      "teacher_activities": "The teacher coordinates the floor for spokesperson presentations and facilitates structured peer feedback between the 8 teams.",
+      "student_activities": "Spokespersons present their group's resolution and chart findings to the whole class. Civic Investigators and peers from other groups challenge assumptions and provide constructive feedback on sign interpretations and accident causes.",
+      "learning_teaching_aids": "Chart Paper displayed on classroom walls",
+      "assessment_and_feedback": "Teacher observation",
+      "other": ""
     }
   ],
-  "summary": "Recap of key findings: Road accidents can be prevented by following road rules and taking preventive measures.",
-  "assessment_and_feedback_whole_lesson": "Summative check: Students will complete a quiz on road rules and preventive measures.",
-  "post_activity": "Homework: Students will research and write a short essay on the causes and preventive measures of road accidents.",
+  "summary": "The teacher consolidates the key findings from all 8 groups, emphasizing that road and railway accidents stem from avoidable human errors such as ignoring signs, excessive speed, and walking on tracks, reinforcing the vital role of civic responsibility in prevention.",
+  "assessment_and_feedback_whole_lesson": "Evaluated through active group collaboration, effective execution of assigned team roles, accuracy of the cause-and-effect charts, and insightful peer feedback during presentations.",
+  "post_activity": "Each student independently writes down two primary causes of railway accidents and one specific rule for safe road crossing in their student notebooks within 5 minutes, submitting them to the teacher as an exit ticket.",
   "information_sources": [
-    "National Institute of Education (NIE) Teacher Instructional Guide",
-    "Grade 8 Pupil's Textbook"
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
   ],
   "attachments": [
-    "Road Accident Prevention Worksheet"
-  ]
+    "Chalkboard sign illustrations and group chart paper templates."
+  ],
+  "title": "Explains causes for railway accidents: Road & Rail Hazard Mapping & Sign Interpretation",
+  "topic": "Explains causes for railway accidents: Road & Rail Hazard Mapping & Sign Interpretation",
+  "grade_level": "Grade 8",
+  "educational_goal_or_standard": "Contributes to minimizing road accidents by following road rules.",
+  "estimated_duration_minutes": 30,
+  "learning_outcomes": [
+    {
+      "id": 1,
+      "description": "Explains causes for railway accidents.",
+      "blooms_taxonomy_level": "Apply"
+    },
+    {
+      "id": 2,
+      "description": "Explains how to react at a road or railway accident.",
+      "blooms_taxonomy_level": "Apply"
+    },
+    {
+      "id": 3,
+      "description": "Explains reasons for road accidents.",
+      "blooms_taxonomy_level": "Apply"
+    },
+    {
+      "id": 4,
+      "description": "Explains road rules using signs and signals.",
+      "blooms_taxonomy_level": "Apply"
+    }
+  ],
+  "procedures": [
+    {
+      "step_number": 1,
+      "phase_title": "Guided Inquiry & Setup",
+      "duration_minutes": 10,
+      "teacher_action": "The teacher explains the task, distributes prompt instructions to the 8 groups, and outlines the roles of the Leader, Scribe, Timekeeper, Spokesperson, and Civic Investigator. The teacher sets up the 8 island desks and acts as a timekeeper.",
+      "student_action": "Students organize themselves into 8 teams of 5, assign their specific roles, inspect the chalkboard sign scenarios, and clarify task requirements with their group members."
+    },
+    {
+      "step_number": 2,
+      "phase_title": "Group Investigation & Production",
+      "duration_minutes": 15,
+      "teacher_action": "The teacher circulates among the 8 islands, posing guiding questions about why railway gate crossings are breached and prompting deeper critical thinking regarding root causes of road and rail accidents.",
+      "student_action": "Teams actively investigate root causes of local road and railway accidents. Scribes record findings, Civic Investigators check facts against textbook scenarios, Leaders maintain focus, and Timekeepers monitor the 15-minute pacing to produce a collaborative cause-and-effect chart on chart paper."
+    },
+    {
+      "step_number": 3,
+      "phase_title": "Presentation & Cross-Review",
+      "duration_minutes": 5,
+      "teacher_action": "The teacher coordinates the floor for spokesperson presentations and facilitates structured peer feedback between the 8 teams.",
+      "student_action": "Spokespersons present their group's resolution and chart findings to the whole class. Civic Investigators and peers from other groups challenge assumptions and provide constructive feedback on sign interpretations and accident causes."
+    }
+  ],
+  "materials": [
+    {
+      "item_name": "grade_8_civic_teacher_guide.pdf",
+      "quantity": "1",
+      "is_digital": false
+    },
+    {
+      "item_name": "grade_8_civic_textbook.pdf",
+      "quantity": "1",
+      "is_digital": false
+    }
+  ],
+  "verification": {
+    "formative_assessment": "Evaluated through active group collaboration, effective execution of assigned team roles, accuracy of the cause-and-effect charts, and insightful peer feedback during presentations.",
+    "summative_assessment": "The teacher consolidates the key findings from all 8 groups, emphasizing that road and railway accidents stem from avoidable human errors such as ignoring signs, excessive speed, and walking on tracks, reinforcing the vital role of civic responsibility in prevention.",
+    "alignment_check": "Aligned with Sri Lankan NIE & LEARN standards"
+  }
 }

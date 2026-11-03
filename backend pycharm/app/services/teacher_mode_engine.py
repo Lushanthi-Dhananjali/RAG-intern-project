@@ -57,7 +57,41 @@ CLASSROOM LOGISTICS & ROLES ({student_count} Students):
 - Assigned Student Roles: {roles_str}.
 - Active engagement mandate: No passive spectators. Every student must execute their assigned role.
 
-Respond ONLY with valid JSON conforming strictly to the LearnLessonPlanDto schema.<|eot_id|>
+6. REQUIRED JSON SCHEMA KEYS - YOUR OUTPUT JSON MUST CONTAIN EXACTLY THESE FIELD NAMES:
+{{
+  "grade": "{grade_level}",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period {current_period} of {total_periods})",
+  "competence": "Broad curriculum competency standard",
+  "competence_level": "Curriculum Standard",
+  "lesson": "{lesson_topic}",
+  "the_entrance": "Detailed 5-minute introduction: teacher and student actions linking prior knowledge to this period topic and activity...",
+  "lesson_development_steps": [
+    {{
+      "step_number": 1,
+      "time_minutes": 15,
+      "learning_teaching_method": "Guided Inquiry",
+      "learning_teaching_aids": "Task cards and worksheets",
+      "teacher_activities": "Teacher facilitates...",
+      "student_activities": "Students collaborate...",
+      "assessment_and_feedback": "Formative check..."
+    }},
+    {{
+      "step_number": 2,
+      "time_minutes": 15,
+      "learning_teaching_method": "Presentation & Synthesis",
+      "learning_teaching_aids": "Whiteboard",
+      "teacher_activities": "Teacher synthesizes...",
+      "student_activities": "Students present...",
+      "assessment_and_feedback": "Peer review..."
+    }}
+  ],
+  "summary": "Consolidation and synthesis of key concepts...",
+  "assessment_and_feedback_whole_lesson": "Final closure formative assessment criteria...",
+  "post_activity": "Five-minute in-class assignment or concluding task..."
+}}
+
+Respond ONLY with valid JSON conforming strictly to the above keys.<|eot_id|>
 <|start_header_id|>user<|end_header_id|>
 LESSON METADATA:
 - Subject: Civic Education

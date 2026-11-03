@@ -12,16 +12,42 @@ export function getLlmHeaders(): Record<string, string> {
   };
   if (typeof window !== 'undefined') {
     try {
-      const persisted = localStorage.getItem('multi_period_lesson_plan_storage');
-      if (persisted) {
-        const parsed = JSON.parse(persisted);
-        const state = parsed.state || {};
-        if (state.apiKey && typeof state.apiKey === 'string' && state.apiKey.trim()) {
-          headers['X-LLM-API-Key'] = state.apiKey.trim();
+      let key = '';
+      let provider = '';
+
+      // Check all possible localStorage persistence keys
+      const storageKeys = ['civic-multi-period-planner', 'multi_period_lesson_plan_storage'];
+      for (const storageKey of storageKeys) {
+        const raw = localStorage.getItem(storageKey);
+        if (raw) {
+          try {
+            const parsed = JSON.parse(raw);
+            const state = parsed.state || parsed;
+            if (!key && state.apiKey && typeof state.apiKey === 'string') {
+              key = state.apiKey.trim();
+            }
+            if (!provider && state.llmProvider && typeof state.llmProvider === 'string') {
+              provider = state.llmProvider.trim();
+            }
+          } catch {}
         }
-        if (state.llmProvider && typeof state.llmProvider === 'string' && state.llmProvider.trim()) {
-          headers['X-LLM-Provider'] = state.llmProvider.trim();
+      }
+
+      // Check standalone localStorage entries as well
+      if (!key) {
+        key = (localStorage.getItem('x-llm-api-key') || localStorage.getItem('llm_api_key') || '').trim();
+      }
+      if (!provider) {
+        provider = (localStorage.getItem('x-llm-provider') || localStorage.getItem('llm_provider') || '').trim();
+      }
+
+      if (key) {
+        headers['X-LLM-API-Key'] = key;
+        if (provider) {
+          headers['X-LLM-Provider'] = provider;
         }
+      } else if (provider === 'ollama') {
+        headers['X-LLM-Provider'] = 'ollama';
       }
     } catch {}
   }

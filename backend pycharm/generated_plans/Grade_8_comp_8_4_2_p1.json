@@ -1,0 +1,80 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 1 of 1)",
+  "competence": "Broad curriculum competency standard",
+  "competence_level": "8.4.2",
+  "lesson": "Emphasises the need for acting according to the situations in disasters: Competency 8.4.2 Civic Systems Analysis: Competency Level 8.4.2",
+  "unique_learning_outcome": [
+    "Emphasises the need for acting according to the situations in disasters.",
+    "Explains the importance of working to protect self as well as others at disasters."
+  ],
+  "the_entrance": "5-minute introduction: The teacher explains the importance of working to protect self as well as others at disasters. Students are asked to think about a recent disaster and how they would act in that situation. The teacher then presents a classroom example about 'Emphasises the need for acting according to the situations in disasters.' and asks students to analyze its key features and agree on a supported conclusion.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Teacher organizes students into structured inquiry teams and introduces the task scenario.",
+      "student_activities": "Students review task cards, assume collaborative group roles, and begin investigations.",
+      "learning_teaching_method": "Guided Inquiry",
+      "learning_teaching_aids": "Task cards and activity prompts",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": "Group formation"
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Teacher moderates student presentations, highlights key points, and addresses misconceptions.",
+      "student_activities": "Student spokespersons present findings, compare observations, and note feedback.",
+      "learning_teaching_method": "Presentation & Synthesis",
+      "learning_teaching_aids": "Presentation charts and whiteboard",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": "Class presentation"
+    }
+  ],
+  "summary": "Consolidation and synthesis of key concepts: Students summarize their group analysis and supported conclusion.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment: Teacher checks understanding and provides feedback throughout the lesson.",
+  "post_activity": "5-minute in-class assignment: Five-minute in-class assignment: Students write a short reflection on what they learned about acting according to the situations in disasters.",
+  "information_sources": [
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
+  ],
+  "attachments": [],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 1,
+  "total_periods": 1,
+  "selected_activity": "Activity: Competency 8.4.2 Civic Systems Analysis: Competency Level 8.4.2\nApproach: Students work with a teacher-presented classroom example about 'Emphasises the need for acting according to the situations in disasters.' to analyze a teacher-presented civic example, identify its key features, and agree on a supported conclusion, without leaving the classroom.\nStudent task: Analyze a teacher-presented civic example, identify its key features, and agree on a supported conclusion. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.\nExpected output: A group analysis with a supported conclusion.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+  "selected_activity_title": "Competency 8.4.2 Civic Systems Analysis: Competency Level 8.4.2",
+  "custom_teacher_activity": null,
+  "activity_options": [
+    {
+      "id": "option_2",
+      "title": "Competency 8.4.2 Civic Systems Analysis: Competency Level 8.4.2",
+      "pedagogy_type": "Field Investigation / School Walk",
+      "description": "Students work with a teacher-presented classroom example about 'Emphasises the need for acting according to the situations in disasters.' to analyze a teacher-presented civic example, identify its key features, and agree on a supported conclusion, without leaving the classroom.",
+      "learning_outcomes_addressed": [
+        "Emphasises the need for acting according to the situations in disasters.",
+        "Explains the importance of working to protect self as well as others at disasters."
+      ],
+      "student_action_summary": "Analyze a teacher-presented civic example, identify its key features, and agree on a supported conclusion. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "teacher_facilitation_summary": "Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.",
+      "student_grouping": "8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks",
+        "Chart Paper"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "A group analysis with a supported conclusion.",
+      "creative_assessment_preview": "Each group explains one part of its civic systems analysis and links it to the outcome.",
+      "low_resource_alternative": "Use a spoken teacher prompt and oral group responses if writing materials are unavailable."
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "Emphasises the need for acting according to the situations in disasters.",
+      "Explains the importance of working to protect self as well as others at disasters."
+    ]
+  }
+}
