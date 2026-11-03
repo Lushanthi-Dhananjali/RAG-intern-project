@@ -1,0 +1,97 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 4 of 4)",
+  "competence": "8.3.3",
+  "competence_level": "8.3.3",
+  "lesson": "Expresses the importance of mutual understanding for the wellbeing of a peaceful society: Institutional Fact-Finding Station: Competency Level 8.3.3",
+  "unique_learning_outcome": [
+    "Expresses the importance of mutual understanding for the wellbeing of a peaceful society."
+  ],
+  "the_entrance": "Teacher explains the importance of mutual understanding for the wellbeing of a peaceful society. Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Students rotate roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Teacher circulates across 8 teams, facilitating role execution and formatively checking progress. (5 minutes)",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Teacher delivers prompts/cue cards; students inspect tasks.",
+      "student_activities": "Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings.",
+      "learning_teaching_method": "Inquiry-based learning",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Teacher facilitates role execution and formatively checks progress.",
+      "student_activities": "Students execute roles without bystanders.",
+      "learning_teaching_method": "Collaborative learning",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "Teacher facilitates role execution and formatively checks progress.",
+      "student_activities": "Students present findings and receive peer feedback.",
+      "learning_teaching_method": "Presentational learning",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 5,
+      "other": ""
+    }
+  ],
+  "summary": "Students record evidence, compare findings, and present conclusions.",
+  "assessment_and_feedback_whole_lesson": "Teacher formatively assesses student progress and provides feedback.",
+  "post_activity": "5-minute in-class assignment: Each student completes a short exit response explaining one finding about “Expresses the importance of mutual understanding for the wellbeing of a peaceful society” using evidence or an example from Institutional Fact-Finding Station: Competency Level 8.3.3. The teacher reviews responses for an accurate link to the period outcome.",
+  "information_sources": [
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
+  ],
+  "attachments": [],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 4,
+  "total_periods": 4,
+  "selected_activity": "Activity: Institutional Fact-Finding Station: Competency Level 8.3.3\nApproach: Students use institutional fact-finding station to explore 'Expresses the importance of mutual understanding for the wellbeing of a peaceful society.'. Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.\nExpected output: An evidence record with one supported conclusion.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+  "selected_activity_title": "Institutional Fact-Finding Station: Competency Level 8.3.3",
+  "custom_teacher_activity": null,
+  "activity_options": [
+    {
+      "id": "option_2",
+      "title": "Institutional Fact-Finding Station: Competency Level 8.3.3",
+      "pedagogy_type": "Observation / Evidence Inquiry",
+      "description": "Students use institutional fact-finding station to explore 'Expresses the importance of mutual understanding for the wellbeing of a peaceful society.'. Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "learning_outcomes_addressed": [
+        "Expresses the importance of mutual understanding for the wellbeing of a peaceful society."
+      ],
+      "student_action_summary": "Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "teacher_facilitation_summary": "Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.",
+      "student_grouping": "8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks",
+        "Chart Paper"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "An evidence record with one supported conclusion.",
+      "creative_assessment_preview": "A paired evidence check: name one observation and the outcome it supports.",
+      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "Explains how sustainable peace brings about the national development.",
+      "Explains the importance of building sustainable peace in a multicultural society."
+    ],
+    "2": [
+      "Explains the importance of respecting other cultural identity while retaining one's culture."
+    ],
+    "3": [
+      "Explains the measures that can be taken for cultural integration in a multicultural society."
+    ],
+    "4": [
+      "Expresses the importance of mutual understanding for the wellbeing of a peaceful society."
+    ]
+  }
+}

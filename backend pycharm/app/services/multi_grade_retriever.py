@@ -26,8 +26,21 @@ def format_retrieved_source_references(retrieved_chunks: List[Dict[str, Any]]) -
     for item in retrieved_chunks:
         metadata = item.get("metadata") or {}
         source = metadata.get("source_file") or metadata.get("source") or item.get("source")
-        if not source:
-            continue
+
+        # If source is missing or generic "PDF"/"unknown", infer from doc_type and grade/subject
+        if not source or str(source).strip().casefold() in {"pdf", "unknown", "none"}:
+            doc_type = metadata.get("doc_type") or item.get("doc_type") or ""
+            grade = metadata.get("grade_level") or item.get("grade_level") or "Grade 8"
+            subj = metadata.get("subject") or item.get("subject") or "Civic Education"
+            clean_grade = re.sub(r"[^a-zA-Z0-9]+", "_", str(grade).lower()).strip("_")
+            clean_subj = "civic" if "civic" in str(subj).lower() else "science" if "science" in str(subj).lower() else "curriculum"
+
+            if "teacher" in str(doc_type).lower() or "guide" in str(doc_type).lower() or "tig" in str(doc_type).lower():
+                source = f"{clean_grade}_{clean_subj}_teacher_guide.pdf"
+            elif "textbook" in str(doc_type).lower():
+                source = f"{clean_grade}_{clean_subj}_textbook.pdf"
+            else:
+                continue
 
         source = str(source).strip()
         if source.casefold() in {"pdf", "unknown", "none"}:
@@ -40,7 +53,8 @@ def format_retrieved_source_references(retrieved_chunks: List[Dict[str, Any]]) -
         page = metadata.get("page") or metadata.get("page_number")
         page_ref = str(page).strip() if page is not None else ""
         pages = source_pages.setdefault(source, [])
-        if page_ref and page_ref not in pages:
+        # Only attach page numbers if authentic content page (filter out page 1 / cover template)
+        if page_ref and page_ref != "1" and page_ref not in pages:
             pages.append(page_ref)
 
     formatted_sources = []
@@ -463,10 +477,17 @@ class MultiGradeBoundaryRetriever:
                 else doc
             )
 
+            clean_g = re.sub(r"[^a-zA-Z0-9]+", "_", clean_grade.lower()).strip("_")
+            clean_s = "civic" if "civic" in clean_subject.lower() else "science" if "science" in clean_subject.lower() else "curriculum"
+            tig_src = (
+                meta.get("source_file")
+                or meta.get("source")
+                or f"{clean_g}_{clean_s}_teacher_guide.pdf"
+            )
             item = {
                 "content": tagged_content,
-                "metadata": meta,
-                "source": meta.get("source", "PDF"),
+                "metadata": {**meta, "source_file": tig_src, "grade_level": clean_grade, "subject": clean_subject, "doc_type": "teacher_guide"},
+                "source": tig_src,
                 "doc_type": meta.get("doc_type", "teacher_guide")
             }
 
@@ -503,14 +524,26 @@ class MultiGradeBoundaryRetriever:
 
         textbook_items = []
         if textbook_res.get("documents") and textbook_res["documents"][0]:
+            clean_g = re.sub(r"[^a-zA-Z0-9]+", "_", clean_grade.lower()).strip("_")
+            clean_s = "civic" if "civic" in clean_subject.lower() else "science" if "science" in clean_subject.lower() else "curriculum"
             for doc, meta in zip(textbook_res["documents"][0], textbook_res["metadatas"][0]):
-                if doc.strip():
-                    textbook_items.append({
-                        "content": f"[STUDENT TEXTBOOK SUPPLEMENTARY CONTENT]\n{doc}",
-                        "metadata": meta,
-                        "source": meta.get("source", "PDF"),
-                        "doc_type": meta.get("doc_type", "textbook")
-                    })
+                if not doc.strip():
+                    continue
+                # Skip blank template or lesson plan format sample chunks that contain generic headings
+                doc_lower = doc.lower()
+                if "lesson plan format" in doc_lower and "lesson plan number" in doc_lower:
+                    continue
+                tb_src = (
+                    meta.get("source_file")
+                    or meta.get("source")
+                    or f"{clean_g}_{clean_s}_textbook.pdf"
+                )
+                textbook_items.append({
+                    "content": f"[STUDENT TEXTBOOK SUPPLEMENTARY CONTENT]\n{doc}",
+                    "metadata": {**meta, "source_file": tb_src, "grade_level": clean_grade, "subject": clean_subject, "doc_type": "textbook"},
+                    "source": tb_src,
+                    "doc_type": meta.get("doc_type", "textbook")
+                })
 
         return {
             "competency_level": target_level,

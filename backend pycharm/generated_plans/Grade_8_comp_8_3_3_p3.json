@@ -1,0 +1,97 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 3 of 4)",
+  "competence": "8.3.3",
+  "competence_level": "8.3.3",
+  "lesson": "Explains the measures that can be taken for cultural integration in a multicultural society: Competency 8.3.3 Civic Cause-and-Effect Mapping: Competency Level 8.3.3",
+  "unique_learning_outcome": [
+    "Explains the measures that can be taken for cultural integration in a multicultural society."
+  ],
+  "the_entrance": "5-minute introduction: The teacher introduces the topic by writing 'Measures for Cultural Integration in a Multicultural Society' on the chalkboard. Students are asked to share their thoughts on how people from different cultures can live together peacefully. The teacher then presents a classroom example about 'Measures for Cultural Integration in a Multicultural Society' and asks students to map how the presented civic examples connect, explain those relationships, and review a peer map. This leads directly into the selected activity.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "The teacher delivers prompts/cue cards to the students. Students inspect the tasks and begin to work in their assigned roles.",
+      "student_activities": "Students work in their assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "learning_teaching_method": "Practiced & Applied (Simulation / Real-world Application)",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "The teacher circulates across the 8 teams, facilitating role execution and formatively checking progress.",
+      "student_activities": "Students work in their assigned roles, mapping how the presented civic examples connect, explaining those relationships, and reviewing a peer map.",
+      "learning_teaching_method": "Practiced & Applied (Simulation / Real-world Application)",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "The teacher facilitates the presentation and cross-review of the maps.",
+      "student_activities": "Spokespersons present their group's map, and peers provide feedback.",
+      "learning_teaching_method": "Practiced & Applied (Simulation / Real-world Application)",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 5,
+      "other": ""
+    }
+  ],
+  "summary": "The teacher summarizes the lesson by asking students to reflect on what they learned about measures for cultural integration in a multicultural society.",
+  "assessment_and_feedback_whole_lesson": "The teacher assesses student understanding by reviewing their maps and providing feedback.",
+  "post_activity": "5-minute in-class assignment: In-class assignment: Students write a short paragraph on what they learned about measures for cultural integration in a multicultural society and how they can apply it in their daily lives.",
+  "information_sources": [
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
+  ],
+  "attachments": [],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 3,
+  "total_periods": 4,
+  "selected_activity": "Activity: Competency 8.3.3 Civic Cause-and-Effect Mapping: Competency Level 8.3.3\nApproach: Students work with a teacher-presented classroom example about 'Explains the measures that can be taken for cultural integration in a multicultural society.' to map how the presented civic examples connect, explain those relationships, and review a peer map, without leaving the classroom.\nStudent task: Map how the presented civic examples connect, explain those relationships, and review a peer map. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.\nExpected output: A cause-and-effect map with student explanations.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+  "selected_activity_title": "Competency 8.3.3 Civic Cause-and-Effect Mapping: Competency Level 8.3.3",
+  "custom_teacher_activity": null,
+  "activity_options": [
+    {
+      "id": "option_3",
+      "title": "Competency 8.3.3 Civic Cause-and-Effect Mapping: Competency Level 8.3.3",
+      "pedagogy_type": "Observation / Evidence Inquiry",
+      "description": "Students work with a teacher-presented classroom example about 'Explains the measures that can be taken for cultural integration in a multicultural society.' to map how the presented civic examples connect, explain those relationships, and review a peer map, without leaving the classroom.",
+      "learning_outcomes_addressed": [
+        "Explains the measures that can be taken for cultural integration in a multicultural society."
+      ],
+      "student_action_summary": "Map how the presented civic examples connect, explain those relationships, and review a peer map. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "teacher_facilitation_summary": "Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.",
+      "student_grouping": "8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks",
+        "Chart Paper"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "A cause-and-effect map with student explanations.",
+      "creative_assessment_preview": "Each group explains one part of its civic cause-and-effect mapping and links it to the outcome.",
+      "low_resource_alternative": "Use a spoken teacher prompt and oral group responses if writing materials are unavailable."
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "Explains how sustainable peace brings about the national development.",
+      "Explains the importance of building sustainable peace in a multicultural society."
+    ],
+    "2": [
+      "Explains the importance of respecting other cultural identity while retaining one's culture."
+    ],
+    "3": [
+      "Explains the measures that can be taken for cultural integration in a multicultural society."
+    ],
+    "4": [
+      "Expresses the importance of mutual understanding for the wellbeing of a peaceful society."
+    ]
+  }
+}

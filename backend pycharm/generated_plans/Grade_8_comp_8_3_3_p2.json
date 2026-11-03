@@ -1,0 +1,93 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 2 of 4)",
+  "competence": "Explains the importance of respecting other cultural identity while retaining one's culture.",
+  "competence_level": "8.3.3",
+  "lesson": "Explains the importance of respecting other cultural identity while retaining one's culture: Teacher Activity: Show video",
+  "unique_learning_outcome": [
+    "Explains the importance of respecting other cultural identity while retaining one's culture."
+  ],
+  "the_entrance": "5-minute introduction: The teacher introduces the topic by asking students to share their experiences with cultural differences and similarities. Students share their thoughts and ideas, and the teacher connects this to the importance of respecting other cultural identity while retaining one's culture. The teacher then shows a video that highlights the significance of cultural diversity and the importance of respecting it.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "The teacher explains the importance of respecting other cultural identity while retaining one's culture and provides a brief overview of the video to be shown.",
+      "student_activities": "Students are assigned their roles and are briefed on their responsibilities. They are also given a task sheet with the prompt to discuss and decide on the importance of respecting other cultural identity while retaining one's culture.",
+      "learning_teaching_method": "Show video",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 5,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Students work in groups to discuss and decide on the importance of respecting other cultural identity while retaining one's culture. They are encouraged to use the video as a reference and to consider their own experiences and perspectives.",
+      "student_activities": "Students engage in active collaboration and analysis, using their assigned roles to contribute to the group discussion. They record their key findings and decisions on the task sheet or notebook.",
+      "learning_teaching_method": "Group Discussion",
+      "learning_teaching_aids": "Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "The teacher facilitates a plenary session where students share their findings and decisions with the class. Students are encouraged to cross-review and provide feedback to their peers.",
+      "student_activities": "Students share their group's findings and decisions with the class, using their assigned roles to present their conclusions. They also engage in cross-review and feedback with their peers.",
+      "learning_teaching_method": "Plenary Sharing & Cross-Review",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    }
+  ],
+  "summary": "Students will understand the importance of respecting other cultural identity while retaining one's culture.",
+  "assessment_and_feedback_whole_lesson": "The teacher provides feedback on the students' understanding of the importance of respecting other cultural identity while retaining one's culture. The teacher also assesses the students' ability to apply this understanding in their group discussions and presentations.",
+  "post_activity": "Students are given 5 minutes to write a short reflection on what they learned about the importance of respecting other cultural identity while retaining one's culture. They are also asked to think about how they can apply this understanding in their daily lives.",
+  "information_sources": [
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
+  ],
+  "attachments": [],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 2,
+  "total_periods": 4,
+  "selected_activity": "Show video",
+  "selected_activity_title": "Teacher Activity: Show video",
+  "custom_teacher_activity": "Show video",
+  "activity_options": [
+    {
+      "id": "teacher_custom_activity_p2",
+      "title": "Teacher Activity: Show video",
+      "description": "Show video",
+      "pedagogy_type": "Show video",
+      "student_grouping": "Adaptive Grouping (40 students)",
+      "student_action_summary": "Students are assigned their roles and are briefed on their responsibilities. They are also given a task sheet with the prompt to discuss and decide on the importance of respecting other cultural identity while retaining one's culture.",
+      "teacher_facilitation_summary": "The teacher explains the importance of respecting other cultural identity while retaining one's culture and provides a brief overview of the video to be shown.",
+      "required_materials": [
+        "Chalkboard, Student Notebooks, Chart Paper"
+      ],
+      "expected_student_output": "Students are given 5 minutes to write a short reflection on what they learned about the importance of respecting other cultural identity while retaining one's culture. They are also asked to think about how they can apply this understanding in their daily lives.",
+      "creative_assessment_preview": "The teacher provides feedback on the students' understanding of the importance of respecting other cultural identity while retaining one's culture. The teacher also assesses the students' ability to apply this understanding in their group discussions and presentations.",
+      "learning_outcomes_addressed": [
+        "Explains the importance of respecting other cultural identity while retaining one's culture."
+      ]
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "Explains how sustainable peace brings about the national development.",
+      "Explains the importance of building sustainable peace in a multicultural society."
+    ],
+    "2": [
+      "Explains the importance of respecting other cultural identity while retaining one's culture."
+    ],
+    "3": [
+      "Explains the measures that can be taken for cultural integration in a multicultural society."
+    ],
+    "4": [
+      "Expresses the importance of mutual understanding for the wellbeing of a peaceful society."
+    ]
+  }
+}
