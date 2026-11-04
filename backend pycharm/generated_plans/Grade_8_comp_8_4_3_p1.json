@@ -2,9 +2,9 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 1 of 1)",
-  "competence": "Explains the importance of being alert about the situations where accidents and disasters might happen.",
+  "competence": "Broad curriculum competency standard",
   "competence_level": "8.4.3",
-  "lesson": "Identifies accidents caused by food and drugs highlights the importance of protection: Bad Habit Audit and Safety Jigsaw Roundtable",
+  "lesson": "Identifies accidents caused by food and drugs highlights the importance of protection: Community Observation Checklist & Mapping: Competency Level 8.4.3",
   "unique_learning_outcome": [
     "Identifies accidents caused by food and drugs highlights the importance of protection.",
     "Explains the importance of being alert about the situations where accidents and disasters might happen.",
@@ -13,64 +13,60 @@
     "Expresses the importance of getting rid of bad habits for the prevention of accidents and disasters.",
     "Suggests suitable preventive measures for accidents and disasters."
   ],
-  "the_entrance": "Duration: Exactly 5 minutes. Teacher asks students to share common everyday experiences regarding careless habits, spoiled food, or improper medication use. Students respond with examples from their daily lives. The teacher connects these personal experiences to the day's topic on accident prevention caused by food, drugs, and bad habits, linking directly to the Bad Habit Audit and Safety Jigsaw Roundtable activity.",
+  "the_entrance": "Detailed 5-minute introduction: teacher and student actions linking prior knowledge to this period topic and activity... Students are introduced to the concept of accidents caused by food and drugs, and the importance of protection is highlighted. The teacher explains the scenario and distributes the community observation checklist & mapping materials.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "Teacher organizes the class into 8 teams of 5 students, distributes task cards outlining scenarios on food/drug safety and bad habits, and explains the roles: Leader/Facilitator, Scribe/Secretary, Timekeeper & Logistics, Spokesperson/Presenter, and Civic Investigator/Inquirer.",
-      "student_activities": "Students organize into their 8 teams, assign their specific roles, inspect the task cards, and begin analyzing the assigned scenarios involving non-situational accidents caused by negligence.",
-      "learning_teaching_method": "Guided Inquiry & Setup",
-      "learning_teaching_aids": "Task cards, student notebooks, chalkboard",
+      "teacher_activities": "Teacher explains the scenario, distributes the community observation checklist & mapping materials, and assigns student roles (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer).",
+      "student_activities": "Students arrange into cooperative groups, assign designated roles, review inquiry cards, and begin collaborative planning...",
+      "learning_teaching_method": "Task Orientation & Guided Inquiry Launch",
+      "learning_teaching_aids": "Task assignment cards, role description sheets, inquiry scenario prompts",
       "assessment_and_feedback": "",
       "time_minutes": 10,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "Teacher monitors room noise and time pacing, prompting teams to classify bad habits versus protective habits and formulate community prevention steps for food and drug related accidents.",
-      "student_activities": "Team members actively execute their roles: the Leader keeps focus, the Scribe records arguments, the Timekeeper monitors the 30-minute pacing, the Civic Investigator checks facts against textbook content, and all members collaborate to build a classified list of hazards and protective measures.",
-      "learning_teaching_method": "Group Investigation & Production",
-      "learning_teaching_aids": "Chart paper, student notebooks, chalkboard",
+      "teacher_activities": "Teacher circulates as facilitator among groups, observes peer interactions, scaffolds challenging concepts with probing questions, and ensures active participation without lecturing...",
+      "student_activities": "Students actively execute the chosen activity (e.g., conducting mock council session, exploratory school-walk survey, analyzing Sri Lankan community issues, or solving civic challenges in groups) using assigned roles...",
+      "learning_teaching_method": "Active Student-Centered Investigation / Simulation / Drama / School-Walk",
+      "learning_teaching_aids": "Worksheets, roleplay cue cards, chart papers, colored markers",
       "assessment_and_feedback": "",
-      "time_minutes": 15,
+      "time_minutes": 10,
       "other": ""
     },
     {
       "step_number": 3,
-      "teacher_activities": "Teacher coordinates the presentation sequence, inviting spokespersons to share their group resolutions and facilitating cross-review peer feedback.",
-      "student_activities": "Spokespersons present their group's findings and prevention pledges to the class. Other groups evaluate the presentations, ask questions, and offer constructive peer feedback on safety measures.",
-      "learning_teaching_method": "Presentation & Cross-Review",
-      "learning_teaching_aids": "Chart paper, chalkboard",
+      "teacher_activities": "Teacher moderates student presentations, facilitates constructive peer review, and synthesizes key student discoveries directly against the period's learning outcomes...",
+      "student_activities": "Spokespersons present group solutions or roleplay outcomes; class peers ask questions, provide constructive feedback, and summarize key takeaways in their notebooks...",
+      "learning_teaching_method": "Spokesperson Presentation & Plenary Synthesis",
+      "learning_teaching_aids": "Student output posters, whiteboard, peer assessment checklist",
       "assessment_and_feedback": "",
-      "time_minutes": 5,
+      "time_minutes": 10,
       "other": ""
     }
   ],
-  "summary": "Consolidation of key concepts emphasizing that man-made accidents—particularly those involving food, drugs, and daily bad habits—can be significantly minimized or avoided through heightened awareness, responsible behavior, and proactive safety measures.",
-  "assessment_and_feedback_whole_lesson": "Formative assessment based on active group participation, accuracy of the bad habit audit classifications, effectiveness of peer feedback during presentations, and individual engagement in assigned roles.",
-  "post_activity": "Duration: Exactly 5 minutes. In-class concluding task: Each student writes down one personal bad habit they will eliminate and one preventive measure they will adopt regarding food or drug safety in their student notebooks, handing them to the teacher as an exit ticket.",
+  "summary": "Consolidation and synthesis of key concepts...",
+  "assessment_and_feedback_whole_lesson": "Final closure formative assessment criteria...",
+  "post_activity": "5-minute in-class assignment: Five-minute in-class assignment or concluding task... Students are asked to create a short poem or song highlighting the importance of protection from accidents caused by food and drugs.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
-  "attachments": [
-    "Task cards detailing scenarios on food",
-    "drug safety",
-    "and bad habits."
-  ],
+  "attachments": [],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 1,
   "total_periods": 1,
-  "selected_activity": "Activity: Bad Habit Audit and Safety Jigsaw Roundtable\nApproach: Student groups examine how daily bad habits and unmonitored situations trigger disasters. Through a structured rotation of investigators, teams synthesize arguments on why breaking bad habits is vital for community safety.\nStudent task: Groups dissect specific scenarios of non-situational accidents caused by negligence. Investigators gather insights on food/drug safety, secretaries record hazard categories, and presenters share final prevention pledges.\nTeacher facilitation: The teacher monitors room noise and time limits, guiding students to connect personal habits with disaster prevention, ensuring every role is actively utilized across all 40 students.\nExpected output: A classified list of bad habits versus protective habits, featuring practical community prevention steps.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
-  "selected_activity_title": "Bad Habit Audit and Safety Jigsaw Roundtable",
+  "selected_activity": "Activity: Community Observation Checklist & Mapping: Competency Level 8.4.3\nApproach: Students use community observation checklist & mapping to explore 'Identifies accidents caused by food and drugs highlights the importance of protection.'. Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.\nExpected output: An evidence record with one supported conclusion.\nGrouping: 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+  "selected_activity_title": "Community Observation Checklist & Mapping: Competency Level 8.4.3",
   "custom_teacher_activity": null,
   "activity_options": [
     {
       "id": "option_2",
-      "title": "Bad Habit Audit and Safety Jigsaw Roundtable",
-      "pedagogy_type": "Jigsaw",
-      "description": "Student groups examine how daily bad habits and unmonitored situations trigger disasters. Through a structured rotation of investigators, teams synthesize arguments on why breaking bad habits is vital for community safety.",
+      "title": "Community Observation Checklist & Mapping: Competency Level 8.4.3",
+      "pedagogy_type": "Observation / Evidence Inquiry",
+      "description": "Students use community observation checklist & mapping to explore 'Identifies accidents caused by food and drugs highlights the importance of protection.'. Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
       "learning_outcomes_addressed": [
         "Identifies accidents caused by food and drugs highlights the importance of protection.",
         "Explains the importance of being alert about the situations where accidents and disasters might happen.",
@@ -79,18 +75,18 @@
         "Expresses the importance of getting rid of bad habits for the prevention of accidents and disasters.",
         "Suggests suitable preventive measures for accidents and disasters."
       ],
-      "student_action_summary": "Groups dissect specific scenarios of non-situational accidents caused by negligence. Investigators gather insights on food/drug safety, secretaries record hazard categories, and presenters share final prevention pledges.",
-      "teacher_facilitation_summary": "The teacher monitors room noise and time limits, guiding students to connect personal habits with disaster prevention, ensuring every role is actively utilized across all 40 students.",
-      "student_grouping": "8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
+      "student_action_summary": "Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "teacher_facilitation_summary": "Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.",
+      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A classified list of bad habits versus protective habits, featuring practical community prevention steps.",
-      "creative_assessment_preview": "5-minute 'Tableau Freeze': Teams freeze in a statue pose depicting a safe habit versus a dangerous habit, while the teacher calls out random groups to explain the underlying protection lesson.",
-      "low_resource_alternative": "Write group findings directly into student notebooks and present orally."
+      "expected_student_output": "An evidence record with one supported conclusion.",
+      "creative_assessment_preview": "A paired evidence check: name one observation and the outcome it supports.",
+      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
     }
   ],
   "outcome_allocation": {

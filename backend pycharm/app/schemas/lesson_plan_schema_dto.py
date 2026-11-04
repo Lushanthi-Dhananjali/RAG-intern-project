@@ -283,47 +283,68 @@ class LessonPlanSchemaDto(BaseModel):
         """
         TARGET_DEV_MINUTES = 30
 
-        # 1. Fallback: If development steps are missing, initialize default scaffolded steps
+        # 1. Fallback: If development steps are missing, initialize default scaffolded 3 steps (10m, 10m, 10m in clean multiples of 5)
         if not self.lesson_development_steps:
             self.lesson_development_steps = [
                 LessonDevelopmentStepDto(
                     step_number=1,
-                    teacher_activities="Teacher organizes students into structured inquiry teams and introduces the task scenario.",
-                    student_activities="Students review task cards, assume collaborative group roles, and begin investigations.",
-                    learning_teaching_method="Guided Inquiry",
-                    learning_teaching_aids="Task Cards & Activity Prompts",
-                    assessment_and_feedback="Teacher checks clarity of instructions and initial group comprehension.",
-                    time_minutes=15,
+                    teacher_activities="Teacher introduces the Sri Lankan real-world scenario, clarifies objectives, and distributes task cards and role assignments as facilitator.",
+                    student_activities="Students arrange into collaborative groups, review inquiry task cards, assign group roles, and formulate investigative questions.",
+                    learning_teaching_method="Task Orientation & Guided Inquiry Launch",
+                    learning_teaching_aids="Task Cards & Activity Scenario Prompts",
+                    assessment_and_feedback="",
+                    time_minutes=10,
                     other="Group formation"
                 ),
                 LessonDevelopmentStepDto(
                     step_number=2,
-                    teacher_activities="Teacher moderates rapid student presentations, highlights key points, and addresses misconceptions.",
-                    student_activities="Student spokespersons present team findings, compare observations, and note feedback.",
-                    learning_teaching_method="Presentation & Discussion",
-                    learning_teaching_aids="Whiteboard & Presentation Charts",
-                    assessment_and_feedback="Formative peer feedback and teacher clarification of concepts.",
-                    time_minutes=15,
-                    other="Peer presentation"
+                    teacher_activities="Teacher actively circulates as facilitator, scaffolds student inquiry with probing questions, and ensures active participation without lecturing.",
+                    student_activities="Students collaborate in assigned roles to execute the investigation/simulation, analyzing Sri Lankan community situations without passive spectators.",
+                    learning_teaching_method="Active Student-Centered Investigation / Simulation",
+                    learning_teaching_aids="Activity Worksheets, Roleplay Cards & Chart Paper",
+                    assessment_and_feedback="",
+                    time_minutes=10,
+                    other="Collaborative inquiry"
+                ),
+                LessonDevelopmentStepDto(
+                    step_number=3,
+                    teacher_activities="Teacher moderates rapid student presentations, facilitates constructive peer review, and synthesizes key discoveries directly against syllabus learning outcomes.",
+                    student_activities="Student spokespersons present team conclusions; peers provide constructive feedback and record key takeaways in their notebooks.",
+                    learning_teaching_method="Presentation, Peer Review & Plenary Synthesis",
+                    learning_teaching_aids="Whiteboard & Student Presentation Charts",
+                    assessment_and_feedback="",
+                    time_minutes=10,
+                    other="Plenary synthesis"
                 )
             ]
 
-        # 2. If only 1 step was generated, split it to ensure at least 2 distinct developmental phases
+        # 2. If only 1 step was generated, split it to ensure a complete 3-step developmental scaffold in clean multiples of 5
         if len(self.lesson_development_steps) == 1:
             orig = self.lesson_development_steps[0]
-            orig.time_minutes = 15
-            self.lesson_development_steps.append(
+            orig.time_minutes = 10
+            self.lesson_development_steps = [
+                orig,
                 LessonDevelopmentStepDto(
                     step_number=2,
-                    teacher_activities=f"Teacher facilitates student presentations and synthesis of findings from Step 1.",
-                    student_activities="Students present their conclusions, compare outcomes with peers, and record feedback.",
-                    learning_teaching_method="Presentation & Synthesis",
+                    teacher_activities="Teacher actively circulates as facilitator, scaffolds student inquiry, and observes group dynamics.",
+                    student_activities="Students actively investigate, roleplay, or solve the civic scenario in collaborative teams using their assigned roles.",
+                    learning_teaching_method="Active Student-Centered Investigation",
                     learning_teaching_aids=orig.learning_teaching_aids,
-                    assessment_and_feedback="Teacher assesses clarity of student findings and reinforces core syllabus concepts.",
-                    time_minutes=15,
+                    assessment_and_feedback="",
+                    time_minutes=10,
+                    other="Group teamwork"
+                ),
+                LessonDevelopmentStepDto(
+                    step_number=3,
+                    teacher_activities="Teacher facilitates student presentations, peer review, and synthesizes key findings against the learning outcomes.",
+                    student_activities="Student spokespersons present conclusions; peers ask questions and note feedback.",
+                    learning_teaching_method="Presentation, Peer Review & Synthesis",
+                    learning_teaching_aids="Presentation charts and whiteboard",
+                    assessment_and_feedback="",
+                    time_minutes=10,
                     other="Presentation synthesis"
                 )
-            )
+            ]
 
         # 3. Round all individual step durations to the nearest multiple of 5 (minimum 5 mins)
         for step in self.lesson_development_steps:

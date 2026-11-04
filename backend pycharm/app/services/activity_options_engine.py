@@ -127,7 +127,9 @@ STRICT PEDAGOGICAL REQUIREMENTS:
    - State how all {student_count} students participate, how the teacher supervises the groups, and how the activity fits the 30-minute development period.
    - Use only these available resources: {resources_formatted}. Do not require unavailable equipment, printing, or off-site access; provide a feasible adaptation for {classroom_environment}.
 8. 5-Minute Assessment Preview: Include a creative, active 5-minute learning check (e.g., tableau, rhyme, exit slip, pass-the-parcel quiz).
-9. Period {current_period} outcomes for Competency Level {competency_level}:
+9. Authentic Sri Lankan Context: Firmly ground every activity scenario, simulation, inquiry, or case study in real Sri Lankan civic situations (e.g., local communities, schools, Pradeshiya Sabhas, Urban/Municipal Councils, Grama Niladhari, multicultural harmony, public services).
+10. Strict Learning Outcome Alignment: Every option MUST directly enable students to demonstrate the specific period outcomes below through student-centred collaboration, roleplay, investigation, or problem-solving.
+11. Period {current_period} outcomes for Competency Level {competency_level}:
 {outcomes_formatted}
 {anti_repetition_prompt}
 

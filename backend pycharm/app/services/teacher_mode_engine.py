@@ -42,13 +42,14 @@ The teacher has provided their OWN custom pedagogical concept (Mode B).
 Your job is NOT to replace their idea, but to scaffold it cleanly into the official 40-minute LEARN Kandy Practice Teaching Framework.
 
 PEDAGOGICAL PACING MANDATE (Total: 40 Minutes):
-1. The Entrance (exactly 5 mins): State what the teacher and students do; connect prior knowledge or everyday experience to this period's topic and the teacher's activity. Do not depend on unverified external links.
-2. Lesson Development Steps (30 mins across 2 or 3 structured steps):
+1. The Entrance (exactly 5 mins): State what the teacher and students do; connect prior knowledge or everyday Sri Lankan experience to this period's topic and the teacher's activity. Do not depend on unverified external links.
+2. Lesson Development Steps (CLEAN MULTIPLES OF 5, TOTAL = EXACTLY 30 MINUTES):
    - Fully integrate the teacher's custom idea: "{teacher_custom_activity}".
-   - Step 1: Orientation & Group Task Setup (5-7 mins).
-   - Step 2: Active Student Collaboration / Production (15-18 mins) using the allocated group structure.
-   - Step 3: Synthesis, Plenary Sharing & Cross-Review (7-10 mins).
-3. Assignment & Closure (exactly 5 mins total): Put a specific, age-appropriate in-class assignment/concluding task in 'post_activity'. It must connect to this period's topic, allocated outcome, and custom activity, and be achievable in five minutes. The summary and assessment feedback are brief parts of this same five-minute phase, not extra time.
+   - Teacher acts strictly as FACILITATOR: circulating, scaffolding, asking probing questions, never lecturing.
+   - Ground scenarios and tasks in authentic Sri Lankan context (schools, local governance, communities, cultural traditions).
+   - Every step's duration MUST be a clean multiple of 5 (e.g. 5, 10, 15, 20 mins). Sum MUST equal exactly 30 minutes.
+   - Step count typically 3 (e.g. 10m + 10m + 10m = 30m, or 5m + 15m + 10m = 30m, or 5m + 20m + 5m = 30m), but 2 or 4 steps matching the custom activity are also accepted.
+3. Creative In-Class Assignment & Closure (exactly 5 mins total): Put a creative, age-appropriate in-class concluding task in 'post_activity' and 'summary' connecting directly to the period outcome and custom activity (e.g. quick 2-line rhyme, drawing challenge, mini-quiz, pass-the-parcel concept ball, or statement display). Must be achievable in 5 minutes in-class.
 4. Align the Entrance and Assignment & Closure with the supplied competency outcomes and the teacher's custom activity. Generate usable classroom content, never placeholders or URLs.
 5. The 'the_entrance' field must describe both teacher and student actions. The 'post_activity' field must describe the in-class five-minute task, not take-home homework.
 
@@ -57,7 +58,7 @@ CLASSROOM LOGISTICS & ROLES ({student_count} Students):
 - Assigned Student Roles: {roles_str}.
 - Active engagement mandate: No passive spectators. Every student must execute their assigned role.
 
-6. REQUIRED JSON SCHEMA KEYS - YOUR OUTPUT JSON MUST CONTAIN EXACTLY THESE FIELD NAMES:
+6. REQUIRED JSON SCHEMA KEYS - YOUR OUTPUT JSON MUST CONTAIN EXACTLY THESE FIELD NAMES (PROVIDING 3 DEVELOPMENT STEPS):
 {{
   "grade": "{grade_level}",
   "subject": "Civic Education",
@@ -69,21 +70,30 @@ CLASSROOM LOGISTICS & ROLES ({student_count} Students):
   "lesson_development_steps": [
     {{
       "step_number": 1,
-      "time_minutes": 15,
-      "learning_teaching_method": "Guided Inquiry",
-      "learning_teaching_aids": "Task cards and worksheets",
-      "teacher_activities": "Teacher facilitates...",
-      "student_activities": "Students collaborate...",
-      "assessment_and_feedback": "Formative check..."
+      "time_minutes": 10,
+      "learning_teaching_method": "Task Orientation & Guided Inquiry Launch",
+      "learning_teaching_aids": "Task cards, worksheets, role sheets",
+      "teacher_activities": "Teacher introduces the custom scenario, outlines objectives, and assigns student roles as facilitator...",
+      "student_activities": "Students arrange in cooperative groups, assume assigned roles, and analyze task prompts...",
+      "assessment_and_feedback": ""
     }},
     {{
       "step_number": 2,
-      "time_minutes": 15,
-      "learning_teaching_method": "Presentation & Synthesis",
-      "learning_teaching_aids": "Whiteboard",
-      "teacher_activities": "Teacher synthesizes...",
-      "student_activities": "Students present...",
-      "assessment_and_feedback": "Peer review..."
+      "time_minutes": 10,
+      "learning_teaching_method": "Active Student-Centered Execution / Simulation",
+      "learning_teaching_aids": "Activity materials, props, chart papers, markers",
+      "teacher_activities": "Teacher circulates among student groups, facilitates progress, scaffolds challenges, and monitors engagement...",
+      "student_activities": "Students actively perform the custom activity in their teams, discussing, creating, and recording outputs...",
+      "assessment_and_feedback": ""
+    }},
+    {{
+      "step_number": 3,
+      "time_minutes": 10,
+      "learning_teaching_method": "Presentation, Peer Review & Plenary Synthesis",
+      "learning_teaching_aids": "Presentation boards, whiteboard, checklist",
+      "teacher_activities": "Teacher coordinates spokesperson presentations, moderates peer feedback, and consolidates findings...",
+      "student_activities": "Spokespersons present group work; classmates question, provide constructive peer review, and note key ideas...",
+      "assessment_and_feedback": ""
     }}
   ],
   "summary": "Consolidation and synthesis of key concepts...",

@@ -1,0 +1,80 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 2 of 3)",
+  "competence": "Broad curriculum competency standard",
+  "competence_level": "8.5.1",
+  "lesson": "Explains the importance of being watchfull regarding the problems and challenges faced in day-to-day life: Teacher Activity: show video",
+  "unique_learning_outcome": [
+    "Explains the importance of being watchfull regarding the problems and challenges faced in day-to-day life."
+  ],
+  "the_entrance": "5-minute introduction: The teacher begins by asking students to share a recent situation where they had to be watchful to overcome a problem or challenge. Students share their experiences, and the teacher connects these everyday scenarios to the importance of being watchful in day-to-day life. The teacher then shows a video that illustrates the concept, sparking class discussion and setting the stage for the lesson.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Teacher introduces the concept of being watchful and shows the video.",
+      "student_activities": "Students watch the video and take notes on key points.",
+      "learning_teaching_method": "Presentation",
+      "learning_teaching_aids": "Video, student notebooks",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": "Formative check: Teacher circulates around the room to monitor student understanding and engagement."
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Teacher facilitates a class discussion on the importance of being watchful in day-to-day life, using the video and student notes as prompts.",
+      "student_activities": "Students participate in the class discussion, sharing their own experiences and insights.",
+      "learning_teaching_method": "Guided Inquiry",
+      "learning_teaching_aids": "Chalkboard, chart paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 20,
+      "other": "Formative check: Teacher encourages students to connect their own experiences to the concept and facilitates peer-to-peer discussion."
+    }
+  ],
+  "summary": "Consolidation and synthesis of key concepts: Students will summarize the importance of being watchful in day-to-day life, connecting their own experiences to the video and class discussion.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment criteria: Student participation in class discussion, ability to connect personal experiences to the concept, and understanding of the importance of being watchful in day-to-day life.",
+  "post_activity": "In-class assignment: Students will write a short reflection (5 minutes) on how they can apply the concept of being watchful in their daily lives, considering the video and class discussion.",
+  "information_sources": [
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
+  ],
+  "attachments": [],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 2,
+  "total_periods": 3,
+  "selected_activity": "show video",
+  "selected_activity_title": "Teacher Activity: show video",
+  "custom_teacher_activity": "show video",
+  "activity_options": [
+    {
+      "id": "teacher_custom_activity_p2",
+      "title": "Teacher Activity: show video",
+      "description": "show video",
+      "pedagogy_type": "Presentation",
+      "student_grouping": "Adaptive Grouping (35 students)",
+      "student_action_summary": "Students watch the video and take notes on key points.",
+      "teacher_facilitation_summary": "Teacher introduces the concept of being watchful and shows the video.",
+      "required_materials": [
+        "Video, student notebooks"
+      ],
+      "expected_student_output": "In-class assignment: Students will write a short reflection (5 minutes) on how they can apply the concept of being watchful in their daily lives, considering the video and class discussion.",
+      "creative_assessment_preview": "Formative assessment criteria: Student participation in class discussion, ability to connect personal experiences to the concept, and understanding of the importance of being watchful in day-to-day life.",
+      "learning_outcomes_addressed": [
+        "Explains the importance of being watchfull regarding the problems and challenges faced in day-to-day life."
+      ]
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "Defines problems and challenges simply."
+    ],
+    "2": [
+      "Explains the importance of being watchfull regarding the problems and challenges faced in day-to-day life."
+    ],
+    "3": [
+      "Expresses the ability to face problems in day-to-day life should be developed."
+    ]
+  },
+  "filename": "Grade_8_comp_8_5_1_p2.json"
+}

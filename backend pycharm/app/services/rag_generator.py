@@ -277,23 +277,33 @@ def normalize_lesson_plan_dict(data: Any) -> Dict[str, Any]:
         clean_steps = [
             {
                 "step_number": 1,
-                "teacher_activities": "Teacher organizes students into structured inquiry teams and introduces the task scenario.",
-                "student_activities": "Students review task cards, assume collaborative group roles, and begin investigations.",
-                "learning_teaching_method": "Guided Inquiry",
-                "learning_teaching_aids": "Task cards and activity prompts",
-                "assessment_and_feedback": "Teacher checks understanding of instructions.",
-                "time_minutes": 15,
-                "other": "Group formation"
+                "teacher_activities": "Teacher introduces the Sri Lankan real-world scenario, clarifies group objectives, and distributes task cards and role assignments as a facilitator.",
+                "student_activities": "Students arrange into collaborative groups, review inquiry task cards, assign group roles, and formulate investigative questions.",
+                "learning_teaching_method": "Task Orientation & Guided Inquiry Launch",
+                "learning_teaching_aids": "Inquiry task cards, role sheets, scenario prompts",
+                "assessment_and_feedback": "",
+                "time_minutes": 10,
+                "other": "Group formation and role distribution"
             },
             {
                 "step_number": 2,
-                "teacher_activities": "Teacher moderates student presentations, highlights key points, and addresses misconceptions.",
-                "student_activities": "Student spokespersons present findings, compare observations, and note feedback.",
-                "learning_teaching_method": "Presentation & Synthesis",
-                "learning_teaching_aids": "Presentation charts and whiteboard",
-                "assessment_and_feedback": "Peer review and formative feedback.",
-                "time_minutes": 15,
-                "other": "Class presentation"
+                "teacher_activities": "Teacher actively circulates among student groups, facilitates inquiry, scaffolds complex civic concepts with probing questions, and ensures active participation.",
+                "student_activities": "Students collaborate actively in assigned roles to execute the investigation/simulation, analyzing Sri Lankan community situations without passive spectators.",
+                "learning_teaching_method": "Active Student-Centered Investigation / Simulation",
+                "learning_teaching_aids": "Activity worksheets, observation sheets, chart paper, markers",
+                "assessment_and_feedback": "",
+                "time_minutes": 10,
+                "other": "Active collaborative investigation"
+            },
+            {
+                "step_number": 3,
+                "teacher_activities": "Teacher moderates student spokesperson presentations, facilitates constructive peer evaluation, and synthesizes key student findings against syllabus outcomes.",
+                "student_activities": "Group spokespersons present findings and solutions; peers evaluate presentations using criteria and note constructive feedback.",
+                "learning_teaching_method": "Spokesperson Presentation, Peer Review & Plenary Synthesis",
+                "learning_teaching_aids": "Student presentation charts, whiteboard",
+                "assessment_and_feedback": "",
+                "time_minutes": 10,
+                "other": "Plenary presentation and synthesis"
             }
         ]
     norm["lesson_development_steps"] = clean_steps

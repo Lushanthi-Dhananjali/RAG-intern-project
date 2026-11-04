@@ -17,9 +17,9 @@ logger = logging.getLogger("TimingGuardrailEngine")
 # Standard pedagogical blueprints for 30-minute developmental blocks
 STANDARD_DEVELOPMENT_STEP_PRESETS = {
     1: [30],
-    2: [12, 18],
-    3: [8, 14, 8],
-    4: [6, 10, 8, 6],
+    2: [15, 15],
+    3: [10, 10, 10],
+    4: [5, 10, 10, 5],
 }
 
 KNOWN_COMPETENCY_TITLES = {
@@ -86,7 +86,7 @@ class TimingGuardrailEngine:
             return [
                 LessonDevelopmentStepDto(
                     step_number=1,
-                    time_minutes=8,
+                    time_minutes=10,
                     learning_teaching_method="Task Orientation & Prompt Distribution",
                     learning_teaching_aids="Task assignment cards, chalkboard",
                     teacher_activities="Distributes materials and sets investigative goals.",
@@ -95,7 +95,7 @@ class TimingGuardrailEngine:
                 ),
                 LessonDevelopmentStepDto(
                     step_number=2,
-                    time_minutes=14,
+                    time_minutes=10,
                     learning_teaching_method="Cooperative Group Investigation",
                     learning_teaching_aids="Worksheets, student notebooks",
                     teacher_activities="Circulates to provide scaffolding and monitor roles.",
@@ -104,7 +104,7 @@ class TimingGuardrailEngine:
                 ),
                 LessonDevelopmentStepDto(
                     step_number=3,
-                    time_minutes=8,
+                    time_minutes=10,
                     learning_teaching_method="Plenary Presentation & Review",
                     learning_teaching_aids="Blackboard, completed posters",
                     teacher_activities="Facilitates peer review and synthesizes main findings.",
@@ -120,21 +120,38 @@ class TimingGuardrailEngine:
         for idx, s in enumerate(steps, start=1):
             s.step_number = idx
 
-        # If already exactly 30 minutes, preserve LLM's proportional decisions
-        if current_sum == 30:
+        # If already exactly 30 minutes and all steps are multiples of 5, preserve LLM's proportional decisions
+        if current_sum == 30 and all(s.time_minutes % 5 == 0 and s.time_minutes >= 5 for s in steps):
             return steps
 
         logger.warning(
-            "Timing drift detected: Developmental steps sum to %dm (target: 30m). Auto-repairing...",
+            "Timing drift detected: Developmental steps sum to %dm (target: 30m) or non-multiples of 5. Auto-repairing...",
             current_sum,
         )
 
-        # Strategy A: Use proven preset if step count is between 1 and 4
-        if step_count in STANDARD_DEVELOPMENT_STEP_PRESETS:
-            preset = STANDARD_DEVELOPMENT_STEP_PRESETS[step_count]
-            for s, allocated_mins in zip(steps, preset):
-                s.time_minutes = allocated_mins
-            return steps
+        # Round all steps to nearest multiple of 5 (min 5 mins)
+        for s in steps:
+            s.time_minutes = max(5, int(round(s.time_minutes / 5.0) * 5))
+
+        current_sum = sum(s.time_minutes for s in steps)
+        drift = 30 - current_sum
+
+        if drift != 0:
+            units = drift // 5
+            direction = 5 if units > 0 else -5
+            for _ in range(abs(units)):
+                if direction < 0:
+                    candidates = [i for i, s in enumerate(steps) if s.time_minutes > 5]
+                    if candidates:
+                        idx = max(candidates, key=lambda k: steps[k].time_minutes)
+                        steps[idx].time_minutes += direction
+                    else:
+                        break
+                else:
+                    idx = min(range(step_count), key=lambda k: steps[k].time_minutes)
+                    steps[idx].time_minutes += direction
+
+        return steps
 
         # Strategy B: Proportional scaling for 5+ steps
         # Normalize and clamp delta into the longest middle activity step

@@ -20,33 +20,39 @@ logger = logging.getLogger("LessonPlanAssembler")
 
 def balance_development_step_times(steps: List[LessonDevelopmentStepDto]) -> List[LessonDevelopmentStepDto]:
     """
-    Enforces that all developmental steps mathematically sum to exactly 30 minutes.
-    If the LLM drifts (e.g. 20m or 35m total), this normalizes and adjusts the middle step.
+    Enforces that all developmental steps mathematically sum to exactly 30 minutes in clean multiples of 5 (5, 10, 15, 20).
     """
     if not steps:
         return steps
 
-    total = sum(step.time_minutes for step in steps)
-    target = 30
-
-    if total == target:
+    # If already exactly 30 mins and all steps are multiples of 5 (min 5), preserve LLM's dynamic allocation
+    if sum(s.time_minutes for s in steps) == 30 and all(s.time_minutes % 5 == 0 and s.time_minutes >= 5 for s in steps):
         return steps
 
-    logger.warning("Step timing drift detected (Sum: %d mins). Re-balancing to exactly 30 mins...", total)
+    logger.warning("Step timing drift or non-multiples of 5 detected. Re-balancing in 5-minute increments to exactly 30 mins...")
 
-    if len(steps) == 2:
-        # Standard 2-step breakdown: Step 1 (12 mins), Step 2 (18 mins)
-        steps[0].time_minutes = 12
-        steps[1].time_minutes = 18
-    elif len(steps) == 3:
-        # Standard 3-step breakdown: Step 1 (8 mins), Step 2 (14 mins), Step 3 (8 mins)
-        steps[0].time_minutes = 8
-        steps[1].time_minutes = 14
-        steps[2].time_minutes = 8
-    else:
-        # Proportional adjustment
-        diff = target - total
-        steps[1].time_minutes = max(5, steps[1].time_minutes + diff)
+    # Round each step to nearest multiple of 5 (min 5 mins)
+    for s in steps:
+        s.time_minutes = max(5, int(round(s.time_minutes / 5.0) * 5))
+
+    total = sum(s.time_minutes for s in steps)
+    drift = 30 - total
+    step_count = len(steps)
+
+    if drift != 0:
+        units = drift // 5
+        direction = 5 if units > 0 else -5
+        for _ in range(abs(units)):
+            if direction < 0:
+                candidates = [i for i, s in enumerate(steps) if s.time_minutes > 5]
+                if candidates:
+                    idx = max(candidates, key=lambda k: steps[k].time_minutes)
+                    steps[idx].time_minutes += direction
+                else:
+                    break
+            else:
+                idx = min(range(step_count), key=lambda k: steps[k].time_minutes)
+                steps[idx].time_minutes += direction
 
     return steps
 
@@ -89,32 +95,45 @@ def build_single_period_assembly_prompt(
     )
 
     prompt = f"""<|begin_of_text|><|start_header_id|>system<|end_header_id|>
-You are an expert Teacher Educator and Curriculum Evaluator for the LEARN Practice Teaching Framework in Sri Lanka.
-Your task is to assemble a complete, single-period lesson plan for Period {current_period} of a {total_periods}-period sequence.
+You are an expert Sri Lankan Teacher Educator and Curriculum Specialist for the LEARN Practice Teaching Framework in Sri Lanka.
+Your task is to assemble an innovative, highly engaging, student-centered single-period lesson plan for Period {current_period} of a {total_periods}-period sequence.
 
-STRICT 40-MINUTE LEARN KANDY STRUCTURAL LAWS:
-1. Total Duration: EXACTLY 40 minutes.
-2. The Entrance (time: exactly 5 minutes):
-   - State exactly what the teacher and students do; connect prior knowledge or everyday experience to this period's topic and allocated outcomes.
-   - Lead directly into the selected activity. Do not rely on unverified external links.
-3. Lesson Development Steps (time: sum MUST equal exactly 30 minutes across 2 or 3 steps):
-   - Step 1 (Setup/Inquiry Launch: 7-8 mins): Teacher delivers prompts/cue cards; students inspect tasks.
-   - Step 2 (Group Investigation & Production: 14-15 mins): Active teamwork executing roles without bystanders.
-   - Step 3 (Presentation & Cross-Review: 7-8 mins): Spokespersons present; peer feedback.
+STRICT PEDAGOGICAL & 40-MINUTE STRUCTURAL LAWS:
+1. Total Duration: EXACTLY 40 minutes (5m Entrance + 30m Development + 5m Closure/Assessment).
+2. STUDENT-CENTERED PEDAGOGY (TEACHER AS FACILITATOR):
+   - The teacher must NEVER deliver passive monologues or lengthy lectures.
+   - The teacher's role is strictly that of a FACILITATOR: circulating among student groups, providing investigative task prompts, observing interactions, asking probing questions to scaffold learning, and moderating peer feedback.
+   - Students are at the center: actively collaborating in small groups, conducting roleplays or investigations, exploring Sri Lankan real-world scenarios, presenting solutions, and evaluating peers without passive bystanders.
+3. AUTHENTIC SRI LANKAN CONTEXT:
+   - Ground all scenarios, investigations, roleplays, and discussions in real Sri Lankan situations (e.g., Sri Lankan school community, local government authorities like Pradeshiya Sabha / Urban Council / Municipal Council, Grama Niladhari, Sri Lankan multicultural society, environmental protection, and civic rights/duties).
+4. DYNAMIC ALIGNMENT WITH CHOSEN ACTIVITY & ALLOCATED OUTCOMES:
+   - The lesson development steps MUST directly embody the teacher-selected activity and address the specific NIE learning outcome(s) allocated for this period!
+   - Do NOT output generic boilerplate. Explicitly name the concrete tasks, materials, role cards, inquiry questions, or case scenarios derived from the chosen activity and period outcomes.
+5. The Entrance (time: exactly 5 minutes):
+   - Active motivational hook linking student everyday experience in Sri Lanka to this period's topic and allocated outcomes, transitioning directly into the chosen activity.
+6. Lesson Development Steps (CLEAN MULTIPLES OF 5, TOTAL = EXACTLY 30 MINUTES):
+   - Every single step's 'time_minutes' MUST be a clean multiple of 5 (e.g. 5, 10, 15, 20). NEVER use non-multiples of 5 like 7, 8, 12, 13, 14, 17, 22!
+   - Step count is typically 3 steps, but can be 2, 3, or 4 steps depending on what best suits the selected activity and learning outcome:
+     * 3 Steps (Standard): e.g. 10m + 10m + 10m = 30m; OR 5m (Launch) + 15m (Active Simulation/Walk) + 10m (Synthesis) = 30m; OR 10m (Setup) + 15m (Inquiry) + 5m (Review) = 30m; OR 5m (Setup) + 20m (Extended Drama/Field Work) + 5m (Debrief) = 30m.
+     * 2 Steps (Intensive): e.g. 10m (Orientation) + 20m (Roleplay/Debate) = 30m; OR 15m + 15m = 30m.
+     * 4 Steps (Multi-Station): e.g. 5m + 10m + 10m + 5m = 30m.
+   - The SUM of all development steps MUST strictly equal 30 minutes.
+   - DYNAMIC ADAPTATION: Allocate time and step contents to fit the specific activity (e.g. a drama or school-walk needs a longer middle step like 15-20m; station jigsaw may use 10m/10m/10m).
 {step_assessment_rule}
-4. Assignment & Closure (time: exactly 5 minutes total):
-   - Put a concrete, age-appropriate in-class assignment/concluding task in 'post_activity'. It must connect to this period's topic, allocated outcomes, and selected activity, and be achievable in five minutes.
-   - The summary and assessment/feedback are brief parts of this same five-minute phase, not additional time.
-5. Logistics ({student_count} Students):
+7. Creative In-Class Assignment & Formative Closure (time: exactly 5 minutes total):
+   - Put a highly creative in-class closing check in 'post_activity' and 'summary' matching the selected activity and period outcomes.
+   - Examples of creative checks: a 2-line rhyming verse/poem recitation, a rapid quiz or team mini-competition, a quick drawing/sketch challenge, a pass-the-parcel concept ball, or a statement display & vote.
+   - Must be an in-class active check achievable in 5 minutes, NOT take-home homework.
+8. Logistics ({student_count} Students):
    - Partition: {logistics.group_summary_label}.
    - Roles to embed: {roles_str}.
    - Use only the available aids listed below, adapt to the stated classroom setting, and ensure every student can participate within the 30-minute development phase.
-6. ABSOLUTE PROHIBITION OF URLs AND EXTERNAL LINKS:
+9. ABSOLUTE PROHIBITION OF URLs AND EXTERNAL LINKS:
    - NEVER output URLs, website links, or http/https links anywhere in ANY field of the lesson plan.
    - 'competence' MUST be the broad curriculum competency standard in plain English text. Never output a URL or web link.
    - 'competence_level' MUST be strictly the curriculum code string "{competency_level}". Never output a URL or web link.
 
-7. REQUIRED JSON SCHEMA KEYS - YOUR OUTPUT JSON MUST CONTAIN EXACTLY THESE FIELD NAMES:
+10. REQUIRED JSON SCHEMA KEYS - YOUR OUTPUT JSON MUST CONTAIN EXACTLY THESE FIELD NAMES (PROVIDING 3 DEVELOPMENT STEPS):
 {{
   "grade": "{grade_level}",
   "subject": "{subject}",
@@ -126,21 +145,30 @@ STRICT 40-MINUTE LEARN KANDY STRUCTURAL LAWS:
   "lesson_development_steps": [
     {{
       "step_number": 1,
-      "time_minutes": 15,
-      "learning_teaching_method": "Guided Inquiry",
-      "learning_teaching_aids": "Task cards and worksheets",
-      "teacher_activities": "Teacher facilitates and explains task...",
-      "student_activities": "Students work in groups on task...",
-      "assessment_and_feedback": "Teacher checks understanding..."
+      "time_minutes": 10,
+      "learning_teaching_method": "Task Orientation & Guided Inquiry Launch",
+      "learning_teaching_aids": "Task assignment cards, role description sheets, inquiry scenario prompts",
+      "teacher_activities": "Teacher introduces the Sri Lankan real-world scenario, explains group objectives, distributes task materials, and assigns student roles as a facilitator...",
+      "student_activities": "Students arrange into cooperative groups, assign designated roles, review inquiry cards, and begin collaborative planning...",
+      "assessment_and_feedback": ""
     }},
     {{
       "step_number": 2,
-      "time_minutes": 15,
-      "learning_teaching_method": "Presentation & Synthesis",
-      "learning_teaching_aids": "Charts and whiteboard",
-      "teacher_activities": "Teacher coordinates peer presentations...",
-      "student_activities": "Students present group findings...",
-      "assessment_and_feedback": "Formative peer feedback..."
+      "time_minutes": 10,
+      "learning_teaching_method": "Active Student-Centered Investigation / Simulation / Drama / School-Walk",
+      "learning_teaching_aids": "Worksheets, roleplay cue cards, chart papers, colored markers",
+      "teacher_activities": "Teacher circulates as facilitator among groups, observes peer interactions, scaffolds challenging concepts with probing questions, and ensures active participation without lecturing...",
+      "student_activities": "Students actively execute the chosen activity (e.g., conducting mock council session, exploratory school-walk survey, analyzing Sri Lankan community issues, or solving civic challenges in groups) using assigned roles...",
+      "assessment_and_feedback": ""
+    }},
+    {{
+      "step_number": 3,
+      "time_minutes": 10,
+      "learning_teaching_method": "Spokesperson Presentation & Plenary Synthesis",
+      "learning_teaching_aids": "Student output posters, whiteboard, peer assessment checklist",
+      "teacher_activities": "Teacher moderates student presentations, facilitates constructive peer review, and synthesizes key student discoveries directly against the period's learning outcomes...",
+      "student_activities": "Spokespersons present group solutions or roleplay outcomes; class peers ask questions, provide constructive feedback, and summarize key takeaways in their notebooks...",
+      "assessment_and_feedback": ""
     }}
   ],
   "summary": "Consolidation and synthesis of key concepts...",

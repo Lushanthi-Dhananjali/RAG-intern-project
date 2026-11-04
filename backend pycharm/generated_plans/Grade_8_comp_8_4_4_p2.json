@@ -1,0 +1,90 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 2 of 2)",
+  "competence": "Broad curriculum competency standard",
+  "competence_level": "8.4.4",
+  "lesson": "Presents information about road accidents and disasters caused at present: Consensus Problem-Solving Carousel: Competency Level 8.4.4",
+  "unique_learning_outcome": [
+    "Presents information about road accidents and disasters caused at present.",
+    "Shows the measures to be followed avoid railway accidents.",
+    "Shows with example the preventive measures for accidents."
+  ],
+  "the_entrance": "5-minute introduction: The teacher begins by asking students to reflect on their prior knowledge about road accidents and disasters. Students share their thoughts and experiences, and the teacher connects this to the topic of the lesson. The teacher then distributes the task cards and explains the activity, and students inspect the tasks. The teacher leads directly into the selected activity.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Teacher facilitates and explains task, circulates across 7 teams, facilitating role execution and formatively checking progress.",
+      "student_activities": "Students negotiate a solution, create a shared civic artifact, and review another group's proposal.",
+      "learning_teaching_method": "Guided Inquiry",
+      "learning_teaching_aids": "Task cards and worksheets",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Teacher coordinates peer presentations, facilitates role execution and formatively checks progress.",
+      "student_activities": "Students present group findings, and peers provide feedback.",
+      "learning_teaching_method": "Presentation & Synthesis",
+      "learning_teaching_aids": "Charts and whiteboard",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    }
+  ],
+  "summary": "Consolidation and synthesis of key concepts...",
+  "assessment_and_feedback_whole_lesson": "Final closure formative assessment criteria...",
+  "post_activity": "5-minute in-class assignment: Five-minute in-class assignment or concluding task: Students write a short paragraph summarizing the main points discussed during the lesson and what they learned about road accidents and disasters.",
+  "information_sources": [
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
+  ],
+  "attachments": [],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 2,
+  "total_periods": 2,
+  "selected_activity": "Activity: Consensus Problem-Solving Carousel: Competency Level 8.4.4\nApproach: Students use consensus problem-solving carousel to explore 'Presents information about road accidents and disasters caused at present.'. Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.\nExpected output: A group civic proposal, diagram, or public information message.\nGrouping: 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+  "selected_activity_title": "Consensus Problem-Solving Carousel: Competency Level 8.4.4",
+  "custom_teacher_activity": null,
+  "activity_options": [
+    {
+      "id": "option_2",
+      "title": "Consensus Problem-Solving Carousel: Competency Level 8.4.4",
+      "pedagogy_type": "Collaborative Design",
+      "description": "Students use consensus problem-solving carousel to explore 'Presents information about road accidents and disasters caused at present.'. Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "learning_outcomes_addressed": [
+        "Presents information about road accidents and disasters caused at present.",
+        "Shows the measures to be followed avoid railway accidents.",
+        "Shows with example the preventive measures for accidents."
+      ],
+      "student_action_summary": "Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "teacher_facilitation_summary": "Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.",
+      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks",
+        "Chart Paper"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "A group civic proposal, diagram, or public information message.",
+      "creative_assessment_preview": "Groups give one-sentence feedback connecting a peer proposal to the outcome.",
+      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "Explains causes for railway accidents.",
+      "Explains how to react at a road or railway accident.",
+      "Explains reasons for road accidents.",
+      "Explains road rules using signs and signals."
+    ],
+    "2": [
+      "Presents information about road accidents and disasters caused at present.",
+      "Shows the measures to be followed avoid railway accidents.",
+      "Shows with example the preventive measures for accidents."
+    ]
+  },
+  "filename": "Grade_8_comp_8_4_4_p2.json"
+}

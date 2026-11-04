@@ -1,0 +1,84 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 3 of 3)",
+  "competence": "Broad curriculum competency standard",
+  "competence_level": "8.5.1",
+  "lesson": "Expresses the ability to face problems in day-to-day life should be developed: Citizen-Officer Deliberation Roleplay: Competency Level 8.5.1",
+  "unique_learning_outcome": [
+    "Expresses the ability to face problems in day-to-day life should be developed."
+  ],
+  "the_entrance": "5-minute introduction: The teacher writes or reads “Expresses the ability to face problems in day-to-day life should be developed” and asks students to name one example they have seen in everyday life. Students share brief responses; the teacher connects their examples to Citizen-Officer Deliberation Roleplay: Competency Level 8.5.1 and explains how it will help them explore this period's outcome.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Teacher organizes students into structured inquiry teams and introduces the task scenario.",
+      "student_activities": "Students review task cards, assume collaborative group roles, and begin investigations.",
+      "learning_teaching_method": "Guided Inquiry",
+      "learning_teaching_aids": "Task cards and activity prompts",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": "Group formation"
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Teacher moderates student presentations, highlights key points, and addresses misconceptions.",
+      "student_activities": "Student spokespersons present findings, compare observations, and note feedback.",
+      "learning_teaching_method": "Presentation & Synthesis",
+      "learning_teaching_aids": "Presentation charts and whiteboard",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": "Class presentation"
+    }
+  ],
+  "summary": "Consolidation and synthesis of key concepts: Students reflect on their roleplay experience and how it relates to real-life problems and challenges.",
+  "assessment_and_feedback_whole_lesson": "Final closure formative assessment criteria: Students' roleplay decisions and reasons are evaluated for understanding of the importance of facing problems and challenges in day-to-day life.",
+  "post_activity": "5-minute in-class assignment: Each student completes a short exit response explaining one finding about “Expresses the ability to face problems in day-to-day life should be developed” using evidence or an example from Citizen-Officer Deliberation Roleplay: Competency Level 8.5.1. The teacher reviews responses for an accurate link to the period outcome.",
+  "information_sources": [
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
+  ],
+  "attachments": [],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 3,
+  "total_periods": 3,
+  "selected_activity": "Activity: Citizen-Officer Deliberation Roleplay: Competency Level 8.5.1\nApproach: Students use citizen-officer deliberation roleplay to explore 'Expresses the ability to face problems in day-to-day life should be developed.'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.\nExpected output: A short role-based civic decision and its reasons.\nGrouping: 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+  "selected_activity_title": "Citizen-Officer Deliberation Roleplay: Competency Level 8.5.1",
+  "custom_teacher_activity": null,
+  "activity_options": [
+    {
+      "id": "option_2",
+      "title": "Citizen-Officer Deliberation Roleplay: Competency Level 8.5.1",
+      "pedagogy_type": "Simulation / Roleplay",
+      "description": "Students use citizen-officer deliberation roleplay to explore 'Expresses the ability to face problems in day-to-day life should be developed.'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "learning_outcomes_addressed": [
+        "Expresses the ability to face problems in day-to-day life should be developed."
+      ],
+      "student_action_summary": "Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "teacher_facilitation_summary": "Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.",
+      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks",
+        "Chart Paper"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "A short role-based civic decision and its reasons.",
+      "creative_assessment_preview": "Students state one role responsibility and explain how it supported the decision.",
+      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "Defines problems and challenges simply."
+    ],
+    "2": [
+      "Explains the importance of being watchfull regarding the problems and challenges faced in day-to-day life."
+    ],
+    "3": [
+      "Expresses the ability to face problems in day-to-day life should be developed."
+    ]
+  },
+  "filename": "Grade_8_comp_8_5_1_p3.json"
+}
