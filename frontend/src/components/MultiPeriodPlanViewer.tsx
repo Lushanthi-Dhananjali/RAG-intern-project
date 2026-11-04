@@ -35,7 +35,7 @@ export default function MultiPeriodPlanViewer({
   const cleanTitle = primaryPlan.lesson.replace(/\(Period \d+\)/i, "").trim();
 
   return (
-    <div className="space-y-6 max-w-5xl mx-auto animate-in fade-in duration-200">
+    <div className="space-y-6 w-full mx-auto animate-in fade-in duration-200">
       {/* Top Meta Bar */}
       <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs flex flex-wrap items-center justify-between gap-4">
         <div>

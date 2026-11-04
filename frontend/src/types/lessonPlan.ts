@@ -73,6 +73,7 @@ export interface LessonPlanSchemaDto {
   outcome_allocation?: Record<string, string[]>;
   entrance_duration_minutes?: number;
   assignment_duration_minutes?: number;
+  filename?: string;
 }
 
 // Aliases for compatibility

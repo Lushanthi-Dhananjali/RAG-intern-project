@@ -110,6 +110,7 @@ export interface LessonPlanDto {
   activity_options?: PedagogicalActivityOption[];
   entrance_duration_minutes?: number;
   assignment_duration_minutes?: number;
+  filename?: string;
 }
 
 // Type aliases for seamless compatibility across UI components

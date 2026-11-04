@@ -11,14 +11,16 @@ interface StructuralEditorProps {
   initialPlan: any;
   filename?: string;
   userId?: string;
-  onSave?: (updatedPlan: any) => void;
+  onSave?: (updatedPlan: any, savedFilename?: string) => void;
+  activeViewTab?: 'viewer' | 'editor';
+  onViewTabChange?: (tab: 'viewer' | 'editor') => void;
 }
 
 /**
  * Normalizes input plan data from either the Sri Lankan NIE & LEARN DTO
  * or legacy schemas into a structured LessonPlanDto format.
  */
-function normalizeInitialPlan(p: any): LessonPlanDto {
+function normalizeInitialPlan(p: any, fallbackFilename?: string): LessonPlanDto {
   if (!p) {
     return {
       grade: 'Grade 8',
@@ -131,6 +133,16 @@ function normalizeInitialPlan(p: any): LessonPlanDto {
     post_activity: p.post_activity || 'Students complete assigned textbook activities.',
     information_sources: sources,
     attachments: p.attachments || [],
+    period_number: p.period_number,
+    total_periods: p.total_periods,
+    selected_activity: p.selected_activity,
+    selected_activity_title: p.selected_activity_title,
+    custom_teacher_activity: p.custom_teacher_activity,
+    activity_options: p.activity_options,
+    outcome_allocation: p.outcome_allocation,
+    entrance_duration_minutes: p.entrance_duration_minutes,
+    assignment_duration_minutes: p.assignment_duration_minutes,
+    filename: p?.filename || fallbackFilename,
   };
 }
 
@@ -139,8 +151,10 @@ export default function StructuralEditor({
   filename,
   userId,
   onSave,
+  activeViewTab = 'editor',
+  onViewTabChange,
 }: StructuralEditorProps) {
-  const [plan, setPlan] = useState<LessonPlanDto>(() => normalizeInitialPlan(initialPlan));
+  const [plan, setPlan] = useState<LessonPlanDto>(() => normalizeInitialPlan(initialPlan, filename));
   const [isSaving, setIsSaving] = useState(false);
   const [saveStatus, setSaveStatus] = useState<{
     type: 'success' | 'error';
@@ -150,7 +164,7 @@ export default function StructuralEditor({
   // Sync state whenever external initialPlan prop updates
   useEffect(() => {
     if (initialPlan) {
-      setPlan(normalizeInitialPlan(initialPlan));
+      setPlan(normalizeInitialPlan(initialPlan, filename));
     }
   }, [initialPlan]);
 
@@ -301,14 +315,23 @@ export default function StructuralEditor({
       },
     };
 
+    const targetFilename =
+      filename ||
+      plan.filename ||
+      initialPlan?.filename ||
+      (plan.period_number != null
+        ? `${(plan.grade || 'Grade 8').replace(/\s+/g, '_')}_comp_${(plan.competence_level || 'custom').replace(/\./g, '_')}_p${plan.period_number}.json`
+        : `${(plan.grade || 'Grade 8').replace(/\s+/g, '_')}_comp_${(plan.competence_level || 'custom').replace(/\./g, '_')}.json`);
+
     try {
-      const res = await saveGeneratedPlan(comprehensivePlan, filename);
+      const res = await saveGeneratedPlan(comprehensivePlan, targetFilename);
+      const savedName = res.filename || targetFilename;
       setSaveStatus({
         type: 'success',
-        message: `✅ Lesson plan saved successfully! ${res.filename ? `(Saved as ${res.filename})` : ''}`,
+        message: `✅ Lesson plan saved successfully as "${savedName}"!`,
       });
       if (onSave) {
-        onSave(comprehensivePlan);
+        onSave(comprehensivePlan, savedName);
       }
     } catch (err: any) {
       setSaveStatus({
@@ -369,38 +392,97 @@ export default function StructuralEditor({
           </p>
         </div>
 
-        <button
-          type="button"
-          onClick={handleSave}
-          disabled={isSaving}
-          style={{
-            padding: '9px 18px',
-            borderRadius: '10px',
-            backgroundColor: isSaving ? '#94a3b8' : '#059669',
-            color: '#ffffff',
-            fontWeight: '700',
-            fontSize: '13px',
-            border: 'none',
-            cursor: isSaving ? 'not-allowed' : 'pointer',
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '8px',
-            boxShadow: '0 2px 4px rgba(5, 150, 105, 0.2)',
-            transition: 'all 0.2s ease',
-          }}
-        >
-          {isSaving ? (
-            <>
-              <span>⏳</span>
-              <span>Saving...</span>
-            </>
-          ) : (
-            <>
-              <span>💾</span>
-              <span>Save Changes</span>
-            </>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+          {onViewTabChange && (
+            <div
+              style={{
+                display: 'inline-flex',
+                padding: '3px',
+                backgroundColor: '#f1f5f9',
+                borderRadius: '10px',
+                border: '1px solid #e2e8f0',
+              }}
+            >
+              <button
+                type="button"
+                onClick={() => onViewTabChange('viewer')}
+                style={{
+                  padding: '6px 14px',
+                  borderRadius: '8px',
+                  fontSize: '12px',
+                  fontWeight: '700',
+                  cursor: 'pointer',
+                  border: 'none',
+                  backgroundColor: activeViewTab === 'viewer' ? '#4f46e5' : 'transparent',
+                  color: activeViewTab === 'viewer' ? '#ffffff' : '#475569',
+                  boxShadow: activeViewTab === 'viewer' ? '0 2px 4px rgba(79, 70, 229, 0.25)' : 'none',
+                  transition: 'all 0.15s ease',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                }}
+              >
+                <span>📄</span>
+                <span>Table Viewer</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => onViewTabChange('editor')}
+                style={{
+                  padding: '6px 14px',
+                  borderRadius: '8px',
+                  fontSize: '12px',
+                  fontWeight: '700',
+                  cursor: 'pointer',
+                  border: 'none',
+                  backgroundColor: activeViewTab === 'editor' ? '#4f46e5' : 'transparent',
+                  color: activeViewTab === 'editor' ? '#ffffff' : '#475569',
+                  boxShadow: activeViewTab === 'editor' ? '0 2px 4px rgba(79, 70, 229, 0.25)' : 'none',
+                  transition: 'all 0.15s ease',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                }}
+              >
+                <span>✏️</span>
+                <span>Structural Editor</span>
+              </button>
+            </div>
           )}
-        </button>
+
+          <button
+            type="button"
+            onClick={handleSave}
+            disabled={isSaving}
+            style={{
+              padding: '9px 18px',
+              borderRadius: '10px',
+              backgroundColor: isSaving ? '#94a3b8' : '#059669',
+              color: '#ffffff',
+              fontWeight: '700',
+              fontSize: '13px',
+              border: 'none',
+              cursor: isSaving ? 'not-allowed' : 'pointer',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              boxShadow: '0 2px 4px rgba(5, 150, 105, 0.2)',
+              transition: 'all 0.2s ease',
+            }}
+          >
+            {isSaving ? (
+              <>
+                <span>⏳</span>
+                <span>Saving...</span>
+              </>
+            ) : (
+              <>
+                <span>💾</span>
+                <span>Save Changes</span>
+              </>
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Save Notification Feedback Banner */}

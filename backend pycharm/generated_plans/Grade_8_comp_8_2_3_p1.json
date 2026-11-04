@@ -2,82 +2,83 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 1 of 2)",
-  "competence": "Controls the emotions in such a way that it safeguards the existence of a democratic society.",
+  "competence": "Broad curriculum competency standard",
   "competence_level": "8.2.3",
-  "lesson": "Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society: Institutional Fact-Finding Station: Competency Level 8.2.3",
+  "lesson": "Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society: Mock Local Council / Pradeshiya Sabha Session: Competency 8.2.3",
   "unique_learning_outcome": [
     "Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society.",
     "Describes giving examples the nature of various kinds of emotions occuring in a person."
   ],
-  "the_entrance": "5-minute introduction: The teacher writes or reads “Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society” and asks students to name one example they have seen in everyday life. Students share brief responses; the teacher connects their examples to Institutional Fact-Finding Station: Competency Level 8.2.3 and explains how it will help them explore this period's outcome.",
+  "the_entrance": "Detailed 5-minute introduction: teacher and student actions linking prior knowledge to this period topic and activity... Students are introduced to the concept of emotions and their impact on personal behavior. The teacher explains the scenario and objectives of the mock local council/pradeshiya sabha session.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "The teacher introduces the lesson inquiry on 'Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society', organizes students into collaborative teams with designated roles, and distributes inquiry task prompt cards.",
-      "student_activities": "Students arrange themselves in assigned group roles, examine the inquiry prompt concerning 'Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society', and prepare materials for their investigation.",
-      "learning_teaching_method": "Introduced Explored Foundational Inquiry",
-      "learning_teaching_aids": "Inquiry prompt cards, chalkboard, student notebooks",
+      "teacher_activities": "Teacher explains the scenario and objectives of the mock local council/pradeshiya sabha session, distributes task materials, and assigns student roles as a facilitator.",
+      "student_activities": "Students arrange into cooperative groups, assign designated roles, review inquiry cards, and begin collaborative planning.",
+      "learning_teaching_method": "Task Orientation & Guided Inquiry Launch",
+      "learning_teaching_aids": "Task assignment cards, role description sheets, inquiry scenario prompts",
       "assessment_and_feedback": "",
       "time_minutes": 10,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "The teacher actively circulates among the groups to facilitate Institutional Fact-Finding Station: Competency Level 8.2.3, scaffolds student discussions around 'Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society', prompts critical thinking, and formatively monitors student engagement.",
-      "student_activities": "Students actively carry out Institutional Fact-Finding Station: Competency Level 8.2.3, collaborating in teams to analyze real-world civic situations related to 'Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society' without passive bystanders.",
-      "learning_teaching_method": "Introduced Explored Foundational Inquiry",
-      "learning_teaching_aids": "Activity scenario cards, observation sheets, chart paper",
+      "teacher_activities": "Teacher circulates as facilitator among groups, observes peer interactions, scaffolds challenging concepts with probing questions, and ensures active participation without lecturing.",
+      "student_activities": "Students actively execute the chosen activity (e.g., conducting mock council session, exploratory school-walk survey, analyzing Sri Lankan community issues, or solving civic challenges in groups) using assigned roles.",
+      "learning_teaching_method": "Active Student-Centered Investigation / Simulation / Drama / School-Walk",
+      "learning_teaching_aids": "Worksheets, roleplay cue cards, chart papers, colored markers",
       "assessment_and_feedback": "",
       "time_minutes": 10,
       "other": ""
     },
     {
       "step_number": 3,
-      "teacher_activities": "The teacher facilitates group presentations, synthesizes student discoveries regarding 'Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society', highlights core civic values, and formatively clarifies any conceptual misconceptions.",
-      "student_activities": "Team spokespersons present their group's findings on 'Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society' to the class, compare conclusions with peers, and record constructive feedback in their notebooks.",
-      "learning_teaching_method": "Introduced Explored Foundational Inquiry",
-      "learning_teaching_aids": "Presentation board, student summary sheets, whiteboard",
+      "teacher_activities": "Teacher moderates student presentations, facilitates constructive peer review, and synthesizes key student discoveries directly against the period's learning outcomes.",
+      "student_activities": "Spokespersons present group solutions or roleplay outcomes; class peers ask questions, provide constructive feedback, and summarize key takeaways in their notebooks.",
+      "learning_teaching_method": "Spokesperson Presentation & Plenary Synthesis",
+      "learning_teaching_aids": "Student output posters, whiteboard, peer assessment checklist",
       "assessment_and_feedback": "",
       "time_minutes": 10,
       "other": ""
     }
   ],
-  "summary": "Synthesize key student findings from Institutional Fact-Finding Station: Competency Level 8.2.3, emphasizing the core principles of “Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society” and clarifying any lingering misconceptions.",
-  "assessment_and_feedback_whole_lesson": "Use the student's five-minute assignment response to check understanding of “Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society” and give one concise correction or affirmation.",
-  "post_activity": "5-minute in-class assignment: Each student completes a short exit response explaining one finding about “Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society” using evidence or an example from Institutional Fact-Finding Station: Competency Level 8.2.3. The teacher reviews responses for an accurate link to the period outcome.",
+  "summary": "Consolidation and synthesis of key concepts...",
+  "assessment_and_feedback_whole_lesson": "Final closure formative assessment criteria...",
+  "post_activity": "5-minute in-class assignment: Each student completes a short exit response explaining one finding about “Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society” using evidence or an example from Mock Local Council / Pradeshiya Sabha Session: Competency 8.2.3. The teacher reviews responses for an accurate link to the period outcome.",
   "information_sources": [
-    "grade_8_civic_textbook.pdf (page 1)"
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
   ],
   "attachments": [],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 1,
   "total_periods": 2,
-  "selected_activity": "Activity: Institutional Fact-Finding Station: Competency Level 8.2.3\nApproach: Students use institutional fact-finding station to explore 'Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society.'. Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.\nExpected output: An evidence record with one supported conclusion.\nGrouping: 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "Institutional Fact-Finding Station: Competency Level 8.2.3",
+  "selected_activity": "Activity: Mock Local Council / Pradeshiya Sabha Session: Competency 8.2.3\nApproach: Students use mock local council / pradeshiya sabha session to explore 'Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society.'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.\nExpected output: A short role-based civic decision and its reasons.\nGrouping: 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+  "selected_activity_title": "Mock Local Council / Pradeshiya Sabha Session: Competency 8.2.3",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_2",
-      "title": "Institutional Fact-Finding Station: Competency Level 8.2.3",
-      "pedagogy_type": "Observation / Evidence Inquiry",
-      "description": "Students use institutional fact-finding station to explore 'Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society.'. Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "learning_outcomes_addressed": [
-        "Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society.",
-        "Describes giving examples the nature of various kinds of emotions occuring in a person."
-      ],
-      "student_action_summary": "Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "id": "option_1",
+      "title": "Mock Local Council / Pradeshiya Sabha Session: Competency 8.2.3",
+      "pedagogy_type": "Simulation / Roleplay",
+      "description": "Students use mock local council / pradeshiya sabha session to explore 'Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society.'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "student_action_summary": "Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
       "teacher_facilitation_summary": "Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.",
       "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
       "required_materials": [
-        "Chalkboard",
-        "Student Notebooks",
-        "Chart Paper"
+        "Blackboard",
+        "Paper",
+        "Student notebooks"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "An evidence record with one supported conclusion.",
-      "creative_assessment_preview": "A paired evidence check: name one observation and the outcome it supports.",
-      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
+      "expected_student_output": "A short role-based civic decision and its reasons.",
+      "creative_assessment_preview": "Students state one role responsibility and explain how it supported the decision.",
+      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable.",
+      "learning_outcomes_addressed": [
+        "Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society.",
+        "Describes giving examples the nature of various kinds of emotions occuring in a person."
+      ]
     }
   ],
   "outcome_allocation": {

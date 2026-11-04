@@ -642,6 +642,8 @@ class LessonPlanMlService(ILessonPlanMlService):
             sanitized_grade = plan.grade.replace(" ", "_")
             sanitized_comp = target_comp.replace(".", "_")
             filename = f"{sanitized_grade}_comp_{sanitized_comp}_p{p_idx}.json"
+            plan.filename = filename
+            plan_data = plan.model_dump(mode="json")
             save_generated_plan(plan_data, filename)
             logger.info("Persisted Period %d plan to generated-plan library as %s", p_idx, filename)
 
@@ -711,6 +713,15 @@ class LessonPlanMlService(ILessonPlanMlService):
             time_slot=time_slot,
             retrieved_outcomes=None
         )
+
+        sanitized_grade = grade.replace(" ", "_")
+        sanitized_comp = target_comp.replace(".", "_")
+        filename = f"{sanitized_grade}_comp_{sanitized_comp}.json"
+        plan.filename = filename
+        try:
+            save_generated_plan(plan.model_dump(mode="json"), filename)
+        except Exception as save_err:
+            logger.warning("Could not auto-persist legacy plan: %s", save_err)
 
         return LessonPlanGenerateResponse(
             lesson_plan=plan,

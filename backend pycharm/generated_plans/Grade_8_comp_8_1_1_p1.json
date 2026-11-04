@@ -1,73 +1,27 @@
 {
   "grade": "Grade 8",
   "subject": "Civic Education",
-  "time_allocation": "40 Minutes (Period 1 of 1)",
-  "competence": "Democratic Governance",
   "competence_level": "8.1.1",
-  "lesson": "Identifies the public services: Teacher approach: Students role-play a village council meeting...",
+  "period_number": 1,
+  "total_periods": 2,
+  "lesson": "Updated Public Services Lesson",
+  "time_allocation": "40 Minutes",
   "unique_learning_outcome": [
-    "Identifies the public services.",
-    "Explains the need of public services."
+    "Outcome 1"
   ],
-  "the_entrance": "5-minute introduction: The teacher poses a real-world civic prompt and students discuss in pairs.",
+  "the_entrance": "Test entrance",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "Organizes teams and guides investigative tasks.",
-      "student_activities": "Collaborate in assigned roles to analyze evidence.",
-      "learning_teaching_method": "Guided Inquiry",
-      "learning_teaching_aids": "Task Cards",
-      "assessment_and_feedback": "",
-      "time_minutes": 15,
-      "other": ""
-    },
-    {
-      "step_number": 2,
-      "teacher_activities": "Facilitates group presentations and highlights key insights.",
-      "student_activities": "Present team findings and record feedback.",
-      "learning_teaching_method": "Plenary Discussion",
-      "learning_teaching_aids": "Blackboard",
-      "assessment_and_feedback": "",
-      "time_minutes": 15,
-      "other": ""
+      "time_minutes": 10,
+      "learning_teaching_method": "Discussion",
+      "teacher_activities": "Teacher explains",
+      "student_activities": "Students listen",
+      "learning_teaching_aids": "Board",
+      "assessment_and_feedback": ""
     }
   ],
-  "summary": "Synthesizes core student findings and civic values.",
-  "assessment_and_feedback_whole_lesson": "5-minute rapid formative exit check.",
-  "post_activity": "5-minute in-class assignment: Each student writes an exit response on Identifies the public services..",
-  "information_sources": [],
-  "attachments": [],
-  "entrance_duration_minutes": 5,
-  "assignment_duration_minutes": 5,
-  "period_number": 1,
-  "total_periods": 1,
-  "selected_activity": "Students role-play a village council meeting discussing public services.",
-  "selected_activity_title": "Teacher approach: Students role-play a village council meeting discussing public services.",
-  "custom_teacher_activity": "Students role-play a village council meeting discussing public services.",
-  "activity_options": [
-    {
-      "id": "teacher_custom_activity_p1",
-      "title": "Teacher Activity: Students role-play a village council meeting discussing public services.",
-      "description": "Students role-play a village council meeting discussing public services.",
-      "pedagogy_type": "Guided Inquiry",
-      "student_grouping": "Adaptive Grouping (35 students)",
-      "student_action_summary": "Collaborate in assigned roles to analyze evidence.",
-      "teacher_facilitation_summary": "Organizes teams and guides investigative tasks.",
-      "required_materials": [
-        "Task Cards"
-      ],
-      "expected_student_output": "5-minute in-class assignment: Each student writes an exit response on Identifies the public services..",
-      "creative_assessment_preview": "5-minute rapid formative exit check.",
-      "learning_outcomes_addressed": [
-        "Identifies the public services.",
-        "Explains the need of public services."
-      ]
-    }
-  ],
-  "outcome_allocation": {
-    "1": [
-      "Identifies the public services.",
-      "Explains the need of public services."
-    ]
-  }
+  "summary": "Test summary",
+  "assessment_and_feedback_whole_lesson": "Test feedback",
+  "post_activity": "Test post"
 }

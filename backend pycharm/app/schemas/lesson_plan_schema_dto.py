@@ -59,6 +59,7 @@ class LessonPlanSchemaDto(BaseModel):
     custom_teacher_activity: Optional[str] = None
     activity_options: List[Dict[str, Any]] = Field(default_factory=list)
     outcome_allocation: Dict[str, List[str]] = Field(default_factory=dict)
+    filename: Optional[str] = Field(default=None, description="Exact filename in generated_plans storage")
 
     @model_validator(mode="before")
     @classmethod

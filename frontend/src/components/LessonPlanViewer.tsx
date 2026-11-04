@@ -44,6 +44,11 @@ interface Props {
   filename?: string;
   onEditInGenerator?: (plan: any) => void;
   onDeletePlan?: (filename: string) => void;
+  allPlans?: (LearnLessonPlan | any)[];
+  activePeriodIndex?: number;
+  onPeriodChange?: (index: number) => void;
+  activeViewTab?: 'viewer' | 'editor';
+  onViewTabChange?: (tab: 'viewer' | 'editor') => void;
 }
 
 export default function LessonPlanViewer({
@@ -53,6 +58,11 @@ export default function LessonPlanViewer({
   filename,
   onEditInGenerator,
   onDeletePlan,
+  allPlans,
+  activePeriodIndex,
+  onPeriodChange,
+  activeViewTab = 'viewer',
+  onViewTabChange,
 }: Props) {
   const [copied, setCopied] = useState<boolean>(false);
 
@@ -272,6 +282,63 @@ export default function LessonPlanViewer({
 
         {/* Action Buttons in Header */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+          {onViewTabChange && (
+            <div
+              style={{
+                display: 'inline-flex',
+                padding: '3px',
+                backgroundColor: '#f1f5f9',
+                borderRadius: '10px',
+                border: '1px solid #e2e8f0',
+              }}
+            >
+              <button
+                type="button"
+                onClick={() => onViewTabChange('viewer')}
+                style={{
+                  padding: '6px 14px',
+                  borderRadius: '8px',
+                  fontSize: '12px',
+                  fontWeight: '700',
+                  cursor: 'pointer',
+                  border: 'none',
+                  backgroundColor: activeViewTab === 'viewer' ? '#4f46e5' : 'transparent',
+                  color: activeViewTab === 'viewer' ? '#ffffff' : '#475569',
+                  boxShadow: activeViewTab === 'viewer' ? '0 2px 4px rgba(79, 70, 229, 0.25)' : 'none',
+                  transition: 'all 0.15s ease',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                }}
+              >
+                <span>📄</span>
+                <span>Table Viewer</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => onViewTabChange('editor')}
+                style={{
+                  padding: '6px 14px',
+                  borderRadius: '8px',
+                  fontSize: '12px',
+                  fontWeight: '700',
+                  cursor: 'pointer',
+                  border: 'none',
+                  backgroundColor: activeViewTab === 'editor' ? '#4f46e5' : 'transparent',
+                  color: activeViewTab === 'editor' ? '#ffffff' : '#475569',
+                  boxShadow: activeViewTab === 'editor' ? '0 2px 4px rgba(79, 70, 229, 0.25)' : 'none',
+                  transition: 'all 0.15s ease',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                }}
+              >
+                <span>✏️</span>
+                <span>Structural Editor</span>
+              </button>
+            </div>
+          )}
+
           <button
             type="button"
             onClick={handlePrint}
@@ -316,7 +383,7 @@ export default function LessonPlanViewer({
             <span>{copied ? '✅' : '📋'}</span>
             <span>{copied ? 'Copied' : 'Copy JSON'}</span>
           </button>
-          {onEditInGenerator && (
+          {onEditInGenerator && !onViewTabChange && (
             <button
               type="button"
               onClick={() => onEditInGenerator(plan)}
@@ -366,6 +433,81 @@ export default function LessonPlanViewer({
           )}
         </div>
       </div>
+
+      {/* Multi-Period Selector Bar if multiple periods exist */}
+      {allPlans && allPlans.length > 1 && (
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '10px',
+            backgroundColor: '#f8fafc',
+            border: '1px solid #e2e8f0',
+            borderRadius: '12px',
+            padding: '8px 14px',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+            <span
+              style={{
+                fontSize: '11px',
+                fontWeight: '800',
+                color: '#475569',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+              }}
+            >
+              📚 Sequential Periods:
+            </span>
+            {allPlans.map((p, idx) => {
+              const pNum = p.period_number ?? (idx + 1);
+              const isSelected = (activePeriodIndex ?? 0) === idx;
+              return (
+                <button
+                  key={idx}
+                  type="button"
+                  onClick={() => onPeriodChange?.(idx)}
+                  style={{
+                    padding: '6px 14px',
+                    borderRadius: '8px',
+                    fontSize: '12px',
+                    fontWeight: '700',
+                    cursor: 'pointer',
+                    border: isSelected ? '1px solid #4f46e5' : '1px solid #cbd5e1',
+                    backgroundColor: isSelected ? '#4f46e5' : '#ffffff',
+                    color: isSelected ? '#ffffff' : '#334155',
+                    boxShadow: isSelected ? '0 2px 4px rgba(79, 70, 229, 0.25)' : 'none',
+                    transition: 'all 0.15s ease',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                  }}
+                >
+                  <span>Period {pNum}</span>
+                  <span
+                    style={{
+                      fontSize: '10px',
+                      padding: '1px 6px',
+                      borderRadius: '9999px',
+                      backgroundColor: isSelected ? 'rgba(255,255,255,0.25)' : '#f1f5f9',
+                      color: isSelected ? '#ffffff' : '#475569',
+                      fontFamily: 'monospace',
+                      fontWeight: 700,
+                    }}
+                  >
+                    40m
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+          <span style={{ fontSize: '11px', color: '#64748b', fontWeight: '600' }}>
+            Viewing Period {(activePeriodIndex ?? 0) + 1} of {allPlans.length} (40 Min Lesson)
+          </span>
+        </div>
+      )}
 
       {/* Optional Guardrails Summary Boxes */}
       {(factCheck || alignment) && (

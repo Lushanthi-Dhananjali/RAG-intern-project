@@ -1,0 +1,91 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 1 of 1)",
+  "competence": "Broad curriculum competency standard",
+  "competence_level": "8.6.3",
+  "lesson": "Explains that all employments bring about social development: Station Jigsaw Synthesis Matrix: Competency Level 8.6.3",
+  "unique_learning_outcome": [
+    "Explains that all employments bring about social development.",
+    "Explains that all employments contribute to fulfilling social needs."
+  ],
+  "the_entrance": "Detailed 5-minute introduction: teacher and student actions linking prior knowledge to this period topic and activity... Students review the importance of different occupations in society, exploring how they contribute to fulfilling social needs and bringing about social development. Teacher facilitates a brief discussion on the role of different occupations in society, highlighting the interconnectedness of various jobs.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Teacher introduces the Station Jigsaw Synthesis Matrix activity, explains the role of each student, and distributes the assigned roles (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer).",
+      "student_activities": "Students arrange into cooperative groups, assign designated roles, review inquiry cards, and begin collaborative planning...",
+      "learning_teaching_method": "Task Orientation & Guided Inquiry Launch",
+      "learning_teaching_aids": "Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Teacher circulates as facilitator among groups, observes peer interactions, scaffolds challenging concepts with probing questions, and ensures active participation without lecturing...",
+      "student_activities": "Students actively execute the chosen activity (e.g., conducting mock council session, exploratory school-walk survey, analyzing Sri Lankan community issues, or solving civic challenges in groups) using assigned roles...",
+      "learning_teaching_method": "Active Student-Centered Investigation / Simulation / Drama / School-Walk",
+      "learning_teaching_aids": "Worksheets, roleplay cue cards, chart papers, colored markers",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "Teacher moderates student presentations, facilitates constructive peer review, and synthesizes key student discoveries directly against the period's learning outcomes...",
+      "student_activities": "Spokespersons present group solutions or roleplay outcomes; class peers ask questions, provide constructive feedback, and summarize key takeaways in their notebooks...",
+      "learning_teaching_method": "Spokesperson Presentation & Plenary Synthesis",
+      "learning_teaching_aids": "Student output posters, whiteboard, peer assessment checklist",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    }
+  ],
+  "summary": "Consolidation and synthesis of key concepts...",
+  "assessment_and_feedback_whole_lesson": "Final closure formative assessment criteria...",
+  "post_activity": "5-minute in-class assignment: Five-minute in-class assignment or concluding task... Students create a shared civic artifact (e.g., poster, diagram, or public information message) summarizing their group's findings on how all employments bring about social development.",
+  "information_sources": [
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
+  ],
+  "attachments": [],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 1,
+  "total_periods": 1,
+  "selected_activity": "Activity: Station Jigsaw Synthesis Matrix: Competency Level 8.6.3\nApproach: Students use station jigsaw synthesis matrix to explore 'Explains that all employments bring about social development.'. Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.\nExpected output: A group civic proposal, diagram, or public information message.\nGrouping: 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+  "selected_activity_title": "Station Jigsaw Synthesis Matrix: Competency Level 8.6.3",
+  "custom_teacher_activity": null,
+  "activity_options": [
+    {
+      "id": "option_1",
+      "title": "Station Jigsaw Synthesis Matrix: Competency Level 8.6.3",
+      "pedagogy_type": "Collaborative Design",
+      "description": "Students use station jigsaw synthesis matrix to explore 'Explains that all employments bring about social development.'. Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "learning_outcomes_addressed": [
+        "Explains that all employments bring about social development.",
+        "Explains that all employments contribute to fulfilling social needs."
+      ],
+      "student_action_summary": "Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "teacher_facilitation_summary": "Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.",
+      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks",
+        "Chart Paper"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "A group civic proposal, diagram, or public information message.",
+      "creative_assessment_preview": "Groups give one-sentence feedback connecting a peer proposal to the outcome.",
+      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "Explains that all employments bring about social development.",
+      "Explains that all employments contribute to fulfilling social needs."
+    ]
+  },
+  "filename": "Grade_8_comp_8_6_3_p1.json"
+}

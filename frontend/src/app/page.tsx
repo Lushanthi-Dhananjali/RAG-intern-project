@@ -163,6 +163,7 @@ export default function Home() {
   const [activeViewTab, setActiveViewTab] = useState<"viewer" | "editor">("viewer");
   const [planData, setPlanData] = useState<LessonPlanResponse | null>(null);
   const [multiPeriodPlans, setMultiPeriodPlans] = useState<LessonPlanSchemaDto[]>([]);
+  const [selectedClassicPeriodIndex, setSelectedClassicPeriodIndex] = useState<number>(0);
 
   // Storage, Modal & Notifications
   const [currentPlanFilename, setCurrentPlanFilename] = useState<string | null>(null);
@@ -468,12 +469,24 @@ export default function Home() {
 
       const result: LessonPlanResponse = await fetchLessonPlan(payload);
       setPlanData(result);
-      const plans =
+      const rawPlans =
         Array.isArray(result.lesson_plans) && result.lesson_plans.length > 0
           ? result.lesson_plans
           : [result.lesson_plan as any];
-      setMultiPeriodPlans(plans as any);
-      setCurrentPlanFilename(null);
+      
+      const enrichedPlans = rawPlans.map((p: any, idx: number) => {
+        const pNum = p.period_number ?? (idx + 1);
+        const fname =
+          p.filename ||
+          (rawPlans.length > 1 || p.period_number != null
+            ? `${(p.grade || formData.gradeLevel || 'Grade 8').replace(/\s+/g, '_')}_comp_${(p.competence_level || competency).replace(/\./g, '_')}_p${pNum}.json`
+            : `${(p.grade || formData.gradeLevel || 'Grade 8').replace(/\s+/g, '_')}_comp_${(p.competence_level || competency).replace(/\./g, '_')}.json`);
+        return { ...p, filename: fname };
+      });
+
+      setMultiPeriodPlans(enrichedPlans as any);
+      setSelectedClassicPeriodIndex(0);
+      setCurrentPlanFilename(enrichedPlans[0]?.filename || null);
       setActiveViewTab("viewer");
     } catch (err: any) {
       setError(err.message || "Failed to generate lesson plan. Ensure backend and Ollama are running.");
@@ -567,6 +580,10 @@ export default function Home() {
       alignment_report: null,
     });
     setMultiPeriodPlans([savedPlan as any]);
+    setSelectedClassicPeriodIndex(0);
+    if (savedPlan.filename || (savedPlan as any).file_name) {
+      setCurrentPlanFilename(savedPlan.filename || (savedPlan as any).file_name);
+    }
     setGenerationMode("standard");
     setActiveViewTab("viewer");
     setActiveMainTab("generator");
@@ -592,6 +609,20 @@ export default function Home() {
       setIsDeleting(false);
     }
   };
+
+  const activePlanToView =
+    multiPeriodPlans && multiPeriodPlans.length > selectedClassicPeriodIndex
+      ? multiPeriodPlans[selectedClassicPeriodIndex]
+      : planData?.lesson_plan;
+
+  const resolvedActiveFilename =
+    activePlanToView?.filename ||
+    currentPlanFilename ||
+    (activePlanToView && activePlanToView.period_number != null
+      ? `${(activePlanToView.grade || 'Grade 8').replace(/\s+/g, '_')}_comp_${(activePlanToView.competence_level || '8.1.1').replace(/\./g, '_')}_p${activePlanToView.period_number}.json`
+      : activePlanToView
+      ? `${(activePlanToView.grade || 'Grade 8').replace(/\s+/g, '_')}_comp_${(activePlanToView.competence_level || '8.1.1').replace(/\./g, '_')}.json`
+      : undefined);
 
   if (authStatus !== "authenticated") {
     return (
@@ -1910,97 +1941,60 @@ export default function Home() {
                 </div>
               </div>
             ) : planData ? (
-              <div style={{ maxWidth: "860px", margin: "0 auto", width: "100%", display: "flex", flexDirection: "column" }}>
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 4px", marginBottom: "16px" }}>
-                  <div style={{ display: "flex", gap: "8px" }}>
-                    <button
-                      type="button"
-                      onClick={() => setActiveViewTab("viewer")}
-                      style={{
-                        padding: "7px 16px",
-                        borderRadius: "10px",
-                        fontSize: "12px",
-                        fontWeight: "700",
-                        cursor: "pointer",
-                        border: "none",
-                        backgroundColor: activeViewTab === "viewer" ? "#4f46e5" : "#e2e8f0",
-                        color: activeViewTab === "viewer" ? "#ffffff" : "#334155",
-                      }}
-                    >
-                      📄 Table Viewer
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setActiveViewTab("editor")}
-                      style={{
-                        padding: "7px 16px",
-                        borderRadius: "10px",
-                        fontSize: "12px",
-                        fontWeight: "700",
-                        cursor: "pointer",
-                        border: "none",
-                        backgroundColor: activeViewTab === "editor" ? "#4f46e5" : "#e2e8f0",
-                        color: activeViewTab === "editor" ? "#ffffff" : "#334155",
-                      }}
-                    >
-                      ✏️ Structural Editor
-                    </button>
-                  </div>
-                  <span style={{ fontSize: "11px", color: "#64748b", fontWeight: "600" }}>
-                    LEARN Practice Teaching Layout
-                  </span>
-                </div>
-
-                {activeViewTab === "viewer" && (
+              <div style={{ maxWidth: "860px", margin: "0 auto", width: "100%" }}>
+                {activeViewTab === "viewer" ? (
                   <>
-                    {multiPeriodPlans && multiPeriodPlans.length > 1 ? (
-                      <MultiPeriodPlanViewer
-                        plans={multiPeriodPlans}
-                        onNewPlan={() => {
-                          setPlanData(null);
-                          setMultiPeriodPlans([]);
-                        }}
-                        onEditPlan={(chosenPlan) => {
-                          setPlanData((prev) =>
-                            prev ? { ...prev, lesson_plan: chosenPlan as any } : null
-                          );
-                          setActiveViewTab("editor");
-                        }}
-                      />
-                    ) : (
-                      <LessonPlanViewer
-                        plan={planData.lesson_plan}
-                        factCheck={planData.fact_check_report}
-                        alignment={planData.alignment_report}
-                        filename={currentPlanFilename || undefined}
-                        onEditInGenerator={() => setActiveViewTab("editor")}
-                        onDeletePlan={currentPlanFilename ? () => setIsDeleteModalOpen(true) : undefined}
-                      />
-                    )}
+                    <LessonPlanViewer
+                      plan={activePlanToView}
+                      factCheck={planData.fact_check_report}
+                      alignment={planData.alignment_report}
+                      filename={resolvedActiveFilename}
+                      allPlans={multiPeriodPlans && multiPeriodPlans.length > 1 ? multiPeriodPlans : undefined}
+                      activePeriodIndex={selectedClassicPeriodIndex}
+                      onPeriodChange={(newIdx) => {
+                        setSelectedClassicPeriodIndex(newIdx);
+                        if (multiPeriodPlans && multiPeriodPlans[newIdx]?.filename) {
+                          setCurrentPlanFilename(multiPeriodPlans[newIdx].filename!);
+                        }
+                      }}
+                      activeViewTab={activeViewTab}
+                      onViewTabChange={setActiveViewTab}
+                      onDeletePlan={resolvedActiveFilename ? () => setIsDeleteModalOpen(true) : undefined}
+                    />
 
                     <DeleteConfirmModal
                       isOpen={isDeleteModalOpen}
-                      filename={currentPlanFilename || ""}
-                      planTitle={planData?.lesson_plan?.lesson || planData?.lesson_plan?.competence || ""}
-                      grade={planData?.lesson_plan?.grade}
-                      subject={planData?.lesson_plan?.subject}
-                      competenceLevel={planData?.lesson_plan?.competence_level}
-                      timeAllocation={planData?.lesson_plan?.time_allocation}
+                      filename={resolvedActiveFilename || ""}
+                      planTitle={activePlanToView?.lesson || activePlanToView?.competence || ""}
+                      grade={activePlanToView?.grade}
+                      subject={activePlanToView?.subject}
+                      competenceLevel={activePlanToView?.competence_level}
+                      timeAllocation={activePlanToView?.time_allocation}
                       isDeleting={isDeleting}
                       onConfirm={handleDeleteCurrentPlan}
                       onCancel={() => setIsDeleteModalOpen(false)}
                     />
                   </>
-                )}
-
-                {activeViewTab === "editor" && (
+                ) : (
                   <StructuralEditor
-                    initialPlan={planData.lesson_plan as any}
-                    filename={currentPlanFilename || undefined}
-                    onSave={(updated) => {
-                      setPlanData((prev) => (prev ? { ...prev, lesson_plan: updated as any } : null));
-                      setNotificationMessage("Updated lesson plan saved successfully!");
-                      setTimeout(() => setNotificationMessage(null), 3000);
+                    initialPlan={activePlanToView as any}
+                    filename={resolvedActiveFilename}
+                    activeViewTab={activeViewTab}
+                    onViewTabChange={setActiveViewTab}
+                    onSave={(updated, savedFilename) => {
+                      const fname = savedFilename || resolvedActiveFilename;
+                      const planWithFname = { ...updated, filename: fname };
+                      setPlanData((prev) => (prev ? { ...prev, lesson_plan: planWithFname as any } : null));
+                      if (multiPeriodPlans && multiPeriodPlans.length > 0) {
+                        const updatedList = [...multiPeriodPlans];
+                        updatedList[selectedClassicPeriodIndex] = planWithFname as any;
+                        setMultiPeriodPlans(updatedList);
+                      }
+                      if (fname) {
+                        setCurrentPlanFilename(fname);
+                      }
+                      setNotificationMessage(`Lesson plan "${fname || 'Plan'}" saved successfully!`);
+                      setTimeout(() => setNotificationMessage(null), 3500);
                     }}
                   />
                 )}

@@ -1,66 +1,110 @@
 {
   "grade": "Grade 8",
   "subject": "Civic Education",
-  "time_allocation": "80 Minutes (2 Periods)",
-  "competence": "Controls the emotions in such a way that it safeguards the existence of a democratic society.",
+  "time_allocation": "40 Minutes (Period 1 of 2)",
+  "competence": "Broad curriculum competency standard",
   "competence_level": "8.2.3",
-  "lesson": "Competency Level 8.2.3: Competency 8.2.3",
+  "lesson": "Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society: Mock Local Council / Pradeshiya Sabha Session: Competency 8.2.3",
   "unique_learning_outcome": [
-    "Describes the nature of various kinds of emotions occurring in a person.",
-    "Explains how the emotions influence personal behaviour in varying ways.",
-    "Controlling emotions positively as a democratic citizen helps the wellbeing of the person as well as the society."
+    "Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society.",
+    "Describes giving examples the nature of various kinds of emotions occuring in a person."
   ],
-  "the_entrance": "Different emotions can be expressed as happiness, sorrow, fear, anger, and love.",
+  "the_entrance": "Detailed 5-minute introduction: teacher and student actions linking prior knowledge to this period topic and activity... Students are introduced to the concept of emotions and their impact on personal behavior. The teacher explains the scenario and objectives of the mock local council/pradeshiya sabha session.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "Introduce the concept of different emotions and their expressions.",
-      "student_activities": "Students will identify and describe the different emotions.",
-      "learning_teaching_method": "Exposition",
-      "learning_teaching_aids": "Textbook diagrams and charts",
-      "assessment_and_feedback": "Formative assessment through class discussion",
       "time_minutes": 10,
-      "other": "Blackboard arrangement"
+      "learning_teaching_method": "Task Orientation & Guided Inquiry Launch",
+      "teacher_activities": "Teacher explains the scenario and objectives of the mock local council/pradeshiya sabha session, distributes task materials, and assigns student roles as a facilitator.",
+      "student_activities": "Students arrange into cooperative groups, assign designated roles, review inquiry cards, and begin collaborative planning.",
+      "learning_teaching_aids": "Task assignment cards, role description sheets, inquiry scenario prompts",
+      "assessment_and_feedback": "Teacher observation",
+      "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "Facilitate student group discussions on the consequences of emotions.",
-      "student_activities": "Students will discuss and present the consequences of emotions.",
-      "learning_teaching_method": "Cooperative Group Work",
-      "learning_teaching_aids": "Worksheets, task cards",
-      "assessment_and_feedback": "Monitoring group progress and correcting misconceptions",
-      "time_minutes": 25,
-      "other": "Differentiation or group roles"
+      "time_minutes": 10,
+      "learning_teaching_method": "Active Student-Centered Investigation / Simulation / Drama / School-Walk",
+      "teacher_activities": "Teacher circulates as facilitator among groups, observes peer interactions, scaffolds challenging concepts with probing questions, and ensures active participation without lecturing.",
+      "student_activities": "Students actively execute the chosen activity (e.g., conducting mock council session, exploratory school-walk survey, analyzing Sri Lankan community issues, or solving civic challenges in groups) using assigned roles.",
+      "learning_teaching_aids": "Worksheets, roleplay cue cards, chart papers, colored markers",
+      "assessment_and_feedback": "Teacher observation",
+      "other": ""
     },
     {
       "step_number": 3,
-      "teacher_activities": "Guide student presentations on the importance of controlling emotions optimistically.",
-      "student_activities": "Students will present and discuss the importance of controlling emotions.",
-      "learning_teaching_method": "Student Presentations",
-      "learning_teaching_aids": "Presentation sheets, whiteboard",
-      "assessment_and_feedback": "Peer feedback and teacher clarification",
-      "time_minutes": 25,
-      "other": "None"
-    },
-    {
-      "step_number": 4,
-      "teacher_activities": "Consolidate learning and formative evaluation.",
-      "student_activities": "Students will answer targeted evaluation questions.",
-      "learning_teaching_method": "Review and Synthesis",
-      "learning_teaching_aids": "Evaluation questions sheet",
-      "assessment_and_feedback": "Summative check for all learning outcomes",
-      "time_minutes": 20,
-      "other": "None"
+      "time_minutes": 10,
+      "learning_teaching_method": "Spokesperson Presentation & Plenary Synthesis",
+      "teacher_activities": "Teacher moderates student presentations, facilitates constructive peer review, and synthesizes key student discoveries directly against the period's learning outcomes.",
+      "student_activities": "Spokespersons present group solutions or roleplay outcomes; class peers ask questions, provide constructive feedback, and summarize key takeaways in their notebooks.",
+      "learning_teaching_aids": "Student output posters, whiteboard, peer assessment checklist",
+      "assessment_and_feedback": "Teacher observation",
+      "other": ""
     }
   ],
-  "summary": "Recap of key findings and core principles: Controlling emotions positively as a democratic citizen helps the wellbeing of the person as well as the society.",
-  "assessment_and_feedback_whole_lesson": "Summative check or exit questions addressing all learning outcomes.",
-  "post_activity": "Concrete homework or workbook exercise.",
+  "summary": "Consolidation and synthesis of key concepts...",
+  "assessment_and_feedback_whole_lesson": "Final closure formative assessment criteria...",
+  "post_activity": "5-minute in-class assignment: Each student completes a short exit response explaining one finding about “Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society” using evidence or an example from Mock Local Council / Pradeshiya Sabha Session: Competency 8.2.3. The teacher reviews responses for an accurate link to the period outcome.",
   "information_sources": [
-    "National Institute of Education (NIE) Teacher Instructional Guide",
-    "Grade 8 Pupil's Textbook"
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
   ],
-  "attachments": [
-    "Worksheet on Emotions and Their Consequences"
-  ]
+  "attachments": [],
+  "title": "Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society: Mock Local Council / Pradeshiya Sabha Session: Competency 8.2.3",
+  "topic": "Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society: Mock Local Council / Pradeshiya Sabha Session: Competency 8.2.3",
+  "grade_level": "Grade 8",
+  "educational_goal_or_standard": "Broad curriculum competency standard",
+  "estimated_duration_minutes": 30,
+  "learning_outcomes": [
+    {
+      "id": 1,
+      "description": "Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society.",
+      "blooms_taxonomy_level": "Apply"
+    },
+    {
+      "id": 2,
+      "description": "Describes giving examples the nature of various kinds of emotions occuring in a person.",
+      "blooms_taxonomy_level": "Apply"
+    }
+  ],
+  "procedures": [
+    {
+      "step_number": 1,
+      "phase_title": "Task Orientation & Guided Inquiry Launch",
+      "duration_minutes": 10,
+      "teacher_action": "Teacher explains the scenario and objectives of the mock local council/pradeshiya sabha session, distributes task materials, and assigns student roles as a facilitator.",
+      "student_action": "Students arrange into cooperative groups, assign designated roles, review inquiry cards, and begin collaborative planning."
+    },
+    {
+      "step_number": 2,
+      "phase_title": "Active Student-Centered Investigation / Simulation / Drama / School-Walk",
+      "duration_minutes": 10,
+      "teacher_action": "Teacher circulates as facilitator among groups, observes peer interactions, scaffolds challenging concepts with probing questions, and ensures active participation without lecturing.",
+      "student_action": "Students actively execute the chosen activity (e.g., conducting mock council session, exploratory school-walk survey, analyzing Sri Lankan community issues, or solving civic challenges in groups) using assigned roles."
+    },
+    {
+      "step_number": 3,
+      "phase_title": "Spokesperson Presentation & Plenary Synthesis",
+      "duration_minutes": 10,
+      "teacher_action": "Teacher moderates student presentations, facilitates constructive peer review, and synthesizes key student discoveries directly against the period's learning outcomes.",
+      "student_action": "Spokespersons present group solutions or roleplay outcomes; class peers ask questions, provide constructive feedback, and summarize key takeaways in their notebooks."
+    }
+  ],
+  "materials": [
+    {
+      "item_name": "grade_8_civic_teacher_guide.pdf",
+      "quantity": "1",
+      "is_digital": false
+    },
+    {
+      "item_name": "grade_8_civic_textbook.pdf",
+      "quantity": "1",
+      "is_digital": false
+    }
+  ],
+  "verification": {
+    "formative_assessment": "Final closure formative assessment criteria...",
+    "summative_assessment": "Consolidation and synthesis of key concepts...",
+    "alignment_check": "Aligned with Sri Lankan NIE & LEARN standards"
+  }
 }
