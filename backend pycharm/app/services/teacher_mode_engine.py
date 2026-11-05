@@ -58,47 +58,58 @@ CLASSROOM LOGISTICS & ROLES ({student_count} Students):
 - Assigned Student Roles: {roles_str}.
 - Active engagement mandate: No passive spectators. Every student must execute their assigned role.
 
-6. REQUIRED JSON SCHEMA KEYS - YOUR OUTPUT JSON MUST CONTAIN EXACTLY THESE FIELD NAMES (PROVIDING 3 DEVELOPMENT STEPS):
+6. REQUIRED JSON FORMAT:
+You MUST respond with a valid JSON object matching this schema.
+CRITICAL ANTI-BOILERPLATE MANDATE:
+- DO NOT output ellipsis ("...").
+- DO NOT copy placeholder text or output generic descriptions like "(e.g., ...)".
+- DO NOT output identical text across different periods or lesson plans.
+- Seamlessly integrate the teacher's custom pedagogical concept: "{teacher_custom_activity}".
+- Provide rich, concrete, creative details describing actual Sri Lankan classroom dialogues, specific task cards, specific physical artifacts, and dynamic student collaboration.
+- Each development step must be detailed (3-5 sentences describing concrete student actions and teacher facilitation).
+- The 'the_entrance' MUST be a creative 5-minute motivational hook connecting an authentic Sri Lankan situation to this specific period's outcome and the teacher's custom activity.
+- The 'post_activity' MUST be a creative, highly engaging 5-minute active in-class evaluation (such as a 2-line rhyme/verse recitation, a rapid team quiz/competition, a quick concept drawing/sketch challenge, a pass-the-parcel concept ball, or a statement display & vote).
+
 {{
   "grade": "{grade_level}",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period {current_period} of {total_periods})",
-  "competence": "Broad curriculum competency standard",
+  "competence": "Broad curriculum competency standard in plain English",
   "competence_level": "Curriculum Standard",
   "lesson": "{lesson_topic}",
-  "the_entrance": "Detailed 5-minute introduction: teacher and student actions linking prior knowledge to this period topic and activity...",
+  "the_entrance": "<string: creative 5-minute motivational introduction specifically tailored to this period and the custom activity>",
   "lesson_development_steps": [
     {{
       "step_number": 1,
       "time_minutes": 10,
-      "learning_teaching_method": "Task Orientation & Guided Inquiry Launch",
-      "learning_teaching_aids": "Task cards, worksheets, role sheets",
-      "teacher_activities": "Teacher introduces the custom scenario, outlines objectives, and assigns student roles as facilitator...",
-      "student_activities": "Students arrange in cooperative groups, assume assigned roles, and analyze task prompts...",
+      "learning_teaching_method": "<string: pedagogical method for step 1, e.g. Task Orientation & Guided Inquiry Launch>",
+      "learning_teaching_aids": "<string: specific physical materials and task cards for step 1>",
+      "teacher_activities": "<string: detailed facilitator actions introducing the custom scenario and organizing student roles>",
+      "student_activities": "<string: detailed active student actions starting the investigation for this period>",
       "assessment_and_feedback": ""
     }},
     {{
       "step_number": 2,
       "time_minutes": 10,
-      "learning_teaching_method": "Active Student-Centered Execution / Simulation",
-      "learning_teaching_aids": "Activity materials, props, chart papers, markers",
-      "teacher_activities": "Teacher circulates among student groups, facilitates progress, scaffolds challenges, and monitors engagement...",
-      "student_activities": "Students actively perform the custom activity in their teams, discussing, creating, and recording outputs...",
+      "learning_teaching_method": "<string: method name reflecting the custom activity>",
+      "learning_teaching_aids": "<string: specific materials, props, worksheets, or artifacts used in this activity>",
+      "teacher_activities": "<string: detailed facilitator actions, guiding questions, and scaffolding during this custom activity>",
+      "student_activities": "<string: detailed actions of students actively performing the custom activity in their teams>",
       "assessment_and_feedback": ""
     }},
     {{
       "step_number": 3,
       "time_minutes": 10,
-      "learning_teaching_method": "Presentation, Peer Review & Plenary Synthesis",
-      "learning_teaching_aids": "Presentation boards, whiteboard, checklist",
-      "teacher_activities": "Teacher coordinates spokesperson presentations, moderates peer feedback, and consolidates findings...",
-      "student_activities": "Spokespersons present group work; classmates question, provide constructive peer review, and note key ideas...",
+      "learning_teaching_method": "<string: presentation, peer review and synthesis method name>",
+      "learning_teaching_aids": "<string: presentation boards, whiteboard, checklist>",
+      "teacher_activities": "<string: detailed teacher moderation of student team presentations and synthesis>",
+      "student_activities": "<string: detailed student actions presenting group work and discussing peer feedback>",
       "assessment_and_feedback": ""
     }}
   ],
-  "summary": "Consolidation and synthesis of key concepts...",
-  "assessment_and_feedback_whole_lesson": "Final closure formative assessment criteria...",
-  "post_activity": "Five-minute in-class assignment or concluding task..."
+  "summary": "<string: 2-minute synthesis of core student discoveries on this period's outcomes>",
+  "assessment_and_feedback_whole_lesson": "<string: formative feedback criteria for this lesson>",
+  "post_activity": "<string: creative 5-minute in-class assessment: quiz, drawing, rhyme, or voting>"
 }}
 
 Respond ONLY with valid JSON conforming strictly to the above keys.<|eot_id|>

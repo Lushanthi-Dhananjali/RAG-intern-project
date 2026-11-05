@@ -260,6 +260,10 @@ def normalize_lesson_plan_dict(data: Any) -> Dict[str, Any]:
     clean_steps = []
     if isinstance(steps, list) and len(steps) > 0:
         for idx, s in enumerate(steps, 1):
+            if hasattr(s, "model_dump"):
+                s = s.model_dump()
+            elif hasattr(s, "dict"):
+                s = s.dict()
             if isinstance(s, dict):
                 clean_s = {
                     "step_number": s.get("step_number") or idx,

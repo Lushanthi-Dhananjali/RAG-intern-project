@@ -222,65 +222,124 @@ class TimingGuardrailEngine:
             re.IGNORECASE,
         )
 
+        # Strip literal prompt boilerplate prefixes from entrance, post_activity, and summary if present
+        if plan.the_entrance:
+            plan.the_entrance = re.sub(r"^<string:\s*[^>]+>\s*", "", plan.the_entrance.strip(), flags=re.IGNORECASE).strip()
+        if plan.post_activity:
+            plan.post_activity = re.sub(r"^<string:\s*[^>]+>\s*", "", plan.post_activity.strip(), flags=re.IGNORECASE).strip()
+        if plan.summary:
+            plan.summary = re.sub(r"^<string:\s*[^>]+>\s*", "", plan.summary.strip(), flags=re.IGNORECASE).strip()
+        if plan.assessment_and_feedback_whole_lesson:
+            plan.assessment_and_feedback_whole_lesson = re.sub(r"^<string:\s*[^>]+>\s*", "", plan.assessment_and_feedback_whole_lesson.strip(), flags=re.IGNORECASE).strip()
+        if plan.the_entrance:
+            plan.the_entrance = re.sub(
+                r"^Detailed 5-minute introduction:\s*(?:teacher and student actions linking prior knowledge to this period topic and activity(?:\.\.\.)?)?\s*",
+                "",
+                plan.the_entrance.strip(),
+                flags=re.IGNORECASE
+            ).strip()
+            plan.the_entrance = re.sub(
+                r"^Creative 5-minute motivational hook:\s*",
+                "",
+                plan.the_entrance.strip(),
+                flags=re.IGNORECASE
+            ).strip()
+
+        if plan.post_activity:
+            plan.post_activity = re.sub(
+                r"^(?:5-minute in-class assignment:\s*)?Five-minute in-class assignment or concluding task(?:\.\.\.)?\s*",
+                "",
+                plan.post_activity.strip(),
+                flags=re.IGNORECASE
+            ).strip()
+            plan.post_activity = re.sub(
+                r"^Creative 5-minute in-class assignment\s*(?:\([^)]*\))?:\s*",
+                "",
+                plan.post_activity.strip(),
+                flags=re.IGNORECASE
+            ).strip()
+
         def needs_repair(text: Optional[str], phase: str) -> bool:
             normalized = (text or "").strip()
-            if len(normalized) < 30 or unavailable_text.search(normalized):
+            if len(normalized) < 25 or unavailable_text.search(normalized):
+                return True
+            if normalized in ("...", "...", "string", "<string>") or normalized.endswith("..."):
+                if len(normalized) < 45 or "linking prior knowledge" in normalized or "concluding task" in normalized:
+                    return True
+            if "Teacher presents everyday scenario and motivational hook" in normalized:
+                return True
+            if "Each student writes two key responsibilities on their reflection sheet" in normalized:
                 return True
             if phase == "introduction":
-                has_teacher = "teacher" in normalized.casefold()
-                has_students = any(term in normalized.casefold() for term in ("students", "learners"))
-                return not (has_teacher and has_students) or (
-                    bool(relevant_terms)
-                    and not any(term in normalized.casefold() for term in relevant_terms)
-                )
-            return (
-                any(
+                return False
+            if phase == "assignment":
+                if any(
                     phrase in normalized.casefold()
                     for phrase in ("homework", "take-home", "at home", "next lesson", "outside class")
-                )
-                or not any(
-                    verb in normalized.casefold()
-                    for verb in (
-                        "write", "draw", "answer", "complete", "exit", "quiz", "identify",
-                        "explain", "state", "share", "prepare", "create", "record", "submit",
-                        "respond", "describe",
-                    )
-                )
-                or (
-                    bool(relevant_terms)
-                    and not any(term in normalized.casefold() for term in relevant_terms)
-                )
-            )
+                ):
+                    return True
+                return False
+            return False
 
         if needs_repair(plan.the_entrance, "introduction"):
-            plan.the_entrance = (
-                f"5-minute introduction: The teacher writes or reads “{focus}” and asks students "
-                "to name one example they have seen in everyday life. Students share brief responses; "
-                f"the teacher connects their examples to {activity} and explains how it will help "
-                "them explore this period's outcome."
-            )
-        elif not re.search(r"\b5\s*[- ]?minutes?\b", plan.the_entrance, re.IGNORECASE):
+            if requested_period == 1:
+                plan.the_entrance = (
+                    f"5-minute motivational entrance: The teacher presents an authentic Sri Lankan real-life situation related to '{focus}' "
+                    "and invites students to share an everyday observation from their home or community. Students discuss briefly in pairs, "
+                    f"and the teacher connects their real-world observations directly to today's {activity}."
+                )
+            elif requested_period == 2:
+                plan.the_entrance = (
+                    f"5-minute motivational entrance: The teacher reviews key findings from Period 1 with a quick dilemma question on '{focus}'. "
+                    f"Students share reflections from their notebooks, and the teacher transitions into the collaborative inquiry phase of {activity}."
+                )
+            else:
+                plan.the_entrance = (
+                    f"5-minute motivational entrance: The teacher introduces an engaging community inquiry question on '{focus}' affecting "
+                    f"Sri Lankan society. Students briefly brainstorm in their teams, and the teacher sets the stage for today's active execution of {activity}."
+                )
+        elif not re.search(r"5\s*[- ]?minutes?", plan.the_entrance, re.IGNORECASE):
             plan.the_entrance = f"5-minute introduction: {plan.the_entrance.strip()}"
 
         if needs_repair(plan.post_activity, "assignment"):
-            plan.post_activity = (
-                f"5-minute in-class assignment: Each student completes a short exit response explaining "
-                f"one finding about “{focus}” using evidence or an example from {activity}. "
-                "The teacher reviews responses for an accurate link to the period outcome."
-            )
-        elif not re.search(r"\b5\s*[- ]?minutes?\b", plan.post_activity, re.IGNORECASE):
+            if requested_period == 1:
+                plan.post_activity = (
+                    f"5-minute creative in-class assignment: Rapid Team Mini-Quiz. The teacher presents 3 quick scenario questions about '{focus}', "
+                    f"and student teams hold up colored cards to vote and give a 1-sentence justification using evidence from {activity}."
+                )
+            elif requested_period == 2:
+                plan.post_activity = (
+                    f"5-minute creative in-class assignment: 2-Line Rhyming Verse / Quick Sketch Challenge. Each cooperative team creates a 2-line rhyming "
+                    f"couplet or a quick symbolic sketch illustrating how '{focus}' was demonstrated during {activity}, then shares it with the class."
+                )
+            else:
+                plan.post_activity = (
+                    f"5-minute creative in-class assignment: Pass-the-Parcel Concept Ball & Statement Vote. A concept ball is passed while a beat plays; "
+                    f"the student holding the ball responds to a quick real-life dilemma on '{focus}', followed by a class consensus vote."
+                )
+        elif not re.search(r"5\s*[- ]?minutes?", plan.post_activity, re.IGNORECASE):
             plan.post_activity = f"5-minute in-class assignment: {plan.post_activity.strip()}"
 
-        if not plan.assessment_and_feedback_whole_lesson or len(plan.assessment_and_feedback_whole_lesson.strip()) < 10 or unavailable_text.search(plan.assessment_and_feedback_whole_lesson):
+        if (
+            not plan.assessment_and_feedback_whole_lesson
+            or len(plan.assessment_and_feedback_whole_lesson.strip()) < 10
+            or unavailable_text.search(plan.assessment_and_feedback_whole_lesson)
+            or "final closure formative" in plan.assessment_and_feedback_whole_lesson.lower()
+        ):
             plan.assessment_and_feedback_whole_lesson = (
-                f"Use the student's five-minute assignment response to check understanding of “{focus}” "
-                "and give one concise correction or affirmation."
+                f"3-minute formative feedback: Formatively evaluate student contributions and understanding of '{focus}' during {activity} "
+                "and the 5-minute closing check, offering immediate verbal affirmation and constructive feedback."
             )
 
-        if not plan.summary or len(plan.summary.strip()) < 15 or unavailable_text.search(plan.summary):
+        if (
+            not plan.summary
+            or len(plan.summary.strip()) < 15
+            or unavailable_text.search(plan.summary)
+            or "consolidation and synthesis" in plan.summary.lower()
+        ):
             plan.summary = (
-                f"Synthesize key student findings from {activity}, emphasizing the core principles "
-                f"of “{focus}” and clarifying any lingering misconceptions."
+                f"2-minute consolidation: Synthesize core student findings from {activity}, highlighting how '{focus}' applies to real Sri Lankan "
+                "community life and resolving any conceptual misconceptions."
             )
 
         if plan.attachments:
@@ -289,10 +348,11 @@ class TimingGuardrailEngine:
                 if not unavailable_text.search(att) and len(att.strip()) >= 3
             ]
 
-        # 5. Sanitize all developmental steps from URLs and placeholders
+        # 5. Sanitize all developmental steps from URLs and placeholders - PRESERVE LLM GENERATED CONTENT
         for idx, step in enumerate(plan.lesson_development_steps, start=1):
-            # Sanitize learning_teaching_method
+            # Sanitize learning_teaching_method: keep LLM method, only clean if missing/URL
             method_str = (step.learning_teaching_method or "").strip()
+            method_str = re.sub(r"^<string:\s*[^>]+>\s*", "", method_str, flags=re.IGNORECASE).strip()
             if not method_str or len(method_str) < 3 or unavailable_text.search(method_str):
                 if "learning-teaching-method" in method_str:
                     slug = re.sub(r"^https?://[^\s/]+/learning-teaching-method/?", "", method_str)
@@ -302,10 +362,13 @@ class TimingGuardrailEngine:
                 elif idx == 2:
                     step.learning_teaching_method = activity if len(activity) < 50 else "Interactive Inquiry & Problem-Solving"
                 else:
-                    step.learning_teaching_method = "Plenary Presentation & Review"
+                    step.learning_teaching_method = "Spokesperson Presentation, Plenary Synthesis & Peer Review"
+            else:
+                step.learning_teaching_method = method_str
 
-            # Sanitize learning_teaching_aids
+            # Sanitize learning_teaching_aids: keep LLM aids, only clean if missing/URL
             aids_str = (step.learning_teaching_aids or "").strip()
+            aids_str = re.sub(r"^<string:\s*[^>]+>\s*", "", aids_str, flags=re.IGNORECASE).strip()
             if not aids_str or len(aids_str) < 3 or unavailable_text.search(aids_str):
                 if "learning-teaching-aids" in aids_str:
                     slug = re.sub(r"^https?://[^\s/]+/learning-teaching-aids/?", "", aids_str)
@@ -316,14 +379,19 @@ class TimingGuardrailEngine:
                     step.learning_teaching_aids = "Activity scenario cards, observation sheets, chart paper"
                 else:
                     step.learning_teaching_aids = "Presentation board, student summary sheets, whiteboard"
+            else:
+                step.learning_teaching_aids = aids_str
 
-            # Sanitize teacher_activities
+            # Sanitize teacher_activities: PRESERVE LLM GENERATED CONTENT! DO NOT HARDCODE OR OVERWRITE!
             t_str = (step.teacher_activities or "").strip()
-            if not t_str or len(t_str) < 20 or unavailable_text.search(t_str):
+            t_str = re.sub(r"^<string:\s*[^>]+>\s*", "", t_str, flags=re.IGNORECASE)
+            t_str = re.sub(r"\.\.\.$", "", t_str).strip()
+            # Only provide fallback if LLM generated literally nothing (< 10 chars) or contained a URL
+            if not t_str or len(t_str) < 10 or unavailable_text.search(t_str):
                 if idx == 1:
                     step.teacher_activities = (
                         f"The teacher introduces the lesson inquiry on '{focus}', organizes students into collaborative teams "
-                        "with designated roles, and distributes inquiry task prompt cards."
+                        "with designated roles, and distributes inquiry task prompt cards as facilitator without lecturing."
                     )
                 elif idx == 2:
                     step.teacher_activities = (
@@ -335,10 +403,15 @@ class TimingGuardrailEngine:
                         f"The teacher facilitates group presentations, synthesizes student discoveries regarding '{focus}', "
                         "highlights core civic values, and formatively clarifies any conceptual misconceptions."
                     )
+            else:
+                step.teacher_activities = t_str
 
-            # Sanitize student_activities
+            # Sanitize student_activities: PRESERVE LLM GENERATED CONTENT! DO NOT HARDCODE OR OVERWRITE!
             s_str = (step.student_activities or "").strip()
-            if not s_str or len(s_str) < 20 or unavailable_text.search(s_str):
+            s_str = re.sub(r"^<string:\s*[^>]+>\s*", "", s_str, flags=re.IGNORECASE)
+            s_str = re.sub(r"\.\.\.$", "", s_str).strip()
+            # Only provide fallback if LLM generated literally nothing (< 10 chars) or contained a URL
+            if not s_str or len(s_str) < 10 or unavailable_text.search(s_str):
                 if idx == 1:
                     step.student_activities = (
                         f"Students arrange themselves in assigned group roles, examine the inquiry prompt concerning '{focus}', "
@@ -354,6 +427,8 @@ class TimingGuardrailEngine:
                         f"Team spokespersons present their group's findings on '{focus}' to the class, compare conclusions with peers, "
                         "and record constructive feedback in their notebooks."
                     )
+            else:
+                step.student_activities = s_str
 
             # Sanitize other and assessment_and_feedback
             if step.other and unavailable_text.search(step.other):

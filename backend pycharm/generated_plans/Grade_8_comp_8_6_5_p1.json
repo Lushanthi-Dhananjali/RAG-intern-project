@@ -1,0 +1,91 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 1 of 1)",
+  "competence": "Broad curriculum competency standard in plain English",
+  "competence_level": "8.6.5",
+  "lesson": "Explains the good qualities of a worker: Thematic Station Jigsaw & Infographic Wall: Competency Level 8.6.5",
+  "unique_learning_outcome": [
+    "Explains the good qualities of a worker.",
+    "Expresses the importance of maintaining good qualities in the work place."
+  ],
+  "the_entrance": "5-minute introduction: Imagine you are a new employee at a local factory in Sri Lanka. What qualities do you think are essential for a worker to possess to excel in their role?",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Organizes students into 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Distributes student notebooks and chart paper.",
+      "student_activities": "Students receive their assigned roles and begin to organize their investigation by exploring the 'Thematic Station Jigsaw' board, discussing the importance of maintaining good qualities in the workplace, and mapping the key ideas.",
+      "learning_teaching_method": "Task Orientation & Inquiry Launch",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Circulates among student groups, facilitating role execution, and providing outcome-focused prompts and time checks. Encourages students to explore the 'Thematic Station Jigsaw' board, discuss the importance of maintaining good qualities in the workplace, and map the key ideas.",
+      "student_activities": "Students continue to explore the 'Thematic Station Jigsaw' board, discuss the importance of maintaining good qualities in the workplace, and map the key ideas. They begin to synthesize their findings and prepare for group presentations.",
+      "learning_teaching_method": "Thematic Station Jigsaw & Infographic Wall",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "Monitors student group presentations, provides feedback, and synthesizes the key ideas. Encourages students to reflect on the importance of maintaining good qualities in the workplace and the qualities of a good worker.",
+      "student_activities": "Students present their group's concrete artifacts/solutions from the activity, receive peer feedback, and reflect on the importance of maintaining good qualities in the workplace and the qualities of a good worker.",
+      "learning_teaching_method": "Group Presentations & Reflection",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    }
+  ],
+  "summary": "Synthesized Civic Action Infographic Poster",
+  "assessment_and_feedback_whole_lesson": "Formative feedback criteria: Peer feedback on group presentations, teacher observation of student roles, and class discussion on the importance of maintaining good qualities in the workplace.",
+  "post_activity": "5-minute in-class assignment: In-class quiz: 'What are the good qualities of a worker?' (2-minute rapid-fire quiz with 5 questions)",
+  "information_sources": [
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
+  ],
+  "attachments": [],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 1,
+  "total_periods": 1,
+  "selected_activity": "Activity: Thematic Station Jigsaw & Infographic Wall: Competency Level 8.6.5\nApproach: Students explore teacher-designated board or discussion stations about 'Explains the good qualities of a worker.'. Home groups reassemble to teach peers and synthesize key ideas.\nStudent task: Explore station prompts, return to home groups to teach peers, and co-create a summary. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.\nExpected output: Synthesized Civic Action Infographic Poster.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+  "selected_activity_title": "Thematic Station Jigsaw & Infographic Wall: Competency Level 8.6.5",
+  "custom_teacher_activity": null,
+  "activity_options": [
+    {
+      "id": "option_3",
+      "title": "Thematic Station Jigsaw & Infographic Wall: Competency Level 8.6.5",
+      "pedagogy_type": "Station Jigsaw / Collaborative Design",
+      "description": "Students explore teacher-designated board or discussion stations about 'Explains the good qualities of a worker.'. Home groups reassemble to teach peers and synthesize key ideas.",
+      "learning_outcomes_addressed": [
+        "Explains the good qualities of a worker.",
+        "Expresses the importance of maintaining good qualities in the work place."
+      ],
+      "student_action_summary": "Explore station prompts, return to home groups to teach peers, and co-create a summary. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "teacher_facilitation_summary": "Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.",
+      "student_grouping": "8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks",
+        "Chart Paper"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "Synthesized Civic Action Infographic Poster.",
+      "creative_assessment_preview": "2-Line Rhyming Slogan: Groups chant a summary of their core takeaway.",
+      "low_resource_alternative": "Use notebook pages pinned to desks as station hubs."
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "Explains the good qualities of a worker.",
+      "Expresses the importance of maintaining good qualities in the work place."
+    ]
+  },
+  "filename": "Grade_8_comp_8_6_5_p1.json"
+}

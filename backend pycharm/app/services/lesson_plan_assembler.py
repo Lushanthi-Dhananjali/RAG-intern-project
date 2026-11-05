@@ -88,12 +88,19 @@ def build_single_period_assembly_prompt(
     )
 
     strategy_directive = (
-        f"CORE PEDAGOGICAL ACTIVITY DIRECTIVE:\n\"{chosen_strategy_description}\"\n"
-        "- This teacher-selected activity is authoritative for this period. Do not replace it with another activity; structure the lesson steps, student roles, materials, and assessment around it.\n"
-        if chosen_strategy_description
-        else "CORE PEDAGOGICAL ACTIVITY DIRECTIVE: Interactive student-centered collaborative investigation."
-    )
+        f"""MANDATORY ACTIVITY & DYNAMIC DEVELOPMENT STEPS DIRECTIVE:
+AUTHORITATIVE SELECTED ACTIVITY FOR THIS LESSON:
+"{chosen_strategy_description}"
 
+CRITICAL INSTRUCTIONS FOR GENERATING DEVELOPMENT STEPS:
+- You MUST generate completely original, unique development steps tailored specifically to the above activity and the allocated learning outcomes.
+- DO NOT use generic, hardcoded, or repetitive steps! Every step must be custom-crafted:
+  * Step 1: Detailed facilitator actions introducing this exact activity scenario and distributing specific task aids, with students in assigned roles organizing their investigation.
+  * Step 2: VIVID and DETAILED student actions actively carrying out this exact activity (describing the specific Sri Lankan community dilemma, debates, mapping, drawings, or roleplay dialogues), with the teacher circulating to scaffold understanding of the allocated outcomes.
+  * Step 3: Detailed actions of student spokespersons presenting their group's concrete artifacts/solutions from this activity, with class peer feedback and teacher synthesis against the outcomes."""
+        if chosen_strategy_description
+        else "MANDATORY ACTIVITY & DYNAMIC DEVELOPMENT STEPS DIRECTIVE: Generate rich, unique, student-centered collaborative investigation steps."
+    )
     prompt = f"""<|begin_of_text|><|start_header_id|>system<|end_header_id|>
 You are an expert Sri Lankan Teacher Educator and Curriculum Specialist for the LEARN Practice Teaching Framework in Sri Lanka.
 Your task is to assemble an innovative, highly engaging, student-centered single-period lesson plan for Period {current_period} of a {total_periods}-period sequence.
@@ -133,47 +140,57 @@ STRICT PEDAGOGICAL & 40-MINUTE STRUCTURAL LAWS:
    - 'competence' MUST be the broad curriculum competency standard in plain English text. Never output a URL or web link.
    - 'competence_level' MUST be strictly the curriculum code string "{competency_level}". Never output a URL or web link.
 
-10. REQUIRED JSON SCHEMA KEYS - YOUR OUTPUT JSON MUST CONTAIN EXACTLY THESE FIELD NAMES (PROVIDING 3 DEVELOPMENT STEPS):
+10. REQUIRED JSON FORMAT:
+You MUST respond with a valid JSON object matching this schema.
+CRITICAL ANTI-BOILERPLATE MANDATE:
+- DO NOT output ellipsis ("...").
+- DO NOT copy placeholder text or output generic descriptions like "(e.g., ...)".
+- DO NOT output identical text across different periods or lesson plans.
+- Provide rich, concrete, creative details describing actual Sri Lankan classroom dialogues, specific task cards, specific physical artifacts, and dynamic student collaboration.
+- Each development step must be detailed (3-5 sentences describing concrete student actions and teacher facilitation).
+- The 'the_entrance' MUST be a creative 5-minute motivational hook connecting an authentic Sri Lankan situation or everyday experience to this specific period's outcome and chosen activity.
+- The 'post_activity' MUST be a creative, highly engaging 5-minute active in-class evaluation (such as a 2-line rhyme/verse recitation, a rapid team quiz/competition, a quick concept drawing/sketch challenge, a pass-the-parcel concept ball, or a statement display & vote).
+
 {{
   "grade": "{grade_level}",
   "subject": "{subject}",
   "time_allocation": "40 Minutes (Period {current_period} of {total_periods})",
-  "competence": "Broad curriculum competency standard",
+  "competence": "Broad curriculum competency standard in plain English",
   "competence_level": "{competency_level}",
   "lesson": "{lesson_topic}",
-  "the_entrance": "Detailed 5-minute introduction: teacher and student actions linking prior knowledge to this period topic and activity...",
+  "the_entrance": "<string: creative 5-minute motivational introduction specifically tailored to this period and activity>",
   "lesson_development_steps": [
     {{
       "step_number": 1,
       "time_minutes": 10,
-      "learning_teaching_method": "Task Orientation & Guided Inquiry Launch",
-      "learning_teaching_aids": "Task assignment cards, role description sheets, inquiry scenario prompts",
-      "teacher_activities": "Teacher introduces the Sri Lankan real-world scenario, explains group objectives, distributes task materials, and assigns student roles as a facilitator...",
-      "student_activities": "Students arrange into cooperative groups, assign designated roles, review inquiry cards, and begin collaborative planning...",
+      "learning_teaching_method": "<string: pedagogical method for step 1, e.g. Task Orientation & Inquiry Launch>",
+      "learning_teaching_aids": "<string: specific physical materials and task cards for step 1>",
+      "teacher_activities": "<string: detailed facilitator actions introducing this specific activity and organizing student roles>",
+      "student_activities": "<string: detailed active student actions starting the investigation for this period>",
       "assessment_and_feedback": ""
     }},
     {{
       "step_number": 2,
       "time_minutes": 10,
-      "learning_teaching_method": "Active Student-Centered Investigation / Simulation / Drama / School-Walk",
-      "learning_teaching_aids": "Worksheets, roleplay cue cards, chart papers, colored markers",
-      "teacher_activities": "Teacher circulates as facilitator among groups, observes peer interactions, scaffolds challenging concepts with probing questions, and ensures active participation without lecturing...",
-      "student_activities": "Students actively execute the chosen activity (e.g., conducting mock council session, exploratory school-walk survey, analyzing Sri Lankan community issues, or solving civic challenges in groups) using assigned roles...",
+      "learning_teaching_method": "<string: method name reflecting the chosen activity>",
+      "learning_teaching_aids": "<string: specific worksheets, scenario cards, artifacts, or materials used in this activity>",
+      "teacher_activities": "<string: detailed facilitator actions, guiding questions, and scaffolding during this activity>",
+      "student_activities": "<string: detailed actions of students executing this exact activity in their groups>",
       "assessment_and_feedback": ""
     }},
     {{
       "step_number": 3,
       "time_minutes": 10,
-      "learning_teaching_method": "Spokesperson Presentation & Plenary Synthesis",
-      "learning_teaching_aids": "Student output posters, whiteboard, peer assessment checklist",
-      "teacher_activities": "Teacher moderates student presentations, facilitates constructive peer review, and synthesizes key student discoveries directly against the period's learning outcomes...",
-      "student_activities": "Spokespersons present group solutions or roleplay outcomes; class peers ask questions, provide constructive feedback, and summarize key takeaways in their notebooks...",
+      "learning_teaching_method": "<string: presentation and synthesis method name>",
+      "learning_teaching_aids": "<string: group presentation artifacts, charts, whiteboard, feedback cards>",
+      "teacher_activities": "<string: detailed teacher actions moderating group presentations and synthesizing learning>",
+      "student_activities": "<string: detailed student actions presenting group findings and discussing peer feedback>",
       "assessment_and_feedback": ""
     }}
   ],
-  "summary": "Consolidation and synthesis of key concepts...",
-  "assessment_and_feedback_whole_lesson": "Final closure formative assessment criteria...",
-  "post_activity": "Five-minute in-class assignment or concluding task..."
+  "summary": "<string: 2-minute synthesis of core student discoveries on this period's outcomes>",
+  "assessment_and_feedback_whole_lesson": "<string: formative feedback criteria for this lesson>",
+  "post_activity": "<string: creative 5-minute in-class assessment: quiz, drawing, rhyme, or voting>"
 }}
 
 Respond ONLY with valid JSON conforming strictly to the above keys.<|eot_id|>

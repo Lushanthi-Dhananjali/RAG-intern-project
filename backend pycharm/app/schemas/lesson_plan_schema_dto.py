@@ -154,6 +154,10 @@ class LessonPlanSchemaDto(BaseModel):
         clean_steps = []
         if isinstance(steps, list):
             for idx, s in enumerate(steps, 1):
+                if hasattr(s, "model_dump"):
+                    s = s.model_dump()
+                elif hasattr(s, "dict"):
+                    s = s.dict()
                 if isinstance(s, dict):
                     clean_steps.append({
                         "step_number": s.get("step_number") or idx,

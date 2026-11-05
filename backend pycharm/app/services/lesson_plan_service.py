@@ -463,23 +463,20 @@ class LessonPlanMlService(ILessonPlanMlService):
             if p_idx == requested_period and getattr(request, "activity_options", None):
                 period_options = getattr(request, "activity_options", [])
             else:
-                saved_opts = saved_period_plans.get(p_idx, {}).get("activity_options", [])
-                if saved_opts:
-                    period_options = saved_opts
-                else:
-                    raw_opts = self.rag_engine.generate_activity_options(
-                        competency_level=target_comp,
-                        student_count=student_count,
-                        periods=total_periods,
-                        requested_period=p_idx,
-                        grade_level=normalized_grade,
-                        subject="Civic Education",
-                        classroom_environment=getattr(request, "classroom_environment", "Standard Classroom"),
-                        accessible_resources=getattr(request, "accessible_resources", []),
-                        previous_activities=list(dict.fromkeys(accumulated_activities)),
-                        lesson_topic=clean_topic,
-                    )
-                    period_options = raw_opts.get("options", [])
+                # Generate fresh, period-specific activity options enforcing anti-repetition across periods
+                raw_opts = self.rag_engine.generate_activity_options(
+                    competency_level=target_comp,
+                    student_count=student_count,
+                    periods=total_periods,
+                    requested_period=p_idx,
+                    grade_level=normalized_grade,
+                    subject="Civic Education",
+                    classroom_environment=getattr(request, "classroom_environment", "Standard Classroom"),
+                    accessible_resources=getattr(request, "accessible_resources", []),
+                    previous_activities=list(dict.fromkeys(accumulated_activities)),
+                    lesson_topic=clean_topic,
+                )
+                period_options = raw_opts.get("options", [])
 
             # Resolve selected activity and title for this period
             if is_own_approach and custom_teacher_act:
@@ -493,10 +490,8 @@ class LessonPlanMlService(ILessonPlanMlService):
                 period_selected_title = getattr(request, "selected_activity_title", None)
                 if not period_selected_title and period_options:
                     period_selected_title = period_options[0].get("title")
-            elif saved_period_plans.get(p_idx, {}).get("selected_activity"):
-                period_selected_activity = saved_period_plans[p_idx]["selected_activity"]
-                period_selected_title = saved_period_plans[p_idx].get("selected_activity_title")
             elif period_options:
+                # Pick distinct option matching this period, respecting previous activities
                 opt0 = period_options[0]
                 period_selected_title = opt0.get("title")
                 period_selected_activity = (
