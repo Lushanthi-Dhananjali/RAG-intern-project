@@ -93,11 +93,15 @@ AUTHORITATIVE SELECTED ACTIVITY FOR THIS LESSON:
 "{chosen_strategy_description}"
 
 CRITICAL INSTRUCTIONS FOR GENERATING DEVELOPMENT STEPS:
-- You MUST generate completely original, unique development steps tailored specifically to the above activity and the allocated learning outcomes.
-- DO NOT use generic, hardcoded, or repetitive steps! Every step must be custom-crafted:
-  * Step 1: Detailed facilitator actions introducing this exact activity scenario and distributing specific task aids, with students in assigned roles organizing their investigation.
-  * Step 2: VIVID and DETAILED student actions actively carrying out this exact activity (describing the specific Sri Lankan community dilemma, debates, mapping, drawings, or roleplay dialogues), with the teacher circulating to scaffold understanding of the allocated outcomes.
-  * Step 3: Detailed actions of student spokespersons presenting their group's concrete artifacts/solutions from this activity, with class peer feedback and teacher synthesis against the outcomes."""
+- Do NOT impose rigid, mandatory conditions dictating that 'Step 1 must be launch/orientation, Step 2 must be execution, Step 3 must be presentation'.
+- Let the stages, sequence, and flow of development steps be determined naturally by the chosen activity and the allocated learning outcomes.
+- The development steps (typically 3 steps, or 2 to 4 steps as appropriate for the activity, totaling exactly 30 minutes in clean multiples of 5, e.g. 10m+10m+10m, 15m+15m, 10m+15m+5m, 5m+15m+10m, or 5m+20m+5m) must organically fit how this specific activity unfolds:
+  * 'learning_teaching_method': Pedagogical method dynamically chosen to match what occurs in this specific step of the activity (e.g. Roleplay, Guided Inquiry, Jigsaw, Issue Tree Analysis, Socratic Dialogue, Campus Observation).
+  * 'learning_teaching_aids': Concrete physical materials, worksheets, props, or artifacts used in this step for this activity.
+  * 'teacher_activities': Active facilitator actions (guiding, scaffolding, observing group dynamics, asking inquiry questions, moderating, never lecturing).
+  * 'student_activities': Active student-centered actions (collaborating in groups, roleplaying, investigating, analyzing, debating, creating, reflecting).
+  * 'time_minutes': Clean multiple of 5 suited to the depth needed for this step.
+- Every step's content, method, aids, teacher activity, and student activity MUST be original, dynamically generated, and aligned with the chosen activity and learning outcomes without hardcoding or repetition."""
         if chosen_strategy_description
         else "MANDATORY ACTIVITY & DYNAMIC DEVELOPMENT STEPS DIRECTIVE: Generate rich, unique, student-centered collaborative investigation steps."
     )
@@ -163,28 +167,28 @@ CRITICAL ANTI-BOILERPLATE MANDATE:
     {{
       "step_number": 1,
       "time_minutes": 10,
-      "learning_teaching_method": "<string: pedagogical method for step 1, e.g. Task Orientation & Inquiry Launch>",
-      "learning_teaching_aids": "<string: specific physical materials and task cards for step 1>",
-      "teacher_activities": "<string: detailed facilitator actions introducing this specific activity and organizing student roles>",
-      "student_activities": "<string: detailed active student actions starting the investigation for this period>",
+      "learning_teaching_method": "<string: pedagogical method organically matching this stage of the activity>",
+      "learning_teaching_aids": "<string: concrete materials, worksheets, props, or artifacts used in this step>",
+      "teacher_activities": "<string: teacher facilitator actions supporting students in this stage of the activity>",
+      "student_activities": "<string: active student tasks and collaborative engagement in this step>",
       "assessment_and_feedback": ""
     }},
     {{
       "step_number": 2,
       "time_minutes": 10,
-      "learning_teaching_method": "<string: method name reflecting the chosen activity>",
-      "learning_teaching_aids": "<string: specific worksheets, scenario cards, artifacts, or materials used in this activity>",
-      "teacher_activities": "<string: detailed facilitator actions, guiding questions, and scaffolding during this activity>",
-      "student_activities": "<string: detailed actions of students executing this exact activity in their groups>",
+      "learning_teaching_method": "<string: pedagogical method organically matching this stage of the activity>",
+      "learning_teaching_aids": "<string: concrete materials, worksheets, props, or artifacts used in this step>",
+      "teacher_activities": "<string: teacher facilitator actions supporting students in this stage of the activity>",
+      "student_activities": "<string: active student tasks and collaborative engagement in this step>",
       "assessment_and_feedback": ""
     }},
     {{
       "step_number": 3,
       "time_minutes": 10,
-      "learning_teaching_method": "<string: presentation and synthesis method name>",
-      "learning_teaching_aids": "<string: group presentation artifacts, charts, whiteboard, feedback cards>",
-      "teacher_activities": "<string: detailed teacher actions moderating group presentations and synthesizing learning>",
-      "student_activities": "<string: detailed student actions presenting group findings and discussing peer feedback>",
+      "learning_teaching_method": "<string: pedagogical method organically matching this stage of the activity>",
+      "learning_teaching_aids": "<string: concrete materials, worksheets, props, or artifacts used in this step>",
+      "teacher_activities": "<string: teacher facilitator actions supporting students in this stage of the activity>",
+      "student_activities": "<string: active student tasks and collaborative engagement in this step>",
       "assessment_and_feedback": ""
     }}
   ],

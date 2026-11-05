@@ -82,28 +82,28 @@ CRITICAL ANTI-BOILERPLATE MANDATE:
     {{
       "step_number": 1,
       "time_minutes": 10,
-      "learning_teaching_method": "<string: pedagogical method for step 1, e.g. Task Orientation & Guided Inquiry Launch>",
-      "learning_teaching_aids": "<string: specific physical materials and task cards for step 1>",
-      "teacher_activities": "<string: detailed facilitator actions introducing the custom scenario and organizing student roles>",
-      "student_activities": "<string: detailed active student actions starting the investigation for this period>",
+      "learning_teaching_method": "<string: pedagogical method organically matching this stage of the custom activity>",
+      "learning_teaching_aids": "<string: concrete materials, worksheets, props, or artifacts used in this step>",
+      "teacher_activities": "<string: teacher facilitator actions supporting students in this stage of the custom activity>",
+      "student_activities": "<string: active student tasks and collaborative engagement in this step>",
       "assessment_and_feedback": ""
     }},
     {{
       "step_number": 2,
       "time_minutes": 10,
-      "learning_teaching_method": "<string: method name reflecting the custom activity>",
-      "learning_teaching_aids": "<string: specific materials, props, worksheets, or artifacts used in this activity>",
-      "teacher_activities": "<string: detailed facilitator actions, guiding questions, and scaffolding during this custom activity>",
-      "student_activities": "<string: detailed actions of students actively performing the custom activity in their teams>",
+      "learning_teaching_method": "<string: pedagogical method organically matching this stage of the custom activity>",
+      "learning_teaching_aids": "<string: concrete materials, worksheets, props, or artifacts used in this step>",
+      "teacher_activities": "<string: teacher facilitator actions supporting students in this stage of the custom activity>",
+      "student_activities": "<string: active student tasks and collaborative engagement in this step>",
       "assessment_and_feedback": ""
     }},
     {{
       "step_number": 3,
       "time_minutes": 10,
-      "learning_teaching_method": "<string: presentation, peer review and synthesis method name>",
-      "learning_teaching_aids": "<string: presentation boards, whiteboard, checklist>",
-      "teacher_activities": "<string: detailed teacher moderation of student team presentations and synthesis>",
-      "student_activities": "<string: detailed student actions presenting group work and discussing peer feedback>",
+      "learning_teaching_method": "<string: pedagogical method organically matching this stage of the custom activity>",
+      "learning_teaching_aids": "<string: concrete materials, worksheets, props, or artifacts used in this step>",
+      "teacher_activities": "<string: teacher facilitator actions supporting students in this stage of the custom activity>",
+      "student_activities": "<string: active student tasks and collaborative engagement in this step>",
       "assessment_and_feedback": ""
     }}
   ],

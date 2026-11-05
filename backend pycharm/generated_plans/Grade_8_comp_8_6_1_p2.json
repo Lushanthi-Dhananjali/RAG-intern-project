@@ -1,0 +1,91 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 2 of 2)",
+  "competence": "Explains the diversity of world of work. Activity “Let’s undentify world of work” Time 40 minutes",
+  "competence_level": "8.6.1",
+  "lesson": "Explains the diversity of world of work. Activity “Let’s undentify world of work” Time 40 minutes: Consensus Problem-Solving Carousel: Competency Level 8.6.1",
+  "unique_learning_outcome": [
+    "Explains the diversity of world of work. Activity “Let’s undentify world of work” Time 40 minutes"
+  ],
+  "the_entrance": "5-minute introduction: As we explore the world of work, let's identify the diverse jobs available in our society. Can you think of some jobs that you know?",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Organizes students into 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "student_activities": "Students negotiate a solution, create a shared civic artifact, and review another group's proposal.",
+      "learning_teaching_method": "Consensus Problem-Solving Carousel",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Circulates across 8 teams, facilitating role execution and formatively checking progress.",
+      "student_activities": "Students continue to negotiate, create, and review their proposals.",
+      "learning_teaching_method": "Guided Inquiry",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "Monitors progress and provides feedback to students.",
+      "student_activities": "Students present their proposals to the class and receive feedback from peers.",
+      "learning_teaching_method": "Socratic Dialogue",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    }
+  ],
+  "summary": "Students will negotiate a solution, create a shared civic artifact, and review another group's proposal.",
+  "assessment_and_feedback_whole_lesson": "Formative feedback criteria: Does the group's proposal demonstrate an understanding of the diversity of the world of work?",
+  "post_activity": "5-minute in-class assignment: Students will reflect on their learning and share their thoughts with the class.",
+  "information_sources": [
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
+  ],
+  "attachments": [],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 2,
+  "total_periods": 2,
+  "selected_activity": "Activity: Consensus Problem-Solving Carousel: Competency Level 8.6.1\nApproach: Students use consensus problem-solving carousel to explore 'Explains the diversity of world of work. Activity “Let’s undentify world of work” Time 40 minutes'. Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.\nExpected output: A group civic proposal, diagram, or public information message.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+  "selected_activity_title": "Consensus Problem-Solving Carousel: Competency Level 8.6.1",
+  "custom_teacher_activity": null,
+  "activity_options": [
+    {
+      "id": "option_1",
+      "title": "Consensus Problem-Solving Carousel: Competency Level 8.6.1",
+      "pedagogy_type": "Collaborative Design",
+      "description": "Students use consensus problem-solving carousel to explore 'Explains the diversity of world of work. Activity “Let’s undentify world of work” Time 40 minutes'. Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "learning_outcomes_addressed": [
+        "Explains the diversity of world of work. Activity “Let’s undentify world of work” Time 40 minutes"
+      ],
+      "student_action_summary": "Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "teacher_facilitation_summary": "Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.",
+      "student_grouping": "8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks",
+        "Chart Paper"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "A group civic proposal, diagram, or public information message.",
+      "creative_assessment_preview": "Groups give one-sentence feedback connecting a peer proposal to the outcome.",
+      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "Explains the diversity of world of work. Activity “Let’s undentify world of work” Time 40 minutes"
+    ],
+    "2": [
+      "Explains the diversity of world of work. Activity “Let’s undentify world of work” Time 40 minutes"
+    ]
+  },
+  "filename": "Grade_8_comp_8_6_1_p2.json"
+}
