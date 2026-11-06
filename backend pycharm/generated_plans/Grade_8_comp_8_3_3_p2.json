@@ -2,48 +2,48 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 2 of 4)",
-  "competence": "Explains the importance of respecting other cultural identity while retaining one's culture.",
+  "competence": "8.3.3",
   "competence_level": "8.3.3",
-  "lesson": "Explains the importance of respecting other cultural identity while retaining one's culture: Teacher Activity: Show video",
+  "lesson": "Explains the importance of respecting other cultural identity while retaining one's culture: 1-Minute Frozen Tableau Drama: Competency Level 8.3.3",
   "unique_learning_outcome": [
     "Explains the importance of respecting other cultural identity while retaining one's culture."
   ],
-  "the_entrance": "5-minute introduction: The teacher introduces the topic by asking students to share their experiences with cultural differences and similarities. Students share their thoughts and ideas, and the teacher connects this to the importance of respecting other cultural identity while retaining one's culture. The teacher then shows a video that highlights the significance of cultural diversity and the importance of respecting it.",
+  "the_entrance": "5-minute introduction: Step 1: Launch & Investigation Setup",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "The teacher explains the importance of respecting other cultural identity while retaining one's culture and provides a brief overview of the video to be shown.",
-      "student_activities": "Students are assigned their roles and are briefed on their responsibilities. They are also given a task sheet with the prompt to discuss and decide on the importance of respecting other cultural identity while retaining one's culture.",
-      "learning_teaching_method": "Show video",
-      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "teacher_activities": "Introduces the specific real-world Sri Lankan dilemma or scenario for 'Explains the importance of respecting other cultural identity while retaining one's culture: 1-Minute Frozen Tableau Drama: Competency Level 8.3.3', presents concrete inquiry task cards/materials, and assigns active group roles. Circulates among teams, asking probing questions to scaffold learning without lecturing.",
+      "student_activities": "Examines the prompt, divides responsibilities, and formulates inquiry questions. Teacher facilitation: Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "learning_teaching_method": "Initial Exploration & Role Assignment",
+      "learning_teaching_aids": "Real-world Sri Lankan dilemma or scenario, inquiry task cards/materials, active group roles",
       "assessment_and_feedback": "",
-      "time_minutes": 5,
+      "time_minutes": 10,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "Students work in groups to discuss and decide on the importance of respecting other cultural identity while retaining one's culture. They are encouraged to use the video as a reference and to consider their own experiences and perspectives.",
-      "student_activities": "Students engage in active collaboration and analysis, using their assigned roles to contribute to the group discussion. They record their key findings and decisions on the task sheet or notebook.",
-      "learning_teaching_method": "Group Discussion",
-      "learning_teaching_aids": "Student Notebooks, Chart Paper",
+      "teacher_activities": "Circulates across 8 teams, facilitating role execution and formatively checking progress. Teacher scaffolding questions: 'What are the key concerns of this scenario? How can we address these concerns? What cultural identity do we need to respect in this situation?'",
+      "student_activities": "Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Students actively execute 'Activity: 1-Minute Frozen Tableau Drama: Competency Level 8.3.3'. Teacher facilitation: Monitors progress with outcome-focused prompts and time checks.",
+      "learning_teaching_method": "Active Collaborative Deep-Dive / Simulation",
+      "learning_teaching_aids": "Concrete inquiry task cards/materials, role badges",
       "assessment_and_feedback": "",
-      "time_minutes": 15,
+      "time_minutes": 10,
       "other": ""
     },
     {
       "step_number": 3,
-      "teacher_activities": "The teacher facilitates a plenary session where students share their findings and decisions with the class. Students are encouraged to cross-review and provide feedback to their peers.",
-      "student_activities": "Students share their group's findings and decisions with the class, using their assigned roles to present their conclusions. They also engage in cross-review and feedback with their peers.",
-      "learning_teaching_method": "Plenary Sharing & Cross-Review",
-      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "teacher_activities": "Group spokespersons present their civic findings or artifacts; peer teams evaluate using clear criteria and offer feedback. Teacher synthesizes discoveries against the learning outcomes.",
+      "student_activities": "Group spokespersons share their civic findings or artifacts. Peer teams evaluate using clear criteria and offer feedback. Students reflect on their learning and the importance of respecting other cultural identity while retaining one's culture.",
+      "learning_teaching_method": "Spokesperson Sharing, Peer Critique & Plenary Consolidation",
+      "learning_teaching_aids": "Clear criteria, feedback forms",
       "assessment_and_feedback": "",
       "time_minutes": 10,
       "other": ""
     }
   ],
-  "summary": "Students will understand the importance of respecting other cultural identity while retaining one's culture.",
-  "assessment_and_feedback_whole_lesson": "The teacher provides feedback on the students' understanding of the importance of respecting other cultural identity while retaining one's culture. The teacher also assesses the students' ability to apply this understanding in their group discussions and presentations.",
-  "post_activity": "Students are given 5 minutes to write a short reflection on what they learned about the importance of respecting other cultural identity while retaining one's culture. They are also asked to think about how they can apply this understanding in their daily lives.",
+  "summary": "This lesson plan aims to help students understand the importance of respecting other cultural identity while retaining one's culture. It uses a 1-Minute Frozen Tableau Drama approach to facilitate active learning and collaboration. Students will work in teams to explore a real-world Sri Lankan scenario, take civic roles, and agree on a reasoned decision. The lesson will help students develop their critical thinking, communication, and problem-solving skills while promoting cultural awareness and understanding.",
+  "assessment_and_feedback_whole_lesson": "Students will be assessed on their participation, active listening, and role execution. Feedback will be provided through peer evaluation and self-reflection.",
+  "post_activity": "5-minute in-class assignment: Activity: 1-Minute Frozen Tableau Drama: Competency Level 8.3.3",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
@@ -53,26 +53,30 @@
   "assignment_duration_minutes": 5,
   "period_number": 2,
   "total_periods": 4,
-  "selected_activity": "Show video",
-  "selected_activity_title": "Teacher Activity: Show video",
-  "custom_teacher_activity": "Show video",
+  "selected_activity": "Activity: 1-Minute Frozen Tableau Drama: Competency Level 8.3.3\nApproach: Students use 1-minute frozen tableau drama to explore 'Explains the importance of respecting other cultural identity while retaining one's culture.'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.\nExpected output: A short role-based civic decision and its reasons.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+  "selected_activity_title": "1-Minute Frozen Tableau Drama: Competency Level 8.3.3",
+  "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "teacher_custom_activity_p2",
-      "title": "Teacher Activity: Show video",
-      "description": "Show video",
-      "pedagogy_type": "Show video",
-      "student_grouping": "Adaptive Grouping (40 students)",
-      "student_action_summary": "Students are assigned their roles and are briefed on their responsibilities. They are also given a task sheet with the prompt to discuss and decide on the importance of respecting other cultural identity while retaining one's culture.",
-      "teacher_facilitation_summary": "The teacher explains the importance of respecting other cultural identity while retaining one's culture and provides a brief overview of the video to be shown.",
-      "required_materials": [
-        "Chalkboard, Student Notebooks, Chart Paper"
-      ],
-      "expected_student_output": "Students are given 5 minutes to write a short reflection on what they learned about the importance of respecting other cultural identity while retaining one's culture. They are also asked to think about how they can apply this understanding in their daily lives.",
-      "creative_assessment_preview": "The teacher provides feedback on the students' understanding of the importance of respecting other cultural identity while retaining one's culture. The teacher also assesses the students' ability to apply this understanding in their group discussions and presentations.",
+      "id": "option_2",
+      "title": "1-Minute Frozen Tableau Drama: Competency Level 8.3.3",
+      "pedagogy_type": "Simulation / Roleplay",
+      "description": "Students use 1-minute frozen tableau drama to explore 'Explains the importance of respecting other cultural identity while retaining one's culture.'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
       "learning_outcomes_addressed": [
         "Explains the importance of respecting other cultural identity while retaining one's culture."
-      ]
+      ],
+      "student_action_summary": "Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "teacher_facilitation_summary": "Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.",
+      "student_grouping": "8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks",
+        "Chart Paper"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "A short role-based civic decision and its reasons.",
+      "creative_assessment_preview": "Students state one role responsibility and explain how it supported the decision.",
+      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
     }
   ],
   "outcome_allocation": {
@@ -89,5 +93,6 @@
     "4": [
       "Expresses the importance of mutual understanding for the wellbeing of a peaceful society."
     ]
-  }
+  },
+  "filename": "Grade_8_comp_8_3_3_p2.json"
 }

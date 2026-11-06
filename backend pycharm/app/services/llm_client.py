@@ -153,6 +153,7 @@ def call_openai_compatible_api(
     model: str,
     base_url: Optional[str] = None,
     system_prompt: Optional[str] = None,
+    temperature: float = 0.65,
     timeout: int = 90,
 ) -> Dict[str, Any]:
     """Invokes OpenAI or OpenAI-compatible (Gemini, Groq, OpenRouter) endpoint for JSON output."""
@@ -185,7 +186,7 @@ def call_openai_compatible_api(
                         model=cand_model,
                         messages=messages,
                         response_format={"type": "json_object"},
-                        temperature=0.2,
+                        temperature=temperature,
                     )
                     content = response.choices[0].message.content or "{}"
                     clean = content.strip().removeprefix("```json").removeprefix("```").removesuffix("```").strip()
@@ -232,7 +233,7 @@ def call_openai_compatible_api(
             {"role": "user", "content": prompt},
         ],
         "response_format": {"type": "json_object"},
-        "temperature": 0.2,
+        "temperature": temperature,
     }
     res = requests.post(url, json=payload, headers=headers, timeout=timeout)
     res.raise_for_status()
@@ -247,6 +248,7 @@ def call_gemini_native_rest_api(
     model: str = "gemini-3.8-flash",
     system_prompt: Optional[str] = None,
     json_schema: Optional[Dict[str, Any]] = None,
+    temperature: float = 0.65,
     timeout: int = 90,
 ) -> Dict[str, Any]:
     """
@@ -279,7 +281,7 @@ def call_gemini_native_rest_api(
             }
         ],
         "generationConfig": {
-            "temperature": 0.2,
+            "temperature": temperature,
             "responseMimeType": "application/json",
         }
     }
@@ -344,6 +346,7 @@ def call_local_ollama_api(
     model: str = "llama3",
     ollama_url: str = "http://localhost:11434",
     json_schema: Optional[Dict[str, Any]] = None,
+    temperature: float = 0.65,
     timeout: int = 180,
 ) -> Dict[str, Any]:
     """Invokes local Ollama endpoint with JSON mode or strict schema."""
@@ -374,7 +377,8 @@ def call_local_ollama_api(
         "stream": False,
         "format": json_schema if json_schema else "json",
         "options": {
-            "temperature": 0.2,
+            "temperature": temperature,
+            "top_p": 0.9,
             "num_predict": 2500,
             "num_thread": 6,
         },
@@ -394,6 +398,7 @@ def execute_llm_json(
     provider: Optional[str] = None,
     model: Optional[str] = None,
     ollama_url: Optional[str] = None,
+    temperature: float = 0.65,
     timeout: int = 180,
 ) -> Dict[str, Any]:
     """
@@ -419,6 +424,7 @@ def execute_llm_json(
                     model=active_model,
                     system_prompt=system_prompt,
                     json_schema=json_schema,
+                    temperature=temperature,
                     timeout=min(timeout, 90),
                 )
             else:
@@ -428,6 +434,7 @@ def execute_llm_json(
                     model=active_model,
                     base_url=active_base_url,
                     system_prompt=system_prompt,
+                    temperature=temperature,
                     timeout=min(timeout, 90),
                 )
         except Exception as api_err:
@@ -438,6 +445,7 @@ def execute_llm_json(
                     model=getattr(settings, "OLLAMA_MODEL", "llama3"),
                     ollama_url=ollama_endpoint,
                     json_schema=json_schema,
+                    temperature=temperature,
                     timeout=timeout,
                 )
             except Exception:
@@ -448,6 +456,15 @@ def execute_llm_json(
         local_model = active_model
         if not local_model or any(x in local_model.lower() for x in ["gemini", "gpt", "claude"]):
             local_model = getattr(settings, "OLLAMA_MODEL", "llama3")
+        logger.info("Executing LLM call via local Ollama (model: %s)...", local_model)
+        return call_local_ollama_api(
+            prompt=prompt,
+            model=local_model,
+            ollama_url=ollama_endpoint,
+            json_schema=json_schema,
+            temperature=temperature,
+            timeout=timeout,
+        )
         logger.info("Executing LLM call via local Ollama (model: %s)...", local_model)
         return call_local_ollama_api(
             prompt=prompt,

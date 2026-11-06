@@ -3,7 +3,10 @@ import sys
 from typing import List, Dict, Any, Union, Optional
 from pydantic import BaseModel, Field
 from dotenv import load_dotenv
-from openai import OpenAI
+try:
+    from openai import OpenAI
+except ImportError:
+    OpenAI = None
 
 # =====================================================================
 # PATH RESOLUTION & ENVIRONMENT SETUP
@@ -38,7 +41,7 @@ except ModuleNotFoundError:
 
 # Initialize OpenAI client safely
 _api_key = os.getenv("OPENAI_API_KEY")
-client = OpenAI(api_key=_api_key) if _api_key else None
+client = OpenAI(api_key=_api_key) if (_api_key and OpenAI) else None
 
 
 # =====================================================================

@@ -167,13 +167,13 @@ except ModuleNotFoundError:
 try:
     from app.evaluation.evaluator import RAGFactCheckingAgent
     from app.evaluation.alignment_evaluator import AlignmentEvaluator
-except ModuleNotFoundError:
+except Exception:
     try:
         from evaluation.evaluator import RAGFactCheckingAgent
         from evaluation.alignment_evaluator import AlignmentEvaluator
-    except ModuleNotFoundError:
-        from evaluator import RAGFactCheckingAgent
-        from alignment_evaluator import AlignmentEvaluator
+    except Exception:
+        RAGFactCheckingAgent = None
+        AlignmentEvaluator = None
 
 # Import 3-Tier Multi-Grade Boundary Retriever
 try:
@@ -251,11 +251,20 @@ def normalize_lesson_plan_dict(data: Any) -> Dict[str, Any]:
 
     # 6. lesson_development_steps
     steps = norm.get("lesson_development_steps")
-    if not steps or not isinstance(steps, list):
-        for k in ["steps", "development_steps", "activities", "procedures", "development", "learning_activities"]:
-            if norm.get(k) and isinstance(norm[k], list) and len(norm[k]) > 0:
-                steps = norm[k]
+    if not steps:
+        for k in ["steps", "development_steps", "lesson_steps", "lesson_development", "activities", "procedures", "development", "learning_activities", "developmental_steps"]:
+            val = norm.get(k)
+            if val:
+                steps = val
                 break
+
+    if isinstance(steps, dict):
+        steps = list(steps.values())
+    elif isinstance(steps, str) and steps.strip().startswith("["):
+        try:
+            steps = json.loads(steps)
+        except Exception:
+            pass
 
     clean_steps = []
     if isinstance(steps, list) and len(steps) > 0:
@@ -265,46 +274,53 @@ def normalize_lesson_plan_dict(data: Any) -> Dict[str, Any]:
             elif hasattr(s, "dict"):
                 s = s.dict()
             if isinstance(s, dict):
+                act_ctx = str(norm.get("selected_activity_title") or norm.get("selected_activity") or "Collaborative Inquiry").splitlines()[0]
+                act_ctx = re.sub(r"^Activity:\s*", "", act_ctx, flags=re.IGNORECASE).strip() or "Collaborative Inquiry"
+                topic_ctx = str(norm.get("lesson") or "Curriculum Investigation").strip()
                 clean_s = {
                     "step_number": s.get("step_number") or idx,
-                    "teacher_activities": str(s.get("teacher_activities") or s.get("teacher") or s.get("facilitation") or "Teacher guides investigation and scaffolding.").strip(),
-                    "student_activities": str(s.get("student_activities") or s.get("students") or s.get("task") or "Students collaborate in groups on assigned inquiry tasks.").strip(),
-                    "learning_teaching_method": str(s.get("learning_teaching_method") or s.get("method") or s.get("pedagogy") or "Guided Inquiry").strip(),
-                    "learning_teaching_aids": str(s.get("learning_teaching_aids") or s.get("aids") or s.get("materials") or "Task cards, activity worksheets, whiteboard").strip(),
+                    "teacher_activities": str(s.get("teacher_activities") or s.get("teacher") or s.get("facilitation") or f"Teacher facilitates student engagement in {act_ctx} on '{topic_ctx}'.").strip(),
+                    "student_activities": str(s.get("student_activities") or s.get("students") or s.get("task") or f"Students collaborate in groups executing {act_ctx} on '{topic_ctx}'.").strip(),
+                    "learning_teaching_method": str(s.get("learning_teaching_method") or s.get("method") or s.get("pedagogy") or act_ctx).strip(),
+                    "learning_teaching_aids": str(s.get("learning_teaching_aids") or s.get("aids") or s.get("materials") or f"Materials and worksheets for {act_ctx}").strip(),
                     "assessment_and_feedback": str(s.get("assessment_and_feedback") or s.get("assessment") or "").strip(),
-                    "time_minutes": int(s.get("time_minutes") or s.get("duration") or 15),
+                    "time_minutes": (lambda tm: int(re.search(r"\d+", str(tm)).group()) if re.search(r"\d+", str(tm)) else 10)(s.get("time_minutes") or s.get("duration") or 10),
                     "other": str(s.get("other") or "").strip()
                 }
                 clean_steps.append(clean_s)
 
     if not clean_steps:
+        # Dynamic fallback synthesized from the specific lesson topic and activity
+        topic_txt = str(norm.get("lesson") or "Civic Core Principles").strip()
+        act_raw = str(norm.get("selected_activity_title") or norm.get("selected_activity") or "Collaborative Inquiry").splitlines()[0]
+        act_clean = re.sub(r"^Activity:\s*", "", act_raw, flags=re.IGNORECASE).strip() or "Collaborative Inquiry"
         clean_steps = [
             {
                 "step_number": 1,
-                "teacher_activities": "Teacher introduces the Sri Lankan real-world scenario, clarifies group objectives, and distributes task cards and role assignments as a facilitator.",
-                "student_activities": "Students arrange into collaborative groups, review inquiry task cards, assign group roles, and formulate investigative questions.",
-                "learning_teaching_method": "Task Orientation & Guided Inquiry Launch",
-                "learning_teaching_aids": "Inquiry task cards, role sheets, scenario prompts",
+                "teacher_activities": f"Teacher introduces the Sri Lankan real-world scenario for '{topic_txt}', organizes collaborative student teams, and distributes task cards for {act_clean}.",
+                "student_activities": f"Students arrange into collaborative groups, review inquiry task cards for {act_clean}, assign group roles, and formulate investigative questions.",
+                "learning_teaching_method": f"Orientation & {act_clean} Launch",
+                "learning_teaching_aids": f"Task cards for {act_clean}, role sheets, scenario prompts",
                 "assessment_and_feedback": "",
                 "time_minutes": 10,
                 "other": "Group formation and role distribution"
             },
             {
                 "step_number": 2,
-                "teacher_activities": "Teacher actively circulates among student groups, facilitates inquiry, scaffolds complex civic concepts with probing questions, and ensures active participation.",
-                "student_activities": "Students collaborate actively in assigned roles to execute the investigation/simulation, analyzing Sri Lankan community situations without passive spectators.",
-                "learning_teaching_method": "Active Student-Centered Investigation / Simulation",
-                "learning_teaching_aids": "Activity worksheets, observation sheets, chart paper, markers",
+                "teacher_activities": f"Teacher actively circulates among student groups, facilitates inquiry into '{topic_txt}', scaffolds civic concepts with probing questions, and observes {act_clean}.",
+                "student_activities": f"Students actively collaborate in assigned roles to execute {act_clean}, analyzing Sri Lankan community situations related to '{topic_txt}' without passive spectators.",
+                "learning_teaching_method": act_clean,
+                "learning_teaching_aids": f"Activity worksheets for {act_clean}, observation sheets, chart paper, markers",
                 "assessment_and_feedback": "",
                 "time_minutes": 10,
                 "other": "Active collaborative investigation"
             },
             {
                 "step_number": 3,
-                "teacher_activities": "Teacher moderates student spokesperson presentations, facilitates constructive peer evaluation, and synthesizes key student findings against syllabus outcomes.",
-                "student_activities": "Group spokespersons present findings and solutions; peers evaluate presentations using criteria and note constructive feedback.",
-                "learning_teaching_method": "Spokesperson Presentation, Peer Review & Plenary Synthesis",
-                "learning_teaching_aids": "Student presentation charts, whiteboard",
+                "teacher_activities": f"Teacher moderates student team presentations, facilitates constructive peer evaluation, and synthesizes key student discoveries regarding '{topic_txt}'.",
+                "student_activities": f"Group spokespersons present findings on '{topic_txt}'; peers evaluate presentations using criteria and note constructive feedback.",
+                "learning_teaching_method": f"Presentation & Synthesis of {act_clean}",
+                "learning_teaching_aids": f"Student presentation charts, whiteboard for {act_clean}",
                 "assessment_and_feedback": "",
                 "time_minutes": 10,
                 "other": "Plenary presentation and synthesis"
@@ -353,7 +369,6 @@ def normalize_lesson_plan_dict(data: Any) -> Dict[str, Any]:
     if info is None:
         norm["information_sources"] = []
     elif isinstance(info, str):
-        import re
         norm["information_sources"] = [s.strip() for s in re.split(r"[\n,;]+", info) if s.strip()] or [info.strip()]
     elif isinstance(info, list):
         norm["information_sources"] = [str(x).strip() for x in info if str(x).strip()]
@@ -363,7 +378,6 @@ def normalize_lesson_plan_dict(data: Any) -> Dict[str, Any]:
     if att is None:
         norm["attachments"] = []
     elif isinstance(att, str):
-        import re
         norm["attachments"] = [s.strip() for s in re.split(r"[\n,;]+", att) if s.strip()] or [att.strip()]
     elif isinstance(att, list):
         norm["attachments"] = [str(x).strip() for x in att if str(x).strip()]

@@ -1,0 +1,104 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 2 of 3)",
+  "competence": "8.5.2",
+  "competence_level": "8.5.2",
+  "lesson": "Explains the need of searching for solutions creatively for any challenge or problem for success in life: Citizen Charter / Wall Newspaper Poster: Competency Level 8.5.2",
+  "unique_learning_outcome": [
+    "Explains the need of searching for solutions creatively for any challenge or problem for success in life."
+  ],
+  "the_entrance": "5-minute introduction: Explains the need of searching for solutions creatively for any challenge or problem for success in life.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Scenario Analysis & Role Allocation",
+      "student_activities": "Students negotiate a solution, create a shared civic artifact, and review another group's proposal.",
+      "learning_teaching_method": "Role-Play",
+      "learning_teaching_aids": "Role cards, scenario cards, and civic artifacts",
+      "assessment_and_feedback": "",
+      "time_minutes": 5,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Mock Assembly Debate Round 1",
+      "student_activities": "Students debate and negotiate the solution with other groups",
+      "learning_teaching_method": "Debate",
+      "learning_teaching_aids": "Debate cards, scenario cards, and civic artifacts",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "Interactive Station Jigsaw Audit",
+      "student_activities": "Students review and audit another group's proposal and provide feedback",
+      "learning_teaching_method": "Jigsaw",
+      "learning_teaching_aids": "Jigsaw cards, scenario cards, and civic artifacts",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 4,
+      "teacher_activities": "Community Problem Tree Mapping",
+      "student_activities": "Students create a shared civic artifact and present it to the class",
+      "learning_teaching_method": "Brainstorming",
+      "learning_teaching_aids": "Brainstorming cards, scenario cards, and civic artifacts",
+      "assessment_and_feedback": "",
+      "time_minutes": 5,
+      "other": ""
+    }
+  ],
+  "summary": "In this lesson, students will learn to explain the need of searching for solutions creatively for any challenge or problem for success in life. They will negotiate a solution, create a shared civic artifact, and review another group's proposal. The lesson will be conducted through role-play, debate, and jigsaw activities.",
+  "assessment_and_feedback_whole_lesson": "Students will be assessed based on their participation and engagement in the activities, as well as the quality of their shared civic artifact and presentation.",
+  "post_activity": "5-minute in-class assignment: Students will reflect on their learning and share their thoughts with the class.",
+  "information_sources": [
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
+  ],
+  "attachments": [],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 2,
+  "total_periods": 3,
+  "selected_activity": "Activity: Citizen Charter / Wall Newspaper Poster: Competency Level 8.5.2\nApproach: Students use citizen charter / wall newspaper poster to explore 'Explains the need of searching for solutions creatively for any challenge or problem for success in life.'. Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.\nExpected output: A group civic proposal, diagram, or public information message.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+  "selected_activity_title": "Citizen Charter / Wall Newspaper Poster: Competency Level 8.5.2",
+  "custom_teacher_activity": null,
+  "activity_options": [
+    {
+      "id": "option_2",
+      "title": "Citizen Charter / Wall Newspaper Poster: Competency Level 8.5.2",
+      "pedagogy_type": "Collaborative Design",
+      "description": "Students use citizen charter / wall newspaper poster to explore 'Explains the need of searching for solutions creatively for any challenge or problem for success in life.'. Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "learning_outcomes_addressed": [
+        "Explains the need of searching for solutions creatively for any challenge or problem for success in life."
+      ],
+      "student_action_summary": "Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "teacher_facilitation_summary": "Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.",
+      "student_grouping": "8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks",
+        "Chart Paper"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "A group civic proposal, diagram, or public information message.",
+      "creative_assessment_preview": "Groups give one-sentence feedback connecting a peer proposal to the outcome.",
+      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "Explains that facing problems is common, relevant to life."
+    ],
+    "2": [
+      "Explains the need of searching for solutions creatively for any challenge or problem for success in life."
+    ],
+    "3": [
+      "Explains with examples that any challenge or any problem has a solution."
+    ]
+  },
+  "filename": "Grade_8_comp_8_5_2_p2.json"
+}

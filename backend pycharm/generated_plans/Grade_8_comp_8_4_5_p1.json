@@ -1,0 +1,94 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 1 of 2)",
+  "competence": "8.4.5",
+  "competence_level": "8.4.5",
+  "lesson": "Explains the accidents that can be caused by the use of chemicals: Public Service Case Study & Dilemma Cards: Competency Level 8.4.5",
+  "unique_learning_outcome": [
+    "Explains the accidents that can be caused by the use of chemicals.",
+    "Explains the measures to be taken at accident caused by chemicals."
+  ],
+  "the_entrance": "5-minute introduction: Launch & Investigation Setup",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Introduces the specific real-world Sri Lankan dilemma or scenario for 'Explains the accidents that can be caused by the use of chemicals: Public Service Case Study & Dilemma Cards: Competency Level 8.4.5', presents concrete inquiry task cards/materials, and assigns active group roles. Circulates among teams, asking probing questions to scaffold learning without lecturing. 'What are some real-world scenarios where chemicals are used? How might chemical use lead to accidents?'",
+      "student_activities": "Examine the prompt, divide responsibilities, and formulate inquiry questions. 'What are some possible causes for accidents due to chemical use?'",
+      "learning_teaching_method": "Dilemma Framing & Evidence Prep",
+      "learning_teaching_aids": "Public Service Case Study & Dilemma Cards, blank paper, and pens",
+      "assessment_and_feedback": "",
+      "time_minutes": 5,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Circulates across 8 teams, facilitating role execution and formatively checking progress. 'What have you found so far? What are some possible consequences of chemical accidents?'",
+      "student_activities": "Inspect the provided scenario or accessible surroundings, record evidence, and compare findings. 'What are some measures that can be taken to avoid accidents caused by chemicals?'",
+      "learning_teaching_method": "Active Collaborative Deep-Dive / Simulation",
+      "learning_teaching_aids": "Public Service Case Study & Dilemma Cards, blank paper, and pens",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "Group spokespersons present their civic findings or artifacts; peer teams evaluate using clear criteria and offer feedback; teacher synthesizes discoveries against the learning outcomes. 'What did you learn from your group's findings? How do your findings relate to the learning outcomes?'",
+      "student_activities": "Present findings, evaluate using clear criteria, and offer feedback. 'What did you learn from your group's findings? How do your findings relate to the learning outcomes?'",
+      "learning_teaching_method": "Spokesperson Sharing, Peer Critique & Plenary Consolidation",
+      "learning_teaching_aids": "Presentation charts created during Public Service Case Study & Dilemma Cards: Competency Level 8.4.5, whiteboard, peer review criteria sheets",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    }
+  ],
+  "summary": "This lesson plan focuses on the competency level 8.4.5, where students explore the accidents that can be caused by the use of chemicals. The lesson is designed to be a progressive multi-stage step blueprint, with 3 steps. Each step represents a distinct progressive phase of the activity. The teacher facilitation and student activities are designed to scaffold learning without lecturing. The expected output is an evidence record with one supported conclusion. The grouping is 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+  "assessment_and_feedback_whole_lesson": "As students, there are times for you to use chemicals in school laboratories for experiment. Incorrect and careless use of chemicals can cause harm to our health and even death. Given below is a Table showing statistics related to hazards caused to people by poisoning with chemical pesticides. 2005 2004 Cause for accident No. deathNo. hospitalized No. deathNo. hospitalized 127016910128116644 Poisoning pesticides 2301745622616978 Poisoning chemicals used at home Sauce: Reports of medical statistics",
+  "post_activity": "5-minute in-class assignment: Assemble the final, validated LEARN lesson plan JSON now.",
+  "information_sources": [
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
+  ],
+  "attachments": [],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 1,
+  "total_periods": 2,
+  "selected_activity": "Activity: Public Service Case Study & Dilemma Cards: Competency Level 8.4.5\nApproach: Students use public service case study & dilemma cards to explore 'Explains the accidents that can be caused by the use of chemicals.'. Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.\nExpected output: An evidence record with one supported conclusion.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+  "selected_activity_title": "Public Service Case Study & Dilemma Cards: Competency Level 8.4.5",
+  "custom_teacher_activity": null,
+  "activity_options": [
+    {
+      "id": "option_2",
+      "title": "Public Service Case Study & Dilemma Cards: Competency Level 8.4.5",
+      "pedagogy_type": "Observation / Evidence Inquiry",
+      "description": "Students use public service case study & dilemma cards to explore 'Explains the accidents that can be caused by the use of chemicals.'. Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "learning_outcomes_addressed": [
+        "Explains the accidents that can be caused by the use of chemicals.",
+        "Explains the measures to be taken at accident caused by chemicals."
+      ],
+      "student_action_summary": "Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "teacher_facilitation_summary": "Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.",
+      "student_grouping": "8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks",
+        "Chart Paper"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "An evidence record with one supported conclusion.",
+      "creative_assessment_preview": "A paired evidence check: name one observation and the outcome it supports.",
+      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "Explains the accidents that can be caused by the use of chemicals.",
+      "Explains the measures to be taken at accident caused by chemicals."
+    ],
+    "2": [
+      "Shows the measures to be taken to avoid accidents caused by chemicals."
+    ]
+  },
+  "filename": "Grade_8_comp_8_4_5_p1.json"
+}

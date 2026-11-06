@@ -21,11 +21,50 @@ logger = logging.getLogger("LessonPlanAssembler")
 def balance_development_step_times(steps: List[LessonDevelopmentStepDto]) -> List[LessonDevelopmentStepDto]:
     """
     Enforces that all developmental steps mathematically sum to exactly 30 minutes in clean multiples of 5 (5, 10, 15, 20).
+    Preserves LLM dynamic auto-generated allocation whenever steps sum to 30 in clean multiples of 5
+    (including 10+10+10, 5+15+10, 10+15+5, 15+15, 5+20+5, etc.).
     """
     if not steps:
         return steps
 
-    # If already exactly 30 mins and all steps are multiples of 5 (min 5), preserve LLM's dynamic allocation
+    # If already exactly 30 mins and all steps are multiples of 5 (min 5), preserve LLM auto-generated allocation
+    if sum(s.time_minutes for s in steps) == 30 and all(s.time_minutes % 5 == 0 and s.time_minutes >= 5 for s in steps):
+        return steps
+
+    logger.warning("Step timing drift or non-multiples of 5 detected. Re-balancing in 5-minute increments to exactly 30 mins...")
+
+    # Round each step to nearest multiple of 5 (min 5 mins)
+    for s in steps:
+        s.time_minutes = max(5, int(round(s.time_minutes / 5.0) * 5))
+
+    total = sum(s.time_minutes for s in steps)
+    drift = 30 - total
+    step_count = len(steps)
+
+    if drift != 0:
+        units = drift // 5
+        direction = 5 if units > 0 else -5
+        for _ in range(abs(units)):
+            if direction < 0:
+                candidates = [i for i, s in enumerate(steps) if s.time_minutes > 5]
+                if candidates:
+                    idx = max(candidates, key=lambda k: steps[k].time_minutes)
+                    steps[idx].time_minutes += direction
+                else:
+                    break
+            else:
+                idx = min(range(step_count), key=lambda k: steps[k].time_minutes)
+                steps[idx].time_minutes += direction
+
+    return steps
+
+    # If steps are uniform [10, 10, 10], diversify based on step depth and tasks
+    if len(steps) == 3 and all(s.time_minutes == 10 for s in steps):
+        steps = differentiate_step_timings_by_content(steps)
+        if sum(s.time_minutes for s in steps) == 30:
+            return steps
+
+    # If already exactly 30 mins and all steps are multiples of 5 (min 5), preserve dynamic allocation
     if sum(s.time_minutes for s in steps) == 30 and all(s.time_minutes % 5 == 0 and s.time_minutes >= 5 for s in steps):
         return steps
 
@@ -81,6 +120,7 @@ def build_single_period_assembly_prompt(
     outcomes_formatted = "\n".join([f"- {o}" for o in period_outcomes]) if period_outcomes else "- Foundational civic concept exploration."
     resources_formatted = ", ".join(accessible_resources) if accessible_resources else "Standard blackboard, student notebooks"
     is_civic_education = subject.strip().casefold() == "civic education"
+
     step_assessment_rule = (
         "   - Do not include assessment_and_feedback in development steps; the only assessment belongs in Assessment & Closure."
         if is_civic_education
@@ -92,16 +132,28 @@ def build_single_period_assembly_prompt(
 AUTHORITATIVE SELECTED ACTIVITY FOR THIS LESSON:
 "{chosen_strategy_description}"
 
-CRITICAL INSTRUCTIONS FOR GENERATING DEVELOPMENT STEPS:
-- Do NOT impose rigid, mandatory conditions dictating that 'Step 1 must be launch/orientation, Step 2 must be execution, Step 3 must be presentation'.
-- Let the stages, sequence, and flow of development steps be determined naturally by the chosen activity and the allocated learning outcomes.
-- The development steps (typically 3 steps, or 2 to 4 steps as appropriate for the activity, totaling exactly 30 minutes in clean multiples of 5, e.g. 10m+10m+10m, 15m+15m, 10m+15m+5m, 5m+15m+10m, or 5m+20m+5m) must organically fit how this specific activity unfolds:
-  * 'learning_teaching_method': Pedagogical method dynamically chosen to match what occurs in this specific step of the activity (e.g. Roleplay, Guided Inquiry, Jigsaw, Issue Tree Analysis, Socratic Dialogue, Campus Observation).
-  * 'learning_teaching_aids': Concrete physical materials, worksheets, props, or artifacts used in this step for this activity.
-  * 'teacher_activities': Active facilitator actions (guiding, scaffolding, observing group dynamics, asking inquiry questions, moderating, never lecturing).
-  * 'student_activities': Active student-centered actions (collaborating in groups, roleplaying, investigating, analyzing, debating, creating, reflecting).
-  * 'time_minutes': Clean multiple of 5 suited to the depth needed for this step.
-- Every step's content, method, aids, teacher activity, and student activity MUST be original, dynamically generated, and aligned with the chosen activity and learning outcomes without hardcoding or repetition."""
+CRITICAL INSTRUCTIONS FOR GENERATING CREATIVE DEVELOPMENT STEPS:
+- You MUST generate completely unique, imaginative, highly creative development steps designed strictly around:
+  * SPECIFIC SELECTED ACTIVITY: "{chosen_strategy_description}"
+  * ALLOCATED LEARNING OUTCOMES FOR THIS PERIOD:
+{outcomes_formatted}
+  * LESSON TOPIC: "{lesson_topic}"
+
+- PROGRESSIVE MULTI-STAGE STEP BLUEPRINT:
+  * Each step represents a distinct progressive phase of "{chosen_strategy_description}". DO NOT repeat the same tasks or phrases across steps!
+  * Step 1 (Launch & Investigation Setup): Teacher introduces the specific real-world Sri Lankan dilemma or scenario for "{lesson_topic}", presents concrete inquiry task cards/materials, and assigns active group roles. Students examine the prompt, divide responsibilities, and formulate inquiry questions.
+  * Step 2 (Active Collaborative Deep-Dive / Simulation): Students actively execute "{chosen_strategy_description}" (e.g., roleplaying civic stakeholders, auditing scenarios, debating propositions, or designing civic artifacts). Teacher circulates among teams, asking probing questions to scaffold learning without lecturing.
+  * Step 3 (Spokesperson Sharing, Peer Critique & Plenary Consolidation): Group spokespersons present their civic findings or artifacts; peer teams evaluate using clear criteria and offer feedback; teacher synthesizes discoveries against the learning outcomes.
+  * (If 4 steps are used, split the middle deep-dive into two distinct progressive sub-stages).
+
+- ABSOLUTE PROHIBITION OF REPETITION & BOILERPLATE:
+  * NEVER repeat the exact same sentences for 'teacher_activities' or 'student_activities' across multiple steps (e.g. NEVER repeat "Facilitates role execution" or "Students negotiate a solution" across steps 2, 3, 4). Each step MUST describe unique, specific actions!
+  * NEVER use generic boilerplate titles like 'Task Orientation & Guided Inquiry Launch' or copy unrelated method names.
+  * In 'learning_teaching_method', name the specific sub-stage of this activity (e.g., for a debate: "Dilemma Framing & Evidence Prep", "Cross-Team Rebuttal Session", "Consensus Resolution"; for a hazard walk: "Campus Hazard Inspection", "Risk Matrix Formulation", "Safety Charter Drafting").
+  * In 'learning_teaching_aids', list specific, physical items (e.g. hazard cards, dilemma briefs, role badges, observation grids, chart paper, markers). NEVER output "None" or "none"!
+  * In 'teacher_activities' and 'student_activities', write 2 to 4 detailed sentences with concrete Sri Lankan classroom dialogue, teacher scaffolding questions, and active student tasks.
+
+- Dynamic Timing: Auto-generate 'time_minutes' as clean multiples of 5 (e.g. 5, 10, 15, or 20) totaling exactly 30 minutes across steps (such as 10m+10m+10m, 5m+15m+10m, 10m+15m+5m, 15m+15m, or 5m+20m+5m)."""
         if chosen_strategy_description
         else "MANDATORY ACTIVITY & DYNAMIC DEVELOPMENT STEPS DIRECTIVE: Generate rich, unique, student-centered collaborative investigation steps."
     )
@@ -125,10 +177,11 @@ STRICT PEDAGOGICAL & 40-MINUTE STRUCTURAL LAWS:
 6. Lesson Development Steps (CLEAN MULTIPLES OF 5, TOTAL = EXACTLY 30 MINUTES):
    - Every single step's 'time_minutes' MUST be a clean multiple of 5 (e.g. 5, 10, 15, 20). NEVER use non-multiples of 5 like 7, 8, 12, 13, 14, 17, 22!
    - Step count is typically 3 steps, but can be 2, 3, or 4 steps depending on what best suits the selected activity and learning outcome:
-     * 3 Steps (Standard): e.g. 10m + 10m + 10m = 30m; OR 5m (Launch) + 15m (Active Simulation/Walk) + 10m (Synthesis) = 30m; OR 10m (Setup) + 15m (Inquiry) + 5m (Review) = 30m; OR 5m (Setup) + 20m (Extended Drama/Field Work) + 5m (Debrief) = 30m.
-     * 2 Steps (Intensive): e.g. 10m (Orientation) + 20m (Roleplay/Debate) = 30m; OR 15m + 15m = 30m.
-     * 4 Steps (Multi-Station): e.g. 5m + 10m + 10m + 5m = 30m.
-   - The SUM of all development steps MUST strictly equal 30 minutes.
+     * Examples: 10m + 10m + 10m, 5m + 15m + 10m, 10m + 15m + 5m, 15m + 15m, 5m + 20m + 5m, or 5m + 10m + 10m + 5m = 30m.
+   - DYNAMIC TIMING AUTO-GENERATION:
+     * Automatically generate and allocate 'time_minutes' to each development step to fit what students and the teacher actually do in that step.
+     * Each step's duration must be a clean multiple of 5 (e.g. 5, 10, 15, or 20 minutes).
+     * The total across all development steps must sum to exactly 30 minutes. (10+10+10 is completely acceptable when steps are balanced, as are 5+15+10, 10+15+5, 15+15, or 5+20+5).
    - DYNAMIC ADAPTATION: Allocate time and step contents to fit the specific activity (e.g. a drama or school-walk needs a longer middle step like 15-20m; station jigsaw may use 10m/10m/10m).
 {step_assessment_rule}
 7. Creative In-Class Assignment & Formative Closure (time: exactly 5 minutes total):
@@ -167,28 +220,28 @@ CRITICAL ANTI-BOILERPLATE MANDATE:
     {{
       "step_number": 1,
       "time_minutes": 10,
-      "learning_teaching_method": "<string: pedagogical method organically matching this stage of the activity>",
-      "learning_teaching_aids": "<string: concrete materials, worksheets, props, or artifacts used in this step>",
-      "teacher_activities": "<string: teacher facilitator actions supporting students in this stage of the activity>",
-      "student_activities": "<string: active student tasks and collaborative engagement in this step>",
+      "learning_teaching_method": "<string: specific launch and inquiry setup phase for this activity>",
+      "learning_teaching_aids": "<string: concrete physical materials, prompt cards, and worksheets for this step (never 'None')>",
+      "teacher_activities": "<string: 2-4 sentences describing exact teacher facilitator actions introducing this specific scenario and scaffolding role distribution>",
+      "student_activities": "<string: 2-4 sentences describing active student teamwork reviewing scenario prompts and assigning group roles>",
       "assessment_and_feedback": ""
     }},
     {{
       "step_number": 2,
       "time_minutes": 10,
-      "learning_teaching_method": "<string: pedagogical method organically matching this stage of the activity>",
-      "learning_teaching_aids": "<string: concrete materials, worksheets, props, or artifacts used in this step>",
-      "teacher_activities": "<string: teacher facilitator actions supporting students in this stage of the activity>",
-      "student_activities": "<string: active student tasks and collaborative engagement in this step>",
+      "learning_teaching_method": "<string: specific collaborative execution/simulation phase of this activity>",
+      "learning_teaching_aids": "<string: concrete artifacts, case materials, charts, or props used in this step (never 'None')>",
+      "teacher_activities": "<string: 2-4 sentences describing teacher circulating, observing, and asking probing questions to deepen inquiry>",
+      "student_activities": "<string: 2-4 sentences describing active student investigation, roleplay, debate, or mapping without passive spectators>",
       "assessment_and_feedback": ""
     }},
     {{
       "step_number": 3,
       "time_minutes": 10,
-      "learning_teaching_method": "<string: pedagogical method organically matching this stage of the activity>",
-      "learning_teaching_aids": "<string: concrete materials, worksheets, props, or artifacts used in this step>",
-      "teacher_activities": "<string: teacher facilitator actions supporting students in this stage of the activity>",
-      "student_activities": "<string: active student tasks and collaborative engagement in this step>",
+      "learning_teaching_method": "<string: specific presentation, peer review, and plenary synthesis phase>",
+      "learning_teaching_aids": "<string: student-created presentation charts, whiteboard, feedback cards (never 'None')>",
+      "teacher_activities": "<string: 2-4 sentences describing teacher moderating presentations, guiding peer evaluation, and reinforcing syllabus concepts>",
+      "student_activities": "<string: 2-4 sentences describing team spokespersons presenting findings and peer students critiquing and recording takeaways>",
       "assessment_and_feedback": ""
     }}
   ],

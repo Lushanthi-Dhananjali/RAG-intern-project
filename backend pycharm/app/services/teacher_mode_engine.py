@@ -36,6 +36,7 @@ def build_mode_b_scaffolding_prompt(
     outcomes_formatted = "\n".join([f"- {o}" for o in period_outcomes]) if period_outcomes else "- Foundational civic concept exploration."
     resources_formatted = ", ".join(accessible_resources) if accessible_resources else "Standard classroom chalkboard, notebooks"
 
+
     prompt = f"""<|begin_of_text|><|start_header_id|>system<|end_header_id|>
 You are a Senior Pedagogical Scaffolding Specialist for the Sri Lankan NIE Civic Education Curriculum (Grades 6-9).
 The teacher has provided their OWN custom pedagogical concept (Mode B).
@@ -48,7 +49,13 @@ PEDAGOGICAL PACING MANDATE (Total: 40 Minutes):
    - Teacher acts strictly as FACILITATOR: circulating, scaffolding, asking probing questions, never lecturing.
    - Ground scenarios and tasks in authentic Sri Lankan context (schools, local governance, communities, cultural traditions).
    - Every step's duration MUST be a clean multiple of 5 (e.g. 5, 10, 15, 20 mins). Sum MUST equal exactly 30 minutes.
-   - Step count typically 3 (e.g. 10m + 10m + 10m = 30m, or 5m + 15m + 10m = 30m, or 5m + 20m + 5m = 30m), but 2 or 4 steps matching the custom activity are also accepted.
+   - PROGRESSIVE MULTI-STAGE STEP BLUEPRINT:
+     * Step 1 (Launch & Investigation Setup): Teacher introduces the specific problem or dilemma for "{lesson_topic}", sets up materials and role assignments. Students divide responsibilities and review inquiry prompts.
+     * Step 2 (Active Collaborative Execution): Students actively execute "{teacher_custom_activity}" in small groups without passive spectators. Teacher circulates to scaffold inquiry.
+     * Step 3 (Spokesperson Sharing & Consolidation): Group spokespersons present discoveries or artifacts; peer teams evaluate; teacher consolidates key learnings.
+   - ABSOLUTE PROHIBITION OF REPETITION:
+     * NEVER repeat the exact same sentences for 'teacher_activities' or 'student_activities' across multiple steps. Each step MUST describe unique, specific actions!
+     * In 'learning_teaching_aids', list concrete physical items (e.g. task cards, role sheets, charts, markers). NEVER output "None"!
 3. Creative In-Class Assignment & Closure (exactly 5 mins total): Put a creative, age-appropriate in-class concluding task in 'post_activity' and 'summary' connecting directly to the period outcome and custom activity (e.g. quick 2-line rhyme, drawing challenge, mini-quiz, pass-the-parcel concept ball, or statement display). Must be achievable in 5 minutes in-class.
 4. Align the Entrance and Assignment & Closure with the supplied competency outcomes and the teacher's custom activity. Generate usable classroom content, never placeholders or URLs.
 5. The 'the_entrance' field must describe both teacher and student actions. The 'post_activity' field must describe the in-class five-minute task, not take-home homework.
@@ -82,28 +89,28 @@ CRITICAL ANTI-BOILERPLATE MANDATE:
     {{
       "step_number": 1,
       "time_minutes": 10,
-      "learning_teaching_method": "<string: pedagogical method organically matching this stage of the custom activity>",
-      "learning_teaching_aids": "<string: concrete materials, worksheets, props, or artifacts used in this step>",
-      "teacher_activities": "<string: teacher facilitator actions supporting students in this stage of the custom activity>",
-      "student_activities": "<string: active student tasks and collaborative engagement in this step>",
+      "learning_teaching_method": "<string: specific launch and inquiry setup phase for this custom activity>",
+      "learning_teaching_aids": "<string: concrete physical materials, prompt cards, and worksheets for this step (never 'None')>",
+      "teacher_activities": "<string: 2-4 sentences describing exact teacher facilitator actions introducing this specific scenario and scaffolding role distribution>",
+      "student_activities": "<string: 2-4 sentences describing active student teamwork reviewing scenario prompts and assigning group roles>",
       "assessment_and_feedback": ""
     }},
     {{
       "step_number": 2,
       "time_minutes": 10,
-      "learning_teaching_method": "<string: pedagogical method organically matching this stage of the custom activity>",
-      "learning_teaching_aids": "<string: concrete materials, worksheets, props, or artifacts used in this step>",
-      "teacher_activities": "<string: teacher facilitator actions supporting students in this stage of the custom activity>",
-      "student_activities": "<string: active student tasks and collaborative engagement in this step>",
+      "learning_teaching_method": "<string: specific collaborative execution/simulation phase of this custom activity>",
+      "learning_teaching_aids": "<string: concrete artifacts, case materials, charts, or props used in this step (never 'None')>",
+      "teacher_activities": "<string: 2-4 sentences describing teacher circulating, observing, and asking probing questions to deepen inquiry>",
+      "student_activities": "<string: 2-4 sentences describing active student investigation, roleplay, debate, or mapping without passive spectators>",
       "assessment_and_feedback": ""
     }},
     {{
       "step_number": 3,
       "time_minutes": 10,
-      "learning_teaching_method": "<string: pedagogical method organically matching this stage of the custom activity>",
-      "learning_teaching_aids": "<string: concrete materials, worksheets, props, or artifacts used in this step>",
-      "teacher_activities": "<string: teacher facilitator actions supporting students in this stage of the custom activity>",
-      "student_activities": "<string: active student tasks and collaborative engagement in this step>",
+      "learning_teaching_method": "<string: specific presentation, peer review, and plenary synthesis phase>",
+      "learning_teaching_aids": "<string: student-created presentation charts, whiteboard, feedback cards (never 'None')>",
+      "teacher_activities": "<string: 2-4 sentences describing teacher moderating presentations, guiding peer evaluation, and reinforcing syllabus concepts>",
+      "student_activities": "<string: 2-4 sentences describing team spokespersons presenting findings and peer students critiquing and recording takeaways>",
       "assessment_and_feedback": ""
     }}
   ],

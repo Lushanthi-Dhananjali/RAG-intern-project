@@ -76,40 +76,46 @@ class TimingGuardrailEngine:
     @staticmethod
     def auto_repair_step_timings(
         steps: List[LessonDevelopmentStepDto],
+        selected_activity: str = "",
+        focus_outcome: str = "",
+        lesson_topic: str = "",
     ) -> List[LessonDevelopmentStepDto]:
         """
-        Guarantees that the sum of lesson development steps equals exactly 30 minutes.
-        Repairs LLM drift without failing generation or throwing validation errors.
+        Guarantees that the sum of lesson development steps equals exactly 30 minutes in clean multiples of 5.
+        Repairs LLM timing drift without overwriting valid auto-generated step content.
+        If steps are empty, synthesizes dynamic steps tailored to the specific activity and learning outcome.
         """
         if not steps:
-            # Fallback to default 3-step scaffold if LLM emitted an empty array
+            act_clean = (selected_activity or "Collaborative Inquiry").splitlines()[0]
+            act_clean = re.sub(r"^Activity:\s*", "", act_clean, flags=re.IGNORECASE).strip() or "Collaborative Inquiry"
+            topic_clean = focus_outcome or lesson_topic or "Civic Core Principles"
             return [
                 LessonDevelopmentStepDto(
                     step_number=1,
                     time_minutes=10,
-                    learning_teaching_method="Task Orientation & Prompt Distribution",
-                    learning_teaching_aids="Task assignment cards, chalkboard",
-                    teacher_activities="Distributes materials and sets investigative goals.",
-                    student_activities="Review task cards in assigned groups.",
-                    assessment_and_feedback="Checks student readiness and clarifies questions.",
+                    learning_teaching_method=f"Orientation & {act_clean} Launch",
+                    learning_teaching_aids=f"Task cards for {act_clean}, chalkboard, student notebooks",
+                    teacher_activities=f"Teacher introduces the Sri Lankan real-world scenario for '{topic_clean}', clarifies objectives, and distributes task cards for {act_clean}.",
+                    student_activities=f"Students arrange into collaborative groups, review inquiry prompts for {act_clean}, assign group roles, and formulate investigative questions.",
+                    assessment_and_feedback="",
                 ),
                 LessonDevelopmentStepDto(
                     step_number=2,
                     time_minutes=10,
-                    learning_teaching_method="Cooperative Group Investigation",
-                    learning_teaching_aids="Worksheets, student notebooks",
-                    teacher_activities="Circulates to provide scaffolding and monitor roles.",
-                    student_activities="Collaborate within assigned roles to solve the problem.",
-                    assessment_and_feedback="Provides formative feedback on ongoing discussion.",
+                    learning_teaching_method=act_clean,
+                    learning_teaching_aids=f"Activity worksheets, scenario cards, and materials for {act_clean}",
+                    teacher_activities=f"Teacher circulates among student groups as facilitator, scaffolds student inquiry into '{topic_clean}', and monitors dynamic execution of {act_clean}.",
+                    student_activities=f"Students actively collaborate in assigned roles to execute {act_clean}, analyzing civic situations related to '{topic_clean}' without passive spectators.",
+                    assessment_and_feedback="",
                 ),
                 LessonDevelopmentStepDto(
                     step_number=3,
                     time_minutes=10,
-                    learning_teaching_method="Plenary Presentation & Review",
-                    learning_teaching_aids="Blackboard, completed posters",
-                    teacher_activities="Facilitates peer review and synthesizes main findings.",
-                    student_activities="Spokespersons share group outputs with class.",
-                    assessment_and_feedback="Clarifies misconceptions and provides peer assessment.",
+                    learning_teaching_method=f"Presentation & Synthesis of {act_clean}",
+                    learning_teaching_aids=f"Completed group charts from {act_clean}, whiteboard",
+                    teacher_activities=f"Teacher moderates student team presentations, facilitates constructive peer review, and synthesizes discoveries regarding '{topic_clean}'.",
+                    student_activities=f"Group spokespersons present findings and solutions from {act_clean}; peers evaluate presentations and note key takeaways in their notebooks.",
+                    assessment_and_feedback="",
                 ),
             ]
 
@@ -119,6 +125,7 @@ class TimingGuardrailEngine:
         # Re-index step numbers consecutively (1 to N)
         for idx, s in enumerate(steps, start=1):
             s.step_number = idx
+
 
         # If already exactly 30 minutes and all steps are multiples of 5, preserve LLM's proportional decisions
         if current_sum == 30 and all(s.time_minutes % 5 == 0 and s.time_minutes >= 5 for s in steps):
@@ -197,14 +204,6 @@ class TimingGuardrailEngine:
             plan.unique_learning_outcome = clean_outcomes
             logger.info("Programmatically injected %d verbatim TIG outcome(s).", len(clean_outcomes))
 
-        # 2. Timing Auto-Repair
-        plan.lesson_development_steps = TimingGuardrailEngine.auto_repair_step_timings(
-            plan.lesson_development_steps
-        )
-
-        # 3. Time Allocation Formatting
-        plan.time_allocation = f"40 Minutes (Period {requested_period} of {total_periods})"
-
         focus = next(
             (outcome.strip().rstrip(".") for outcome in verbatim_outcomes if outcome.strip()),
             lesson_topic.strip() or "the period topic",
@@ -213,6 +212,17 @@ class TimingGuardrailEngine:
         activity = activity_lines[0] if activity_lines else ""
         activity = re.sub(r"^Activity:\s*", "", activity, flags=re.IGNORECASE).strip()
         activity = activity or "the selected student activity"
+
+        # 2. Timing Auto-Repair (passes activity and focus for dynamic synthesis if needed)
+        plan.lesson_development_steps = TimingGuardrailEngine.auto_repair_step_timings(
+            steps=plan.lesson_development_steps,
+            selected_activity=activity,
+            focus_outcome=focus,
+            lesson_topic=lesson_topic
+        )
+
+        # 3. Time Allocation Formatting
+        plan.time_allocation = f"40 Minutes (Period {requested_period} of {total_periods})"
         relevant_terms = {
             word.casefold()
             for word in re.findall(r"[A-Za-z]{4,}", focus)
@@ -348,37 +358,53 @@ class TimingGuardrailEngine:
                 if not unavailable_text.search(att) and len(att.strip()) >= 3
             ]
 
-        # 5. Sanitize all developmental steps from URLs and placeholders - PRESERVE LLM GENERATED CONTENT
+        # 5. Sanitize all developmental steps from URLs, placeholders, and duplicate repetitive sentences
+        seen_methods = set()
+        seen_teacher_acts = set()
+        seen_student_acts = set()
+
         for idx, step in enumerate(plan.lesson_development_steps, start=1):
-            # Sanitize learning_teaching_method: keep LLM method, only clean if missing/URL
+            # Sanitize learning_teaching_method: keep LLM method, only clean if missing/URL/duplicate
             method_str = (step.learning_teaching_method or "").strip()
             method_str = re.sub(r"^<string:\s*[^>]+>\s*", "", method_str, flags=re.IGNORECASE).strip()
-            if not method_str or len(method_str) < 3 or unavailable_text.search(method_str):
+            is_generic_placeholder = any(
+                p in method_str.casefold()
+                for p in ("task orientation", "guided inquiry launch", "active student-centered investigation", "spokesperson presentation, peer review")
+            )
+            is_dup_method = method_str.casefold() in seen_methods
+
+            if not method_str or len(method_str) < 3 or unavailable_text.search(method_str) or is_generic_placeholder or is_dup_method:
                 if "learning-teaching-method" in method_str:
                     slug = re.sub(r"^https?://[^\s/]+/learning-teaching-method/?", "", method_str)
-                    step.learning_teaching_method = slug.replace("-", " ").strip().title() or "Guided Inquiry & Discussion"
+                    step.learning_teaching_method = slug.replace("-", " ").strip().title() or f"{activity} Exploration"
                 elif idx == 1:
-                    step.learning_teaching_method = "Task Orientation & Guided Inquiry Setup"
+                    step.learning_teaching_method = f"Orientation & {activity} Setup"
                 elif idx == 2:
-                    step.learning_teaching_method = activity if len(activity) < 50 else "Interactive Inquiry & Problem-Solving"
+                    step.learning_teaching_method = f"Collaborative Deep-Dive: {activity}"
+                elif idx == 3:
+                    step.learning_teaching_method = f"Spokesperson Presentation & Peer Review: {activity}"
                 else:
-                    step.learning_teaching_method = "Spokesperson Presentation, Plenary Synthesis & Peer Review"
+                    step.learning_teaching_method = f"Plenary Consolidation: {activity}"
             else:
                 step.learning_teaching_method = method_str
+            seen_methods.add(step.learning_teaching_method.casefold())
 
-            # Sanitize learning_teaching_aids: keep LLM aids, only clean if missing/URL
+            # Sanitize learning_teaching_aids: keep LLM aids, only clean if missing/URL/none
             aids_str = (step.learning_teaching_aids or "").strip()
             aids_str = re.sub(r"^<string:\s*[^>]+>\s*", "", aids_str, flags=re.IGNORECASE).strip()
-            if not aids_str or len(aids_str) < 3 or unavailable_text.search(aids_str):
+            is_none_aids = aids_str.casefold() in ("none", "none.", "n/a", "null", "no aids", "not applicable")
+            if not aids_str or len(aids_str) < 3 or is_none_aids or unavailable_text.search(aids_str):
                 if "learning-teaching-aids" in aids_str:
                     slug = re.sub(r"^https?://[^\s/]+/learning-teaching-aids/?", "", aids_str)
-                    step.learning_teaching_aids = slug.replace("-", ", ").strip().title() or "Chalkboard, student notebooks, task prompt cards"
+                    step.learning_teaching_aids = slug.replace("-", ", ").strip().title() or f"Task materials for {activity}"
                 elif idx == 1:
-                    step.learning_teaching_aids = "Inquiry prompt cards, chalkboard, student notebooks"
+                    step.learning_teaching_aids = f"Inquiry prompt cards for {activity}, scenario prompts, chalkboard, student notebooks"
                 elif idx == 2:
-                    step.learning_teaching_aids = "Activity scenario cards, observation sheets, chart paper"
+                    step.learning_teaching_aids = f"Worksheets and activity cards for {activity}, chart paper, markers"
+                elif idx == 3:
+                    step.learning_teaching_aids = f"Presentation charts created during {activity}, whiteboard, peer review criteria sheets"
                 else:
-                    step.learning_teaching_aids = "Presentation board, student summary sheets, whiteboard"
+                    step.learning_teaching_aids = f"Synthesis reflection sheets and summary cards for {activity}"
             else:
                 step.learning_teaching_aids = aids_str
 
@@ -386,49 +412,65 @@ class TimingGuardrailEngine:
             t_str = (step.teacher_activities or "").strip()
             t_str = re.sub(r"^<string:\s*[^>]+>\s*", "", t_str, flags=re.IGNORECASE)
             t_str = re.sub(r"\.\.\.$", "", t_str).strip()
-            # Only provide fallback if LLM generated literally nothing (< 10 chars) or contained a URL
-            if not t_str or len(t_str) < 10 or unavailable_text.search(t_str):
+            is_dup_teacher = t_str.casefold() in seen_teacher_acts
+
+            # Only provide fallback if LLM generated literally nothing (< 15 chars), contained a URL, or repeated identical text from an earlier step
+            if not t_str or len(t_str) < 15 or is_dup_teacher or unavailable_text.search(t_str):
                 if idx == 1:
                     step.teacher_activities = (
-                        f"The teacher introduces the lesson inquiry on '{focus}', organizes students into collaborative teams "
-                        "with designated roles, and distributes inquiry task prompt cards as facilitator without lecturing."
+                        f"The teacher presents the Sri Lankan real-world dilemma on '{focus}', organizes students into collaborative teams "
+                        f"with designated roles, and distributes inquiry task cards for {activity} as facilitator without lecturing."
                     )
                 elif idx == 2:
                     step.teacher_activities = (
-                        f"The teacher actively circulates among the groups to facilitate {activity}, scaffolds student "
-                        f"discussions around '{focus}', prompts critical thinking, and formatively monitors student engagement."
+                        f"The teacher actively circulates among the groups executing {activity}, scaffolds student "
+                        f"discussions around '{focus}' with probing questions, and formatively observes team collaboration."
+                    )
+                elif idx == 3:
+                    step.teacher_activities = (
+                        f"The teacher moderates group spokesperson presentations on '{focus}', guides peer groups in offering "
+                        f"constructive feedback, and synthesizes the core civic insights discovered through {activity}."
                     )
                 else:
                     step.teacher_activities = (
-                        f"The teacher facilitates group presentations, synthesizes student discoveries regarding '{focus}', "
-                        "highlights core civic values, and formatively clarifies any conceptual misconceptions."
+                        f"The teacher facilitates final group consensus on '{focus}', helps students resolve conceptual questions, "
+                        f"and consolidates key learnings from {activity}."
                     )
             else:
                 step.teacher_activities = t_str
+            seen_teacher_acts.add(step.teacher_activities.casefold())
 
             # Sanitize student_activities: PRESERVE LLM GENERATED CONTENT! DO NOT HARDCODE OR OVERWRITE!
             s_str = (step.student_activities or "").strip()
             s_str = re.sub(r"^<string:\s*[^>]+>\s*", "", s_str, flags=re.IGNORECASE)
             s_str = re.sub(r"\.\.\.$", "", s_str).strip()
-            # Only provide fallback if LLM generated literally nothing (< 10 chars) or contained a URL
-            if not s_str or len(s_str) < 10 or unavailable_text.search(s_str):
+            is_dup_student = s_str.casefold() in seen_student_acts
+
+            # Only provide fallback if LLM generated literally nothing (< 15 chars), contained a URL, or repeated identical text from an earlier step
+            if not s_str or len(s_str) < 15 or is_dup_student or unavailable_text.search(s_str):
                 if idx == 1:
                     step.student_activities = (
-                        f"Students arrange themselves in assigned group roles, examine the inquiry prompt concerning '{focus}', "
-                        "and prepare materials for their investigation."
+                        f"Students arrange themselves in assigned group roles, examine the inquiry challenge concerning '{focus}', "
+                        f"and prepare their collaborative materials for {activity}."
                     )
                 elif idx == 2:
                     step.student_activities = (
-                        f"Students actively carry out {activity}, collaborating in teams to analyze real-world civic situations "
-                        f"related to '{focus}' without passive bystanders."
+                        f"Students actively carry out {activity}, working in teams to analyze real-world civic situations "
+                        f"related to '{focus}' and co-create their group findings without passive bystanders."
                     )
-                else:
+                elif idx == 3:
                     step.student_activities = (
                         f"Team spokespersons present their group's findings on '{focus}' to the class, compare conclusions with peers, "
                         "and record constructive feedback in their notebooks."
                     )
+                else:
+                    step.student_activities = (
+                        f"Students review feedback received from peer teams, refine their group conclusions regarding '{focus}', "
+                        "and note personal civic responsibilities in their reflection sheets."
+                    )
             else:
                 step.student_activities = s_str
+            seen_student_acts.add(step.student_activities.casefold())
 
             # Sanitize other and assessment_and_feedback
             if step.other and unavailable_text.search(step.other):

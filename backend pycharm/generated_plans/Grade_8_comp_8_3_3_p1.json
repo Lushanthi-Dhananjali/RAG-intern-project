@@ -2,49 +2,49 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 1 of 4)",
-  "competence": "Contributes to the building of national cohesion and sustainable peace safeguarding one's own cultural identity",
+  "competence": "8.3.3",
   "competence_level": "8.3.3",
-  "lesson": "Explains how sustainable peace brings about the national development: Mock Local Council / Pradeshiya Sabha Session: Competency Level 8.3.3",
+  "lesson": "Explains how sustainable peace brings about the national development: Competency 8.3.3 Civic Cause-and-Effect Mapping: Competency Level 8.3.3",
   "unique_learning_outcome": [
     "Explains how sustainable peace brings about the national development.",
     "Explains the importance of building sustainable peace in a multicultural society."
   ],
-  "the_entrance": "Duration: Exactly 5 minutes. Teacher action: Welcomes the 40 students, writes the lesson title on the chalkboard, and introduces a short real-world scenario of a multicultural community deciding on a local development project. Student action: Listens attentively, recalls prior experiences of community cooperation, and links daily harmony to national progress. The teacher transitions directly into organizing the 8 teams for the mock council activity.",
+  "the_entrance": "5-minute introduction: Step 1: Launch & Investigation Setup",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "Organizes the 40 students into 8 teams of 5. Assigns specific roles (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) to ensure no bystanders. Distributes prompt cards outlining a local council dilemma regarding community resource allocation and national development.",
-      "student_activities": "Students assemble into their 8 designated teams, assume their roles, inspect the prompt cards, and clarify their team responsibilities with the teacher.",
-      "learning_teaching_method": "Guided Inquiry & Setup",
-      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "teacher_activities": "Teacher introduces the specific real-world Sri Lankan dilemma or scenario for 'Explains how sustainable peace brings about the national development: Competency 8.3.3 Civic Cause-and-Effect Mapping: Competency Level 8.3.3', presents concrete inquiry task cards/materials, and assigns active group roles. Students examine the prompt, divide responsibilities, and formulate inquiry questions.",
+      "student_activities": "Students examine the prompt, divide responsibilities, and formulate inquiry questions.",
+      "learning_teaching_method": "Investigation Setup",
+      "learning_teaching_aids": "inquiry task cards/materials",
       "assessment_and_feedback": "",
       "time_minutes": 10,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "Circulates across all 8 teams, providing outcome-focused prompts and time checks. Facilitates role execution, ensuring Leaders guide discussions, Scribes record arguments, Timekeepers monitor the 15-minute pacing, Spokespersons prepare summaries, and Civic Investigators check alignment with textbook facts.",
-      "student_activities": "Team members actively execute their roles: the Leader moderates discussion on how sustainable peace drives national development, the Scribe notes down key points, the Timekeeper keeps track of time, the Civic Investigator checks textbook concepts, and the team agrees on a reasoned decision written on chart paper.",
-      "learning_teaching_method": "Group Investigation & Production",
-      "learning_teaching_aids": "Student Notebooks, Chart Paper",
+      "teacher_activities": "Teacher circulates among teams, asking probing questions to scaffold learning without lecturing. Students actively execute 'Activity: Competency 8.3.3 Civic Cause-and-Effect Mapping: Competency Level 8.3.3 Approach: Students work with a teacher-presented classroom example about 'Explains how sustainable peace brings about the national development.' to map how the presented civic examples connect, explain those relationships, and review a peer map, without leaving the classroom.",
+      "student_activities": "Students actively execute 'Activity: Competency 8.3.3 Civic Cause-and-Effect Mapping: Competency Level 8.3.3 Approach: Students work with a teacher-presented classroom example about 'Explains how sustainable peace brings about the national development.' to map how the presented civic examples connect, explain those relationships, and review a peer map, without leaving the classroom.",
+      "learning_teaching_method": "Active Collaborative Deep-Dive / Simulation",
+      "learning_teaching_aids": "teacher-presented classroom example, chart paper, markers",
       "assessment_and_feedback": "",
-      "time_minutes": 15,
+      "time_minutes": 10,
       "other": ""
     },
     {
       "step_number": 3,
-      "teacher_activities": "Coordinates brief presentations from team Spokespersons and moderates the peer feedback session, highlighting common themes on sustainable peace and national development.",
-      "student_activities": "Spokespersons present their group's resolution to the class. Other teams listen critically, ask questions, and offer constructive peer feedback on the proposed civic decisions.",
-      "learning_teaching_method": "Presentation & Cross-Review",
-      "learning_teaching_aids": "Chart Paper, Chalkboard",
+      "teacher_activities": "Teacher synthesizes discoveries against the learning outcomes. Group spokespersons present their civic findings or artifacts; peer teams evaluate using clear criteria and offer feedback.",
+      "student_activities": "Group spokespersons present their civic findings or artifacts; peer teams evaluate using clear criteria and offer feedback.",
+      "learning_teaching_method": "Spokesperson Sharing, Peer Critique & Plenary Consolidation",
+      "learning_teaching_aids": "clear criteria",
       "assessment_and_feedback": "",
-      "time_minutes": 5,
+      "time_minutes": 10,
       "other": ""
     }
   ],
-  "summary": "Consolidation and synthesis of key concepts: The teacher summarizes how mutual understanding and sustainable peace directly contribute to national development, reinforcing that working unitedly across cultural diversities is essential for progress.",
-  "assessment_and_feedback_whole_lesson": "Final closure formative assessment evaluating student participation across roles and the accuracy of group resolutions regarding peace and national development.",
-  "post_activity": "Duration: Exactly 5 minutes. In-class assignment: Each student writes a single sentence in their notebook summarizing how sustainable peace enables national development, which is collected immediately by the Timekeeper.",
+  "summary": "This lesson plan focuses on Competency 8.3.3 Civic Cause-and-Effect Mapping: Competency Level 8.3.3, where students learn to explain how sustainable peace brings about the national development. The lesson is divided into three steps: Launch & Investigation Setup, Active Collaborative Deep-Dive / Simulation, and Spokesperson Sharing, Peer Critique & Plenary Consolidation. The lesson is designed to promote critical thinking, collaboration, and effective communication among students. The learning outcomes are: Explain how sustainable peace brings about the national development. Explain the importance of building sustainable peace in a multicultural society.",
+  "assessment_and_feedback_whole_lesson": "Teacher circulates across 8 teams, facilitating role execution and formatively checking progress. The teacher monitors progress with outcome-focused prompts and time checks. The teacher synthesizes discoveries against the learning outcomes. Group spokespersons present their civic findings or artifacts; peer teams evaluate using clear criteria and offer feedback. The teacher provides constructive feedback to students, focusing on their understanding and application of the learning outcomes.",
+  "post_activity": "5-minute in-class assignment: The teacher facilitates a class discussion on the importance of building sustainable peace in a multicultural society and how it can be achieved through mutual understanding, respect, and cooperation. The teacher emphasizes the role of education in fostering a culture of peace and encourages students to think critically about the importance of cultural diversity in a multicultural society. The teacher also provides guidance on how students can contribute to building sustainable peace in their own community and society.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
@@ -54,20 +54,20 @@
   "assignment_duration_minutes": 5,
   "period_number": 1,
   "total_periods": 4,
-  "selected_activity": "Activity: Mock Local Council / Pradeshiya Sabha Session: Competency Level 8.3.3\nApproach: Students use mock local council / pradeshiya sabha session to explore 'Explains how sustainable peace brings about the national development.'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.\nExpected output: A short role-based civic decision and its reasons.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "Mock Local Council / Pradeshiya Sabha Session: Competency Level 8.3.3",
+  "selected_activity": "Activity: Competency 8.3.3 Civic Cause-and-Effect Mapping: Competency Level 8.3.3\nApproach: Students work with a teacher-presented classroom example about 'Explains how sustainable peace brings about the national development.' to map how the presented civic examples connect, explain those relationships, and review a peer map, without leaving the classroom.\nStudent task: Map how the presented civic examples connect, explain those relationships, and review a peer map. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.\nExpected output: A cause-and-effect map with student explanations.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+  "selected_activity_title": "Competency 8.3.3 Civic Cause-and-Effect Mapping: Competency Level 8.3.3",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_2",
-      "title": "Mock Local Council / Pradeshiya Sabha Session: Competency Level 8.3.3",
-      "pedagogy_type": "Simulation / Roleplay",
-      "description": "Students use mock local council / pradeshiya sabha session to explore 'Explains how sustainable peace brings about the national development.'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "id": "option_1",
+      "title": "Competency 8.3.3 Civic Cause-and-Effect Mapping: Competency Level 8.3.3",
+      "pedagogy_type": "Field Investigation / School Walk",
+      "description": "Students work with a teacher-presented classroom example about 'Explains how sustainable peace brings about the national development.' to map how the presented civic examples connect, explain those relationships, and review a peer map, without leaving the classroom.",
       "learning_outcomes_addressed": [
         "Explains how sustainable peace brings about the national development.",
         "Explains the importance of building sustainable peace in a multicultural society."
       ],
-      "student_action_summary": "Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "student_action_summary": "Map how the presented civic examples connect, explain those relationships, and review a peer map. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
       "teacher_facilitation_summary": "Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.",
       "student_grouping": "8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
       "required_materials": [
@@ -76,9 +76,9 @@
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A short role-based civic decision and its reasons.",
-      "creative_assessment_preview": "Students state one role responsibility and explain how it supported the decision.",
-      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
+      "expected_student_output": "A cause-and-effect map with student explanations.",
+      "creative_assessment_preview": "Each group explains one part of its civic cause-and-effect mapping and links it to the outcome.",
+      "low_resource_alternative": "Use a spoken teacher prompt and oral group responses if writing materials are unavailable."
     }
   ],
   "outcome_allocation": {
@@ -95,5 +95,6 @@
     "4": [
       "Expresses the importance of mutual understanding for the wellbeing of a peaceful society."
     ]
-  }
+  },
+  "filename": "Grade_8_comp_8_3_3_p1.json"
 }

@@ -24,10 +24,11 @@ CRITICAL PEDAGOGICAL & GROUNDING DIRECTIVES:
 - The official learning outcomes are already fixed by the NIE syllabus and handled programmatically.
 - Use the provided official learning outcomes ONLY as an instructional reference to design matching teaching activities, steps, and assessments.
 
-4. 5-MINUTE ROUND MULTIPLES ONLY:
+4. 5-MINUTE ROUND MULTIPLES & DYNAMIC TIME ALLOCATION:
 - Every step's 'time_minutes' in 'lesson_development_steps' MUST be a clean multiple of 5 (e.g., 5, 10, 15, 20).
 - NEVER output odd or irregular times like 7, 11, 13, 17, or 22 minutes.
 - The total sum of 'time_minutes' across all development steps MUST strictly equal 30 minutes.
+- Automatically generate step durations dynamically to suit the actual tasks of each step (e.g. 10m+10m+10m, 5m+15m+10m, 10m+15m+5m, 15m+15m, or 5m+20m+5m).
 
 5. CREATIVE FORMATIVE ASSESSMENT:
 - The final assessment must not be a boring written test. It must be a creative, 5-minute active review (e.g., quick rhyming jingle/verse, 1-minute frozen tableau, pass-the-parcel concept question, whiteboard sketch duel, or rapid peer quiz).
@@ -148,6 +149,7 @@ def build_lesson_plan_prompt(
     # Time allocation for a single period plan
     time_allocation_label = f"40 Minutes (Period {current_period} of {total_periods})"
 
+
     # Format strategy directions
     if selected_activity_strategy and selected_activity_strategy.strip():
         strategy_directive = f"""### MANDATORY STUDENT-CENTERED PEDAGOGICAL STRATEGY:
@@ -188,38 +190,38 @@ Cooperative Student-Led Investigation with hands-on task cards and structured pe
         "lesson_development_steps": [
             {
                 "step_number": 1,
-                "teacher_activities": "string (Teacher sets up the task cards, explains group rules, and presents the central inquiry question to the students)",
-                "student_activities": f"string (Students organize into groups for {student_count} students, review task sheets, assign group roles, and begin investigation)",
-                "learning_teaching_method": "string (e.g., Guided Inquiry, Cooperative Setup)",
-                "learning_teaching_aids": "string (Task cards, problem scenarios, charts, or apparatus)",
+                "teacher_activities": "string (2-4 sentences: Teacher introduces the lesson dilemma, sets up inquiry prompts, and explains group roles as facilitator)",
+                "student_activities": f"string (2-4 sentences: Students organize into teams for {student_count} students, review task sheets, assign group roles, and formulate investigative questions)",
+                "learning_teaching_method": "string (Specific launch phase name organically matching this activity)",
+                "learning_teaching_aids": "string (Specific physical task cards, problem scenarios, or charts - never 'None')",
                 **({} if is_civic_education else {
                     "assessment_and_feedback": "string (Teacher checks understanding of instructions and group role assignment)"
                 }),
-                "time_minutes": 10,
+                "time_minutes": "integer (Auto-generated minutes suited to this step's depth; clean multiple of 5, summing to 30 mins total across steps)",
                 "other": "string (Group seating arrangement, resource distribution notes)",
             },
             {
                 "step_number": 2,
-                "teacher_activities": "string (Teacher circulates as facilitator, observes group work, scaffolds difficulties, and prompts deeper thinking)",
-                "student_activities": "string (Students actively execute the chosen activity—e.g. roleplaying, conducting school inquiry, or analyzing case studies)",
-                "learning_teaching_method": "string (e.g., Roleplay Simulation, Field Investigation, Jigsaw Activity)",
-                "learning_teaching_aids": "string (Activity worksheets, props, observation checklists, or posters)",
+                "teacher_activities": "string (2-4 sentences: Teacher circulates as facilitator, observes team collaboration, scaffolds difficulties with probing questions, and monitors progress)",
+                "student_activities": "string (2-4 sentences: Students actively carry out the collaborative investigation, roleplay, or problem solving without passive spectators)",
+                "learning_teaching_method": "string (Specific collaborative execution phase name matching this activity)",
+                "learning_teaching_aids": "string (Specific worksheets, scenario props, observation checklists, or posters - never 'None')",
                 **({} if is_civic_education else {
                     "assessment_and_feedback": "string (Teacher formatively assesses student collaboration and corrects conceptual misconceptions)"
                 }),
-                "time_minutes": 10,
+                "time_minutes": "integer (Auto-generated minutes suited to this step's depth; clean multiple of 5, summing to 30 mins total across steps)",
                 "other": "string (Differentiation for mixed abilities, timekeeping reminders)",
             },
             {
                 "step_number": 3,
-                "teacher_activities": "string (Teacher coordinates rapid peer presentations and synthesizes key student findings against syllabus concepts)",
-                "student_activities": "string (Student group spokespersons present observations, compare findings with other groups, and record peer feedback)",
-                "learning_teaching_method": "string (Student Presentations & Synthesis Discussion)",
-                "learning_teaching_aids": "string (Presentation boards, student charts, whiteboard)",
+                "teacher_activities": "string (2-4 sentences: Teacher moderates team presentations, facilitates constructive peer review, and synthesizes key discoveries against syllabus concepts)",
+                "student_activities": "string (2-4 sentences: Student spokespersons present findings, peer teams critique using criteria and record constructive feedback)",
+                "learning_teaching_method": "string (Specific presentation, peer evaluation, and synthesis phase name)",
+                "learning_teaching_aids": "string (Student presentation posters, whiteboard, feedback cards - never 'None')",
                 **({} if is_civic_education else {
                     "assessment_and_feedback": "string (Peer evaluation and teacher reinforcement of core learning outcomes)"
                 }),
-                "time_minutes": 10,
+                "time_minutes": "integer (Auto-generated minutes suited to this step's depth; clean multiple of 5, summing to 30 mins total across steps)",
                 "other": "None",
             },
         ],

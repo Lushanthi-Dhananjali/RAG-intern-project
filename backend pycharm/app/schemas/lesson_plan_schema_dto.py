@@ -33,8 +33,9 @@ class LessonPlanSchemaDto(BaseModel):
         description="Five-minute introduction with teacher actions, student actions, and a link to the selected activity"
     )
     lesson_development_steps: List[LessonDevelopmentStepDto] = Field(
-        default_factory=list,
-        description="Sequential development steps (Sum must strictly equal 30 Minutes)"
+        ...,
+        min_length=2,
+        description="Sequential development steps dynamically generated to match the chosen activity and outcomes (Sum must strictly equal 30 Minutes)"
     )
     summary: str = Field(..., description="Consolidation and synthesis of key student findings")
     assessment_and_feedback_whole_lesson: str = Field(
@@ -151,6 +152,10 @@ class LessonPlanSchemaDto(BaseModel):
                 if d.get(k) and isinstance(d[k], list) and len(d[k]) > 0:
                     steps = d[k]
                     break
+        act_raw = str(d.get("selected_activity_title") or d.get("selected_activity") or "Collaborative Inquiry").splitlines()[0]
+        act_clean = re.sub(r"^Activity:\s*", "", act_raw, flags=re.IGNORECASE).strip() or "Collaborative Inquiry"
+        topic_clean = str(d.get("lesson") or d.get("query") or "Civic Principles").strip()
+
         clean_steps = []
         if isinstance(steps, list):
             for idx, s in enumerate(steps, 1):
@@ -161,35 +166,46 @@ class LessonPlanSchemaDto(BaseModel):
                 if isinstance(s, dict):
                     clean_steps.append({
                         "step_number": s.get("step_number") or idx,
-                        "teacher_activities": str(s.get("teacher_activities") or s.get("teacher") or s.get("facilitation") or "Teacher guides investigation and scaffolding.").strip(),
-                        "student_activities": str(s.get("student_activities") or s.get("students") or s.get("task") or "Students collaborate in groups on assigned inquiry tasks.").strip(),
-                        "learning_teaching_method": str(s.get("learning_teaching_method") or s.get("method") or s.get("pedagogy") or "Guided Inquiry").strip(),
-                        "learning_teaching_aids": str(s.get("learning_teaching_aids") or s.get("aids") or s.get("materials") or "Task cards, activity worksheets, whiteboard").strip(),
+                        "teacher_activities": str(s.get("teacher_activities") or s.get("teacher") or s.get("facilitation") or f"Teacher facilitates student engagement in {act_clean} on '{topic_clean}'.").strip(),
+                        "student_activities": str(s.get("student_activities") or s.get("students") or s.get("task") or f"Students collaborate in groups executing {act_clean} on '{topic_clean}'.").strip(),
+                        "learning_teaching_method": str(s.get("learning_teaching_method") or s.get("method") or s.get("pedagogy") or f"{act_clean} Step {idx}").strip(),
+                        "learning_teaching_aids": str(s.get("learning_teaching_aids") or s.get("aids") or s.get("materials") or f"Task materials and worksheets for {act_clean}").strip(),
                         "assessment_and_feedback": str(s.get("assessment_and_feedback") or s.get("assessment") or "").strip(),
-                        "time_minutes": int(s.get("time_minutes") or s.get("duration") or 15),
+                        "time_minutes": int(s.get("time_minutes") or s.get("duration") or 10),
                         "other": str(s.get("other") or "").strip()
                     })
+
         if not clean_steps:
             clean_steps = [
                 {
                     "step_number": 1,
-                    "teacher_activities": "Teacher organizes students into structured inquiry teams and introduces the task scenario.",
-                    "student_activities": "Students review task cards, assume collaborative group roles, and begin investigations.",
-                    "learning_teaching_method": "Guided Inquiry",
-                    "learning_teaching_aids": "Task cards and activity prompts",
+                    "teacher_activities": f"Teacher introduces the Sri Lankan real-world scenario for '{topic_clean}', clarifies objectives, and distributes task cards for {act_clean}.",
+                    "student_activities": f"Students review task cards, assume collaborative group roles, and begin investigations for {act_clean}.",
+                    "learning_teaching_method": f"Orientation & {act_clean} Setup",
+                    "learning_teaching_aids": f"Task cards and scenario prompts for {act_clean}",
                     "assessment_and_feedback": "Teacher checks understanding of instructions.",
-                    "time_minutes": 15,
+                    "time_minutes": 10,
                     "other": "Group formation"
                 },
                 {
                     "step_number": 2,
-                    "teacher_activities": "Teacher moderates student presentations, highlights key points, and addresses misconceptions.",
-                    "student_activities": "Student spokespersons present findings, compare observations, and note feedback.",
-                    "learning_teaching_method": "Presentation & Synthesis",
-                    "learning_teaching_aids": "Presentation charts and whiteboard",
+                    "teacher_activities": f"Teacher facilitates {act_clean}, circulates among groups, scaffolds student inquiries into '{topic_clean}', and monitors collaborative progress.",
+                    "student_activities": f"Students actively execute {act_clean}, collaborating in assigned roles to analyze civic situations related to '{topic_clean}'.",
+                    "learning_teaching_method": f"Collaborative Deep-Dive: {act_clean}",
+                    "learning_teaching_aids": f"Activity worksheets, scenario briefs, chart paper, markers for {act_clean}",
+                    "assessment_and_feedback": "",
+                    "time_minutes": 10,
+                    "other": "Active investigation"
+                },
+                {
+                    "step_number": 3,
+                    "teacher_activities": f"Teacher moderates group spokesperson presentations, facilitates constructive peer review, and synthesizes key discoveries regarding '{topic_clean}'.",
+                    "student_activities": f"Group spokespersons present findings on '{topic_clean}'; peer teams evaluate presentations using criteria and note constructive feedback.",
+                    "learning_teaching_method": f"Presentation & Synthesis of {act_clean}",
+                    "learning_teaching_aids": f"Student presentation charts, whiteboard for {act_clean}",
                     "assessment_and_feedback": "Peer review and formative feedback.",
-                    "time_minutes": 15,
-                    "other": "Class presentation"
+                    "time_minutes": 10,
+                    "other": "Plenary synthesis"
                 }
             ]
         d["lesson_development_steps"] = clean_steps
@@ -288,35 +304,38 @@ class LessonPlanSchemaDto(BaseModel):
         """
         TARGET_DEV_MINUTES = 30
 
-        # 1. Fallback: If development steps are missing, initialize default scaffolded 3 steps (10m, 10m, 10m in clean multiples of 5)
+        # 1. Fallback: If development steps are missing, synthesize dynamic steps from the topic and activity
         if not self.lesson_development_steps:
+            act_title = (self.selected_activity_title or self.selected_activity or "Collaborative Investigation").splitlines()[0]
+            act_title = re.sub(r"^Activity:\s*", "", act_title, flags=re.IGNORECASE).strip() or "Collaborative Inquiry"
+            topic_clean = self.lesson or "Civic Core Principles"
             self.lesson_development_steps = [
                 LessonDevelopmentStepDto(
                     step_number=1,
-                    teacher_activities="Teacher introduces the Sri Lankan real-world scenario, clarifies objectives, and distributes task cards and role assignments as facilitator.",
-                    student_activities="Students arrange into collaborative groups, review inquiry task cards, assign group roles, and formulate investigative questions.",
-                    learning_teaching_method="Task Orientation & Guided Inquiry Launch",
-                    learning_teaching_aids="Task Cards & Activity Scenario Prompts",
+                    teacher_activities=f"Teacher introduces the Sri Lankan real-world situation for '{topic_clean}', arranges student groups, and provides {act_title} task cards and role assignments.",
+                    student_activities=f"Students arrange into collaborative groups, review inquiry prompts for {act_title}, assign group roles, and formulate investigative questions.",
+                    learning_teaching_method=f"Orientation & {act_title} Launch",
+                    learning_teaching_aids=f"Task cards for {act_title}, scenario sheets, chalkboard",
                     assessment_and_feedback="",
                     time_minutes=10,
                     other="Group formation"
                 ),
                 LessonDevelopmentStepDto(
                     step_number=2,
-                    teacher_activities="Teacher actively circulates as facilitator, scaffolds student inquiry with probing questions, and ensures active participation without lecturing.",
-                    student_activities="Students collaborate in assigned roles to execute the investigation/simulation, analyzing Sri Lankan community situations without passive spectators.",
-                    learning_teaching_method="Active Student-Centered Investigation / Simulation",
-                    learning_teaching_aids="Activity Worksheets, Roleplay Cards & Chart Paper",
+                    teacher_activities=f"Teacher actively circulates among student groups as facilitator, scaffolds inquiry into '{topic_clean}', and monitors dynamic execution of {act_title}.",
+                    student_activities=f"Students actively collaborate in assigned roles to execute {act_title}, analyzing Sri Lankan community scenarios and co-creating group findings.",
+                    learning_teaching_method=act_title,
+                    learning_teaching_aids="Activity worksheets, inquiry cards, chart paper, markers",
                     assessment_and_feedback="",
                     time_minutes=10,
                     other="Collaborative inquiry"
                 ),
                 LessonDevelopmentStepDto(
                     step_number=3,
-                    teacher_activities="Teacher moderates rapid student presentations, facilitates constructive peer review, and synthesizes key discoveries directly against syllabus learning outcomes.",
-                    student_activities="Student spokespersons present team conclusions; peers provide constructive feedback and record key takeaways in their notebooks.",
-                    learning_teaching_method="Presentation, Peer Review & Plenary Synthesis",
-                    learning_teaching_aids="Whiteboard & Student Presentation Charts",
+                    teacher_activities=f"Teacher moderates student team presentations, facilitates constructive peer review, and synthesizes discoveries regarding '{topic_clean}'.",
+                    student_activities=f"Group spokespersons present findings on '{topic_clean}'; peers evaluate solutions using criteria and note constructive feedback.",
+                    learning_teaching_method="Spokesperson Presentation & Plenary Synthesis",
+                    learning_teaching_aids="Student presentation posters, whiteboard",
                     assessment_and_feedback="",
                     time_minutes=10,
                     other="Plenary synthesis"
