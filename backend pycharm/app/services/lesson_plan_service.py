@@ -571,6 +571,11 @@ class LessonPlanMlService(ILessonPlanMlService):
             plan.selected_activity = period_selected_activity
             plan.custom_teacher_activity = custom_teacher_act
 
+            # Ensure all development steps have empty assessment_and_feedback
+            if plan.lesson_development_steps:
+                for step in plan.lesson_development_steps:
+                    step.assessment_and_feedback = "" 
+
             # Persist ONLY the selected activity option in activity_options and saved JSON
             filtered_opts = []
             if is_own_approach and custom_teacher_act:
@@ -630,8 +635,6 @@ class LessonPlanMlService(ILessonPlanMlService):
                 for period in range(1, total_periods + 1)
             }
             plan.information_sources = curriculum_sources
-            for step in plan.lesson_development_steps:
-                step.assessment_and_feedback = ""
 
             plan_data = plan.model_dump(mode="json")
             sanitized_grade = plan.grade.replace(" ", "_")

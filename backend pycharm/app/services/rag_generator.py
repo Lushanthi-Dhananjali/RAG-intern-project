@@ -283,7 +283,7 @@ def normalize_lesson_plan_dict(data: Any) -> Dict[str, Any]:
                     "student_activities": str(s.get("student_activities") or s.get("students") or s.get("task") or f"Students collaborate in groups executing {act_ctx} on '{topic_ctx}'.").strip(),
                     "learning_teaching_method": str(s.get("learning_teaching_method") or s.get("method") or s.get("pedagogy") or act_ctx).strip(),
                     "learning_teaching_aids": str(s.get("learning_teaching_aids") or s.get("aids") or s.get("materials") or f"Materials and worksheets for {act_ctx}").strip(),
-                    "assessment_and_feedback": str(s.get("assessment_and_feedback") or s.get("assessment") or "").strip(),
+                    "assessment_and_feedback": "",
                     "time_minutes": (lambda tm: int(re.search(r"\d+", str(tm)).group()) if re.search(r"\d+", str(tm)) else 10)(s.get("time_minutes") or s.get("duration") or 10),
                     "other": str(s.get("other") or "").strip()
                 }

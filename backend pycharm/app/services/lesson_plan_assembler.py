@@ -58,43 +58,6 @@ def balance_development_step_times(steps: List[LessonDevelopmentStepDto]) -> Lis
 
     return steps
 
-    # If steps are uniform [10, 10, 10], diversify based on step depth and tasks
-    if len(steps) == 3 and all(s.time_minutes == 10 for s in steps):
-        steps = differentiate_step_timings_by_content(steps)
-        if sum(s.time_minutes for s in steps) == 30:
-            return steps
-
-    # If already exactly 30 mins and all steps are multiples of 5 (min 5), preserve dynamic allocation
-    if sum(s.time_minutes for s in steps) == 30 and all(s.time_minutes % 5 == 0 and s.time_minutes >= 5 for s in steps):
-        return steps
-
-    logger.warning("Step timing drift or non-multiples of 5 detected. Re-balancing in 5-minute increments to exactly 30 mins...")
-
-    # Round each step to nearest multiple of 5 (min 5 mins)
-    for s in steps:
-        s.time_minutes = max(5, int(round(s.time_minutes / 5.0) * 5))
-
-    total = sum(s.time_minutes for s in steps)
-    drift = 30 - total
-    step_count = len(steps)
-
-    if drift != 0:
-        units = drift // 5
-        direction = 5 if units > 0 else -5
-        for _ in range(abs(units)):
-            if direction < 0:
-                candidates = [i for i, s in enumerate(steps) if s.time_minutes > 5]
-                if candidates:
-                    idx = max(candidates, key=lambda k: steps[k].time_minutes)
-                    steps[idx].time_minutes += direction
-                else:
-                    break
-            else:
-                idx = min(range(step_count), key=lambda k: steps[k].time_minutes)
-                steps[idx].time_minutes += direction
-
-    return steps
-
 
 def build_single_period_assembly_prompt(
     competency_level: str,
@@ -122,38 +85,42 @@ def build_single_period_assembly_prompt(
     is_civic_education = subject.strip().casefold() == "civic education"
 
     step_assessment_rule = (
-        "   - Do not include assessment_and_feedback in development steps; the only assessment belongs in Assessment & Closure."
-        if is_civic_education
-        else "   - Every step MUST include distinct: learning_teaching_method, learning_teaching_aids, teacher_activities, student_activities, and assessment_and_feedback."
+        "   - Do NOT include assessment and feedback inside development steps (leave 'assessment_and_feedback': ''); "
+        "the full lesson assessment belongs strictly in the final 5-minute section ('assessment_and_feedback_whole_lesson') at the bottom."
     )
 
     strategy_directive = (
-        f"""MANDATORY ACTIVITY & DYNAMIC DEVELOPMENT STEPS DIRECTIVE:
+        f"""MANDATORY ACTIVITY, CURRICULUM GROUNDING & DYNAMIC DEVELOPMENT STEPS DIRECTIVE:
 AUTHORITATIVE SELECTED ACTIVITY FOR THIS LESSON:
 "{chosen_strategy_description}"
 
-CRITICAL INSTRUCTIONS FOR GENERATING CREATIVE DEVELOPMENT STEPS:
-- You MUST generate completely unique, imaginative, highly creative development steps designed strictly around:
+CRITICAL INSTRUCTIONS FOR GENERATING DYNAMIC DEVELOPMENT STEPS:
+- You MUST generate unique, highly creative, student-centered development steps designed strictly around:
   * SPECIFIC SELECTED ACTIVITY: "{chosen_strategy_description}"
   * ALLOCATED LEARNING OUTCOMES FOR THIS PERIOD:
 {outcomes_formatted}
   * LESSON TOPIC: "{lesson_topic}"
+  * ACTUAL TIG & TEXTBOOK EVIDENCE: Extract and directly weave the specific definitions, civic concepts, real-life examples, discussion dilemmas, and factual points from the TIG & TEXTBOOK CONTEXT into the steps!
 
-- PROGRESSIVE MULTI-STAGE STEP BLUEPRINT:
-  * Each step represents a distinct progressive phase of "{chosen_strategy_description}". DO NOT repeat the same tasks or phrases across steps!
-  * Step 1 (Launch & Investigation Setup): Teacher introduces the specific real-world Sri Lankan dilemma or scenario for "{lesson_topic}", presents concrete inquiry task cards/materials, and assigns active group roles. Students examine the prompt, divide responsibilities, and formulate inquiry questions.
-  * Step 2 (Active Collaborative Deep-Dive / Simulation): Students actively execute "{chosen_strategy_description}" (e.g., roleplaying civic stakeholders, auditing scenarios, debating propositions, or designing civic artifacts). Teacher circulates among teams, asking probing questions to scaffold learning without lecturing.
-  * Step 3 (Spokesperson Sharing, Peer Critique & Plenary Consolidation): Group spokespersons present their civic findings or artifacts; peer teams evaluate using clear criteria and offer feedback; teacher synthesizes discoveries against the learning outcomes.
-  * (If 4 steps are used, split the middle deep-dive into two distinct progressive sub-stages).
+- DYNAMIC STEP COUNT & TIMING (STRICTLY 30 MINUTES TOTAL):
+  * You may generate 2, 3, or 4 development steps depending on what best suits "{chosen_strategy_description}":
+    - 2-Step intensive activity: e.g., 15m + 15m = 30m, or 10m + 20m = 30m.
+    - 3-Step progressive inquiry: e.g., 10m + 10m + 10m = 30m, 5m + 15m + 10m = 30m, 10m + 15m + 5m = 30m, or 5m + 20m + 5m = 30m.
+    - 4-Step multi-station / carousel: e.g., 5m + 10m + 10m + 5m = 30m.
+  * Every single step's 'time_minutes' MUST be a clean multiple of 5 (e.g. 5, 10, 15, or 20).
+  * The sum of 'time_minutes' across all development steps MUST equal EXACTLY 30 minutes.
+
+- STUDENT-CENTERED PROGRESSIVE PEDAGOGY:
+  * Step 1 (Inquiry Setup & Launch): Teacher introduces the specific real-world Sri Lankan dilemma for "{lesson_topic}", presents concrete inquiry task cards/materials derived from the textbook/TIG, and organizes student teams with assigned roles. Students examine the prompt, divide responsibilities, and formulate inquiry questions.
+  * Middle Step(s) (Active Collaborative Deep-Dive / Simulation): Students actively execute "{chosen_strategy_description}" (debating, roleplaying, investigating textbook scenarios, mapping hazards, or constructing artifacts) in small groups without passive spectators. Teacher circulates as facilitator, asking probing questions to scaffold learning without lecturing.
+  * Final Step (Spokesperson Sharing, Peer Critique & Synthesis): Group spokespersons present discoveries or co-created artifacts; peer teams evaluate using criteria and offer feedback; teacher synthesizes discoveries against the learning outcomes.
 
 - ABSOLUTE PROHIBITION OF REPETITION & BOILERPLATE:
-  * NEVER repeat the exact same sentences for 'teacher_activities' or 'student_activities' across multiple steps (e.g. NEVER repeat "Facilitates role execution" or "Students negotiate a solution" across steps 2, 3, 4). Each step MUST describe unique, specific actions!
-  * NEVER use generic boilerplate titles like 'Task Orientation & Guided Inquiry Launch' or copy unrelated method names.
-  * In 'learning_teaching_method', name the specific sub-stage of this activity (e.g., for a debate: "Dilemma Framing & Evidence Prep", "Cross-Team Rebuttal Session", "Consensus Resolution"; for a hazard walk: "Campus Hazard Inspection", "Risk Matrix Formulation", "Safety Charter Drafting").
-  * In 'learning_teaching_aids', list specific, physical items (e.g. hazard cards, dilemma briefs, role badges, observation grids, chart paper, markers). NEVER output "None" or "none"!
-  * In 'teacher_activities' and 'student_activities', write 2 to 4 detailed sentences with concrete Sri Lankan classroom dialogue, teacher scaffolding questions, and active student tasks.
-
-- Dynamic Timing: Auto-generate 'time_minutes' as clean multiples of 5 (e.g. 5, 10, 15, or 20) totaling exactly 30 minutes across steps (such as 10m+10m+10m, 5m+15m+10m, 10m+15m+5m, 15m+15m, or 5m+20m+5m)."""
+  * NEVER repeat the exact same sentences for 'teacher_activities' or 'student_activities' across multiple steps. Each step MUST describe unique, progressive actions!
+  * In 'learning_teaching_method', name the specific sub-stage of this activity (e.g. "Dilemma Analysis & Role Distribution", "Team Rebuttal Round", "Consensus Resolution").
+  * In 'learning_teaching_aids', list concrete physical items (e.g. hazard cards, dilemma briefs, role badges, observation grids, chart paper, markers). NEVER output "None" or "none"!
+  * In 'teacher_activities' and 'student_activities', write 2 to 4 detailed sentences incorporating actual curriculum content and teacher facilitation questions.
+  * In 'assessment_and_feedback', keep it empty ("") as the complete lesson assessment is located at the bottom of the plan ('assessment_and_feedback_whole_lesson')."""
         if chosen_strategy_description
         else "MANDATORY ACTIVITY & DYNAMIC DEVELOPMENT STEPS DIRECTIVE: Generate rich, unique, student-centered collaborative investigation steps."
     )
@@ -167,8 +134,8 @@ STRICT PEDAGOGICAL & 40-MINUTE STRUCTURAL LAWS:
    - The teacher must NEVER deliver passive monologues or lengthy lectures.
    - The teacher's role is strictly that of a FACILITATOR: circulating among student groups, providing investigative task prompts, observing interactions, asking probing questions to scaffold learning, and moderating peer feedback.
    - Students are at the center: actively collaborating in small groups, conducting roleplays or investigations, exploring Sri Lankan real-world scenarios, presenting solutions, and evaluating peers without passive bystanders.
-3. AUTHENTIC SRI LANKAN CONTEXT:
-   - Ground all scenarios, investigations, roleplays, and discussions in real Sri Lankan situations (e.g., Sri Lankan school community, local government authorities like Pradeshiya Sabha / Urban Council / Municipal Council, Grama Niladhari, Sri Lankan multicultural society, environmental protection, and civic rights/duties).
+3. AUTHENTIC SRI LANKAN CONTEXT & CURRICULUM GROUNDING:
+   - Ground all scenarios, investigations, roleplays, and discussions in real Sri Lankan situations and the factual concepts from the provided textbook and Teacher Guide context.
 4. DYNAMIC ALIGNMENT WITH CHOSEN ACTIVITY & ALLOCATED OUTCOMES:
    - The lesson development steps MUST directly embody the teacher-selected activity and address the specific NIE learning outcome(s) allocated for this period!
    - Do NOT output generic boilerplate. Explicitly name the concrete tasks, materials, role cards, inquiry questions, or case scenarios derived from the chosen activity and period outcomes.
@@ -176,17 +143,12 @@ STRICT PEDAGOGICAL & 40-MINUTE STRUCTURAL LAWS:
    - Active motivational hook linking student everyday experience in Sri Lanka to this period's topic and allocated outcomes, transitioning directly into the chosen activity.
 6. Lesson Development Steps (CLEAN MULTIPLES OF 5, TOTAL = EXACTLY 30 MINUTES):
    - Every single step's 'time_minutes' MUST be a clean multiple of 5 (e.g. 5, 10, 15, 20). NEVER use non-multiples of 5 like 7, 8, 12, 13, 14, 17, 22!
-   - Step count is typically 3 steps, but can be 2, 3, or 4 steps depending on what best suits the selected activity and learning outcome:
-     * Examples: 10m + 10m + 10m, 5m + 15m + 10m, 10m + 15m + 5m, 15m + 15m, 5m + 20m + 5m, or 5m + 10m + 10m + 5m = 30m.
-   - DYNAMIC TIMING AUTO-GENERATION:
-     * Automatically generate and allocate 'time_minutes' to each development step to fit what students and the teacher actually do in that step.
-     * Each step's duration must be a clean multiple of 5 (e.g. 5, 10, 15, or 20 minutes).
-     * The total across all development steps must sum to exactly 30 minutes. (10+10+10 is completely acceptable when steps are balanced, as are 5+15+10, 10+15+5, 15+15, or 5+20+5).
-   - DYNAMIC ADAPTATION: Allocate time and step contents to fit the specific activity (e.g. a drama or school-walk needs a longer middle step like 15-20m; station jigsaw may use 10m/10m/10m).
+   - Step count is flexible (2, 3, or 4 steps) depending on what best suits the selected activity and learning outcome:
+     * Examples: 10m + 10m + 10m = 30m, 5m + 15m + 10m = 30m, 10m + 15m + 5m = 30m, 15m + 15m = 30m, 5m + 20m + 5m = 30m, or 5m + 10m + 10m + 5m = 30m.
+   - The total across all development steps must sum to exactly 30 minutes.
 {step_assessment_rule}
 7. Creative In-Class Assignment & Formative Closure (time: exactly 5 minutes total):
    - Put a highly creative in-class closing check in 'post_activity' and 'summary' matching the selected activity and period outcomes.
-   - Examples of creative checks: a 2-line rhyming verse/poem recitation, a rapid quiz or team mini-competition, a quick drawing/sketch challenge, a pass-the-parcel concept ball, or a statement display & vote.
    - Must be an in-class active check achievable in 5 minutes, NOT take-home homework.
 8. Logistics ({student_count} Students):
    - Partition: {logistics.group_summary_label}.
@@ -206,7 +168,7 @@ CRITICAL ANTI-BOILERPLATE MANDATE:
 - Provide rich, concrete, creative details describing actual Sri Lankan classroom dialogues, specific task cards, specific physical artifacts, and dynamic student collaboration.
 - Each development step must be detailed (3-5 sentences describing concrete student actions and teacher facilitation).
 - The 'the_entrance' MUST be a creative 5-minute motivational hook connecting an authentic Sri Lankan situation or everyday experience to this specific period's outcome and chosen activity.
-- The 'post_activity' MUST be a creative, highly engaging 5-minute active in-class evaluation (such as a 2-line rhyme/verse recitation, a rapid team quiz/competition, a quick concept drawing/sketch challenge, a pass-the-parcel concept ball, or a statement display & vote).
+- The 'post_activity' MUST be a creative, highly engaging 5-minute active in-class evaluation.
 
 {{
   "grade": "{grade_level}",
@@ -222,8 +184,8 @@ CRITICAL ANTI-BOILERPLATE MANDATE:
       "time_minutes": 10,
       "learning_teaching_method": "<string: specific launch and inquiry setup phase for this activity>",
       "learning_teaching_aids": "<string: concrete physical materials, prompt cards, and worksheets for this step (never 'None')>",
-      "teacher_activities": "<string: 2-4 sentences describing exact teacher facilitator actions introducing this specific scenario and scaffolding role distribution>",
-      "student_activities": "<string: 2-4 sentences describing active student teamwork reviewing scenario prompts and assigning group roles>",
+      "teacher_activities": "<string: 2-4 sentences describing exact teacher facilitator actions introducing this specific scenario, referencing curriculum concepts, and scaffolding role distribution>",
+      "student_activities": "<string: 2-4 sentences describing active student teamwork reviewing scenario prompts, examining textbook evidence, and assigning group roles>",
       "assessment_and_feedback": ""
     }},
     {{
@@ -271,8 +233,8 @@ INTERNAL SEQUENCE GUIDANCE FOR THIS PERIOD:
 {strategy_directive}
 
 TIG & TEXTBOOK CONTEXT:
-{retrieved_tig_context[:1800]}
-{textbook_context[:1200]}
+{retrieved_tig_context[:2500]}
+{textbook_context[:2500]}
 
 Assemble the final, validated LEARN lesson plan JSON now.<|eot_id|><|start_header_id|>assistant<|end_header_id|>"""
 

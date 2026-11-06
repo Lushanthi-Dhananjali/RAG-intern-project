@@ -194,9 +194,7 @@ Cooperative Student-Led Investigation with hands-on task cards and structured pe
                 "student_activities": f"string (2-4 sentences: Students organize into teams for {student_count} students, review task sheets, assign group roles, and formulate investigative questions)",
                 "learning_teaching_method": "string (Specific launch phase name organically matching this activity)",
                 "learning_teaching_aids": "string (Specific physical task cards, problem scenarios, or charts - never 'None')",
-                **({} if is_civic_education else {
-                    "assessment_and_feedback": "string (Teacher checks understanding of instructions and group role assignment)"
-                }),
+                "assessment_and_feedback": "",
                 "time_minutes": "integer (Auto-generated minutes suited to this step's depth; clean multiple of 5, summing to 30 mins total across steps)",
                 "other": "string (Group seating arrangement, resource distribution notes)",
             },
@@ -206,9 +204,7 @@ Cooperative Student-Led Investigation with hands-on task cards and structured pe
                 "student_activities": "string (2-4 sentences: Students actively carry out the collaborative investigation, roleplay, or problem solving without passive spectators)",
                 "learning_teaching_method": "string (Specific collaborative execution phase name matching this activity)",
                 "learning_teaching_aids": "string (Specific worksheets, scenario props, observation checklists, or posters - never 'None')",
-                **({} if is_civic_education else {
-                    "assessment_and_feedback": "string (Teacher formatively assesses student collaboration and corrects conceptual misconceptions)"
-                }),
+                "assessment_and_feedback": "",
                 "time_minutes": "integer (Auto-generated minutes suited to this step's depth; clean multiple of 5, summing to 30 mins total across steps)",
                 "other": "string (Differentiation for mixed abilities, timekeeping reminders)",
             },
@@ -218,9 +214,7 @@ Cooperative Student-Led Investigation with hands-on task cards and structured pe
                 "student_activities": "string (2-4 sentences: Student spokespersons present findings, peer teams critique using criteria and record constructive feedback)",
                 "learning_teaching_method": "string (Specific presentation, peer evaluation, and synthesis phase name)",
                 "learning_teaching_aids": "string (Student presentation posters, whiteboard, feedback cards - never 'None')",
-                **({} if is_civic_education else {
-                    "assessment_and_feedback": "string (Peer evaluation and teacher reinforcement of core learning outcomes)"
-                }),
+                "assessment_and_feedback": "",
                 "time_minutes": "integer (Auto-generated minutes suited to this step's depth; clean multiple of 5, summing to 30 mins total across steps)",
                 "other": "None",
             },
@@ -285,7 +279,7 @@ Cooperative Student-Led Investigation with hands-on task cards and structured pe
 8. Return ONLY a single valid JSON object. No Markdown code fences, no conversational preambles or notes.
 9. Do not invent information_sources; the backend fills this field only from retrieved source metadata.
 10. ABSOLUTE PROHIBITION OF URLs: NEVER output URLs or web links anywhere in ANY field (including 'competence' and 'competence_level'). Write concrete pedagogical classroom descriptions or curriculum codes only.
-{"11. For Civic Education, do not include assessment_and_feedback inside development steps." if is_civic_education else ""}
+{"11. In 'assessment_and_feedback' inside development steps, keep it empty (\"\"). Full lesson assessment is strictly in 'assessment_and_feedback_whole_lesson'." if is_civic_education else ""}
 {"12. For Civic Education, write the Entrance introduction and final Assessment & Closure from the supplied curriculum context and allocated outcomes. Return content only, never URLs or links." if is_civic_education else ""}
 
 OUTPUT SCHEMA:

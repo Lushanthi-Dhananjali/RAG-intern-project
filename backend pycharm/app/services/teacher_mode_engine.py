@@ -49,6 +49,7 @@ PEDAGOGICAL PACING MANDATE (Total: 40 Minutes):
    - Teacher acts strictly as FACILITATOR: circulating, scaffolding, asking probing questions, never lecturing.
    - Ground scenarios and tasks in authentic Sri Lankan context (schools, local governance, communities, cultural traditions).
    - Every step's duration MUST be a clean multiple of 5 (e.g. 5, 10, 15, 20 mins). Sum MUST equal exactly 30 minutes.
+   - Step count is flexible (2, 3, or 4 steps) depending on what best suits the custom activity, but must total exactly 30 minutes (e.g. 15+15=30, 10+10+10=30, 5+15+10=30, 10+15+5=30, or 5+10+10+5=30).
    - PROGRESSIVE MULTI-STAGE STEP BLUEPRINT:
      * Step 1 (Launch & Investigation Setup): Teacher introduces the specific problem or dilemma for "{lesson_topic}", sets up materials and role assignments. Students divide responsibilities and review inquiry prompts.
      * Step 2 (Active Collaborative Execution): Students actively execute "{teacher_custom_activity}" in small groups without passive spectators. Teacher circulates to scaffold inquiry.
@@ -56,6 +57,7 @@ PEDAGOGICAL PACING MANDATE (Total: 40 Minutes):
    - ABSOLUTE PROHIBITION OF REPETITION:
      * NEVER repeat the exact same sentences for 'teacher_activities' or 'student_activities' across multiple steps. Each step MUST describe unique, specific actions!
      * In 'learning_teaching_aids', list concrete physical items (e.g. task cards, role sheets, charts, markers). NEVER output "None"!
+     * In 'assessment_and_feedback', keep it empty ("") as formative assessment is conducted at the bottom of the plan ('assessment_and_feedback_whole_lesson').
 3. Creative In-Class Assignment & Closure (exactly 5 mins total): Put a creative, age-appropriate in-class concluding task in 'post_activity' and 'summary' connecting directly to the period outcome and custom activity (e.g. quick 2-line rhyme, drawing challenge, mini-quiz, pass-the-parcel concept ball, or statement display). Must be achievable in 5 minutes in-class.
 4. Align the Entrance and Assignment & Closure with the supplied competency outcomes and the teacher's custom activity. Generate usable classroom content, never placeholders or URLs.
 5. The 'the_entrance' field must describe both teacher and student actions. The 'post_activity' field must describe the in-class five-minute task, not take-home homework.

@@ -170,7 +170,7 @@ class LessonPlanSchemaDto(BaseModel):
                         "student_activities": str(s.get("student_activities") or s.get("students") or s.get("task") or f"Students collaborate in groups executing {act_clean} on '{topic_clean}'.").strip(),
                         "learning_teaching_method": str(s.get("learning_teaching_method") or s.get("method") or s.get("pedagogy") or f"{act_clean} Step {idx}").strip(),
                         "learning_teaching_aids": str(s.get("learning_teaching_aids") or s.get("aids") or s.get("materials") or f"Task materials and worksheets for {act_clean}").strip(),
-                        "assessment_and_feedback": str(s.get("assessment_and_feedback") or s.get("assessment") or "").strip(),
+                        "assessment_and_feedback": "",
                         "time_minutes": int(s.get("time_minutes") or s.get("duration") or 10),
                         "other": str(s.get("other") or "").strip()
                     })
@@ -183,7 +183,7 @@ class LessonPlanSchemaDto(BaseModel):
                     "student_activities": f"Students review task cards, assume collaborative group roles, and begin investigations for {act_clean}.",
                     "learning_teaching_method": f"Orientation & {act_clean} Setup",
                     "learning_teaching_aids": f"Task cards and scenario prompts for {act_clean}",
-                    "assessment_and_feedback": "Teacher checks understanding of instructions.",
+                    "assessment_and_feedback": "",
                     "time_minutes": 10,
                     "other": "Group formation"
                 },
@@ -203,7 +203,7 @@ class LessonPlanSchemaDto(BaseModel):
                     "student_activities": f"Group spokespersons present findings on '{topic_clean}'; peer teams evaluate presentations using criteria and note constructive feedback.",
                     "learning_teaching_method": f"Presentation & Synthesis of {act_clean}",
                     "learning_teaching_aids": f"Student presentation charts, whiteboard for {act_clean}",
-                    "assessment_and_feedback": "Peer review and formative feedback.",
+                    "assessment_and_feedback": "",
                     "time_minutes": 10,
                     "other": "Plenary synthesis"
                 }
@@ -324,8 +324,8 @@ class LessonPlanSchemaDto(BaseModel):
                     step_number=2,
                     teacher_activities=f"Teacher actively circulates among student groups as facilitator, scaffolds inquiry into '{topic_clean}', and monitors dynamic execution of {act_title}.",
                     student_activities=f"Students actively collaborate in assigned roles to execute {act_title}, analyzing Sri Lankan community scenarios and co-creating group findings.",
-                    learning_teaching_method=act_title,
-                    learning_teaching_aids="Activity worksheets, inquiry cards, chart paper, markers",
+                    learning_teaching_method=f"Collaborative Deep-Dive: {act_title}",
+                    learning_teaching_aids=f"Activity worksheets, inquiry cards, chart paper, markers for {act_title}",
                     assessment_and_feedback="",
                     time_minutes=10,
                     other="Collaborative inquiry"
@@ -334,36 +334,40 @@ class LessonPlanSchemaDto(BaseModel):
                     step_number=3,
                     teacher_activities=f"Teacher moderates student team presentations, facilitates constructive peer review, and synthesizes discoveries regarding '{topic_clean}'.",
                     student_activities=f"Group spokespersons present findings on '{topic_clean}'; peers evaluate solutions using criteria and note constructive feedback.",
-                    learning_teaching_method="Spokesperson Presentation & Plenary Synthesis",
-                    learning_teaching_aids="Student presentation posters, whiteboard",
+                    learning_teaching_method=f"Spokesperson Presentation & Plenary Synthesis: {act_title}",
+                    learning_teaching_aids=f"Student presentation posters, whiteboard for {act_title}",
                     assessment_and_feedback="",
                     time_minutes=10,
                     other="Plenary synthesis"
                 )
             ]
 
-        # 2. If only 1 step was generated, split it to ensure a complete 3-step developmental scaffold in clean multiples of 5
+        # 2. If only 1 step was generated, split it to ensure a complete developmental scaffold in clean multiples of 5
         if len(self.lesson_development_steps) == 1:
             orig = self.lesson_development_steps[0]
+            act_title = (self.selected_activity_title or self.selected_activity or "Collaborative Investigation").splitlines()[0]
+            act_title = re.sub(r"^Activity:\s*", "", act_title, flags=re.IGNORECASE).strip() or "Collaborative Inquiry"
+            topic_clean = self.lesson or "Civic Principles"
+            orig.step_number = 1
             orig.time_minutes = 10
             self.lesson_development_steps = [
                 orig,
                 LessonDevelopmentStepDto(
                     step_number=2,
-                    teacher_activities="Teacher actively circulates as facilitator, scaffolds student inquiry, and observes group dynamics.",
-                    student_activities="Students actively investigate, roleplay, or solve the civic scenario in collaborative teams using their assigned roles.",
-                    learning_teaching_method="Active Student-Centered Investigation",
-                    learning_teaching_aids=orig.learning_teaching_aids,
+                    teacher_activities=f"Teacher circulates as facilitator among groups executing {act_title}, scaffolding student inquiries into '{topic_clean}' with probing questions.",
+                    student_activities=f"Students actively collaborate in assigned roles to execute {act_title}, analyzing real-world civic situations related to '{topic_clean}'.",
+                    learning_teaching_method=f"Collaborative Deep-Dive: {act_title}",
+                    learning_teaching_aids=f"Activity worksheets, problem scenarios, and collaboration materials for {act_title}",
                     assessment_and_feedback="",
                     time_minutes=10,
-                    other="Group teamwork"
+                    other="Collaborative deep-dive"
                 ),
                 LessonDevelopmentStepDto(
                     step_number=3,
-                    teacher_activities="Teacher facilitates student presentations, peer review, and synthesizes key findings against the learning outcomes.",
-                    student_activities="Student spokespersons present conclusions; peers ask questions and note feedback.",
-                    learning_teaching_method="Presentation, Peer Review & Synthesis",
-                    learning_teaching_aids="Presentation charts and whiteboard",
+                    teacher_activities=f"Teacher moderates student team presentations on '{topic_clean}', facilitates constructive peer critique, and synthesizes key insights from {act_title}.",
+                    student_activities=f"Team spokespersons present findings on '{topic_clean}'; peer teams evaluate presentations against criteria and record constructive feedback.",
+                    learning_teaching_method=f"Spokesperson Presentation & Peer Review: {act_title}",
+                    learning_teaching_aids=f"Student presentation charts and whiteboard for {act_title}",
                     assessment_and_feedback="",
                     time_minutes=10,
                     other="Presentation synthesis"
@@ -372,6 +376,7 @@ class LessonPlanSchemaDto(BaseModel):
 
         # 3. Round all individual step durations to the nearest multiple of 5 (minimum 5 mins)
         for step in self.lesson_development_steps:
+            step.assessment_and_feedback = ""
             raw_val = step.time_minutes
             rounded = round(raw_val / 5.0) * 5
             step.time_minutes = max(5, int(rounded))

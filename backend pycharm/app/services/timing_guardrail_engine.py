@@ -97,7 +97,7 @@ class TimingGuardrailEngine:
                     learning_teaching_aids=f"Task cards for {act_clean}, chalkboard, student notebooks",
                     teacher_activities=f"Teacher introduces the Sri Lankan real-world scenario for '{topic_clean}', clarifies objectives, and distributes task cards for {act_clean}.",
                     student_activities=f"Students arrange into collaborative groups, review inquiry prompts for {act_clean}, assign group roles, and formulate investigative questions.",
-                    assessment_and_feedback="",
+                    assessment_and_feedback=f"Teacher checks team understanding of {act_clean} task cards and role allocations.",
                 ),
                 LessonDevelopmentStepDto(
                     step_number=2,
@@ -106,7 +106,7 @@ class TimingGuardrailEngine:
                     learning_teaching_aids=f"Activity worksheets, scenario cards, and materials for {act_clean}",
                     teacher_activities=f"Teacher circulates among student groups as facilitator, scaffolds student inquiry into '{topic_clean}', and monitors dynamic execution of {act_clean}.",
                     student_activities=f"Students actively collaborate in assigned roles to execute {act_clean}, analyzing civic situations related to '{topic_clean}' without passive spectators.",
-                    assessment_and_feedback="",
+                    assessment_and_feedback=f"Teacher formatively monitors group collaboration and evidence gathering on '{topic_clean}'.",
                 ),
                 LessonDevelopmentStepDto(
                     step_number=3,
@@ -115,7 +115,7 @@ class TimingGuardrailEngine:
                     learning_teaching_aids=f"Completed group charts from {act_clean}, whiteboard",
                     teacher_activities=f"Teacher moderates student team presentations, facilitates constructive peer review, and synthesizes discoveries regarding '{topic_clean}'.",
                     student_activities=f"Group spokespersons present findings and solutions from {act_clean}; peers evaluate presentations and note key takeaways in their notebooks.",
-                    assessment_and_feedback="",
+                    assessment_and_feedback=f"Peer teams evaluate presentations against criteria and provide constructive feedback on '{topic_clean}'.",
                 ),
             ]
 
@@ -157,26 +157,6 @@ class TimingGuardrailEngine:
                 else:
                     idx = min(range(step_count), key=lambda k: steps[k].time_minutes)
                     steps[idx].time_minutes += direction
-
-        return steps
-
-        # Strategy B: Proportional scaling for 5+ steps
-        # Normalize and clamp delta into the longest middle activity step
-        scale_factor = 30.0 / max(1, current_sum)
-        allocated_so_far = 0
-
-        for i in range(step_count - 1):
-            normalized = max(3, round(steps[i].time_minutes * scale_factor))
-            steps[i].time_minutes = normalized
-            allocated_so_far += normalized
-
-        # Assign remaining minutes to final step, ensuring at least 3 minutes
-        steps[-1].time_minutes = max(3, 30 - allocated_so_far)
-
-        # Final pass verification
-        final_sum = sum(s.time_minutes for s in steps)
-        if final_sum != 30:
-            steps[1].time_minutes += (30 - final_sum)
 
         return steps
 
@@ -472,11 +452,10 @@ class TimingGuardrailEngine:
                 step.student_activities = s_str
             seen_student_acts.add(step.student_activities.casefold())
 
-            # Sanitize other and assessment_and_feedback
+            # Sanitize other and assessment_and_feedback (leave step.assessment_and_feedback empty)
             if step.other and unavailable_text.search(step.other):
                 step.other = ""
-            if step.assessment_and_feedback and unavailable_text.search(step.assessment_and_feedback):
-                step.assessment_and_feedback = f"Checks student participation and understanding of '{focus}'."
+            step.assessment_and_feedback = ""
 
         # 6. Sanitize Competence Level and Competence Statement from URLs and unknown links
         # Competence Level sanitization
