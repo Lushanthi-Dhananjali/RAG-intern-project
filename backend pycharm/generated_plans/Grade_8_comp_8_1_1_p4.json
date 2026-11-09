@@ -12,32 +12,32 @@
   "lesson_development_steps": [
     {
       "step_number": 1,
+      "time_minutes": 10,
+      "learning_teaching_method": "Task Assignment",
       "teacher_activities": "Explains roleplay goals.",
       "student_activities": "Read task roles.",
-      "learning_teaching_method": "Task Assignment",
       "learning_teaching_aids": "Worksheets",
-      "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "assessment_and_feedback": "Teacher observation",
       "other": ""
     },
     {
       "step_number": 2,
+      "time_minutes": 10,
+      "learning_teaching_method": "Collaborative Roleplay",
       "teacher_activities": "Monitors group debates.",
       "student_activities": "Enact council hearing.",
-      "learning_teaching_method": "Collaborative Roleplay",
       "learning_teaching_aids": "Role cue cards",
-      "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "assessment_and_feedback": "Teacher observation",
       "other": ""
     },
     {
       "step_number": 3,
+      "time_minutes": 10,
+      "learning_teaching_method": "Plenary Synthesis",
       "teacher_activities": "Consolidates findings.",
       "student_activities": "Spokespersons share resolutions.",
-      "learning_teaching_method": "Plenary Synthesis",
       "learning_teaching_aids": "Blackboard",
-      "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "assessment_and_feedback": "Teacher observation",
       "other": ""
     }
   ],
@@ -50,8 +50,6 @@
   "attachments": [
     "Worksheet 1"
   ],
-  "entrance_duration_minutes": 5,
-  "assignment_duration_minutes": 5,
   "period_number": 4,
   "total_periods": 4,
   "selected_activity": "Watch a 3-minute video on Pradeshiya Sabha meetings, then conduct group debate.",
@@ -90,5 +88,55 @@
     "4": [
       "Investigates information on the beginning and progress of public services."
     ]
+  },
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "filename": "Grade_8_comp_8_1_1_p4.json",
+  "title": "Investigates information on the beginning and progress of public services: Teacher approach: Watch a 3-minute video on Pradeshiya Sabha...",
+  "topic": "Investigates information on the beginning and progress of public services: Teacher approach: Watch a 3-minute video on Pradeshiya Sabha...",
+  "grade_level": "Grade 8",
+  "educational_goal_or_standard": "Democratic Governance",
+  "estimated_duration_minutes": 30,
+  "learning_outcomes": [
+    {
+      "id": 1,
+      "description": "Investigates information on the beginning and progress of public services.",
+      "blooms_taxonomy_level": "Apply"
+    }
+  ],
+  "procedures": [
+    {
+      "step_number": 1,
+      "phase_title": "Task Assignment",
+      "duration_minutes": 10,
+      "teacher_action": "Explains roleplay goals.",
+      "student_action": "Read task roles."
+    },
+    {
+      "step_number": 2,
+      "phase_title": "Collaborative Roleplay",
+      "duration_minutes": 10,
+      "teacher_action": "Monitors group debates.",
+      "student_action": "Enact council hearing."
+    },
+    {
+      "step_number": 3,
+      "phase_title": "Plenary Synthesis",
+      "duration_minutes": 10,
+      "teacher_action": "Consolidates findings.",
+      "student_action": "Spokespersons share resolutions."
+    }
+  ],
+  "materials": [
+    {
+      "item_name": "grade_8_civic_textbook.pdf (pages 1, 150)",
+      "quantity": "1",
+      "is_digital": false
+    }
+  ],
+  "verification": {
+    "formative_assessment": "5-minute rapid peer review quiz.",
+    "summative_assessment": "Summarizes local government roles.",
+    "alignment_check": "Aligned with Sri Lankan NIE & LEARN standards"
   }
 }

@@ -11,6 +11,7 @@ import {
 } from '@/services/lessonPlanApi';
 import DeleteConfirmModal from './DeleteConfirmModal';
 import LessonPlanViewer from './LessonPlanViewer';
+import StructuralEditor from './StructuralEditor';
 
 interface GeneratedPlansLibraryProps {
   onPlanLoadedToViewer?: (plan: LessonPlanDto) => void;
@@ -33,6 +34,7 @@ export default function GeneratedPlansLibrary({
   // Currently viewed plan (rendered below competency level)
   const [activePlan, setActivePlan] = useState<LessonPlanDto | null>(null);
   const [activeFilename, setActiveFilename] = useState<string>('');
+  const [isEditingActivePlan, setIsEditingActivePlan] = useState<boolean>(false);
   const [isDetailLoading, setIsDetailLoading] = useState<boolean>(false);
   const [copied, setCopied] = useState<boolean>(false);
 
@@ -123,6 +125,7 @@ export default function GeneratedPlansLibrary({
       const detail = await fetchGeneratedPlanDetail(filename);
       setActivePlan(detail.plan);
       setActiveFilename(detail.filename);
+      setIsEditingActivePlan(false);
       if (detail.plan.competence_level) setTypedCompetency(detail.plan.competence_level);
     } catch (err: any) {
       setError(err.message || `Failed to load saved lesson plan "${filename}".`);
@@ -155,6 +158,7 @@ export default function GeneratedPlansLibrary({
         const detail = await fetchGeneratedPlanDetail(localMatch.filename);
         setActivePlan(detail.plan);
         setActiveFilename(detail.filename);
+        setIsEditingActivePlan(false);
         setIsDetailLoading(false);
         return;
       } catch {
@@ -171,9 +175,11 @@ export default function GeneratedPlansLibrary({
       );
       setActivePlan(result.plan);
       setActiveFilename(result.filename);
+      setIsEditingActivePlan(false);
     } catch (err: any) {
       setActivePlan(null);
       setActiveFilename('');
+      setIsEditingActivePlan(false);
       setError(
         err.message ||
         `No saved lesson plan found for Competency Level "${comp}". Check Grade and Subject or generate a new plan.`
@@ -194,6 +200,7 @@ export default function GeneratedPlansLibrary({
       const deletedName = activeFilename;
       setActivePlan(null);
       setActiveFilename('');
+      setIsEditingActivePlan(false);
       setIsDeleteModalOpen(false);
       setSuccessMessage(res.message || `Successfully deleted lesson plan "${deletedName}".`);
       await loadPlans();
@@ -611,26 +618,49 @@ export default function GeneratedPlansLibrary({
       <div style={{ marginTop: '24px' }}>
         {activePlan ? (
           <>
-            <LessonPlanViewer
-              plan={activePlan}
-              filename={activeFilename}
-              onEditInGenerator={onPlanLoadedToViewer}
-              onDeletePlan={() => setIsDeleteModalOpen(true)}
-            />
+            {isEditingActivePlan ? (
+              <StructuralEditor
+                initialPlan={activePlan}
+                filename={activeFilename}
+                activeViewTab="editor"
+                onViewTabChange={(tab) => {
+                  if (tab === 'viewer') setIsEditingActivePlan(false);
+                }}
+                onSave={(updatedPlan, savedFilename) => {
+                  const filename = savedFilename || activeFilename;
+                  const updatedPlanWithFilename = { ...updatedPlan, filename };
+                  setActivePlan(updatedPlanWithFilename);
+                  setActiveFilename(filename);
+                  onPlanLoadedToViewer?.(updatedPlanWithFilename);
+                }}
+              />
+            ) : (
+              <>
+                <LessonPlanViewer
+                  plan={activePlan}
+                  filename={activeFilename}
+                  onEditInGenerator={(plan) => {
+                    onPlanLoadedToViewer?.(plan);
+                    setIsEditingActivePlan(true);
+                  }}
+                  onDeletePlan={() => setIsDeleteModalOpen(true)}
+                />
 
-            {/* 3. DELETE LESSON PLAN BOX: DIRECTLY BELOW VIEW LESSON PLAN WITH SMALL GAP, MIDDLE CENTER ALIGNED */}
-            <DeleteConfirmModal
-              isOpen={isDeleteModalOpen}
-              filename={activeFilename}
-              planTitle={activePlan?.lesson || activePlan?.competence || ''}
-              grade={activePlan?.grade}
-              subject={activePlan?.subject}
-              competenceLevel={activePlan?.competence_level}
-              timeAllocation={activePlan?.time_allocation}
-              isDeleting={isDeleting}
-              onConfirm={handleConfirmDelete}
-              onCancel={() => setIsDeleteModalOpen(false)}
-            />
+                {/* 3. DELETE LESSON PLAN BOX: DIRECTLY BELOW VIEW LESSON PLAN WITH SMALL GAP, MIDDLE CENTER ALIGNED */}
+                <DeleteConfirmModal
+                  isOpen={isDeleteModalOpen}
+                  filename={activeFilename}
+                  planTitle={activePlan?.lesson || activePlan?.competence || ''}
+                  grade={activePlan?.grade}
+                  subject={activePlan?.subject}
+                  competenceLevel={activePlan?.competence_level}
+                  timeAllocation={activePlan?.time_allocation}
+                  isDeleting={isDeleting}
+                  onConfirm={handleConfirmDelete}
+                  onCancel={() => setIsDeleteModalOpen(false)}
+                />
+              </>
+            )}
           </>
         ) : (
           /* Empty / Placeholder State Box matching View Saved Lesson Plan */

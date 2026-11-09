@@ -401,10 +401,10 @@ export default function LessonPlanViewer({
                 gap: '6px',
                 transition: 'background-color 0.2s',
               }}
-              title="Load into Main Viewer and Structural Editor"
+              title="Open the lesson plan editor"
             >
               <span>✏️</span>
-              <span>Edit in Generator</span>
+              <span>Edit Lesson Plan</span>
             </button>
           )}
           {onDeletePlan && filename && (

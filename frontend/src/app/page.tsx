@@ -584,9 +584,6 @@ export default function Home() {
     if (savedPlan.filename || (savedPlan as any).file_name) {
       setCurrentPlanFilename(savedPlan.filename || (savedPlan as any).file_name);
     }
-    setGenerationMode("standard");
-    setActiveViewTab("viewer");
-    setActiveMainTab("generator");
   };
 
   const handleDeleteCurrentPlan = async () => {
