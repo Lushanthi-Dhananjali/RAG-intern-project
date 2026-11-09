@@ -1,0 +1,85 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 2 of 3)",
+  "competence": "value: 8.3.2",
+  "competence_level": "8.3.2",
+  "lesson": "Present information about the multicultural features of other countries: Participatory Council Hearing: Competency Level 8.3.2",
+  "unique_learning_outcome": [
+    "Present information about the multicultural features of other countries."
+  ],
+  "the_entrance": "5-minute introduction: value: Students are already familiar with the concept of a multicultural society. They have studied different cultures in their textbooks and have a basic understanding of their importance in Sri Lankan society.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "Teacher introduces the specific real-world Sri Lankan dilemma for 'Present information about the multicultural features of other countries: Participatory Council Hearing: Competency Level 8.3.2', presents concrete inquiry task cards/materials derived from the textbook/TIG, and organizes student teams with assigned roles. Students examine the prompt, divide responsibilities, and formulate inquiry questions.",
+      "student_activities": "Students examine the prompt, divide responsibilities, and formulate inquiry questions.",
+      "learning_teaching_method": "Dilemma Analysis & Role Distribution",
+      "learning_teaching_aids": "Textbook, TIG, inquiry task cards, materials derived from the textbook/TIG",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Teacher facilitates role execution and formatively checks progress. Circulates across 8 teams, facilitating role execution and formatively checking progress.",
+      "student_activities": "Students conduct a simulated community forum addressing 'Present information about the multicultural features of other countries.' Teams take civic roles, debate feasible responses, and agree on a resolution using oral discussion or the available board and notebooks.",
+      "learning_teaching_method": "Team Rebuttal Round",
+      "learning_teaching_aids": "Available board, notebooks, markers",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    }
+  ],
+  "summary": "Students participate in a simulated community forum to address the multicultural features of other countries. They take civic roles, debate feasible responses, and agree on a resolution using oral discussion or the available board and notebooks.",
+  "assessment_and_feedback_whole_lesson": "The final assessment is located at the end of the lesson.",
+  "post_activity": "5-minute in-class assignment: Students present discoveries or co-created artifacts; peer teams evaluate using criteria and offer feedback; teacher synthesizes discoveries against the learning outcomes.",
+  "information_sources": [
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
+  ],
+  "attachments": [],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 2,
+  "total_periods": 3,
+  "selected_activity": "Activity: Participatory Council Hearing: Competency Level 8.3.2\nApproach: Students conduct a simulated community forum addressing 'Present information about the multicultural features of other countries.'. Teams take civic roles, debate feasible responses, and agree on a resolution using oral discussion or the available board and notebooks.\nStudent task: Prepare brief citizen statements, propose priorities, and vote on a community resolution. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.\nExpected output: Approved 3-point citizen resolution sheet recorded in notebooks.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+  "selected_activity_title": "Participatory Council Hearing: Competency Level 8.3.2",
+  "custom_teacher_activity": null,
+  "activity_options": [
+    {
+      "id": "option_3",
+      "title": "Participatory Council Hearing: Competency Level 8.3.2",
+      "pedagogy_type": "Simulation & Roleplay",
+      "description": "Students conduct a simulated community forum addressing 'Present information about the multicultural features of other countries.'. Teams take civic roles, debate feasible responses, and agree on a resolution using oral discussion or the available board and notebooks.",
+      "learning_outcomes_addressed": [
+        "Present information about the multicultural features of other countries."
+      ],
+      "student_action_summary": "Prepare brief citizen statements, propose priorities, and vote on a community resolution. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "teacher_facilitation_summary": "Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.",
+      "student_grouping": "8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks",
+        "Chart Paper"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "Approved 3-point citizen resolution sheet recorded in notebooks.",
+      "creative_assessment_preview": "1-Minute Freeze-Frame Tableau: Teams depict a moment of civic consensus.",
+      "low_resource_alternative": "Assign verbal roles without physical paper cards."
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "Explains with examples that Sri Lanka as a multicultural society.",
+      "Expresses views appreciating the importance of living cooperatively as a member of a multicultural society."
+    ],
+    "2": [
+      "Present information about the multicultural features of other countries."
+    ],
+    "3": [
+      "Presents details of cultural features of different cultures in the Sri Lankan society."
+    ]
+  },
+  "filename": "Grade_8_comp_8_3_2_p2.json"
+}

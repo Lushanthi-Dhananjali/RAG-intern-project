@@ -1118,19 +1118,6 @@ export default function Home() {
           >
             <span>🚀</span>
             <span>Multi-Period Lesson Planner</span>
-            <span
-              style={{
-                fontSize: "10px",
-                fontWeight: "800",
-                padding: "2px 6px",
-                borderRadius: "9999px",
-                backgroundColor: "#dcfce7",
-                color: "#15803d",
-                border: "1px solid #86efac",
-              }}
-            >
-              Step 9
-            </span>
           </button>
 
           {/* Tab 3: Classic Lesson Plan Generator */}
