@@ -1,0 +1,99 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 2 of 2)",
+  "competence": "Demonstrates democratic values and leadership qualities in group and community interactions for social wellbeing",
+  "competence_level": "8.2.4",
+  "lesson": "Expresses the importance of developing democratic leadership qualities: Pradeshiya Sabha Youth Council Case Inquiry",
+  "unique_learning_outcome": [
+    "Expresses the importance of developing democratic leadership qualities.",
+    "Presents qualities to be developed as a follower for the wellbeing of the society."
+  ],
+  "the_entrance": "5-minute introduction: The teacher greets the 40 students arranged into 8 desk islands and presents a short local news clipping about a rural Pradeshiya Sabha youth committee successfully resolving a village drinking water dispute through collaborative debate. The teacher poses the opening question: 'When community members disagree on a development project, what specific leadership traits and follower duties prevent conflict and ensure a fair decision?' Students spend 2 minutes in their teams discussing how listening and tolerance matter, before the teacher directs them to examine the simulated youth council case dossiers.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "The teacher distributes the simulated case dossiers detailing the rural water supply dispute to all 8 groups, acting as a resource guide and timekeeper. The teacher circulates among the desk islands, prompting the student Leaders and Scribes to unpack the specific governance dilemma and allocate investigative roles.",
+      "student_activities": "Students review the case text within their teams, assigning roles such as Leader, Scribe, Timekeeper, Spokesperson, and Civic Investigator. The Scribe records the core conflict on the task sheet while the Civic Investigator cross-checks the facts against democratic principles.",
+      "learning_teaching_method": "Inquiry Launch & Pradeshiya Sabha Dossier Briefing",
+      "learning_teaching_aids": "Printed Pradeshiya Sabha Case Dossiers, Task Sheets, and Colored Markers",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "The teacher circulates actively among the groups, asking probing questions about how democratic leaders tolerate differing opinions and how constructive followers support community initiatives. The teacher scaffolds group discussions by encouraging students to link textbook definitions of equity and listening to the case study characters.",
+      "student_activities": "Groups actively debate the scenario, identifying democratic leadership decisions made by the youth committee head and evaluating how constructive followers supported the initiative without seeking personal benefits. The Scribe and team members jointly construct an analysis matrix on chart paper, dividing findings into leadership qualities and follower contributions.",
+      "learning_teaching_method": "Collaborative Investigation & Analysis Matrix Construction",
+      "learning_teaching_aids": "Chart Paper, Marker Pens, and Textbook Excerpts on Democratic Leadership",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "The teacher moderates the rapid gallery showcase, inviting spokespersons to share key insights while guiding the class in synthesizing common lessons on social betterment and good governance. The teacher provides constructive verbal feedback commending thorough team collaboration.",
+      "student_activities": "Team spokespersons present their group's analysis chart to the class in a 1-minute summary, highlighting essential follower duties and leadership traits. Remaining students evaluate the presentations and record valuable peer insights in their notebooks.",
+      "learning_teaching_method": "Spokesperson Presentation & Plenary Synthesis",
+      "learning_teaching_aids": "Completed Chart Paper Posters and Whiteboard",
+      "assessment_and_feedback": "",
+      "time_minutes": 5,
+      "other": ""
+    }
+  ],
+  "summary": "The teacher synthesizes core student discoveries, emphasizing that developing democratic leadership qualities such as listening, equity, and taking correct decisions ensures social betterment and good governance in Sri Lankan communities. Furthermore, active followership grounded in faith, mutual respect, and working without personal benefit is essential for achieving common goals.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted through observation of active group collaboration, evaluation of the completed case analysis charts for accurate identification of democratic leadership and follower duties, and peer feedback during presentations.",
+  "post_activity": "5-minute in-class assignment: Each student writes down one vital democratic leadership quality and one follower duty on a sticky note and pastes it on the chalkboard under the 'Commitment to Democracy' banner before leaving the classroom.",
+  "information_sources": [
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
+  ],
+  "attachments": [
+    "Pradeshiya Sabha Case Dossiers",
+    "Case Analysis Chart Templates"
+  ],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 2,
+  "total_periods": 2,
+  "selected_activity": "Activity: Pradeshiya Sabha Youth Council Case Inquiry\nApproach: Students investigate a simulated case study of a Sri Lankan Pradeshiya Sabha youth committee meeting to analyze the importance of democratic leadership and the duties of active followers.\nStudent task: Groups analyze a written scenario about resolving a water supply dispute in a rural Sri Lankan community, identifying democratic leadership decisions and evaluating how constructive followers supported the initiative.\nTeacher facilitation: Teacher acts as a timekeeper and resource guide, circulating among the 8 desk islands to prompt critical thinking regarding community welfare.\nExpected output: A case analysis chart detailing leadership competencies and follower contributions.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
+  "selected_activity_title": "Pradeshiya Sabha Youth Council Case Inquiry",
+  "custom_teacher_activity": null,
+  "activity_options": [
+    {
+      "id": "option_2",
+      "title": "Pradeshiya Sabha Youth Council Case Inquiry",
+      "pedagogy_type": "Case Inquiry",
+      "description": "Students investigate a simulated case study of a Sri Lankan Pradeshiya Sabha youth committee meeting to analyze the importance of democratic leadership and the duties of active followers.",
+      "learning_outcomes_addressed": [
+        "Expresses the importance of developing democratic leadership qualities.",
+        "Presents qualities to be developed as a follower for the wellbeing of the society."
+      ],
+      "student_action_summary": "Groups analyze a written scenario about resolving a water supply dispute in a rural Sri Lankan community, identifying democratic leadership decisions and evaluating how constructive followers supported the initiative.",
+      "teacher_facilitation_summary": "Teacher acts as a timekeeper and resource guide, circulating among the 8 desk islands to prompt critical thinking regarding community welfare.",
+      "student_grouping": "8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks",
+        "Chart Paper"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "A case analysis chart detailing leadership competencies and follower contributions.",
+      "creative_assessment_preview": "Statue Tableau: Groups form a 30-second silent statue representing harmonious cooperation between a democratic leader and followers.",
+      "low_resource_alternative": "Dictate the case study directly onto the chalkboard to eliminate the need for printed handouts."
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "Names the democratic leadership qualities in leadership.",
+      "Explains the need of moral leadership for the wellbeing of society.",
+      "Explains the term leadership briefly."
+    ],
+    "2": [
+      "Expresses the importance of developing democratic leadership qualities.",
+      "Presents qualities to be developed as a follower for the wellbeing of the society."
+    ]
+  },
+  "filename": "Grade_8_comp_8_2_4_p2.json"
+}

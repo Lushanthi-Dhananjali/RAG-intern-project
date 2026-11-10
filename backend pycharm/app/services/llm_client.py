@@ -347,7 +347,8 @@ def call_local_ollama_api(
     ollama_url: str = "http://localhost:11434",
     json_schema: Optional[Dict[str, Any]] = None,
     temperature: float = 0.65,
-    timeout: int = 600,
+    timeout: int = 120,
+    max_tokens: Optional[int] = None,
 ) -> Dict[str, Any]:
     """Invokes local Ollama endpoint with JSON mode or strict schema."""
     target_model = model
@@ -381,7 +382,7 @@ def call_local_ollama_api(
             "top_p": 0.9,
             "repeat_penalty": 1.25,
             "frequency_penalty": 0.35,
-            "num_predict": 2500,
+            "num_predict": max_tokens if max_tokens else 1800,
             "num_thread": 6,
         },
     }
@@ -401,7 +402,8 @@ def execute_llm_json(
     model: Optional[str] = None,
     ollama_url: Optional[str] = None,
     temperature: float = 0.65,
-    timeout: int = 600,
+    timeout: int = 120,
+    max_tokens: Optional[int] = None,
 ) -> Dict[str, Any]:
     """
     Universal JSON execution entry point.
@@ -466,14 +468,7 @@ def execute_llm_json(
             json_schema=json_schema,
             temperature=temperature,
             timeout=timeout,
-        )
-        logger.info("Executing LLM call via local Ollama (model: %s)...", local_model)
-        return call_local_ollama_api(
-            prompt=prompt,
-            model=local_model,
-            ollama_url=ollama_endpoint,
-            json_schema=json_schema,
-            timeout=timeout,
+            max_tokens=max_tokens,
         )
     except Exception as ollama_err:
         # If Ollama fails, check if an API key is available as fallback (from request context, env, or code)
