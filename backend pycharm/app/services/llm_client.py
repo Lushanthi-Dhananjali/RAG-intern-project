@@ -347,7 +347,7 @@ def call_local_ollama_api(
     ollama_url: str = "http://localhost:11434",
     json_schema: Optional[Dict[str, Any]] = None,
     temperature: float = 0.65,
-    timeout: int = 180,
+    timeout: int = 600,
 ) -> Dict[str, Any]:
     """Invokes local Ollama endpoint with JSON mode or strict schema."""
     target_model = model
@@ -401,7 +401,7 @@ def execute_llm_json(
     model: Optional[str] = None,
     ollama_url: Optional[str] = None,
     temperature: float = 0.65,
-    timeout: int = 180,
+    timeout: int = 600,
 ) -> Dict[str, Any]:
     """
     Universal JSON execution entry point.
@@ -427,7 +427,7 @@ def execute_llm_json(
                     system_prompt=system_prompt,
                     json_schema=json_schema,
                     temperature=temperature,
-                    timeout=min(timeout, 90),
+                    timeout=timeout,
                 )
             else:
                 return call_openai_compatible_api(
@@ -437,7 +437,7 @@ def execute_llm_json(
                     base_url=active_base_url,
                     system_prompt=system_prompt,
                     temperature=temperature,
-                    timeout=min(timeout, 90),
+                    timeout=timeout,
                 )
         except Exception as api_err:
             logger.warning("Cloud %s API call failed: %s. Attempting fallback to local Ollama...", active_provider, api_err)
@@ -500,7 +500,7 @@ def execute_llm_json(
                     model=fb_model,
                     system_prompt=system_prompt,
                     json_schema=json_schema,
-                    timeout=min(timeout, 90),
+                    timeout=timeout,
                 )
             else:
                 return call_openai_compatible_api(
@@ -509,7 +509,7 @@ def execute_llm_json(
                     model=fb_model,
                     base_url=fb_base,
                     system_prompt=system_prompt,
-                    timeout=min(timeout, 90),
+                    timeout=timeout,
                 )
         raise RuntimeError(
             "No LLM API key detected and local Ollama is not running on http://localhost:11434. "

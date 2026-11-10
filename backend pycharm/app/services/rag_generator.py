@@ -592,7 +592,7 @@ class RAGLessonPlanGenerator:
                 system_prompt="You are an expert NIE Sri Lanka curriculum planner. Output strictly valid JSON containing an 'options' array with 3 distinct active learning strategies.",
                 model=self.model_name,
                 ollama_url=self.ollama_url,
-                timeout=90,
+                timeout=600,
             )
             parsed_options = parsed.get("options", [])
             if isinstance(parsed_options, list) and len(parsed_options) == 3:
@@ -874,7 +874,7 @@ class RAGLessonPlanGenerator:
                 ),
                 model=self.model_name,
                 ollama_url=self.ollama_url,
-                timeout=360,
+                timeout=600,
             )
         except Exception as llm_err:
             logger.error("LLM execution failed: %s", llm_err)
