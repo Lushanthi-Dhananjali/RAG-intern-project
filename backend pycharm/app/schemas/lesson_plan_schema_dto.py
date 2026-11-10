@@ -166,48 +166,15 @@ class LessonPlanSchemaDto(BaseModel):
                 if isinstance(s, dict):
                     clean_steps.append({
                         "step_number": s.get("step_number") or idx,
-                        "teacher_activities": str(s.get("teacher_activities") or s.get("teacher") or s.get("facilitation") or f"Teacher facilitates student engagement in {act_clean} on '{topic_clean}'.").strip(),
-                        "student_activities": str(s.get("student_activities") or s.get("students") or s.get("task") or f"Students collaborate in groups executing {act_clean} on '{topic_clean}'.").strip(),
-                        "learning_teaching_method": str(s.get("learning_teaching_method") or s.get("method") or s.get("pedagogy") or f"{act_clean} Step {idx}").strip(),
-                        "learning_teaching_aids": str(s.get("learning_teaching_aids") or s.get("aids") or s.get("materials") or f"Task materials and worksheets for {act_clean}").strip(),
+                        "teacher_activities": str(s.get("teacher_activities") or s.get("teacher") or s.get("facilitation") or "").strip(),
+                        "student_activities": str(s.get("student_activities") or s.get("students") or s.get("task") or "").strip(),
+                        "learning_teaching_method": str(s.get("learning_teaching_method") or s.get("method") or s.get("pedagogy") or f"Step {idx}").strip(),
+                        "learning_teaching_aids": str(s.get("learning_teaching_aids") or s.get("aids") or s.get("materials") or "").strip(),
                         "assessment_and_feedback": "",
                         "time_minutes": int(s.get("time_minutes") or s.get("duration") or 10),
                         "other": str(s.get("other") or "").strip()
                     })
 
-        if not clean_steps:
-            clean_steps = [
-                {
-                    "step_number": 1,
-                    "teacher_activities": f"Teacher introduces the Sri Lankan real-world scenario for '{topic_clean}', clarifies objectives, and distributes task cards for {act_clean}.",
-                    "student_activities": f"Students review task cards, assume collaborative group roles, and begin investigations for {act_clean}.",
-                    "learning_teaching_method": f"Orientation & {act_clean} Setup",
-                    "learning_teaching_aids": f"Task cards and scenario prompts for {act_clean}",
-                    "assessment_and_feedback": "",
-                    "time_minutes": 10,
-                    "other": "Group formation"
-                },
-                {
-                    "step_number": 2,
-                    "teacher_activities": f"Teacher facilitates {act_clean}, circulates among groups, scaffolds student inquiries into '{topic_clean}', and monitors collaborative progress.",
-                    "student_activities": f"Students actively execute {act_clean}, collaborating in assigned roles to analyze civic situations related to '{topic_clean}'.",
-                    "learning_teaching_method": f"Collaborative Deep-Dive: {act_clean}",
-                    "learning_teaching_aids": f"Activity worksheets, scenario briefs, chart paper, markers for {act_clean}",
-                    "assessment_and_feedback": "",
-                    "time_minutes": 10,
-                    "other": "Active investigation"
-                },
-                {
-                    "step_number": 3,
-                    "teacher_activities": f"Teacher moderates group spokesperson presentations, facilitates constructive peer review, and synthesizes key discoveries regarding '{topic_clean}'.",
-                    "student_activities": f"Group spokespersons present findings on '{topic_clean}'; peer teams evaluate presentations using criteria and note constructive feedback.",
-                    "learning_teaching_method": f"Presentation & Synthesis of {act_clean}",
-                    "learning_teaching_aids": f"Student presentation charts, whiteboard for {act_clean}",
-                    "assessment_and_feedback": "",
-                    "time_minutes": 10,
-                    "other": "Plenary synthesis"
-                }
-            ]
         d["lesson_development_steps"] = clean_steps
 
         # 6. the_entrance
@@ -217,7 +184,7 @@ class LessonPlanSchemaDto(BaseModel):
                     d["the_entrance"] = str(d[k]).strip()
                     break
             if not d.get("the_entrance") or not str(d.get("the_entrance", "")).strip():
-                d["the_entrance"] = "5-minute introduction: Teacher presents everyday scenario and motivational hook; students discuss and connect prior knowledge."
+                d["the_entrance"] = d.get("the_entrance") or ""
 
         # 7. time_allocation
         if not d.get("time_allocation") or not str(d.get("time_allocation", "")).strip():
@@ -276,7 +243,7 @@ class LessonPlanSchemaDto(BaseModel):
                     d["assessment_and_feedback_whole_lesson"] = str(d[k]).strip()
                     break
             if not d.get("assessment_and_feedback_whole_lesson") or not str(d.get("assessment_and_feedback_whole_lesson", "")).strip():
-                d["assessment_and_feedback_whole_lesson"] = "Formative exit ticket questioning: 3 students share real-life application examples."
+                d["assessment_and_feedback_whole_lesson"] = d.get("assessment_and_feedback_whole_lesson") or ""
 
         # 13. post_activity
         if not d.get("post_activity") or not str(d.get("post_activity", "")).strip():
@@ -304,75 +271,11 @@ class LessonPlanSchemaDto(BaseModel):
         """
         TARGET_DEV_MINUTES = 30
 
-        # 1. Fallback: If development steps are missing, synthesize dynamic steps from the topic and activity
         if not self.lesson_development_steps:
-            act_title = (self.selected_activity_title or self.selected_activity or "Collaborative Investigation").splitlines()[0]
-            act_title = re.sub(r"^Activity:\s*", "", act_title, flags=re.IGNORECASE).strip() or "Collaborative Inquiry"
-            topic_clean = self.lesson or "Civic Core Principles"
-            self.lesson_development_steps = [
-                LessonDevelopmentStepDto(
-                    step_number=1,
-                    teacher_activities=f"Teacher introduces the Sri Lankan real-world situation for '{topic_clean}', arranges student groups, and provides {act_title} task cards and role assignments.",
-                    student_activities=f"Students arrange into collaborative groups, review inquiry prompts for {act_title}, assign group roles, and formulate investigative questions.",
-                    learning_teaching_method=f"Orientation & {act_title} Launch",
-                    learning_teaching_aids=f"Task cards for {act_title}, scenario sheets, chalkboard",
-                    assessment_and_feedback="",
-                    time_minutes=10,
-                    other="Group formation"
-                ),
-                LessonDevelopmentStepDto(
-                    step_number=2,
-                    teacher_activities=f"Teacher actively circulates among student groups as facilitator, scaffolds inquiry into '{topic_clean}', and monitors dynamic execution of {act_title}.",
-                    student_activities=f"Students actively collaborate in assigned roles to execute {act_title}, analyzing Sri Lankan community scenarios and co-creating group findings.",
-                    learning_teaching_method=f"Collaborative Deep-Dive: {act_title}",
-                    learning_teaching_aids=f"Activity worksheets, inquiry cards, chart paper, markers for {act_title}",
-                    assessment_and_feedback="",
-                    time_minutes=10,
-                    other="Collaborative inquiry"
-                ),
-                LessonDevelopmentStepDto(
-                    step_number=3,
-                    teacher_activities=f"Teacher moderates student team presentations, facilitates constructive peer review, and synthesizes discoveries regarding '{topic_clean}'.",
-                    student_activities=f"Group spokespersons present findings on '{topic_clean}'; peers evaluate solutions using criteria and note constructive feedback.",
-                    learning_teaching_method=f"Spokesperson Presentation & Plenary Synthesis: {act_title}",
-                    learning_teaching_aids=f"Student presentation posters, whiteboard for {act_title}",
-                    assessment_and_feedback="",
-                    time_minutes=10,
-                    other="Plenary synthesis"
-                )
-            ]
+            raise ValueError("Validation Failure: 'lesson_development_steps' is missing or empty. Development steps must be generated by LLM.")
 
-        # 2. If only 1 step was generated, split it to ensure a complete developmental scaffold in clean multiples of 5
         if len(self.lesson_development_steps) == 1:
-            orig = self.lesson_development_steps[0]
-            act_title = (self.selected_activity_title or self.selected_activity or "Collaborative Investigation").splitlines()[0]
-            act_title = re.sub(r"^Activity:\s*", "", act_title, flags=re.IGNORECASE).strip() or "Collaborative Inquiry"
-            topic_clean = self.lesson or "Civic Principles"
-            orig.step_number = 1
-            orig.time_minutes = 10
-            self.lesson_development_steps = [
-                orig,
-                LessonDevelopmentStepDto(
-                    step_number=2,
-                    teacher_activities=f"Teacher circulates as facilitator among groups executing {act_title}, scaffolding student inquiries into '{topic_clean}' with probing questions.",
-                    student_activities=f"Students actively collaborate in assigned roles to execute {act_title}, analyzing real-world civic situations related to '{topic_clean}'.",
-                    learning_teaching_method=f"Collaborative Deep-Dive: {act_title}",
-                    learning_teaching_aids=f"Activity worksheets, problem scenarios, and collaboration materials for {act_title}",
-                    assessment_and_feedback="",
-                    time_minutes=10,
-                    other="Collaborative deep-dive"
-                ),
-                LessonDevelopmentStepDto(
-                    step_number=3,
-                    teacher_activities=f"Teacher moderates student team presentations on '{topic_clean}', facilitates constructive peer critique, and synthesizes key insights from {act_title}.",
-                    student_activities=f"Team spokespersons present findings on '{topic_clean}'; peer teams evaluate presentations against criteria and record constructive feedback.",
-                    learning_teaching_method=f"Spokesperson Presentation & Peer Review: {act_title}",
-                    learning_teaching_aids=f"Student presentation charts and whiteboard for {act_title}",
-                    assessment_and_feedback="",
-                    time_minutes=10,
-                    other="Presentation synthesis"
-                )
-            ]
+            self.lesson_development_steps[0].time_minutes = 30
 
         # 3. Round all individual step durations to the nearest multiple of 5 (minimum 5 mins)
         for step in self.lesson_development_steps:

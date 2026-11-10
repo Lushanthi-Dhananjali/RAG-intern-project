@@ -89,40 +89,35 @@ def build_single_period_assembly_prompt(
         "the full lesson assessment belongs strictly in the final 5-minute section ('assessment_and_feedback_whole_lesson') at the bottom."
     )
 
+    clean_act_desc = (chosen_strategy_description or "").strip()
+    if clean_act_desc:
+        lines = [line.strip() for line in clean_act_desc.splitlines() if line.strip()]
+        filtered = [l for l in lines if not l.lower().startswith("standard class layout") and not l.lower().startswith("grouping:")]
+        clean_act_desc = "\n".join(filtered) if filtered else clean_act_desc
+
     strategy_directive = (
-        f"""MANDATORY ACTIVITY, CURRICULUM GROUNDING & DYNAMIC DEVELOPMENT STEPS DIRECTIVE:
-AUTHORITATIVE SELECTED ACTIVITY FOR THIS LESSON:
-"{chosen_strategy_description}"
+        f"""MANDATORY ACTIVITY & DYNAMIC DEVELOPMENT STEPS INSTRUCTIONS:
+SELECTED ACTIVITY FOR THIS LESSON:
+{clean_act_desc}
 
-CRITICAL INSTRUCTIONS FOR GENERATING DYNAMIC DEVELOPMENT STEPS:
-- You MUST generate unique, highly creative, student-centered development steps designed strictly around:
-  * SPECIFIC SELECTED ACTIVITY: "{chosen_strategy_description}"
-  * ALLOCATED LEARNING OUTCOMES FOR THIS PERIOD:
+CURRICULUM GROUNDING & REQUIREMENTS:
+- Target Outcomes: Address these specific outcomes through active student work:
 {outcomes_formatted}
-  * LESSON TOPIC: "{lesson_topic}"
-  * ACTUAL TIG & TEXTBOOK EVIDENCE: Extract and directly weave the specific definitions, civic concepts, real-life examples, discussion dilemmas, and factual points from the TIG & TEXTBOOK CONTEXT into the steps!
-
-- DYNAMIC STEP COUNT & TIMING (STRICTLY 30 MINUTES TOTAL):
-  * You may generate 2, 3, or 4 development steps depending on what best suits "{chosen_strategy_description}":
-    - 2-Step intensive activity: e.g., 15m + 15m = 30m, or 10m + 20m = 30m.
-    - 3-Step progressive inquiry: e.g., 10m + 10m + 10m = 30m, 5m + 15m + 10m = 30m, 10m + 15m + 5m = 30m, or 5m + 20m + 5m = 30m.
-    - 4-Step multi-station / carousel: e.g., 5m + 10m + 10m + 5m = 30m.
-  * Every single step's 'time_minutes' MUST be a clean multiple of 5 (e.g. 5, 10, 15, or 20).
-  * The sum of 'time_minutes' across all development steps MUST equal EXACTLY 30 minutes.
-
-- STUDENT-CENTERED PROGRESSIVE PEDAGOGY:
-  * Step 1 (Inquiry Setup & Launch): Teacher introduces the specific real-world Sri Lankan dilemma for "{lesson_topic}", presents concrete inquiry task cards/materials derived from the textbook/TIG, and organizes student teams with assigned roles. Students examine the prompt, divide responsibilities, and formulate inquiry questions.
-  * Middle Step(s) (Active Collaborative Deep-Dive / Simulation): Students actively execute "{chosen_strategy_description}" (debating, roleplaying, investigating textbook scenarios, mapping hazards, or constructing artifacts) in small groups without passive spectators. Teacher circulates as facilitator, asking probing questions to scaffold learning without lecturing.
-  * Final Step (Spokesperson Sharing, Peer Critique & Synthesis): Group spokespersons present discoveries or co-created artifacts; peer teams evaluate using criteria and offer feedback; teacher synthesizes discoveries against the learning outcomes.
-
-- ABSOLUTE PROHIBITION OF REPETITION & BOILERPLATE:
-  * NEVER repeat the exact same sentences for 'teacher_activities' or 'student_activities' across multiple steps. Each step MUST describe unique, progressive actions!
-  * In 'learning_teaching_method', name the specific sub-stage of this activity (e.g. "Dilemma Analysis & Role Distribution", "Team Rebuttal Round", "Consensus Resolution").
-  * In 'learning_teaching_aids', list concrete physical items (e.g. hazard cards, dilemma briefs, role badges, observation grids, chart paper, markers). NEVER output "None" or "none"!
-  * In 'teacher_activities' and 'student_activities', write 2 to 4 detailed sentences incorporating actual curriculum content and teacher facilitation questions.
-  * In 'assessment_and_feedback', keep it empty ("") as the complete lesson assessment is located at the bottom of the plan ('assessment_and_feedback_whole_lesson')."""
+- Lesson Topic: {lesson_topic}
+- Timing: Development steps MUST sum to exactly 30 minutes in clean multiples of 5 (e.g., 10+10+10, 5+15+10, 15+15, 5+20+5, or 5+10+10+5).
+- Progressive Step Flow:
+  * Step 1: Launch the investigation with a specific Sri Lankan inquiry problem directly based on the topic. Detail how the teacher facilitates the setup and how students begin collaborative work.
+  * Step 2: Detail the active collaborative execution of the activity (investigation, roleplay, dilemma analysis, or artifact creation). Describe the specific questions students debate and materials they handle.
+  * Step 3: Detail team presentation, peer critique, and teacher consolidation of key syllabus learnings.
+- STRICT ANTI-COPY MANDATE:
+  * DO NOT copy, quote, or echo instruction sentences, headings, or activity summary paragraphs into your JSON fields!
+  * DO NOT repeat the same sentences across different steps!
+  * Write original, detailed classroom dialogue, teacher facilitation questions, and student collaborative tasks.
+  * In 'learning_teaching_method', name a meaningful pedagogical phase (e.g. "Inquiry Launch & Dilemma Briefing", "Collaborative Investigation & Evidence Gathering", "Spokesperson Presentation & Plenary Synthesis"). NEVER output "Step 1", "Step 2", or numbers!
+  * In 'learning_teaching_aids', list specific concrete materials (sheets, task cards, chart paper, markers, whiteboard) for EVERY step. NEVER leave this field empty (\"\") or output "None"!
+  * In 'assessment_and_feedback', leave it empty (\"\") as full assessment is in 'assessment_and_feedback_whole_lesson'."""
         if chosen_strategy_description
-        else "MANDATORY ACTIVITY & DYNAMIC DEVELOPMENT STEPS DIRECTIVE: Generate rich, unique, student-centered collaborative investigation steps."
+        else "MANDATORY DIRECTIVE: Generate rich, unique, student-centered collaborative investigation steps totaling exactly 30 minutes."
     )
     prompt = f"""<|begin_of_text|><|start_header_id|>system<|end_header_id|>
 You are an expert Sri Lankan Teacher Educator and Curriculum Specialist for the LEARN Practice Teaching Framework in Sri Lanka.
@@ -182,34 +177,34 @@ CRITICAL ANTI-BOILERPLATE MANDATE:
     {{
       "step_number": 1,
       "time_minutes": 10,
-      "learning_teaching_method": "<string: specific launch and inquiry setup phase for this activity>",
-      "learning_teaching_aids": "<string: concrete physical materials, prompt cards, and worksheets for this step (never 'None')>",
-      "teacher_activities": "<string: 2-4 sentences describing exact teacher facilitator actions introducing this specific scenario, referencing curriculum concepts, and scaffolding role distribution>",
-      "student_activities": "<string: 2-4 sentences describing active student teamwork reviewing scenario prompts, examining textbook evidence, and assigning group roles>",
+      "learning_teaching_method": "string (Activity launch sub-stage title)",
+      "learning_teaching_aids": "string (Physical materials and prompt sheets used in this step)",
+      "teacher_activities": "string (Original 2-4 sentences: teacher facilitation introducing inquiry challenge and guiding student groups)",
+      "student_activities": "string (Original 2-4 sentences: active student teamwork reviewing prompt, assigning roles, and planning inquiry)",
       "assessment_and_feedback": ""
     }},
     {{
       "step_number": 2,
       "time_minutes": 10,
-      "learning_teaching_method": "<string: specific collaborative execution/simulation phase of this activity>",
-      "learning_teaching_aids": "<string: concrete artifacts, case materials, charts, or props used in this step (never 'None')>",
-      "teacher_activities": "<string: 2-4 sentences describing teacher circulating, observing, and asking probing questions to deepen inquiry>",
-      "student_activities": "<string: 2-4 sentences describing active student investigation, roleplay, debate, or mapping without passive spectators>",
+      "learning_teaching_method": "string (Active collaborative execution sub-stage title)",
+      "learning_teaching_aids": "string (Physical investigation cards, case briefs, and charts used in this step)",
+      "teacher_activities": "string (Original 2-4 sentences: teacher circulating, asking probing questions, and scaffolding inquiry)",
+      "student_activities": "string (Original 2-4 sentences: active student investigation, roleplay, debate, or mapping in groups)",
       "assessment_and_feedback": ""
     }},
     {{
       "step_number": 3,
       "time_minutes": 10,
-      "learning_teaching_method": "<string: specific presentation, peer review, and plenary synthesis phase>",
-      "learning_teaching_aids": "<string: student-created presentation charts, whiteboard, feedback cards (never 'None')>",
-      "teacher_activities": "<string: 2-4 sentences describing teacher moderating presentations, guiding peer evaluation, and reinforcing syllabus concepts>",
-      "student_activities": "<string: 2-4 sentences describing team spokespersons presenting findings and peer students critiquing and recording takeaways>",
+      "learning_teaching_method": "string (Presentation and peer synthesis sub-stage title)",
+      "learning_teaching_aids": "string (Student presentation posters, whiteboard, and peer criteria sheets)",
+      "teacher_activities": "string (Original 2-4 sentences: teacher moderating presentations, facilitating peer review, and synthesizing learnings)",
+      "student_activities": "string (Original 2-4 sentences: team spokespersons presenting findings and peer students evaluating and recording insights)",
       "assessment_and_feedback": ""
     }}
   ],
-  "summary": "<string: 2-minute synthesis of core student discoveries on this period's outcomes>",
-  "assessment_and_feedback_whole_lesson": "<string: formative feedback criteria for this lesson>",
-  "post_activity": "<string: creative 5-minute in-class assessment: quiz, drawing, rhyme, or voting>"
+  "summary": "string (2-minute synthesis of core student discoveries on this period's outcomes)",
+  "assessment_and_feedback_whole_lesson": "string (Formative feedback criteria for this lesson)",
+  "post_activity": "string (Creative 5-minute active in-class evaluation check: rapid quiz, sketch challenge, rhyme, or voting)"
 }}
 
 Respond ONLY with valid JSON conforming strictly to the above keys.<|eot_id|>

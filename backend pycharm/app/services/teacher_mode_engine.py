@@ -51,12 +51,14 @@ PEDAGOGICAL PACING MANDATE (Total: 40 Minutes):
    - Every step's duration MUST be a clean multiple of 5 (e.g. 5, 10, 15, 20 mins). Sum MUST equal exactly 30 minutes.
    - Step count is flexible (2, 3, or 4 steps) depending on what best suits the custom activity, but must total exactly 30 minutes (e.g. 15+15=30, 10+10+10=30, 5+15+10=30, 10+15+5=30, or 5+10+10+5=30).
    - PROGRESSIVE MULTI-STAGE STEP BLUEPRINT:
-     * Step 1 (Launch & Investigation Setup): Teacher introduces the specific problem or dilemma for "{lesson_topic}", sets up materials and role assignments. Students divide responsibilities and review inquiry prompts.
-     * Step 2 (Active Collaborative Execution): Students actively execute "{teacher_custom_activity}" in small groups without passive spectators. Teacher circulates to scaffold inquiry.
-     * Step 3 (Spokesperson Sharing & Consolidation): Group spokespersons present discoveries or artifacts; peer teams evaluate; teacher consolidates key learnings.
-   - ABSOLUTE PROHIBITION OF REPETITION:
-     * NEVER repeat the exact same sentences for 'teacher_activities' or 'student_activities' across multiple steps. Each step MUST describe unique, specific actions!
-     * In 'learning_teaching_aids', list concrete physical items (e.g. task cards, role sheets, charts, markers). NEVER output "None"!
+     * Step 1: Launch the investigation with a specific Sri Lankan inquiry problem based on "{lesson_topic}". Detail how the teacher facilitates the setup and how students begin collaborative work.
+     * Step 2: Detail active student group execution of "{teacher_custom_activity}". Describe specific questions students debate and materials they handle.
+     * Step 3: Detail team presentation, peer critique, and teacher consolidation of key syllabus learnings.
+   - STRICT ANTI-COPY MANDATE:
+     * DO NOT copy, quote, or echo instruction sentences or headings into your JSON fields!
+     * DO NOT repeat the same sentences across different steps!
+     * In 'learning_teaching_method', name a meaningful pedagogical phase. NEVER output generic "Step 1", "Step 2" numbers!
+     * In 'learning_teaching_aids', list specific concrete materials for EVERY step. NEVER leave this field empty ("")!
      * In 'assessment_and_feedback', keep it empty ("") as formative assessment is conducted at the bottom of the plan ('assessment_and_feedback_whole_lesson').
 3. Creative In-Class Assignment & Closure (exactly 5 mins total): Put a creative, age-appropriate in-class concluding task in 'post_activity' and 'summary' connecting directly to the period outcome and custom activity (e.g. quick 2-line rhyme, drawing challenge, mini-quiz, pass-the-parcel concept ball, or statement display). Must be achievable in 5 minutes in-class.
 4. Align the Entrance and Assignment & Closure with the supplied competency outcomes and the teacher's custom activity. Generate usable classroom content, never placeholders or URLs.
@@ -91,34 +93,34 @@ CRITICAL ANTI-BOILERPLATE MANDATE:
     {{
       "step_number": 1,
       "time_minutes": 10,
-      "learning_teaching_method": "<string: specific launch and inquiry setup phase for this custom activity>",
-      "learning_teaching_aids": "<string: concrete physical materials, prompt cards, and worksheets for this step (never 'None')>",
-      "teacher_activities": "<string: 2-4 sentences describing exact teacher facilitator actions introducing this specific scenario and scaffolding role distribution>",
-      "student_activities": "<string: 2-4 sentences describing active student teamwork reviewing scenario prompts and assigning group roles>",
+      "learning_teaching_method": "string (Activity launch sub-stage title)",
+      "learning_teaching_aids": "string (Physical materials and prompt sheets used in this step)",
+      "teacher_activities": "string (Original 2-4 sentences: teacher facilitator actions introducing the scenario and guiding group setup)",
+      "student_activities": "string (Original 2-4 sentences: active student teamwork reviewing prompt, assigning roles, and planning inquiry)",
       "assessment_and_feedback": ""
     }},
     {{
       "step_number": 2,
       "time_minutes": 10,
-      "learning_teaching_method": "<string: specific collaborative execution/simulation phase of this custom activity>",
-      "learning_teaching_aids": "<string: concrete artifacts, case materials, charts, or props used in this step (never 'None')>",
-      "teacher_activities": "<string: 2-4 sentences describing teacher circulating, observing, and asking probing questions to deepen inquiry>",
-      "student_activities": "<string: 2-4 sentences describing active student investigation, roleplay, debate, or mapping without passive spectators>",
+      "learning_teaching_method": "string (Active collaborative execution sub-stage title)",
+      "learning_teaching_aids": "string (Physical investigation cards, case briefs, and charts used in this step)",
+      "teacher_activities": "string (Original 2-4 sentences: teacher circulating, asking probing questions, and scaffolding inquiry)",
+      "student_activities": "string (Original 2-4 sentences: active student investigation, roleplay, debate, or mapping in groups)",
       "assessment_and_feedback": ""
     }},
     {{
       "step_number": 3,
       "time_minutes": 10,
-      "learning_teaching_method": "<string: specific presentation, peer review, and plenary synthesis phase>",
-      "learning_teaching_aids": "<string: student-created presentation charts, whiteboard, feedback cards (never 'None')>",
-      "teacher_activities": "<string: 2-4 sentences describing teacher moderating presentations, guiding peer evaluation, and reinforcing syllabus concepts>",
-      "student_activities": "<string: 2-4 sentences describing team spokespersons presenting findings and peer students critiquing and recording takeaways>",
+      "learning_teaching_method": "string (Presentation and peer synthesis sub-stage title)",
+      "learning_teaching_aids": "string (Student presentation posters, whiteboard, and peer criteria sheets)",
+      "teacher_activities": "string (Original 2-4 sentences: teacher moderating presentations, facilitating peer review, and synthesizing learnings)",
+      "student_activities": "string (Original 2-4 sentences: team spokespersons presenting findings and peer students evaluating and recording insights)",
       "assessment_and_feedback": ""
     }}
   ],
-  "summary": "<string: 2-minute synthesis of core student discoveries on this period's outcomes>",
-  "assessment_and_feedback_whole_lesson": "<string: formative feedback criteria for this lesson>",
-  "post_activity": "<string: creative 5-minute in-class assessment: quiz, drawing, rhyme, or voting>"
+  "summary": "string (2-minute synthesis of core student discoveries on this period's outcomes)",
+  "assessment_and_feedback_whole_lesson": "string (Formative feedback criteria for this lesson)",
+  "post_activity": "string (Creative 5-minute active in-class evaluation check: rapid quiz, sketch challenge, rhyme, or voting)"
 }}
 
 Respond ONLY with valid JSON conforming strictly to the above keys.<|eot_id|>

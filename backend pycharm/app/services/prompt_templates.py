@@ -190,8 +190,8 @@ Cooperative Student-Led Investigation with hands-on task cards and structured pe
         "lesson_development_steps": [
             {
                 "step_number": 1,
-                "teacher_activities": "string (2-4 sentences: Teacher introduces the lesson dilemma, sets up inquiry prompts, and explains group roles as facilitator)",
-                "student_activities": f"string (2-4 sentences: Students organize into teams for {student_count} students, review task sheets, assign group roles, and formulate investigative questions)",
+                "teacher_activities": "string (Original 2-4 sentences: teacher facilitator actions introducing the scenario and guiding group setup)",
+                "student_activities": f"string (Original 2-4 sentences: students organize into teams for {student_count} students, review task sheets, assign group roles, and formulate questions)",
                 "learning_teaching_method": "string (Specific launch phase name organically matching this activity)",
                 "learning_teaching_aids": "string (Specific physical task cards, problem scenarios, or charts - never 'None')",
                 "assessment_and_feedback": "",
@@ -200,8 +200,8 @@ Cooperative Student-Led Investigation with hands-on task cards and structured pe
             },
             {
                 "step_number": 2,
-                "teacher_activities": "string (2-4 sentences: Teacher circulates as facilitator, observes team collaboration, scaffolds difficulties with probing questions, and monitors progress)",
-                "student_activities": "string (2-4 sentences: Students actively carry out the collaborative investigation, roleplay, or problem solving without passive spectators)",
+                "teacher_activities": "string (Original 2-4 sentences: teacher circulating, asking probing questions, and scaffolding inquiry)",
+                "student_activities": "string (Original 2-4 sentences: active student investigation, roleplay, debate, or mapping in groups)",
                 "learning_teaching_method": "string (Specific collaborative execution phase name matching this activity)",
                 "learning_teaching_aids": "string (Specific worksheets, scenario props, observation checklists, or posters - never 'None')",
                 "assessment_and_feedback": "",
@@ -210,8 +210,8 @@ Cooperative Student-Led Investigation with hands-on task cards and structured pe
             },
             {
                 "step_number": 3,
-                "teacher_activities": "string (2-4 sentences: Teacher moderates team presentations, facilitates constructive peer review, and synthesizes key discoveries against syllabus concepts)",
-                "student_activities": "string (2-4 sentences: Student spokespersons present findings, peer teams critique using criteria and record constructive feedback)",
+                "teacher_activities": "string (Original 2-4 sentences: teacher moderating presentations, facilitating peer review, and synthesizing learnings)",
+                "student_activities": "string (Original 2-4 sentences: team spokespersons presenting findings and peer students evaluating and recording insights)",
                 "learning_teaching_method": "string (Specific presentation, peer evaluation, and synthesis phase name)",
                 "learning_teaching_aids": "string (Student presentation posters, whiteboard, feedback cards - never 'None')",
                 "assessment_and_feedback": "",

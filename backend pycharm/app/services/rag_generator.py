@@ -279,53 +279,16 @@ def normalize_lesson_plan_dict(data: Any) -> Dict[str, Any]:
                 topic_ctx = str(norm.get("lesson") or "Curriculum Investigation").strip()
                 clean_s = {
                     "step_number": s.get("step_number") or idx,
-                    "teacher_activities": str(s.get("teacher_activities") or s.get("teacher") or s.get("facilitation") or f"Teacher facilitates student engagement in {act_ctx} on '{topic_ctx}'.").strip(),
-                    "student_activities": str(s.get("student_activities") or s.get("students") or s.get("task") or f"Students collaborate in groups executing {act_ctx} on '{topic_ctx}'.").strip(),
-                    "learning_teaching_method": str(s.get("learning_teaching_method") or s.get("method") or s.get("pedagogy") or act_ctx).strip(),
-                    "learning_teaching_aids": str(s.get("learning_teaching_aids") or s.get("aids") or s.get("materials") or f"Materials and worksheets for {act_ctx}").strip(),
+                    "teacher_activities": str(s.get("teacher_activities") or s.get("teacher") or s.get("facilitation") or "").strip(),
+                    "student_activities": str(s.get("student_activities") or s.get("students") or s.get("task") or "").strip(),
+                    "learning_teaching_method": str(s.get("learning_teaching_method") or s.get("method") or s.get("pedagogy") or "").strip(),
+                    "learning_teaching_aids": str(s.get("learning_teaching_aids") or s.get("aids") or s.get("materials") or "").strip(),
                     "assessment_and_feedback": "",
                     "time_minutes": (lambda tm: int(re.search(r"\d+", str(tm)).group()) if re.search(r"\d+", str(tm)) else 10)(s.get("time_minutes") or s.get("duration") or 10),
                     "other": str(s.get("other") or "").strip()
                 }
                 clean_steps.append(clean_s)
 
-    if not clean_steps:
-        # Dynamic fallback synthesized from the specific lesson topic and activity
-        topic_txt = str(norm.get("lesson") or "Civic Core Principles").strip()
-        act_raw = str(norm.get("selected_activity_title") or norm.get("selected_activity") or "Collaborative Inquiry").splitlines()[0]
-        act_clean = re.sub(r"^Activity:\s*", "", act_raw, flags=re.IGNORECASE).strip() or "Collaborative Inquiry"
-        clean_steps = [
-            {
-                "step_number": 1,
-                "teacher_activities": f"Teacher introduces the Sri Lankan real-world scenario for '{topic_txt}', organizes collaborative student teams, and distributes task cards for {act_clean}.",
-                "student_activities": f"Students arrange into collaborative groups, review inquiry task cards for {act_clean}, assign group roles, and formulate investigative questions.",
-                "learning_teaching_method": f"Orientation & {act_clean} Launch",
-                "learning_teaching_aids": f"Task cards for {act_clean}, role sheets, scenario prompts",
-                "assessment_and_feedback": "",
-                "time_minutes": 10,
-                "other": "Group formation and role distribution"
-            },
-            {
-                "step_number": 2,
-                "teacher_activities": f"Teacher actively circulates among student groups, facilitates inquiry into '{topic_txt}', scaffolds civic concepts with probing questions, and observes {act_clean}.",
-                "student_activities": f"Students actively collaborate in assigned roles to execute {act_clean}, analyzing Sri Lankan community situations related to '{topic_txt}' without passive spectators.",
-                "learning_teaching_method": act_clean,
-                "learning_teaching_aids": f"Activity worksheets for {act_clean}, observation sheets, chart paper, markers",
-                "assessment_and_feedback": "",
-                "time_minutes": 10,
-                "other": "Active collaborative investigation"
-            },
-            {
-                "step_number": 3,
-                "teacher_activities": f"Teacher moderates student team presentations, facilitates constructive peer evaluation, and synthesizes key student discoveries regarding '{topic_txt}'.",
-                "student_activities": f"Group spokespersons present findings on '{topic_txt}'; peers evaluate presentations using criteria and note constructive feedback.",
-                "learning_teaching_method": f"Presentation & Synthesis of {act_clean}",
-                "learning_teaching_aids": f"Student presentation charts, whiteboard for {act_clean}",
-                "assessment_and_feedback": "",
-                "time_minutes": 10,
-                "other": "Plenary presentation and synthesis"
-            }
-        ]
     norm["lesson_development_steps"] = clean_steps
 
     # 7. summary
@@ -344,7 +307,7 @@ def normalize_lesson_plan_dict(data: Any) -> Dict[str, Any]:
                 norm["assessment_and_feedback_whole_lesson"] = str(norm[k]).strip()
                 break
         if not norm.get("assessment_and_feedback_whole_lesson") or not str(norm.get("assessment_and_feedback_whole_lesson", "")).strip():
-            norm["assessment_and_feedback_whole_lesson"] = "Formative exit ticket questioning: 3 students share real-life application examples."
+            norm["assessment_and_feedback_whole_lesson"] = norm.get("assessment_and_feedback_whole_lesson") or ""
 
     # 9. post_activity
     if not norm.get("post_activity") or not str(norm.get("post_activity", "")).strip():
@@ -874,6 +837,8 @@ class RAGLessonPlanGenerator:
                 raise ValueError(f"Validation Failure: 'student_activities' missing in Step {idx}.")
             if not step.learning_teaching_method.strip():
                 raise ValueError(f"Validation Failure: 'learning_teaching_method' missing in Step {idx}.")
+            if not step.learning_teaching_aids.strip():
+                raise ValueError(f"Validation Failure: 'learning_teaching_aids' missing in Step {idx}.")
 
         if not plan.summary.strip():
             raise ValueError("Validation Failure: 'summary' section is missing.")

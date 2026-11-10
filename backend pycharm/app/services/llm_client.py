@@ -377,8 +377,10 @@ def call_local_ollama_api(
         "stream": False,
         "format": json_schema if json_schema else "json",
         "options": {
-            "temperature": temperature,
+            "temperature": max(temperature, 0.75),
             "top_p": 0.9,
+            "repeat_penalty": 1.25,
+            "frequency_penalty": 0.35,
             "num_predict": 2500,
             "num_thread": 6,
         },
