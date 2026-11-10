@@ -2,81 +2,84 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 2 of 2)",
-  "competence": "Broad curriculum competency standard",
+  "competence": "Describes giving examples the nature of various kinds of emotions occuring in a person.",
   "competence_level": "8.2.3",
-  "lesson": "Explains how the emotions impact on personal behaviour in varying ways: Community Observation Checklist & Mapping: Competency 8.2.3",
+  "lesson": "Explains how the emotions impact on personal behaviour in varying ways: Emotion-Behaviour Chain Reaction Roleplay",
   "unique_learning_outcome": [
     "Explains how the emotions impact on personal behaviour in varying ways."
   ],
-  "the_entrance": "Detailed 5-minute introduction: teacher and student actions linking prior knowledge to this period topic and activity... Students are introduced to the concept of emotions and their impact on personal behavior. The teacher explains the importance of understanding emotions and their role in shaping our behavior. Students are asked to share their personal experiences with emotions and how they have affected their behavior.",
+  "the_entrance": "The teacher greets the 40 students divided into 8 groups of 5 and invites them to participate in a 5-minute facial expression miming game connected to everyday Sri Lankan school life. The teacher asks students to display non-verbal reactions of sudden joy during a cricket victory at the school grounds versus sudden frustration during a missed bus ride. As students mimic laughing, frowning, or tense breathing, the teacher acts as a facilitator connecting these physical expressions directly to how internal feelings dictate external actions.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "Teacher explains the concept of emotions and their impact on personal behavior. Students are introduced to the community observation checklist and mapping activity.",
-      "student_activities": "Students review the community observation checklist and mapping activity. They are asked to identify the different types of emotions and how they can be observed in their daily lives.",
-      "learning_teaching_method": "Task Orientation & Guided Inquiry Launch",
-      "learning_teaching_aids": "Task assignment cards, role description sheets, inquiry scenario prompts",
+      "teacher_activities": "The teacher circulates among the 8 groups, distributing unique local scenario cards depicting situations like a dispute over a village playground or losing a school sports match. Acting strictly as a facilitator, the teacher prompts each group to assign internal team roles such as Leader, Scribe, Timekeeper, Spokesperson, and Civic Investigator to examine the emotional triggers.",
+      "student_activities": "Students review their assigned Sri Lankan scenario card within their groups of five. The team Leader ensures every member speaks, while the Scribe records the initial emotional trigger and the resulting behavioural reaction in student notebooks.",
+      "learning_teaching_method": "Scenario Briefing & Role Assignment",
+      "learning_teaching_aids": "Scenario Task Cards, Student Notebooks, Pens",
       "assessment_and_feedback": "",
       "time_minutes": 10,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "Teacher circulates as facilitator among groups, observes peer interactions, scaffolds challenging concepts with probing questions, and ensures active participation without lecturing...",
-      "student_activities": "Students actively execute the chosen activity (e.g., conducting mock council session, exploratory school-walk survey, analyzing Sri Lankan community issues, or solving civic challenges in groups) using assigned roles...",
-      "learning_teaching_method": "Active Student-Centered Investigation / Simulation / Drama / School-Walk",
-      "learning_teaching_aids": "Worksheets, roleplay cue cards, chart papers, colored markers",
+      "teacher_activities": "The teacher monitors group pacing every 7 minutes, scaffolding student collaboration by asking probing questions on how intense anger, sorrow, or excitement shifts personal behaviour. The teacher observes interactions to ensure all students actively participate in drafting the cause-and-effect summary chart.",
+      "student_activities": "Groups rehearse a 2-minute roleplay enactment demonstrating the exact moment an emotion alters personal conduct. The Civic Investigator checks accuracy against textbook facts on emotional reactions, while the Scribe and Spokesperson finalize the cause-and-effect summary on chart paper using marker pens.",
+      "learning_teaching_method": "Collaborative Roleplay Scripting & Rehearsal",
+      "learning_teaching_aids": "Chart Paper, Marker Pens, Roleplay Props",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 15,
       "other": ""
     },
     {
       "step_number": 3,
-      "teacher_activities": "Teacher moderates student presentations, facilitates constructive peer review, and synthesizes key student discoveries directly against the period's learning outcomes...",
-      "student_activities": "Spokespersons present group solutions or roleplay outcomes; class peers ask questions, provide constructive feedback, and summarize key takeaways in their notebooks...",
-      "learning_teaching_method": "Spokesperson Presentation & Plenary Synthesis",
-      "learning_teaching_aids": "Student output posters, whiteboard, peer assessment checklist",
+      "teacher_activities": "The teacher moderates the rapid sharing of roleplay highlights across groups, guiding peer feedback and synthesizing how unmanaged unfavourable emotions cause social harm while positive emotions foster community harmony.",
+      "student_activities": "Team spokespersons present their 2-minute roleplay dialogues and display their chart papers to the class. Remaining student groups evaluate the presentations and record key insights regarding emotional self-regulation in their notebooks.",
+      "learning_teaching_method": "Plenary Showcase & Peer Synthesis",
+      "learning_teaching_aids": "Completed Chart Papers, Whiteboard",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 5,
       "other": ""
     }
   ],
-  "summary": "Consolidation and synthesis of key concepts...",
-  "assessment_and_feedback_whole_lesson": "Final closure formative assessment criteria...",
-  "post_activity": "5-minute in-class assignment: Five-minute in-class assignment or concluding task... Students are asked to reflect on what they have learned about emotions and their impact on personal behavior. They are asked to write a short paragraph summarizing their understanding of the topic.",
+  "summary": "In this 2-minute synthesis, students consolidate their discoveries that intense emotions such as anger, fear, or sorrow directly trigger distinct physical and behavioural reactions. Through roleplay analysis, the class recognizes that failing to manipulate unfavourable emotions leads to negative social consequences, reinforcing the necessity of emotional self-regulation for a democratic citizen.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation is based on group collaboration during roleplay creation, accuracy in linking specific emotional triggers to behavioural reactions on chart papers, and constructive peer feedback during plenary presentations.",
+  "post_activity": "The teacher conducts a 5-minute rapid in-class 'Emotion-Behaviour Match' voting challenge. The teacher reads out three real-world Sri Lankan scenarios, and students individually write down the corresponding emotion and resulting behavioural reaction on a slip of paper to hand in before exiting.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
-  "attachments": [],
+  "attachments": [
+    "Scenario Task Cards",
+    "Cause-and-Effect Chart Templates"
+  ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 2,
   "total_periods": 2,
-  "selected_activity": "Activity: Community Observation Checklist & Mapping: Competency 8.2.3\nApproach: Students use community observation checklist & mapping to explore 'Explains how the emotions impact on personal behaviour in varying ways.'. Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.\nExpected output: An evidence record with one supported conclusion.\nGrouping: 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "Community Observation Checklist & Mapping: Competency 8.2.3",
+  "selected_activity": "Activity: Emotion-Behaviour Chain Reaction Roleplay\nApproach: Students enact everyday school and community scenarios in Sri Lanka to demonstrate how intense emotions like anger, frustration, or excitement directly trigger specific positive or negative personal behaviours.\nStudent task: Each group receives a distinct local scenario card (e.g., losing a school sports match, handling a dispute over a village playground). They script and perform a short roleplay showing the exact moment an emotion shifts personal behaviour, identifying the trigger, internal feeling, and resulting action.\nTeacher facilitation: The teacher acts as a facilitator and timekeeper, prompting groups every 7 minutes to transition from script creation to rehearsal. The teacher circulates among the 8 islands to ensure all roles are active and asks probing questions on how emotional self-regulation alters outcomes.\nExpected output: A 2-minute roleplay enactment and a written cause-and-effect summary chart on chart paper.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
+  "selected_activity_title": "Emotion-Behaviour Chain Reaction Roleplay",
   "custom_teacher_activity": null,
   "activity_options": [
     {
       "id": "option_1",
-      "title": "Community Observation Checklist & Mapping: Competency 8.2.3",
-      "pedagogy_type": "Observation / Evidence Inquiry",
-      "description": "Students use community observation checklist & mapping to explore 'Explains how the emotions impact on personal behaviour in varying ways.'. Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "student_action_summary": "Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-      "required_materials": [
-        "Blackboard",
-        "Paper",
-        "Student notebooks"
-      ],
-      "approximate_duration_minutes": 30,
-      "expected_student_output": "An evidence record with one supported conclusion.",
-      "creative_assessment_preview": "A paired evidence check: name one observation and the outcome it supports.",
-      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable.",
+      "title": "Emotion-Behaviour Chain Reaction Roleplay",
+      "pedagogy_type": "Roleplay",
+      "description": "Students enact everyday school and community scenarios in Sri Lanka to demonstrate how intense emotions like anger, frustration, or excitement directly trigger specific positive or negative personal behaviours.",
       "learning_outcomes_addressed": [
         "Explains how the emotions impact on personal behaviour in varying ways."
-      ]
+      ],
+      "student_action_summary": "Each group receives a distinct local scenario card (e.g., losing a school sports match, handling a dispute over a village playground). They script and perform a short roleplay showing the exact moment an emotion shifts personal behaviour, identifying the trigger, internal feeling, and resulting action.",
+      "teacher_facilitation_summary": "The teacher acts as a facilitator and timekeeper, prompting groups every 7 minutes to transition from script creation to rehearsal. The teacher circulates among the 8 islands to ensure all roles are active and asks probing questions on how emotional self-regulation alters outcomes.",
+      "student_grouping": "8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks",
+        "Chart Paper"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "A 2-minute roleplay enactment and a written cause-and-effect summary chart on chart paper.",
+      "creative_assessment_preview": "Pass-the-Emotion Token: The teacher tosses a crumpled paper ball; the catching student must instantly name one emotion and one resulting behaviour in 5 seconds.",
+      "low_resource_alternative": "Use student notebooks exclusively for drafting dialogue without chart paper, relying on verbal delivery."
     }
   ],
   "outcome_allocation": {
@@ -87,5 +90,6 @@
     "2": [
       "Explains how the emotions impact on personal behaviour in varying ways."
     ]
-  }
+  },
+  "filename": "Grade_8_comp_8_2_3_p2.json"
 }

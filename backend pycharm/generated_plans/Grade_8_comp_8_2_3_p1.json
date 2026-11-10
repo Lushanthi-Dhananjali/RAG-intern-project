@@ -2,83 +2,85 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 1 of 2)",
-  "competence": "Broad curriculum competency standard",
+  "competence": "Demonstrates democratic values by managing emotions and personality development for the betterment of self and society",
   "competence_level": "8.2.3",
-  "lesson": "Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society: Mock Local Council / Pradeshiya Sabha Session: Competency 8.2.3",
+  "lesson": "Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society: Democratic Citizen Emotion Roleplay Workshop",
   "unique_learning_outcome": [
     "Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society.",
     "Describes giving examples the nature of various kinds of emotions occuring in a person."
   ],
-  "the_entrance": "Detailed 5-minute introduction: teacher and student actions linking prior knowledge to this period topic and activity... Students are introduced to the concept of emotions and their impact on personal behavior. The teacher explains the scenario and objectives of the mock local council/pradeshiya sabha session.",
+  "the_entrance": "5-minute introduction: The teacher welcomes the 40 students organized into 8 teams and reads out a brief, relatable scenario about a tense village committee meeting in Sri Lanka where a heated argument erupts over a community water project. Without taking a lecturing stance, the teacher asks the class: 'Have you ever seen someone lose their temper during a village discussion, and how did that affect everyone else?' Students share quick everyday observations from their neighborhoods, establishing the connection between emotional outbursts, democratic participation, and community harmony, before introducing the roleplay workshop task.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "Teacher explains the scenario and objectives of the mock local council/pradeshiya sabha session, distributes task materials, and assigns student roles as a facilitator.",
-      "student_activities": "Students arrange into cooperative groups, assign designated roles, review inquiry cards, and begin collaborative planning.",
-      "learning_teaching_method": "Task Orientation & Guided Inquiry Launch",
-      "learning_teaching_aids": "Task assignment cards, role description sheets, inquiry scenario prompts",
+      "teacher_activities": "The teacher circulates among the 8 groups, distributing task cards outlining different emotional scenarios commonly experienced in Sri Lankan community settings, such as frustration during a sports match or anger at a town hall meeting. The teacher acts purely as a facilitator, guiding the Leader and Scribe in each group to assign roles and examine the difference between uncontrolled emotional reactions and positive emotional control.",
+      "student_activities": "Students gather in their teams of 5, reviewing the scenario task cards with the Leader guiding discussion and the Scribe noting down key emotional triggers. The Civic Investigator checks textbook concepts regarding emotional types, while the Timekeeper tracks the pacing as the team prepares to outline their roleplay dialogue.",
+      "learning_teaching_method": "Inquiry Launch & Dilemma Briefing",
+      "learning_teaching_aids": "Student Notebooks, Chalkboard, and Emotion Scenario Task Cards",
       "assessment_and_feedback": "",
       "time_minutes": 10,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "Teacher circulates as facilitator among groups, observes peer interactions, scaffolds challenging concepts with probing questions, and ensures active participation without lecturing.",
-      "student_activities": "Students actively execute the chosen activity (e.g., conducting mock council session, exploratory school-walk survey, analyzing Sri Lankan community issues, or solving civic challenges in groups) using assigned roles.",
-      "learning_teaching_method": "Active Student-Centered Investigation / Simulation / Drama / School-Walk",
-      "learning_teaching_aids": "Worksheets, roleplay cue cards, chart papers, colored markers",
+      "teacher_activities": "Moving dynamically between tables, the teacher prompts student groups with probing questions such as 'How does listening and following community rules help de-escalate this argument?' The teacher observes the teamwork, ensuring that the Spokesperson and Logistics members are actively collaborating to draft a 2-minute contrasting skit showing both negative and positive emotional responses.",
+      "student_activities": "Team members actively write and rehearse their mini-sketches in their notebooks, capturing examples of positive and negative emotions and their respective results. The Scribe records the dialogue highlighting strategies like pre-arrangement, self-confidence, and respecting others' feelings, while the Spokesperson rehearses the delivery for the upcoming presentation.",
+      "learning_teaching_method": "Collaborative Investigation & Roleplay Scripting",
+      "learning_teaching_aids": "Chart Paper, Colored Markers, and Student Notebooks",
       "assessment_and_feedback": "",
       "time_minutes": 10,
       "other": ""
     },
     {
       "step_number": 3,
-      "teacher_activities": "Teacher moderates student presentations, facilitates constructive peer review, and synthesizes key student discoveries directly against the period's learning outcomes.",
-      "student_activities": "Spokespersons present group solutions or roleplay outcomes; class peers ask questions, provide constructive feedback, and summarize key takeaways in their notebooks.",
+      "teacher_activities": "The teacher moderates the rapid sequence of 2-minute roleplay presentations from the 8 group spokespersons, ensuring a respectful and engaging atmosphere. The teacher guides the peer feedback session, asking probing questions to synthesize how democratic citizens achieve personal betterment and societal peace through positive emotional management.",
+      "student_activities": "Group spokespersons enact their 2-minute roleplays for the class, while the remaining student teams evaluate the performances using peer criteria sheets. The Civic Investigators from listening teams offer constructive comments on whether the skits accurately reflected democratic emotional control and its benefits to society.",
       "learning_teaching_method": "Spokesperson Presentation & Plenary Synthesis",
-      "learning_teaching_aids": "Student output posters, whiteboard, peer assessment checklist",
+      "learning_teaching_aids": "Whiteboard, Group Chart Posters, and Peer Criteria Evaluation Sheets",
       "assessment_and_feedback": "",
       "time_minutes": 10,
       "other": ""
     }
   ],
-  "summary": "Consolidation and synthesis of key concepts...",
-  "assessment_and_feedback_whole_lesson": "Final closure formative assessment criteria...",
-  "post_activity": "5-minute in-class assignment: Each student completes a short exit response explaining one finding about “Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society” using evidence or an example from Mock Local Council / Pradeshiya Sabha Session: Competency 8.2.3. The teacher reviews responses for an accurate link to the period outcome.",
+  "summary": "In a 2-minute plenary wrap-up, the teacher and students synthesize that managing emotions through strategies like listening, rule-following, and self-confidence prevents individuals from becoming victims of stress and fosters a cooperative, respected, and peaceful Sri Lankan society.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted continuously through teacher observation of group collaboration, the accuracy of emotional examples recorded in student notebooks, and the quality of peer critique during the roleplay presentations.",
+  "post_activity": "5-minute in-class assignment: Each student writes down one personal strategy on a slip of paper for controlling negative emotions positively in school and places it in the class emotion-management box.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
-  "attachments": [],
+  "attachments": [
+    "Emotion Scenario Task Cards",
+    "Peer Criteria Evaluation Sheets"
+  ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 1,
   "total_periods": 2,
-  "selected_activity": "Activity: Mock Local Council / Pradeshiya Sabha Session: Competency 8.2.3\nApproach: Students use mock local council / pradeshiya sabha session to explore 'Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society.'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.\nExpected output: A short role-based civic decision and its reasons.\nGrouping: 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "Mock Local Council / Pradeshiya Sabha Session: Competency 8.2.3",
+  "selected_activity": "Activity: Democratic Citizen Emotion Roleplay Workshop\nApproach: Students enact mini-sketches reflecting different types of emotional occurrences in a local public council meeting or village committee session in Sri Lanka.\nStudent task: Each group scripts and performs a 2-minute roleplay showing a citizen reacting with uncontrolled emotion versus a democratic citizen exercising positive emotional control.\nTeacher facilitation: Teacher manages the 30-minute pacing, ensuring all 8 groups perform brief skits, and leads a plenary reflection on personal betterment.\nExpected output: A collaborative dialogue script written in student notebooks and enacted.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Zero bystanders.",
+  "selected_activity_title": "Democratic Citizen Emotion Roleplay Workshop",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_1",
-      "title": "Mock Local Council / Pradeshiya Sabha Session: Competency 8.2.3",
-      "pedagogy_type": "Simulation / Roleplay",
-      "description": "Students use mock local council / pradeshiya sabha session to explore 'Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society.'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "student_action_summary": "Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-      "required_materials": [
-        "Blackboard",
-        "Paper",
-        "Student notebooks"
-      ],
-      "approximate_duration_minutes": 30,
-      "expected_student_output": "A short role-based civic decision and its reasons.",
-      "creative_assessment_preview": "Students state one role responsibility and explain how it supported the decision.",
-      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable.",
+      "id": "option_2",
+      "title": "Democratic Citizen Emotion Roleplay Workshop",
+      "pedagogy_type": "Roleplay",
+      "description": "Students enact mini-sketches reflecting different types of emotional occurrences in a local public council meeting or village committee session in Sri Lanka.",
       "learning_outcomes_addressed": [
         "Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society.",
         "Describes giving examples the nature of various kinds of emotions occuring in a person."
-      ]
+      ],
+      "student_action_summary": "Each group scripts and performs a 2-minute roleplay showing a citizen reacting with uncontrolled emotion versus a democratic citizen exercising positive emotional control.",
+      "teacher_facilitation_summary": "Teacher manages the 30-minute pacing, ensuring all 8 groups perform brief skits, and leads a plenary reflection on personal betterment.",
+      "student_grouping": "8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Zero bystanders.",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "A collaborative dialogue script written in student notebooks and enacted.",
+      "creative_assessment_preview": "A 5-minute freeze-frame (tableau) where groups pose as 'controlled' vs 'uncontrolled' democratic citizens.",
+      "low_resource_alternative": "Rely entirely on improvised dialogue using chalkboard bullet points for scenarios."
     }
   ],
   "outcome_allocation": {
@@ -89,5 +91,6 @@
     "2": [
       "Explains how the emotions impact on personal behaviour in varying ways."
     ]
-  }
+  },
+  "filename": "Grade_8_comp_8_2_3_p1.json"
 }

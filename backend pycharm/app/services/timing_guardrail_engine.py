@@ -263,19 +263,7 @@ class TimingGuardrailEngine:
             if "learning-teaching-method" in method_str:
                 slug = re.sub(r"^https?://[^\s/]+/learning-teaching-method/?", "", method_str)
                 method_str = slug.replace("-", " ").strip().title()
-
-            is_generic_num = bool(re.match(r"^step\s*\d+$", method_str.casefold()))
-            if not method_str or is_generic_num:
-                if idx == 1:
-                    step.learning_teaching_method = f"{activity} - Inquiry Launch & Setup"
-                elif idx == 2:
-                    step.learning_teaching_method = f"{activity} - Collaborative Execution"
-                elif idx == 3:
-                    step.learning_teaching_method = f"{activity} - Presentation & Synthesis"
-                else:
-                    step.learning_teaching_method = f"{activity} - Plenary Consolidation"
-            else:
-                step.learning_teaching_method = method_str
+            step.learning_teaching_method = method_str
 
             aids_str = (step.learning_teaching_aids or "").strip()
             aids_str = re.sub(r"^<string:\s*[^>]+>\s*", "", aids_str, flags=re.IGNORECASE).strip()
@@ -283,19 +271,7 @@ class TimingGuardrailEngine:
             if "learning-teaching-aids" in aids_str:
                 slug = re.sub(r"^https?://[^\s/]+/learning-teaching-aids/?", "", aids_str)
                 aids_str = slug.replace("-", ", ").strip().title()
-
-            is_empty_aids = not aids_str or aids_str.casefold() in ("none", "none.", "n/a", "null", "no aids", "nil")
-            if is_empty_aids:
-                if idx == 1:
-                    step.learning_teaching_aids = f"Prompt cards and inquiry scenario sheets for {activity}, student notebooks"
-                elif idx == 2:
-                    step.learning_teaching_aids = f"Worksheets, chart paper, markers, and case briefs for {activity}"
-                elif idx == 3:
-                    step.learning_teaching_aids = f"Presentation posters, whiteboard/chalkboard, peer critique checklist"
-                else:
-                    step.learning_teaching_aids = f"Reflection sheets and summary notes for {activity}"
-            else:
-                step.learning_teaching_aids = aids_str
+            step.learning_teaching_aids = aids_str
 
             t_str = (step.teacher_activities or "").strip()
             t_str = re.sub(r"^<string:\s*[^>]+>\s*", "", t_str, flags=re.IGNORECASE).strip()

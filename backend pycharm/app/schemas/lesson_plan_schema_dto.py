@@ -168,8 +168,8 @@ class LessonPlanSchemaDto(BaseModel):
                         "step_number": s.get("step_number") or idx,
                         "teacher_activities": str(s.get("teacher_activities") or s.get("teacher") or s.get("facilitation") or "").strip(),
                         "student_activities": str(s.get("student_activities") or s.get("students") or s.get("task") or "").strip(),
-                        "learning_teaching_method": str(s.get("learning_teaching_method") or s.get("method") or s.get("pedagogy") or f"Step {idx}").strip(),
-                        "learning_teaching_aids": str(s.get("learning_teaching_aids") or s.get("aids") or s.get("materials") or "").strip(),
+                        "learning_teaching_method": str(s.get("learning_teaching_method") or s.get("method") or s.get("teaching_method") or s.get("learning_method") or s.get("pedagogy") or "").strip(),
+                        "learning_teaching_aids": str(s.get("learning_teaching_aids") or s.get("aids") or s.get("teaching_aids") or s.get("learning_aids") or s.get("materials") or s.get("resources") or "").strip(),
                         "assessment_and_feedback": "",
                         "time_minutes": int(s.get("time_minutes") or s.get("duration") or 10),
                         "other": str(s.get("other") or "").strip()
