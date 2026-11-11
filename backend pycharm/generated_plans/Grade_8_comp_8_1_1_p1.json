@@ -1,0 +1,102 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 1 of 2)",
+  "competence": "Demonstrates civic responsibility by understanding, evaluating, and properly utilizing public services that enhance community well-being.",
+  "competence_level": "8.1.1",
+  "lesson": "Identifies the public services: The Village Hub Roleplay: Identifying Essential Services",
+  "unique_learning_outcome": [
+    "Identifies the public services.",
+    "Explains the common features related to public services.",
+    "Explains the need of public services."
+  ],
+  "the_entrance": "The teacher welcomes the class and initiates a fast-paced 5-minute chalkboard brainstorm by asking students to name three services they or their families used this very morning before coming to school, such as traveling on a CTB bus, visiting a local government health clinic, or getting a document signed at the Grama Niladhari office. As students shout out examples, the teacher categorizes them on the chalkboard into private and public services, seamlessly transitioning the class into the main roleplay activity by announcing that today the classroom will transform into a local Pradeshiya Sabha council hub.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "The teacher acts as a process facilitator, dividing the 30 students into 6 teams of 5 and distributing distinct scenario task cards representing typical encounters at a Sri Lankan village hub (e.g., requesting water supply maintenance, applying for a low-income housing concession, or visiting a government dispensary). The teacher circulates among the groups to explain team roles (Leader, Scribe, Timekeeper, Spokesperson, and Civic Investigator) and prompts them with guiding questions: 'What specific service is your citizen requesting, and which public institution is responsible for providing it?'",
+      "student_activities": "Students assemble in their designated groups of five, assign collaborative roles among themselves, and read their scenario task cards. The Scribe records initial brainstorming notes on chart paper while the Civic Investigator cross-checks the scenario against textbook definitions of public services, ensuring everyone actively contributes to planning a 3-minute dialogue.",
+      "learning_teaching_method": "Scenario Briefing and Group Role Allocation",
+      "learning_teaching_aids": "Roleplay Scenario Task Cards, Student Notebooks, Chart Paper, and Markers",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "The teacher facilitates the mini-roleplay presentations by timing each 3-minute enactment and moderating peer feedback. While circulating between teams, the teacher asks probing questions to deepen analysis: 'Does this service operate with a profit motive, and is it equally accessible to all low-income families in the village?' The teacher guides students to identify core features such as non-profit intent, legal framework, and community-wide availability.",
+      "student_activities": "Each group's Spokesperson enacts a brief 3-minute roleplay skit portraying citizens interacting with public officers, highlighting the exact features and necessity of the service. Meanwhile, the remaining group members take notes in their Student Notebooks on the common features and societal needs identified during peer presentations, preparing to defend their findings against investigator challenges.",
+      "learning_teaching_method": "Simulated Council Deliberation and Feature Analysis",
+      "learning_teaching_aids": "Whiteboard, Colored Markers, and Group Chart Papers",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "The teacher acts as a synthesizing facilitator, drawing a concept map on the whiteboard capturing the three core aspects explored: identification of public services, common features, and necessity. The teacher asks the class concluding inquiry prompts to connect the roleplays to broader national development standards in Sri Lanka.",
+      "student_activities": "Students finalize their concise roleplay enactment summaries in their Student Notebooks, synthesizing how public services fulfill daily needs that cannot be achieved individually. The Timekeeper collects team materials and hands them back to the teacher while the Scribe completes the final summary entry.",
+      "learning_teaching_method": "Collaborative Synthesis and Notebook Summary",
+      "learning_teaching_aids": "Student Notebooks and Whiteboard Key Concept Summary",
+      "assessment_and_feedback": "",
+      "time_minutes": 5,
+      "other": ""
+    }
+  ],
+  "summary": "In this 2-minute synthesis, students consolidate their discoveries that public services—such as health clinics, postal networks, and local government utilities—are non-profit, legally established systems provided by the government and public sector to guarantee social security, elevate living standards, and fulfill essential community needs across Sri Lanka.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted continuously through teacher observation of group collaboration, adherence to assigned roles, accuracy in identifying public service features during roleplays, and the completeness of the roleplay summary recorded in Student Notebooks.",
+  "post_activity": "Students participate in a rapid 5-minute in-class 'Flash Poll and Service Match' check where the teacher reads out four quick service scenarios, and students simultaneously hold up either a 'Government Public Service' or 'Private Service' flash card made from their notebook paper, followed by a 1-minute verbal check on why these services have no profit motive.",
+  "information_sources": [
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
+  ],
+  "attachments": [
+    "Roleplay Scenario Task Cards",
+    "Chalkboard Concept Map Template",
+    "Student Notebook Summary Guidelines"
+  ],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 1,
+  "total_periods": 2,
+  "selected_activity": "Activity: The Village Hub Roleplay: Identifying Essential Services\nApproach: Students simulate a community council meeting in a Sri Lankan Pradeshiya Sabha jurisdiction, acting out scenarios where citizens request specific services and debate why these services are indispensable for society.\nStudent task: Students enact short, 3-minute roleplay skits portraying citizens interacting with public officers (e.g., obtaining a Grama Niladhari certificate or visiting a government dispensary), identifying service features and community needs.\nTeacher facilitation: Teacher acts as timekeeper and process consultant, prompting groups to reflect on the core characteristics and ultimate necessity of public services.\nExpected output: A concise roleplay enactment summary recorded in Student Notebooks.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+  "selected_activity_title": "The Village Hub Roleplay: Identifying Essential Services",
+  "custom_teacher_activity": null,
+  "activity_options": [
+    {
+      "id": "option_2",
+      "title": "The Village Hub Roleplay: Identifying Essential Services",
+      "pedagogy_type": "Roleplay / Simulation",
+      "description": "Students simulate a community council meeting in a Sri Lankan Pradeshiya Sabha jurisdiction, acting out scenarios where citizens request specific services and debate why these services are indispensable for society.",
+      "learning_outcomes_addressed": [
+        "Identifies the public services.",
+        "Explains the common features related to public services.",
+        "Explains the need of public services."
+      ],
+      "student_action_summary": "Students enact short, 3-minute roleplay skits portraying citizens interacting with public officers (e.g., obtaining a Grama Niladhari certificate or visiting a government dispensary), identifying service features and community needs.",
+      "teacher_facilitation_summary": "Teacher acts as timekeeper and process consultant, prompting groups to reflect on the core characteristics and ultimate necessity of public services.",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks",
+        "Chart Paper"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "A concise roleplay enactment summary recorded in Student Notebooks.",
+      "creative_assessment_preview": "Exit Slip: Each student writes down one unique reason why public services are needed on a slip of paper before leaving.",
+      "low_resource_alternative": "Students perform seated mini-roleplays (tableaus) without requiring props or moving furniture."
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "Identifies the public services.",
+      "Explains the common features related to public services.",
+      "Explains the need of public services."
+    ],
+    "2": [
+      "Presents views appreciating the importance of public services of the times.",
+      "Investigates information on the beginning and progress of public services."
+    ]
+  },
+  "filename": "Grade_8_comp_8_1_1_p1.json"
+}

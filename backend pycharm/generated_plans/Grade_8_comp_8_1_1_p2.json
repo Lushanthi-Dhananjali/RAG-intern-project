@@ -1,0 +1,100 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 2 of 2)",
+  "competence": "Investigates public services, their evolution, and appreciates their timely importance for community welfare and social development in Sri Lanka",
+  "competence_level": "8.1.1",
+  "lesson": "Presents views appreciating the importance of public services of the times: Service Audit Jigsaw: Examining Past and Present Public Utilities",
+  "unique_learning_outcome": [
+    "Presents views appreciating the importance of public services of the times.",
+    "Investigates information on the beginning and progress of public services."
+  ],
+  "the_entrance": "5-minute introduction: The teacher greets the 30 students, organized into 6 teams of 5, and displays two contrasting photographs on the chalkboard: an ancient Sri Lankan irrigation tank with its 'Osu Uyan' (medicinal garden) context from the Anuradhapura period, alongside a modern water board purification plant. Acting as facilitator, the teacher asks the class: 'How did our ancestors ensure community health centuries ago compared to how our local Pradeshiya Sabha supplies treated water to our homes today?' Teams quickly confer for 2 minutes using their Student Notebooks. The teacher invites the Spokespersons to share one immediate similarity in meeting human needs, seamlessly transitioning the class into the cooperative jigsaw service audit activity.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "The teacher circulates among the 6 teams, distributing distinct historical and modern utility task cards (focusing on ancient hospitals, medicinal gardens, and contemporary public transport or postal networks). Acting as a facilitator, the teacher prompts the Civic Investigators with scaffolding questions: 'What specific evidence shows that public services in ancient Sri Lanka aimed at community welfare without profit?' The teacher monitors group role distribution to ensure Leaders, Scribes, and Timekeepers are actively managing the 10-minute literature and source review.",
+      "student_activities": "Students work collaboratively in their groups of 5, assigning roles where the Scribe records the historical origins and progress of public services on task sheets. The Civic Investigator checks textbook facts regarding the evolution of public services from the Anuradhapura era to modern provincial councils, while the Timekeeper monitors the pacing. Team members examine how early public utilities fulfilled basic societal needs before reporting back to their home tables.",
+      "learning_teaching_method": "Cooperative Jigsaw Source Investigation",
+      "learning_teaching_aids": "Station Task Cards, Historical Evidence Sheets on Anuradhapura public works, Student Notebooks, Pens",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "The teacher moves between teams as a mentor, observing how groups construct their comparative value matrices. The teacher asks probing questions to deepen critical thinking: 'How does the complexity of modern population needs compare with ancient times, and why must public services remain accessible to low-income earners without profit motives?' The teacher provides guidance on synthesizing past progression with contemporary utility standards.",
+      "student_activities": "Working intensely on Chart Paper with colored markers, the 6 teams design a comparative past-to-present utility matrix contrasting ancient public health and educational structures with modern counterparts. The Spokesperson collaborates with the team to draft 3 clear bullet points appreciating the timely importance of public services. The Logistics officer ensures all markers are managed efficiently while the Scribe finalizes the matrix layout.",
+      "learning_teaching_method": "Comparative Matrix Construction and Synthesis",
+      "learning_teaching_aids": "Large Chart Paper, Colored Markers, Whiteboard, Textbook Excerpts",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "The teacher facilitates a rapid gallery walk and moderated debrief, inviting designated Spokespersons to present their team's core arguments defending public service value. The teacher guides peer evaluation by asking the audience to identify common features of public services highlighted across the presentations, ensuring constructive feedback is exchanged among all 6 groups.",
+      "student_activities": "Spokespersons proudly present their group's comparative matrix and defend the timely importance of public services to their peers. Remaining team members act as engaged evaluators, asking questions about accessibility, non-profit intent, and community welfare. Students note down key comparative insights in their Student Notebooks.",
+      "learning_teaching_method": "Gallery Defense and Peer Appreciation",
+      "learning_teaching_aids": "Chart Paper Matrices displayed on classroom walls, Chalkboard",
+      "assessment_and_feedback": "",
+      "time_minutes": 5,
+      "other": ""
+    }
+  ],
+  "summary": "In a 2-minute synthesized wrap-up, the teacher and students consolidate discoveries on how public services evolved from ancient irrigation and health networks in the Anuradhapura period to modern provincial institutions. The class affirms that public services are essential for social security, living standard enhancement, and equitable access without profit motives.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted through observation of active group collaboration, the accuracy of historical and modern comparisons in the Chart Paper matrix, and the clarity of student arguments presented during the gallery defense regarding the timely importance of public services.",
+  "post_activity": "The teacher conducts a 5-minute in-class 'Value Vote and One-Sentence Summary' check. Each student writes down on a scrap slip of paper one sentence appreciating the modern importance of public services compared to ancient times and drops it into the team collection box as they exit their seats.",
+  "information_sources": [
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
+  ],
+  "attachments": [
+    "Station Task Cards",
+    "Historical Evidence Sheets",
+    "Comparative Matrix Template"
+  ],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 2,
+  "total_periods": 2,
+  "selected_activity": "Activity: Service Audit Jigsaw: Examining Past and Present Public Utilities\nApproach: The class investigates public service progression through a cooperative jigsaw method, where different groups examine different eras or milestones of public services in Sri Lanka (e.g., ancient irrigation tanks vs. modern water boards). They synthesize findings to appreciate how service evolution directly impacts community welfare.\nStudent task: Groups analyze assigned aspects of public service progress (origins, evolution, and modern significance). They construct a comparative value matrix on Chart Paper contrasting past methods with contemporary systems, preparing a joint defense of public service value.\nTeacher facilitation: The teacher manages group transitions, provides guidance on evaluating historical sources versus current needs, and monitors time management to fit the 30-minute segment.\nExpected output: A comparative past-to-present utility matrix displayed on Chart Paper.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+  "selected_activity_title": "Service Audit Jigsaw: Examining Past and Present Public Utilities",
+  "custom_teacher_activity": null,
+  "activity_options": [
+    {
+      "id": "option_2",
+      "title": "Service Audit Jigsaw: Examining Past and Present Public Utilities",
+      "pedagogy_type": "Jigsaw Cooperative Inquiry & Value Matrix",
+      "description": "The class investigates public service progression through a cooperative jigsaw method, where different groups examine different eras or milestones of public services in Sri Lanka (e.g., ancient irrigation tanks vs. modern water boards). They synthesize findings to appreciate how service evolution directly impacts community welfare.",
+      "learning_outcomes_addressed": [
+        "Presents views appreciating the importance of public services of the times.",
+        "Investigates information on the beginning and progress of public services."
+      ],
+      "student_action_summary": "Groups analyze assigned aspects of public service progress (origins, evolution, and modern significance). They construct a comparative value matrix on Chart Paper contrasting past methods with contemporary systems, preparing a joint defense of public service value.",
+      "teacher_facilitation_summary": "The teacher manages group transitions, provides guidance on evaluating historical sources versus current needs, and monitors time management to fit the 30-minute segment.",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks",
+        "Chart Paper"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "A comparative past-to-present utility matrix displayed on Chart Paper.",
+      "creative_assessment_preview": "Pass-the-Chalk Summary: The spokesperson from each team writes one key word on the chalkboard summarizing the evolution and value of public services.",
+      "low_resource_alternative": "Matrix drawn directly on the chalkboard or inside student notebooks with oral peer sharing."
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "Identifies the public services.",
+      "Explains the common features related to public services.",
+      "Explains the need of public services."
+    ],
+    "2": [
+      "Presents views appreciating the importance of public services of the times.",
+      "Investigates information on the beginning and progress of public services."
+    ]
+  },
+  "filename": "Grade_8_comp_8_1_1_p2.json"
+}

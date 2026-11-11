@@ -104,20 +104,23 @@ CURRICULUM GROUNDING & REQUIREMENTS:
 - Target Outcomes: Address these specific outcomes through active student work:
 {outcomes_formatted}
 - Lesson Topic: {lesson_topic}
-- Timing: Development steps MUST sum to exactly 30 minutes in clean multiples of 5 (e.g., 10+10+10, 5+15+10, 15+15, 5+20+5, or 5+10+10+5).
-- Progressive Step Flow:
-  * Step 1: Launch the investigation with a specific Sri Lankan inquiry problem directly based on the topic. Detail how the teacher facilitates the setup and how students begin collaborative work.
-  * Step 2: Detail the active collaborative execution of the activity (investigation, roleplay, dilemma analysis, or artifact creation). Describe the specific questions students debate and materials they handle.
-  * Step 3: Detail team presentation, peer critique, and teacher consolidation of key syllabus learnings.
+- DYNAMIC ACTIVITY-BASED DEVELOPMENT STEP DESIGN:
+  * Do NOT use a rigid or fixed step template. Create steps dynamically and organically based on the nature of the selected activity '{clean_act_desc}', the target outcomes, and the provided TIG and Textbook facts.
+  * Different activities demand completely different structures and phases:
+    - A debate, mock trial, or negotiation may have 2 deep phases (e.g. 10m preparation + 20m structured debate/rebuttal, or 15m + 15m).
+    - An inquiry investigation, experiment, or case study may have 3 phases (e.g. 5m setup + 15m evidence gathering + 10m synthesis/defense).
+    - A multi-station workshop, gallery walk, or jigsaw may have 3 or 4 phases (e.g. 5m + 10m + 10m + 5m).
+  * Determine the step count (2, 3, or 4 steps) and duration of each step to best suit the activity.
+  * Every step's 'time_minutes' MUST be a clean multiple of 5 (e.g. 5, 10, 15, 20) and the sum across all steps MUST strictly equal exactly 30 minutes. Do NOT default to a fixed time allocation across all lessons.
 - STRICT ANTI-COPY MANDATE:
   * DO NOT copy, quote, or echo instruction sentences, headings, or activity summary paragraphs into your JSON fields!
   * DO NOT repeat the same sentences across different steps!
   * Write original, detailed classroom dialogue, teacher facilitation questions, and student collaborative tasks.
-  * In 'learning_teaching_method', name a meaningful pedagogical phase (e.g. "Inquiry Launch & Dilemma Briefing", "Collaborative Investigation & Evidence Gathering", "Spokesperson Presentation & Plenary Synthesis"). NEVER output "Step 1", "Step 2", or numbers!
+  * In 'learning_teaching_method', name a meaningful pedagogical phase derived from the activity (e.g. "Case Evidence Analysis", "Mock Assembly Deliberation", "Community Map Reconstruction"). NEVER output generic "Step 1", "Step 2" numbers!
   * In 'learning_teaching_aids', list specific concrete materials (sheets, task cards, chart paper, markers, whiteboard) for EVERY step. NEVER leave this field empty (\"\") or output "None"!
   * In 'assessment_and_feedback', leave it empty (\"\") as full assessment is in 'assessment_and_feedback_whole_lesson'."""
         if chosen_strategy_description
-        else "MANDATORY DIRECTIVE: Generate rich, unique, student-centered collaborative investigation steps totaling exactly 30 minutes."
+        else "MANDATORY DIRECTIVE: Generate rich, unique, student-centered collaborative investigation steps totaling exactly 30 minutes based on the curriculum and learning outcomes."
     )
     prompt = f"""<|begin_of_text|><|start_header_id|>system<|end_header_id|>
 You are an expert Sri Lankan Teacher Educator and Curriculum Specialist for the LEARN Practice Teaching Framework in Sri Lanka.
@@ -138,8 +141,9 @@ STRICT PEDAGOGICAL & 40-MINUTE STRUCTURAL LAWS:
    - Active motivational hook linking student everyday experience in Sri Lanka to this period's topic and allocated outcomes, transitioning directly into the chosen activity.
 6. Lesson Development Steps (CLEAN MULTIPLES OF 5, TOTAL = EXACTLY 30 MINUTES):
    - Every single step's 'time_minutes' MUST be a clean multiple of 5 (e.g. 5, 10, 15, 20). NEVER use non-multiples of 5 like 7, 8, 12, 13, 14, 17, 22!
-   - Step count is flexible (2, 3, or 4 steps) depending on what best suits the selected activity and learning outcome:
-     * Examples: 10m + 10m + 10m = 30m, 5m + 15m + 10m = 30m, 10m + 15m + 5m = 30m, 15m + 15m = 30m, 5m + 20m + 5m = 30m, or 5m + 10m + 10m + 5m = 30m.
+   - Determine the step count (2, 3, or 4 steps) and duration of each step organically to match the activity:
+     * Valid configurations: 15m + 15m = 30m, 5m + 15m + 10m = 30m, 10m + 15m + 5m = 30m, 5m + 20m + 5m = 30m, 5m + 10m + 10m + 5m = 30m, etc.
+   - Do NOT default to a fixed time or equal split on every lesson. Time allocation must reflect the actual depth of each step's tasks.
    - The total across all development steps must sum to exactly 30 minutes.
 {step_assessment_rule}
 7. Creative In-Class Assignment & Formative Closure (time: exactly 5 minutes total):
@@ -176,29 +180,20 @@ CRITICAL ANTI-BOILERPLATE MANDATE:
   "lesson_development_steps": [
     {{
       "step_number": 1,
-      "time_minutes": 10,
-      "learning_teaching_method": "string (Activity launch sub-stage title)",
-      "learning_teaching_aids": "string (Physical materials and prompt sheets used in this step)",
-      "teacher_activities": "string (Original 2-4 sentences: teacher facilitation introducing inquiry challenge and guiding student groups)",
-      "student_activities": "string (Original 2-4 sentences: active student teamwork reviewing prompt, assigning roles, and planning inquiry)",
+      "time_minutes": 15,
+      "learning_teaching_method": "string (Specific pedagogical phase name organically matching this activity's first stage)",
+      "learning_teaching_aids": "string (Specific physical classroom materials and task sheets used in this step)",
+      "teacher_activities": "string (Detailed 2-4 sentences: teacher facilitation, inquiry prompts, and scaffolding questions)",
+      "student_activities": "string (Detailed 2-4 sentences: active student collaboration, investigative tasks, and discussions)",
       "assessment_and_feedback": ""
     }},
     {{
       "step_number": 2,
-      "time_minutes": 10,
-      "learning_teaching_method": "string (Active collaborative execution sub-stage title)",
-      "learning_teaching_aids": "string (Physical investigation cards, case briefs, and charts used in this step)",
-      "teacher_activities": "string (Original 2-4 sentences: teacher circulating, asking probing questions, and scaffolding inquiry)",
-      "student_activities": "string (Original 2-4 sentences: active student investigation, roleplay, debate, or mapping in groups)",
-      "assessment_and_feedback": ""
-    }},
-    {{
-      "step_number": 3,
-      "time_minutes": 10,
-      "learning_teaching_method": "string (Presentation and peer synthesis sub-stage title)",
-      "learning_teaching_aids": "string (Student presentation posters, whiteboard, and peer criteria sheets)",
-      "teacher_activities": "string (Original 2-4 sentences: teacher moderating presentations, facilitating peer review, and synthesizing learnings)",
-      "student_activities": "string (Original 2-4 sentences: team spokespersons presenting findings and peer students evaluating and recording insights)",
+      "time_minutes": 15,
+      "learning_teaching_method": "string (Specific pedagogical phase name organically matching this activity's execution or presentation)",
+      "learning_teaching_aids": "string (Specific physical artifacts, evidence cards, presentation charts, or whiteboard)",
+      "teacher_activities": "string (Detailed 2-4 sentences: teacher observing, guiding, asking probing questions, or moderating)",
+      "student_activities": "string (Detailed 2-4 sentences: active student debate, problem-solving, synthesis, or peer evaluation)",
       "assessment_and_feedback": ""
     }}
   ],

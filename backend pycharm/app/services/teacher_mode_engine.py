@@ -49,11 +49,12 @@ PEDAGOGICAL PACING MANDATE (Total: 40 Minutes):
    - Teacher acts strictly as FACILITATOR: circulating, scaffolding, asking probing questions, never lecturing.
    - Ground scenarios and tasks in authentic Sri Lankan context (schools, local governance, communities, cultural traditions).
    - Every step's duration MUST be a clean multiple of 5 (e.g. 5, 10, 15, 20 mins). Sum MUST equal exactly 30 minutes.
-   - Step count is flexible (2, 3, or 4 steps) depending on what best suits the custom activity, but must total exactly 30 minutes (e.g. 15+15=30, 10+10+10=30, 5+15+10=30, 10+15+5=30, or 5+10+10+5=30).
-   - PROGRESSIVE MULTI-STAGE STEP BLUEPRINT:
-     * Step 1: Launch the investigation with a specific Sri Lankan inquiry problem based on "{lesson_topic}". Detail how the teacher facilitates the setup and how students begin collaborative work.
-     * Step 2: Detail active student group execution of "{teacher_custom_activity}". Describe specific questions students debate and materials they handle.
-     * Step 3: Detail team presentation, peer critique, and teacher consolidation of key syllabus learnings.
+   - Determine step count (2, 3, or 4 steps) and duration of each step organically to suit the teacher's custom activity:
+     * Examples: 15m + 15m = 30m, 5m + 15m + 10m = 30m, 10m + 15m + 5m = 30m, 5m + 20m + 5m = 30m, or 5m + 10m + 10m + 5m = 30m.
+   - Do NOT default to a fixed 10+10+10 or fixed step structure across all lessons. Time allocation must reflect the actual depth of each step's tasks.
+   - DYNAMIC STEP STRUCTURING:
+     * Structure the sequence, pedagogical method names, and tasks organically around "{teacher_custom_activity}", the target learning outcomes, and the curriculum context.
+     * Every step must detail student active participation and teacher facilitation.
    - STRICT ANTI-COPY MANDATE:
      * DO NOT copy, quote, or echo instruction sentences or headings into your JSON fields!
      * DO NOT repeat the same sentences across different steps!
@@ -92,29 +93,20 @@ CRITICAL ANTI-BOILERPLATE MANDATE:
   "lesson_development_steps": [
     {{
       "step_number": 1,
-      "time_minutes": 10,
-      "learning_teaching_method": "string (Activity launch sub-stage title)",
-      "learning_teaching_aids": "string (Physical materials and prompt sheets used in this step)",
-      "teacher_activities": "string (Original 2-4 sentences: teacher facilitator actions introducing the scenario and guiding group setup)",
-      "student_activities": "string (Original 2-4 sentences: active student teamwork reviewing prompt, assigning roles, and planning inquiry)",
+      "time_minutes": 15,
+      "learning_teaching_method": "string (Specific pedagogical phase name organically matching this activity's first stage)",
+      "learning_teaching_aids": "string (Specific physical classroom materials and task sheets used in this step)",
+      "teacher_activities": "string (Detailed 2-4 sentences: teacher facilitation, inquiry prompts, and scaffolding questions)",
+      "student_activities": "string (Detailed 2-4 sentences: active student collaboration, investigative tasks, and discussions)",
       "assessment_and_feedback": ""
     }},
     {{
       "step_number": 2,
-      "time_minutes": 10,
-      "learning_teaching_method": "string (Active collaborative execution sub-stage title)",
-      "learning_teaching_aids": "string (Physical investigation cards, case briefs, and charts used in this step)",
-      "teacher_activities": "string (Original 2-4 sentences: teacher circulating, asking probing questions, and scaffolding inquiry)",
-      "student_activities": "string (Original 2-4 sentences: active student investigation, roleplay, debate, or mapping in groups)",
-      "assessment_and_feedback": ""
-    }},
-    {{
-      "step_number": 3,
-      "time_minutes": 10,
-      "learning_teaching_method": "string (Presentation and peer synthesis sub-stage title)",
-      "learning_teaching_aids": "string (Student presentation posters, whiteboard, and peer criteria sheets)",
-      "teacher_activities": "string (Original 2-4 sentences: teacher moderating presentations, facilitating peer review, and synthesizing learnings)",
-      "student_activities": "string (Original 2-4 sentences: team spokespersons presenting findings and peer students evaluating and recording insights)",
+      "time_minutes": 15,
+      "learning_teaching_method": "string (Specific pedagogical phase name organically matching this activity's execution or presentation)",
+      "learning_teaching_aids": "string (Specific physical artifacts, evidence cards, presentation charts, or whiteboard)",
+      "teacher_activities": "string (Detailed 2-4 sentences: teacher observing, guiding, asking probing questions, or moderating)",
+      "student_activities": "string (Detailed 2-4 sentences: active student debate, problem-solving, synthesis, or evaluation)",
       "assessment_and_feedback": ""
     }}
   ],

@@ -28,7 +28,7 @@ CRITICAL PEDAGOGICAL & GROUNDING DIRECTIVES:
 - Every step's 'time_minutes' in 'lesson_development_steps' MUST be a clean multiple of 5 (e.g., 5, 10, 15, 20).
 - NEVER output odd or irregular times like 7, 11, 13, 17, or 22 minutes.
 - The total sum of 'time_minutes' across all development steps MUST strictly equal 30 minutes.
-- Automatically generate step durations dynamically to suit the actual tasks of each step (e.g. 10m+10m+10m, 5m+15m+10m, 10m+15m+5m, 15m+15m, or 5m+20m+5m).
+- Determine the step count (2, 3, or 4 steps) and duration dynamically to suit the actual depth of each step (e.g. 15m+15m, 5m+15m+10m, 10m+15m+5m, 5m+20m+5m, or 5m+10m+10m+5m). Do not force a fixed time or equal split on every lesson.
 
 5. CREATIVE FORMATIVE ASSESSMENT:
 - The final assessment must not be a boring written test. It must be a creative, 5-minute active review (e.g., quick rhyming jingle/verse, 1-minute frozen tableau, pass-the-parcel concept question, whiteboard sketch duel, or rapid peer quiz).
@@ -190,33 +190,23 @@ Cooperative Student-Led Investigation with hands-on task cards and structured pe
         "lesson_development_steps": [
             {
                 "step_number": 1,
-                "teacher_activities": "string (Original 2-4 sentences: teacher facilitator actions introducing the scenario and guiding group setup)",
-                "student_activities": f"string (Original 2-4 sentences: students organize into teams for {student_count} students, review task sheets, assign group roles, and formulate questions)",
-                "learning_teaching_method": "string (Specific launch phase name organically matching this activity)",
+                "teacher_activities": "string (Detailed 2-4 sentences: teacher facilitator actions introducing the activity and guiding group inquiry)",
+                "student_activities": f"string (Detailed 2-4 sentences: students collaborate in groups for {student_count} students, review tasks, and investigate)",
+                "learning_teaching_method": "string (Specific pedagogical phase name organically matching this activity's first stage)",
                 "learning_teaching_aids": "string (Specific physical task cards, problem scenarios, or charts - never 'None')",
                 "assessment_and_feedback": "",
-                "time_minutes": "integer (Auto-generated minutes suited to this step's depth; clean multiple of 5, summing to 30 mins total across steps)",
+                "time_minutes": "integer (Auto-calculated multiple of 5 suited to this phase's depth, e.g. 5, 10, 15, or 20)",
                 "other": "string (Group seating arrangement, resource distribution notes)",
             },
             {
                 "step_number": 2,
-                "teacher_activities": "string (Original 2-4 sentences: teacher circulating, asking probing questions, and scaffolding inquiry)",
-                "student_activities": "string (Original 2-4 sentences: active student investigation, roleplay, debate, or mapping in groups)",
-                "learning_teaching_method": "string (Specific collaborative execution phase name matching this activity)",
-                "learning_teaching_aids": "string (Specific worksheets, scenario props, observation checklists, or posters - never 'None')",
+                "teacher_activities": "string (Detailed 2-4 sentences: teacher circulating, asking probing questions, and scaffolding inquiry)",
+                "student_activities": "string (Detailed 2-4 sentences: active student debate, problem-solving, synthesis, or presentation)",
+                "learning_teaching_method": "string (Specific pedagogical phase name organically matching this activity's execution or synthesis stage)",
+                "learning_teaching_aids": "string (Specific physical artifacts, evidence cards, presentation charts, or whiteboard - never 'None')",
                 "assessment_and_feedback": "",
-                "time_minutes": "integer (Auto-generated minutes suited to this step's depth; clean multiple of 5, summing to 30 mins total across steps)",
+                "time_minutes": "integer (Auto-calculated multiple of 5 suited to this phase's depth; sum of all steps must equal 30 mins)",
                 "other": "string (Differentiation for mixed abilities, timekeeping reminders)",
-            },
-            {
-                "step_number": 3,
-                "teacher_activities": "string (Original 2-4 sentences: teacher moderating presentations, facilitating peer review, and synthesizing learnings)",
-                "student_activities": "string (Original 2-4 sentences: team spokespersons presenting findings and peer students evaluating and recording insights)",
-                "learning_teaching_method": "string (Specific presentation, peer evaluation, and synthesis phase name)",
-                "learning_teaching_aids": "string (Student presentation posters, whiteboard, feedback cards - never 'None')",
-                "assessment_and_feedback": "",
-                "time_minutes": "integer (Auto-generated minutes suited to this step's depth; clean multiple of 5, summing to 30 mins total across steps)",
-                "other": "None",
             },
         ],
         "summary": "string (Recap of key student discoveries and core concepts formulated during the lesson)",
@@ -270,9 +260,9 @@ Cooperative Student-Led Investigation with hands-on task cards and structured pe
 5. NO OUTCOMES FIELD: Strictly DO NOT generate 'unique_learning_outcome' in your JSON.
 6. STRICT 40-MINUTE PACING RULES:
    - 'the_entrance': Must be an active motivational hook lasting EXACTLY 5 minutes.
-   - 'lesson_development_steps': Must produce 2 or 3 distinct student-centered steps.
-     * Each step's 'time_minutes' must be a clean multiple of 5 (e.g., 10, 10, 10 or 15, 15).
-     * The SUM of all development steps MUST EQUAL EXACTLY 30 MINUTES.
+   - 'lesson_development_steps': Must produce distinct student-centered steps (2, 3, or 4 steps) tailored to the activity.
+     * Each step's 'time_minutes' must be a clean multiple of 5 (e.g. 5, 10, 15, 20).
+     * The SUM of all development steps MUST EQUAL EXACTLY 30 MINUTES. Do not force fixed time splits.
    - 'assessment_and_feedback_whole_lesson': {"Must provide a generated 3-minute active evaluation; together with the 2-minute summary this completes the final 5-minute Assessment & Closure." if is_civic_education else "Must provide a creative, active evaluation lasting EXACTLY 5 minutes (e.g., 2-line rhyming verse reciting core duties, rapid sketch review, freeze frame tableau, pass-the-parcel quiz)."}
    - TOTAL PERIOD DURATION: 5m (Entrance) + 30m (Development) + 5m ({"Summary & Assessment Closure" if is_civic_education else "Assessment"}) = 40 MINUTES.
 7. CLASS ADAPTATION: Explicitly detail group sizing and tasks tailored for {student_count} students.
