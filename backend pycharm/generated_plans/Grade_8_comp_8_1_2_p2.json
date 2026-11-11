@@ -1,0 +1,101 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 2 of 3)",
+  "competence": "Expresses ideas appreciating the fact that public services bring about quality development in human lives through community institutions.",
+  "competence_level": "8.1.2",
+  "lesson": "Expresses ideas appreciating the fact that public services bring about a quality development of human lives: Community Service Network Mapping and Life-Impact Audit",
+  "unique_learning_outcome": [
+    "Expresses ideas appreciating the fact that public services bring about a quality development of human lives.",
+    "Gives examples for other organizations that provide public services."
+  ],
+  "the_entrance": "5-minute introduction: The teacher displays photographs of a local Sanasa society cooperative bank, a rural temple free medical clinic, and a village youth club sports ground on the chalkboard. Students are invited to observe the images and quickly share in pairs how these specific local places assist families in their village, bridging everyday community experiences to the concept of non-governmental public welfare.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "The teacher circulates among the six table groups, distributing distinct scenario cards about cooperative societies, religious welfare centers, and youth organizations. The teacher prompts group facilitators with guiding questions such as, 'How does this temple clinic or cooperative society improve daily living standards for families?'",
+      "student_activities": "Students read their assigned scenario within their teams, assigning roles such as Scribe and Civic Investigator. They identify the specific organization providing the service and discuss how it impacts human wellbeing.",
+      "learning_teaching_method": "Collaborative Scenario Investigation",
+      "learning_teaching_aids": "Task cards detailing local service scenarios, student notebooks, colored pens",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "The teacher acts as a facilitator and timekeeper, observing group discussions across table islands and prompting students to connect organizational functions directly to human quality of life improvements. The teacher scaffolds groups needing help linking cooperative loans or youth programs to community development.",
+      "student_activities": "Working collaboratively on chart paper, the student teams draw a 'Service & Life-Impact Network' map linking local organizations to specific community benefits. Scribes write down key findings while Spokespersons prepare to share their mapped evidence.",
+      "learning_teaching_method": "Service Network Mapping and Impact Audit",
+      "learning_teaching_aids": "Chart paper, colored markers, whiteboard",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "The teacher moderates a rapid gallery-style rotation where team presenters share one major life-impact insight from their network map. The teacher summarizes key themes connecting non-governmental entities to national development.",
+      "student_activities": "Team Presenters explain their mapped networks to visiting peers, while Civic Investigators check accuracy against textbook concepts and appreciation statements are shared aloud.",
+      "learning_teaching_method": "Peer Presentation and Synthesis",
+      "learning_teaching_aids": "Completed group chart papers displayed around the classroom",
+      "assessment_and_feedback": "",
+      "time_minutes": 5,
+      "other": ""
+    }
+  ],
+  "summary": "The teacher synthesizes student discoveries, highlighting that organizations beyond the central government—such as cooperatives, religious centers, and youth clubs—play a vital role in delivering public services that elevate human life quality and foster community wellbeing across Sri Lanka.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation based on group collaboration quality, accuracy of organizational examples provided on network maps, and the clarity of student expressions appreciating the impact of public services on human development.",
+  "post_activity": "5-minute in-class assignment: Each student writes down one appreciation statement on a sticky note thanking a specific local community organization for its public service and pastes it onto the chalkboard under the 'Life-Impact Wall' heading.",
+  "information_sources": [
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
+  ],
+  "attachments": [
+    "Scenario Task Cards for Local Organizations",
+    "Service & Life-Impact Network Mapping Template"
+  ],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 2,
+  "total_periods": 3,
+  "selected_activity": "Activity: Community Service Network Mapping and Life-Impact Audit\nApproach: Students investigate local Sri Lankan non-governmental, religious, and cooperative organizations providing public services, analyzing how these entities elevate human quality of life. Working in collaborative groups, they map out service networks and present concrete examples of community development.\nStudent task: Students examine scenarios of community services provided by local organizations such as Sanasa societies, religious welfare centers, and youth clubs, listing examples and debating their specific impacts on human wellbeing on chart paper.\nTeacher facilitation: The teacher acts as a facilitator and timekeeper, guiding groups with prompts like 'How does this temple clinic or cooperative society improve daily living standards?' and managing the 30-minute timeframe across table islands.\nExpected output: A collaborative 'Service & Life-Impact Network' chart featuring local organizational examples and appreciation statements.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
+  "selected_activity_title": "Community Service Network Mapping and Life-Impact Audit",
+  "custom_teacher_activity": null,
+  "activity_options": [
+    {
+      "id": "option_1",
+      "title": "Community Service Network Mapping and Life-Impact Audit",
+      "pedagogy_type": "Case Inquiry",
+      "description": "Students investigate local Sri Lankan non-governmental, religious, and cooperative organizations providing public services, analyzing how these entities elevate human quality of life. Working in collaborative groups, they map out service networks and present concrete examples of community development.",
+      "learning_outcomes_addressed": [
+        "Expresses ideas appreciating the fact that public services bring about a quality development of human lives.",
+        "Gives examples for other organizations that provide public services."
+      ],
+      "student_action_summary": "Students examine scenarios of community services provided by local organizations such as Sanasa societies, religious welfare centers, and youth clubs, listing examples and debating their specific impacts on human wellbeing on chart paper.",
+      "teacher_facilitation_summary": "The teacher acts as a facilitator and timekeeper, guiding groups with prompts like 'How does this temple clinic or cooperative society improve daily living standards?' and managing the 30-minute timeframe across table islands.",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks",
+        "Chart Paper"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "A collaborative 'Service & Life-Impact Network' chart featuring local organizational examples and appreciation statements.",
+      "creative_assessment_preview": "A 'Pass-the-Chalk' rapid reflection where one representative per group writes a non-governmental public service example on the chalkboard within 5 minutes.",
+      "low_resource_alternative": "Groups draw the organizational map directly into their Student Notebooks using shared colored pencils or pens."
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "Names the public services provided for the area identifying them.",
+      "Describes institutions that provide public services and the functions of the officers."
+    ],
+    "2": [
+      "Expresses ideas appreciating the fact that public services bring about a quality development of human lives.",
+      "Gives examples for other organizations that provide public services."
+    ],
+    "3": [
+      "Presents information about other public services provided by the government."
+    ]
+  },
+  "filename": "Grade_8_comp_8_1_2_p2.json"
+}

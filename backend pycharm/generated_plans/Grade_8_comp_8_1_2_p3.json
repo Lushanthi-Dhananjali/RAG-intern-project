@@ -2,80 +2,74 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 3 of 3)",
-  "competence": "Names the public services provided for the area identifying them.",
+  "competence": "Demonstrates comprehensive understanding of public services provided by government institutions and presents detailed information on specialized agencies.",
   "competence_level": "8.1.2",
-  "lesson": "Presents information about other public services provided by the government: Courtroom / Citizen Grievance Tribunal: Competency Level 8.1.2",
+  "lesson": "Presents information about other public services provided by the government: Public Service Agency Inquiry and Dossier Compilation",
   "unique_learning_outcome": [
     "Presents information about other public services provided by the government."
   ],
-  "the_entrance": "5-minute introduction: The teacher writes or reads “Presents information about other public services provided by the government” and asks students to name one example they have seen in everyday life. Students share brief responses; the teacher connects their examples to Courtroom / Citizen Grievance Tribunal: Competency Level 8.1.2 and explains how it will help them explore this period's outcome.",
+  "the_entrance": "5-minute introduction: The teacher initiates the session by displaying a collection of real Sri Lankan public notices, such as a Department of Meteorology heavy rain warning bulletin and a Department of Registration of Persons national identity card application form. Standing as a facilitator, the teacher poses an engaging inquiry question to the whole class: 'If a farmer in Anuradhapura needs advance flood warnings or a youth in Jaffna needs passport verification, which specific government departments step in beyond our local Pradeshiya Sabha?' Students share quick everyday observations about government assistance, smoothly transitioning into group civic research team formations.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "The teacher introduces the lesson inquiry on 'Presents information about other public services provided by the government', organizes students into collaborative teams with designated roles, and distributes inquiry task prompt cards.",
-      "student_activities": "Students arrange themselves in assigned group roles, examine the inquiry prompt concerning 'Presents information about other public services provided by the government', and prepare materials for their investigation.",
-      "learning_teaching_method": "Setup Inquiry Launch",
-      "learning_teaching_aids": "Inquiry prompt cards, chalkboard, student notebooks",
+      "teacher_activities": "The teacher circulates among the six student groups, distributing distinct citizen scenario prompt cards covering agencies like the Department of Wildlife Conservation, National Child Protection Authority, and the Bureau of Foreign Employment. As a facilitator, the teacher uses probing questions such as, 'What mandate does this specific agency hold, and how does it directly protect citizens' welfare across Sri Lanka?' to guide student discussions.",
+      "student_activities": "Students collaborate in their assigned teams of five, distributing roles among the Leader, Scribe, Timekeeper, Spokesperson, and Civic Investigator. The Scribe records findings on the task sheet while the Investigator cross-checks accessibility and operational scope of agencies like the Department of Examinations and Department of Meteorology against textbook concepts.",
+      "learning_teaching_method": "Civic Scenario Investigation and Fact-Finding",
+      "learning_teaching_aids": "Structured prompt scenario cards, student notebooks, and reference fact sheets on specialized government departments",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 15,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "The teacher actively circulates among the groups to facilitate Courtroom / Citizen Grievance Tribunal: Competency Level 8.1.2, scaffolds student discussions around 'Presents information about other public services provided by the government', prompts critical thinking, and formatively monitors student engagement.",
-      "student_activities": "Students actively carry out Courtroom / Citizen Grievance Tribunal: Competency Level 8.1.2, collaborating in teams to analyze real-world civic situations related to 'Presents information about other public services provided by the government' without passive bystanders.",
-      "learning_teaching_method": "Group Investigation Production",
-      "learning_teaching_aids": "Activity scenario cards, observation sheets, chart paper",
+      "teacher_activities": "The teacher moves between desks, moderating team debates and assisting groups in organizing their investigative findings into structured dossier formats. The teacher challenges students to ensure that every citizen benefit and contact method is accurately represented on their charts before the presentation phase.",
+      "student_activities": "Working together, team members synthesize their scenario analyses onto large chart papers to create a comprehensive public service dossier. The Spokesperson rehearses the group's oral summary while team members refine their arguments regarding how these specialized government institutions improve the quality of human life in Sri Lanka.",
+      "learning_teaching_method": "Dossier Synthesis and Gallery Presentation Preparation",
+      "learning_teaching_aids": "Chart paper, colored markers, and chalkboard",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
-      "other": ""
-    },
-    {
-      "step_number": 3,
-      "teacher_activities": "The teacher facilitates group presentations, synthesizes student discoveries regarding 'Presents information about other public services provided by the government', highlights core civic values, and formatively clarifies any conceptual misconceptions.",
-      "student_activities": "Team spokespersons present their group's findings on 'Presents information about other public services provided by the government' to the class, compare conclusions with peers, and record constructive feedback in their notebooks.",
-      "learning_teaching_method": "Presentation Cross Review",
-      "learning_teaching_aids": "Presentation board, student summary sheets, whiteboard",
-      "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 15,
       "other": ""
     }
   ],
-  "summary": "Synthesize key student findings from Courtroom / Citizen Grievance Tribunal: Competency Level 8.1.2, emphasizing the core principles of “Presents information about other public services provided by the government” and clarifying any lingering misconceptions.",
-  "assessment_and_feedback_whole_lesson": "Use the student's five-minute assignment response to check understanding of “Presents information about other public services provided by the government” and give one concise correction or affirmation.",
-  "post_activity": "5-minute in-class assignment: Each student completes a short exit response explaining one finding about “Presents information about other public services provided by the government” using evidence or an example from Courtroom / Citizen Grievance Tribunal: Competency Level 8.1.2. The teacher reviews responses for an accurate link to the period outcome.",
+  "summary": "In a 2-minute synthesis, the teacher invites spokespersons from selected groups to highlight core discoveries regarding specialized public services such as foreign employment facilitation and meteorological warnings. The class collectively summarizes how these diverse government institutions work synergistically to generate qualitative development in Sri Lankan society.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted through observation of active group collaboration, accuracy of civic dossier charts, and the depth of peer evaluation during presentations. The teacher checks whether students correctly identified agency mandates, responsibilities of officers, and accessibility channels.",
+  "post_activity": "Each student writes down one key takeaway on a slip of paper regarding a newly discovered public service agency and drops it into the 'Civic Inquiry Box' on the teacher's desk as a rapid 5-minute active in-class evaluation check.",
   "information_sources": [
-    "grade_8_civic_textbook.pdf (page 1)"
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
   ],
-  "attachments": [],
+  "attachments": [
+    "Specialized Agency Scenario Prompt Cards",
+    "Dossier Compilation Templates"
+  ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 3,
   "total_periods": 3,
-  "selected_activity": "Activity: Courtroom / Citizen Grievance Tribunal: Competency Level 8.1.2\nApproach: Students use courtroom / citizen grievance tribunal to explore 'Presents information about other public services provided by the government.'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.\nExpected output: A short role-based civic decision and its reasons.\nGrouping: 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "Courtroom / Citizen Grievance Tribunal: Competency Level 8.1.2",
+  "selected_activity": "Activity: Public Service Agency Inquiry and Dossier Compilation\nApproach: Student groups act as civic research teams investigating government information brochures and scenarios regarding specialized public services like public libraries, meteorological departments, and consumer affairs authorities. They compile a structured dossier detailing these functions.\nStudent task: The 6 groups analyze scenarios and prompt questions provided by the teacher regarding lesser-known government services operating in Sri Lanka (e.g., Department of Meteorology weather warnings, Department of Examinations certificates, Department of Registration of Persons national identity cards, Department of Wildlife Conservation, National Child Protection Authority, and Bureau of Foreign Employment). The Scribe records findings, and the Investigator cross-checks service accessibility.\nTeacher facilitation: Teacher distributes prompt cards detailing citizen scenarios requiring specific government agencies. Teacher acts as a resource guide, moving between the 6 island desks to ensure students correctly identify the corresponding public service and its operational scope.\nExpected output: A detailed dossier chart on chart paper outlining service mandates, contact methods, and citizen benefits.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks rearranged into 6 islands. All 30 students participate through structured role division.",
+  "selected_activity_title": "Public Service Agency Inquiry and Dossier Compilation",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_1",
-      "title": "Courtroom / Citizen Grievance Tribunal: Competency Level 8.1.2",
-      "pedagogy_type": "Simulation / Roleplay",
-      "description": "Students use courtroom / citizen grievance tribunal to explore 'Presents information about other public services provided by the government.'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "id": "option_2",
+      "title": "Public Service Agency Inquiry and Dossier Compilation",
+      "pedagogy_type": "Case Inquiry / Evidence Analysis",
+      "description": "Student groups act as civic research teams investigating government information brochures and scenarios regarding specialized public services like public libraries, meteorological departments, and consumer affairs authorities. They compile a structured dossier detailing these functions.",
       "learning_outcomes_addressed": [
         "Presents information about other public services provided by the government."
       ],
-      "student_action_summary": "Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "student_action_summary": "The 6 groups analyze scenarios and prompt questions provided by the teacher regarding lesser-known government services operating in Sri Lanka (e.g., Department of Meteorology weather warnings, Department of Examinations certificates, Department of Registration of Persons national identity cards, Department of Wildlife Conservation, National Child Protection Authority, and Bureau of Foreign Employment). The Scribe records findings, and the Investigator cross-checks service accessibility.",
+      "teacher_facilitation_summary": "Teacher distributes prompt cards detailing citizen scenarios requiring specific government agencies. Teacher acts as a resource guide, moving between the 6 island desks to ensure students correctly identify the corresponding public service and its operational scope.",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks rearranged into 6 islands. All 30 students participate through structured role division.",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A short role-based civic decision and its reasons.",
-      "creative_assessment_preview": "Students state one role responsibility and explain how it supported the decision.",
-      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
+      "expected_student_output": "A detailed dossier chart on chart paper outlining service mandates, contact methods, and citizen benefits.",
+      "creative_assessment_preview": "Exit Slip Bingo: Students write down 3 public service agencies discussed on a slip of paper and hand it to the teacher as an exit ticket upon naming how each benefits the community.",
+      "low_resource_alternative": "Groups compile their dossiers entirely inside student notebooks and present oral summaries instead of using chart paper."
     }
   ],
   "outcome_allocation": {
@@ -90,5 +84,6 @@
     "3": [
       "Presents information about other public services provided by the government."
     ]
-  }
+  },
+  "filename": "Grade_8_comp_8_1_2_p3.json"
 }

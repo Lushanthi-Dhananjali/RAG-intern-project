@@ -1,0 +1,8 @@
+frontend -
+cd frontend
+npm run dev 
+
+backend-
+cd "backend pycharm"
+.\venv\Scripts\activate
+python main.py
