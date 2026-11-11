@@ -36,6 +36,14 @@ def build_mode_b_scaffolding_prompt(
     outcomes_formatted = "\n".join([f"- {o}" for o in period_outcomes]) if period_outcomes else "- Foundational civic concept exploration."
     resources_formatted = ", ".join(accessible_resources) if accessible_resources else "Standard classroom chalkboard, notebooks"
 
+    assignment_styles = [
+        "Rapid Team Quiz / Buzzer Board Challenge (2 fast conceptual dilemma questions on this period's Sri Lankan topic)",
+        "Statement Display & Justified Standpoint Vote (display an authentic Sri Lankan societal statement on board; students vote Agree/Disagree and justify)",
+        "Creative Rhyming Poem / 2-4 Line Verse Recitation (students in pairs compose or recite a short rhythm summarizing the core civic value or duty)",
+        "Concept Drawing / Quick Sketch Challenge (students rapidly sketch a symbol, emblem, or flowchart mapping the solution to the Sri Lankan scenario)",
+        "Pass-the-Parcel Concept Dilemma Ball (students pass a prompt ball with question cards; receivers solve short real-world dilemmas)",
+    ]
+    period_suggested_style = assignment_styles[(current_period - 1) % len(assignment_styles)]
 
     prompt = f"""<|begin_of_text|><|start_header_id|>system<|end_header_id|>
 You are a Senior Pedagogical Scaffolding Specialist for the Sri Lankan NIE Civic Education Curriculum (Grades 6-9).
@@ -43,7 +51,7 @@ The teacher has provided their OWN custom pedagogical concept (Mode B).
 Your job is NOT to replace their idea, but to scaffold it cleanly into the official 40-minute LEARN Kandy Practice Teaching Framework.
 
 PEDAGOGICAL PACING MANDATE (Total: 40 Minutes):
-1. The Entrance (exactly 5 mins): State what the teacher and students do; connect prior knowledge or everyday Sri Lankan experience to this period's topic and the teacher's activity. Do not depend on unverified external links.
+1. The Entrance (exactly 5 mins): Ground dynamically in the retrieved NIE learning outcomes, the teacher's custom activity, textbook details, and Teacher Instructional Guide (TIG). Design an active motivational hook connecting student prior knowledge to launch the activity towards achieving the target learning outcomes. Detail both teacher challenge prompt and student active responses.
 2. Lesson Development Steps (CLEAN MULTIPLES OF 5, TOTAL = EXACTLY 30 MINUTES):
    - Fully integrate the teacher's custom idea: "{teacher_custom_activity}".
    - Teacher acts strictly as FACILITATOR: circulating, scaffolding, asking probing questions, never lecturing.
@@ -61,7 +69,18 @@ PEDAGOGICAL PACING MANDATE (Total: 40 Minutes):
      * In 'learning_teaching_method', name a meaningful pedagogical phase. NEVER output generic "Step 1", "Step 2" numbers!
      * In 'learning_teaching_aids', list specific concrete materials for EVERY step. NEVER leave this field empty ("")!
      * In 'assessment_and_feedback', keep it empty ("") as formative assessment is conducted at the bottom of the plan ('assessment_and_feedback_whole_lesson').
-3. Creative In-Class Assignment & Closure (exactly 5 mins total): Put a creative, age-appropriate in-class concluding task in 'post_activity' and 'summary' connecting directly to the period outcome and custom activity (e.g. quick 2-line rhyme, drawing challenge, mini-quiz, pass-the-parcel concept ball, or statement display). Must be achievable in 5 minutes in-class.
+3. Creative In-Class Assignment & Closure ('post_activity', exactly 5 mins total):
+   - Put a highly creative in-class closing evaluation check directly addressing '{lesson_topic}', the period outcomes, and the custom activity in an authentic Sri Lankan context (NOT take-home homework).
+   - MULTI-PERIOD DIVERSITY & INNOVATION MANDATE:
+     * Across a {total_periods}-period sequence, each period MUST feature a completely different assignment format (NEVER repeat the same type of assignment across periods!).
+     * You have complete pedagogical freedom: you may use the suggested format for Period {current_period} ({period_suggested_style}), OR invent a BRAND NEW creative format (e.g., Mini Speed Debate, 60-Second Civic Pitch, Headline Writing, Case Verdict, Taboo Word Challenge, or your own original active learning check).
+   - The formats below are pedagogical ideas only—DO NOT copy generic sentences! Generate a brand new, unique task tailored specifically to '{lesson_topic}':
+     * Creative Rhyming Poem / Verses: Students compose or recite a short 2-4 line original rhyming verse summarizing the core concept, duty, or value of '{lesson_topic}'.
+     * Rapid Team Quiz / Competition: Fast-paced buzzer or board challenge testing 2 specific conceptual questions from this period's Sri Lankan topic.
+     * Concept Drawing / Quick Sketch Challenge: Students rapidly sketch a symbol, emblem, or diagram representing the core solution to the Sri Lankan scenario studied.
+     * Pass-the-Parcel Concept Ball: Students pass a prompt ball with question cards; student holding it solves a short case dilemma on '{lesson_topic}'.
+     * Statement Display & Vote: Teacher displays an agree/disagree civic statement relevant to Sri Lankan society on this topic; students vote and justify their stance.
+   - Must be achievable in 5 minutes in-class.
 4. Align the Entrance and Assignment & Closure with the supplied competency outcomes and the teacher's custom activity. Generate usable classroom content, never placeholders or URLs.
 5. The 'the_entrance' field must describe both teacher and student actions. The 'post_activity' field must describe the in-class five-minute task, not take-home homework.
 
@@ -79,7 +98,7 @@ CRITICAL ANTI-BOILERPLATE MANDATE:
 - Seamlessly integrate the teacher's custom pedagogical concept: "{teacher_custom_activity}".
 - Provide rich, concrete, creative details describing actual Sri Lankan classroom dialogues, specific task cards, specific physical artifacts, and dynamic student collaboration.
 - Each development step must be detailed (3-5 sentences describing concrete student actions and teacher facilitation).
-- The 'the_entrance' MUST be a creative 5-minute motivational hook connecting an authentic Sri Lankan situation to this specific period's outcome and the teacher's custom activity.
+- The 'the_entrance' MUST be an engaging 5-minute motivational hook grounded in the learning outcomes, the teacher's custom activity, textbook details, and Teacher Guide (TIG).
 - The 'post_activity' MUST be a creative, highly engaging 5-minute active in-class evaluation (such as a 2-line rhyme/verse recitation, a rapid team quiz/competition, a quick concept drawing/sketch challenge, a pass-the-parcel concept ball, or a statement display & vote).
 
 {{
@@ -89,7 +108,7 @@ CRITICAL ANTI-BOILERPLATE MANDATE:
   "competence": "Broad curriculum competency standard in plain English",
   "competence_level": "Curriculum Standard",
   "lesson": "{lesson_topic}",
-  "the_entrance": "<string: creative 5-minute motivational introduction specifically tailored to this period and the custom activity>",
+  "the_entrance": "<string: creative 5-minute motivational hook connecting learning outcomes, textbook, and TIG to launch the custom activity>",
   "lesson_development_steps": [
     {{
       "step_number": 1,

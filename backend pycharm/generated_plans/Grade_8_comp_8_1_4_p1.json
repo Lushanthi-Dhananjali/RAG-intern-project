@@ -2,80 +2,75 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 1 of 3)",
-  "competence": "Explains the importance of citizens fulfilling duties and rights related to use of public services.",
+  "competence": "Uses the public services that are for the betterment of the people effectively",
   "competence_level": "8.1.4",
-  "lesson": "Explains the importance of the citizens fulfilling duties and rights related to: Competency 8.1.4 Civic Cause-and-Effect Mapping: Competency Level 8.1.4",
+  "lesson": "Explains the importance of the citizens fulfilling duties and rights related to: Community Scenario Jigsaw: Balancing Citizen Rights and Duties",
   "unique_learning_outcome": [
     "Explains the importance of the citizens fulfilling duties and rights related to"
   ],
-  "the_entrance": "5-minute introduction: The teacher writes or reads “Explains the importance of the citizens fulfilling duties and rights related to” and asks students to name one example they have seen in everyday life. Students share brief responses; the teacher connects their examples to Competency 8.1.4 Civic Cause-and-Effect Mapping: Competency Level 8.1.4 and explains how it will help them explore this period's outcome.",
+  "the_entrance": "5-minute introduction: The teacher enters the classroom holding a local electricity bill and a damaged public bus seat photograph, displaying them on the chalkboard to spark immediate curiosity. The teacher launches the session with a probing question: 'When we demand the right to uninterrupted electricity and public transport, what responsibilities do we carry as citizens?' The 30 students, organized into 6 teams of 5 with assigned roles (Leader, Scribe, Timekeeper, Presenter, Investigator), immediately engage in a rapid 2-minute table talk. Team scribes note down initial thoughts on how claiming rights without paying bills or protecting property harms society, preparing them to dive into the jigsaw activity.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "Teacher delivers prompts/cue cards; students inspect tasks.",
-      "student_activities": "Students work with a teacher-presented classroom example about 'Explains the importance of the citizens fulfilling duties and rights related to' to map how the presented civic examples connect, explain those relationships, and review a peer map, without leaving the classroom.",
-      "learning_teaching_method": "Introduced & Explored (Foundational Inquiry)",
-      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
-      "assessment_and_feedback": "",
-      "time_minutes": 10,
-      "other": ""
-    },
-    {
-      "step_number": 2,
-      "teacher_activities": "Teacher facilitates role execution and formatively checks progress.",
-      "student_activities": "Students work in teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-      "learning_teaching_method": "Group Investigation & Production",
-      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "teacher_activities": "The teacher circulates among the 6 student groups, distributing distinct local community scenarios written on task cards regarding public services like water supply, railway transport, and local libraries. As a facilitator, the teacher poses scaffolding questions such as, 'Examine what happens in your assigned village scenario when citizens claim the right to clean water but neglect timely bill payments or pipe maintenance.' The teacher observes group interactions, ensuring that every student actively contributes and that the Civic Investigators verify textbook facts regarding public service duties.",
+      "student_activities": "Students collaborate in their assigned groups of 5 to read their designated local scenario from the task sheet. The Leader guides the discussion, the Scribe notes down the points of conflict between citizen rights and civic duties, and the Timekeeper manages the 15-minute pacing. The group analyzes how utilizing public services requires a balance of enjoying rights and fulfilling responsibilities such as economic usage and property protection.",
+      "learning_teaching_method": "Community Scenario Jigsaw Investigation",
+      "learning_teaching_aids": "Chalkboard scenario prompts, Student Notebooks, Task Sheets",
       "assessment_and_feedback": "",
       "time_minutes": 15,
       "other": ""
     },
     {
-      "step_number": 3,
-      "teacher_activities": "Teacher circulates across 7 teams, facilitating role execution and formatively checking progress.",
-      "student_activities": "Spokespersons present; peer feedback.",
-      "learning_teaching_method": "Presentation & Cross-Review",
-      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "step_number": 2,
+      "teacher_activities": "The teacher guides teams to synthesize their findings onto large chart paper to create a 'Rights-Duties Balance Chart'. The teacher moderates the room, prompting presenters with targeted inquiries: 'How does fulfilling your responsibility toward this public service increase overall community efficiency?' The teacher provides formative feedback on how well groups linked their scenario solutions to the core concepts of public service preservation.",
+      "student_activities": "Working together, group members use color markers to map out their analyzed scenarios onto chart paper under the headings of 'Citizen Rights' and 'Corresponding Duties'. The Spokesperson prepares the group's key arguments and solutions for societal wellbeing, while other members review the chart for clarity and factual accuracy before displaying it around the classroom.",
+      "learning_teaching_method": "Rights-Duties Balance Chart Synthesis",
+      "learning_teaching_aids": "Chart Paper, Color Markers, Whiteboard",
       "assessment_and_feedback": "",
-      "time_minutes": 5,
+      "time_minutes": 15,
       "other": ""
     }
   ],
-  "summary": "A cause-and-effect map with student explanations.",
-  "assessment_and_feedback_whole_lesson": "Teacher monitors progress with outcome-focused prompts and time checks.",
-  "post_activity": "5-minute in-class assignment: Each student completes a short exit response explaining one finding about “Explains the importance of the citizens fulfilling duties and rights related to” using evidence or an example from Competency 8.1.4 Civic Cause-and-Effect Mapping: Competency Level 8.1.4. The teacher reviews responses for an accurate link to the period outcome.",
+  "summary": "In a 2-minute whole-class synthesis, the teacher invites spokespersons to highlight key discoveries: citizens must realize that enjoying high-quality public services is inseparable from duties such as paying bills on time, protecting public property, and maintaining positive attitudes toward community resources.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted by observing active group collaboration, assessing the accuracy and depth of the 'Rights-Duties Balance Chart', and evaluating how well students articulate the connection between citizen rights and responsibilities in Sri Lankan public services.",
+  "post_activity": "Rapid Team Quiz / Buzzer Board Challenge: The teacher poses 2 fast conceptual dilemma questions on the chalkboard regarding citizens' rights and duties in public service usage. Teams quickly discuss and write their answers on mini-whiteboards or notebooks, holding them up simultaneously for an energetic 5-minute in-class evaluation check.",
   "information_sources": [
-    "grade_8_civic_textbook.pdf (page 1)"
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
   ],
-  "attachments": [],
+  "attachments": [
+    "Community Scenario Task Cards",
+    "Rights-Duties Balance Chart Template",
+    "Electricity and Water Bill Samples."
+  ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 1,
   "total_periods": 3,
-  "selected_activity": "Activity: Competency 8.1.4 Civic Cause-and-Effect Mapping: Competency Level 8.1.4\nApproach: Students work with a teacher-presented classroom example about 'Explains the importance of the citizens fulfilling duties and rights related to' to map how the presented civic examples connect, explain those relationships, and review a peer map, without leaving the classroom.\nStudent task: Map how the presented civic examples connect, explain those relationships, and review a peer map. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.\nExpected output: A cause-and-effect map with student explanations.\nGrouping: 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "Competency 8.1.4 Civic Cause-and-Effect Mapping: Competency Level 8.1.4",
+  "selected_activity": "Activity: Community Scenario Jigsaw: Balancing Citizen Rights and Duties\nApproach: Students investigate local Sri Lankan community scenarios to analyze how exercising a right (such as freedom of speech or using public amenities) requires a corresponding duty (such as respecting public property and community harmony).\nStudent task: Each group reads a distinct local scenario provided on the chalkboard, analyzes the conflict between rights and duties, and debates the importance of fulfilling both for societal wellbeing.\nTeacher facilitation: The teacher acts as a timekeeper and facilitator, prompting groups with guiding questions about what happens when rights are claimed without fulfilling duties in a village or town setting.\nExpected output: A summarized 'Rights-Duties Balance Chart' on chart paper detailing the analyzed scenarios.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks are arranged into 6 islands to accommodate all 30 students actively with zero bystanders.",
+  "selected_activity_title": "Community Scenario Jigsaw: Balancing Citizen Rights and Duties",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_3",
-      "title": "Competency 8.1.4 Civic Cause-and-Effect Mapping: Competency Level 8.1.4",
-      "pedagogy_type": "Field Investigation / School Walk",
-      "description": "Students work with a teacher-presented classroom example about 'Explains the importance of the citizens fulfilling duties and rights related to' to map how the presented civic examples connect, explain those relationships, and review a peer map, without leaving the classroom.",
+      "id": "option_1",
+      "title": "Community Scenario Jigsaw: Balancing Citizen Rights and Duties",
+      "pedagogy_type": "Case Inquiry",
+      "description": "Students investigate local Sri Lankan community scenarios to analyze how exercising a right (such as freedom of speech or using public amenities) requires a corresponding duty (such as respecting public property and community harmony).",
       "learning_outcomes_addressed": [
         "Explains the importance of the citizens fulfilling duties and rights related to"
       ],
-      "student_action_summary": "Map how the presented civic examples connect, explain those relationships, and review a peer map. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "student_action_summary": "Each group reads a distinct local scenario provided on the chalkboard, analyzes the conflict between rights and duties, and debates the importance of fulfilling both for societal wellbeing.",
+      "teacher_facilitation_summary": "The teacher acts as a timekeeper and facilitator, prompting groups with guiding questions about what happens when rights are claimed without fulfilling duties in a village or town setting.",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks are arranged into 6 islands to accommodate all 30 students actively with zero bystanders.",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A cause-and-effect map with student explanations.",
-      "creative_assessment_preview": "Each group explains one part of its civic cause-and-effect mapping and links it to the outcome.",
-      "low_resource_alternative": "Use a spoken teacher prompt and oral group responses if writing materials are unavailable."
+      "expected_student_output": "A summarized 'Rights-Duties Balance Chart' on chart paper detailing the analyzed scenarios.",
+      "creative_assessment_preview": "Pass-the-Chalk: Each group's spokesperson writes one core reason why duties must accompany rights on the chalkboard within a 5-minute rapid relay.",
+      "low_resource_alternative": "Use student notebooks exclusively to draw the balance matrix instead of chart paper."
     }
   ],
   "outcome_allocation": {
@@ -88,5 +83,6 @@
     "3": [
       "use of public services."
     ]
-  }
+  },
+  "filename": "Grade_8_comp_8_1_4_p1.json"
 }

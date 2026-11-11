@@ -206,7 +206,7 @@ def normalize_lesson_plan_dict(data: Any) -> Dict[str, Any]:
                 norm["the_entrance"] = str(norm[k]).strip()
                 break
         if not norm.get("the_entrance") or not str(norm.get("the_entrance", "")).strip():
-            norm["the_entrance"] = "5-minute introduction: Teacher presents everyday scenario and motivational hook; students discuss and connect prior knowledge."
+            norm["the_entrance"] = ""
 
     # 2. time_allocation
     if not norm.get("time_allocation") or not str(norm.get("time_allocation", "")).strip():
@@ -316,7 +316,7 @@ def normalize_lesson_plan_dict(data: Any) -> Dict[str, Any]:
                 norm["post_activity"] = str(norm[k]).strip()
                 break
         if not norm.get("post_activity") or not str(norm.get("post_activity", "")).strip():
-            norm["post_activity"] = "Five-minute in-class assignment: Each student writes two key responsibilities on their reflection sheet."
+            norm["post_activity"] = ""
 
     # 10. unique_learning_outcome: must be List[str]
     ulo = norm.get("unique_learning_outcome")

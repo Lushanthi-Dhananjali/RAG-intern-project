@@ -84,6 +84,15 @@ def build_single_period_assembly_prompt(
     resources_formatted = ", ".join(accessible_resources) if accessible_resources else "Standard blackboard, student notebooks"
     is_civic_education = subject.strip().casefold() == "civic education"
 
+    assignment_styles = [
+        "Rapid Team Quiz / Buzzer Board Challenge (2 fast conceptual dilemma questions on this period's Sri Lankan topic)",
+        "Statement Display & Justified Standpoint Vote (display an authentic Sri Lankan societal statement on board; students vote Agree/Disagree and justify)",
+        "Creative Rhyming Poem / 2-4 Line Verse Recitation (students in pairs compose or recite a short rhythm summarizing the core civic value or duty)",
+        "Concept Drawing / Quick Sketch Challenge (students rapidly sketch a symbol, emblem, or flowchart mapping the solution to the Sri Lankan scenario)",
+        "Pass-the-Parcel Concept Dilemma Ball (students pass a prompt ball with question cards; receivers solve short real-world dilemmas)",
+    ]
+    period_suggested_style = assignment_styles[(current_period - 1) % len(assignment_styles)]
+
     step_assessment_rule = (
         "   - Do NOT include assessment and feedback inside development steps (leave 'assessment_and_feedback': ''); "
         "the full lesson assessment belongs strictly in the final 5-minute section ('assessment_and_feedback_whole_lesson') at the bottom."
@@ -138,7 +147,9 @@ STRICT PEDAGOGICAL & 40-MINUTE STRUCTURAL LAWS:
    - The lesson development steps MUST directly embody the teacher-selected activity and address the specific NIE learning outcome(s) allocated for this period!
    - Do NOT output generic boilerplate. Explicitly name the concrete tasks, materials, role cards, inquiry questions, or case scenarios derived from the chosen activity and period outcomes.
 5. The Entrance (time: exactly 5 minutes):
-   - Active motivational hook linking student everyday experience in Sri Lanka to this period's topic and allocated outcomes, transitioning directly into the chosen activity.
+   - Ground dynamically in the retrieved NIE learning outcome(s), the selected activity, relevant textbook details, and Teacher Instructional Guide (TIG) guidelines.
+   - Design an active motivational hook connecting student prior knowledge and enthusiasm to launch the chosen activity towards achieving the target learning outcomes.
+   - Explicitly detail both teacher facilitation actions (launch prompt / challenge scenario) and student collaborative responses.
 6. Lesson Development Steps (CLEAN MULTIPLES OF 5, TOTAL = EXACTLY 30 MINUTES):
    - Every single step's 'time_minutes' MUST be a clean multiple of 5 (e.g. 5, 10, 15, 20). NEVER use non-multiples of 5 like 7, 8, 12, 13, 14, 17, 22!
    - Determine the step count (2, 3, or 4 steps) and duration of each step organically to match the activity:
@@ -146,9 +157,18 @@ STRICT PEDAGOGICAL & 40-MINUTE STRUCTURAL LAWS:
    - Do NOT default to a fixed time or equal split on every lesson. Time allocation must reflect the actual depth of each step's tasks.
    - The total across all development steps must sum to exactly 30 minutes.
 {step_assessment_rule}
-7. Creative In-Class Assignment & Formative Closure (time: exactly 5 minutes total):
-   - Put a highly creative in-class closing check in 'post_activity' and 'summary' matching the selected activity and period outcomes.
-   - Must be an in-class active check achievable in 5 minutes, NOT take-home homework.
+7. Creative In-Class Assignment ('post_activity', time: exactly 5 minutes total):
+   - Must be an original, highly engaging 5-minute active in-class evaluation check directly addressing '{lesson_topic}', the period's learning outcomes, and grounded in the authentic Sri Lankan context (NOT take-home homework).
+   - MULTI-PERIOD DIVERSITY & INNOVATION MANDATE:
+     * Across a {total_periods}-period sequence, each period MUST feature a completely different assignment format (NEVER repeat the same type of assignment across periods!).
+     * You have complete pedagogical freedom: you may use the suggested format for Period {current_period} ({period_suggested_style}), OR invent a BRAND NEW creative format (e.g., Mini Speed Debate, 60-Second Civic Pitch, Headline Writing, Case Verdict, Taboo Word Challenge, or your own original active learning check).
+   - The formats below are pedagogical inspiration only—DO NOT copy or hardcode generic sentences! Generate a brand new, unique task tailored specifically to '{lesson_topic}':
+     * Creative Rhyming Poem / Verses: Students compose or recite a short 2-4 line original rhyming verse directly summarizing the core civic concept, duty, or value of '{lesson_topic}'.
+     * Rapid Team Quiz / Competition: Fast-paced buzzer or board challenge testing 2 specific conceptual questions from this period's Sri Lankan topic.
+     * Concept Drawing / Quick Sketch Challenge: Students rapidly sketch a symbol, emblem, or diagram representing the core solution to the Sri Lankan scenario studied.
+     * Pass-the-Parcel Concept Ball: Students pass a prompt ball with question cards; student holding it solves a short scenario dilemma on '{lesson_topic}'.
+     * Statement Display & Vote: Teacher displays an agree/disagree civic statement relevant to Sri Lankan society on this topic; students vote and justify their stance.
+   - Describe the concrete prompt, student interaction, and teacher feedback for this 5-minute task.
 8. Logistics ({student_count} Students):
    - Partition: {logistics.group_summary_label}.
    - Roles to embed: {roles_str}.
@@ -166,8 +186,8 @@ CRITICAL ANTI-BOILERPLATE MANDATE:
 - DO NOT output identical text across different periods or lesson plans.
 - Provide rich, concrete, creative details describing actual Sri Lankan classroom dialogues, specific task cards, specific physical artifacts, and dynamic student collaboration.
 - Each development step must be detailed (3-5 sentences describing concrete student actions and teacher facilitation).
-- The 'the_entrance' MUST be a creative 5-minute motivational hook connecting an authentic Sri Lankan situation or everyday experience to this specific period's outcome and chosen activity.
-- The 'post_activity' MUST be a creative, highly engaging 5-minute active in-class evaluation.
+- The 'the_entrance' MUST be an engaging 5-minute motivational hook grounded in the target learning outcomes, selected activity, textbook details, and Teacher Guide (TIG), detailing both teacher launch actions and student active responses.
+- The 'post_activity' MUST be a creative, highly engaging 5-minute active in-class evaluation (creative poem/verse recitation, rapid quiz competition, concept drawing challenge, pass-the-parcel, or statement display & vote).
 
 {{
   "grade": "{grade_level}",
@@ -176,7 +196,7 @@ CRITICAL ANTI-BOILERPLATE MANDATE:
   "competence": "Broad curriculum competency standard in plain English",
   "competence_level": "{competency_level}",
   "lesson": "{lesson_topic}",
-  "the_entrance": "<string: creative 5-minute motivational introduction specifically tailored to this period and activity>",
+  "the_entrance": "<string: creative 5-minute motivational hook connecting learning outcomes, textbook, and TIG to launch the activity, detailing teacher prompt and student responses>",
   "lesson_development_steps": [
     {{
       "step_number": 1,
@@ -199,7 +219,7 @@ CRITICAL ANTI-BOILERPLATE MANDATE:
   ],
   "summary": "string (2-minute synthesis of core student discoveries on this period's outcomes)",
   "assessment_and_feedback_whole_lesson": "string (Formative feedback criteria for this lesson)",
-  "post_activity": "string (Creative 5-minute active in-class evaluation check: rapid quiz, sketch challenge, rhyme, or voting)"
+  "post_activity": "string (Creative 5-minute active in-class evaluation check: rhyming poem/verse, rapid quiz competition, concept sketch challenge, pass-the-parcel, or statement display & vote)"
 }}
 
 Respond ONLY with valid JSON conforming strictly to the above keys.<|eot_id|>

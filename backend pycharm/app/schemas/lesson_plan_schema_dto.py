@@ -252,7 +252,7 @@ class LessonPlanSchemaDto(BaseModel):
                     d["post_activity"] = str(d[k]).strip()
                     break
             if not d.get("post_activity") or not str(d.get("post_activity", "")).strip():
-                d["post_activity"] = "Five-minute in-class assignment: Each student writes two key responsibilities on their reflection sheet."
+                d["post_activity"] = ""
 
         # 14. entrance_duration_minutes & assignment_duration_minutes
         d["entrance_duration_minutes"] = 5

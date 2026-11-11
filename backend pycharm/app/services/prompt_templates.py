@@ -30,8 +30,14 @@ CRITICAL PEDAGOGICAL & GROUNDING DIRECTIVES:
 - The total sum of 'time_minutes' across all development steps MUST strictly equal 30 minutes.
 - Determine the step count (2, 3, or 4 steps) and duration dynamically to suit the actual depth of each step (e.g. 15m+15m, 5m+15m+10m, 10m+15m+5m, 5m+20m+5m, or 5m+10m+10m+5m). Do not force a fixed time or equal split on every lesson.
 
-5. CREATIVE FORMATIVE ASSESSMENT:
-- The final assessment must not be a boring written test. It must be a creative, 5-minute active review (e.g., quick rhyming jingle/verse, 1-minute frozen tableau, pass-the-parcel concept question, whiteboard sketch duel, or rapid peer quiz).
+5. CREATIVE FORMATIVE IN-CLASS ASSIGNMENT & CLOSURE ('post_activity'):
+- Must be an original, highly creative 5-minute active evaluation directly matching this specific period's topic, learning outcomes, and grounded in the authentic Sri Lankan context (NOT take-home homework).
+- You have complete freedom to adopt one of the creative formats below OR invent a completely NEW, innovative active in-class format (e.g. Mini Speed Debate, Headline Writing, Case Verdict, Taboo Word Challenge, 60-Second Civic Pitch, etc.). Do NOT copy generic sentences—generate a brand new, unique task tailored specifically to the lesson topic:
+  * Creative Rhyming Poem / Verses: Students compose or recite a short 2-4 line original rhyming verse directly summarizing the core civic concept, duty, or value.
+  * Rapid Team Quiz / Competition: Fast-paced buzzer or board challenge testing 2 specific conceptual questions from this period's Sri Lankan topic.
+  * Concept Drawing / Quick Sketch Challenge: Students rapidly sketch a symbol, emblem, or diagram representing the core solution to the Sri Lankan scenario studied.
+  * Pass-the-Parcel Concept Ball: Students pass a prompt ball with question cards; student holding it solves a short case dilemma on the topic.
+  * Statement Display & Vote: Teacher displays an agree/disagree civic statement relevant to Sri Lankan society on this topic; students vote and justify their stance.
 
 6. NO PLACEHOLDERS: Extract actual syllabus concepts, facts, and evaluation questions directly from the provided TIG and Textbook context.
 7. ABSOLUTE PROHIBITION OF URLs AND WEB LINKS:
@@ -185,7 +191,7 @@ Cooperative Student-Led Investigation with hands-on task cards and structured pe
         "competence_level": f"{competency_level}",
         "lesson": f"{query} (Period {current_period})",
         "the_entrance": (
-            "string (Motivational hook / everyday scenario linking student prior knowledge to the activity. Duration: Exactly 5 Minutes)"
+            "string (Motivational hook grounded in learning outcomes, textbook, and TIG to launch the activity. Duration: Exactly 5 Minutes)"
         ),
         "lesson_development_steps": [
             {
@@ -215,7 +221,7 @@ Cooperative Student-Led Investigation with hands-on task cards and structured pe
             if is_civic_education
             else "string (Creative 5-minute active check—e.g. 2-line rhyming verse reciting core duties, rapid sketch review, freeze frame, or pass-the-parcel quiz)"
         ),
-        "post_activity": "string (Follow-up inquiry, personal reflection, or observation to bring to the next period)",
+        "post_activity": "string (Creative 5-minute active in-class evaluation: rhyming poem/verse, rapid team quiz competition, concept sketch challenge, pass-the-parcel, or statement display & vote)",
         "information_sources": [],
         "attachments": [
             "string (Concrete title of the activity sheet, roleplay cue cards, or observation checklist used)"
@@ -259,7 +265,7 @@ Cooperative Student-Led Investigation with hands-on task cards and structured pe
 4. 'competence_level': Must be set strictly to: "{competency_level}".
 5. NO OUTCOMES FIELD: Strictly DO NOT generate 'unique_learning_outcome' in your JSON.
 6. STRICT 40-MINUTE PACING RULES:
-   - 'the_entrance': Must be an active motivational hook lasting EXACTLY 5 minutes.
+   - 'the_entrance': Must be an active motivational hook lasting EXACTLY 5 minutes, grounded dynamically in the retrieved learning outcomes, selected activity, textbook details, and Teacher Guide (TIG) to launch the activity, detailing teacher launch prompt and student responses.
    - 'lesson_development_steps': Must produce distinct student-centered steps (2, 3, or 4 steps) tailored to the activity.
      * Each step's 'time_minutes' must be a clean multiple of 5 (e.g. 5, 10, 15, 20).
      * The SUM of all development steps MUST EQUAL EXACTLY 30 MINUTES. Do not force fixed time splits.
