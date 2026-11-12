@@ -2,85 +2,75 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 2 of 3)",
-  "competence": "Demonstrates respect for cultural diversity and promotes national unity in a multicultural society.",
+  "competence": "Demonstrates an understanding of cultural diversity and harmonious living in a multicultural society.",
   "competence_level": "8.3.1",
-  "lesson": "Explains the main features of a multicultural society. Activity “Let’s see unity in diversity” Time 40 minutes: Station Jigsaw Synthesis Matrix: Competency Level 8.3.1",
+  "lesson": "Explains the main features of a multicultural society. Activity “Let’s see unity in diversity” Time 40 minutes: Feature Detective Audit: Spotting Inclusivity in Sri Lankan Life",
   "unique_learning_outcome": [
     "Explains the main features of a multicultural society. Activity “Let’s see unity in diversity” Time 40 minutes"
   ],
-  "the_entrance": "5-minute introduction: The teacher greets the 35 students and displays census data charts showing Sri Lanka's ethnic and religious distributions (Sinhala 74%, Tamil 12.6%, Muslims 7.1%, Indian Tamil 5.5%, and various religious groups including Buddhists, Hindus, Muslims, and Christians). The teacher asks students to look around the classroom and share one unique custom, festival, or language phrase they appreciate from a peer's cultural background, bridging everyday school experiences directly into the Station Jigsaw Synthesis Matrix activity.",
+  "the_entrance": "The teacher displays statistical charts of Sri Lanka's ethnic and religious distribution (Annex 8.3.1.1 and 8.3.1.2) on the chalkboard and launches a 5-minute challenge prompt: 'Imagine stepping into a bustling town in our island where Sinhala, Tamil, Muslim, and Burgher neighbors celebrate Avurudu, Pongal, Eid, and Christmas side by side. As civic detectives, what distinct everyday clues would tell you this community truly thrives on unity in diversity?' The 30 students form 6 groups of 5, appointing leaders and scribes, and instantly brainstorm initial ideas such as shared community halls, bilingual signage, and cooperative marketplaces in their notebooks.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "The teacher organizes the 35 students into 7 teams of 5, assigning specific roles: Leader/Facilitator, Scribe/Secretary, Timekeeper & Logistics, Spokesperson/Presenter, and Civic Investigator/Inquirer. The teacher distributes specific task sheets from Annex 8.3.1.3 to each team, prompting them to examine demographic and cultural blending features in Sri Lanka.",
-      "student_activities": "Students arrange their desks into 7 collaborative groups, assume their designated roles, and review the task sheet prompts regarding ethnic, religious, linguistic, and traditional diversity in Sri Lanka. The Scribe records initial group ideas while the Civic Investigator cross-references textbook definitions of a multicultural society.",
-      "learning_teaching_method": "Station Jigsaw Launch & Role Assignment",
-      "learning_teaching_aids": "Task sheets (Annex 8.3.1.3), Census Data Annexes 8.3.1.1 and 8.3.1.2, Role Badges",
-      "assessment_and_feedback": "",
-      "time_minutes": 10,
-      "other": ""
-    },
-    {
-      "step_number": 2,
-      "teacher_activities": "The teacher circulates among the 7 teams as a facilitator, observing group negotiations and asking probing questions such as 'How does protecting individual cultural identities build national unity?' and 'What examples of shared traditions can you incorporate into your civic artifact?'. The teacher provides formative feedback on team pacing and active participation.",
-      "student_activities": "Working together without passive bystanders, team members debate and negotiate key points to design a shared civic artifact, diagram, or public information message illustrating unity in diversity. The Leader ensures all voices are heard, the Timekeeper monitors progress, and the Scribe drafts the visual layout on chart paper.",
-      "learning_teaching_method": "Collaborative Artifact Creation & Investigation",
-      "learning_teaching_aids": "Chart Paper, Color Markers, Student Notebooks",
+      "teacher_activities": "The teacher circulates among the 6 student groups, distributing specialized task sheets featuring profiles of hypothetical Sri Lankan neighborhoods. As a facilitator, the teacher observes interactions and poses probing questions such as, 'Look closely at how community decisions are made in this scenario; are all linguistic groups represented in local village councils?' The teacher scaffolds analytical thinking by guiding students to cross-reference text clues with textbook criteria on safeguarding ethnic rights and mutual trust.",
+      "student_activities": "Students act as civic auditors within their teams of 5. The Leader keeps the discussion focused, the Scribe records observations, the Civic Investigator checks textbook facts, and the Timekeeper monitors progress. Together, they rigorously analyze their assigned town profile, highlighting active multicultural practices and identifying missing inclusivity links that could cause friction.",
+      "learning_teaching_method": "Civic Evidence Investigation & Community Profile Audit",
+      "learning_teaching_aids": "Task Sheet Annex 8.3.1.3, Student Notebooks, Colored Markers",
       "assessment_and_feedback": "",
       "time_minutes": 15,
       "other": ""
     },
     {
-      "step_number": 3,
-      "teacher_activities": "The teacher moderates the swift reporting phase, calling upon team spokespersons to present their co-created artifacts and guiding the rest of the class in evaluating the presentations against criteria such as accuracy, creativity, and teamwork.",
-      "student_activities": "Spokespersons present their group's resolution and civic artifact to the class, while peer students evaluate the proposals, offer constructive feedback, and record key takeaways regarding the features of Sri Lanka's multicultural society.",
-      "learning_teaching_method": "Spokesperson Presentation & Peer Review",
-      "learning_teaching_aids": "Group Chart Papers, Whiteboard",
+      "step_number": 2,
+      "teacher_activities": "The teacher moves from group to group, moderating peer synthesis and advising teams on how to format their findings effectively onto chart paper. The teacher prompts groups to refine their recommendations by asking, 'How can these missing cultural integration links be practically addressed by youth groups in our own schools?' The teacher ensures every student, including the Spokesperson, is prepared to articulate their group's conclusions clearly.",
+      "student_activities": "Collaborating intensively, the groups synthesize their audit findings into a structured 'Civic Inclusivity Checklist' poster on chart paper. The Scribe and team members sketch out clear headings displaying present features (such as religious harmony and shared traditions) alongside creative recommendations for strengthening communal ties. The Spokesperson rehearses the group's key takeaway for upcoming peer sharing.",
+      "learning_teaching_method": "Collaborative Synthesis & Inclusivity Checklist Construction",
+      "learning_teaching_aids": "Chart Paper, Marker Pens, Chalkboard",
       "assessment_and_feedback": "",
-      "time_minutes": 5,
+      "time_minutes": 15,
       "other": ""
     }
   ],
-  "summary": "In this session, students actively explored the core features of Sri Lanka's multicultural society through collaborative station work, recognizing that the nation is a rich blend of diverse ethnic groups, religions, languages, customs, and traditions.",
-  "assessment_and_feedback_whole_lesson": "Formative evaluation is based on students' active teamwork, accuracy in explaining multicultural features using census data, creativity in designing civic artifacts, and effective peer critique during presentations.",
-  "post_activity": "5-minute in-class assignment: A 5-minute in-class 'Ticket to Leave' voting and reflection slip where each student writes down one specific feature of Sri Lanka's multicultural society discovered during the station activity and drops it into the box before exiting.",
+  "summary": "In a 2-minute synthesis, the teacher invites student representatives to highlight key discoveries regarding multicultural features, reinforcing that mutual respect for diverse languages, religions, and customs is essential for sustainable peace and national development in Sri Lanka.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted continuously through observation of group collaboration, adherence to task sheet instructions, accuracy of the Civic Inclusivity Checklist posters, and the depth of reasoning demonstrated by the Spokesperson during group audits.",
+  "post_activity": "Interactive 'Cultural Coin Box' Exchange: Each group receives a small paper coin box cutout. Within 5 minutes, group members rapidly write down one concrete multicultural feature discovered during the audit on separate paper slips (e.g., bilingual announcements, shared temple-kovil festivals) and deposit them into a neighboring group's coin box. Teams then quickly review and validate the incoming slips, holding them up to show immediate comprehension of unity in diversity.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
   "attachments": [
-    "Annex 8.3.1.1 Population percentage by ethnic groups",
-    "Annex 8.3.1.2 Population percentage by religions",
-    "Annex 8.3.1.3 Group Task Sheets."
+    "Annex 8.3.1.1 Ethnic Population Distribution Chart",
+    "Annex 8.3.1.2 Religious Population Distribution Chart",
+    "Annex 8.3.1.3 Group Task Sheets for Multicultural Community Audit."
   ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 2,
   "total_periods": 3,
-  "selected_activity": "Activity: Station Jigsaw Synthesis Matrix: Competency Level 8.3.1\nApproach: Students use station jigsaw synthesis matrix to explore 'Explains the main features of a multicultural society. Activity “Let’s see unity in diversity” Time 40 minutes'. Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.\nExpected output: A group civic proposal, diagram, or public information message.\nGrouping: 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "Station Jigsaw Synthesis Matrix: Competency Level 8.3.1",
+  "selected_activity": "Activity: Feature Detective Audit: Spotting Inclusivity in Sri Lankan Life\nApproach: Students act as civic auditors reviewing a profile of a hypothetical Sri Lankan town to identify evidence of multicultural features and missing links that hinder unity.\nStudent task: Civic investigators and scribes review provided text accounts of local community practices, auditing them against established criteria of a vibrant multicultural society and drafting improvement notes.\nTeacher facilitation: The teacher monitors group discussions, keeps strict time, and prompts deeper thinking by asking 'What feature is missing in this community scenario to make it truly inclusive?'\nExpected output: An audited 'Civic Inclusivity Checklist' poster on chart paper detailing present features and recommendations.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+  "selected_activity_title": "Feature Detective Audit: Spotting Inclusivity in Sri Lankan Life",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_1",
-      "title": "Station Jigsaw Synthesis Matrix: Competency Level 8.3.1",
-      "pedagogy_type": "Collaborative Design",
-      "description": "Students use station jigsaw synthesis matrix to explore 'Explains the main features of a multicultural society. Activity “Let’s see unity in diversity” Time 40 minutes'. Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "id": "option_3",
+      "title": "Feature Detective Audit: Spotting Inclusivity in Sri Lankan Life",
+      "pedagogy_type": "Evidence Audit / Problem-Solving",
+      "description": "Students act as civic auditors reviewing a profile of a hypothetical Sri Lankan town to identify evidence of multicultural features and missing links that hinder unity.",
       "learning_outcomes_addressed": [
         "Explains the main features of a multicultural society. Activity “Let’s see unity in diversity” Time 40 minutes"
       ],
-      "student_action_summary": "Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "student_action_summary": "Civic investigators and scribes review provided text accounts of local community practices, auditing them against established criteria of a vibrant multicultural society and drafting improvement notes.",
+      "teacher_facilitation_summary": "The teacher monitors group discussions, keeps strict time, and prompts deeper thinking by asking 'What feature is missing in this community scenario to make it truly inclusive?'",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A group civic proposal, diagram, or public information message.",
-      "creative_assessment_preview": "Groups give one-sentence feedback connecting a peer proposal to the outcome.",
-      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
+      "expected_student_output": "An audited 'Civic Inclusivity Checklist' poster on chart paper detailing present features and recommendations.",
+      "creative_assessment_preview": "Statue Tableau: Groups form a silent 10-second tableau representing a key feature of a multicultural society, while peers guess the feature.",
+      "low_resource_alternative": "Groups construct their audit checklist on student notebooks instead of chart paper."
     }
   ],
   "outcome_allocation": {

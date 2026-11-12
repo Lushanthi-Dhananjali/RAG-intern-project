@@ -1,0 +1,88 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 1 of 3)",
+  "competence": "Demonstrates respect for diversity by analyzing the features and coexistence of a multicultural society.",
+  "competence_level": "8.3.1",
+  "lesson": "Defines the term multicultural society: Village Assembly: Understanding Our Coexistence",
+  "unique_learning_outcome": [
+    "Defines the term multicultural society."
+  ],
+  "the_entrance": "5-minute introduction: The teacher displays Census 2012 demographic data charts showing Sri Lanka's ethnic and religious distributions (Sinhala 74%, Tamil 18%, Muslim 9%, Buddhists, Hindus, Islam, Christians) on the chalkboard as a motivational hook. The teacher launches the village assembly simulation challenge by posing the prompt: 'Imagine our Grama Niladhari division is holding an emergency community council to welcome new families from different linguistic and religious backgrounds; how would you explain our neighborhood's identity to an outsider?' Students actively respond by turning to their assigned groups of five, reviewing the demographic data in their student notebooks, and brainstorming initial observations about how different communities live side by side in Sri Lanka.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "The teacher circulates among the six student groups acting as a facilitator, distributing task sheets highlighting local demographic statistics and assigning internal team roles (Leader, Scribe, Timekeeper, Spokesperson, Investigator). The teacher prompts deeper civic inquiry by asking each group: 'What specific customs, languages, and religious practices exist in our local village that prove we share this space together?' The teacher observes group interactions to ensure equitable participation and equitable voicing of diverse perspectives.",
+      "student_activities": "Students organize themselves within their teams of five, assuming roles of diverse village residents attending a local council meeting. The Scribe records observations on task sheets while the Leader ensures every member shares examples of Sinhala, Tamil, Muslim, and Burgher cultural traditions practiced in Sri Lankan neighborhoods. The Civic Investigator checks textbook facts regarding ethnic and religious percentages to ground their discussion in authentic data.",
+      "learning_teaching_method": "Simulated Village Council Deliberation & Role Assignment",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Task Sheets with Demographic Data Tables (Annex 8.3.1.3)",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "The teacher guides groups as they transition from discussion to synthesizing a formal definition of a multicultural society. The teacher facilitates peer interaction by asking probing scaffold questions: 'How does having different languages and religions in one village strengthen our cooperation rather than cause conflict?' The teacher moderates the timeframe and encourages groups to draft their official community charter statement summarizing the core definition.",
+      "student_activities": "Students collaborate intensely using chart paper and markers to draft a concise, powerful definition of a multicultural society reflecting their village assembly simulation. The Spokesperson and Scribe work together to formulate a community charter statement declaring that a society consisting of people of different races, religions, and languages living and working together cooperatively is a multicultural society. Team members review the drafted charter against textbook criteria to ensure accuracy.",
+      "learning_teaching_method": "Collaborative Community Charter Drafting & Synthesis",
+      "learning_teaching_aids": "Chart Paper, Colored Markers, Student Notebooks",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    }
+  ],
+  "summary": "In a 2-minute plenary synthesis, the teacher invites spokespersons to share key discoveries, highlighting that a multicultural society is one where individuals of diverse ethnic, religious, and linguistic backgrounds coexist peacefully, share mutual trust, minimize conflicts, and work collaboratively for national development.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted by assessing student engagement during the village assembly simulation, the accuracy of the drafted community charter definitions, active collaboration across assigned group roles, and adherence to respectful civic discourse regarding Sri Lanka's cultural diversity.",
+  "post_activity": "Interactive 'Mosaic Puzzle Match': The teacher draws a large outline of Sri Lanka on the chalkboard surrounded by six puzzle piece cutouts made from scrap paper. Within 5 minutes, each group must rapidly write one key keyword or phrase defining a multicultural society (e.g., 'mutual trust', 'different languages', 'shared customs', 'peaceful coexistence') onto their assigned puzzle piece and have their Spokesperson place it correctly inside the island outline on the board. The teacher provides immediate oral feedback, validating how all diverse pieces lock together to form a complete picture of Sri Lankan society.",
+  "information_sources": [
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
+  ],
+  "attachments": [
+    "Annex 8.3.1.1 (Ethnic Population Percentages)",
+    "Annex 8.3.1.2 (Religious Population Percentages)",
+    "Annex 8.3.1.3 (Group Task Sheets)"
+  ],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 1,
+  "total_periods": 3,
+  "selected_activity": "Activity: Village Assembly: Understanding Our Coexistence\nApproach: Students simulate a Grama Niladhari division meeting where residents discuss the varied cultural backgrounds of their neighborhood, leading to a shared understanding and definition of a multicultural society.\nStudent task: Group members take on roles of community members from diverse backgrounds attending a local council or village gathering, debating what makes their neighborhood a multicultural society and summarizing the agreed definition.\nTeacher facilitation: The teacher moderates the timeframe, prompts deeper civic inquiry by asking 'How would you explain your community to an outsider?', and ensures equitable participation among all assigned group roles.\nExpected output: A written community charter statement officially defining their local area as a multicultural society.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks arranged into 6 islands to ensure all 30 students participate actively without bystanders.",
+  "selected_activity_title": "Village Assembly: Understanding Our Coexistence",
+  "custom_teacher_activity": null,
+  "activity_options": [
+    {
+      "id": "option_3",
+      "title": "Village Assembly: Understanding Our Coexistence",
+      "pedagogy_type": "Roleplay / Scenario Exploration",
+      "description": "Students simulate a Grama Niladhari division meeting where residents discuss the varied cultural backgrounds of their neighborhood, leading to a shared understanding and definition of a multicultural society.",
+      "learning_outcomes_addressed": [
+        "Defines the term multicultural society."
+      ],
+      "student_action_summary": "Group members take on roles of community members from diverse backgrounds attending a local council or village gathering, debating what makes their neighborhood a multicultural society and summarizing the agreed definition.",
+      "teacher_facilitation_summary": "The teacher moderates the timeframe, prompts deeper civic inquiry by asking 'How would you explain your community to an outsider?', and ensures equitable participation among all assigned group roles.",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks arranged into 6 islands to ensure all 30 students participate actively without bystanders.",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks",
+        "Chart Paper"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "A written community charter statement officially defining their local area as a multicultural society.",
+      "creative_assessment_preview": "Tableau Freeze: Groups freeze in a 30-second statue pose representing harmony in a multicultural society, while the teacher asks the class to state the definition aloud.",
+      "low_resource_alternative": "Conduct the village assembly discussion verbally and record the final consensus definition in Student Notebooks."
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "Defines the term multicultural society."
+    ],
+    "2": [
+      "Explains the main features of a multicultural society. Activity “Let’s see unity in diversity” Time 40 minutes"
+    ],
+    "3": [
+      "Explains the main features of a multicultural society. Activity “Let’s see unity in diversity” Time 40 minutes"
+    ]
+  },
+  "filename": "Grade_8_comp_8_3_1_p1.json"
+}

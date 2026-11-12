@@ -32,8 +32,8 @@ CRITICAL PEDAGOGICAL & GROUNDING DIRECTIVES:
 
 5. CREATIVE FORMATIVE IN-CLASS ASSIGNMENT & CLOSURE ('post_activity'):
 - Must be an original, highly creative 5-minute active in-class evaluation directly matching this specific period's topic, learning outcomes, and grounded in the authentic Sri Lankan context (NOT take-home homework).
-- Treat existing 5-minute assignment examples (quiz, pass-the-parcel, drawing, poem, display statement, small competition) ONLY as starting creative inspiration—NEVER copy them as fixed templates or lock any format to a period number.
-- Beyond those examples, actively invent brand-new, creative interactive assignments and creative verses uniquely inspired by the lesson topic and activity.
+- Use the classic 5-minute assignment examples (quiz, pass-the-parcel, drawing, poem, display statement, small competition) whenever they fit the lesson well—freshly tailored to the topic—AND also invent brand-new creative interactive assignments and creative verses.
+- NEVER lock any format to a period number, and NEVER repeat the same underlying activity mechanic across periods or recent plans; vary the interaction mode (oral/verse, visual/drawing, quiz/competition, movement/tactile, statement vote, or original new formats).
 
 6. NO PLACEHOLDERS: Extract actual syllabus concepts, facts, and evaluation questions directly from the provided TIG and Textbook context.
 7. ABSOLUTE PROHIBITION OF URLs AND WEB LINKS:
@@ -58,22 +58,25 @@ def build_creative_assignment_directive(
     if cleaned_prev:
         items = "\n".join(f"     * {p[:180]}" for p in cleaned_prev[:4])
         prev_block = (
-            "\n   - STRICT ANTI-REPETITION MANDATE — DO NOT REPEAT ANY OF THESE RECENT ASSIGNMENTS OR THEIR FORMATS:\n"
+            "\n   - STRICT ANTI-REPETITION MANDATE — DO NOT REPEAT ANY OF THESE RECENT ASSIGNMENTS OR THEIR UNDERLYING MECHANIC:\n"
             f"{items}\n"
-            "     You MUST invent a completely DIFFERENT, fresh format and idea from the ones above!"
+            "     You MUST choose a genuinely DIFFERENT interaction mode and activity mechanic from the ones above—"
+            "never just change object or theme names while keeping the same mechanic!"
         )
 
     return (
         f"   - Must be an original, highly engaging 5-minute active in-class evaluation check directly addressing '{lesson_topic}', "
         "the period's learning outcomes, and grounded in the authentic Sri Lankan context (NOT take-home homework).\n"
-        "   - CREATIVE INSPIRATION & NEW-ASSIGNMENT INNOVATION MANDATE:\n"
+        "   - BALANCED VARIETY & CREATIVE INNOVATION MANDATE:\n"
         "     * NEVER fix or assign any specific assignment type to a period number.\n"
-        "     * Existing 5-minute assignment examples (quiz, pass-the-parcel, drawing, poem, display statement, small competition) "
-        "are ONLY starting inspiration to spark new ideas—DO NOT treat them as a closed list or repeat them rigidly!\n"
-        "     * Beyond those examples, invent a BRAND-NEW, creative 5-minute interactive assignment or creative verse/version "
-        "uniquely tailored to this lesson's topic, learning outcomes, and chosen activity. "
-        "Prioritize variety, originality, and meaningful student participation. "
-        "Do not simply rename or slightly modify an existing example."
+        "     * You may freely choose and creatively adapt any of the classic 5-minute assignment examples "
+        "(quiz, pass-the-parcel, drawing, poem, display statement, small competition) when it fits the lesson well, "
+        "OR invent a BRAND-NEW, original 5-minute interactive assignment or creative verse/version uniquely tailored to "
+        "this lesson's topic, learning outcomes, and chosen activity.\n"
+        "     * Balance BOTH: do not rely solely on the 6 examples, and do not avoid them either—mix classic examples "
+        "(freshly tailored to the topic) with brand-new creative formats across lessons.\n"
+        "     * Prioritize true variety in student interaction mode (oral/verse, visual sketch, fast quiz/game, tactile/movement, "
+        "statement debate, or a newly invented format)—do not repeat the same underlying mechanic across lessons."
         f"{prev_block}\n"
         "   - Describe the concrete prompt, active student interaction, and immediate teacher feedback achievable within 5 minutes."
     )
