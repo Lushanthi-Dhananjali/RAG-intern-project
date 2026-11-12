@@ -4,86 +4,76 @@
   "time_allocation": "40 Minutes (Period 1 of 2)",
   "competence": "Develops leadership qualities, identifying the need of leadership",
   "competence_level": "8.2.4",
-  "lesson": "Names the democratic leadership qualities in leadership: School Prefect Board Tribunal: Investigating Leadership Needs",
+  "lesson": "Names the democratic leadership qualities in leadership: School Prefect Election Debate and Value Audit",
   "unique_learning_outcome": [
     "Names the democratic leadership qualities in leadership.",
     "Explains the need of moral leadership for the wellbeing of society.",
     "Explains the term leadership briefly."
   ],
-  "the_entrance": "5-minute introduction: The teacher greets the 35 students divided into 7 groups and poses a relatable Sri Lankan school dilemma: 'Imagine our school sports meet is coming up, and the prefect board is divided on how to manage the entrance gates. One prefect wants to give orders strictly without listening, while another wants to consult all class monitors.' The teacher asks the class to consider which approach builds a peaceful school environment, seamlessly launching the School Prefect Board Tribunal activity.",
+  "the_entrance": "The teacher steps into the classroom acting as the Returning Officer for an upcoming provincial school prefect election, writing 'Power vs. Moral Authority' on the chalkboard. The teacher launches a 5-minute motivational challenge by asking: 'When choosing a school captain for our sports meet or prefect board, do we look for someone who simply gives orders, or someone who listens, tolerates others' ideas, and leads with honesty?' Students immediately turn to their table groups of five, buzzing with rapid reactions, sharing personal experiences of school sports captains and club leaders who inspired them through fairness rather than strict authority, and appointing their team roles.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "The teacher circulates among the seven groups, distributing mini-case study task sheets that outline daily challenges faced by a Sri Lankan school prefect board. The teacher facilitates group role allocation (Leader, Scribe, Timekeeper, Spokesperson, Civic Investigator) and prompts students to read the cases to uncover initial definitions of leadership.",
-      "student_activities": "Students organize themselves into their 7 assigned teams of 5, formally assign their group roles, and read through the prefect board case briefs. The Scribe records the team's initial brainstorming ideas regarding what leadership means in a school setting.",
-      "learning_teaching_method": "Inquiry Launch and Case Briefing",
-      "learning_teaching_aids": "Mini-case study task sheets, student notebooks, colored markers",
+      "teacher_activities": "The teacher acts as a facilitator, circulating among the six student groups as they examine simulated manifestos from a Sri Lankan provincial school election. The teacher prompts inquiry by asking: 'How do these candidate pledges demonstrate listening to others and maintaining interpersonal relations?' The teacher scaffolds discussions on the basic definition of leadership by prompting groups to distinguish between guiding a group toward common goals versus exercising autocratic control.",
+      "student_activities": "Students collaborate in their teams of five, assigning roles such as Leader, Scribe, Timekeeper, Spokesperson, and Civic Investigator. They analyze the candidate manifesto cards, debate the meaning of leadership based on textbook concepts, and list concrete examples of how leaders guide family, school, and community groups toward common objectives.",
+      "learning_teaching_method": "Manifesto Evidence Audit and Leadership Definition Inquiry",
+      "learning_teaching_aids": "Simulated candidate manifesto task cards, student notebooks, colored markers, whiteboard",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 15,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "Acting as a facilitator, the teacher moves between groups to probe student thinking with guiding questions such as, 'What happens when a prefect lacks moral grounding?' and 'Which of these behaviors reflect tolerance and listening?' The teacher scaffolds teams in analyzing democratic versus autocratic traits.",
-      "student_activities": "Team members actively debate the case scenarios, using their textbooks to extract specific democratic leadership qualities such as listening, equity, and honesty. The Civic Investigator checks textbook facts while the Scribe drafts the group's arguments on chart paper.",
-      "learning_teaching_method": "Collaborative Investigation and Evidence Gathering",
-      "learning_teaching_aids": "Chart paper, marker pens, textbook excerpts on democratic leadership qualities",
+      "teacher_activities": "The teacher moderates the room as a School Development Society committee meeting, guiding groups to synthesize their findings. The teacher asks probing questions to deepen understanding: 'Why is moral leadership essential for social betterment and good governance in our society?' The teacher observes group interactions, ensuring every student contributes to identifying democratic traits such as equity, steadiness, and self-confidence.",
+      "student_activities": "Students engage in a simulated committee debate discussing what moral leadership means for societal harmony. Working together, they filter through qualities like humility, honesty, helping others, and far-sightedness, and synthesize their group consensus onto a newly drafted 'Code of Moral Leadership' poster using chart paper.",
+      "learning_teaching_method": "Mock Society Assembly and Moral Value Mapping",
+      "learning_teaching_aids": "Chart paper, marker pens, textbook reference excerpts on democratic leadership qualities",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
-      "other": ""
-    },
-    {
-      "step_number": 3,
-      "teacher_activities": "The teacher moderates the brief presentations from group spokespersons, inviting peer feedback and drawing out core concepts on the chalkboard. The teacher synthesizes how moral leadership directly ensures institutional wellbeing and societal harmony.",
-      "student_activities": "Group Spokespersons present their 3-part comparison charts detailing the definition of leadership, democratic qualities, and reasons for moral leadership. Peer students evaluate the presentations, offering constructive feedback and recording key insights in their notebooks.",
-      "learning_teaching_method": "Spokesperson Presentation and Plenary Synthesis",
-      "learning_teaching_aids": "Completed chart paper posters, chalkboard, white chalk",
-      "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 15,
       "other": ""
     }
   ],
-  "summary": "In a 2-minute synthesis, the teacher reviews student discoveries, emphasizing that leadership is guiding a group toward common goals, democratic qualities like listening and equity prevent conflicts, and moral leadership is vital for maintaining a peaceful and well-governed school community.",
-  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted through observation of group collaboration, evaluation of the 3-part comparison charts for accuracy regarding democratic qualities, and assessing the quality of peer feedback during presentations.",
-  "post_activity": "5-minute in-class assignment: Each student writes down one key democratic leadership quality and one reason why moral leadership matters on a slip of paper and drops it into the team collection box as an active in-class exit check.",
+  "summary": "In a 2-minute plenary synthesis, the teacher invites spokespersons to highlight key discoveries: leadership is guiding a group toward common goals, moral leadership is indispensable for good governance and community wellbeing, and democratic qualities such as active listening, equity, and honesty form the bedrock of exemplary leadership.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted through observation of active group participation, analysis of the accuracy of democratic leadership qualities listed on the 'Code of Moral Leadership' posters, and peer feedback during the committee simulation.",
+  "post_activity": "5-minute in-class assignment: Rapid Team Buzzer Challenge: The teacher poses 2 fast conceptual dilemma questions on Sri Lankan school leadership scenarios (e.g., 'Identify one democratic quality missing if a prefect ignores minority opinions in club meetings'). Teams rapidly consult for 60 seconds and present their answer cards, earning instant peer evaluation and teacher feedback.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
   "attachments": [
-    "Mini-case study task sheets",
-    "3-part comparison chart templates"
+    "Simulated Candidate Manifesto Task Cards",
+    "Code of Moral Leadership Poster Templates"
   ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 1,
   "total_periods": 2,
-  "selected_activity": "Activity: School Prefect Board Tribunal: Investigating Leadership Needs\nApproach: Students examine the daily challenges of a Sri Lankan school prefect board to explore what leadership means and why moral leadership creates a peaceful school environment.\nStudent task: Students audit three mini-case studies on school leadership issues, extracting definitions of leadership, identifying democratic practices (consensus over authority), and arguing the necessity of moral leadership for institutional wellbeing.\nTeacher facilitation: The teacher manages time across the 30-minute block, guiding student inquirers with targeted questions such as 'What happens when a leader lacks moral grounding?' and 'How do we define leadership based on this case?'\nExpected output: A 3-part comparison chart detailing: 1) Definition of leadership, 2) Democratic qualities, and 3) Reasons why moral leadership ensures societal wellbeing.\nGrouping: 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. All 35 students participate actively across the 7 table islands.",
-  "selected_activity_title": "School Prefect Board Tribunal: Investigating Leadership Needs",
+  "selected_activity": "Activity: School Prefect Election Debate and Value Audit\nApproach: Students simulate a school development society meeting to evaluate candidates, distinguishing between ordinary power and true democratic moral leadership.\nStudent task: Groups analyze candidate manifestos from a simulated Sri Lankan provincial school election, roleplay a discussion on what leadership means, and list essential moral and democratic qualities required for societal harmony.\nTeacher facilitation: Teacher acts as the returning officer, outlines the 30-minute framework on the chalkboard, and guides students to connect candidate integrity directly to community wellbeing.\nExpected output: A summarized 'Code of Moral Leadership' poster drafted on chart paper by each group.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. All 30 students participate actively via structured cooperative roles.",
+  "selected_activity_title": "School Prefect Election Debate and Value Audit",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_3",
-      "title": "School Prefect Board Tribunal: Investigating Leadership Needs",
-      "pedagogy_type": "Problem-Solving / Jigsaw Audit",
-      "description": "Students examine the daily challenges of a Sri Lankan school prefect board to explore what leadership means and why moral leadership creates a peaceful school environment.",
+      "id": "option_2",
+      "title": "School Prefect Election Debate and Value Audit",
+      "pedagogy_type": "Roleplay / Case Inquiry",
+      "description": "Students simulate a school development society meeting to evaluate candidates, distinguishing between ordinary power and true democratic moral leadership.",
       "learning_outcomes_addressed": [
         "Names the democratic leadership qualities in leadership.",
         "Explains the need of moral leadership for the wellbeing of society.",
         "Explains the term leadership briefly."
       ],
-      "student_action_summary": "Students audit three mini-case studies on school leadership issues, extracting definitions of leadership, identifying democratic practices (consensus over authority), and arguing the necessity of moral leadership for institutional wellbeing.",
-      "teacher_facilitation_summary": "The teacher manages time across the 30-minute block, guiding student inquirers with targeted questions such as 'What happens when a leader lacks moral grounding?' and 'How do we define leadership based on this case?'",
-      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. All 35 students participate actively across the 7 table islands.",
+      "student_action_summary": "Groups analyze candidate manifestos from a simulated Sri Lankan provincial school election, roleplay a discussion on what leadership means, and list essential moral and democratic qualities required for societal harmony.",
+      "teacher_facilitation_summary": "Teacher acts as the returning officer, outlines the 30-minute framework on the chalkboard, and guides students to connect candidate integrity directly to community wellbeing.",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. All 30 students participate actively via structured cooperative roles.",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A 3-part comparison chart detailing: 1) Definition of leadership, 2) Democratic qualities, and 3) Reasons why moral leadership ensures societal wellbeing.",
-      "creative_assessment_preview": "Pass-the-Parcel Quiz: A notebook is passed around music-style; when stopped, the student holding it names one democratic leadership quality learned.",
-      "low_resource_alternative": "Case studies are written directly onto the chalkboard for whole-class reading, and teams draft their findings in their Student Notebooks."
+      "expected_student_output": "A summarized 'Code of Moral Leadership' poster drafted on chart paper by each group.",
+      "creative_assessment_preview": "Exit Slip: Students write down one sentence explaining why moral leadership is needed for society on a scrap paper before leaving.",
+      "low_resource_alternative": "Write the 'Code of Moral Leadership' directly into student notebooks instead of chart paper."
     }
   ],
   "outcome_allocation": {

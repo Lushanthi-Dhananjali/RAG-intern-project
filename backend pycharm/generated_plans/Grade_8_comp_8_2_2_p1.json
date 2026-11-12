@@ -2,83 +2,87 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 1 of 3)",
-  "competence": "8.2.2",
+  "competence": "Works with understanding the rights of the child and his duties.",
   "competence_level": "8.2.2",
-  "lesson": "Explains rights of the child: 1-Minute Frozen Tableau Drama: Competency Level 8.2.2",
+  "lesson": "Explains rights of the child: Childhood Vignettes: Rights in Action and Protection",
   "unique_learning_outcome": [
     "Explains rights of the child.",
     "Explains the importance of enjoying rights of child properly."
   ],
-  "the_entrance": "5-minute introduction: Introduction of rights of the child.",
+  "the_entrance": "5-minute introduction: The teacher opens by writing a thought-provoking headline on the chalkboard: 'A 13-year-old child works all day in a retail shop instead of attending school.' The teacher prompts the whole class: 'According to our laws and global standards, what is fundamentally wrong with this picture, and who is considered a child?' Students instantly turn to their shoulder partners, discuss the age threshold defined by the United Nations Convention on the Rights of the Child (under 18 years), and volunteer quick responses identifying the denial of school and protection. The teacher affirms their baseline understanding, introduces the four broad categories of child rights (survival, development, protection, participation), and connects this directly to today's task of examining everyday Sri Lankan childhood vignettes to discover why exercising these rights responsibly is vital for personal and social growth.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "Teacher introduces the specific real-world Sri Lankan dilemma for 'Explains rights of the child: 1-Minute Frozen Tableau Drama: Competency Level 8.2.2', presents concrete inquiry task cards/materials derived from the textbook/TIG, and organizes student teams with assigned roles. Students examine the prompt, divide responsibilities, and formulate inquiry questions.",
-      "student_activities": "Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (40 students): Desks arranged into 8 teams (8 groups of 5), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "learning_teaching_method": "Dilemma Analysis & Role Distribution",
-      "learning_teaching_aids": "Textbook, TIG, hazard cards, dilemma briefs, role badges, observation grids, chart paper, markers",
+      "teacher_activities": "The teacher organizes the 30 students into 6 structured teams of 5 and directs attention to three realistic Sri Lankan scenarios inscribed on the chalkboard: Vignette A (Kamal in Polonnaruwa balancing paddy harvest chores with his studies and cricket practice), Vignette B (Sanduni in Nuwara Eliya visiting a rural dispensary for routine health checkups and vaccinations), and Vignette C (Mevan in Kandy voicing student ideas inside the Junior School Development Society). The teacher assigns two teams per vignette and prompts the designated Facilitators and Logistics managers to distribute notebooks and prepare their group recording templates.",
+      "student_activities": "Students immediately assemble into their 6 designated island pods, verify their specific roles (Leader/Facilitator, Scribe, Timekeeper/Logistics, Spokesperson, and Civic Investigator), and copy their assigned case facts into their notebooks. The Civic Investigator reads the case details aloud to the group while the Scribe sets up three columns: 'Right Identified', 'UNCRC Theme', and 'Benefit to Child & Community'.",
+      "learning_teaching_method": "Vignette Case Allocation and Role Orientation",
+      "learning_teaching_aids": "Chalkboard case scenario outlines, team role badges, Student Notebooks",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 5,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "Teacher monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.",
-      "student_activities": "Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (40 students): Desks arranged into 8 teams (8 groups of 5), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "learning_teaching_method": "Role Execution and Feedback",
-      "learning_teaching_aids": "Textbook, TIG, hazard cards, dilemma briefs, role badges, observation grids, chart paper, markers",
+      "teacher_activities": "The teacher actively circulates among the 6 team tables, providing scaffolding questions rather than giving direct answers. To the teams handling Vignette A, the teacher asks: 'What happens to Kamal's right to development if recreation is neglected or, conversely, if he plays cricket all day and ignores his studies?' To the teams analyzing Vignette B and C, the teacher asks: 'How does Sanduni's access to primary healthcare safeguard her survival, and why does Mevan's participation build responsible leadership?'",
+      "student_activities": "Team members engage in dynamic deliberation. The Civic Investigator checks textbook classifications (survival, development, protection, participation) to verify the exact rights involved in their scenario. The group discusses the dual necessity of exercising rights and maintaining discipline, while the Scribe records their points onto an 'Action & Impact Matrix' chart paper. The Facilitator ensures every member provides at least one argument showing how enjoying rights properly prevents harm and promotes communal well-being.",
+      "learning_teaching_method": "Collaborative Vignette Investigation and Matrix Construction",
+      "learning_teaching_aids": "Chart Paper, marker pens, Student Notebooks, Civic Education Textbook Chapter extracts",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 15,
       "other": ""
     },
     {
       "step_number": 3,
-      "teacher_activities": "Teacher synthesizes discoveries against the learning outcomes.",
-      "student_activities": "Group spokespersons present discoveries or co-created artifacts; peer teams evaluate using criteria and offer feedback.",
-      "learning_teaching_method": "Synthesis and Peer Evaluation",
-      "learning_teaching_aids": "Textbook, TIG, hazard cards, dilemma briefs, role badges, observation grids, chart paper, markers",
+      "teacher_activities": "The teacher moderates a sharp plenary session, calling on the Spokesperson of one team from each vignette pair to present their findings in 90 seconds while inviting the parallel team to add complementary observations. The teacher synthesizes their key points on the chalkboard under the four core themes of child rights, probing the class: 'What common danger occurs if a child claims a right to leisure or speech without respecting school rules and family responsibilities?'",
+      "student_activities": "The designated Spokespersons present their group's matrix, explaining the specific rights detected in their vignettes and justifying why balanced, proper enjoyment of these rights ensures holistic mental and physical development. Non-presenting teams listen attentively, compare the presenter's conclusions with their own notes, and ask clarifying questions on how to prevent rights from becoming self-centered or disruptive.",
+      "learning_teaching_method": "Plenary Matrix Defense and Comparative Dialogue",
+      "learning_teaching_aids": "Affixed Chart Papers on classroom walls, Chalkboard comparative summary grid",
       "assessment_and_feedback": "",
       "time_minutes": 10,
       "other": ""
     }
   ],
-  "summary": "Explains rights of the child: 1-Minute Frozen Tableau Drama: Competency Level 8.2.2",
-  "assessment_and_feedback_whole_lesson": "Assess and evaluate students using suitable criteria to gauge the development of the students in relation to the competency of enjoying rights of the child and fulfilling related duties.",
-  "post_activity": "5-minute in-class assignment: Five-minute in-class assignment: Each student writes two key responsibilities on their reflection sheet.",
+  "summary": "The teacher brings the class together to synthesize core discoveries: under the 1989 UNCRC, every person under 18 years holds indivisible rights classified under survival, development, protection, and participation. Students conclude that enjoying rights such as education, healthcare, play, and expression is not a license for unrestrained behavior, but a vital foundation that must be exercised with discipline and mutual respect to ensure personal growth and societal harmony.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted through observation of group matrix charts and plenary contributions using three criteria: (1) Accurate classification of child rights within the four UNCRC pillars (survival, development, protection, participation); (2) Quality and depth of student explanations regarding why rights must be exercised responsibly; (3) Equitable team collaboration without passive members. The teacher delivers targeted verbal praise for accurate contextual links and clarifies any misconceptions regarding the boundary between enjoying rights and upholding civic duties.",
+  "post_activity": "5-minute in-class assignment: Rapid Team Quiz / Buzzer Board Challenge: The teacher poses two rapid conceptual dilemma questions to the six teams. Question 1: 'A school student argues: \"Because I have the right to play and rest, I will skip my homework every day to play football.\" Which principle of enjoying rights properly does this violate?' Question 2: 'Which specific category of child rights is guaranteed when a Sri Lankan Grama Niladhari and Public Health Midwife ensure an infant receives free immunization and clean water?' Teams confer for 60 seconds, write their answers on their handheld slate/notebook boards, and raise them simultaneously. The teacher instantly verifies the answers (Question 1: Rights must be balanced with responsibility and educational development; Question 2: Right to survival/existence and healthcare), awarding team points and reinforcing the lesson's core outcome.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
-  "attachments": [],
+  "attachments": [
+    "Chalkboard vignette case cards",
+    "Action and Impact Matrix templates",
+    "group role cards."
+  ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 1,
   "total_periods": 3,
-  "selected_activity": "Activity: 1-Minute Frozen Tableau Drama: Competency Level 8.2.2\nApproach: Students use 1-minute frozen tableau drama to explore 'Explains rights of the child.'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.\nExpected output: A short role-based civic decision and its reasons.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "1-Minute Frozen Tableau Drama: Competency Level 8.2.2",
+  "selected_activity": "Activity: Childhood Vignettes: Rights in Action and Protection\nApproach: Student islands analyze authentic Sri Lankan vignettes depicting everyday situations of school children in agricultural and urban settlements. Teams identify the specific rights of the child depicted and formulate arguments detailing why enjoying these rights properly is essential for their individual growth and community harmony.\nStudent task: Students examine three chalkboard-listed case prompts (e.g., a child balancing study and leisure in Polonnaruwa, a girl accessing primary healthcare in Nuwara Eliya, and student participation in a school development society). The Civic Investigator pinpoints the specific child rights involved, the group debates the consequences of denial versus proper exercise, and the Scribe records their insights into an analytical matrix.\nTeacher facilitation: Pre-writes the 3 short case scenarios on the chalkboard. Facilitates by circulating among islands, asking: 'What fundamental child right protects this student?' and 'Why must the right to leisure or expression be exercised with discipline and balance?' Manages time across 5 min intro, 15 min team investigation, and 10 min plenary dialogue.\nExpected output: An Action & Impact Matrix chart classifying core child rights (survival, development, protection, participation) alongside three key reasons why proper enjoyment leads to personal and community wellbeing.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks are arranged into 6 separate island clusters.",
+  "selected_activity_title": "Childhood Vignettes: Rights in Action and Protection",
   "custom_teacher_activity": null,
   "activity_options": [
     {
       "id": "option_1",
-      "title": "1-Minute Frozen Tableau Drama: Competency Level 8.2.2",
-      "pedagogy_type": "Simulation / Roleplay",
-      "description": "Students use 1-minute frozen tableau drama to explore 'Explains rights of the child.'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "title": "Childhood Vignettes: Rights in Action and Protection",
+      "pedagogy_type": "Case Inquiry / Critical Vignette Analysis",
+      "description": "Student islands analyze authentic Sri Lankan vignettes depicting everyday situations of school children in agricultural and urban settlements. Teams identify the specific rights of the child depicted and formulate arguments detailing why enjoying these rights properly is essential for their individual growth and community harmony.",
       "learning_outcomes_addressed": [
         "Explains rights of the child.",
         "Explains the importance of enjoying rights of child properly."
       ],
-      "student_action_summary": "Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "student_action_summary": "Students examine three chalkboard-listed case prompts (e.g., a child balancing study and leisure in Polonnaruwa, a girl accessing primary healthcare in Nuwara Eliya, and student participation in a school development society). The Civic Investigator pinpoints the specific child rights involved, the group debates the consequences of denial versus proper exercise, and the Scribe records their insights into an analytical matrix.",
+      "teacher_facilitation_summary": "Pre-writes the 3 short case scenarios on the chalkboard. Facilitates by circulating among islands, asking: 'What fundamental child right protects this student?' and 'Why must the right to leisure or expression be exercised with discipline and balance?' Manages time across 5 min intro, 15 min team investigation, and 10 min plenary dialogue.",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks are arranged into 6 separate island clusters.",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A short role-based civic decision and its reasons.",
-      "creative_assessment_preview": "Students state one role responsibility and explain how it supported the decision.",
-      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
+      "expected_student_output": "An Action & Impact Matrix chart classifying core child rights (survival, development, protection, participation) alongside three key reasons why proper enjoyment leads to personal and community wellbeing.",
+      "creative_assessment_preview": "Tableau Vivant (Freeze-Frame): Each team creates a 10-second silent frozen posture showing a child actively enjoying a right properly (e.g., reading in a library, receiving a vaccination), while another group identifies the right and its significance.",
+      "low_resource_alternative": "Students record the matrix directly on a dedicated two-column page in their Student Notebooks using chalk summaries on the board as a guide."
     }
   ],
   "outcome_allocation": {

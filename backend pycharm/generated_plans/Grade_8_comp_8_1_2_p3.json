@@ -2,74 +2,74 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 3 of 3)",
-  "competence": "Demonstrates comprehensive understanding of public services provided by government institutions and presents detailed information on specialized agencies.",
+  "competence": "Names the public services provided for the area identifying them and appreciates their contribution to human development.",
   "competence_level": "8.1.2",
-  "lesson": "Presents information about other public services provided by the government: Public Service Agency Inquiry and Dossier Compilation",
+  "lesson": "Presents information about other public services provided by the government: Government Services Legislative Mock Expo & Presentation",
   "unique_learning_outcome": [
     "Presents information about other public services provided by the government."
   ],
-  "the_entrance": "5-minute introduction: The teacher initiates the session by displaying a collection of real Sri Lankan public notices, such as a Department of Meteorology heavy rain warning bulletin and a Department of Registration of Persons national identity card application form. Standing as a facilitator, the teacher poses an engaging inquiry question to the whole class: 'If a farmer in Anuradhapura needs advance flood warnings or a youth in Jaffna needs passport verification, which specific government departments step in beyond our local Pradeshiya Sabha?' Students share quick everyday observations about government assistance, smoothly transitioning into group civic research team formations.",
+  "the_entrance": "5-minute introduction: The teacher welcomes the class and projects a vibrant visual slide of a local Divisional Secretariat office interacting with citizens in Sri Lanka. As a motivational hook, the teacher challenges the 6 student groups: 'Today, our classroom transforms into the National Government Services Expo. You are senior information officers representing various ministries. Can your team pitch your assigned public service so clearly that visiting citizens immediately understand its direct benefit to our community?' Student groups eagerly gather their ministry files, assign roles for their upcoming expo presentations, and review their assigned service portfolios with their team leaders.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "The teacher circulates among the six student groups, distributing distinct citizen scenario prompt cards covering agencies like the Department of Wildlife Conservation, National Child Protection Authority, and the Bureau of Foreign Employment. As a facilitator, the teacher uses probing questions such as, 'What mandate does this specific agency hold, and how does it directly protect citizens' welfare across Sri Lanka?' to guide student discussions.",
-      "student_activities": "Students collaborate in their assigned teams of five, distributing roles among the Leader, Scribe, Timekeeper, Spokesperson, and Civic Investigator. The Scribe records findings on the task sheet while the Investigator cross-checks accessibility and operational scope of agencies like the Department of Examinations and Department of Meteorology against textbook concepts.",
-      "learning_teaching_method": "Civic Scenario Investigation and Fact-Finding",
-      "learning_teaching_aids": "Structured prompt scenario cards, student notebooks, and reference fact sheets on specialized government departments",
+      "teacher_activities": "The teacher circulates among the 6 groups, acting as a lead facilitator to assist teams in structuring their 2-minute oral presentation key points and organizing chalk diagrams. The teacher asks probing scaffold questions such as: 'Which specific citizen needs does your ministry service address first, and how will you represent this clearly on the chalkboard?'",
+      "student_activities": "Team leaders and secretaries collaborate to draft a concise 2-minute presentation outline on chart paper, while civic investigators verify facts against textbook guidelines and timekeepers check pacing. Group members practice their speaking parts and assign chalkboard sketching duties to prepare for the upcoming expo rotation.",
+      "learning_teaching_method": "Ministry Briefing & Expo Station Setup",
+      "learning_teaching_aids": "Chart paper, colored markers, and ministry fact sheets on fisheries support, cooperative development, and cultural affairs.",
       "assessment_and_feedback": "",
-      "time_minutes": 15,
+      "time_minutes": 10,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "The teacher moves between desks, moderating team debates and assisting groups in organizing their investigative findings into structured dossier formats. The teacher challenges students to ensure that every citizen benefit and contact method is accurately represented on their charts before the presentation phase.",
-      "student_activities": "Working together, team members synthesize their scenario analyses onto large chart papers to create a comprehensive public service dossier. The Spokesperson rehearses the group's oral summary while team members refine their arguments regarding how these specialized government institutions improve the quality of human life in Sri Lanka.",
-      "learning_teaching_method": "Dossier Synthesis and Gallery Presentation Preparation",
-      "learning_teaching_aids": "Chart paper, colored markers, and chalkboard",
+      "teacher_activities": "The teacher manages the strict presentation timer, ensuring each of the 6 teams delivers their 2-minute ministerial briefing without interruption while moderating the peer Q&A session. The teacher prompts audience groups to ask critical, clarifying questions and guides constructive peer evaluation after each ministry showcase.",
+      "student_activities": "Group spokespersons step forward sequentially to present their ministry's public services to the class while illustrating key functions using chalkboard diagrams. Meanwhile, visiting audience groups take concise notes in their notebooks and actively pose probing inquiries regarding service accessibility and community benefits.",
+      "learning_teaching_method": "Legislative Mock Expo & Interactive Presentation Showcase",
+      "learning_teaching_aids": "Chalkboard, student notebooks, and spokesperson role cards.",
       "assessment_and_feedback": "",
-      "time_minutes": 15,
+      "time_minutes": 20,
       "other": ""
     }
   ],
-  "summary": "In a 2-minute synthesis, the teacher invites spokespersons from selected groups to highlight core discoveries regarding specialized public services such as foreign employment facilitation and meteorological warnings. The class collectively summarizes how these diverse government institutions work synergistically to generate qualitative development in Sri Lankan society.",
-  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted through observation of active group collaboration, accuracy of civic dossier charts, and the depth of peer evaluation during presentations. The teacher checks whether students correctly identified agency mandates, responsibilities of officers, and accessibility channels.",
-  "post_activity": "Each student writes down one key takeaway on a slip of paper regarding a newly discovered public service agency and drops it into the 'Civic Inquiry Box' on the teacher's desk as a rapid 5-minute active in-class evaluation check.",
+  "summary": "In a 2-minute plenary synthesis, the teacher and students consolidate key discoveries, highlighting how diverse government ministries—such as fisheries, cooperatives, and cultural affairs—collaborate to deliver essential public services that uplift community life across Sri Lanka.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted continuously through peer questioning during the mock expo, accuracy of chalkboard presentation outlines, and the depth of student notes recorded in notebooks regarding government public service functions.",
+  "post_activity": "5-minute in-class assignment: Creative Rhyming Verse Recitation: In pairs, students compose and recite a 2-line original rhyming verse summarizing the core value of government public services presented during the expo (e.g., 'From fisheries aid to cultural care, government public services are everywhere!'). The teacher invites selected pairs to perform their verses aloud and provides immediate positive reinforcement.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
   "attachments": [
-    "Specialized Agency Scenario Prompt Cards",
-    "Dossier Compilation Templates"
+    "Ministry Information Fact Sheets on Fisheries, Cooperative Development, and Cultural Affairs",
+    "Chalkboard Presentation Rubric and Timer Cards"
   ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 3,
   "total_periods": 3,
-  "selected_activity": "Activity: Public Service Agency Inquiry and Dossier Compilation\nApproach: Student groups act as civic research teams investigating government information brochures and scenarios regarding specialized public services like public libraries, meteorological departments, and consumer affairs authorities. They compile a structured dossier detailing these functions.\nStudent task: The 6 groups analyze scenarios and prompt questions provided by the teacher regarding lesser-known government services operating in Sri Lanka (e.g., Department of Meteorology weather warnings, Department of Examinations certificates, Department of Registration of Persons national identity cards, Department of Wildlife Conservation, National Child Protection Authority, and Bureau of Foreign Employment). The Scribe records findings, and the Investigator cross-checks service accessibility.\nTeacher facilitation: Teacher distributes prompt cards detailing citizen scenarios requiring specific government agencies. Teacher acts as a resource guide, moving between the 6 island desks to ensure students correctly identify the corresponding public service and its operational scope.\nExpected output: A detailed dossier chart on chart paper outlining service mandates, contact methods, and citizen benefits.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks rearranged into 6 islands. All 30 students participate through structured role division.",
-  "selected_activity_title": "Public Service Agency Inquiry and Dossier Compilation",
+  "selected_activity": "Activity: Government Services Legislative Mock Expo & Presentation\nApproach: Student groups take on the persona of government ministry information officers hosting an interactive community exhibition to present information on diverse public services to visiting citizens.\nStudent task: Each group prepares a 2-minute oral presentation accompanied by chalkboard diagrams outlining a specific set of public services (e.g., fisheries support, cooperative development, cultural affairs) and presents it to the rest of the class.\nTeacher facilitation: The teacher manages the strict presentation schedule, ensuring each of the 6 teams gets an equal opportunity to present while prompting audience groups to ask clarifying questions.\nExpected output: A structured public service presentation outline recorded in student notebooks and delivered verbally by spokespersons.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
+  "selected_activity_title": "Government Services Legislative Mock Expo & Presentation",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_2",
-      "title": "Public Service Agency Inquiry and Dossier Compilation",
-      "pedagogy_type": "Case Inquiry / Evidence Analysis",
-      "description": "Student groups act as civic research teams investigating government information brochures and scenarios regarding specialized public services like public libraries, meteorological departments, and consumer affairs authorities. They compile a structured dossier detailing these functions.",
+      "id": "option_3",
+      "title": "Government Services Legislative Mock Expo & Presentation",
+      "pedagogy_type": "Presentation / Exhibition",
+      "description": "Student groups take on the persona of government ministry information officers hosting an interactive community exhibition to present information on diverse public services to visiting citizens.",
       "learning_outcomes_addressed": [
         "Presents information about other public services provided by the government."
       ],
-      "student_action_summary": "The 6 groups analyze scenarios and prompt questions provided by the teacher regarding lesser-known government services operating in Sri Lanka (e.g., Department of Meteorology weather warnings, Department of Examinations certificates, Department of Registration of Persons national identity cards, Department of Wildlife Conservation, National Child Protection Authority, and Bureau of Foreign Employment). The Scribe records findings, and the Investigator cross-checks service accessibility.",
-      "teacher_facilitation_summary": "Teacher distributes prompt cards detailing citizen scenarios requiring specific government agencies. Teacher acts as a resource guide, moving between the 6 island desks to ensure students correctly identify the corresponding public service and its operational scope.",
-      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks rearranged into 6 islands. All 30 students participate through structured role division.",
+      "student_action_summary": "Each group prepares a 2-minute oral presentation accompanied by chalkboard diagrams outlining a specific set of public services (e.g., fisheries support, cooperative development, cultural affairs) and presents it to the rest of the class.",
+      "teacher_facilitation_summary": "The teacher manages the strict presentation schedule, ensuring each of the 6 teams gets an equal opportunity to present while prompting audience groups to ask clarifying questions.",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A detailed dossier chart on chart paper outlining service mandates, contact methods, and citizen benefits.",
-      "creative_assessment_preview": "Exit Slip Bingo: Students write down 3 public service agencies discussed on a slip of paper and hand it to the teacher as an exit ticket upon naming how each benefits the community.",
-      "low_resource_alternative": "Groups compile their dossiers entirely inside student notebooks and present oral summaries instead of using chart paper."
+      "expected_student_output": "A structured public service presentation outline recorded in student notebooks and delivered verbally by spokespersons.",
+      "creative_assessment_preview": "A 5-minute 'One-Sentence Exit Ticket' where every student writes down the most surprising public service learned during the expo on a slip of notebook paper.",
+      "low_resource_alternative": "Groups present their information as a seated panel discussion from their island desks rather than standing up in front of the room."
     }
   ],
   "outcome_allocation": {

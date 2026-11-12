@@ -2,80 +2,75 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 2 of 2)",
-  "competence": "Expresses views accepting the fact that fulfillment of duties and responsibilities of the public services institutions bring about the welfare of human beings.",
-  "competence_level": "Formative",
-  "lesson": "Expresses views accepting the fact that fulfillment of duties and responsibilities of the public services institutions bring about the welfare of human beings: Teacher approach: show video for school students",
+  "competence": "Explains the duties and responsibilities of public service institutions and demonstrates appreciation for their role in human welfare.",
+  "competence_level": "8.1.3",
+  "lesson": "Expresses views accepting the fact that fulfillment of duties and responsibilities of the public services institutions bring about the welfare of human beings: Public Service Value Jigsaw & Advocacy Poster Walk",
   "unique_learning_outcome": [
     "Expresses views accepting the fact that fulfillment of duties and responsibilities of the public services institutions bring about the welfare of human beings."
   ],
-  "the_entrance": "5-minute introduction: The teacher introduces the topic by asking students to share their experiences with public services institutions. Students discuss how these institutions impact their daily lives. The teacher then shows a video for school students that highlights the importance of public services institutions in bringing about the welfare of human beings. Students are encouraged to take notes and ask questions.",
+  "the_entrance": "The teacher initiates a 5-minute motivational hook by displaying a local newspaper photograph of a busy Sri Lankan postal hub and a rural health clinic alongside a bold chalkboard question: 'How does a public officer's daily duty touch a citizen's life?' Operating strictly as a facilitator, the teacher prompts student teams to quickly turn to their neighbours and share one personal experience where a public service institution directly assisted their family. Student groups actively respond by popcorn-sharing examples such as obtaining birth certificates at the Divisional Secretariat or receiving timely immunizations at the local MOH clinic, connecting their lived experiences directly to the concept of human welfare.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "The teacher explains the importance of public services institutions and their role in bringing about the welfare of human beings. Students are then divided into groups of 5 and assigned roles: Leader/Facilitator, Scribe/Secretary, Timekeeper & Logistics, Spokesperson/Presenter, and Civic Investigator/Inquirer.",
-      "student_activities": "Students discuss and brainstorm ideas on how public services institutions bring about the welfare of human beings. They are encouraged to use the video as a reference and take notes on key points.",
-      "learning_teaching_method": "Collaborative Learning",
-      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "teacher_activities": "The teacher circulates among the 6 collaborative groups (assigned into expert teams), providing investigative prompt cards detailing specific institutional duties like railway scheduling or hospital emergency care. Acting purely as a facilitator, the teacher asks probing scaffolding questions such as, 'What specific welfare benefits occur in our community when this institution operates efficiently every single day?' The teacher monitors active role distribution among leaders, scribes, and timekeepers, ensuring every student contributes to the evidence collection.",
+      "student_activities": "Students collaborate in their groups, with the Scribe recording institutional duties and the Civic Investigator cross-checking textbook facts against real-world Sri Lankan scenarios. Group members analyze how public officers fulfilling their responsibilities directly prevent public inconvenience and enhance community well-being. The Spokesperson ensures all voices are heard as the team synthesizes their findings onto their collaborative task sheet.",
+      "learning_teaching_method": "Jigsaw Expert Group Investigation",
+      "learning_teaching_aids": "Task sheets on specific public services (transport, health, postal, registration), student notebooks, pens",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 15,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "The teacher facilitates the group discussions and ensures that each student is actively engaged in the activity. Students are encouraged to share their ideas and listen to their peers.",
-      "student_activities": "Students continue to discuss and brainstorm ideas on how public services institutions bring about the welfare of human beings. They are encouraged to use the video as a reference and take notes on key points.",
-      "learning_teaching_method": "Collaborative Learning",
-      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "teacher_activities": "The teacher guides the transition into mini-poster creation, instructing teams to design a persuasive visual advocacy artifact highlighting public service appreciation. The teacher moderates the subsequent Poster Walk gallery rotation, asking probing questions that challenge students to justify how duty fulfillment drives societal welfare. The teacher provides formative peer-feedback prompts, encouraging groups to evaluate each other's artistic and logical arguments constructively.",
+      "student_activities": "Students actively draw and write persuasive slogans on chart paper, integrating core concepts of public service duty and human welfare into a striking mini-poster. The Timekeeper manages pacing while the Presenter leads the group's contribution during the classroom walkthrough. Students examine neighboring posters, discussing how efficient institutional services safeguard citizens' rights and promote national development.",
+      "learning_teaching_method": "Advocacy Poster Walk & Collaborative Synthesis",
+      "learning_teaching_aids": "Chart paper, colored markers, chalkboard",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
-      "other": ""
-    },
-    {
-      "step_number": 3,
-      "teacher_activities": "The teacher summarizes the key points discussed by the groups and asks students to share their findings with the class. Students are encouraged to provide evidence from the video to support their arguments.",
-      "student_activities": "Students share their findings with the class and provide evidence from the video to support their arguments. The teacher facilitates the discussion and encourages students to listen to their peers.",
-      "learning_teaching_method": "Collaborative Learning",
-      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
-      "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 15,
       "other": ""
     }
   ],
-  "summary": "Students will be able to express views accepting the fact that fulfillment of duties and responsibilities of the public services institutions bring about the welfare of human beings.",
-  "assessment_and_feedback_whole_lesson": "The teacher will assess student understanding through their participation in the group discussions and their ability to provide evidence from the video to support their arguments.",
-  "post_activity": "5-minute in-class assignment: Students will write a short paragraph summarizing the importance of public services institutions in bringing about the welfare of human beings. They will also provide one example of how a public services institution has positively impacted their daily life.",
+  "summary": "In a 2-minute teacher-moderated plenary, student representatives synthesize key discoveries, concluding unanimously that when public service officers diligently execute their duties in transport, healthcare, and civil registration, it directly elevates the quality of life and welfare of all citizens across Sri Lanka.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted through observation of active group collaboration, the logical depth of arguments presented in the advocacy posters, and peer evaluations during the gallery walk, ensuring students successfully articulate how public institutional responsibilities foster human welfare.",
+  "post_activity": "Statement Display & Justified Standpoint Vote: The teacher writes an authentic Sri Lankan societal statement on the chalkboard ('Public officers are merely doing a paid job; their daily duty fulfillment has little direct impact on community welfare'). Students immediately take a 5-minute active stance by voting 'Agree' or 'Disagree' by raising colored cards, and designated student representatives verbally justify their standpoints using evidence from the lesson's jigsaw investigation.",
   "information_sources": [
-    "grade_8_civic_textbook.pdf (page 1)"
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
   ],
-  "attachments": [],
+  "attachments": [
+    "Public Service Jigsaw Task Cards",
+    "Advocacy Poster Rubric",
+    "Statement Voting Cards"
+  ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 2,
   "total_periods": 2,
-  "selected_activity": "show video for school students",
-  "selected_activity_title": "Teacher approach: show video for school students",
-  "custom_teacher_activity": "show video for school students",
+  "selected_activity": "Activity: Public Service Value Jigsaw & Advocacy Poster Walk\nApproach: Students engage in a collaborative jigsaw investigation examining different public services (transport, health, postal, registration) to formulate persuasive value statements supporting human welfare.\nStudent task: Groups investigate different aspects of public institutional responsibility, compile evidence of human welfare outcomes, and design a striking mini-poster advocating for public service appreciation.\nTeacher facilitation: Manages team rotations, ensures all students actively contribute according to their assigned roles, and provides time checks at 10-minute intervals.\nExpected output: An advocacy poster highlighting how public service duty fulfillment brings about community welfare.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
+  "selected_activity_title": "Public Service Value Jigsaw & Advocacy Poster Walk",
+  "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_1",
-      "title": "Thematic Station Jigsaw & Infographic Wall: Competency Level 8.1.3",
-      "pedagogy_type": "Station Jigsaw / Collaborative Design",
-      "description": "Students explore teacher-designated board or discussion stations about 'Expresses views accepting the fact that fulfillment of duties and responsibilities of the public services institutions bring about the welfare of human beings.'. Home groups reassemble to teach peers and synthesize key ideas.",
+      "id": "option_2",
+      "title": "Public Service Value Jigsaw & Advocacy Poster Walk",
+      "pedagogy_type": "Station Jigsaw & Creative Advocacy Design",
+      "description": "Students engage in a collaborative jigsaw investigation examining different public services (transport, health, postal, registration) to formulate persuasive value statements supporting human welfare.",
       "learning_outcomes_addressed": [
         "Expresses views accepting the fact that fulfillment of duties and responsibilities of the public services institutions bring about the welfare of human beings."
       ],
-      "student_action_summary": "Explore station prompts, return to home groups to teach peers, and co-create a summary. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "student_action_summary": "Groups investigate different aspects of public institutional responsibility, compile evidence of human welfare outcomes, and design a striking mini-poster advocating for public service appreciation.",
+      "teacher_facilitation_summary": "Manages team rotations, ensures all students actively contribute according to their assigned roles, and provides time checks at 10-minute intervals.",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "Synthesized Civic Action Infographic Poster.",
-      "creative_assessment_preview": "2-Line Rhyming Slogan: Groups chant a summary of their core takeaway.",
-      "low_resource_alternative": "Use notebook pages pinned to desks as station hubs."
+      "expected_student_output": "An advocacy poster highlighting how public service duty fulfillment brings about community welfare.",
+      "creative_assessment_preview": "Silent Gallery Walk: Students place notebooks on desks and use 3 minutes to read peer posters, leaving a checkmark next to the most persuasive welfare argument.",
+      "low_resource_alternative": "Divide chalkboard space into sections for each group to sketch their advocacy slogan."
     }
   ],
   "outcome_allocation": {
@@ -86,5 +81,6 @@
     "2": [
       "Expresses views accepting the fact that fulfillment of duties and responsibilities of the public services institutions bring about the welfare of human beings."
     ]
-  }
+  },
+  "filename": "Grade_8_comp_8_1_3_p2.json"
 }

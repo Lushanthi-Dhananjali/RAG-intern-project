@@ -2,77 +2,87 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 1 of 3)",
-  "competence": "Demonstrates civic responsibility by identifying and utilizing public services provided for community development and well-being",
+  "competence": "Investigates public services provided for the local area and identifies the administrative institutions and officers responsible for community development",
   "competence_level": "8.1.2",
-  "lesson": "Names the public services provided for the area identifying them: Mapping Our Local Public Service Network",
+  "lesson": "Names the public services provided for the area identifying them: Civic Scenario Case Inquiry & Officer Role Analysis",
   "unique_learning_outcome": [
     "Names the public services provided for the area identifying them.",
     "Describes institutions that provide public services and the functions of the officers."
   ],
-  "the_entrance": "5-minute introduction: The teacher greets the 30 students arranged into six groups of five and displays a large pictorial collage of a bustling Sri Lankan town on the chalkboard, featuring a Pradeshiya Sabha office, a Divisional Secretariat, a government hospital, and a local post office. The teacher sparks student curiosity by asking, 'If your family needs to register a new birth, obtain a Grama Niladhari certificate, or access emergency healthcare in our local area, which exact buildings do you visit and who helps you?' Students briefly discuss in pairs, connecting their everyday community experiences to the institutional network, which directly transitions into the group mapping task.",
+  "the_entrance": "The teacher launches the 5-minute session by projecting a vibrant photographic collage of everyday Sri Lankan community encounters—such as a blocked drainage canal in a local municipal ward, a farmer applying for a Samurdhi subsidy at the Divisional Secretariat, and citizens obtaining land deeds. The teacher challenges the class with the opening prompt: 'Imagine walking through our village or town council area and encountering these exact situations tomorrow morning—which government office do you visit, and which specific officer holds the legal authority to solve each problem?' Students immediately buzz in their 6 groups of 5, assigning roles among themselves (Leader, Scribe, Timekeeper, Spokesperson, and Civic Investigator) and examining their initial chalkboard prompt to connect prior neighborhood experiences with formal government structures.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "The teacher acts as a facilitator, distributing distinct sector task cards (healthcare, waste management, water supply, civil registration, postal services, and transport) to each of the six groups. The teacher circulates among the island desks, monitoring group roles and prompting the Civic Investigator and Scribe with targeted questions such as 'Which government department oversees water supply in our Pradeshiya Sabha division?' and 'What specific service does this office provide to residents?'",
-      "student_activities": "Students organize themselves using assigned roles: the Leader keeps the team focused, the Scribe records sector details, the Timekeeper manages pacing, the Spokesperson prepares the presentation, and the Civic Investigator verifies facts against textbook definitions. Each group investigates their assigned local public service sector, identifying the core services rendered and listing them on chart paper under designated headings.",
-      "learning_teaching_method": "Sector-Based Collaborative Investigation",
-      "learning_teaching_aids": "Chart paper, colored markers, student notebooks, and Sector Task Cards",
+      "teacher_activities": "The teacher circulates among the six island desks, monitoring how group leaders delegate reading tasks and prompting teams with scaffolding questions such as 'Is this infrastructure repair handled by the Pradeshiya Sabha technical division or the provincial irrigation engineer?'. The teacher ensures all students are actively discussing the scenario text and recording preliminary ideas in their notebooks.",
+      "student_activities": "Civic investigators and secretaries within each group read the assigned chalkboard situational prompts regarding local public service needs, such as registering land deeds or reporting damaged rural access roads. The team discusses the realistic community dilemma, cross-referencing textbook concepts on local government institutions to identify the primary administrative body involved.",
+      "learning_teaching_method": "Foundational Case Scenario Scrutiny",
+      "learning_teaching_aids": "Chalkboard situational prompts, Student Notebooks, Task Distribution Sheets",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Acting as a facilitator, the teacher moves from group to group observing the collaborative construction of the problem-solving charts, asking probing questions like 'What specific duties does the Grama Niladhari perform versus the Divisional Secretary when verifying this subsidy claim?'. The teacher encourages the timekeeper to keep the team focused on mapping exact officer functions.",
+      "student_activities": "Students collaborate intensely using chart paper and colored markers to construct a 'Case-to-Institution Problem-Solving Chart'. The spokesperson and team members map out the specific public service, the responsible institution (e.g., Pradeshiya Sabha vs. Divisional Secretariat), and list the exact administrative functions of the officers in charge.",
+      "learning_teaching_method": "Institutional Mapping and Officer Function Analysis",
+      "learning_teaching_aids": "Chart Paper, Colored Markers, Institutional Authority Reference Cards",
       "assessment_and_feedback": "",
       "time_minutes": 15,
       "other": ""
     },
     {
-      "step_number": 2,
-      "teacher_activities": "The teacher facilitates the second phase by guiding teams to link their identified public services directly to specific government institutions and chief administrative officers. The teacher moves between groups, scaffolding discussions with probing prompts like 'Who is the chief administrative officer responsible for managing this institution?' and moderating peer feedback as students refine their directory charts.",
-      "student_activities": "Group members collaborate to match their listed public services with the corresponding government institutions (such as the Divisional Secretariat or Pradeshiya Sabha) and detail the functions of key officers on their chart paper. The Spokesperson and Scribe finalize the Public Service & Institution Directory Chart, ensuring all required service descriptions and officer roles are clearly articulated before display.",
-      "learning_teaching_method": "Institutional Role and Function Mapping",
-      "learning_teaching_aids": "Completed sector charts, marker pens, and Chalkboard for synthesis",
+      "step_number": 3,
+      "teacher_activities": "The teacher moderates a rapid 5-minute sharing circle where group presenters highlight their institutional linkages, offering constructive praise and guiding the class to verify whether the officer functions identified align with official administrative guidelines.",
+      "student_activities": "Spokespersons briefly share their group's charted solutions with neighboring groups, while civic investigators check the accuracy of the listed officer functions against textbook facts and challenge any misallocated jurisdictional duties.",
+      "learning_teaching_method": "Peer Defense and Gallery Synthesis",
+      "learning_teaching_aids": "Completed Chart Paper Displays, Classroom Whiteboard",
       "assessment_and_feedback": "",
-      "time_minutes": 15,
+      "time_minutes": 5,
       "other": ""
     }
   ],
-  "summary": "The teacher conducts a 2-minute synthesis by inviting student representatives to highlight key discoveries, emphasizing that public services provided by government institutions such as the Pradeshiya Sabha and Divisional Secretariat are essential for the qualitative development and well-being of the local Sri Lankan community.",
-  "assessment_and_feedback_whole_lesson": "Formative evaluation is based on group collaboration, accuracy in identifying local public services and corresponding institutions, effective participation of assigned student roles, and the completeness of the Public Service & Institution Directory Charts.",
-  "post_activity": "The teacher conducts a 5-minute active in-class 'Rapid Service-Institution Match' check where each group receives a flash card naming a specific local service (e.g., issuing national identity cards or maintaining village roads). Groups must rapidly write down the correct government institution and officer on a mini-slate or notebook page and hold it up simultaneously for instant teacher verification and peer scoring.",
+  "summary": "During this 2-minute synthesis, students consolidate their discoveries by realizing that local public services—ranging from sanitation and infrastructure upkeep to social welfare—are delivered through distinct grassroots institutions like the Pradeshiya Sabha and Divisional Secretariat, each driven by designated administrative officers with specific statutory duties.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted continuously through teacher observation of group collaboration, accurate matching of community scenarios to institutional jurisdictions on the problem-solving charts, and the precision of officer function descriptions during peer review.",
+  "post_activity": "Rapid Team Quiz / Buzzer Board Challenge: The teacher conducts a fast-paced 5-minute board competition where each of the 6 teams answers two rapid-fire conceptual dilemma questions regarding local public service institutions and officer roles (e.g., identifying whether a public health inspector operates under local government health committees or central ministries), with team secretaries racing to write the correct institutional authority on their mini-whiteboards.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
   "attachments": [
-    "Sector Task Cards",
-    "Chart Paper",
-    "Colored Markers"
+    "Chalkboard scenario prompt cards",
+    "institutional jurisdiction reference sheets",
+    "blank chart paper and colored markers."
   ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 1,
   "total_periods": 3,
-  "selected_activity": "Activity: Mapping Our Local Public Service Network\nApproach: Students investigate their local Sri Lankan community context to identify essential public services and match them with the specific government institutions and officers responsible for delivering them.\nStudent task: Each group analyzes a specific sector of local public services (e.g., healthcare, waste management, water supply, civil registration) provided in a typical Sri Lankan Pradeshiya Sabha or Divisional Secretariat division, listing the institutions and officer roles on chart paper.\nTeacher facilitation: The teacher circulates among the 6 island desks, acting as a timekeeper and guiding inquiry with targeted prompts like 'Which government office issues your birth certificate?' and 'Who is the chief administrative officer in that institution?'.\nExpected output: A structured 'Public Service & Institution Directory Chart' drawn on chart paper detailing services, institutions, and officer functions.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "Mapping Our Local Public Service Network",
+  "selected_activity": "Activity: Civic Scenario Case Inquiry & Officer Role Analysis\nApproach: Students examine realistic community scenarios reflecting daily life in Sri Lankan towns and villages to uncover hidden public service needs, trace them to the responsible government bodies, and detail the specific administrative officers in charge.\nStudent task: Civic investigators examine short situational prompts written on the chalkboard (e.g., requesting a Samurdhi subsidy, registering a land deed, or reporting a blocked drainage canal), discuss the relevant local institution (Pradeshiya Sabha vs. Divisional Secretariat), and list the officer functions required to resolve the issue.\nTeacher facilitation: The teacher circulates among the 6 island desks, keeping time and ensuring every student actively contributes through their assigned role, offering scaffolding prompts like 'Is this handled by a Grama Niladhari or a Technical Officer?'.\nExpected output: A 'Case-to-Institution Problem-Solving Chart' linking community scenarios to public institutions and officer duties.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+  "selected_activity_title": "Civic Scenario Case Inquiry & Officer Role Analysis",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_1",
-      "title": "Mapping Our Local Public Service Network",
-      "pedagogy_type": "Case Inquiry / Community Mapping",
-      "description": "Students investigate their local Sri Lankan community context to identify essential public services and match them with the specific government institutions and officers responsible for delivering them.",
+      "id": "option_2",
+      "title": "Civic Scenario Case Inquiry & Officer Role Analysis",
+      "pedagogy_type": "Case Inquiry",
+      "description": "Students examine realistic community scenarios reflecting daily life in Sri Lankan towns and villages to uncover hidden public service needs, trace them to the responsible government bodies, and detail the specific administrative officers in charge.",
       "learning_outcomes_addressed": [
         "Names the public services provided for the area identifying them.",
         "Describes institutions that provide public services and the functions of the officers."
       ],
-      "student_action_summary": "Each group analyzes a specific sector of local public services (e.g., healthcare, waste management, water supply, civil registration) provided in a typical Sri Lankan Pradeshiya Sabha or Divisional Secretariat division, listing the institutions and officer roles on chart paper.",
-      "teacher_facilitation_summary": "The teacher circulates among the 6 island desks, acting as a timekeeper and guiding inquiry with targeted prompts like 'Which government office issues your birth certificate?' and 'Who is the chief administrative officer in that institution?'.",
+      "student_action_summary": "Civic investigators examine short situational prompts written on the chalkboard (e.g., requesting a Samurdhi subsidy, registering a land deed, or reporting a blocked drainage canal), discuss the relevant local institution (Pradeshiya Sabha vs. Divisional Secretariat), and list the officer functions required to resolve the issue.",
+      "teacher_facilitation_summary": "The teacher circulates among the 6 island desks, keeping time and ensuring every student actively contributes through their assigned role, offering scaffolding prompts like 'Is this handled by a Grama Niladhari or a Technical Officer?'.",
       "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
       "required_materials": [
-        "Chart Paper",
+        "Chalkboard",
         "Student Notebooks",
-        "Chalkboard"
+        "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A structured 'Public Service & Institution Directory Chart' drawn on chart paper detailing services, institutions, and officer functions.",
-      "creative_assessment_preview": "Pass-the-Chalk Rapid Quiz: A representative from each group runs to the chalkboard within 5 minutes to write one public service and its corresponding institution.",
-      "low_resource_alternative": "Students draw the public service institution directory directly in their Student Notebooks instead of using Chart Paper."
+      "expected_student_output": "A 'Case-to-Institution Problem-Solving Chart' linking community scenarios to public institutions and officer duties.",
+      "creative_assessment_preview": "A 5-minute 'Tableau Freeze-Frame' where each group poses for 10 seconds to visually represent a specific public service officer performing their duty while peers guess the role.",
+      "low_resource_alternative": "Groups record case analyses exclusively in their Student Notebooks without chart paper."
     }
   ],
   "outcome_allocation": {

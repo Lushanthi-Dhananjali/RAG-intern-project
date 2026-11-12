@@ -2,83 +2,79 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 2 of 3)",
-  "competence": "Democratic Governance and Civic Participation",
+  "competence": "Works with understanding the rights of the child and his duties.",
   "competence_level": "8.2.2",
-  "lesson": "Explains the importance of fulfilling the duties of rights of child: Institutional Fact-Finding Station: Competency Level 8.2.2",
+  "lesson": "Explains the importance of fulfilling the duties of rights of child: The Child Growth Matrix: Rights-to-Development Jigsaw",
   "unique_learning_outcome": [
     "Explains the importance of fulfilling the duties of rights of child.",
     "Expresses how enjoying rights of child bring about child development."
   ],
-  "the_entrance": "5-minute introduction: Teacher explains that Sri Lanka has ratified United Nations Convention on Rights of Child, emphasizing children's right to education, health facilities, security, participation in decision-making processes, development opportunities, existence without exploitation and freedom from child labor.",
+  "the_entrance": "5-minute introduction: The teacher opens the period by sketching two contrasting profiles on the chalkboard: 'Student Kasun' who receives free textbooks, school meals, and clean facilities but damages desks, skips homework, and bullies peers; and 'Student Nethmi' who exercises those same entitlements while studying diligently, keeping the school clean, and helping classmates. The teacher facilitates by asking: 'Both students enjoy identical child rights under Sri Lankan education policy, yet why will only one achieve genuine personal and emotional maturity?' Students discuss actively in their assigned 5-member teams for two minutes, concluding that rights supply the vital nutrients for growth, but fulfilling civic duties is what builds character, refined personality, and true developmental progress.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "Teacher explains the scenario: 'A parent is struggling with childcare duties due to work commitments. They need help finding solutions.', assigns roles (Leader / Facilitator, Scribe / Secretary), and distributes fact-finding station materials.",
-      "student_activities": "Students inspect surrounding area for potential institutions that can support this child's situation, record evidence on the chart paper",
-      "learning_teaching_method": "Step 1",
-      "learning_teaching_aids": "Chart Paper",
+      "teacher_activities": "The teacher circulates among the designated student islands (Teams 1 & 2: Physical & Health Growth; Teams 3 & 4: Intellectual & Educational Growth; Teams 5 & 6: Social & Emotional Wellbeing). The teacher provides inquiry prompts to scaffold thinking: 'If a child claims the right to play and recreation under Article 31 but ignores the duty to avoid rough play and respect rules, what happens to the emotional security of their peers and their own physical safety?' Prompts the Civic Investigators to cross-check textbook tables and ensures Scribes divide their matrix into explicit cause-and-effect developmental columns.",
+      "student_activities": "Civic Investigators locate specific provisions from textbook tables while Group Leaders guide team discussions on their assigned developmental sphere. Scribes record two detailed matrix sections on chart paper: 'How Exercising Rights Fosters Our Growth' (e.g., right to education expands intellectual reasoning; right to healthcare develops stamina and physical vitality) paired directly with 'How Fulfilling Duties Secures and Multiplies That Growth' (e.g., adhering to hygiene rules prevents disease transmission; respecting teachers ensures a focused learning climate). Timekeepers track the 15-minute limit as members formulate real-world Sri Lankan school examples.",
+      "learning_teaching_method": "Station-Based Domain Investigation & Matrix Mapping",
+      "learning_teaching_aids": "Chart paper sheets, color markers, Grade 8 Civic Education textbook excerpts on Child Rights (pages 18-20), Station Prompt Task Sheets (Physical & Health Growth, Intellectual Development, Social-Emotional Wellbeing).",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 15,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "Teacher circulates across teams to facilitate role execution and formatively check progress.",
-      "student_activities": "Students continue exploring institutions, record findings on chart paper",
-      "learning_teaching_method": "Step 2",
-      "learning_teaching_aids": "",
+      "teacher_activities": "The teacher moderates a structured plenary assembly, directing team Spokespersons to anchor their completed matrices onto the corresponding branches of the chalkboard 'Developmental Tree' (Roots for Health/Survival, Trunk for Education/Mental, Canopy for Social/Emotional). The teacher poses challenging questions to the audience: 'Why does our Civic Education syllabus emphasize that rights without responsibilities are meaningless and self-centred?' and guides students to synthesize how rights and responsibilities interlock to form balanced citizens.",
+      "student_activities": "Spokespersons from each developmental island present a concise two-minute synthesis of their matrix, detailing how duties such as preserving school property, eating nutritious food, and listening respectfully protect collective rights and personal growth. Non-presenting students act as civic peer-evaluators, posing counter-scenarios and recording peer insights into their notebooks under four developmental headings: Physical, Mental, Moral, and Social. Students collectively verify on the board tree that neglect of duty arrests growth across all quadrants.",
+      "learning_teaching_method": "Plenary Matrix Integration & Chalkboard Tree Assembly",
+      "learning_teaching_aids": "Pre-drawn four-quadrant 'Developmental Tree' outline on the chalkboard, adhesive tape, completed team chart paper matrices, student notebooks.",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
-      "other": ""
-    },
-    {
-      "step_number": 3,
-      "teacher_activities": "Teacher facilitates team presentations to share their discoveries and insights.",
-      "student_activities": "Teams present findings; peers critique each other's work",
-      "learning_teaching_method": "Step 3",
-      "learning_teaching_aids": "",
-      "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 15,
       "other": ""
     }
   ],
-  "summary": "Teacher and students synthesize core findings, reinforcing key civic competencies and takeaways.",
-  "assessment_and_feedback_whole_lesson": "Teacher assesses student understanding through presentation and peer review, checks for connections to the Convention on Rights of Child.",
-  "post_activity": "5-minute in-class assignment: Five-minute in-class assignment: Each student writes two key responsibilities on their reflection sheet.",
+  "summary": "The teacher summarizes that child rights provide the indispensable social and institutional framework for physical, intellectual, and emotional growth, but personal and national development remains stunted unless every child actively discharges their corresponding civic duties. Fulfilling duties safeguards the rights of others, preserves public resources, and develops a disciplined, refined personality capable of leading Sri Lankan society.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted through teacher observation of small group matrices and plenary defenses based on three standard criteria: (1) Accurate explanation of how exercising specific rights catalyzes mental, physical, or social development; (2) Logical identification of corresponding duties that safeguard each entitlement; (3) Active participation and ability to articulate constructive civic solutions during peer cross-examination. Constructive oral feedback is immediately delivered to reinforce the reciprocal nature of civic rights and responsibilities.",
+  "post_activity": "5-minute in-class assignment: Statement Display & Justified Standpoint Vote: The teacher writes a provocative statement on the chalkboard: 'A student who demands their full right to freely express their opinions on social media or in class has no obligation to filter out insults or respect the religious and cultural beliefs of others.' The teacher calls for an immediate Standpoint Vote: thumbs-up (Agree) or thumbs-down (Disagree). The entire class casts their silent vote simultaneously. The teacher selects two students holding opposing or nuanced viewpoints to deliver a 30-second justification grounded in textbook principles, followed by whole-class consensus affirming that freedom of expression is meaningful and developmental only when accompanied by the duty to respect community harmony and individual dignity.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
-  "attachments": [],
+  "attachments": [
+    "Child Growth Matrix Template Handout",
+    "Developmental Domain Task Cards (Physical",
+    "Intellectual",
+    "Social-Emotional)",
+    "Chalkboard Developmental Tree Graphic Organizer."
+  ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 2,
   "total_periods": 3,
-  "selected_activity": "Activity: Institutional Fact-Finding Station: Competency Level 8.2.2\nApproach: Students use institutional fact-finding station to explore 'Explains the importance of fulfilling the duties of rights of child.'. Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.\nExpected output: An evidence record with one supported conclusion.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "Institutional Fact-Finding Station: Competency Level 8.2.2",
+  "selected_activity": "Activity: The Child Growth Matrix: Rights-to-Development Jigsaw\nApproach: Teams analyze the developmental journey of a Sri Lankan student by tracing how specific categories of child rights foster mental, physical, social, and emotional maturity when accompanied by responsible civic behaviour.\nStudent task: Student islands are designated developmental stations (Teams 1 & 2: Physical & Health Development; Teams 3 & 4: Intellectual & Educational Growth; Teams 5 & 6: Social & Emotional Wellbeing). The Civic Investigator reviews textbook principles of child rights; the team maps out how enjoying entitlements (e.g., recreation, healthcare, expression) develops vital capabilities, and records why failing personal duties (e.g., healthy eating, active listening, respecting elders) halts that development.\nTeacher facilitation: Pre-draws a large four-quadrant 'Developmental Tree' outline on the chalkboard. Directs Spokespersons to anchor findings on the board during rotation, guiding inquiries with: 'What happens to emotional development when a child exercises freedom of expression without the duty to avoid insulting others?'\nExpected output: A completed 'Child Development Pathway Matrix' on chart paper detailing how specific rights stimulate developmental milestones and how fulfilling duties secures those benefits.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
+  "selected_activity_title": "The Child Growth Matrix: Rights-to-Development Jigsaw",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_1",
-      "title": "Institutional Fact-Finding Station: Competency Level 8.2.2",
-      "pedagogy_type": "Observation / Evidence Inquiry",
-      "description": "Students use institutional fact-finding station to explore 'Explains the importance of fulfilling the duties of rights of child.'. Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "id": "option_2",
+      "title": "The Child Growth Matrix: Rights-to-Development Jigsaw",
+      "pedagogy_type": "Cooperative Station Jigsaw",
+      "description": "Teams analyze the developmental journey of a Sri Lankan student by tracing how specific categories of child rights foster mental, physical, social, and emotional maturity when accompanied by responsible civic behaviour.",
       "learning_outcomes_addressed": [
         "Explains the importance of fulfilling the duties of rights of child.",
         "Expresses how enjoying rights of child bring about child development."
       ],
-      "student_action_summary": "Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "student_action_summary": "Student islands are designated developmental stations (Teams 1 & 2: Physical & Health Development; Teams 3 & 4: Intellectual & Educational Growth; Teams 5 & 6: Social & Emotional Wellbeing). The Civic Investigator reviews textbook principles of child rights; the team maps out how enjoying entitlements (e.g., recreation, healthcare, expression) develops vital capabilities, and records why failing personal duties (e.g., healthy eating, active listening, respecting elders) halts that development.",
+      "teacher_facilitation_summary": "Pre-draws a large four-quadrant 'Developmental Tree' outline on the chalkboard. Directs Spokespersons to anchor findings on the board during rotation, guiding inquiries with: 'What happens to emotional development when a child exercises freedom of expression without the duty to avoid insulting others?'",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "An evidence record with one supported conclusion.",
-      "creative_assessment_preview": "A paired evidence check: name one observation and the outcome it supports.",
-      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
+      "expected_student_output": "A completed 'Child Development Pathway Matrix' on chart paper detailing how specific rights stimulate developmental milestones and how fulfilling duties secures those benefits.",
+      "creative_assessment_preview": "5-Minute 'Pass-the-Parcel Civic Echo': Teacher taps a rhythm; when it stops, the holding student must pair a right called out by the teacher with its obligatory duty and name one personal skill it develops.",
+      "low_resource_alternative": "Students draw the four-quadrant Development Matrix across a double-page spread in their student notebooks, using chalk summaries on the floor or chalkboard for group sharing."
     }
   ],
   "outcome_allocation": {
