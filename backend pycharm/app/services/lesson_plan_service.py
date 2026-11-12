@@ -18,6 +18,7 @@ from app.services.i_lesson_plan_service import (
 from app.services.rag_generator import RAGLessonPlanGenerator
 from app.services.generated_plans_manager import (
     get_competency_period_plans,
+    get_recent_post_activities,
     save_generated_plan,
 )
 from app.services.outcome_allocator import (
@@ -413,11 +414,20 @@ class LessonPlanMlService(ILessonPlanMlService):
         )
 
         accumulated_activities = list(request.previous_period_activities or [])
+        accumulated_assignments: List[str] = []
         for p in range(1, total_periods + 1):
             s_plan = saved_period_plans.get(p, {})
             title = s_plan.get("selected_activity_title")
             if title and title not in accumulated_activities:
                 accumulated_activities.append(title)
+            if p != requested_period:
+                saved_post = (s_plan.get("post_activity") or "").strip()
+                if saved_post and saved_post not in accumulated_assignments:
+                    accumulated_assignments.append(saved_post)
+
+        for recent_post in get_recent_post_activities(limit=3):
+            if recent_post and recent_post not in accumulated_assignments:
+                accumulated_assignments.append(recent_post)
 
         generated_plans: List[LessonPlanSchemaDto] = []
         for p_idx in periods_to_generate:
@@ -552,10 +562,14 @@ class LessonPlanMlService(ILessonPlanMlService):
                     allocation_plan.get_progression_summary_for_period(p_idx)
                     if hasattr(allocation_plan, "get_progression_summary_for_period")
                     else ""
-                )
+                ),
+                previous_assignments=list(accumulated_assignments),
             )
 
             plan = plan.model_copy(deep=True)
+            generated_post = (plan.post_activity or "").strip()
+            if generated_post and generated_post not in accumulated_assignments:
+                accumulated_assignments.insert(0, generated_post)
             plan.competence_level = target_comp
             if not plan.competence or re.search(r"https?://|www\.", plan.competence, re.IGNORECASE):
                 from app.services.timing_guardrail_engine import resolve_clean_competence_title

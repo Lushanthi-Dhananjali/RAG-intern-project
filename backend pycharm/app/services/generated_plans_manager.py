@@ -354,3 +354,31 @@ def find_plan_by_competency(
         return primary
 
     return None
+
+
+def get_recent_post_activities(limit: int = 3) -> List[str]:
+    """Returns post_activity texts from the most recently modified saved lesson plans."""
+    plans_dir = ensure_directory_exists()
+    try:
+        entries = [
+            os.path.join(plans_dir, f)
+            for f in os.listdir(plans_dir)
+            if f.lower().endswith(".json") and os.path.isfile(os.path.join(plans_dir, f))
+        ]
+    except OSError:
+        return []
+
+    entries.sort(key=os.path.getmtime, reverse=True)
+    recent: List[str] = []
+    for path in entries[: max(limit * 2, limit)]:
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            pa = str(data.get("post_activity") or "").strip()
+            if pa and pa not in recent:
+                recent.append(pa)
+                if len(recent) >= limit:
+                    break
+        except Exception:
+            continue
+    return recent

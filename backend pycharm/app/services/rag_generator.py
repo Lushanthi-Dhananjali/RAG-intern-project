@@ -913,6 +913,7 @@ class RAGLessonPlanGenerator:
         activity_options: Optional[List[Dict[str, Any]]] = None,
         selected_activity_title: Optional[str] = None,
         outcome_allocation: Optional[Dict[str, List[str]]] = None,
+        previous_assignments: Optional[List[str]] = None,
     ) -> LessonPlanSchemaDto:
         """
         Step 7 & 8: Single-Period 40-Minute Assembly with Deterministic Guardrails.
@@ -989,7 +990,8 @@ class RAGLessonPlanGenerator:
                 grade_level=grade_level,
                 classroom_environment=classroom_environment,
                 accessible_resources=accessible_resources,
-                progression_context=progression_context
+                progression_context=progression_context,
+                previous_assignments=previous_assignments,
             )
         elif build_single_period_assembly_prompt is not None:
             prompt = build_single_period_assembly_prompt(
@@ -1006,7 +1008,8 @@ class RAGLessonPlanGenerator:
                 accessible_resources=accessible_resources,
                 retrieved_tig_context=tig_context,
                 textbook_context=tb_context,
-                progression_context=progression_context
+                progression_context=progression_context,
+                previous_assignments=previous_assignments,
             )
         else:
             prompt = self.generate_prompt(

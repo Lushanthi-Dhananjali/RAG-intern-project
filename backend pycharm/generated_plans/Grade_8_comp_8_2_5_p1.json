@@ -1,0 +1,95 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 1 of 2)",
+  "competence": "Works as a good citizen in a democratic society by practicing core civic values and democratic habits.",
+  "competence_level": "8.2.5",
+  "lesson": "Explains qualities needed for a democratic life: Democratic Life Value Auction: Prioritizing Civic Virtues",
+  "unique_learning_outcome": [
+    "Explains qualities needed for a democratic life."
+  ],
+  "the_entrance": "5-minute introduction: The teacher displays a large chalkboard drawing of a scales of justice balanced atop a school playground and asks the 6 student teams: 'Imagine our school sports meet committee is deadlocked on whether to distribute funds equally among all teams or reward only the top winners; which democratic quality—equality, majority rule, or tolerance—must guide us first?' The teacher circulates among the groups to gauge prior understanding of democratic living. Student groups quickly huddle with their Leaders and Scribes, enthusiastically shouting out initial terms like 'equality' and 'cooperation', and prepare to defend their choices as the teacher officially launches the Democratic Life Value Auction task.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "The teacher acts as the auction facilitator, distributing a set of ten democratic virtue cards and a virtual budget sheet to each of the 6 student groups. The teacher circulates among the groups, prompting the Civic Investigators to examine how each virtue applies to real Sri Lankan school and village contexts, such as organizing a community Shramadana or resolving a playground dispute. The teacher asks probing questions: 'Why might acting with transparency be more vital in a village council than mere majority voting?'",
+      "student_activities": "The 6 student groups organize themselves using assigned roles: the Leader coordinates the team debate, the Scribe records the initial value points, and the Civic Investigator cross-references the virtues against textbook definitions of democratic living. Students actively examine their assigned virtue cards, discussing among themselves how qualities like respecting minority opinions and fulfilling duties shape daily community harmony.",
+      "learning_teaching_method": "Value Auction Briefing and Evidence Card Distribution",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Value Criterion Cards listing democratic habits (tolerance, rule of law, honesty, transparency, cooperation)",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "The teacher circulates continuously as a facilitator, observing team negotiations and moderating disputes where group members disagree on ranking qualities like self-discipline versus freedom of speech. The teacher prompts timekeepers to monitor pacing and challenges teams to justify their top three choices with concrete local examples from Sri Lankan civic life, such as parents and teachers making decisions through discussion.",
+      "student_activities": "Working collaboratively in their groups of five, students vigorously debate and negotiate to rank the democratic qualities on a consensus-building matrix chart. The Spokesperson synthesizes the team arguments while the Scribe uses colored markers to sketch the final priority hierarchy on the chart paper, ensuring every group member's voice is integrated into the final ranking of the top five democratic virtues.",
+      "learning_teaching_method": "Consensus-Building Matrix Negotiation",
+      "learning_teaching_aids": "Chart Paper, Colored Markers, Student Notebooks",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "The teacher moderates a rapid gallery defense where Spokespersons from selected teams briefly highlight their top-ranked democratic quality and explain its societal impact. The teacher provides formative feedback, validating robust student reasoning and connecting their local school justifications directly to the official NIE curriculum guidelines on building a peaceful, law-abiding society.",
+      "student_activities": "Group Spokespersons proudly display their consensus matrix charts to the class and defend their team's top choice in a 30-second summary statement. The remaining students act as evaluators, nodding in agreement or raising polite inquiries about how transparency and self-discipline prevent local community conflicts.",
+      "learning_teaching_method": "Matrix Gallery Defense and Synthesis",
+      "learning_teaching_aids": "Prioritized Consensus Matrix Charts, Chalkboard",
+      "assessment_and_feedback": "",
+      "time_minutes": 5,
+      "other": ""
+    }
+  ],
+  "summary": "In this 2-minute synthesis, the teacher and students consolidate their findings, confirming that democratic life requires a balanced mix of self-discipline, cooperation, equality, and respect for others' opinions. Students recognize that cultivating these habits transforms democracy from a mere form of government into an active daily lifestyle that brings peace and well-being to Sri Lankan society.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted through continuous observation of group collaboration, the logical defense of prioritized virtues during matrix negotiations, and the accuracy of student explanations regarding qualities needed for a democratic life.",
+  "post_activity": "Civic Virtue Spotlight Debate: The teacher writes a short scenario on the chalkboard about a school club committee struggling to decide on a fair project budget without causing friction. Each team has exactly 3 minutes to whisper among themselves and write down on a slip of paper the single most critical democratic quality needed to solve the dilemma (e.g., 'arriving at decisions through discussion'). The Scribe hands the slip to the teacher, who immediately reads out the top selections and awards verbal recognition to the most insightful team justifications within the final 5 minutes.",
+  "information_sources": [
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
+  ],
+  "attachments": [
+    "Value Criterion Cards",
+    "Consensus Matrix Chart Templates",
+    "Scenario Prompt Sheets"
+  ],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 1,
+  "total_periods": 2,
+  "selected_activity": "Activity: Democratic Life Value Auction: Prioritizing Civic Virtues\nApproach: Students participate in a simulated value-ranking exercise to determine which qualities are most critical for maintaining a harmonious, democratic Sri Lankan society.\nStudent task: Groups evaluate a list of democratic qualities (e.g., freedom of speech, rule of law, gender equality, cooperation) and rank them in a consensus-building matrix, defending their top choices based on local school and community contexts.\nTeacher facilitation: Facilitate student participation and outcome-focused discussion.\nExpected output: A prioritized consensus matrix chart outlining the top five qualities of a democratic life.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks are rearranged into 6 islands to ensure all 30 students participate actively without bystanders.",
+  "selected_activity_title": "Democratic Life Value Auction: Prioritizing Civic Virtues",
+  "custom_teacher_activity": null,
+  "activity_options": [
+    {
+      "id": "option_2",
+      "title": "Democratic Life Value Auction: Prioritizing Civic Virtues",
+      "pedagogy_type": "Problem-Solving / Decision Matrix",
+      "description": "Students participate in a simulated value-ranking exercise to determine which qualities are most critical for maintaining a harmonious, democratic Sri Lankan society.",
+      "learning_outcomes_addressed": [
+        "Explains qualities needed for a democratic life."
+      ],
+      "student_action_summary": "Groups evaluate a list of democratic qualities (e.g., freedom of speech, rule of law, gender equality, cooperation) and rank them in a consensus-building matrix, defending their top choices based on local school and community contexts.",
+      "teacher_facilitation_summary": "",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks are rearranged into 6 islands to ensure all 30 students participate actively without bystanders.",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks",
+        "Chart Paper"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "A prioritized consensus matrix chart outlining the top five qualities of a democratic life.",
+      "creative_assessment_preview": "A 5-minute 'Exit Ticket Slips' activity where every student writes one sentence explaining their most valued democratic quality in their notebook.",
+      "low_resource_alternative": "Use student notebooks for drafting matrices instead of chart paper, and write the master ranking on the chalkboard."
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "Explains qualities needed for a democratic life."
+    ],
+    "2": [
+      "Expresses the fact that the democratic life style brings out the well-being of the society."
+    ]
+  },
+  "filename": "Grade_8_comp_8_2_5_p1.json"
+}

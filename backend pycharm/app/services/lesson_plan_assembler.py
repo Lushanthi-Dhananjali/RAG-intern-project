@@ -14,6 +14,7 @@ from app.services.grouping_logistics_engine import (
     GroupingLogisticsEngine,
     GroupingLogisticsResult,
 )
+from app.services.prompt_templates import build_creative_assignment_directive
 
 logger = logging.getLogger("LessonPlanAssembler")
 
@@ -74,6 +75,7 @@ def build_single_period_assembly_prompt(
     retrieved_tig_context: str = "",
     textbook_context: str = "",
     progression_context: str = "",
+    previous_assignments: Optional[List[str]] = None,
 ) -> str:
     """
     Constructs a rigid, single-period prompt for Llama 3 enforcing the 5m-30m-5m LEARN blueprint.
@@ -83,15 +85,10 @@ def build_single_period_assembly_prompt(
     outcomes_formatted = "\n".join([f"- {o}" for o in period_outcomes]) if period_outcomes else "- Foundational civic concept exploration."
     resources_formatted = ", ".join(accessible_resources) if accessible_resources else "Standard blackboard, student notebooks"
     is_civic_education = subject.strip().casefold() == "civic education"
-
-    assignment_styles = [
-        "Rapid Team Quiz / Buzzer Board Challenge (2 fast conceptual dilemma questions on this period's Sri Lankan topic)",
-        "Statement Display & Justified Standpoint Vote (display an authentic Sri Lankan societal statement on board; students vote Agree/Disagree and justify)",
-        "Creative Rhyming Poem / 2-4 Line Verse Recitation (students in pairs compose or recite a short rhythm summarizing the core civic value or duty)",
-        "Concept Drawing / Quick Sketch Challenge (students rapidly sketch a symbol, emblem, or flowchart mapping the solution to the Sri Lankan scenario)",
-        "Pass-the-Parcel Concept Dilemma Ball (students pass a prompt ball with question cards; receivers solve short real-world dilemmas)",
-    ]
-    period_suggested_style = assignment_styles[(current_period - 1) % len(assignment_styles)]
+    assignment_directive = build_creative_assignment_directive(
+        lesson_topic=lesson_topic,
+        previous_assignments=previous_assignments,
+    )
 
     step_assessment_rule = (
         "   - Do NOT include assessment and feedback inside development steps (leave 'assessment_and_feedback': ''); "
@@ -158,17 +155,7 @@ STRICT PEDAGOGICAL & 40-MINUTE STRUCTURAL LAWS:
    - The total across all development steps must sum to exactly 30 minutes.
 {step_assessment_rule}
 7. Creative In-Class Assignment ('post_activity', time: exactly 5 minutes total):
-   - Must be an original, highly engaging 5-minute active in-class evaluation check directly addressing '{lesson_topic}', the period's learning outcomes, and grounded in the authentic Sri Lankan context (NOT take-home homework).
-   - MULTI-PERIOD DIVERSITY & INNOVATION MANDATE:
-     * Across a {total_periods}-period sequence, each period MUST feature a completely different assignment format (NEVER repeat the same type of assignment across periods!).
-     * You have complete pedagogical freedom: you may use the suggested format for Period {current_period} ({period_suggested_style}), OR invent a BRAND NEW creative format (e.g., Mini Speed Debate, 60-Second Civic Pitch, Headline Writing, Case Verdict, Taboo Word Challenge, or your own original active learning check).
-   - The formats below are pedagogical inspiration only—DO NOT copy or hardcode generic sentences! Generate a brand new, unique task tailored specifically to '{lesson_topic}':
-     * Creative Rhyming Poem / Verses: Students compose or recite a short 2-4 line original rhyming verse directly summarizing the core civic concept, duty, or value of '{lesson_topic}'.
-     * Rapid Team Quiz / Competition: Fast-paced buzzer or board challenge testing 2 specific conceptual questions from this period's Sri Lankan topic.
-     * Concept Drawing / Quick Sketch Challenge: Students rapidly sketch a symbol, emblem, or diagram representing the core solution to the Sri Lankan scenario studied.
-     * Pass-the-Parcel Concept Ball: Students pass a prompt ball with question cards; student holding it solves a short scenario dilemma on '{lesson_topic}'.
-     * Statement Display & Vote: Teacher displays an agree/disagree civic statement relevant to Sri Lankan society on this topic; students vote and justify their stance.
-   - Describe the concrete prompt, student interaction, and teacher feedback for this 5-minute task.
+{assignment_directive}
 8. Logistics ({student_count} Students):
    - Partition: {logistics.group_summary_label}.
    - Roles to embed: {roles_str}.
@@ -187,7 +174,7 @@ CRITICAL ANTI-BOILERPLATE MANDATE:
 - Provide rich, concrete, creative details describing actual Sri Lankan classroom dialogues, specific task cards, specific physical artifacts, and dynamic student collaboration.
 - Each development step must be detailed (3-5 sentences describing concrete student actions and teacher facilitation).
 - The 'the_entrance' MUST be an engaging 5-minute motivational hook grounded in the target learning outcomes, selected activity, textbook details, and Teacher Guide (TIG), detailing both teacher launch actions and student active responses.
-- The 'post_activity' MUST be a creative, highly engaging 5-minute active in-class evaluation (creative poem/verse recitation, rapid quiz competition, concept drawing challenge, pass-the-parcel, or statement display & vote).
+- The 'post_activity' MUST be a brand-new, highly creative 5-minute in-class active evaluation or creative verse/task uniquely invented for '{lesson_topic}' (using traditional formats only as inspiration, never fixed to a period number or repeated from earlier plans).
 
 {{
   "grade": "{grade_level}",
@@ -219,7 +206,7 @@ CRITICAL ANTI-BOILERPLATE MANDATE:
   ],
   "summary": "string (2-minute synthesis of core student discoveries on this period's outcomes)",
   "assessment_and_feedback_whole_lesson": "string (Formative feedback criteria for this lesson)",
-  "post_activity": "string (Creative 5-minute active in-class evaluation check: rhyming poem/verse, rapid quiz competition, concept sketch challenge, pass-the-parcel, or statement display & vote)"
+  "post_activity": "string (Brand-new, creative 5-minute in-class active evaluation or creative verse/task uniquely invented for this topic and Sri Lankan context, inspired by—never limited to or repeated from—existing formats)"
 }}
 
 Respond ONLY with valid JSON conforming strictly to the above keys.<|eot_id|>

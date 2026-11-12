@@ -1,0 +1,86 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 2 of 2)",
+  "competence": "Works as a good citizen in a democratic society by developing qualities required for a democratic life",
+  "competence_level": "8.2.5",
+  "lesson": "Expresses the fact that the democratic life style brings out the well-being of the society: Blueprint for a Democratic Community Action Plan",
+  "unique_learning_outcome": [
+    "Expresses the fact that the democratic life style brings out the well-being of the society."
+  ],
+  "the_entrance": "The teacher launches the 5-minute entrance by displaying a vibrant photograph of a peaceful village Shramadana campaign in rural Sri Lanka on the chalkboard and posing the challenge: 'How does daily cooperation and mutual respect in a neighborhood transform into societal well-being and peace?' Student groups examine the image, with Leaders and Civic Investigators sharing prior observations about how working together and resolving village disputes through open discussion prevent conflicts and uplift community happiness.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "The teacher acts as a facilitator, circulating among the six groups as they map out their ideal Sri Lankan village or urban ward. The teacher prompts the committees with scaffolding questions: 'How do your proposed community zones like open forums and youth councils guarantee equal access to public resources and protect minority representation?' The teacher encourages Scribes to capture structural layouts while ensuring every member contributes.",
+      "student_activities": "Students actively collaborate in their assigned roles to draw and label a comprehensive community layout on chart paper, designating specific public zones such as community halls, multi-ethnic cultural centers, and town square forums. The Scribe records the team's spatial arrangements while the Spokesperson and Inquirer cross-check that the design reflects democratic life habits like transparency and equality.",
+      "learning_teaching_method": "Collaborative Community Cartography and Zoning",
+      "learning_teaching_aids": "Chart paper, colored markers, civic rule template sheets",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "The teacher moderates the second phase by visiting each committee to review their drafted golden rules of democratic living. The teacher asks probing questions on how these rules resolve conflicts peacefully and foster a law-abiding society, guiding students to link institutional transparency with citizen well-being.",
+      "student_activities": "Group members debate and draft three golden rules of democratic living that ensure societal health, happiness, and prosperity, such as mandatory consensus-building for neighborhood projects and equitable resource distribution. The Timekeeper monitors pacing while the Presenter rehearses the rationale behind their blueprint rules for the upcoming class share-out.",
+      "learning_teaching_method": "Democratic Governance Rule-Drafting and Synthesis",
+      "learning_teaching_aids": "Completed community blueprint posters, draft rule cards, adhesive notes",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    }
+  ],
+  "summary": "A 2-minute synthesis where student representatives briefly highlight how embedding democratic habits like respecting majority and minority opinions and working with self-discipline directly generates peaceful, prosperous, and conflict-free Sri Lankan communities.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted by observing group collaboration, verifying the practical feasibility of the community blueprint rules, and assessing how accurately students articulate the direct link between democratic lifestyles and societal well-being during team presentations.",
+  "post_activity": "5-Minute In-Class Activity: Community Blueprint Gallery Walk & Golden Vote. Groups display their Democratic Community Blueprints on the classroom walls. Each student is given two sticky notes to silently place a 'Well-Being Vote' on two different team posters that best demonstrate how transparent rules and minority representation lead to societal peace, followed by a rapid 1-minute popcorn reflection moderated by the teacher.",
+  "information_sources": [
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
+  ],
+  "attachments": [
+    "Chalkboard photographs",
+    "Chart paper",
+    "Colored markers",
+    "Draft rule cards"
+  ],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 2,
+  "total_periods": 2,
+  "selected_activity": "Activity: Blueprint for a Democratic Community Action Plan\nApproach: Groups act as community development committees tasked with designing a visual blueprint for an ideal Sri Lankan village or urban ward where democratic lifestyle habits guarantee the health, happiness, and prosperity of all residents.\nStudent task: Students draw and label a community layout on chart paper, incorporating specific zones (e.g., community halls, open forums, youth councils) and drafting three golden rules of democratic living that ensure societal well-being.\nTeacher facilitation: Scaffolds group imagination by asking how everyday citizens in their fictional town resolve disputes peacefully and ensure equal access to public resources.\nExpected output: A labeled 'Democratic Community Blueprint' poster featuring operational rules for societal well-being.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks are rearranged into 6 islands to ensure all 30 students participate actively without bystanders.",
+  "selected_activity_title": "Blueprint for a Democratic Community Action Plan",
+  "custom_teacher_activity": null,
+  "activity_options": [
+    {
+      "id": "option_3",
+      "title": "Blueprint for a Democratic Community Action Plan",
+      "pedagogy_type": "Creative Design and Problem-Solving",
+      "description": "Groups act as community development committees tasked with designing a visual blueprint for an ideal Sri Lankan village or urban ward where democratic lifestyle habits guarantee the health, happiness, and prosperity of all residents.",
+      "learning_outcomes_addressed": [
+        "Expresses the fact that the democratic life style brings out the well-being of the society."
+      ],
+      "student_action_summary": "Students draw and label a community layout on chart paper, incorporating specific zones (e.g., community halls, open forums, youth councils) and drafting three golden rules of democratic living that ensure societal well-being.",
+      "teacher_facilitation_summary": "Scaffolds group imagination by asking how everyday citizens in their fictional town resolve disputes peacefully and ensure equal access to public resources.",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks are rearranged into 6 islands to ensure all 30 students participate actively without bystanders.",
+      "required_materials": [
+        "Chart Paper",
+        "Student Notebooks",
+        "Chalkboard"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "A labeled 'Democratic Community Blueprint' poster featuring operational rules for societal well-being.",
+      "creative_assessment_preview": "Exit Ticket Rhyme: Each student writes a single rhyming couplet in their notebook summarizing how democracy brings well-being, sharing it with a partner before leaving.",
+      "low_resource_alternative": "Students sketch their community layout directly into their notebooks using colored pencils or pens if chart paper is unavailable."
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "Explains qualities needed for a democratic life."
+    ],
+    "2": [
+      "Expresses the fact that the democratic life style brings out the well-being of the society."
+    ]
+  },
+  "filename": "Grade_8_comp_8_2_5_p2.json"
+}

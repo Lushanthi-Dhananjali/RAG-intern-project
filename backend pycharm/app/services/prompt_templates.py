@@ -31,13 +31,9 @@ CRITICAL PEDAGOGICAL & GROUNDING DIRECTIVES:
 - Determine the step count (2, 3, or 4 steps) and duration dynamically to suit the actual depth of each step (e.g. 15m+15m, 5m+15m+10m, 10m+15m+5m, 5m+20m+5m, or 5m+10m+10m+5m). Do not force a fixed time or equal split on every lesson.
 
 5. CREATIVE FORMATIVE IN-CLASS ASSIGNMENT & CLOSURE ('post_activity'):
-- Must be an original, highly creative 5-minute active evaluation directly matching this specific period's topic, learning outcomes, and grounded in the authentic Sri Lankan context (NOT take-home homework).
-- You have complete freedom to adopt one of the creative formats below OR invent a completely NEW, innovative active in-class format (e.g. Mini Speed Debate, Headline Writing, Case Verdict, Taboo Word Challenge, 60-Second Civic Pitch, etc.). Do NOT copy generic sentences—generate a brand new, unique task tailored specifically to the lesson topic:
-  * Creative Rhyming Poem / Verses: Students compose or recite a short 2-4 line original rhyming verse directly summarizing the core civic concept, duty, or value.
-  * Rapid Team Quiz / Competition: Fast-paced buzzer or board challenge testing 2 specific conceptual questions from this period's Sri Lankan topic.
-  * Concept Drawing / Quick Sketch Challenge: Students rapidly sketch a symbol, emblem, or diagram representing the core solution to the Sri Lankan scenario studied.
-  * Pass-the-Parcel Concept Ball: Students pass a prompt ball with question cards; student holding it solves a short case dilemma on the topic.
-  * Statement Display & Vote: Teacher displays an agree/disagree civic statement relevant to Sri Lankan society on this topic; students vote and justify their stance.
+- Must be an original, highly creative 5-minute active in-class evaluation directly matching this specific period's topic, learning outcomes, and grounded in the authentic Sri Lankan context (NOT take-home homework).
+- Treat existing 5-minute assignment examples (quiz, pass-the-parcel, drawing, poem, display statement, small competition) ONLY as starting creative inspiration—NEVER copy them as fixed templates or lock any format to a period number.
+- Beyond those examples, actively invent brand-new, creative interactive assignments and creative verses uniquely inspired by the lesson topic and activity.
 
 6. NO PLACEHOLDERS: Extract actual syllabus concepts, facts, and evaluation questions directly from the provided TIG and Textbook context.
 7. ABSOLUTE PROHIBITION OF URLs AND WEB LINKS:
@@ -47,6 +43,40 @@ CRITICAL PEDAGOGICAL & GROUNDING DIRECTIVES:
 """
 
 LEARN_5E_SYSTEM_PROMPT = LEARN_PRACTICE_TEACHING_PROMPT
+
+
+def build_creative_assignment_directive(
+    lesson_topic: str,
+    previous_assignments: Optional[List[str]] = None,
+) -> str:
+    """
+    Builds open-ended creative assignment instructions using existing formats strictly
+    as inspiration while pushing the LLM to invent brand-new formats and creative verses.
+    """
+    prev_block = ""
+    cleaned_prev = [p.strip() for p in (previous_assignments or []) if p and p.strip()]
+    if cleaned_prev:
+        items = "\n".join(f"     * {p[:180]}" for p in cleaned_prev[:4])
+        prev_block = (
+            "\n   - STRICT ANTI-REPETITION MANDATE — DO NOT REPEAT ANY OF THESE RECENT ASSIGNMENTS OR THEIR FORMATS:\n"
+            f"{items}\n"
+            "     You MUST invent a completely DIFFERENT, fresh format and idea from the ones above!"
+        )
+
+    return (
+        f"   - Must be an original, highly engaging 5-minute active in-class evaluation check directly addressing '{lesson_topic}', "
+        "the period's learning outcomes, and grounded in the authentic Sri Lankan context (NOT take-home homework).\n"
+        "   - CREATIVE INSPIRATION & NEW-ASSIGNMENT INNOVATION MANDATE:\n"
+        "     * NEVER fix or assign any specific assignment type to a period number.\n"
+        "     * Existing 5-minute assignment examples (quiz, pass-the-parcel, drawing, poem, display statement, small competition) "
+        "are ONLY starting inspiration to spark new ideas—DO NOT treat them as a closed list or repeat them rigidly!\n"
+        "     * Beyond those examples, invent a BRAND-NEW, creative 5-minute interactive assignment or creative verse/version "
+        "uniquely tailored to this lesson's topic, learning outcomes, and chosen activity. "
+        "Prioritize variety, originality, and meaningful student participation. "
+        "Do not simply rename or slightly modify an existing example."
+        f"{prev_block}\n"
+        "   - Describe the concrete prompt, active student interaction, and immediate teacher feedback achievable within 5 minutes."
+    )
 
 
 # =====================================================================
@@ -221,7 +251,7 @@ Cooperative Student-Led Investigation with hands-on task cards and structured pe
             if is_civic_education
             else "string (Creative 5-minute active check—e.g. 2-line rhyming verse reciting core duties, rapid sketch review, freeze frame, or pass-the-parcel quiz)"
         ),
-        "post_activity": "string (Creative 5-minute active in-class evaluation: rhyming poem/verse, rapid team quiz competition, concept sketch challenge, pass-the-parcel, or statement display & vote)",
+        "post_activity": "string (A genuinely fresh, creative 5-minute active in-class assignment uniquely invented for this topic and Sri Lankan context—inspired by existing creative ideas without copying rigid templates; never take-home homework)",
         "information_sources": [],
         "attachments": [
             "string (Concrete title of the activity sheet, roleplay cue cards, or observation checklist used)"
