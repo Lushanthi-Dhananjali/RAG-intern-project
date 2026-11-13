@@ -1,0 +1,95 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 1 of 2)",
+  "competence": "Maintains personal performance at a higher level as a worker.",
+  "competence_level": "8.6.8",
+  "lesson": "Discusses the skills of the worker and his/her interests with a career guidance counsellor: Case Inquiry Audit: Analyzing Worker Profiles and Aspiration Mapping",
+  "unique_learning_outcome": [
+    "Discusses the skills of the worker and his/her interests with a career guidance counsellor."
+  ],
+  "the_entrance": "5-minute introduction: The teacher writes three short worker profiles on the chalkboard representing a batik artisan, an IT technician, and an agricultural extension officer, then poses the opening challenge: 'How do personal hobbies and natural talents align with daily job tasks and career counselling advice?' Students in their 9 desk groups brainstorm for 2 minutes on what factors make a worker truly satisfied and skilled, with Spokespersons briefly sharing their initial thoughts with the class.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "The teacher circulates among the 9 desk islands to distribute specific case details and prompt students to examine the daily tasks of the batik artisan and IT technician. The facilitator asks probing questions: 'What specific technical skills does this worker utilize, and how do they match personal interests?'",
+      "student_activities": "Group Scribes and Civic Investigators review the case notes in their notebooks, identifying the core skills and stated personal hobbies of each worker profile. Team members debate whether the worker's current role fulfills their intrinsic aspirations.",
+      "learning_teaching_method": "Case Vignette Breakdown",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "The teacher acts as a resource facilitator, guiding groups on how to structure their audit matrix comparing worker skills against career guidance recommendations. The teacher asks guiding questions regarding how a guidance counsellor can help bridge gaps between current performance and personal interests.",
+      "student_activities": "Creative Directors and Scribes collaborate to draw and fill out a comparative audit matrix on chart paper, mapping out worker competencies, personal interests, and counsellor suggestions. Timekeepers monitor pacing while team members ensure all voices are represented in the matrix design.",
+      "learning_teaching_method": "Comparative Audit Matrix Construction",
+      "learning_teaching_aids": "Chart Paper, Colored Markers",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "The teacher moderates a quick 5-minute gallery walk where teams examine neighboring audit charts and encourages constructive peer feedback on career counselling insights.",
+      "student_activities": "Spokespersons present key findings from their matrices to visiting peers, while other group members inspect other tables' work to compare different worker profiles and counselling strategies.",
+      "learning_teaching_method": "Gallery Walk & Peer Critique",
+      "learning_teaching_aids": "Completed Chart Paper Matrices, Student Notebooks",
+      "assessment_and_feedback": "",
+      "time_minutes": 5,
+      "other": ""
+    }
+  ],
+  "summary": "The teacher summarizes that understanding a worker's skills, personal interests, and career guidance counselling is vital for maintaining high personal performance, job satisfaction, and social contribution.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted through observation of group collaboration, accuracy of the audit matrix mapping worker skills to counselling advice, and clarity during peer presentations.",
+  "post_activity": "Statement Display & Justified Standpoint Vote: The teacher displays a Sri Lankan societal statement on the board ('A worker only needs money; skills and career counselling do not matter for job satisfaction'). Students immediately take a 5-minute standing vote (Stand for Agree, Sit for Disagree) and selected student representatives provide a 30-second justification linking back to worker skills and guidance counselling.",
+  "information_sources": [
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
+  ],
+  "attachments": [
+    "Chalkboard case vignettes",
+    "Chart paper matrices",
+    "Marker pens"
+  ],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 1,
+  "total_periods": 2,
+  "selected_activity": "Activity: Case Inquiry Audit: Analyzing Worker Profiles and Aspiration Mapping\nApproach: Groups examine realistic case vignettes of young Sri Lankan workers from rural and urban settings, evaluating how well their daily tasks match their personal hobbies, talents, and career counselling advice.\nStudent task: Students read teacher-provided or chalkboard-written case profiles of local community workers (e.g., a batik artisan, an IT technician, an agricultural extension officer), auditing their skill sets against their stated personal interests.\nTeacher facilitation: Writes the three case vignettes on the chalkboard, circulates among the 9 desk islands to clarify case details, and prompts critical thinking regarding job satisfaction and skill utilization.\nExpected output: A comparative audit matrix on chart paper evaluating worker skills, interests, and counselling recommendations.\nGrouping: 9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead",
+  "selected_activity_title": "Case Inquiry Audit: Analyzing Worker Profiles and Aspiration Mapping",
+  "custom_teacher_activity": null,
+  "activity_options": [
+    {
+      "id": "option_2",
+      "title": "Case Inquiry Audit: Analyzing Worker Profiles and Aspiration Mapping",
+      "pedagogy_type": "Case Inquiry",
+      "description": "Groups examine realistic case vignettes of young Sri Lankan workers from rural and urban settings, evaluating how well their daily tasks match their personal hobbies, talents, and career counselling advice.",
+      "learning_outcomes_addressed": [
+        "Discusses the skills of the worker and his/her interests with a career guidance counsellor."
+      ],
+      "student_action_summary": "Students read teacher-provided or chalkboard-written case profiles of local community workers (e.g., a batik artisan, an IT technician, an agricultural extension officer), auditing their skill sets against their stated personal interests.",
+      "teacher_facilitation_summary": "Writes the three case vignettes on the chalkboard, circulates among the 9 desk islands to clarify case details, and prompts critical thinking regarding job satisfaction and skill utilization.",
+      "student_grouping": "9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks",
+        "Chart Paper"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "A comparative audit matrix on chart paper evaluating worker skills, interests, and counselling recommendations.",
+      "creative_assessment_preview": "Pass-the-Chalk Quiz: Teams rapidly write one vital worker skill on the board when their turn is called.",
+      "low_resource_alternative": "Students copy the audit matrix directly into notebooks instead of using chart paper."
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "Discusses the skills of the worker and his/her interests with a career guidance counsellor."
+    ],
+    "2": [
+      "Explains the importance of maintaining personal performance at higher level as a worker."
+    ]
+  },
+  "filename": "Grade_8_comp_8_6_8_p1.json"
+}

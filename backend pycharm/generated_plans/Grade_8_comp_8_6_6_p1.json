@@ -2,83 +2,76 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 1 of 1)",
-  "competence": "Broad curriculum competency standard in plain English",
+  "competence": "Acts according to the expectations of the workplace by balancing employee duties and institutional goals.",
   "competence_level": "8.6.6",
-  "lesson": "Explains the fact that the fulfillment of the expectations of a work place is a bounden duty of an employee: Courtroom / Citizen Grievance Tribunal: Competency Level 8.6.6",
+  "lesson": "Explains the fact that the fulfillment of the expectations of a work place is a bounden duty of an employee: Problem-Solving Consensus Matrix: Balancing Worker Sensitivity and...",
   "unique_learning_outcome": [
     "Explains the fact that the fulfillment of the expectations of a work place is a bounden duty of an employee.",
     "Explains the need to be sensitive as a worker to the expectation of the work place."
   ],
-  "the_entrance": "5-minute introduction: Imagine you are a new employee at a company. You have just received your first assignment. What are your expectations from your workplace? How do you plan to fulfill them? (5 minutes)",
+  "the_entrance": "5-minute introduction: The teacher writes the scenario of a busy Divisional Secretariat office in Sri Lanka on the chalkboard where citizens are waiting for service while administrative tasks pile up. Acting as a facilitator, the teacher launches the motivational hook by posing the challenge: 'Imagine you are service counter staff facing angry citizens and strict official deadlines; how do you balance your bounden duty to the institution with deep empathy for the public?' Students immediately turn to their assigned groups of 5-6, appointing their Team Leaders and Spokespersons, and begin buzzing with initial ideas about balancing strict punctuality and regulations with compassionate customer service.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "Circulates across 8 teams, facilitating role execution and formatively checking progress.",
-      "student_activities": "Students take civic roles, respond to a shared scenario, and agree on a reasoned decision.",
-      "learning_teaching_method": "Roleplay",
-      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "teacher_activities": "The teacher circulates among the 9 student groups, distributing the local cooperative service center case profiles and providing investigative prompts. The teacher asks probing scaffolded questions such as, 'How does honoring institutional rules affect the daily duties of a public servant?' and moderates initial group debates on worker sensitivity.",
+      "student_activities": "Working in collaborative groups of 5-6, students review the case scenario of a local Sri Lankan government office. Scribes record conflicting workplace demands on task sheets while Civic Investigators check arguments against textbook duties such as respecting leadership, honoring regulations, and maintaining empathy.",
+      "learning_teaching_method": "Collaborative Dilemma Case Analysis",
+      "learning_teaching_aids": "Case study task sheets, chart paper, markers, chalkboard scenario notes",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
-      "other": "Students rotate responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders."
+      "time_minutes": 15,
+      "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "Circulates across 8 teams, facilitating role execution and formatively checking progress.",
-      "student_activities": "Students continue to take civic roles, respond to the shared scenario, and agree on a reasoned decision.",
-      "learning_teaching_method": "Guided Inquiry",
-      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "teacher_activities": "The teacher guides the groups as they construct their consensus priority matrices, ensuring all team members contribute. The teacher prompts the Chart Leads and Presenters to clarify how their ranked duties account for both administrative efficiency and citizen sensitivity.",
+      "student_activities": "Group members actively debate and synthesize diverse solutions to build a Consensus Matrix chart that ranks employee duties and workplace sensitivity requirements. Spokespersons prepare their group's prioritized list to defend how fulfilling institutional expectations is a bounden employee duty.",
+      "learning_teaching_method": "Consensus Matrix Synthesis and Priority Ranking",
+      "learning_teaching_aids": "Consensus Matrix template charts, colored markers, student notebooks",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
-      "other": "Students continue to rotate responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders."
-    },
-    {
-      "step_number": 3,
-      "teacher_activities": "Circulates across 8 teams, facilitating role execution and formatively checking progress.",
-      "student_activities": "Students present their reasoned decisions and reasons to the class.",
-      "learning_teaching_method": "Socratic Dialogue",
-      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
-      "assessment_and_feedback": "",
-      "time_minutes": 10,
-      "other": "Students continue to rotate responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders."
+      "time_minutes": 15,
+      "other": ""
     }
   ],
-  "summary": "What are the key takeaways from today's activity? How do you think fulfilling the expectations of a workplace is important for employees? (2 minutes)",
-  "assessment_and_feedback_whole_lesson": "Formative feedback: Did the students demonstrate an understanding of the importance of fulfilling the expectations of a workplace? Did they show sensitivity to the expectations of the workplace?",
-  "post_activity": "5-minute in-class assignment: In-class quiz: Can you recall the key points discussed in the courtroom scenario? (5 minutes)",
+  "summary": "In a 2-minute synthesis, the teacher moderates a quick cross-group review where representatives highlight that fulfilling workplace duties—such as reporting on time, honoring regulations, and maintaining sensitivity to citizen expectations—is both a bounden duty and the key to achieving professional rights in Sri Lankan workplaces.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted through observation of small group collaboration, checking the completion and logical consistency of the Consensus Matrix charts, and evaluating the clarity with which teams explain worker sensitivity and duty fulfillment.",
+  "post_activity": "5-minute in-class assignment: Creative Rhyming Poem Verse Composition: In pairs or small groups within their seated teams, students compose and recite a 4-line rhyming verse summarizing the balance between worker duties, institutional rules, and citizen sensitivity. The teacher listens in as groups share their verses aloud, providing immediate formative feedback on conceptual accuracy and creative expression.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
-  "attachments": [],
+  "attachments": [
+    "Case study task sheets",
+    "Consensus Matrix template charts."
+  ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 1,
   "total_periods": 1,
-  "selected_activity": "Activity: Courtroom / Citizen Grievance Tribunal: Competency Level 8.6.6\nApproach: Students use courtroom / citizen grievance tribunal to explore 'Explains the fact that the fulfillment of the expectations of a work place is a bounden duty of an employee.'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.\nExpected output: A short role-based civic decision and its reasons.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "Courtroom / Citizen Grievance Tribunal: Competency Level 8.6.6",
+  "selected_activity": "Activity: Problem-Solving Consensus Matrix: Balancing Worker Sensitivity and Public Service Goals\nApproach: Students tackle a logistical challenge faced by a community service center in Sri Lanka, working collaboratively to reach a consensus on how employees can balance daily duties with empathy for citizen expectations.\nStudent task: Groups evaluate conflicting workplace demands in a local cooperative context, debate potential solutions, and build a consensus priority list ranking employee duties and sensitivity requirements.\nTeacher facilitation: Outlines the problem on the chalkboard, maintains strict pacing across the 30-minute window, and facilitates a brief synthesis of the different consensus solutions reached by the 9 teams.\nExpected output: A consensus priority list chart detailing actionable steps for employee duty and workplace sensitivity.\nGrouping: 9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead",
+  "selected_activity_title": "Problem-Solving Consensus Matrix: Balancing Worker Sensitivity and Public Service Goals",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_2",
-      "title": "Courtroom / Citizen Grievance Tribunal: Competency Level 8.6.6",
-      "pedagogy_type": "Simulation / Roleplay",
-      "description": "Students use courtroom / citizen grievance tribunal to explore 'Explains the fact that the fulfillment of the expectations of a work place is a bounden duty of an employee.'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "id": "option_3",
+      "title": "Problem-Solving Consensus Matrix: Balancing Worker Sensitivity and Public Service Goals",
+      "pedagogy_type": "Problem-Solving / Consensus Matrix",
+      "description": "Students tackle a logistical challenge faced by a community service center in Sri Lanka, working collaboratively to reach a consensus on how employees can balance daily duties with empathy for citizen expectations.",
       "learning_outcomes_addressed": [
         "Explains the fact that the fulfillment of the expectations of a work place is a bounden duty of an employee.",
         "Explains the need to be sensitive as a worker to the expectation of the work place."
       ],
-      "student_action_summary": "Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "student_action_summary": "Groups evaluate conflicting workplace demands in a local cooperative context, debate potential solutions, and build a consensus priority list ranking employee duties and sensitivity requirements.",
+      "teacher_facilitation_summary": "Outlines the problem on the chalkboard, maintains strict pacing across the 30-minute window, and facilitates a brief synthesis of the different consensus solutions reached by the 9 teams.",
+      "student_grouping": "9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A short role-based civic decision and its reasons.",
-      "creative_assessment_preview": "Students state one role responsibility and explain how it supported the decision.",
-      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
+      "expected_student_output": "A consensus priority list chart detailing actionable steps for employee duty and workplace sensitivity.",
+      "creative_assessment_preview": "One-Sentence Rhyme / Slogan: Each team creates a catchy 1-line slogan summarizing worker duty and sensitivity to share aloud in the final 5 minutes.",
+      "low_resource_alternative": "Teams list their consensus points on the chalkboard or in individual notebooks."
     }
   ],
   "outcome_allocation": {

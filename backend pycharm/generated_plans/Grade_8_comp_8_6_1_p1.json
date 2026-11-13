@@ -2,81 +2,73 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 1 of 2)",
-  "competence": "Broad curriculum competency standard in plain English",
+  "competence": "Appreciates the diversity of the world of work.",
   "competence_level": "8.6.1",
-  "lesson": "Explains the diversity of world of work. Activity “Let’s undentify world of work” Time 40 minutes: Mock Local Council / Pradeshiya Sabha Session: Competency Level 8.6.1",
+  "lesson": "Explains the diversity of world of work. Activity “Let’s undentify world of work” Time 40 minutes: Sri Lankan Career Sector Classification Audit",
   "unique_learning_outcome": [
     "Explains the diversity of world of work. Activity “Let’s undentify world of work” Time 40 minutes"
   ],
-  "the_entrance": "5-minute introduction: Imagine you are a new member of the Pradeshiya Sabha, a local council in Sri Lanka. Your role is to contribute to the decision-making process for the betterment of your community. What are some of the jobs and professions that you think are essential for the development of your community?",
+  "the_entrance": "5-minute introduction: The teacher facilitator steps into the classroom holding flashcards depicting various Sri Lankan occupations such as a Nuwara Eliya tea plucker, a Galle coastal fisherman, and a Colombo software engineer, launching an energetic opening prompt: 'Look at these diverse vocations across our island—what do all these different professions collectively represent in our society?' Students in their 6 groups brainstorm rapidly, sharing prior knowledge of community jobs and responding with initial ideas about how different livelihoods sustain families and the national economy, setting the stage for the career sector audit.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "Teacher introduces the Sri Lankan real-world scenario, clarifies group objectives, and distributes task cards and role assignments as a facilitator.",
-      "student_activities": "Students arrange into collaborative groups, review inquiry task cards, assign group roles, and formulate investigative questions.",
-      "learning_teaching_method": "Task Orientation & Guided Inquiry Launch",
-      "learning_teaching_aids": "Inquiry task cards, role sheets, scenario prompts",
+      "teacher_activities": "The teacher circulates among the six student groups, distributing Annex 8.6.1.2 task sheets and guiding them to examine workplace profiles across agriculture, industry, and services. As a facilitator, the teacher prompts groups with scaffolding questions such as 'How does regional geography in places like Weweldeniya or Anuradhapura shape the types of jobs available?' and ensures every student contributes to categorizing the professions.",
+      "student_activities": "Students collaborate in their assigned groups of five, examining the provided workplace scenario cards representing diverse Sri Lankan industries like rattan craftsmen, paddy farmers, and urban tech professionals. The group Scribe records findings while team members debate and sort the vocations into primary, secondary, and tertiary economic sectors on their chart paper matrix.",
+      "learning_teaching_method": "Sector Profiling and Investigative Sorting",
+      "learning_teaching_aids": "Annex 8.6.1.2 task sheets, workplace scenario cards, colored markers, and chart paper",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
-      "other": "Group formation and role distribution"
+      "time_minutes": 15,
+      "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "Teacher actively circulates among student groups, facilitates inquiry, scaffolds complex civic concepts with probing questions, and ensures active participation.",
-      "student_activities": "Students collaborate actively in assigned roles to execute the investigation/simulation, analyzing Sri Lankan community situations without passive spectators.",
-      "learning_teaching_method": "Active Student-Centered Investigation / Simulation",
-      "learning_teaching_aids": "Activity worksheets, observation sheets, chart paper, markers",
+      "teacher_activities": "The teacher acts as a moderator as each group's Spokesperson presents their classified matrix to the class, asking probing questions to help students articulate how each economic sector contributes to national development. The teacher highlights key regional specializations like gem mining in Ratnapura and trade in Kajugama, commending collaborative teamwork.",
+      "student_activities": "The group Spokespersons present their finalized Sector Diversity Matrix charts to the class while Civic Investigators and other group members cross-check findings and share their viewpoints on preparing for the world of work. Students actively listen to peer reports and take notes in their notebooks on the wide spectrum of employment opportunities across Sri Lanka.",
+      "learning_teaching_method": "Matrix Synthesis and Group Presentation",
+      "learning_teaching_aids": "Completed Sector Diversity Matrix charts, chalkboard, and student notebooks",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
-      "other": "Active collaborative investigation"
-    },
-    {
-      "step_number": 3,
-      "teacher_activities": "Teacher moderates student spokesperson presentations, facilitates constructive peer evaluation, and synthesizes key student findings against syllabus outcomes.",
-      "student_activities": "Group spokespersons present findings and solutions; peers evaluate presentations using criteria and note constructive feedback.",
-      "learning_teaching_method": "Spokesperson Presentation, Peer Review & Plenary Synthesis",
-      "learning_teaching_aids": "Student presentation charts, whiteboard",
-      "assessment_and_feedback": "",
-      "time_minutes": 10,
-      "other": "Plenary presentation and synthesis"
+      "time_minutes": 15,
+      "other": ""
     }
   ],
-  "summary": "As a Pradeshiya Sabha member, you have identified the importance of various jobs and professions in your community. How do you think these jobs and professions contribute to the overall development of your community?",
-  "assessment_and_feedback_whole_lesson": "Formative feedback criteria: Students' participation in the mock Pradeshiya Sabha session, their ability to identify and explain the diversity of the world of work, and their understanding of the importance of various jobs and professions in their community.",
-  "post_activity": "5-minute in-class assignment: Students reflect on their experience as Pradeshiya Sabha members and how it has helped them understand the diversity of the world of work and its importance in their community.",
+  "summary": "In a 2-minute synthesis, the teacher and students review the core discoveries of the period, confirming that the world of work encompasses all employment opportunities across primary agriculture, secondary industries, and tertiary services, reflecting regional resources and diverse human effort across Sri Lanka.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted by observing active group participation, evaluating the accuracy of the completed Sector Diversity Matrix charts against NIE assessment criteria, and checking students' ability to introduce the world of work and name diverse available jobs.",
+  "post_activity": "Concept Drawing and Symbol Sketching Challenge: In a 5-minute rapid in-class evaluation, each of the 6 student groups is assigned one economic sector (agriculture, industry, or services) and must quickly sketch a creative visual emblem or symbol on a scrap of paper representing a signature Sri Lankan profession from that sector (e.g., a paddy stalk for agriculture, a loom for industry, a stethoscope for services). The Timekeeper holds up the finished sketch, and the teacher conducts a lightning-fast gallery check where groups point out why their symbol captures the diversity of the Sri Lankan workforce.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
-  "attachments": [],
+  "attachments": [
+    "Annex 8.6.1.1 List of jobs and Annex 8.6.1.2 Group task sheets for sector classification"
+  ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 1,
   "total_periods": 2,
-  "selected_activity": "Activity: Mock Local Council / Pradeshiya Sabha Session: Competency Level 8.6.1\nApproach: Students use mock local council / pradeshiya sabha session to explore 'Explains the diversity of world of work. Activity “Let’s undentify world of work” Time 40 minutes'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.\nExpected output: A short role-based civic decision and its reasons.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "Mock Local Council / Pradeshiya Sabha Session: Competency Level 8.6.1",
+  "selected_activity": "Activity: Sri Lankan Career Sector Classification Audit\nApproach: Students investigate local employment profiles across Sri Lanka's primary, secondary, and tertiary economic sectors to map out career diversity. Working collaboratively, groups analyze community professions ranging from traditional agriculture to modern digital services.\nStudent task: Students examine provided workplace scenarios representing various Sri Lankan industries (e.g., tea estate workers, software developers in Colombo, regional craftsmen, fishermen in Negombo) and categorize them into a collaborative chart paper matrix.\nTeacher facilitation: The teacher circulates among the 6 islands, guiding students to consider how different sectors contribute to the national economy and prompting them to recognize non-traditional vocations.\nExpected output: A classified Sector Diversity Matrix chart displaying various Sri Lankan occupations and their economic contributions.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
+  "selected_activity_title": "Sri Lankan Career Sector Classification Audit",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_3",
-      "title": "Mock Local Council / Pradeshiya Sabha Session: Competency Level 8.6.1",
-      "pedagogy_type": "Simulation / Roleplay",
-      "description": "Students use mock local council / pradeshiya sabha session to explore 'Explains the diversity of world of work. Activity “Let’s undentify world of work” Time 40 minutes'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "id": "option_1",
+      "title": "Sri Lankan Career Sector Classification Audit",
+      "pedagogy_type": "Case Inquiry / Evidence Analysis",
+      "description": "Students investigate local employment profiles across Sri Lanka's primary, secondary, and tertiary economic sectors to map out career diversity. Working collaboratively, groups analyze community professions ranging from traditional agriculture to modern digital services.",
       "learning_outcomes_addressed": [
         "Explains the diversity of world of work. Activity “Let’s undentify world of work” Time 40 minutes"
       ],
-      "student_action_summary": "Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "student_action_summary": "Students examine provided workplace scenarios representing various Sri Lankan industries (e.g., tea estate workers, software developers in Colombo, regional craftsmen, fishermen in Negombo) and categorize them into a collaborative chart paper matrix.",
+      "teacher_facilitation_summary": "The teacher circulates among the 6 islands, guiding students to consider how different sectors contribute to the national economy and prompting them to recognize non-traditional vocations.",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A short role-based civic decision and its reasons.",
-      "creative_assessment_preview": "Students state one role responsibility and explain how it supported the decision.",
-      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
+      "expected_student_output": "A classified Sector Diversity Matrix chart displaying various Sri Lankan occupations and their economic contributions.",
+      "creative_assessment_preview": "Pass-the-Chalk: Each group's Spokesperson rushes to the chalkboard to write one unique profession under a called-out economic sector within 30 seconds.",
+      "low_resource_alternative": "Groups draw their classification matrix directly into their Student Notebooks instead of using Chart Paper."
     }
   ],
   "outcome_allocation": {

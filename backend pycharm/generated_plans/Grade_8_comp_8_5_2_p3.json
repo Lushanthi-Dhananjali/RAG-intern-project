@@ -2,80 +2,73 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 3 of 3)",
-  "competence": "Competency Level 8.5.2",
+  "competence": "Faces challenges and problems successfully through collaborative civic action and creative problem-solving.",
   "competence_level": "8.5.2",
-  "lesson": "Explains with examples that any challenge or any problem has a solution: Public Service Case Study & Dilemma Cards: Competency Level 8.5.2",
+  "lesson": "Explains with examples that any challenge or any problem has a solution: Citizen-Officer Deliberation Roleplay: Competency Level 8.5.2",
   "unique_learning_outcome": [
     "Explains with examples that any challenge or any problem has a solution."
   ],
-  "the_entrance": "5-minute introduction: Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings.",
+  "the_entrance": "5-minute introduction: The teacher initiates the session by projecting or writing a real-world Sri Lankan municipal dilemma on the chalkboard: a rural agrarian community facing sudden irrigation canal blockages during the Yala cultivation season. Acting as a facilitator, the teacher challenges the six designated teams: 'Every community roadblock has a pathway forward if citizens and local officials deliberate creatively. How can our teams negotiate a practical solution right now?' Students immediately assume their assigned group roles—Leader, Scribe, Timekeeper, Spokesperson, and Civic Investigator—and brainstorm initial obstacle-reversal ideas in their notebooks.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "Facilitate Role Allocation",
-      "student_activities": "Scenario Analysis & Role Allocation",
-      "learning_teaching_method": "Scenario Analysis & Role Allocation",
-      "learning_teaching_aids": "Public Service Case Study & Dilemma Cards",
+      "teacher_activities": "The teacher circulates among the six teams, observing group dynamics and prompting the Civic Investigators and Scribes with scaffolding questions such as, 'What specific administrative or community resources can be pooled together to overcome this barrier?' The teacher ensures every student actively contributes to the negotiation table without passive bystanders.",
+      "student_activities": "Students immerse themselves in their assigned civic roles, debating the irrigation canal scenario within their groups of five. The Scribe records the core arguments on chart paper, while the Leader and Spokesperson structure a step-by-step action plan proving that even complex community challenges have viable solutions.",
+      "learning_teaching_method": "Civic Deliberation & Role Simulation",
+      "learning_teaching_aids": "Chart paper, colored markers, and scenario task cards detailing local administrative bottlenecks.",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 15,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "Monitor Progress & Provide Feedback",
-      "student_activities": "Dilemma Card Review & Discussion",
-      "learning_teaching_method": "Dilemma Card Review & Discussion",
-      "learning_teaching_aids": "Public Service Case Study & Dilemma Cards",
+      "teacher_activities": "The teacher acts as a neutral moderator, inviting each team's Spokesperson to present their resolved action plan to the class. The teacher guides peer evaluation by asking probing questions regarding feasibility, resourcefulness, and how each proposal demonstrates that every problem possesses a reachable solution.",
+      "student_activities": "Team Spokespersons present their deliberated solutions to the plenary, while Timekeepers monitor the pacing. Members from listening teams evaluate the proposals, offering constructive feedback and noting down concrete examples of creative problem-solving in their notebooks.",
+      "learning_teaching_method": "Plenary Deliberation & Solution Defense",
+      "learning_teaching_aids": "Whiteboard, student notebooks, and group presentation charts.",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
-      "other": ""
-    },
-    {
-      "step_number": 3,
-      "teacher_activities": "Debrief & Wrap-Up",
-      "student_activities": "Solution Mapping & Presentation",
-      "learning_teaching_method": "Solution Mapping & Presentation",
-      "learning_teaching_aids": "Public Service Case Study & Dilemma Cards",
-      "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 15,
       "other": ""
     }
   ],
-  "summary": "Students use public service case study & dilemma cards to explore 'Explains with examples that any challenge or any problem has a solution.'",
-  "assessment_and_feedback_whole_lesson": "An evidence record with one supported conclusion",
-  "post_activity": "5-minute in-class assignment: Students reflect on their learning and the importance of creative problem-solving in their personal and social lives.",
+  "summary": "In a 2-minute synthesis, the teacher and students consolidate key takeaways, emphasizing that through active civic participation, structured dialogue, and creative resource mobilization, every challenge faced by communities in Sri Lanka can be successfully resolved.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted through observation of active group collaboration, the logical coherence of the presented roleplay resolutions, and the practical inclusion of real-world Sri Lankan examples proving that challenges have solutions.",
+  "post_activity": "Rapid Team Buzzer Showdown: The six teams participate in a fast-paced 5-minute in-class challenge where they examine two unexpected civic dilemma statements on the chalkboard and rapidly write down a one-sentence proof demonstrating how creative problem-solving turns obstacles into solutions, evaluated immediately by peer vote.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
-  "attachments": [],
+  "attachments": [
+    "Citizen-Officer Roleplay Scenario Cards",
+    "Group Task Sheets."
+  ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 3,
   "total_periods": 3,
-  "selected_activity": "Activity: Public Service Case Study & Dilemma Cards: Competency Level 8.5.2\nApproach: Students use public service case study & dilemma cards to explore 'Explains with examples that any challenge or any problem has a solution.'. Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.\nExpected output: An evidence record with one supported conclusion.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "Public Service Case Study & Dilemma Cards: Competency Level 8.5.2",
+  "selected_activity": "Activity: Citizen-Officer Deliberation Roleplay: Competency Level 8.5.2\nApproach: Students use citizen-officer deliberation roleplay to explore 'Explains with examples that any challenge or any problem has a solution.'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (30 students): Desks arranged into 6 teams (6 teams (6 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (30 students): Desks arranged into 6 teams (6 teams (6 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 30 students using 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 6 teams, facilitating role execution and formatively checking progress.\nExpected output: A short role-based civic decision and its reasons.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+  "selected_activity_title": "Citizen-Officer Deliberation Roleplay: Competency Level 8.5.2",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_3",
-      "title": "Public Service Case Study & Dilemma Cards: Competency Level 8.5.2",
-      "pedagogy_type": "Observation / Evidence Inquiry",
-      "description": "Students use public service case study & dilemma cards to explore 'Explains with examples that any challenge or any problem has a solution.'. Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "id": "option_2",
+      "title": "Citizen-Officer Deliberation Roleplay: Competency Level 8.5.2",
+      "pedagogy_type": "Simulation / Roleplay",
+      "description": "Students use citizen-officer deliberation roleplay to explore 'Explains with examples that any challenge or any problem has a solution.'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (30 students): Desks arranged into 6 teams (6 teams (6 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
       "learning_outcomes_addressed": [
         "Explains with examples that any challenge or any problem has a solution."
       ],
-      "student_action_summary": "Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "student_action_summary": "Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (30 students): Desks arranged into 6 teams (6 teams (6 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "teacher_facilitation_summary": "Organizes all 30 students using 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 6 teams, facilitating role execution and formatively checking progress.",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "An evidence record with one supported conclusion.",
-      "creative_assessment_preview": "A paired evidence check: name one observation and the outcome it supports.",
+      "expected_student_output": "A short role-based civic decision and its reasons.",
+      "creative_assessment_preview": "Students state one role responsibility and explain how it supported the decision.",
       "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
     }
   ],

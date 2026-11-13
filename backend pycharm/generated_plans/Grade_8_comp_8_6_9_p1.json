@@ -1,0 +1,84 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 1 of 1)",
+  "competence": "Satisfies customers through effective communication and service in community and commercial transactions",
+  "competence_level": "8.6.9",
+  "lesson": "Explains the importance of getting to know the customers well in keeping contacts with them: Co-operative Shop Customer Connection Simulation",
+  "unique_learning_outcome": [
+    "Explains the importance of getting to know the customers well in keeping contacts with them.",
+    "Suggests strategies to satisfy customers."
+  ],
+  "the_entrance": "5-minute introduction: The teacher launches the lesson by presenting a short spoken vignette about a rural Sri Lankan village co-operative store where Uncle Nimal, the manager, remembers every regular patron's family and monthly ration needs. The teacher asks the hook prompt: 'Why do villagers prefer walking an extra mile to Uncle Nimal's co-op instead of a distant supermarket?' Students in their 9 desk islands turn to discuss in pairs, with Spokespersons sharing how personal recognition builds trust, loyalty, and community bonds, directly setting up the simulation task.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "The teacher circulates among the 9 desk islands acting as facilitator, distributing role cards for the co-operative shop simulation where students act out interactions between an impersonal clerk and a regular villager versus a attentive shopkeeper. The teacher asks probing scaffold questions such as, 'How does the shopkeeper knowing the customer's exact household needs change the transaction and trust?' The teacher monitors team timekeeping and ensures every student participates actively in the enactment.",
+      "student_activities": "Students divide roles within their groups of 5 to 6 members, enacting a 3-minute roleplay contrasting an indifferent retail exchange with a warm, personalized co-op interaction. The Scribes and Civic Investigators record observations on why knowing customers personally prevents misunderstandings and fosters long-term business continuity.",
+      "learning_teaching_method": "Roleplay Simulation and Customer Need Analysis",
+      "learning_teaching_aids": "Scenario role cards, student notebooks, chalkboard, chalk",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "The teacher guides the transition from roleplay to strategic synthesis, prompting groups to link their simulation insights with Jerry Gregoire's principles of customer satisfaction (such as observing customers correctly and building confidence). The teacher circulates to help groups structure their visual charts and moderates peer connections across table islands.",
+      "student_activities": "Student groups collaborate using chart paper and markers to design a 'Customer Care & Satisfaction' chart. They map out three concrete strategies for local Sri Lankan cooperative stores and retail shops, while Creative Directors and Chart Leads format the visual layout for presentation.",
+      "learning_teaching_method": "Collaborative Brainstorming and Strategy Charting",
+      "learning_teaching_aids": "Chart paper, colored markers, Jerry Gregoire customer satisfaction strategy reference notes",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    }
+  ],
+  "summary": "In a 2-minute synthesis, selected group presenters share key takeaways from their charts, highlighting that knowing regular customers by name and understanding their specific needs secures loyalty, prevents communication errors, and drives the sustainable growth of local institutions like village co-operative shops.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation is based on group collaboration, the accuracy of customer satisfaction strategies mapped on charts, and the depth of student explanations regarding the value of personal customer connections during the simulation.",
+  "post_activity": "5-minute in-class assignment: Students participate in a 'Dilemma Dilemma Flash-Round' where the teacher reads out a fast-paced retail challenge based on a Sri Lankan co-op store scenario. Each group has 60 seconds to consult internally and write down on their mini-whiteboard or notebook margin one direct strategy from Jerry Gregoire's principles to resolve the customer dissatisfaction. Teams flash their answers simultaneously, and the teacher provides instant verbal feedback celebrating accurate strategy applications.",
+  "information_sources": [
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
+  ],
+  "attachments": [
+    "Co-op Shop Roleplay Cards",
+    "Customer Care Chart Template"
+  ],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 1,
+  "total_periods": 1,
+  "selected_activity": "Activity: Co-operative Shop Customer Connection Simulation\nApproach: Students simulate a local village co-operative shop or Samurdhi store scenario to investigate how knowing regular customers personally helps maintain strong community ties and loyalty. Groups then brainstorm and chart practical customer satisfaction strategies suitable for local businesses.\nStudent task: Students act out a short scenario where a shopkeeper ignores or knows a customer's specific needs, discuss why personalized contact builds trust, and design a chart mapping out three key customer satisfaction strategies.\nTeacher facilitation: The teacher acts as facilitator and timekeeper, prompting groups at the 10-minute mark to transition from the simulation roleplay to strategy brainstorming, circulating among the 9 desk islands to ensure every student participates.\nExpected output: A collaborative 'Customer Care & Satisfaction' chart displaying mapped strategies and reasons for knowing customers well.\nGrouping: 9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead.",
+  "selected_activity_title": "Co-operative Shop Customer Connection Simulation",
+  "custom_teacher_activity": null,
+  "activity_options": [
+    {
+      "id": "option_1",
+      "title": "Co-operative Shop Customer Connection Simulation",
+      "pedagogy_type": "Simulation",
+      "description": "Students simulate a local village co-operative shop or Samurdhi store scenario to investigate how knowing regular customers personally helps maintain strong community ties and loyalty. Groups then brainstorm and chart practical customer satisfaction strategies suitable for local businesses.",
+      "learning_outcomes_addressed": [
+        "Explains the importance of getting to know the customers well in keeping contacts with them.",
+        "Suggests strategies to satisfy customers."
+      ],
+      "student_action_summary": "Students act out a short scenario where a shopkeeper ignores or knows a customer's specific needs, discuss why personalized contact builds trust, and design a chart mapping out three key customer satisfaction strategies.",
+      "teacher_facilitation_summary": "The teacher acts as facilitator and timekeeper, prompting groups at the 10-minute mark to transition from the simulation roleplay to strategy brainstorming, circulating among the 9 desk islands to ensure every student participates.",
+      "student_grouping": "9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead.",
+      "required_materials": [
+        "Chart Paper",
+        "Student Notebooks",
+        "Chalkboard"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "A collaborative 'Customer Care & Satisfaction' chart displaying mapped strategies and reasons for knowing customers well.",
+      "creative_assessment_preview": "3-minute 'Pass-the-Chalk' Pop Quiz: Each group's spokesperson runs to the chalkboard to write one distinct strategy for satisfying customers before time runs out.",
+      "low_resource_alternative": "If chart paper is unavailable, groups use their Student Notebooks to draft a customer satisfaction pledge and present orally."
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "Explains the importance of getting to know the customers well in keeping contacts with them.",
+      "Suggests strategies to satisfy customers."
+    ]
+  },
+  "filename": "Grade_8_comp_8_6_9_p1.json"
+}

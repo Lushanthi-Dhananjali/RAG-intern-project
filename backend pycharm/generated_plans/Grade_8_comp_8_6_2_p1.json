@@ -2,83 +2,78 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 1 of 1)",
-  "competence": "Broad curriculum competency standard",
+  "competence": "Investigates respectability and the dignity of labour to foster social harmony and job satisfaction",
   "competence_level": "8.6.2",
-  "lesson": "Describes the importance of working with a sense of dignity of labour: Community Observation Checklist & Mapping: Competency 8.6.2",
+  "lesson": "Describes the importance of working with a sense of dignity of labour: Dignity of Labour Multi-Perspective Roleplay Panels",
   "unique_learning_outcome": [
     "Describes the importance of working with a sense of dignity of labour.",
     "Explains the benefits gained by working with a sense of dignity of labour.",
     "Presents facts to show that working with a sense of dignity of labour causes job satisfaction."
   ],
-  "the_entrance": "Detailed 5-minute introduction: teacher and student actions linking prior knowledge to this period topic and activity... Students recall the importance of working with a sense of dignity of labour from the textbook and relate it to their own experiences. Teacher facilitates a brief class discussion on the benefits of working with dignity of labour, highlighting the importance of respect for every worker and developing a sense of pride.",
+  "the_entrance": "5-minute introduction: The teacher steps into the classroom holding a collection of real Sri Lankan newspaper clippings highlighting local workers—such as a cooperative farmer in Anuradhapura, a municipal sanitation worker in Colombo, and a textile merchant in Kandy—and launches the session by asking: 'If every job keeps our community functioning, why do some people undermine physical labour while praising office work?' Students turn to their table groups of 5-6 to rapidly share their initial reactions, connecting prior experiences of family occupations to the concept of self-pride and respect in labor.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "time_minutes": 10,
-      "learning_teaching_method": "Task Orientation & Guided Inquiry Launch",
-      "teacher_activities": "Teacher explains the community observation checklist & mapping activity, distributes task materials, and assigns student roles as a facilitator.",
-      "student_activities": "Students arrange into cooperative groups, assign designated roles, review inquiry cards, and begin collaborative planning.",
-      "learning_teaching_aids": "Task assignment cards, role description sheets, inquiry scenario prompts",
-      "assessment_and_feedback": "Teacher observation",
+      "teacher_activities": "The teacher circulates among the 9 student groups, acting as a facilitator who distributes distinct community role cards and prompts groups to outline dialogue focusing on why honoring all honest labor leads to social harmony. The teacher guides students to examine textbook definitions of physical and mental labor, asking probing questions such as: 'How does a farmer's dedication directly influence customer satisfaction and community well-being?'",
+      "student_activities": "Students collaborate in their assigned groups, assigning roles such as Leader, Scribe, Timekeeper, and Spokesperson to draft a 3-minute community forum script. They debate and record arguments highlighting the importance of dignity of labour, employer benefits like increased motivation, and customer loyalty.",
+      "learning_teaching_method": "Town Hall Roleplay Scripting & Character Profiling",
+      "learning_teaching_aids": "Task sheets, Role character cards (Pradeshiya Sabha members, cooperative farmers, local merchants, teachers), Student Notebooks",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
       "other": ""
     },
     {
       "step_number": 2,
-      "time_minutes": 10,
-      "learning_teaching_method": "Active Student-Centered Investigation / Simulation / Drama / School-Walk",
-      "teacher_activities": "Teacher circulates as facilitator among groups, observes peer interactions, scaffolds challenging concepts with probing questions, and ensures active participation without lecturing.",
-      "student_activities": "Students actively execute the chosen activity (e.g., conducting mock council session, exploratory school-walk survey, analyzing Sri Lankan community issues, or solving civic challenges in groups) using assigned roles.",
-      "learning_teaching_aids": "Worksheets, roleplay cue cards, chart papers, colored markers",
-      "assessment_and_feedback": "Teacher observation",
-      "other": ""
-    },
-    {
-      "step_number": 3,
-      "time_minutes": 10,
-      "learning_teaching_method": "Spokesperson Presentation & Plenary Synthesis",
-      "teacher_activities": "Teacher moderates student presentations, facilitates constructive peer review, and synthesizes key student discoveries directly against the period's learning outcomes.",
-      "student_activities": "Spokespersons present group solutions or roleplay outcomes; class peers ask questions, provide constructive feedback, and summarize key takeaways in their notebooks.",
-      "learning_teaching_aids": "Student output posters, whiteboard, peer assessment checklist",
-      "assessment_and_feedback": "Teacher observation",
+      "teacher_activities": "The teacher moderates the timing of the mini-town hall presentations across groups, providing a 10-minute preparation and staging warning, and gently challenges presenting groups with facilitation prompts regarding job satisfaction and organizational reputation. The teacher records key student insights on the chalkboard to synthesize how dignity of labour elevates worker morale and public appreciation.",
+      "student_activities": "Designated group spokespersons and presenters step forward to enact their 3-minute town hall roleplay dialogues before their peers, vividly portraying local community members discussing the psychological rewards and economic benefits of respectful labor. Remaining group members actively evaluate the presentations against textbook criteria, noting facts related to employer profit, employee contentment, and societal admiration.",
+      "learning_teaching_method": "Mock Town Hall Assembly & Multi-Perspective Enactment",
+      "learning_teaching_aids": "Chart Paper, Markers, Blackboard for tracking core themes",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
       "other": ""
     }
   ],
-  "summary": "Consolidation and synthesis of key concepts...",
-  "assessment_and_feedback_whole_lesson": "Final closure formative assessment criteria...",
-  "post_activity": "5-minute in-class assignment: Five-minute in-class assignment or concluding task... Students reflect on the importance of working with a sense of dignity of labour and its benefits, and write a short paragraph summarizing their findings.",
+  "summary": "The teacher and students synthesize core discoveries by mapping out how valuing both physical and mental labor creates mutual benefits for employees, employers, and customers, reinforcing that true job satisfaction springs from self-pride and societal respect for honest work.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted through observation of collaborative roleplay participation, accuracy of arguments presented during the town hall enactments, and peer evaluations checking whether groups successfully articulated the importance, benefits, and job satisfaction tied to the dignity of labour.",
+  "post_activity": "Students engage in a 5-minute 'Pass-the-Parcel Concept Challenge' where a small prompt box is passed around the classroom while soft traditional Sri Lankan instrumental music plays; when the music pauses abruptly, the student holding the box draws a real-world dilemma card (e.g., 'A customer undervalues a street vendor's hard work') and must instantly state one benefit or fact demonstrating the dignity of labour to resolve the dilemma.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
-  "attachments": [],
+  "attachments": [
+    "Role character cards",
+    "Community dilemma prompt cards",
+    "Town hall task evaluation rubric"
+  ],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
   "period_number": 1,
   "total_periods": 1,
-  "selected_activity": "Activity: Community Observation Checklist & Mapping: Competency 8.6.2\nApproach: Students use community observation checklist & mapping to explore 'Describes the importance of working with a sense of dignity of labour.'. Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.\nExpected output: An evidence record with one supported conclusion.\nGrouping: 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "Community Observation Checklist & Mapping: Competency 8.6.2",
+  "selected_activity": "Activity: Dignity of Labour Multi-Perspective Roleplay Panels\nApproach: Students step into the shoes of community members in a Sri Lankan town (e.g., Pradeshiya Sabha members, local merchants, cooperative farmers, and teachers) to enact a town hall discussion debating the societal importance and psychological rewards of all honest labor.\nStudent task: Groups collaboratively script and perform a 3-minute roleplay depicting a community forum addressing why honoring all professions leads to greater community harmony and personal job satisfaction.\nTeacher facilitation: The teacher sets the scene of a local Pradeshiya Sabha meeting, circulates to ensure equitable student participation across assigned roles, and provides time-check warnings at the 15-minute and 25-minute marks.\nExpected output: A short, structured roleplay enactment demonstrating dialogue on the importance and satisfaction derived from dignity of labour.\nGrouping: 9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead",
+  "selected_activity_title": "Dignity of Labour Multi-Perspective Roleplay Panels",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_1",
-      "title": "Community Observation Checklist & Mapping: Competency 8.6.2",
-      "pedagogy_type": "Observation / Evidence Inquiry",
-      "description": "Students use community observation checklist & mapping to explore 'Describes the importance of working with a sense of dignity of labour.'. Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "student_action_summary": "Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-      "required_materials": [
-        "Blackboard",
-        "Paper",
-        "Student notebooks"
-      ],
-      "approximate_duration_minutes": 30,
-      "expected_student_output": "An evidence record with one supported conclusion.",
-      "creative_assessment_preview": "A paired evidence check: name one observation and the outcome it supports.",
-      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable.",
+      "id": "option_2",
+      "title": "Dignity of Labour Multi-Perspective Roleplay Panels",
+      "pedagogy_type": "Roleplay & Scenario Enactment",
+      "description": "Students step into the shoes of community members in a Sri Lankan town (e.g., Pradeshiya Sabha members, local merchants, cooperative farmers, and teachers) to enact a town hall discussion debating the societal importance and psychological rewards of all honest labor.",
       "learning_outcomes_addressed": [
         "Describes the importance of working with a sense of dignity of labour.",
         "Explains the benefits gained by working with a sense of dignity of labour.",
         "Presents facts to show that working with a sense of dignity of labour causes job satisfaction."
-      ]
+      ],
+      "student_action_summary": "Groups collaboratively script and perform a 3-minute roleplay depicting a community forum addressing why honoring all professions leads to greater community harmony and personal job satisfaction.",
+      "teacher_facilitation_summary": "The teacher sets the scene of a local Pradeshiya Sabha meeting, circulates to ensure equitable student participation across assigned roles, and provides time-check warnings at the 15-minute and 25-minute marks.",
+      "student_grouping": "9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "A short, structured roleplay enactment demonstrating dialogue on the importance and satisfaction derived from dignity of labour.",
+      "creative_assessment_preview": "One-Minute Tableau: Groups freeze in a dramatic posture representing a satisfied worker, and the teacher taps selected students to state one core benefit.",
+      "low_resource_alternative": "Use improvised props from student bags and notebooks instead of external materials."
     }
   ],
   "outcome_allocation": {
@@ -88,69 +83,5 @@
       "Presents facts to show that working with a sense of dignity of labour causes job satisfaction."
     ]
   },
-  "entrance_duration_minutes": 5,
-  "assignment_duration_minutes": 5,
-  "filename": "Grade_8_comp_8_6_2_p1.json",
-  "title": "Describes the importance of working with a sense of dignity of labour: Community Observation Checklist & Mapping: Competency 8.6.2",
-  "topic": "Describes the importance of working with a sense of dignity of labour: Community Observation Checklist & Mapping: Competency 8.6.2",
-  "grade_level": "Grade 8",
-  "educational_goal_or_standard": "Broad curriculum competency standard",
-  "estimated_duration_minutes": 30,
-  "learning_outcomes": [
-    {
-      "id": 1,
-      "description": "Describes the importance of working with a sense of dignity of labour.",
-      "blooms_taxonomy_level": "Apply"
-    },
-    {
-      "id": 2,
-      "description": "Explains the benefits gained by working with a sense of dignity of labour.",
-      "blooms_taxonomy_level": "Apply"
-    },
-    {
-      "id": 3,
-      "description": "Presents facts to show that working with a sense of dignity of labour causes job satisfaction.",
-      "blooms_taxonomy_level": "Apply"
-    }
-  ],
-  "procedures": [
-    {
-      "step_number": 1,
-      "phase_title": "Task Orientation & Guided Inquiry Launch",
-      "duration_minutes": 10,
-      "teacher_action": "Teacher explains the community observation checklist & mapping activity, distributes task materials, and assigns student roles as a facilitator.",
-      "student_action": "Students arrange into cooperative groups, assign designated roles, review inquiry cards, and begin collaborative planning."
-    },
-    {
-      "step_number": 2,
-      "phase_title": "Active Student-Centered Investigation / Simulation / Drama / School-Walk",
-      "duration_minutes": 10,
-      "teacher_action": "Teacher circulates as facilitator among groups, observes peer interactions, scaffolds challenging concepts with probing questions, and ensures active participation without lecturing.",
-      "student_action": "Students actively execute the chosen activity (e.g., conducting mock council session, exploratory school-walk survey, analyzing Sri Lankan community issues, or solving civic challenges in groups) using assigned roles."
-    },
-    {
-      "step_number": 3,
-      "phase_title": "Spokesperson Presentation & Plenary Synthesis",
-      "duration_minutes": 10,
-      "teacher_action": "Teacher moderates student presentations, facilitates constructive peer review, and synthesizes key student discoveries directly against the period's learning outcomes.",
-      "student_action": "Spokespersons present group solutions or roleplay outcomes; class peers ask questions, provide constructive feedback, and summarize key takeaways in their notebooks."
-    }
-  ],
-  "materials": [
-    {
-      "item_name": "grade_8_civic_teacher_guide.pdf",
-      "quantity": "1",
-      "is_digital": false
-    },
-    {
-      "item_name": "grade_8_civic_textbook.pdf",
-      "quantity": "1",
-      "is_digital": false
-    }
-  ],
-  "verification": {
-    "formative_assessment": "Final closure formative assessment criteria...",
-    "summative_assessment": "Consolidation and synthesis of key concepts...",
-    "alignment_check": "Aligned with Sri Lankan NIE & LEARN standards"
-  }
+  "filename": "Grade_8_comp_8_6_2_p1.json"
 }

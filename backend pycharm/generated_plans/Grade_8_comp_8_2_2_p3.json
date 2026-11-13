@@ -2,88 +2,75 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 3 of 3)",
-  "competence": "Works with understanding the rights of the child and his duties.",
+  "competence": "Demonstrates civic responsibility by understanding and respecting the rights and duties of children and supporting child welfare institutions",
   "competence_level": "8.2.2",
-  "lesson": "Expresses the functions of institutions that work towards safeguarding the rights of the child: Case Audit Bureau: Investigating Institutional Mandates",
+  "lesson": "Expresses the functions of institutions that work towards safeguarding the rights of the child: Sri Lankan Child Welfare Institution Policy Debate & Defense",
   "unique_learning_outcome": [
     "Expresses the functions of institutions that work towards safeguarding the rights of the child."
   ],
-  "the_entrance": "5-minute introduction: The teacher opens the session by displaying the national child helpline number '1929' prominently on the chalkboard alongside three emergency call scenario cards representing distress calls from different provinces: a child pushed into hazardous factory labor in an industrial suburb, a young girl prevented from attending school to do domestic servitude, and an abandoned infant found near a rural hospital. The teacher challenges the class: 'If you were the emergency response director receiving these distress calls right now, which specific state authority has the legal duty and power to step in, rescue, and restore these children's rights?' Student groups immediately brainstorm the question in their clusters, identifying familiar bodies such as the Police Children and Women Bureau and the National Child Protection Authority (NCPA), thereby activating their prior knowledge and establishing the focus of the Case Audit Bureau investigation.",
+  "the_entrance": "5-minute introduction: The teacher circulates the 9 desk islands, distributing challenge scenario slips describing real local dilemmas, such as a child dropping out of school in a rural estate sector due to parental economic hardship or an urban child facing neglect. The teacher launches the period with the prompt: 'Today, our nine groups act as institutional defense committees. How do bodies like the NCPA, Child Rights Promotion Officers at the Divisional Secretariat, and the Women and Children Bureau step in to rescue, counsel, and rehabilitate children in these exact Sri Lankan contexts?' Leaders and scribes immediately assign roles and review the scenario.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "The teacher sets up the 'Case Audit Bureau' framework by writing six audit docket summaries on the chalkboard (representing diverse contexts: Pettah wholesale market labor, plantation school dropout vulnerability, domestic abuse in an urban flat, neglected foster care in an estate sector, lack of special education access in a remote dry-zone village, and street begging in a tourist town). The teacher assigns roles to the six teams of five students (Leader, Scribe, Timekeeper, Presenter, Civic Investigator) and defines the audit criteria: identifying the specific infringed right, designating the statutory body legally mandated to act, and specifying its statutory remedial function.",
-      "student_activities": "Students arrange themselves into their six designated audit teams, assign team responsibilities, and transcribe their allocated docket from the chalkboard into their notebooks. Civic Investigators open their Grade 8 Civic Education textbooks to the institutional protection matrix, while Timekeepers confirm the strict time limits for the investigation.",
-      "learning_teaching_method": "Audit Protocol & Case Dossier Briefing",
-      "learning_teaching_aids": "Chalkboard layout detailing 6 provincial child rights violation audit dockets, student civic notebooks.",
-      "assessment_and_feedback": "",
-      "time_minutes": 5,
-      "other": ""
-    },
-    {
-      "step_number": 2,
-      "teacher_activities": "The teacher circulates actively among the six audit stations as Chief Auditor, guiding inquiry with targeted scaffolding prompts: 'Can the Police intervene directly without informing the Probation Officer?' and 'What specific role does the Child Rights Promotion Officer at the Divisional Secretariat perform when coordinating school re-entry?' The teacher ensures teams distinguish between national statutory enforcement (Police Children and Women Bureau, NCPA) and regional welfare and rehabilitation mechanisms (Department of Probation and Child Care Services, Child Rights Promotion Officers).",
-      "student_activities": "Student teams examine their assigned case file, debate statutory jurisdiction, and consult textbook facts to map out the responsible institutions. Civic Investigators verify statutory definitions; Scribes record findings onto the 'Institutional Audit Log' chart paper, detailing the institution's official title, immediate intervention protocol (e.g., lodging a complaint via 1929, securing a court protection order, police escort), and long-term rehabilitation function (e.g., counseling, institutional guardianship, school enrollment assistance). Leaders ensure balanced participation, while Timekeepers track work progress.",
-      "learning_teaching_method": "Statutory Evidence Analysis & Mandate Mapping",
-      "learning_teaching_aids": "Chart paper strips, colored felt pens, Grade 8 Civic Education textbooks (sections on NCPA, Department of Probation and Child Care Services, Children and Women Bureau of Sri Lanka Police, and Divisional Secretariat officers).",
+      "teacher_activities": "The teacher acts as a facilitator, circulating among the 9 desk islands to observe how scribes and civic investigators synthesize institutional functions. The teacher asks probing scaffolding questions such as: 'Does the National Child Protection Authority handle direct field rescue, or does it coordinate legal enforcement with the Sri Lanka Police Women and Children's Bureau?'",
+      "student_activities": "Students collaborate intensely in their groups of 5 and 6, using their rotating roles. The Scribe records legal mandates and protective functions on chart paper, while the Civic Investigator cross-checks textbook references regarding the Department of Probation and Child Care Services and regional Child Rights Promotion Officers.",
+      "learning_teaching_method": "Institutional Defense Brief Preparation",
+      "learning_teaching_aids": "Chalkboard scenario prompts, chart paper, colored markers, student notebooks",
       "assessment_and_feedback": "",
       "time_minutes": 15,
       "other": ""
     },
     {
-      "step_number": 3,
-      "teacher_activities": "The teacher convenes the 'National Child Rights Audit Hearing', inviting each team's Spokesperson to present their audit findings in rapid 90-second submissions. The teacher moderates cross-team verification, asking probing questions such as: 'Why is inter-agency collaboration between the Police and the Probation Department essential in this specific rescue scenario?' and synthesizes the institutional network on the chalkboard.",
-      "student_activities": "Spokespersons from each team present their Institutional Audit Logs to the class, articulating how bodies such as the National Child Protection Authority, the Department of Probation and Child Care Services, and local Child Rights Promotion Officers intervene to protect vulnerable children. Peer teams act as auditing reviewers, checking whether the designated institution accurately matches the legal mandate and offering constructive cross-evaluations.",
-      "learning_teaching_method": "Audit Hearing & Inter-Agency Remedial Defense",
-      "learning_teaching_aids": "Completed Institutional Audit Log charts, classroom display board, chalkboard summary grid.",
+      "step_number": 2,
+      "teacher_activities": "The teacher moderates the structured debate rounds across the room, keeping strict time and ensuring equitable participation from every Spokesperson and Creative Director. The teacher prompts deeper evaluation by moderating rebuttals: 'How effectively does the village-level divisional secretariat machinery bridge national child protection laws with grassroots realities?'",
+      "student_activities": "Spokespersons present their group's defense briefs to neighboring groups in a rotating peer-defense format, while Timekeepers monitor pacing. Students actively critique and defend the operational jurisdiction, counseling services, and rehabilitation powers of Sri Lankan child welfare institutions against community challenges.",
+      "learning_teaching_method": "Structured Institutional Policy Debate & Defense Rounds",
+      "learning_teaching_aids": "Completed Institution Defense & Function Summary charts, chalkboard for scoring key arguments",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 15,
       "other": ""
     }
   ],
-  "summary": "The teacher consolidates the period by synthesizing student audit logs: safeguarding child rights in Sri Lanka is an enforceable legal duty divided across complementary statutory pillars. The National Child Protection Authority formulates policy and handles national complaints (1929); the Children and Women Bureau of Sri Lanka Police enforces criminal law and rescues victims; the Department of Probation and Child Care Services provides legal custody and institutional care; and Divisional Secretariat officers (Child Rights Promotion Officers and Regional Child Protection Officers) coordinate grassroots rehabilitation and school reintegration.",
-  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted using a three-point checklist: (1) Accurate identification of the specific child right violated in the Sri Lankan scenario, (2) Precise matching of the statutory institution (NCPA, Probation Department, Police Bureau, Divisional Secretariat officers) to its legal mandate, and (3) Clear articulation of the concrete protective and remedial functions. The teacher provides verbal feedback commending teams that accurately differentiate between legal enforcement actions and community-level social rehabilitation.",
-  "post_activity": "5-minute in-class assignment: Creative Rhyming Verse Recitation: Working in pairs within their audit teams, students are given three minutes to compose a 2-to-4-line rhyming civic verse that summarizes an institution's mandate to safeguard child rights. One representative pair from each team recites their verse aloud to the class (e.g., 'Dial nineteen-twenty-nine when children face distress, / The Child Protection Authority will answer and redress; / With Probation Officers and Police standing near, / Every child in Sri Lanka lives free from fear!'). The teacher commends rhythmic accuracy and conceptual clarity, using the verses as a memorable conclusion to the 3-period sequence.",
+  "summary": "In a 2-minute synthesis, the class consolidates that child welfare in Sri Lanka relies on a robust institutional network ranging from the National Child Protection Authority and Police Women and Children's Bureau to regional Child Rights Promotion Officers at Divisional Secretariats, ensuring comprehensive rescue, legal aid, and rehabilitation.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted by observing group collaboration, the accuracy of institutional functions recorded on defense charts, and the clarity of student arguments during debate defenses regarding how Sri Lankan child welfare institutions safeguard children.",
+  "post_activity": "Groups participate in a rapid 5-minute 'Institutional Policy Buzzer Showdown' where the teacher reads two rapid-fire conceptual dilemma statements regarding child welfare jurisdiction in Sri Lanka. Teams collaborate for 3 minutes to write down the exact correct institution and its primary protective function on a mini-slate or notebook page, holding it up simultaneously for immediate peer evaluation and teacher feedback.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
   "attachments": [
-    "Chalkboard Case Dossiers (6 provincial case scenarios)",
-    "Institutional Audit Log Template (Columns: Case Number",
-    "Rights Infringed",
-    "Mandated Institution",
-    "Core Statutory Function",
-    "Inter-Agency Partners)."
+    "Chalkboard scenario cards",
+    "Institutional Defense Brief chart templates",
+    "Peer evaluation rubric guidelines"
   ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 3,
   "total_periods": 3,
-  "selected_activity": "Activity: Case Audit Bureau: Investigating Institutional Mandates\nApproach: Student teams act as investigative auditors examining case files from Sri Lankan administrative divisions to match child rights abuses with the exact institutional remedies available.\nStudent task: The 6 teams receive chalkboard-listed audit files detailing realistic dilemmas from provinces across Sri Lanka (e.g., child labor in an urban market, denial of schooling due to displacement, or lack of healthcare access in a remote village). The Civic Investigator scans textbook references for statutory mandates, the team evaluates which state or community institution is legally mandated to intervene, and the Scribe drafts an audit report outlining the exact remedial functions of that agency.\nTeacher facilitation: The teacher outlines the audit criteria on the chalkboard and acts as Chief Auditor, guiding student inquiry with prompts like: 'Which specific department holds the mandate to rescue and rehabilitate this child?' and 'What legal limitations might they face, and how do they overcome them through inter-agency referral?' Controls the 30-minute block strictly, allotting 5 min for briefing, 18 min for audit completion, and 7 min for debriefing.\nExpected output: A completed 'Institutional Audit Log' chart mapping specific child protection cases to the respective statutory institution, its core function, and its remedial action.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks are arranged into 6 separate island clusters.",
-  "selected_activity_title": "Case Audit Bureau: Investigating Institutional Mandates",
+  "selected_activity": "Activity: Sri Lankan Child Welfare Institution Policy Debate & Defense\nApproach: Students engage in a structured debate format analyzing the operational effectiveness and community reach of institutions safeguarding child rights in Sri Lanka, such as the National Child Protection Authority (NCPA) and Child Rights Promotion Officers (CRPOs). Teams defend specific institutional mechanisms against common community challenges.\nStudent task: Working across 9 desk islands, teams analyze chalkboard prompts detailing challenges faced by rural and urban children in Sri Lanka. Investigators and scribes collaborate to compile arguments highlighting how institutional functions (e.g., rescue, counseling, legal aid, rehabilitation) resolve these issues, producing a synthesized defense brief on chart paper.\nTeacher facilitation: The teacher moderates the debate rounds, keeping strict time and ensuring equitable participation across all 50 students through their rotating team roles. The teacher prompts deeper evaluation by asking: 'How does the Probation and Child Care Services Department bridge the gap between national law and village-level protection?'\nExpected output: An 'Institution Defense & Function Summary' chart outlining institutional jurisdiction, powers, and community impact.\nGrouping: 9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead",
+  "selected_activity_title": "Sri Lankan Child Welfare Institution Policy Debate & Defense",
   "custom_teacher_activity": null,
   "activity_options": [
     {
       "id": "option_2",
-      "title": "Case Audit Bureau: Investigating Institutional Mandates",
-      "pedagogy_type": "Case Inquiry / Evidence Audit",
-      "description": "Student teams act as investigative auditors examining case files from Sri Lankan administrative divisions to match child rights abuses with the exact institutional remedies available.",
+      "title": "Sri Lankan Child Welfare Institution Policy Debate & Defense",
+      "pedagogy_type": "Structured Debate & Evidence Inquiry",
+      "description": "Students engage in a structured debate format analyzing the operational effectiveness and community reach of institutions safeguarding child rights in Sri Lanka, such as the National Child Protection Authority (NCPA) and Child Rights Promotion Officers (CRPOs). Teams defend specific institutional mechanisms against common community challenges.",
       "learning_outcomes_addressed": [
         "Expresses the functions of institutions that work towards safeguarding the rights of the child."
       ],
-      "student_action_summary": "The 6 teams receive chalkboard-listed audit files detailing realistic dilemmas from provinces across Sri Lanka (e.g., child labor in an urban market, denial of schooling due to displacement, or lack of healthcare access in a remote village). The Civic Investigator scans textbook references for statutory mandates, the team evaluates which state or community institution is legally mandated to intervene, and the Scribe drafts an audit report outlining the exact remedial functions of that agency.",
-      "teacher_facilitation_summary": "The teacher outlines the audit criteria on the chalkboard and acts as Chief Auditor, guiding student inquiry with prompts like: 'Which specific department holds the mandate to rescue and rehabilitate this child?' and 'What legal limitations might they face, and how do they overcome them through inter-agency referral?' Controls the 30-minute block strictly, allotting 5 min for briefing, 18 min for audit completion, and 7 min for debriefing.",
-      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks are arranged into 6 separate island clusters.",
+      "student_action_summary": "Working across 9 desk islands, teams analyze chalkboard prompts detailing challenges faced by rural and urban children in Sri Lanka. Investigators and scribes collaborate to compile arguments highlighting how institutional functions (e.g., rescue, counseling, legal aid, rehabilitation) resolve these issues, producing a synthesized defense brief on chart paper.",
+      "teacher_facilitation_summary": "The teacher moderates the debate rounds, keeping strict time and ensuring equitable participation across all 50 students through their rotating team roles. The teacher prompts deeper evaluation by asking: 'How does the Probation and Child Care Services Department bridge the gap between national law and village-level protection?'",
+      "student_grouping": "9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead",
       "required_materials": [
-        "Chalkboard",
-        "Student Notebooks",
-        "Chart Paper"
+        "Chalkboard (Debate Motion and Guiding Questions)",
+        "Chart Paper",
+        "Student Notebooks"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A completed 'Institutional Audit Log' chart mapping specific child protection cases to the respective statutory institution, its core function, and its remedial action.",
-      "creative_assessment_preview": "Exit Slip: Each student writes down one specific institution that safeguards children and one core function it performs on a scrap piece of paper before leaving the seat.",
-      "low_resource_alternative": "If chart paper is scarce, each team creates their audit log on a single shared student notebook page, utilizing chalkboard space for shared summaries."
+      "expected_student_output": "An 'Institution Defense & Function Summary' chart outlining institutional jurisdiction, powers, and community impact.",
+      "creative_assessment_preview": "'Exit Ticket Standing Vote': The teacher reads out three statements about child protection functions; students vote with their feet by moving to designated corners of the classroom labeled 'NCPA', 'Probation Dept', or 'Police Children's Desk'.",
+      "low_resource_alternative": "Groups can conduct a mini inner-circle debate at their desks and summarize their core argument on a single shared page in their notebooks."
     }
   ],
   "outcome_allocation": {

@@ -1,0 +1,85 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 2 of 2)",
+  "competence": "Secures rights while fulfilling duties as an employee",
+  "competence_level": "8.6.7",
+  "lesson": "Expresses willingness to enjoy worker rights while fulfilling duties and responsibilities: Consensus Matrix Design: Crafting the Responsible Worker Pledge",
+  "unique_learning_outcome": [
+    "Expresses willingness to enjoy worker rights while fulfilling duties and responsibilities."
+  ],
+  "the_entrance": "The teacher launches the 5-minute motivational session by holding up two actual job cards representing a Sri Lankan garment factory machine operator and a tea plantation supervisor, asking the class: 'If you demand workplace safety and dignity, what specific duty must you offer in return to keep the enterprise thriving?' Students in their 9 desk groups immediately huddle, activating prior knowledge from Period 1 regarding statutory labor rights versus daily workplace obligations, and share rapid popcorn responses connecting punctuality and equipment care directly to securing entitled leave and safe working conditions.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "The teacher circulates among the 9 desk groups, acting as a facilitator to ensure every student participates in dividing the chart paper into dual columns labeled 'What I Expect (Rights)' and 'What I Deliver (Duties)'. The teacher prompts groups with targeted inquiries such as: 'How does fulfilling your duty of reporting to work on time directly strengthen your right to claim fair promotions and training?'",
+      "student_activities": "Students actively collaborate around their desk islands, assigning roles such as Scribe, Timekeeper, and Chart Lead to synthesize textbook labor concepts into structured pledges for chosen Sri Lankan occupations. Team members debate and categorize commitments, ensuring that statutory rights like safe workspaces and tools are balanced equally with professional duties.",
+      "learning_teaching_method": "Collaborative Matrix Drafting and Categorization",
+      "learning_teaching_aids": "Chart paper, colored markers, chalkboard, and student notebooks",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "The teacher guides the inter-group gallery walk by moderating peer feedback rotations, prompting civic investigators to evaluate whether other teams accurately balanced worker entitlements with operational responsibilities. The teacher asks probing synthesis questions to help students refine their pledges before final display.",
+      "student_activities": "Spokespersons and group members rotate to inspect neighboring charts, using sticky notes to append constructive suggestions regarding local work ethics in Sri Lanka. Students finalize their team pledges by incorporating peer feedback and preparing a unified statement of commitment to both worker rights and professional duties.",
+      "learning_teaching_method": "Gallery Walk Peer Review and Pledge Finalization",
+      "learning_teaching_aids": "Completed chart paper posters, sticky notes, and chalkboard for summarizing criteria",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    }
+  ],
+  "summary": "In a 2-minute synthesis, the teacher invites student representatives to highlight how balancing statutory labor rights with rigorous daily duties creates harmonious, productive work environments across Sri Lankan industries.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted by evaluating each group's chart matrix for logical balance between worker rights and responsibilities, active participation of all 50 students across roles, and the depth of student reflection during peer feedback.",
+  "post_activity": "The class engages in a 5-minute 'Pass-the-Pledge Concept Challenge' where a designated prompt token is passed rapidly across desk rows; whoever holds the token when the timer stops must instantly read out one pair of matched rights and duties from their team pledge and explain in one sentence how fulfilling that duty safeguards the corresponding right in a Sri Lankan workplace.",
+  "information_sources": [
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
+  ],
+  "attachments": [
+    "Teacher facilitation rubric",
+    "student group role cards",
+    "and consensus matrix template guide"
+  ],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 2,
+  "total_periods": 2,
+  "selected_activity": "Activity: Consensus Matrix Design: Crafting the Responsible Worker Pledge\nApproach: Student teams design a comprehensive, visual 'Pledge of Responsible Employment' tailored for local Sri Lankan work environments, merging statutory worker rights with ethical workplace obligations.\nStudent task: Collaborating around desk islands, students synthesize their understanding of labor ethics to design a structured poster pledge. They categorize commitments into 'What I Expect (Rights)' and 'What I Deliver (Duties)' for various common occupations in Sri Lanka.\nTeacher facilitation: The teacher supervises group collaboration, encouraging creative visual layouts on chart paper, monitoring time management, and prompting students to ensure every group member actively contributes to the final pledge.\nExpected output: A visually structured 'Responsible Worker Pledge' poster featuring dual commitments to rights and duties.\nGrouping: 9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead",
+  "selected_activity_title": "Consensus Matrix Design: Crafting the Responsible Worker Pledge",
+  "custom_teacher_activity": null,
+  "activity_options": [
+    {
+      "id": "option_3",
+      "title": "Consensus Matrix Design: Crafting the Responsible Worker Pledge",
+      "pedagogy_type": "Consensus Building / Creative Design",
+      "description": "Student teams design a comprehensive, visual 'Pledge of Responsible Employment' tailored for local Sri Lankan work environments, merging statutory worker rights with ethical workplace obligations.",
+      "learning_outcomes_addressed": [
+        "Expresses willingness to enjoy worker rights while fulfilling duties and responsibilities."
+      ],
+      "student_action_summary": "Collaborating around desk islands, students synthesize their understanding of labor ethics to design a structured poster pledge. They categorize commitments into 'What I Expect (Rights)' and 'What I Deliver (Duties)' for various common occupations in Sri Lanka.",
+      "teacher_facilitation_summary": "The teacher supervises group collaboration, encouraging creative visual layouts on chart paper, monitoring time management, and prompting students to ensure every group member actively contributes to the final pledge.",
+      "student_grouping": "9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks",
+        "Chart Paper"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "A visually structured 'Responsible Worker Pledge' poster featuring dual commitments to rights and duties.",
+      "creative_assessment_preview": "Exit Ticket Rhyme: Each student writes a single two-line rhyming couplet in their notebook linking a worker right to a duty, leaving it open on their desk as they exit.",
+      "low_resource_alternative": "Student teams create miniature pledge templates inside their Student Notebooks and present their designs orally instead of using chart paper."
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "List out workers rights and duties."
+    ],
+    "2": [
+      "Expresses willingness to enjoy worker rights while fulfilling duties and responsibilities."
+    ]
+  },
+  "filename": "Grade_8_comp_8_6_7_p2.json"
+}

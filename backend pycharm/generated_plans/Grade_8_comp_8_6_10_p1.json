@@ -1,0 +1,97 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 1 of 1)",
+  "competence": "Takes actions to improve income and living standards.",
+  "competence_level": "8.6.10",
+  "lesson": "Explains how getting a good income develops living standards: Village Household Economy Simulation: Pathways to Prosperity",
+  "unique_learning_outcome": [
+    "Explains how getting a good income develops living standards.",
+    "Expresses opinion appreciating and showing the importance of taking intelligent actions to improve income.",
+    "Suggests ways and means to improve income."
+  ],
+  "the_entrance": "The teacher launches the 5-minute entrance by projecting a brief household budget scenario of a Kurunegala farming family facing monthly deficits. The teacher poses the opening challenge: 'If our family income remains static, how do fluctuating market prices squeeze our children's education and nutrition?' Students assemble in their 9 assigned teams, immediately examining the baseline numbers on their desks, and share initial observations on how financial gaps restrict household well-being.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "The teacher circulates among the 9 teams, observing how students calculate monthly expenses against static earnings. The teacher scaffolds inquiry by asking, 'Which specific line items like healthcare or tuition are suffering the most under this current income constraint?'",
+      "student_activities": "Teams analyze the baseline economic data, calculate the monthly financial deficit, and record the direct impacts of low income on family living standards and nutrition.",
+      "learning_teaching_method": "Household Budget Deficit Diagnosis",
+      "learning_teaching_aids": "Kurunegala Family Baseline Scenario Cards, Student Notebooks, and Chalkboard",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "The teacher facilitates group brainstorming by prompting students to explore local Sri Lankan resources, asking, 'What small-scale cottage industries, home gardening methods, or vocational skills can be sustainably developed right in our village?'",
+      "student_activities": "Students collaborate actively, with Scribes and Creative Directors drafting proposed income-generation methods on chart paper while Timekeepers monitor pacing to ensure all members contribute.",
+      "learning_teaching_method": "Income Diversification Strategy Workshop",
+      "learning_teaching_aids": "Chart Paper, Colored Markers, and Vocational Initiative Prompt Sheets",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "The teacher moderates a rapid peer review, inviting Spokespersons to highlight their most innovative financial strategy and asking probing questions about feasibility and community impact.",
+      "student_activities": "Spokespersons present their group blueprints to neighboring teams, while Civic Investigators cross-check proposed solutions against realistic household capabilities.",
+      "learning_teaching_method": "Blueprint Gallery Walk & Peer Standpoint",
+      "learning_teaching_aids": "Completed 'Living Standard & Income Enhancement Blueprint' Charts",
+      "assessment_and_feedback": "",
+      "time_minutes": 5,
+      "other": ""
+    }
+  ],
+  "summary": "In a rapid 2-minute synthesis, students consolidate their discoveries, agreeing that securing an adequate income through intelligent local actions is essential for elevating household living standards, ensuring educational continuity, and fostering community welfare.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted through observation of active group participation, the logical rigor of the income enhancement blueprints, and the clarity with which teams articulate the connection between increased earnings and improved living standards.",
+  "post_activity": "5-minute in-class assignment: Pairs of students compose and recite a 4-line rhyming verse summarizing the core value of taking intelligent economic actions and improving family income. The teacher moderates rapid voluntary recitation across the classroom, providing immediate verbal commendation for creative accuracy.",
+  "information_sources": [
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
+  ],
+  "attachments": [
+    "Kurunegala Family Baseline Scenario Cards",
+    "Living Standard & Income Enhancement Blueprint Task Sheets"
+  ],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 1,
+  "total_periods": 1,
+  "selected_activity": "Activity: Village Household Economy Simulation: Pathways to Prosperity\nApproach: Students participate in an interactive household budget simulation reflecting a typical Sri Lankan rural family setting. They analyze how smart financial choices and diversified income sources elevate household living standards, health, and education.\nStudent task: Groups receive a baseline simulated income scenario of a rural family in Kurunegala. They calculate expenses, identify gaps in living standards, and map out intelligent economic actions (e.g., home gardening, small-scale cottage industry, vocational upskilling) to improve overall income and living conditions.\nTeacher facilitation: The teacher acts as a facilitator and timekeeper, briefing the 9 teams on the baseline scenario, prompting critical thinking with questions like 'How does raising our monthly income directly transform children's education and nutrition?', and keeping strict track of the 30-minute development timer.\nExpected output: A 'Living Standard & Income Enhancement Blueprint' chart outlining smart financial choices and proposed income generation methods.\nGrouping: 9 teams (4 groups of 5, 5 groups of 6) totaling 50 students. Desks are arranged into 9 islands. Roles assigned with zero bystanders: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead.",
+  "selected_activity_title": "Village Household Economy Simulation: Pathways to Prosperity",
+  "custom_teacher_activity": null,
+  "activity_options": [
+    {
+      "id": "option_1",
+      "title": "Village Household Economy Simulation: Pathways to Prosperity",
+      "pedagogy_type": "Simulation",
+      "description": "Students participate in an interactive household budget simulation reflecting a typical Sri Lankan rural family setting. They analyze how smart financial choices and diversified income sources elevate household living standards, health, and education.",
+      "learning_outcomes_addressed": [
+        "Explains how getting a good income develops living standards.",
+        "Expresses opinion appreciating and showing the importance of taking intelligent actions to improve income.",
+        "Suggests ways and means to improve income."
+      ],
+      "student_action_summary": "Groups receive a baseline simulated income scenario of a rural family in Kurunegala. They calculate expenses, identify gaps in living standards, and map out intelligent economic actions (e.g., home gardening, small-scale cottage industry, vocational upskilling) to improve overall income and living conditions.",
+      "teacher_facilitation_summary": "The teacher acts as a facilitator and timekeeper, briefing the 9 teams on the baseline scenario, prompting critical thinking with questions like 'How does raising our monthly income directly transform children's education and nutrition?', and keeping strict track of the 30-minute development timer.",
+      "student_grouping": "9 teams (4 groups of 5, 5 groups of 6) totaling 50 students. Desks are arranged into 9 islands. Roles assigned with zero bystanders: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead.",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks",
+        "Chart Paper"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "A 'Living Standard & Income Enhancement Blueprint' chart outlining smart financial choices and proposed income generation methods.",
+      "creative_assessment_preview": "30-Second 'Wisdom Pitch': Each group's Spokesperson delivers a 30-second rapid-fire statement appreciating the importance of intelligent income actions.",
+      "low_resource_alternative": "Use student notebooks exclusively to draw the budgeting and enhancement matrix instead of chart paper."
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "Explains how getting a good income develops living standards.",
+      "Expresses opinion appreciating and showing the importance of taking intelligent actions to improve income.",
+      "Suggests ways and means to improve income."
+    ]
+  },
+  "filename": "Grade_8_comp_8_6_10_p1.json"
+}

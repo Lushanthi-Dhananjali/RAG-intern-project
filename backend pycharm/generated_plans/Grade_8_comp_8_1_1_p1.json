@@ -2,79 +2,78 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 1 of 2)",
-  "competence": "Investigates public services and examines their need, evolution, and importance for community development",
+  "competence": "Investigates public services, their necessity, common features, and historical evolution to understand their role in community welfare.",
   "competence_level": "8.1.1",
-  "lesson": "Identifies the public services: Problem-Solving Matrix: The Missing Public Service Scenario",
+  "lesson": "Identifies the public services: The Village Hub Simulation",
   "unique_learning_outcome": [
     "Identifies the public services.",
     "Explains the common features related to public services.",
     "Explains the need of public services."
   ],
-  "the_entrance": "The teacher launches the 5-minute motivational hook by writing a dramatic community distress dispatch on the chalkboard from 'Welimada New Colony', a newly settled agrarian village facing severe challenges due to a complete lack of postal, water, health, and transport services. The teacher acts as the facilitator, posing the challenge prompt: 'Imagine your families have just relocated to this fertile valley to farm, but there is no post office to send harvest proceeds, no clinic for sudden illnesses, no clean water pipe, and no bus route to the town market. How does this absence paralyze daily life, and what immediate state or community services must be established?' Students buzz in their 6 island groups of 5, appointing their Scribes and Spokespersons, and immediately brainstorm the urgent missing services to connect their prior knowledge of village life to the core lesson outcomes.",
+  "the_entrance": "5-minute introduction: The teacher ignites the session by displaying flashcards of local community touchpoints—a rural post office, a Divisional Secretariat office, and a government hospital—asking students to imagine a day without them. The teacher prompts, 'If your family needed a birth certificate or urgent medical care and there were no government offices, how would our village function?' Students in their 7 table groups buzz excitedly, sharing quick personal experiences of visiting local public institutions with their parents, while designated Timekeepers note down initial thoughts on their notebooks.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "The teacher circulates among the 6 island groups as a critical consultant, prompting students with guiding questions such as: 'Is a water supply or health clinic profit-driven, and who ultimately bears the responsibility for ensuring universal access?' The teacher observes collaborative group interactions, ensuring that the Scribe and Civic Investigator in each group actively document the required services and their specific operational features on the task sheet.",
-      "student_activities": "Students collaborate intensely within their groups of 5, reading the scenario card detailing the struggles of Welimada New Colony. They jointly construct a Problem-Solving Matrix on their task sheet, identifying four vital public services (postal, water, health, transport), listing their shared features such as non-profit intent and universal accessibility, and debating why these services cannot be fulfilled personally by individual households.",
-      "learning_teaching_method": "Scenario Investigation and Matrix Mapping",
-      "learning_teaching_aids": "Chalkboard Scenario Cards, Group Task Sheets, Student Notebooks, Colored Markers",
+      "teacher_activities": "The teacher acts as a facilitator, distributing different station role cards to the 7 groups representing various public service touchpoints in Sri Lanka. As students begin their roleplay, the teacher circulates among the groups, prompting them with questions like: 'What specific service is your desk providing to the citizen?' and 'How does this service assist families who cannot afford private alternatives?'",
+      "student_activities": "Students take on designated roles within their groups, simulating citizen interactions at public service desks such as health, postal, and civil registration. The Scribe records the types of services encountered while the Civic Investigator checks service details against textbook concepts, ensuring all members actively participate in mapping out the touchpoints.",
+      "learning_teaching_method": "Divisional Secretariat Roleplay and Touchpoint Mapping",
+      "learning_teaching_aids": "Task sheets, role cards (Citizen, Health Officer, Postal Clerk, Civil Registrar), and markers",
       "assessment_and_feedback": "",
       "time_minutes": 15,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "The teacher acts as a moderator, managing the floor as group Spokespersons present their 'Village Public Service Blueprints'. The teacher asks probing questions to challenge groups on equity, inclusivity for low-income earners, and the legal framework required to sustain these public services, guiding peers to evaluate each presentation constructively.",
-      "student_activities": "Each group's Spokesperson and Timekeeper present their finalized 'Village Public Service Blueprint' chart paper to the class, detailing the proposed services, their common operational features, and a powerful justification statement. The remaining students listen critically, use their Civic Investigator roles to check facts against textbook definitions, and pose questions regarding how these services elevate community living standards.",
-      "learning_teaching_method": "Blueprint Synthesis and Defense",
-      "learning_teaching_aids": "Chart Paper, Colored Markers, Whiteboard",
+      "teacher_activities": "The teacher guides the groups to analyze the common features and underlying needs of the public services they just simulated, prompting them to consider funding sources and accessibility. The teacher moderates cross-group discussions by asking, 'Why is it crucial that these services operate without a profit motive and remain open to every citizen equally?'",
+      "student_activities": "Group members collaborate intensely to synthesize their roleplay findings onto chart paper, listing common features (such as non-profit intent and universal access) and formulating bullet points explaining why these services are essential for community welfare and social security. The Spokesperson prepares the group's final resolution for presentation.",
+      "learning_teaching_method": "Collaborative Feature Analysis and Necessity Synthesis",
+      "learning_teaching_aids": "Chart paper, colored markers, and student textbooks",
       "assessment_and_feedback": "",
       "time_minutes": 15,
       "other": ""
     }
   ],
-  "summary": "In a rapid 2-minute plenary synthesis, the teacher and students consolidate that public services—whether provided by the government, provincial councils, or voluntary organizations—are essential non-profit systems established within legal frameworks to guarantee universal access, fulfill complex daily needs, and drive the qualitative development of Sri Lankan community life.",
-  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted continuously through teacher observation of small-group collaboration, accuracy in identifying public service features on task sheets, clarity of chart paper blueprints, and the intellectual rigor of peer questioning during presentations.",
-  "post_activity": "Rapid Team Quiz / Buzzer Board Challenge: In this fast-paced 5-minute in-class evaluation check, the teacher reads two rapid-fire conceptual dilemma questions based on today's lesson (e.g., 'Name two common features of public services discussed today' and 'Why is a health clinic considered a public service rather than a private business?'). Teams signal with raised hands, and the designated Spokesperson answers on behalf of the group, earning instant formative feedback and scoring points on the chalkboard.",
+  "summary": "The teacher leads a 2-minute plenary where group spokespersons highlight key discoveries, confirming that public services are government-backed institutions established to fulfill daily communal needs, ensure equal access for all citizens, and uplift living standards across Sri Lanka without profit motives.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted continuously through teacher observation of group collaborations, accuracy of the roleplay summary logs, and the depth of student explanations regarding the common features and necessity of public services.",
+  "post_activity": "Students engage in a 5-minute in-class creative challenge called the 'Service Pillars Quick-Sketch & Match'. Each group receives a small blank index card where they must rapidly sketch a simple icon representing a public service feature (such as universal access or non-profit motive) and link it with a one-sentence necessity statement. As time is called, groups flash their cards upward for a rapid peer-verification check moderated by the teacher.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
   "attachments": [
-    "Welimada New Colony Scenario Cards",
-    "Group Problem-Solving Matrix Sheets",
-    "Public Service Blueprint Chart Papers"
+    "Divisional Secretariat Roleplay Station Cards",
+    "Public Service Feature Checklist Sheets"
   ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 1,
   "total_periods": 2,
-  "selected_activity": "Activity: Problem-Solving Matrix: The Missing Public Service Scenario\nApproach: Students tackle a realistic Sri Lankan community dilemma involving a fictional town lacking essential public services, using critical thinking to identify required services, extract common characteristics, and justify their establishment.\nStudent task: Groups read a short scenario card written on the chalkboard about a newly settled agrarian village in Sri Lanka lacking proper postal, water, health, and transport services. The 30 students work collaboratively within their 6 island groups to design a 'Public Service Proposal', identifying the exact services needed, listing their shared operational features, and defending their necessity before the class.\nTeacher facilitation: The teacher circulates among the 6 islands, acting as a critical consultant who challenges groups to think about equity, inclusivity, and state obligation in public service delivery.\nExpected output: A 'Village Public Service Blueprint' chart paper detailing proposed services, their common features, and a justification statement.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "Problem-Solving Matrix: The Missing Public Service Scenario",
+  "selected_activity": "Activity: The Village Hub Simulation\nApproach: Students participate in a guided simulation representing a busy divisional secretariat day in Sri Lanka, where they encounter various public service touchpoints and experience firsthand why these services are established.\nStudent task: Students roleplay citizens visiting different public desks (health, postal, civil registration) set up across the 7 classroom islands. They map out the services utilized, list their common features (such as being funded by public revenue and serving all citizens equally), and formulate arguments explaining the necessity of these services for community welfare.\nTeacher facilitation: The teacher manages classroom flow, sounds a gentle chime for transition phases, and prompts groups with guiding questions regarding service features and community reliance.\nExpected output: A roleplay summary log written on chart paper outlining service categories, common features, and necessity statements.\nGrouping: 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks arranged in 7 islands to accommodate all 35 students actively participating.",
+  "selected_activity_title": "The Village Hub Simulation",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_3",
-      "title": "Problem-Solving Matrix: The Missing Public Service Scenario",
-      "pedagogy_type": "Problem-Solving / Scenario Analysis",
-      "description": "Students tackle a realistic Sri Lankan community dilemma involving a fictional town lacking essential public services, using critical thinking to identify required services, extract common characteristics, and justify their establishment.",
+      "id": "option_2",
+      "title": "The Village Hub Simulation",
+      "pedagogy_type": "Simulation / Roleplay",
+      "description": "Students participate in a guided simulation representing a busy divisional secretariat day in Sri Lanka, where they encounter various public service touchpoints and experience firsthand why these services are established.",
       "learning_outcomes_addressed": [
         "Identifies the public services.",
         "Explains the common features related to public services.",
         "Explains the need of public services."
       ],
-      "student_action_summary": "Groups read a short scenario card written on the chalkboard about a newly settled agrarian village in Sri Lanka lacking proper postal, water, health, and transport services. The 30 students work collaboratively within their 6 island groups to design a 'Public Service Proposal', identifying the exact services needed, listing their shared operational features, and defending their necessity before the class.",
-      "teacher_facilitation_summary": "The teacher circulates among the 6 islands, acting as a critical consultant who challenges groups to think about equity, inclusivity, and state obligation in public service delivery.",
-      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "student_action_summary": "Students roleplay citizens visiting different public desks (health, postal, civil registration) set up across the 7 classroom islands. They map out the services utilized, list their common features (such as being funded by public revenue and serving all citizens equally), and formulate arguments explaining the necessity of these services for community welfare.",
+      "teacher_facilitation_summary": "The teacher manages classroom flow, sounds a gentle chime for transition phases, and prompts groups with guiding questions regarding service features and community reliance.",
+      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks arranged in 7 islands to accommodate all 35 students actively participating.",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A 'Village Public Service Blueprint' chart paper detailing proposed services, their common features, and a justification statement.",
-      "creative_assessment_preview": "A 5-minute 'Human Tableau' (frozen statues) where each group poses for 10 seconds depicting a vital public service in action, while the rest of the class identifies the service and its primary need.",
-      "low_resource_alternative": "If chart paper is scarce, groups draft their village service blueprint directly in their Student Notebooks and present key points verbally."
+      "expected_student_output": "A roleplay summary log written on chart paper outlining service categories, common features, and necessity statements.",
+      "creative_assessment_preview": "Exit Slip Rhyme: Each group collaborates to write a two-line rhyming couplet summarizing why public services are needed before leaving.",
+      "low_resource_alternative": "Roleplay is conducted entirely through seated desk discussions using notebooks to record service interactions."
     }
   ],
   "outcome_allocation": {

@@ -2,83 +2,76 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 1 of 1)",
-  "competence": "Broad curriculum competency standard in plain English",
+  "competence": "Internalizes the qualities of a good labourer and contributes positively to national development",
   "competence_level": "8.6.5",
-  "lesson": "Explains the good qualities of a worker: Thematic Station Jigsaw & Infographic Wall: Competency Level 8.6.5",
+  "lesson": "Explains the good qualities of a worker: Community Workplace Case Audit & Value Inquiry",
   "unique_learning_outcome": [
     "Explains the good qualities of a worker.",
     "Expresses the importance of maintaining good qualities in the work place."
   ],
-  "the_entrance": "5-minute introduction: Imagine you are a new employee at a local factory in Sri Lanka. What qualities do you think are essential for a worker to possess to excel in their role?",
+  "the_entrance": "5-minute introduction: The teacher enters the classroom holding two contrasting fictional worker profiles from a local Sri Lankan agrarian service center—one depicting a dedicated officer who arrives before opening hours and assists farmers with meticulous accuracy, and another showing an indifferent worker who neglects duties. The teacher launches the lesson by posing a sharp inquiry challenge on the chalkboard: 'If you were the president of a rural development society, which worker would you entrust with community funds and why?' Students immediately break into quick pair-share discussions with their neighbors, analyzing the visible behavioral differences, and several volunteer spokespersons share initial hypotheses regarding punctuality, dedication, and institutional trust.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "Organizes students into 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Distributes student notebooks and chart paper.",
-      "student_activities": "Students receive their assigned roles and begin to organize their investigation by exploring the 'Thematic Station Jigsaw' board, discussing the importance of maintaining good qualities in the workplace, and mapping the key ideas.",
-      "learning_teaching_method": "Task Orientation & Inquiry Launch",
-      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "teacher_activities": "The teacher circulates among the nine partitioned student groups, distributing distinct community workplace case vignettes detailing cooperative store managers, healthcare assistants, and local government clerks. Serving as a facilitator, the teacher asks probing scaffolding questions such as 'Which specific actions in this case show punctuality and job satisfaction?' and 'How does this worker's adherence to workplace traditions affect public service delivery?'",
+      "student_activities": "Students collaborate in their assigned groups of 5 to 6, with Leaders keeping focus, Scribes recording observations, and Civic Investigators cross-referencing textbook qualities like honesty, cooperation, and responsibility. Each group dissects their assigned case vignette, identifies the underlying positive or negative behavioral traits, and maps them onto their chart paper.",
+      "learning_teaching_method": "Case Evidence Analysis and Behavior Dissection",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper, Case Vignette Task Cards",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 15,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "Circulates among student groups, facilitating role execution, and providing outcome-focused prompts and time checks. Encourages students to explore the 'Thematic Station Jigsaw' board, discuss the importance of maintaining good qualities in the workplace, and map the key ideas.",
-      "student_activities": "Students continue to explore the 'Thematic Station Jigsaw' board, discuss the importance of maintaining good qualities in the workplace, and map the key ideas. They begin to synthesize their findings and prepare for group presentations.",
-      "learning_teaching_method": "Thematic Station Jigsaw & Infographic Wall",
-      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
+      "teacher_activities": "The teacher guides the groups as they finalize their Case Audit Report charts, prompting Spokespersons to prepare their justifications for national development links. The teacher moderates peer interaction, encouraging teams to challenge each other's assumptions about whether skill alone suffices without dedication and professional development.",
+      "student_activities": "Groups finalize their Case Audit Report charts outlining observed worker behaviors and formulating structured arguments explaining why maintaining good qualities matters for community development. Spokespersons present their group's audit findings to neighboring tables in a gallery rotation, while Timekeepers and Scribes evaluate peer arguments using checklist criteria.",
+      "learning_teaching_method": "Case Audit Report Synthesis and Value Justification",
+      "learning_teaching_aids": "Chart Paper, Markers, Student Notebooks, Whiteboard",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
-      "other": ""
-    },
-    {
-      "step_number": 3,
-      "teacher_activities": "Monitors student group presentations, provides feedback, and synthesizes the key ideas. Encourages students to reflect on the importance of maintaining good qualities in the workplace and the qualities of a good worker.",
-      "student_activities": "Students present their group's concrete artifacts/solutions from the activity, receive peer feedback, and reflect on the importance of maintaining good qualities in the workplace and the qualities of a good worker.",
-      "learning_teaching_method": "Group Presentations & Reflection",
-      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
-      "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 15,
       "other": ""
     }
   ],
-  "summary": "Synthesized Civic Action Infographic Poster",
-  "assessment_and_feedback_whole_lesson": "Formative feedback criteria: Peer feedback on group presentations, teacher observation of student roles, and class discussion on the importance of maintaining good qualities in the workplace.",
-  "post_activity": "5-minute in-class assignment: In-class quiz: 'What are the good qualities of a worker?' (2-minute rapid-fire quiz with 5 questions)",
+  "summary": "In a 2-minute synthesized wrap-up, the teacher invites student volunteers to summarize how punctuality, dedication, cooperation, and adherence to institutional rules directly drive national development and public trust in Sri Lankan workplaces.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted through observation of group collaboration, evaluation of the completed Case Audit Report charts, and accuracy of student explanations regarding worker qualities and their impact on community advancement.",
+  "post_activity": "Students engage in a 5-minute rapid-fire 'Workplace Dilemma Card Sort & Value Stand-Off' where each team receives two flashcards containing contrasting worker behaviors (e.g., 'Staying the whole period on duty' versus 'Leaving early without notice'). Within their groups, students must rapidly classify the quality, write a one-sentence justification of its workplace importance on a slip, and hold it up for immediate peer audit against the chalkboard rubric.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
-  "attachments": [],
+  "attachments": [
+    "Community Workplace Case Vignette Task Cards",
+    "Case Audit Report Chart Templates"
+  ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 1,
   "total_periods": 1,
-  "selected_activity": "Activity: Thematic Station Jigsaw & Infographic Wall: Competency Level 8.6.5\nApproach: Students explore teacher-designated board or discussion stations about 'Explains the good qualities of a worker.'. Home groups reassemble to teach peers and synthesize key ideas.\nStudent task: Explore station prompts, return to home groups to teach peers, and co-create a summary. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.\nExpected output: Synthesized Civic Action Infographic Poster.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "Thematic Station Jigsaw & Infographic Wall: Competency Level 8.6.5",
+  "selected_activity": "Activity: Community Workplace Case Audit & Value Inquiry\nApproach: Students investigate contrasting case vignettes of workers in Sri Lankan community contexts (such as a dedicated cooperative store manager versus an indifferent worker) to audit and articulate good worker qualities.\nStudent task: Each team reviews a case vignette, dissects the behaviors exhibited, categorizes the positive qualities, and formulates arguments explaining why maintaining these qualities matters for community development.\nTeacher facilitation: Acts as a consultant, guiding groups to connect specific worker behaviors to institutional success and public trust through targeted inquiry questions.\nExpected output: A Case Audit Report chart outlining observed worker behaviors and justification of their importance.\nGrouping: 9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead",
+  "selected_activity_title": "Community Workplace Case Audit & Value Inquiry",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_3",
-      "title": "Thematic Station Jigsaw & Infographic Wall: Competency Level 8.6.5",
-      "pedagogy_type": "Station Jigsaw / Collaborative Design",
-      "description": "Students explore teacher-designated board or discussion stations about 'Explains the good qualities of a worker.'. Home groups reassemble to teach peers and synthesize key ideas.",
+      "id": "option_2",
+      "title": "Community Workplace Case Audit & Value Inquiry",
+      "pedagogy_type": "Case Inquiry",
+      "description": "Students investigate contrasting case vignettes of workers in Sri Lankan community contexts (such as a dedicated cooperative store manager versus an indifferent worker) to audit and articulate good worker qualities.",
       "learning_outcomes_addressed": [
         "Explains the good qualities of a worker.",
         "Expresses the importance of maintaining good qualities in the work place."
       ],
-      "student_action_summary": "Explore station prompts, return to home groups to teach peers, and co-create a summary. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "student_action_summary": "Each team reviews a case vignette, dissects the behaviors exhibited, categorizes the positive qualities, and formulates arguments explaining why maintaining these qualities matters for community development.",
+      "teacher_facilitation_summary": "Acts as a consultant, guiding groups to connect specific worker behaviors to institutional success and public trust through targeted inquiry questions.",
+      "student_grouping": "9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "Synthesized Civic Action Infographic Poster.",
-      "creative_assessment_preview": "2-Line Rhyming Slogan: Groups chant a summary of their core takeaway.",
-      "low_resource_alternative": "Use notebook pages pinned to desks as station hubs."
+      "expected_student_output": "A Case Audit Report chart outlining observed worker behaviors and justification of their importance.",
+      "creative_assessment_preview": "Exit Slip Promise: Each student writes down one personal commitment to uphold a specific worker quality (e.g., responsibility) in their school work.",
+      "low_resource_alternative": "Write audit summaries directly in student notebooks and share orally."
     }
   ],
   "outcome_allocation": {

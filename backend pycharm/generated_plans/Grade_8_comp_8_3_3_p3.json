@@ -2,75 +2,84 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 3 of 4)",
-  "competence": "Lives as a peaceful and good citizen in a multicultural society.",
+  "competence": "Contributes to the building of national cohesion and sustainable peace safeguarding one's own cultural identity",
   "competence_level": "8.3.3",
-  "lesson": "Explains the measures that can be taken for cultural integration in a multicultural society: Courtroom / Citizen Grievance Tribunal: Competency Level 8.3.3",
+  "lesson": "Explains the measures that can be taken for cultural integration in a multicultural society: Cultural Integration Station Jigsaw: Bridging Sri Lankan Communities",
   "unique_learning_outcome": [
     "Explains the measures that can be taken for cultural integration in a multicultural society."
   ],
-  "the_entrance": "5-minute introduction: The teacher enters the classroom holding a simulated petition scroll titled 'Community Grievance regarding Cultural Integration in Divisional Secretariat'. The teacher acts as the Chief Magistrate of the Citizen Grievance Tribunal and launches the session by reading a realistic local dispute scenario: two neighborhood communities disagree on organizing joint Sinhala-Tamil New Year and Vesak-Poson cultural exchange programmes due to language barriers and lack of shared awareness. The teacher challenges the 6 student groups: 'As our tribunal panel and legal advocates, how can we formulate actionable integration measures—such as bilingual proficiency classes and community festivals—to resolve this grievance fairly?' Students immediately confer within their teams, assigning roles (Leader, Scribe, Timekeeper, Spokesperson, Investigator) and identifying initial grievances from their notebooks.",
+  "the_entrance": "The teacher circulates among the 9 student desk islands, distributing a short real-world scenario card depicting a bilingual public service office in Colombo and a shared cultural festival committee in Kandy. The teacher launches the 5-minute motivational hook by challenging each group with the prompt: 'What concrete daily measures can bridge language gaps and ensure harmony in our public institutions?' Students enthusiastically engage in quick paired brainstorming within their teams, appointing their Timekeepers and Secretarial Scribes to note down immediate observations on their notebooks before commencing the jigsaw stations.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "The teacher circulates among the 6 teams, acting strictly as a facilitator to prompt deeper investigation into specific integration steps outlined in the syllabus, such as implementing cultural exchange programmes and learning second languages. The teacher asks probing scaffolded questions: 'What specific duties must citizens fulfill to respect cultural diversity in this scenario? How does bilingual proficiency prevent misunderstandings?' The teacher monitors role execution among the Scribes and Facilitators.",
-      "student_activities": "Students work collaboratively in their groups of five. The Civic Investigator reviews textbook concepts on social integrity, while the Scribe records three concrete measures for cultural integration (e.g., joint cultural workshops, learning Sinhala and Tamil languages, and unbiased economic participation). The Leader ensures every member contributes an argument regarding how mutual awareness resolves local friction.",
-      "learning_teaching_method": "Tribunal Evidence Gathering & Measure Formulation",
-      "learning_teaching_aids": "Tribunal Case File Worksheets, Chalkboard, Student Notebooks",
+      "teacher_activities": "The teacher acts as a roving facilitator across the 9 desk islands, guiding students as they dissect their assigned domain cards. The teacher prompts inquiry by asking: 'How does bilingual communication break down social barriers in public offices?' and checks that all team members are actively participating.",
+      "student_activities": "Students work collaboratively in their 9 teams to analyze the specific integration domain assigned on their scenario card. The Leaders guide the discussion while Scribes record the core challenges and potential solutions on their team task sheets.",
+      "learning_teaching_method": "Jigsaw Domain Station Analysis",
+      "learning_teaching_aids": "Domain Scenario Cards (Bilingual education, shared community festivals, inter-school sports exchanges, cooperative economic ventures), Student Notebooks, Colored Pens",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "The teacher circulates as a prompt guide, observing expert sub-group exchanges and checking how students incorporate textbook concepts regarding social integrity and mutual respect. The teacher asks probing questions: 'What makes a shared community project sustainable across diverse ethnic groups?'",
+      "student_activities": "Appointed expert members reconvene with their home teams to synthesize their findings into a comprehensive collaborative 'Integration Matrix' on chart paper. Creative Directors and Chart Leads coordinate the visual layout, outlining actionable steps for schools and local councils.",
+      "learning_teaching_method": "Expert Group Synthesis & Matrix Construction",
+      "learning_teaching_aids": "Chart Paper, Marker Pens, Textbook Reference Pages (54-55)",
       "assessment_and_feedback": "",
       "time_minutes": 15,
       "other": ""
     },
     {
-      "step_number": 2,
-      "teacher_activities": "The teacher convenes the mock Citizen Grievance Tribunal, moderating the floor as groups present their reasoned decisions. The teacher guides the class to evaluate whether the proposed measures genuinely uphold national unity and sustainable peace without bias, offering immediate formative feedback on how well the arguments connect to cultural integration.",
-      "student_activities": "The Spokesperson for each of the 6 teams steps forward to present their group's tribunal verdict and the supporting measures for cultural integration. The remaining team members listen actively, using their Inquirer roles to challenge assumptions respectfully, while taking notes on how other groups propose fostering brotherhood, cooperation, and unity across diverse ethnic and religious groups.",
-      "learning_teaching_method": "Citizen Grievance Tribunal Hearing & Verdict Synthesis",
-      "learning_teaching_aids": "Chart Paper, Colored Markers, Spokesperson Cue Cards",
+      "step_number": 3,
+      "teacher_activities": "The teacher moderates a rapid 5-minute review session where Spokespersons briefly highlight one key actionable measure from their charts. The teacher praises innovative ideas and summarizes how these strategies reinforce national cohesion.",
+      "student_activities": "Spokespersons present their group's top integration measure to the class while Civic Investigators cross-check accuracy against textbook facts and local Sri Lankan realities.",
+      "learning_teaching_method": "Gallery Preview & Peer Standpoint Defense",
+      "learning_teaching_aids": "Completed Integration Matrix Charts, Chalkboard",
       "assessment_and_feedback": "",
-      "time_minutes": 15,
+      "time_minutes": 5,
       "other": ""
     }
   ],
-  "summary": "In a 2-minute synthesis, the teacher and students consolidate that cultural integration in Sri Lanka requires active measures such as developing proficiency in different languages, organizing mutual cultural exchange programmes, and fulfilling civic duties with respect for diversity to ensure sustainable peace.",
-  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted by observing active participation in the tribunal roles, assessing the validity and clarity of the written integration measures on the worksheets, and evaluating the strength of peer critique during the tribunal hearing against NIE competency standards.",
-  "post_activity": "Students engage in a 5-minute interactive 'Tribunal Verdict Standoff'. Instead of paper slips, each of the 6 teams must collaboratively shout out one distinct, rapid-fire 'Sentence of Unity' summarizing an actionable cultural integration measure (e.g., 'Sentence: All citizens must study both national languages to build sustainable peace!'). The teacher immediately awards tribunal points for accuracy, originality, and adherence to civic principles.",
+  "summary": "In a 2-minute teacher-led synthesis, students consolidate their discoveries on cultural integration, recognizing that bilingual proficiency, shared community festivals, and cooperative economic ventures are vital practical measures for minimizing conflict and fostering sustainable peace in Sri Lanka.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted by assessing the completeness and practical feasibility of the student-generated 'Integration Matrix' charts, evaluating student ability to explain concrete measures for cultural integration, and observing active participation during collaborative teamwork.",
+  "post_activity": "5-minute in-class assignment: Statement Display & Justified Standpoint Vote: The teacher writes two contrasting statements on the chalkboard regarding community integration in Sri Lanka (e.g., 'Statement A: Cultural integration is best achieved solely through bilingual education in public schools.' vs. 'Statement B: Cultural integration requires a combination of bilingual proficiency, shared festivals, and cooperative economic ventures.'). Each of the 9 teams holds up a quick color-coded notebook indicator to vote on the most comprehensive standpoint, and selected Spokespersons give a 30-second justification grounded in today's lesson.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
   "attachments": [
-    "Tribunal Case File Worksheets",
-    "Spokesperson Cue Cards",
-    "Chart Paper"
+    "Domain Scenario Cards",
+    "Integration Matrix Chart Templates"
   ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 3,
   "total_periods": 4,
-  "selected_activity": "Activity: Courtroom / Citizen Grievance Tribunal: Competency Level 8.3.3\nApproach: Students use courtroom / citizen grievance tribunal to explore 'Explains the measures that can be taken for cultural integration in a multicultural society.'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (30 students): Desks arranged into 6 teams (6 teams (6 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (30 students): Desks arranged into 6 teams (6 teams (6 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 30 students using 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 6 teams, facilitating role execution and formatively checking progress.\nExpected output: A short role-based civic decision and its reasons.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "Courtroom / Citizen Grievance Tribunal: Competency Level 8.3.3",
+  "selected_activity": "Activity: Cultural Integration Station Jigsaw: Bridging Sri Lankan Communities\nApproach: Students participate in a structured jigsaw activity where each group investigates a specific domain of cultural integration (e.g., bilingual education, shared community festivals, inter-school sports exchanges, and cooperative economic ventures) in Sri Lanka. They then synthesize their findings to design a comprehensive local integration model.\nStudent task: In 9 teams, groups first analyze specific integration measures assigned on a scenario prompt, appoint members to expert sub-groups to share insights, and then synthesize a collaborative 'Integration Matrix' on chart paper detailing actionable steps for schools and local councils.\nTeacher facilitation: The teacher acts as a facilitator, timekeeper, and roving prompt guide across the 9 desk islands, asking: 'How does bilingual communication break down social barriers in public offices?' and 'What makes a shared community project sustainable?'\nExpected output: A collaborative 'Cultural Integration Matrix' drawn on chart paper outlining practical measures for community unity.\nGrouping: 9 teams total (4 groups of 5 students, 5 groups of 6 students, accommodating all 50 students). Roles distributed per team: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead.",
+  "selected_activity_title": "Cultural Integration Station Jigsaw: Bridging Sri Lankan Communities",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_2",
-      "title": "Courtroom / Citizen Grievance Tribunal: Competency Level 8.3.3",
-      "pedagogy_type": "Simulation / Roleplay",
-      "description": "Students use courtroom / citizen grievance tribunal to explore 'Explains the measures that can be taken for cultural integration in a multicultural society.'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (30 students): Desks arranged into 6 teams (6 teams (6 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "id": "option_1",
+      "title": "Cultural Integration Station Jigsaw: Bridging Sri Lankan Communities",
+      "pedagogy_type": "Station Jigsaw & Collaborative Synthesis",
+      "description": "Students participate in a structured jigsaw activity where each group investigates a specific domain of cultural integration (e.g., bilingual education, shared community festivals, inter-school sports exchanges, and cooperative economic ventures) in Sri Lanka. They then synthesize their findings to design a comprehensive local integration model.",
       "learning_outcomes_addressed": [
         "Explains the measures that can be taken for cultural integration in a multicultural society."
       ],
-      "student_action_summary": "Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (30 students): Desks arranged into 6 teams (6 teams (6 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 30 students using 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 6 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "student_action_summary": "In 9 teams, groups first analyze specific integration measures assigned on a scenario prompt, appoint members to expert sub-groups to share insights, and then synthesize a collaborative 'Integration Matrix' on chart paper detailing actionable steps for schools and local councils.",
+      "teacher_facilitation_summary": "The teacher acts as a facilitator, timekeeper, and roving prompt guide across the 9 desk islands, asking: 'How does bilingual communication break down social barriers in public offices?' and 'What makes a shared community project sustainable?'",
+      "student_grouping": "9 teams total (4 groups of 5 students, 5 groups of 6 students, accommodating all 50 students). Roles distributed per team: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead.",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A short role-based civic decision and its reasons.",
-      "creative_assessment_preview": "Students state one role responsibility and explain how it supported the decision.",
-      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
+      "expected_student_output": "A collaborative 'Cultural Integration Matrix' drawn on chart paper outlining practical measures for community unity.",
+      "creative_assessment_preview": "Pass-the-Parcel Quiz: A chalk piece is passed around while music plays; when it stops, the holding student gives one tangible measure for cultural integration.",
+      "low_resource_alternative": "Use student notebooks to draw miniature integration matrices and conduct a verbal round-robin sharing session instead of chart paper."
     }
   ],
   "outcome_allocation": {

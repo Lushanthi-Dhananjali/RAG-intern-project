@@ -2,76 +2,87 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 1 of 3)",
-  "competence": "Appreciates the nature of multicultural societies and demonstrates the importance of cooperative living through mutual trust and collective conscience.",
+  "competence": "Demonstrates understanding of cultural diversity and lives cooperatively as a member of a multicultural society.",
   "competence_level": "8.3.2",
-  "lesson": "Explains with examples that Sri Lanka as a multicultural society: Voices of Harmony: Interactive Roleplay on Cooperative Living",
+  "lesson": "Explains with examples that Sri Lanka as a multicultural society: Mapping Our Cultural Mosaic: Sri Lankan Community Census",
   "unique_learning_outcome": [
     "Explains with examples that Sri Lanka as a multicultural society.",
     "Expresses views appreciating the importance of living cooperatively as a member of a multicultural society."
   ],
-  "the_entrance": "The teacher writes 'Village Harmony Committee Meeting' on the chalkboard and launches a 5-minute motivational hook by presenting a short real-world scenario of a Sri Lankan village planning a common Avurudu and Thai Pongal joint celebration. The teacher prompts students to reflect on how different cultural traditions enrich our community life. Students enthusiastically respond by sharing their own experiences of participating in neighborhood religious festivals, quickly forming their 6 collaborative teams of 5 members with designated group roles (Leader, Scribe, Timekeeper, Spokesperson, Civic Investigator) to prepare for the committee roleplay.",
+  "the_entrance": "5-minute introduction: The teacher launches the session by projecting or writing demographic distribution data from the Grade 8 textbook on the chalkboard, displaying ethnic and religious percentages (Sinhala 74.9%, Tamil 11.2%, Muslim 9.2%, etc.). The teacher poses the motivational challenge prompt: 'Look at our classrooms and neighborhoods across Sri Lanka—from Jaffna to Galle, Batticaloa to Colombo. How do our diverse languages, festivals, and religions weave together into a single national fabric?' Students in their 9 assigned collaborative teams (consisting of designated Leaders, Scribes, Timekeepers, Spokespersons, Civic Investigators, and Creative Directors) immediately engage in a 2-minute quick-fire buzz discussion, sharing local examples of how their families celebrate Sinhala and Tamil New Year, Vesak, Eid, and Christmas together.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "The teacher acts as a facilitator, circulating among the 6 groups to distribute scenario task cards detailing a local village water-management or festival-planning dilemma involving diverse ethnic residents. The teacher guides students in fair role distribution and asks probing questions such as, 'How can our village committee ensure every religious group's customs are respected in this plan?'",
-      "student_activities": "Students work collaboratively in their assigned groups of 5 to read their scenario card and allocate roles representing diverse village elders, farmers, and youth leaders. The Scribe records the initial talking points while the Civic Investigator checks facts against textbook definitions of multicultural coexistence, drafting a 2-minute dialogue outline.",
-      "learning_teaching_method": "Neighborhood Committee Scripting and Character Allocation",
-      "learning_teaching_aids": "Chart Paper, Marker Pens, Student Notebooks, Role Character Cards",
+      "teacher_activities": "The teacher circulates among the 9 student groups, acting strictly as a facilitator to distribute the census data task sheets and prompt critical inquiry. The teacher asks guiding questions such as, 'Which ethnic and religious communities are reflected in our local community data?' and 'How do these statistics represent the broader mosaic of Sri Lanka?'",
+      "student_activities": "Students examine the statistical tables in their groups, with the Scribe and Civic Investigator noting down the specific population percentages and linguistic communities. They cross-reference the data with their own neighborhood experiences to list coexisting communities like Sinhala, Tamil, Muslim, Burgher, and Malay.",
+      "learning_teaching_method": "Demographic Census Analysis and Neighborhood Mapping",
+      "learning_teaching_aids": "Student Notebooks, Chalkboard, Statistical Fact Sheets on Sri Lankan Ethnicity and Religion",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "The teacher monitors group progress across the classroom, scaffolding students as they design their visual maps. The teacher poses probing prompts: 'What specific cultural symbols, religious observances, and traditional attires can you sketch to represent each community on your mosaic map?'",
+      "student_activities": "Led by the Creative Director and Spokesperson, students actively collaborate to draw and assemble a 'Multicultural Mosaic Chart' on large chart paper. They map out diverse cultural features, festival celebrations, and cooperative traditions observed across different regions of Sri Lanka.",
+      "learning_teaching_method": "Collaborative Cultural Mosaic Chart Construction",
+      "learning_teaching_aids": "Chart Paper, Colored Markers, Glue, Picture Cards of Cultural Festivals",
       "assessment_and_feedback": "",
       "time_minutes": 15,
       "other": ""
     },
     {
-      "step_number": 2,
-      "teacher_activities": "The teacher observes team rehearsals, manages strict time pacing, and moderates the rapid presentation of the 2-minute roleplay enactments from each team. The teacher scaffolds student reflections by asking the class to identify specific instances of mutual trust and cooperative problem-solving demonstrated during the performances.",
-      "student_activities": "Group Spokespersons present their dramatized neighborhood committee solutions to the class, illustrating how different language speakers and custom followers resolve community disputes cooperatively. Following the enactments, all students collaboratively write a concise 3-sentence summary in their notebooks highlighting why minimizing conflicts through mutual respect builds sustainable peace in Sri Lanka.",
-      "learning_teaching_method": "Mini-Dramatization and Collaborative Resolution Synthesis",
-      "learning_teaching_aids": "Student Notebooks, Chalkboard summary template",
+      "step_number": 3,
+      "teacher_activities": "The teacher facilitates a rapid 1-minute transition, directing groups to pin up their finished mosaic charts around the classroom walls and instructing Timekeepers to keep strict adherence to the schedule.",
+      "student_activities": "Each group drafts a concise appreciation statement regarding cooperative living in Sri Lanka (e.g., 'Unity in diversity is our greatest strength') and attaches it to their chart mosaic. Students prepare their Spokespersons to summarize their chart's key cultural example for the upcoming review.",
+      "learning_teaching_method": "Cooperative Slogan Synthesis and Gallery Display",
+      "learning_teaching_aids": "Completed Chart Paper Mosaics, Chalkboard",
       "assessment_and_feedback": "",
-      "time_minutes": 15,
+      "time_minutes": 5,
       "other": ""
     }
   ],
-  "summary": "In this 2-minute synthesis, students collectively conclude that Sri Lanka's multicultural fabric—encompassing diverse languages, religions, and customs—requires active mutual trust, collective conscience, and daily cooperation to minimize conflicts and foster national development.",
-  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted through observation of active group participation, the realism and depth of the roleplay dialogue regarding multicultural cooperation, and the accuracy of the 3-sentence notebook summaries evaluated against NIE curriculum standards.",
-  "post_activity": "Within a 5-minute in-class window, students engage in a creative 'Harmony Mosaic Chain' activity. Each student is given a small colored paper slip to quickly write one specific example of how Sri Lankan multiculturalism is visible in their daily life (e.g., sharing food during Vesak and Ramadan). Students rapidly link their paper slips together into a continuous classroom paper chain hung across the chalkboard, while the teacher provides instant verbal praise and formative feedback on the diversity of cultural examples contributed.",
+  "summary": "In this 40-minute session, students successfully investigated Sri Lanka's demographic and cultural diversity using textbook data. Through active group collaboration, they mapped out the coexistence of Sinhala, Tamil, Muslim, Burgher, and Malay communities and synthesized core appreciation statements reflecting our multicultural society.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted through observation of active group participation, accuracy in interpreting ethnic and religious census statistics, the richness of examples included in the Multicultural Mosaic Charts, and the depth of cooperative living appreciation statements drafted by each team.",
+  "post_activity": "Rapid Team Buzzer Showdown: The teacher conducts an energetic 5-minute in-class rapid evaluation where each group's Spokesperson responds to 2 conceptual dilemma prompts displayed on the chalkboard about multicultural coexistence in Sri Lanka. Groups earn points by providing rapid, accurate examples of shared community traditions and cooperative living without using any paper slips or worksheets.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
   "attachments": [
-    "Village Committee Role Cards",
-    "Scenario Task Sheets",
-    "Paper Strips for Mosaic Chain"
+    "Statistical Population Tables",
+    "Mosaic Chart Rubric",
+    "Task Sheets"
   ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 1,
   "total_periods": 3,
-  "selected_activity": "Activity: Voices of Harmony: Interactive Roleplay on Cooperative Living\nApproach: Students enact a short neighborhood committee meeting in a Sri Lankan village discussing how to organize a community event that welcomes all ethnic and religious groups. They explore the practical importance of mutual respect and cooperation.\nStudent task: Each group scripts and performs a 2-minute roleplay scenario demonstrating how neighbors from diverse backgrounds cooperate to solve a common community challenge.\nTeacher facilitation: Sets the scenario context on the chalkboard, guides groups in distributing character roles fairly, monitors rehearsal time limits, and facilitates brief plenary reflections.\nExpected output: A short dramatized enactment and a written 3-sentence summary in notebooks highlighting the value of cooperative multicultural living.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
-  "selected_activity_title": "Voices of Harmony: Interactive Roleplay on Cooperative Living",
+  "selected_activity": "Activity: Mapping Our Cultural Mosaic: Sri Lankan Community Census\nApproach: Students investigate local community structures across Sri Lanka to identify diverse cultural, religious, and linguistic groups, mapping out examples of a multicultural society on chart paper.\nStudent task: Students brainstorm and list examples of ethnic, religious, and linguistic groups coexisting in Sri Lankan society (e.g., Sinhala, Tamil, Muslim, Burgher, Malay communities observing festivals like Sinhala-Tamil New Year, Eid, Vesak, Christmas). They synthesize these examples onto a chart paper mosaic map and draft appreciation statements regarding cooperative living.\nTeacher facilitation: The teacher acts as a facilitator and timekeeper, prompting groups with guiding questions: 'What specific cultural festivals or traditions do we share in our neighborhoods?' and 'How does living together enrich our community?' The teacher monitors group progress across the 30-minute window, ensuring all 50 students actively contribute through assigned roles.\nExpected output: A collaborative 'Multicultural Mosaic Chart' displaying community examples and cooperative living slogans.\nGrouping: 9 teams (4 groups of 5, 5 groups of 6) arranged into 9 classroom islands. Roles distributed: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead. Zero bystanders; all 50 students participate actively.",
+  "selected_activity_title": "Mapping Our Cultural Mosaic: Sri Lankan Community Census",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_2",
-      "title": "Voices of Harmony: Interactive Roleplay on Cooperative Living",
-      "pedagogy_type": "Roleplay",
-      "description": "Students enact a short neighborhood committee meeting in a Sri Lankan village discussing how to organize a community event that welcomes all ethnic and religious groups. They explore the practical importance of mutual respect and cooperation.",
+      "id": "option_1",
+      "title": "Mapping Our Cultural Mosaic: Sri Lankan Community Census",
+      "pedagogy_type": "Case Inquiry / Community Mapping",
+      "description": "Students investigate local community structures across Sri Lanka to identify diverse cultural, religious, and linguistic groups, mapping out examples of a multicultural society on chart paper.",
       "learning_outcomes_addressed": [
         "Explains with examples that Sri Lanka as a multicultural society.",
         "Expresses views appreciating the importance of living cooperatively as a member of a multicultural society."
       ],
-      "student_action_summary": "Each group scripts and performs a 2-minute roleplay scenario demonstrating how neighbors from diverse backgrounds cooperate to solve a common community challenge.",
-      "teacher_facilitation_summary": "Sets the scenario context on the chalkboard, guides groups in distributing character roles fairly, monitors rehearsal time limits, and facilitates brief plenary reflections.",
-      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
+      "student_action_summary": "Students brainstorm and list examples of ethnic, religious, and linguistic groups coexisting in Sri Lankan society (e.g., Sinhala, Tamil, Muslim, Burgher, Malay communities observing festivals like Sinhala-Tamil New Year, Eid, Vesak, Christmas). They synthesize these examples onto a chart paper mosaic map and draft appreciation statements regarding cooperative living.",
+      "teacher_facilitation_summary": "The teacher acts as a facilitator and timekeeper, prompting groups with guiding questions: 'What specific cultural festivals or traditions do we share in our neighborhoods?' and 'How does living together enrich our community?' The teacher monitors group progress across the 30-minute window, ensuring all 50 students actively contribute through assigned roles.",
+      "student_grouping": "9 teams (4 groups of 5, 5 groups of 6) arranged into 9 classroom islands. Roles distributed: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead. Zero bystanders; all 50 students participate actively.",
       "required_materials": [
         "Chalkboard",
-        "Student Notebooks"
+        "Student Notebooks",
+        "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A short dramatized enactment and a written 3-sentence summary in notebooks highlighting the value of cooperative multicultural living.",
-      "creative_assessment_preview": "2-minute 'Statue Tableau' where groups freeze in a pose representing community cooperation, while the teacher asks random students to state one key takeaway.",
-      "low_resource_alternative": "Conduct a seated dialogue debate instead of a full physical roleplay if mobility is restricted."
+      "expected_student_output": "A collaborative 'Multicultural Mosaic Chart' displaying community examples and cooperative living slogans.",
+      "creative_assessment_preview": "3-Minute 'Pass-the-Card' Appreciation: Groups quickly write one sentence appreciating cooperative multiculturalism on a notebook page and pass it to the neighboring group for a quick peer check.",
+      "low_resource_alternative": "Groups use student notebook pages instead of chart paper, dividing pages into quadrants to draw their community cultural mosaic."
     }
   ],
   "outcome_allocation": {

@@ -2,87 +2,77 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 1 of 2)",
-  "competence": "Demonstrates democratic civic values by understanding personal emotional behavior and its impact on societal betterment",
+  "competence": "Demonstrates democratic values and emotional regulation for personal and societal betterment",
   "competence_level": "8.2.3",
-  "lesson": "Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society: Sri Lankan Community Emotion Spectrum Mapping",
+  "lesson": "Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society: Democratic Citizen Roleplay: Emotional Balance at a Pradeshiya Sabha...",
   "unique_learning_outcome": [
     "Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society.",
     "Describes giving examples the nature of various kinds of emotions occuring in a person."
   ],
-  "the_entrance": "The teacher greets the 30 students and writes two contrasting local terms on the chalkboard: 'Haras wahanaya' (Overcoming obstacles/restraint) and 'Kopi kade katahadaha' (Impulsive outbursts). The teacher launches a 5-minute motivational hook by asking students to recall a recent high-stress moment either during a busy village pola market or right before a school term test. As a facilitator, the teacher prompts: 'When someone cuts the water queue or takes your pencil without asking, what immediate physical feeling arises in your chest?' Students in their 6 designated groups of 5 actively share brief personal anecdotes with their Scribe and Leader, identifying whether the triggered emotion was joy, anger, frustration, or anxiety, thus bridging everyday Sri Lankan experiences directly to the concept of emotional spectrums.",
+  "the_entrance": "The teacher launches the 5-minute motivational hook by projecting a scenario on the chalkboard about a heated dispute over a community playground upgrade at a local Pradeshiya Sabha meeting. The teacher prompts students to reflect: 'Have you ever seen a heated argument where tempers flared, and how did it affect the community decision?' Students in their 9 desk islands quickly turn to their partners for a 2-minute 'Think-Pair-Share' session, brainstorming examples of emotional outbursts versus calm reasoning in village council settings, connecting prior knowledge of emotions to democratic responsibilities.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "The teacher circulates among the 6 student groups acting strictly as a facilitator, distributing different localized scenario cards to each table. The teacher provides investigative prompts such as: 'Look closely at the characters in your card; what specific emotion is driving their reaction, and what triggered it?' The teacher guides the Civic Investigator in each group to check the scenario details against textbook concepts of positive and negative emotional triggers.",
-      "student_activities": "Working collaboratively in their groups of 5, students read their assigned authentic local scenario (e.g., managing a community water-supply queue disagreement). The Scribe records the emotions observed (such as anger, impatience, or empathy), while the Timekeeper ensures all members contribute. The Spokesperson and Group Leader guide the discussion on whether the emotions lead to favourable or unfavourable results for the individual.",
-      "learning_teaching_method": "Authentic Local Scenario Investigation",
-      "learning_teaching_aids": "Scenario Task Cards (Pola Dispute, Exam Stress, Water-Supply Queue Dilemma), Student Notebooks, Pens",
-      "assessment_and_feedback": "",
-      "time_minutes": 10,
-      "other": ""
-    },
-    {
-      "step_number": 2,
-      "teacher_activities": "The teacher monitors group interactions, scaffolding the analysis by asking probing questions: 'How does letting anger take over harm not just the individual, but the entire village community?' The teacher encourages the Scribes and Presenters to organize their findings systematically and manages the 30-minute pacing across the six islands to ensure steady progress.",
-      "student_activities": "The 6 groups actively synthesize their findings onto Chart Paper, constructing an 'Emotion & Society Matrix'. They categorize the emotions into positive and negative columns and draft specific points linking emotional control to community betterment, such as maintaining peace in a village pola or fostering cooperative behavior. The Civic Investigator verifies that the matrix aligns with democratic citizenship values and textbook strategies like pre-arrangement and communication.",
-      "learning_teaching_method": "Collaborative Matrix Construction",
-      "learning_teaching_aids": "Chart Paper, Colored Markers, Whiteboard",
+      "teacher_activities": "The teacher circulates among the 9 desk islands, distributing character and emotion profile cards (e.g., eager youth, impatient vendor, calm council chairperson) to groups. The teacher facilitates investigation by asking probing questions: 'How does an angry outburst derail a public meeting, and what specific emotional management strategy from our textbook—like listening or following meeting procedures—can prevent this?'",
+      "student_activities": "Students review their assigned roles and categorize the various kinds of emotions (anger, excitement, anxiety, calm reasoning) likely to occur during the Pradeshiya Sabha debate. The scribe and facilitator in each group lead the discussion, mapping out favorable versus unfavorable results of emotional control on a task sheet.",
+      "learning_teaching_method": "Pradeshiya Sabha Character Briefing and Emotion Mapping",
+      "learning_teaching_aids": "Student Notebooks, Chalkboard, Emotion Scenario Task Sheets",
       "assessment_and_feedback": "",
       "time_minutes": 15,
       "other": ""
     },
     {
-      "step_number": 3,
-      "teacher_activities": "The teacher acts as a moderator, inviting selected Spokespersons to share one key insight from their group's matrix in 30 seconds. The teacher praises strong peer collaboration and highlights how emotional self-regulation prevents individuals from hurting others' feelings.",
-      "student_activities": "Spokespersons briefly present their group's core discovery to the class, while listening peers validate the points by nodding or adding supplementary examples of peaceful conflict resolution. Students finalize their chart work and prepare for the evaluation phase.",
-      "learning_teaching_method": "Peer Gallery Synthesis",
-      "learning_teaching_aids": "Chart Paper Matrices from Groups, Classroom Whiteboard",
+      "step_number": 2,
+      "teacher_activities": "The teacher actively observes group interactions across the classroom, scaffolding students as they draft a 2-minute dialogue showing how constructive emotional regulation resolves the neighborhood playground dispute. The teacher prompts the spokesperson and creative director to ensure the script highlights how democratic citizens benefit society through self-control.",
+      "student_activities": "Group members actively collaborate to write and rehearse a short 2-minute roleplay enactment script in their notebooks, depicting a council member or citizen replacing anger with active listening and pre-arranged compromise. The civic investigator checks the dialogue against textbook principles of democratic living, while the spokesperson prepares for the presentation.",
+      "learning_teaching_method": "Democratic Assembly Simulation and Dialogue Drafting",
+      "learning_teaching_aids": "Chart Paper, Colored Markers, Roleplay Script Outlines",
       "assessment_and_feedback": "",
-      "time_minutes": 5,
+      "time_minutes": 15,
       "other": ""
     }
   ],
-  "summary": "In a 2-minute synthesis, the teacher and students consolidate that recognizing and positively controlling emotions through strategies like rules, communication, and self-confidence prevents individuals from becoming victims of emotional outbursts. This self-mastery directly fosters a peaceful, trusted, and cooperative Sri Lankan society where democratic values thrive.",
-  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted through continuous observation of group collaboration, the accuracy of the 'Emotion & Society Matrix' classification, the depth of peer interactions, and the clarity of student explanations connecting emotional control to personal and societal betterment.",
-  "post_activity": "Creative Rhyming Verse Composition & Recitation: In a fast-paced 5-minute active in-class evaluation, each of the 6 student groups collaborates to compose a short, original 2-line rhyming verse (in Sinhala, Tamil, or English) summarizing how controlling emotions builds a better democratic citizen and society. One by one, the group Spokespersons rapidly stand and recite their verse to the class, while the teacher and peers award enthusiastic applause and quick verbal feedback on how well the verse captures the essence of emotional self-regulation.",
+  "summary": "In a 2-minute synthesis, selected student representatives briefly share key discoveries, highlighting that managing emotions with optimism and calm reasoning prevents conflicts and guarantees societal well-being in a democratic community.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment evaluates students' active participation in roleplay planning, their ability to accurately describe various emotions and their impacts, and their demonstrated understanding that positive emotional control benefits both the individual and society.",
+  "post_activity": "5-minute in-class assignment: Statement Display & Justified Standpoint Vote: The teacher displays a Sri Lankan societal statement on the chalkboard: 'Controlling one's anger during a community dispute is a sign of weakness rather than democratic strength.' Students immediately cast a silent individual vote by holding up a green card (Agree with positive control) or orange card (Disagree), followed by rapid 1-minute partner justifications where students cite textbook strategies like active listening and rule-following to prove why emotional balance betters society.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
   "attachments": [
-    "Scenario Task Cards",
-    "Chart Paper",
-    "Colored Markers"
+    "Emotion Profile Task Sheets",
+    "Pradeshiya Sabha Scenario Cards",
+    "Roleplay Outline Templates"
   ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 1,
   "total_periods": 2,
-  "selected_activity": "Activity: Sri Lankan Community Emotion Spectrum Mapping\nApproach: Students investigate everyday local scenarios from a Sri Lankan village and school context, identifying the nature of various emotions occurring in individuals and linking emotional control to community betterment.\nStudent task: Each group analyzes three authentic local scenarios provided by the teacher (e.g., resolving a minor dispute at a village pola, managing exam stress during term tests, handling a community water-supply queue disagreement). Students list the emotions observed, classify their nature, and debate how positive control benefits both the individual and society.\nTeacher facilitation: The teacher acts as a facilitator and timekeeper, distributing scenario cards, prompting groups with guiding questions about emotional triggers, and managing the 30-minute pacing across the 6 islands.\nExpected output: A collaborative Chart Paper 'Emotion & Society Matrix' illustrating emotion types and societal betterment links.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks are arranged into 6 islands to ensure all 30 students participate actively without bystanders.",
-  "selected_activity_title": "Sri Lankan Community Emotion Spectrum Mapping",
+  "selected_activity": "Activity: Democratic Citizen Roleplay: Emotional Balance at a Pradeshiya Sabha Meeting\nApproach: Students simulate a local Pradeshiya Sabha community discussion where differing opinions on a neighborhood playground project spark strong emotions, requiring democratic citizens to demonstrate emotional self-control for community betterment.\nStudent task: Students take on roles of local citizens and council members experiencing varied emotions (excitement, impatience, anger, calm reasoning). They enact a brief dialogue highlighting how channeling these emotions constructively resolves local disputes.\nTeacher facilitation: The teacher circulates among the 9 desk islands, guiding students to reflect authentic Sri Lankan civic behaviors, prompting them to link emotional regulation to societal harmony, and keeping strict time for preparation and enactment.\nExpected output: A performed 2-minute roleplay enactment script outlined in student notebooks and presented briefly.\nGrouping: 9 teams (4 groups of 5, 5 groups of 6) total 50 students. Desks are arranged into 9 islands. Zero bystanders: roles assigned are Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, and Creative Director / Chart Lead.",
+  "selected_activity_title": "Democratic Citizen Roleplay: Emotional Balance at a Pradeshiya Sabha Meeting",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_1",
-      "title": "Sri Lankan Community Emotion Spectrum Mapping",
-      "pedagogy_type": "Case Inquiry & Evidence Analysis",
-      "description": "Students investigate everyday local scenarios from a Sri Lankan village and school context, identifying the nature of various emotions occurring in individuals and linking emotional control to community betterment.",
+      "id": "option_2",
+      "title": "Democratic Citizen Roleplay: Emotional Balance at a Pradeshiya Sabha Meeting",
+      "pedagogy_type": "Roleplay",
+      "description": "Students simulate a local Pradeshiya Sabha community discussion where differing opinions on a neighborhood playground project spark strong emotions, requiring democratic citizens to demonstrate emotional self-control for community betterment.",
       "learning_outcomes_addressed": [
         "Accepts the view that the positively control of emotions as a democratic citizen bring about the betterment of the person as well as the society.",
         "Describes giving examples the nature of various kinds of emotions occuring in a person."
       ],
-      "student_action_summary": "Each group analyzes three authentic local scenarios provided by the teacher (e.g., resolving a minor dispute at a village pola, managing exam stress during term tests, handling a community water-supply queue disagreement). Students list the emotions observed, classify their nature, and debate how positive control benefits both the individual and society.",
-      "teacher_facilitation_summary": "The teacher acts as a facilitator and timekeeper, distributing scenario cards, prompting groups with guiding questions about emotional triggers, and managing the 30-minute pacing across the 6 islands.",
-      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks are arranged into 6 islands to ensure all 30 students participate actively without bystanders.",
+      "student_action_summary": "Students take on roles of local citizens and council members experiencing varied emotions (excitement, impatience, anger, calm reasoning). They enact a brief dialogue highlighting how channeling these emotions constructively resolves local disputes.",
+      "teacher_facilitation_summary": "The teacher circulates among the 9 desk islands, guiding students to reflect authentic Sri Lankan civic behaviors, prompting them to link emotional regulation to societal harmony, and keeping strict time for preparation and enactment.",
+      "student_grouping": "9 teams (4 groups of 5, 5 groups of 6) total 50 students. Desks are arranged into 9 islands. Zero bystanders: roles assigned are Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, and Creative Director / Chart Lead.",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A collaborative Chart Paper 'Emotion & Society Matrix' illustrating emotion types and societal betterment links.",
-      "creative_assessment_preview": "A 5-minute 'Emotion Tag Exit Slip' where each student writes down one emotion and one way its positive control helps society, handing it to the teacher as they rotate out.",
-      "low_resource_alternative": "Use the Chalkboard for collective mind-mapping if Chart Paper is entirely unavailable."
+      "expected_student_output": "A performed 2-minute roleplay enactment script outlined in student notebooks and presented briefly.",
+      "creative_assessment_preview": "Emotion Tableau: Groups freeze into a 30-second silent statue depicting either uncontrolled anger or positive emotional control, while peers guess the societal impact.",
+      "low_resource_alternative": "Groups write out dialogue bubbles on notebook pages instead of full roleplay staging if space is limited."
     }
   ],
   "outcome_allocation": {

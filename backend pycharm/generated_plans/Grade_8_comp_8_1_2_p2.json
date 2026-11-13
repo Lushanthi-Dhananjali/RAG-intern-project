@@ -2,77 +2,89 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 2 of 3)",
-  "competence": "Investigates public services provided for the area and appreciates their contribution to human development.",
+  "competence": "Investigates public services provided for the area and appreciates their role in human development and community welfare.",
   "competence_level": "8.1.2",
-  "lesson": "Expresses ideas appreciating the fact that public services bring about a quality development of human lives: Public vs. Non-State Service Value Debate & Evidence Grid",
+  "lesson": "Expresses ideas appreciating the fact that public services bring about a quality development of human lives: Dual-Sector Jigsaw Matrix: State vs. Community Organizations",
   "unique_learning_outcome": [
     "Expresses ideas appreciating the fact that public services bring about a quality development of human lives.",
     "Gives examples for other organizations that provide public services."
   ],
-  "the_entrance": "5-minute introduction: The teacher directs student attention to two contrasting scenario prompts written on the chalkboard: Scenario A outlines the Divisional Secretariat repairing a major irrigation canal, while Scenario B details a village temple welfare society organizing immediate post-flood relief and cleaning up community wells. The teacher acts as facilitator, launching the lesson with the inquiry prompt: 'How do both state institutions and non-state organizations directly shape the quality of our daily lives and livelihoods in our local villages?' Students actively turn to their table groups of five, with the Leader and Scribe organizing initial rapid brainstorming to identify local institutions, while the Civic Investigator notes down key community impacts mentioned by peers.",
+  "the_entrance": "The teacher launches the 5-minute session by projecting a split-screen photo slide showing a Provincial General Hospital alongside a local Sanasa cooperative society center in a Sri Lankan rural province. The teacher poses the opening challenge: 'Look at how these two distinct entities operate in our neighborhoods. How do both government departments and community welfare organizations directly elevate the standard of living for everyday citizens?' The 7 table islands of 5 students immediately convene into quick huddles; Leaders assign roles while Secretaries note down initial observations regarding healthcare access and grassroots financial support.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "The teacher circulates among the six teams, observing group collaboration and prompting students with scaffolding questions such as: 'What specific difference does a rural SANASA co-operative or a religious welfare society make to household economic resilience compared to government divisional secretariats?' The teacher ensures every student rotates responsibilities, checking that Scribes and Presenters actively log details about both state and non-state entities.",
-      "student_activities": "Working in collaborative groups of five, students examine the chalkboard scenario prompts regarding local community challenges like post-flood relief and rural road maintenance. The Scribe records evidence on chart paper, while the Timekeeper monitors progress, and the Civic Investigator cross-references textbook concepts on public services with community realities.",
-      "learning_teaching_method": "Scenario Evidence Gathering and Institutional Mapping",
-      "learning_teaching_aids": "Chart paper, colored markers, chalkboard prompts, student notebooks",
+      "teacher_activities": "The teacher circulates among the 7 table islands to distribute specialized expert cards focusing either on state public services (e.g., Department of Registration of Persons, Provincial General Hospitals) or complementary non-state entities (e.g., Sanasa cooperative societies, religious welfare trusts, Red Cross). The teacher scaffolds the inquiry by asking probing questions: 'Can you pinpoint how this specific state institution guarantees fundamental rights, and how does the community organization complement it?'",
+      "student_activities": "Students split into designated expert roles within their 7 table groups. Scribes record specific operational functions from their assigned task cards while Civic Investigators verify factual accuracy against textbook concepts. Group members debate how each entity impacts human life development across Sri Lankan communities.",
+      "learning_teaching_method": "Expert Group Sector Investigation",
+      "learning_teaching_aids": "Expert Sector Task Cards, Chart Paper, Colored Markers",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "The teacher moderates the transition back to home teams, instructing Timekeepers to manage the 15-minute synthesis phase rigorously. As the teacher circulates among the groups, they prompt deeper critical thinking: 'How can you contrast the regulatory reach of a government ministry with the flexible community support of a cooperative society on your synthesis chart?'",
+      "student_activities": "Experts return to their home tables and pool their findings. Collaboratively, the group constructs a comprehensive Dual-Sector Jigsaw Matrix on chart paper, mapping out how state institutions and community organizations jointly foster human development, education, and health. The Presenter coordinates the drafting of comparative bullet points.",
+      "learning_teaching_method": "Jigsaw Home Team Matrix Synthesis",
+      "learning_teaching_aids": "Jigsaw Matrix Worksheets, Large Chart Sheets, Felt Pens",
       "assessment_and_feedback": "",
       "time_minutes": 15,
       "other": ""
     },
     {
-      "step_number": 2,
-      "teacher_activities": "The teacher acts as a moderator, facilitating inter-group discussions and asking probing questions to refine student reasoning about human capital development. The teacher guides learners to evaluate how non-state organizations complement government services in enhancing overall quality of life across Sri Lankan society.",
-      "student_activities": "Groups synthesize their findings into a structured 'Quality of Life & Organizational Provider Grid' comparing state and non-state service values. The Spokesperson presents the team's grid analysis to the class, while team members actively participate in peer feedback and defend their evidence-based arguments against inquiries from other groups.",
-      "learning_teaching_method": "Value-Comparison Grid Construction and Collaborative Debate",
-      "learning_teaching_aids": "Completed chart papers, marker pens, whiteboard",
+      "step_number": 3,
+      "teacher_activities": "The teacher organizes a rapid gallery rotation where teams inspect neighboring charts, prompting students to evaluate the diversity of public and non-state service examples provided. The teacher ensures constructive peer feedback is exchanged quietly and efficiently across all 7 table islands.",
+      "student_activities": "Spokespersons and group members circulate to adjacent table charts, reviewing comparative matrices and attaching sticky notes highlighting well-articulated examples of human development enhancement. Students validate whether both state and community contributions are accurately represented.",
+      "learning_teaching_method": "Gallery Walk Peer Evaluation",
+      "learning_teaching_aids": "Completed Matrix Charts, Sticky Notes",
       "assessment_and_feedback": "",
-      "time_minutes": 15,
+      "time_minutes": 5,
       "other": ""
     }
   ],
-  "summary": "The teacher facilitates a 2-minute plenary synthesis where students conclude that both state public services and non-state community organizations are vital for uplifting living standards, ensuring human capital growth, and fostering local development across Sri Lanka.",
-  "assessment_and_feedback_whole_lesson": "Formative evaluation is based on group participation, the completeness and accuracy of the Quality of Life & Organizational Provider Grid, the depth of peer reasoning during presentations, and the clarity of student reflections on the complementary roles of state and non-state service providers.",
-  "post_activity": "5-minute in-class assignment: Statement Display & Vote: The teacher displays an authentic Sri Lankan civic statement on the chalkboard: 'Non-state organizations and religious societies contribute just as much to human development in our villages as government public services.' Students individually vote Agree or Disagree by raising colored indicator cards and rapidly justify their standpoint in 60 seconds when called upon by the teacher.",
+  "summary": "In a 2-minute plenary synthesis, the teacher invites student volunteers to summarize how state public services and external community organizations work in tandem. Students articulate that while government bodies provide structured nationwide administrative and infrastructural support, non-state community organizations deliver vital grassroots resilience, mutually driving the qualitative development of human lives in Sri Lanka.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted by assessing the completeness and accuracy of the Dual-Sector Jigsaw Matrix charts, observing equitable role participation across table islands, and listening to students' articulated justifications during the gallery walk regarding how public services enrich human life quality.",
+  "post_activity": "Students engage in a 5-minute collaborative creative verse composition in their 7 table groups. Each group composes a concise 4-line rhyming verse in either Sinhala, Tamil, or English that captures the complementary value of state public services and community organizations in uplifting human development. Timekeepers monitor the strict 5-minute limit. Selected group Presenters recite their team's poetic summary to the class, while the teacher provides immediate positive reinforcement and formative verbal feedback.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
   "attachments": [
-    "Chalkboard scenario prompt cards",
-    "group evidence grid templates",
-    "voting indicator cards."
+    "Expert Sector Task Cards",
+    "Jigsaw Matrix Worksheets",
+    "Chart Paper",
+    "Colored Markers",
+    "Sticky Notes"
   ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 2,
   "total_periods": 3,
-  "selected_activity": "Activity: Public vs. Non-State Service Value Debate & Evidence Grid\nApproach: Students critically evaluate the direct link between essential public services and human capital development in Sri Lanka, contrasting state-provided services with contributions from co-operatives, religious institutions, and community organizations.\nStudent task: Teams examine structured scenario prompts written on the chalkboard depicting local community challenges (e.g., managing post-flood relief or maintaining village rural roads), compile evidence of how state and non-state entities improve human lives, and build a structured value-comparison chart.\nTeacher facilitation: The teacher monitors group dynamics, ensures equitable role rotation among all 30 students, and guides inquiries using scaffolds like: 'What specific difference does a rural temple welfare society or a SANASA co-operative make to household livelihoods compared to the Divisional Secretariat?'\nExpected output: An evidence-based 'Quality of Life & Organizational Provider Grid' illustrating service impacts across local Sri Lankan contexts.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "Public vs. Non-State Service Value Debate & Evidence Grid",
+  "selected_activity": "Activity: Dual-Sector Jigsaw Matrix: State vs. Community Organizations\nApproach: Students participate in a cooperative jigsaw task where expert groups analyze either core public services (e.g., Department of Registration of Persons, Provincial General Hospitals) or complementary non-state entities (e.g., Sanasa cooperative societies, religious welfare trusts, Red Cross). They then return to home teams to synthesize a comprehensive value matrix.\nStudent task: Operating within 7 table islands of 5 students, initial 'expert' assignments have teams dissect how government institutions and external organizations uplift human lives across Sri Lanka. Roles are strictly maintained: the Leader manages internal debate, the Timekeeper ensures the 30-minute allocation is respected, and the Presenter articulates the group's compiled examples of human development enhancement.\nTeacher facilitation: The teacher circulates among the 7 islands to monitor equitable role participation, ensuring every student contributes their assigned perspective. The teacher prompts deeper reasoning with guiding questions: 'Can you contrast how a state ministry and a local cooperative society both elevate living standards in a Sri Lankan village?'\nExpected output: A comparative synthesis chart paper illustrating the dual contribution of state public services and external organizations to human development.\nGrouping: 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
+  "selected_activity_title": "Dual-Sector Jigsaw Matrix: State vs. Community Organizations",
   "custom_teacher_activity": null,
   "activity_options": [
     {
       "id": "option_2",
-      "title": "Public vs. Non-State Service Value Debate & Evidence Grid",
-      "pedagogy_type": "Structured Evidence Analysis & Comparative Debate",
-      "description": "Students critically evaluate the direct link between essential public services and human capital development in Sri Lanka, contrasting state-provided services with contributions from co-operatives, religious institutions, and community organizations.",
+      "title": "Dual-Sector Jigsaw Matrix: State vs. Community Organizations",
+      "pedagogy_type": "Station Jigsaw & Comparative Analysis",
+      "description": "Students participate in a cooperative jigsaw task where expert groups analyze either core public services (e.g., Department of Registration of Persons, Provincial General Hospitals) or complementary non-state entities (e.g., Sanasa cooperative societies, religious welfare trusts, Red Cross). They then return to home teams to synthesize a comprehensive value matrix.",
       "learning_outcomes_addressed": [
         "Expresses ideas appreciating the fact that public services bring about a quality development of human lives.",
         "Gives examples for other organizations that provide public services."
       ],
-      "student_action_summary": "Teams examine structured scenario prompts written on the chalkboard depicting local community challenges (e.g., managing post-flood relief or maintaining village rural roads), compile evidence of how state and non-state entities improve human lives, and build a structured value-comparison chart.",
-      "teacher_facilitation_summary": "The teacher monitors group dynamics, ensures equitable role rotation among all 30 students, and guides inquiries using scaffolds like: 'What specific difference does a rural temple welfare society or a SANASA co-operative make to household livelihoods compared to the Divisional Secretariat?'",
-      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "student_action_summary": "Operating within 7 table islands of 5 students, initial 'expert' assignments have teams dissect how government institutions and external organizations uplift human lives across Sri Lanka. Roles are strictly maintained: the Leader manages internal debate, the Timekeeper ensures the 30-minute allocation is respected, and the Presenter articulates the group's compiled examples of human development enhancement.",
+      "teacher_facilitation_summary": "The teacher circulates among the 7 islands to monitor equitable role participation, ensuring every student contributes their assigned perspective. The teacher prompts deeper reasoning with guiding questions: 'Can you contrast how a state ministry and a local cooperative society both elevate living standards in a Sri Lankan village?'",
+      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
       "required_materials": [
-        "Chalkboard",
+        "Chart Paper",
         "Student Notebooks",
-        "Chart Paper"
+        "Chalkboard"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "An evidence-based 'Quality of Life & Organizational Provider Grid' illustrating service impacts across local Sri Lankan contexts.",
-      "creative_assessment_preview": "A 5-minute 'One-Sentence Appreciation Exit Slip' where every student writes down one unique sentence in their notebook expressing how public services enhance human development.",
-      "low_resource_alternative": "If chart paper is scarce, groups draft their evidence grids directly onto double-page student notebook spreads and present verbally."
+      "expected_student_output": "A comparative synthesis chart paper illustrating the dual contribution of state public services and external organizations to human development.",
+      "creative_assessment_preview": "Pass-the-Chalkboard Rapid Quiz: One representative from each of the 7 islands runs up to write one non-state public service provider on the board within a 60-second limit.",
+      "low_resource_alternative": "Draw the comparative matrix directly in student notebooks using shared chalkboard templates."
     }
   ],
   "outcome_allocation": {

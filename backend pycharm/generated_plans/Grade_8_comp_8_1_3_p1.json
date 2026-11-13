@@ -2,78 +2,76 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 1 of 2)",
-  "competence": "Investigates the structure, duties, and responsibilities of public service institutions to understand their impact on citizen welfare and community development in Sri Lanka.",
+  "competence": "Investigates the duties, responsibilities, and qualitative contributions of public service institutions toward community welfare.",
   "competence_level": "8.1.3",
-  "lesson": "Explains the duties and responsibilities of public service institutions: Public Service Institutional Blueprint Analysis",
+  "lesson": "Explains the duties and responsibilities of public service institutions: Citizen-Officer Service Scenario Inquiry",
   "unique_learning_outcome": [
     "Explains the duties and responsibilities of public service institutions.",
     "Explains the importance of providing efficent service of the officers of public services identifying the need."
   ],
-  "the_entrance": "5-minute introduction: The teacher launches the lesson by posing a relatable scenario on the chalkboard: a citizen visiting the local Divisional Secretariat to obtain a birth certificate or register a land deed, facing a long queue and a delayed officer. The teacher acts as a facilitator, challenging the class with the launch prompt: 'Imagine you or your family member need an urgent document from a government office—what specific duties does that institution hold, and how does the officer's speed or delay change your day?' Students in their 6 desk teams of 5 actively discuss the scenario, share prior family experiences visiting local government offices in Sri Lanka, and appoint their Team Leaders and Scribes to prepare for the institutional blueprint investigation.",
+  "the_entrance": "5-minute introduction: The teacher launches the 40-minute session by projecting an illustrated scenario of a crowded local divisional secretariat office on the chalkboard and posing the motivational challenge: 'Imagine your family visits the Grama Niladhari office to secure a residency certificate for a scholarship, but the officer is absent without notice, causing a two-week delay. How does this bottleneck affect community welfare, and what are the institution's legal responsibilities?' As student teams gather in their 9 assigned groups of 5-6, the Facilitator and Scribe lead an initial 2-minute buzz session sharing personal family experiences of public service encounters, while the Timekeeper monitors the countdown to activate the core investigative tasks.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "The teacher circulates among the 6 desk islands as a facilitator, distributing different institutional case profiles (Divisional Secretariat, Postal Department, Government Hospital) to each team. The teacher scaffolds student inquiry by asking probing questions such as 'What are the core legal mandates of this specific office?' and 'Which public needs trigger these institutional duties?' The teacher monitors group collaboration to ensure all assigned roles—such as the Civic Investigator and the Scribe—are actively contributing to the task.",
-      "student_activities": "Working collaboratively in groups of 5, students read their assigned Sri Lankan institutional case profile and extract the primary duties and responsibilities mandated by the state. The Scribe records the core institutional functions on paper, while the Civic Investigator cross-references textbook facts about public services with the case details. Team members discuss how these public institutions contribute directly to the qualitative development of living conditions in Sri Lanka.",
-      "learning_teaching_method": "Institutional Case Profile Investigation",
-      "learning_teaching_aids": "Structured Textual Case Prompt Sheets, Notebooks, Colored Markers",
+      "teacher_activities": "The teacher circulates among the 9 student groups, facilitating inquiry by asking probing questions about the official mandate of local administrative bodies. The teacher prompts the Civic Investigators and Scribes to examine the exact statutory duties of public officers and challenges groups to pinpoint where administrative breakdowns occur in the provided scenarios.",
+      "student_activities": "Working collaboratively in their designated roles, students read the distributed scenario cards detailing public service delays. The Scribe records the core institutional duties identified, while the Creative Director and Spokesperson draft a comparative chart on notebook paper contrasting efficient versus delayed public service impacts on ordinary citizens.",
+      "learning_teaching_method": "Case Evidence Analysis and Institutional Duty Mapping",
+      "learning_teaching_aids": "Scenario Task Cards depicting local post office and Divisional Secretariat delays, Student Notebooks, and Colored Markers",
       "assessment_and_feedback": "",
       "time_minutes": 15,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "The teacher guides the groups as they transition from raw data collection to synthesizing their findings onto chart paper, prompting them to evaluate the human element of public service. The teacher asks targeted scaffolding questions like 'How does officer delay impact public welfare?' and 'What makes a public service officer truly efficient?' The teacher observes group interactions and moderates peer discussions across the room.",
-      "student_activities": "Students design and illustrate an institutional duty-responsibility-efficiency chart on chart paper, mapping out mandatory public services and linking them to officer efficiency standards. The Spokesperson and Timekeeper collaborate with the team to structure their key arguments explaining why efficient service delivery is vital for citizens. Teams prepare to present their institutional blueprints and debate the consequences of administrative bottlenecks in local Sri Lankan offices.",
-      "learning_teaching_method": "Blueprint Mapping and Efficiency Analysis",
-      "learning_teaching_aids": "Chart Paper, Marker Pens, Whiteboard",
+      "teacher_activities": "The teacher acts as a moderator, guiding groups to evaluate why prompt officer action prevents public hardship and economic loss in Sri Lankan communities. The teacher asks scaffolding questions regarding citizen obligations and institutional accountability, encouraging student teams to formulate actionable efficiency solutions.",
+      "student_activities": "Group Spokespersons and Civic Investigators lead a dynamic debate within their teams to synthesize final arguments defending why efficient public service is vital for qualitative community development. Each team finalizes a structured written case analysis in their notebooks outlining specific institutional responsibilities and practical remedies for administrative bottlenecks.",
+      "learning_teaching_method": "Efficiency Impact Evaluation and Solution Synthesis",
+      "learning_teaching_aids": "Chart Paper, Whiteboard, and Textbook Excerpts on Public Services",
       "assessment_and_feedback": "",
       "time_minutes": 15,
       "other": ""
     }
   ],
-  "summary": "In a 2-minute interactive synthesis, the teacher invites student representatives to highlight the core discoveries made during their institutional blueprint analysis. Students conclude that public service institutions exist to ensure qualitative development and citizen welfare, and that prompt, efficient action by public officers is essential to prevent public hardship.",
-  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted through observation of teamwork during chart creation, evaluation of accuracy in identifying institutional duties, and the depth of student reasoning regarding officer efficiency during group interactions.",
-  "post_activity": "Rapid Team Quiz & Buzzer Board Challenge: The teacher conducts a fast-paced 5-minute active review where each of the 6 teams answers two rapid conceptual dilemma questions regarding public service duties and officer efficiency in Sri Lankan institutions. Teams confer quickly and use a mini whiteboard to display their final answers, earning immediate peer feedback and teacher clarification.",
+  "summary": "In a 2-minute synthesis, student representatives share key discoveries emphasizing that public service institutions exist to generate qualitative development in citizens' living conditions, and that timely, responsible officer action is essential to eliminate public hardship and uphold community welfare.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted through active teacher observation of small-group collaboration, inspection of notebook case analyses for accurate identification of institutional duties, and peer feedback during team solution presentations.",
+  "post_activity": "Pass-the-Parcel Concept Challenge: Students participate in an energetic 5-minute in-class activity where a designated prompt box is passed across the room to traditional Sinhala/Tamil rhythmic clapping. When the clapping stops, the student holding the box draws a Dilemma Card containing a real-world public service bottleneck (e.g., identity card registration delay) and must instantly verbalize one specific duty of the responsible public officer and one way efficiency can be restored, receiving immediate formative feedback from the teacher and peers.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
   "attachments": [
-    "Divisional Secretariat Case Prompt Sheet",
-    "Postal Department Case Profile",
-    "Hospital Service Scenario Card",
-    "Institutional Blueprint Chart Template."
+    "Scenario Task Cards",
+    "Chart Paper Templates",
+    "Case Analysis Rubric"
   ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 1,
   "total_periods": 2,
-  "selected_activity": "Activity: Public Service Institutional Blueprint Analysis\nApproach: Students investigate local Sri Lankan public service institutions (such as the Divisional Secretariat, local hospital, or postal department) by analyzing structured textual case prompts on chart paper to map out their exact duties, responsibilities, and service delivery standards.\nStudent task: Working in 6 teams of 5, students examine a provided scenario highlighting a specific public service office (e.g., obtaining a birth certificate at the Divisional Secretariat). They identify the mandatory institutional duties and discuss why officer efficiency directly impacts citizens.\nTeacher facilitation: The teacher acts as a facilitator, introducing the 30-minute task, circulating among the 6 desk islands to prompt critical thinking with questions like 'What is the primary duty here?' and 'How does officer delay affect the public?', and managing time checks.\nExpected output: An institutional duty-responsibility-efficiency chart drawn on chart paper detailing public service functions.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
-  "selected_activity_title": "Public Service Institutional Blueprint Analysis",
+  "selected_activity": "Activity: Citizen-Officer Service Scenario Inquiry\nApproach: Student teams examine real-world scenarios at a local Grama Niladhari office or post office to evaluate officer efficiency and institutional responsibilities.\nStudent task: Students read a provided scenario depicting a public service delay, identify the institution's official duties, and argue why prompt officer action prevents public hardship.\nTeacher facilitation: The teacher guides groups with targeted questions about how public service inefficiency impacts ordinary citizens in Sri Lankan communities.\nExpected output: A written case analysis in student notebooks outlining institutional duties and efficiency solutions.\nGrouping: 9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead",
+  "selected_activity_title": "Citizen-Officer Service Scenario Inquiry",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_1",
-      "title": "Public Service Institutional Blueprint Analysis",
-      "pedagogy_type": "Evidence Analysis & Graphic Structuring",
-      "description": "Students investigate local Sri Lankan public service institutions (such as the Divisional Secretariat, local hospital, or postal department) by analyzing structured textual case prompts on chart paper to map out their exact duties, responsibilities, and service delivery standards.",
+      "id": "option_2",
+      "title": "Citizen-Officer Service Scenario Inquiry",
+      "pedagogy_type": "Case Inquiry",
+      "description": "Student teams examine real-world scenarios at a local Grama Niladhari office or post office to evaluate officer efficiency and institutional responsibilities.",
       "learning_outcomes_addressed": [
         "Explains the duties and responsibilities of public service institutions.",
         "Explains the importance of providing efficent service of the officers of public services identifying the need."
       ],
-      "student_action_summary": "Working in 6 teams of 5, students examine a provided scenario highlighting a specific public service office (e.g., obtaining a birth certificate at the Divisional Secretariat). They identify the mandatory institutional duties and discuss why officer efficiency directly impacts citizens.",
-      "teacher_facilitation_summary": "The teacher acts as a facilitator, introducing the 30-minute task, circulating among the 6 desk islands to prompt critical thinking with questions like 'What is the primary duty here?' and 'How does officer delay affect the public?', and managing time checks.",
-      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
+      "student_action_summary": "Students read a provided scenario depicting a public service delay, identify the institution's official duties, and argue why prompt officer action prevents public hardship.",
+      "teacher_facilitation_summary": "The teacher guides groups with targeted questions about how public service inefficiency impacts ordinary citizens in Sri Lankan communities.",
+      "student_grouping": "9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead",
       "required_materials": [
         "Chalkboard",
-        "Student Notebooks",
-        "Chart Paper"
+        "Student Notebooks"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "An institutional duty-responsibility-efficiency chart drawn on chart paper detailing public service functions.",
-      "creative_assessment_preview": "Pass-the-Chalk Rapid List: Each team sends a representative to the chalkboard to write one distinct duty of a public service officer within 60 seconds.",
-      "low_resource_alternative": "Use student notebooks exclusively to draw the institutional responsibility matrix instead of chart paper."
+      "expected_student_output": "A written case analysis in student notebooks outlining institutional duties and efficiency solutions.",
+      "creative_assessment_preview": "Exit Slip: Each student writes one sentence on a scrap paper explaining why efficient public service matters before leaving their desk.",
+      "low_resource_alternative": "Write the case study scenarios directly on the chalkboard for all groups to read."
     }
   ],
   "outcome_allocation": {

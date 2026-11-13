@@ -2,74 +2,84 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 3 of 3)",
-  "competence": "Names the public services provided for the area identifying them and appreciates their contribution to human development.",
+  "competence": "Names the public services provided for the area identifying them and investigates their functions.",
   "competence_level": "8.1.2",
-  "lesson": "Presents information about other public services provided by the government: Government Services Legislative Mock Expo & Presentation",
+  "lesson": "Presents information about other public services provided by the government: Public Service Directorate Inquiry Panel",
   "unique_learning_outcome": [
     "Presents information about other public services provided by the government."
   ],
-  "the_entrance": "5-minute introduction: The teacher welcomes the class and projects a vibrant visual slide of a local Divisional Secretariat office interacting with citizens in Sri Lanka. As a motivational hook, the teacher challenges the 6 student groups: 'Today, our classroom transforms into the National Government Services Expo. You are senior information officers representing various ministries. Can your team pitch your assigned public service so clearly that visiting citizens immediately understand its direct benefit to our community?' Student groups eagerly gather their ministry files, assign roles for their upcoming expo presentations, and review their assigned service portfolios with their team leaders.",
+  "the_entrance": "5-minute introduction: The teacher circulates the room to establish 7 table islands and launches the session by displaying a photograph of a rural Divisional Secretariat office on the chalkboard alongside a prompt card asking: 'How do lesser-known state directorates like Samurdhi and Social Services reach remote families?' Students immediately assemble in their groups of five, assigning roles of departmental representatives and inquiry officers, and discuss their prior experiences visiting local government offices with their families.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "The teacher circulates among the 6 groups, acting as a lead facilitator to assist teams in structuring their 2-minute oral presentation key points and organizing chalk diagrams. The teacher asks probing scaffold questions such as: 'Which specific citizen needs does your ministry service address first, and how will you represent this clearly on the chalkboard?'",
-      "student_activities": "Team leaders and secretaries collaborate to draft a concise 2-minute presentation outline on chart paper, while civic investigators verify facts against textbook guidelines and timekeepers check pacing. Group members practice their speaking parts and assign chalkboard sketching duties to prepare for the upcoming expo rotation.",
-      "learning_teaching_method": "Ministry Briefing & Expo Station Setup",
-      "learning_teaching_aids": "Chart paper, colored markers, and ministry fact sheets on fisheries support, cooperative development, and cultural affairs.",
+      "teacher_activities": "The teacher circulates among the 7 table islands, distributing blank chart paper and guiding departmental representatives to outline citizen eligibility criteria and service offerings for bodies like the Department of Registration of Persons and Social Services. The teacher prompts students with scaffolding questions such as: 'What specific documents must a citizen present to access welfare services in your assigned department?'",
+      "student_activities": "Three departmental representatives in each group collaborate with their two inquiry officers to draft structured briefing points on chart paper, synthesizing textbook concepts regarding government welfare responsibilities into clear operational summaries.",
+      "learning_teaching_method": "Directorate Briefing Preparation",
+      "learning_teaching_aids": "Chart Paper, Colored Markers, Student Notebooks",
       "assessment_and_feedback": "",
       "time_minutes": 10,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "The teacher manages the strict presentation timer, ensuring each of the 6 teams delivers their 2-minute ministerial briefing without interruption while moderating the peer Q&A session. The teacher prompts audience groups to ask critical, clarifying questions and guides constructive peer evaluation after each ministry showcase.",
-      "student_activities": "Group spokespersons step forward sequentially to present their ministry's public services to the class while illustrating key functions using chalkboard diagrams. Meanwhile, visiting audience groups take concise notes in their notebooks and actively pose probing inquiries regarding service accessibility and community benefits.",
-      "learning_teaching_method": "Legislative Mock Expo & Interactive Presentation Showcase",
-      "learning_teaching_aids": "Chalkboard, student notebooks, and spokesperson role cards.",
+      "teacher_activities": "The teacher acts as a session moderator, timing the rotation of inter-group questioning and asking probing analytical queries like: 'What evidence proves that this public service effectively reaches vulnerable communities in rural Sri Lanka?'",
+      "student_activities": "Groups engage in a structured 3-minute inter-group Q&A panel where designated inquiry officers cross-examine neighboring departmental representatives on operational reach, accessibility hurdles, and citizen grievance redressal mechanisms.",
+      "learning_teaching_method": "Structured Inter-Group Inquiry Panel",
+      "learning_teaching_aids": "Completed Chart Briefing Sheets, Chalkboard",
       "assessment_and_feedback": "",
-      "time_minutes": 20,
+      "time_minutes": 15,
+      "other": ""
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "The teacher monitors the final synthesis phase, ensuring every group incorporates feedback from the peer panel into their working documents and commends collaborative thoroughness.",
+      "student_activities": "The Scribe and Timekeeper finalize the group's Inquiry Panel Briefing Sheet, ensuring all citizen access criteria and public service directorate functions are accurately recorded before classroom display.",
+      "learning_teaching_method": "Briefing Sheet Finalization",
+      "learning_teaching_aids": "Inquiry Panel Briefing Sheets, Markers",
+      "assessment_and_feedback": "",
+      "time_minutes": 5,
       "other": ""
     }
   ],
-  "summary": "In a 2-minute plenary synthesis, the teacher and students consolidate key discoveries, highlighting how diverse government ministries—such as fisheries, cooperatives, and cultural affairs—collaborate to deliver essential public services that uplift community life across Sri Lanka.",
-  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted continuously through peer questioning during the mock expo, accuracy of chalkboard presentation outlines, and the depth of student notes recorded in notebooks regarding government public service functions.",
-  "post_activity": "5-minute in-class assignment: Creative Rhyming Verse Recitation: In pairs, students compose and recite a 2-line original rhyming verse summarizing the core value of government public services presented during the expo (e.g., 'From fisheries aid to cultural care, government public services are everywhere!'). The teacher invites selected pairs to perform their verses aloud and provides immediate positive reinforcement.",
+  "summary": "In this 2-minute synthesis, student groups share key takeaways regarding how specialized government directorates operate across Sri Lanka to improve living conditions and support vulnerable populations.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted through observation of active group collaboration, the factual accuracy of the Inquiry Panel Briefing Sheets, and the analytical depth displayed during the inter-group Q&A panel.",
+  "post_activity": "5-minute in-class assignment: Students engage in a Statement Display & Justified Standpoint Vote where the teacher posts four contrasting statements about state service accessibility on the chalkboard. Each group reviews the claims, places a sticky vote under their chosen standpoint, and the Spokesperson provides a 30-second justification defending their group's vote based on government service reach.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
   "attachments": [
-    "Ministry Information Fact Sheets on Fisheries, Cooperative Development, and Cultural Affairs",
-    "Chalkboard Presentation Rubric and Timer Cards"
+    "Inquiry Panel Briefing Sheet template",
+    "Directorate Role Cards."
   ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 3,
   "total_periods": 3,
-  "selected_activity": "Activity: Government Services Legislative Mock Expo & Presentation\nApproach: Student groups take on the persona of government ministry information officers hosting an interactive community exhibition to present information on diverse public services to visiting citizens.\nStudent task: Each group prepares a 2-minute oral presentation accompanied by chalkboard diagrams outlining a specific set of public services (e.g., fisheries support, cooperative development, cultural affairs) and presents it to the rest of the class.\nTeacher facilitation: The teacher manages the strict presentation schedule, ensuring each of the 6 teams gets an equal opportunity to present while prompting audience groups to ask clarifying questions.\nExpected output: A structured public service presentation outline recorded in student notebooks and delivered verbally by spokespersons.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
-  "selected_activity_title": "Government Services Legislative Mock Expo & Presentation",
+  "selected_activity": "Activity: Public Service Directorate Inquiry Panel\nApproach: Students assume the roles of sector specialists and inquiring citizens to evaluate the reach and accessibility of vital government services in Sri Lanka.\nStudent task: Across 7 table islands, each group of 5 designates two students as inquiry officers and three as departmental representatives (e.g., Department of Samurdhi, Department of Social Services, Department of Registration of Persons). They collaboratively draft inquiry briefs on chart paper detailing service offerings, citizen eligibility, and operational reach before conducting a structured 3-minute inter-group Q&A panel.\nTeacher facilitation: The teacher supervises group dynamics, maintains the strict 30-minute developmental schedule, and scaffolds discussions by asking: 'What evidence proves that this public service reaches vulnerable communities effectively?'\nExpected output: An Inquiry Panel Briefing Sheet detailing public service reach and citizen access criteria\nGrouping: 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
+  "selected_activity_title": "Public Service Directorate Inquiry Panel",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_3",
-      "title": "Government Services Legislative Mock Expo & Presentation",
-      "pedagogy_type": "Presentation / Exhibition",
-      "description": "Student groups take on the persona of government ministry information officers hosting an interactive community exhibition to present information on diverse public services to visiting citizens.",
+      "id": "option_2",
+      "title": "Public Service Directorate Inquiry Panel",
+      "pedagogy_type": "Case Inquiry & Panel Simulation",
+      "description": "Students assume the roles of sector specialists and inquiring citizens to evaluate the reach and accessibility of vital government services in Sri Lanka.",
       "learning_outcomes_addressed": [
         "Presents information about other public services provided by the government."
       ],
-      "student_action_summary": "Each group prepares a 2-minute oral presentation accompanied by chalkboard diagrams outlining a specific set of public services (e.g., fisheries support, cooperative development, cultural affairs) and presents it to the rest of the class.",
-      "teacher_facilitation_summary": "The teacher manages the strict presentation schedule, ensuring each of the 6 teams gets an equal opportunity to present while prompting audience groups to ask clarifying questions.",
-      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
+      "student_action_summary": "Across 7 table islands, each group of 5 designates two students as inquiry officers and three as departmental representatives (e.g., Department of Samurdhi, Department of Social Services, Department of Registration of Persons). They collaboratively draft inquiry briefs on chart paper detailing service offerings, citizen eligibility, and operational reach before conducting a structured 3-minute inter-group Q&A panel.",
+      "teacher_facilitation_summary": "The teacher supervises group dynamics, maintains the strict 30-minute developmental schedule, and scaffolds discussions by asking: 'What evidence proves that this public service reaches vulnerable communities effectively?'",
+      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
       "required_materials": [
+        "Chart Paper",
         "Chalkboard",
-        "Student Notebooks",
-        "Chart Paper"
+        "Student Notebooks"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A structured public service presentation outline recorded in student notebooks and delivered verbally by spokespersons.",
-      "creative_assessment_preview": "A 5-minute 'One-Sentence Exit Ticket' where every student writes down the most surprising public service learned during the expo on a slip of notebook paper.",
-      "low_resource_alternative": "Groups present their information as a seated panel discussion from their island desks rather than standing up in front of the room."
+      "expected_student_output": "An Inquiry Panel Briefing Sheet detailing public service reach and citizen access criteria",
+      "creative_assessment_preview": "Exit Slip Speed-Write: Students spend 5 minutes writing down two newly learned government public services and one question they still have on a scrap paper slip before leaving.",
+      "low_resource_alternative": "Use chalkboard sections for each group to write their inquiry briefs if chart paper is completely unavailable."
     }
   ],
   "outcome_allocation": {

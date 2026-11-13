@@ -2,81 +2,74 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 2 of 2)",
-  "competence": "Broad curriculum competency standard in plain English",
+  "competence": "Demonstrates an understanding of the importance of trained labour and vocational opportunities in national development",
   "competence_level": "8.6.4",
-  "lesson": "Expresses views about the available opportunities for vocational training: Courtroom / Citizen Grievance Tribunal: Competency Level 8.6.4",
+  "lesson": "Expresses views about the available opportunities for vocational training: Youth Advisory Board Opinion Hearing",
   "unique_learning_outcome": [
     "Expresses views about the available opportunities for vocational training."
   ],
-  "the_entrance": "5-minute introduction: Imagine you are a young Sri Lankan citizen seeking vocational training to enhance your career prospects. You are part of a citizen grievance tribunal, and your role is to express views about the available opportunities for vocational training. Your team will take on different roles to investigate and decide on a reasoned solution.",
+  "the_entrance": "5-minute introduction: The teacher steps in as the Advisory Board Secretary, welcoming the 50 students seated across 9 desk islands who are now convened as the Provincial Youth Advisory Council. The teacher launches the session by displaying a realistic case scenario on the chalkboard about rural school-leavers in Kurunegala facing roadblocks in accessing NVQ certification through the Vocational Training Authority (VTA) and National Youth Services Council (NYSC). Students immediately appoint their Scribes and Spokespersons, responding enthusiastically by discussing initial barriers like distance and lack of career guidance in their notebooks.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "The teacher introduces the scenario and distributes the task aids, including the 'Role Cards' and 'Vocational Training Opportunities' handout. Students take on their assigned roles and organize their investigation.",
-      "student_activities": "Students begin to discuss and investigate the scenario, using the role cards and handout to guide their decision-making. The teacher circulates to scaffold understanding and provide outcome-focused prompts.",
-      "learning_teaching_method": "Task Orientation & Inquiry Launch",
-      "learning_teaching_aids": "Role Cards, 'Vocational Training Opportunities' handout, Chalkboard",
+      "teacher_activities": "The teacher circulates among the 9 small groups acting as a facilitator, prompting teams to analyze local institutional gaps between state providers like VTA and private technical colleges. The teacher asks probing equity questions: 'What specific financial or geographical hurdles prevent rural youth from enrolling in technical diploma courses?'",
+      "student_activities": "Group members actively collaborate, assigning roles such as Leader, Scribe, and Civic Investigator to debate local skill development hurdles. Students draft a list of obstacles and begin mapping out core community needs on their chart papers.",
+      "learning_teaching_method": "Case Scenario Analysis and Barrier Mapping",
+      "learning_teaching_aids": "Chart paper, colored markers, and scenario task cards detailing local youth employment challenges",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 15,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "The teacher facilitates student discussions, asking probing questions to scaffold understanding and encourage critical thinking. Students continue to investigate and debate the scenario.",
-      "student_activities": "Students engage in roleplay, using the scenario to explore the available opportunities for vocational training. They discuss and debate the importance of trained labor and its impact on the local job market.",
-      "learning_teaching_method": "Roleplay & Debate",
-      "learning_teaching_aids": "Chalkboard, Student Notebooks",
+      "teacher_activities": "The teacher observes group interactions, guiding students to link their identified barriers with tangible policy recommendations for expanding vocational training accessibility. The teacher moderates the synthesis process, ensuring every student contributes to the final action plan.",
+      "student_activities": "The Creative Director and Spokesperson lead the group in finalizing a Problem-Solution Tree chart that contrasts local training challenges with practical youth-led recommendations. Groups prepare their concise oral viewpoints to advocate for improved vocational guidance frameworks.",
+      "learning_teaching_method": "Problem-Solution Tree Construction and Mock Deliberation",
+      "learning_teaching_aids": "Completed chart papers, whiteboard markers, and textbook reference notes on state and private training institutions",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
-      "other": ""
-    },
-    {
-      "step_number": 3,
-      "teacher_activities": "The teacher moderates student presentations, providing feedback and guidance on their reasoning and decision-making. Students present their group's findings and decisions.",
-      "student_activities": "Students present their group's findings and decisions, using visual aids and roleplay to illustrate their reasoning. The class provides peer feedback and evaluates the presentations.",
-      "learning_teaching_method": "Presentation & Feedback",
-      "learning_teaching_aids": "Chalkboard, Student Notebooks, Chart Paper",
-      "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 15,
       "other": ""
     }
   ],
-  "summary": "Students will express views about the available opportunities for vocational training through a simulated citizen grievance tribunal, taking on different roles and making decisions based on the scenario.",
-  "assessment_and_feedback_whole_lesson": "Formative feedback criteria: Students' ability to articulate their views on vocational training opportunities, their understanding of the importance of trained labor, and their ability to work collaboratively in a simulated citizen grievance tribunal.",
-  "post_activity": "5-minute in-class assignment: In-class quiz: Students will be asked to recall the main points discussed during the activity and provide a brief summary of the available opportunities for vocational training.",
+  "summary": "In a 2-minute synthesis, representatives from selected groups share their core findings on expanding institutional access for vocational training, highlighting the crucial role of state bodies like the Vocational Training Authority and private institutes in shaping productive workers.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted by evaluating the accuracy, feasibility, and clarity of the Problem-Solution Tree charts and the active participation of all students in expressing constructive views on vocational training opportunities.",
+  "post_activity": "Students engage in a 5-minute rapid in-class activity called the 'Youth Advisory Board Opinion Hearing - Rapid Verdict'. Each group's Spokesperson stands up to deliver a 30-second decisive policy recommendation addressing how to improve vocational training enrollment in Sri Lankan villages, while peers use hand signals to vote on feasibility.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
-  "attachments": [],
+  "attachments": [
+    "Scenario Task Cards",
+    "Problem-Solution Tree Template"
+  ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 2,
   "total_periods": 2,
-  "selected_activity": "Activity: Courtroom / Citizen Grievance Tribunal: Competency Level 8.6.4\nApproach: Students use courtroom / citizen grievance tribunal to explore 'Expresses views about the available opportunities for vocational training.'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.\nExpected output: A short role-based civic decision and its reasons.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "Courtroom / Citizen Grievance Tribunal: Competency Level 8.6.4",
+  "selected_activity": "Activity: Youth Advisory Board Opinion Hearing\nApproach: Students act as a Provincial Youth Advisory Council evaluating a realistic case scenario about young school-leavers in a Sri Lankan village seeking vocational guidance and skill development programs.\nStudent task: Groups analyze the barriers to vocational training in local communities, formulate constructive viewpoints on expanding institutional access, and debate practical solutions to improve enrollment and skill uptake.\nTeacher facilitation: The teacher serves as the Advisory Board Secretary, circulating among the 9 desk islands to ensure active inclusion of all 50 students, guiding discussions with targeted equity questions.\nExpected output: A Problem-Solution Tree chart mapping local vocational training challenges against youth-led recommendations.\nGrouping: 9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead",
+  "selected_activity_title": "Youth Advisory Board Opinion Hearing",
   "custom_teacher_activity": null,
   "activity_options": [
     {
       "id": "option_2",
-      "title": "Courtroom / Citizen Grievance Tribunal: Competency Level 8.6.4",
-      "pedagogy_type": "Simulation / Roleplay",
-      "description": "Students use courtroom / citizen grievance tribunal to explore 'Expresses views about the available opportunities for vocational training.'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "title": "Youth Advisory Board Opinion Hearing",
+      "pedagogy_type": "Scenario-Based Problem-Solving and Opinion Hearing",
+      "description": "Students act as a Provincial Youth Advisory Council evaluating a realistic case scenario about young school-leavers in a Sri Lankan village seeking vocational guidance and skill development programs.",
       "learning_outcomes_addressed": [
         "Expresses views about the available opportunities for vocational training."
       ],
-      "student_action_summary": "Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "student_action_summary": "Groups analyze the barriers to vocational training in local communities, formulate constructive viewpoints on expanding institutional access, and debate practical solutions to improve enrollment and skill uptake.",
+      "teacher_facilitation_summary": "The teacher serves as the Advisory Board Secretary, circulating among the 9 desk islands to ensure active inclusion of all 50 students, guiding discussions with targeted equity questions.",
+      "student_grouping": "9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A short role-based civic decision and its reasons.",
-      "creative_assessment_preview": "Students state one role responsibility and explain how it supported the decision.",
-      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
+      "expected_student_output": "A Problem-Solution Tree chart mapping local vocational training challenges against youth-led recommendations.",
+      "creative_assessment_preview": "5-Minute 'Stand and State' Exit Check: Each team's spokesperson stands up and states one clear viewpoint regarding vocational training improvements in 10 seconds or less.",
+      "low_resource_alternative": "Groups draw the problem-solution tree directly on the classroom floor using chalk if paper is unavailable."
     }
   ],
   "outcome_allocation": {

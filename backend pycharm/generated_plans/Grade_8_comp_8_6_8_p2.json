@@ -1,0 +1,83 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 2 of 2)",
+  "competence": "Maintains personal performance at a higher level as a worker through professional dedication and skill enhancement",
+  "competence_level": "8.6.8",
+  "lesson": "Explains the importance of maintaining personal performance at higher level as a worker: Peer-Led Panel Debate: High Performance vs. Complacency",
+  "unique_learning_outcome": [
+    "Explains the importance of maintaining personal performance at higher level as a worker."
+  ],
+  "the_entrance": "The teacher launches the 5-minute motivational hook by displaying two contrasting workplace case vignettes on the chalkboard: one depicting an employee in a Colombo mercantile firm who continually updates technical skills and earns national recognition, and another showing an office worker who settles for minimum effort and faces career stagnation. As facilitator, the teacher challenges the 9 student groups (four groups of 5, five groups of 6) with the opening prompt: 'Consider these two trajectories in our Sri Lankan work environment; what long-term impact does maintaining high performance have on both individual career mobility and institutional productivity?' Students actively respond within their teams by assigning internal roles—Leaders, Scribes, Timekeepers, Spokespersons, Inquirers, and Chart Leads—and sharing quick observations from family members working in local public and private sectors.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "The teacher circulates among all 9 groups, acting as a facilitator to ensure teams divide their members to argue both sides: sustaining peak professional performance versus settling for minimum compliance. The teacher scaffolds the discussions by asking probing questions about how interpersonal relationships, leadership qualities, and modern technology use influence career progression in Sri Lanka.",
+      "student_activities": "Students collaborate actively in their groups where Leaders guide the debate allocation, Scribes record supporting arguments for high performance versus complacency, Inquirers cross-reference textbook concepts on professional qualities, and Creative Directors design the structural layout on chart paper.",
+      "learning_teaching_method": "Intra-Group Mini-Debate Preparation & Evidence Synthesis",
+      "learning_teaching_aids": "Chart Paper, Colored Markers, Student Notebooks, Task Cards on Workplace Professional Qualities",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "The teacher moderates the floor as Spokespersons present their group's comparative impact summaries, encouraging respectful peer critique and ensuring every team defends its conclusions regarding national productivity and personal career growth.",
+      "student_activities": "Spokespersons present their group arguments while Timekeepers monitor pacing; remaining team members challenge assumptions, evaluate the comparative impact of high performance on worker recognition, and synthesize final consensus points on their chart displays.",
+      "learning_teaching_method": "Structured Panel Presentation & Cross-Group Rebuttal",
+      "learning_teaching_aids": "Completed Chart Papers, Whiteboard, Chalk",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    }
+  ],
+  "summary": "In a 2-minute synthesis, student representatives highlight that maintaining peak personal performance through continuous skill improvement, teamwork, and technological adaptation is vital for securing employment recognition and driving national development in Sri Lanka.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted by observing group collaboration, evaluating the depth of arguments presented on the comparative charts, and checking students' ability to articulate the long-term career benefits of sustained high performance during the panel discussions.",
+  "post_activity": "To evaluate learning within 5 minutes in-class, the teacher conducts a Rapid Team Buzzer Showdown where each of the 9 groups receives two fast-paced conceptual dilemma scenarios regarding workplace complacency versus excellence. Teams must confer for 60 seconds and have their Spokesperson raise a finalized verdict card explaining why maintaining higher personal performance safeguards long-term career fulfillment in the Sri Lankan economy.",
+  "information_sources": [
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
+  ],
+  "attachments": [
+    "Task Cards on Workplace Professional Qualities and Comparative Impact Summary Templates"
+  ],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 2,
+  "total_periods": 2,
+  "selected_activity": "Activity: Peer-Led Panel Debate: High Performance vs. Complacency\nApproach: Students participate in a structured structured mini-debate within their groups, comparing the long-term career impacts of maintaining consistently high personal work performance versus settling for minimum required effort in local Sri Lankan public or private service sectors.\nStudent task: Each 9-team group divides internally to construct arguments for and against sustaining peak professional performance, synthesizing their debate insights into a comparative impact summary on chart paper.\nTeacher facilitation: The teacher manages the 30-minute timeframe, assists groups in maintaining respectful and evidence-based argumentation, and provides prompt questions regarding national productivity and personal career progression.\nExpected output: A structured comparative argument chart displaying the consequences of maintaining high performance versus workplace complacency.\nGrouping: 9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead",
+  "selected_activity_title": "Peer-Led Panel Debate: High Performance vs. Complacency",
+  "custom_teacher_activity": null,
+  "activity_options": [
+    {
+      "id": "option_2",
+      "title": "Peer-Led Panel Debate: High Performance vs. Complacency",
+      "pedagogy_type": "Debate",
+      "description": "Students participate in a structured structured mini-debate within their groups, comparing the long-term career impacts of maintaining consistently high personal work performance versus settling for minimum required effort in local Sri Lankan public or private service sectors.",
+      "learning_outcomes_addressed": [
+        "Explains the importance of maintaining personal performance at higher level as a worker."
+      ],
+      "student_action_summary": "Each 9-team group divides internally to construct arguments for and against sustaining peak professional performance, synthesizing their debate insights into a comparative impact summary on chart paper.",
+      "teacher_facilitation_summary": "The teacher manages the 30-minute timeframe, assists groups in maintaining respectful and evidence-based argumentation, and provides prompt questions regarding national productivity and personal career progression.",
+      "student_grouping": "9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks",
+        "Chart Paper"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "A structured comparative argument chart displaying the consequences of maintaining high performance versus workplace complacency.",
+      "creative_assessment_preview": "Statue Tableau: Each group freezes for 30 seconds in a physical pose that visually depicts a high-performing worker earning institutional recognition, while the teacher evaluates alignment with lesson outcomes.",
+      "low_resource_alternative": "Conduct the debate using student notebooks for recording arguments, skipping chart paper preparation in favor of verbal spokesperson summaries."
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "Discusses the skills of the worker and his/her interests with a career guidance counsellor."
+    ],
+    "2": [
+      "Explains the importance of maintaining personal performance at higher level as a worker."
+    ]
+  },
+  "filename": "Grade_8_comp_8_6_8_p2.json"
+}

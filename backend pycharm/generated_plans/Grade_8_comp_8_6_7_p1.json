@@ -1,0 +1,95 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 1 of 2)",
+  "competence": "Secures rights while fulfilling duties as an employee.",
+  "competence_level": "8.6.7",
+  "lesson": "List out workers rights and duties: Cooperative Jigsaw: Unpacking Workplace Rights and Responsibilities",
+  "unique_learning_outcome": [
+    "List out workers rights and duties."
+  ],
+  "the_entrance": "The teacher facilitates a 5-minute energetic hook by displaying three picture cards on the chalkboard depicting different Sri Lankan work environments: a Ceylon Transport Board (CTB) bus depot, a municipal garbage collection unit in Colombo, and a provincial government secretariat office. The teacher challenges the 50 students: 'Imagine you are stepping into these workplaces tomorrow morning. What makes you feel secure, and what responsibilities do you carry toward your employer and the public?' Students in their pre-assigned teams of 5 or 6 engage in a quick 2-minute buzz session, shouting out initial ideas such as 'safe equipment' and 'arriving on time', which the teacher records briefly on the chalkboard to establish prior knowledge before launching the jigsaw investigation.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "The teacher circulates among the 9 small groups, assigning specific occupational sectors (public transport, municipal sanitation, office administration, plantation labor) to different teams. The teacher acts as a facilitator, prompting teams with inquiry questions such as 'Look at the EPF and Shop and Office Employees Act notes; what specific safety and dignity provisions apply directly to your sector?'",
+      "student_activities": "Students disperse into their designated expert groups to meticulously examine textbook references and sector guidelines. The Scribe and Civic Investigator in each team record specific workplace rights like working with dignity and safe environments alongside duties like punctuality, actively debating how these apply to Sri Lankan workers.",
+      "learning_teaching_method": "Expert Sector Investigation",
+      "learning_teaching_aids": "Sector-specific task cards, textbook extracts on labor acts, and student notebooks",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "The teacher monitors group dynamics across the 50 students, ensuring that every role—especially the Scribe, Creative Director, and Timekeeper—is actively functioning. The teacher offers scaffolding prompts: 'Ensure your chart distinctly separates statutory rights from employee duties so that your home team members can easily comprehend them.'",
+      "student_activities": "Working collaboratively with chart paper and markers, the teams design a two-column matrix titled 'Rights versus Duties'. The Creative Director and Spokesperson coordinate to illustrate key points with simple symbols, synthesizing their sector's findings into a clear, structured format ready for presentation.",
+      "learning_teaching_method": "Chart Synthesis and Matrix Drafting",
+      "learning_teaching_aids": "Chart paper, colored markers, and rulers",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "The teacher acts as a timekeeper and moderator, signaling the transition for teams to present their findings and facilitating a rapid 2-minute plenary check to ensure all core textbook rights and duties have been successfully captured across the room.",
+      "student_activities": "Spokespersons briefly share their sector charts with neighboring groups in a mini-gallery rotation, while team members cross-check their own notes to verify that rights like trade union participation and leave entitlements are balanced with duties like reporting to work on time.",
+      "learning_teaching_method": "Home Team Reporting and Peer Review",
+      "learning_teaching_aids": "Completed sector summary charts displayed around the classroom",
+      "assessment_and_feedback": "",
+      "time_minutes": 5,
+      "other": ""
+    }
+  ],
+  "summary": "In this 40-minute session, students actively investigated diverse Sri Lankan employment sectors through a cooperative jigsaw method, successfully compiling comprehensive lists of workers' rights (such as safety, dignity, and basic needs) and corresponding duties (such as punctuality and faithful service), reinforcing the principle that rights and responsibilities are achieved in equal proportion.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted continuously through teacher observation of group collaboration, evaluation of the sector summary charts for factual accuracy regarding labor rights and duties, and peer feedback during the gallery sharing phase.",
+  "post_activity": "The teacher conducts a 5-minute Concept Drawing & Quick Sketch Challenge where each group is given a small slip with a mixed scenario (e.g., a worker demanding leave without notice versus a worker denied safety gear). Within 3 minutes, the Creative Director rapidly sketches a simple visual symbol on their notebook margin representing either a fulfilled duty or an upheld right, while the team writes a one-sentence caption explaining the balance. The teacher calls upon two random groups to hold up their sketches for immediate peer verification.",
+  "information_sources": [
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
+  ],
+  "attachments": [
+    "Sector-specific task cards",
+    "chart paper",
+    "markers"
+  ],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 1,
+  "total_periods": 2,
+  "selected_activity": "Activity: Cooperative Jigsaw: Unpacking Workplace Rights and Responsibilities\nApproach: Student teams split up to investigate specific sectors (e.g., public transport workers, municipal sanitation staff, office employees) to list their respective rights and duties, then return to synthesize.\nStudent task: In expert groups, students investigate sector-specific labor realities in Sri Lanka, draft distinct lists of rights and duties on chart paper, and present their findings to their home teams.\nTeacher facilitation: The teacher monitors the room, ensuring all 50 students actively contribute through assigned roles and keeps time for the transition between expert and home group sharing.\nExpected output: Sector-based collaborative summary charts outlining specific workers' rights and duties.\nGrouping: 9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead",
+  "selected_activity_title": "Cooperative Jigsaw: Unpacking Workplace Rights and Responsibilities",
+  "custom_teacher_activity": null,
+  "activity_options": [
+    {
+      "id": "option_2",
+      "title": "Cooperative Jigsaw: Unpacking Workplace Rights and Responsibilities",
+      "pedagogy_type": "Jigsaw",
+      "description": "Student teams split up to investigate specific sectors (e.g., public transport workers, municipal sanitation staff, office employees) to list their respective rights and duties, then return to synthesize.",
+      "learning_outcomes_addressed": [
+        "List out workers rights and duties."
+      ],
+      "student_action_summary": "In expert groups, students investigate sector-specific labor realities in Sri Lanka, draft distinct lists of rights and duties on chart paper, and present their findings to their home teams.",
+      "teacher_facilitation_summary": "The teacher monitors the room, ensuring all 50 students actively contribute through assigned roles and keeps time for the transition between expert and home group sharing.",
+      "student_grouping": "9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks",
+        "Chart Paper"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "Sector-based collaborative summary charts outlining specific workers' rights and duties.",
+      "creative_assessment_preview": "Pass-the-Parcel Quiz: A chalk piece is passed around; when time stops, the student holding it must state one worker's duty.",
+      "low_resource_alternative": "Expert groups write their compiled lists directly onto shared student notebook pages read aloud to peers."
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "List out workers rights and duties."
+    ],
+    "2": [
+      "Expresses willingness to enjoy worker rights while fulfilling duties and responsibilities."
+    ]
+  },
+  "filename": "Grade_8_comp_8_6_7_p1.json"
+}

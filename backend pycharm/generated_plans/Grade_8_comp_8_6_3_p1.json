@@ -2,83 +2,86 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 1 of 1)",
-  "competence": "Broad curriculum competency standard",
+  "competence": "Investigates the contribution of various occupations and employments to the economic and social well-being of the nation.",
   "competence_level": "8.6.3",
-  "lesson": "Explains that all employments bring about social development: Station Jigsaw Synthesis Matrix: Competency Level 8.6.3",
+  "lesson": "Explains that all employments bring about social development: Sri Lankan Occupational Case Inquiry and Social Need Audit",
   "unique_learning_outcome": [
     "Explains that all employments bring about social development.",
     "Explains that all employments contribute to fulfilling social needs."
   ],
-  "the_entrance": "Detailed 5-minute introduction: teacher and student actions linking prior knowledge to this period topic and activity... Students review the importance of different occupations in society, exploring how they contribute to fulfilling social needs and bringing about social development. Teacher facilitates a brief discussion on the role of different occupations in society, highlighting the interconnectedness of various jobs.",
+  "the_entrance": "The teacher launches a 5-minute motivational challenge by writing a bold scenario on the chalkboard: 'Imagine a week in Colombo or Anuradhapura where municipal waste collectors, cooperative society managers, and preschool teachers simultaneously stop working.' The teacher facilitates student curiosity by prompting, 'Which community needs instantly go unfulfilled, and how does this disruption impact the social fabric?' Students in their 9 assigned teams brainstorm initial reactions, with Student Spokespersons sharing rapid observations on how everyday jobs sustain community order and social progression.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "Teacher introduces the Station Jigsaw Synthesis Matrix activity, explains the role of each student, and distributes the assigned roles (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer).",
-      "student_activities": "Students arrange into cooperative groups, assign designated roles, review inquiry cards, and begin collaborative planning...",
-      "learning_teaching_method": "Task Orientation & Guided Inquiry Launch",
-      "learning_teaching_aids": "Student Notebooks, Chart Paper",
+      "teacher_activities": "The teacher circulates among the 9 groups, distributing distinct case vignettes highlighting workers such as local farmers, ayurvedic doctors, and construction workers. The teacher acts as a facilitator, asking probing questions like, 'Look closely at the farmer's role; beyond producing food, what deeper social stability does their labor provide to the village?'",
+      "student_activities": "Students actively review their assigned case vignette within their groups, designating a Scribe to record facts and a Civic Investigator to check claims against textbook concepts of social uplift. Group members discuss how each occupation addresses specific community requirements, noting down direct links to social efficiency and welfare.",
+      "learning_teaching_method": "Case Vignette Evidence Gathering",
+      "learning_teaching_aids": "Chalkboard scenario cards, student notebooks, and printed occupational vignettes detailing municipal, agricultural, and educational roles.",
       "assessment_and_feedback": "",
       "time_minutes": 10,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "Teacher circulates as facilitator among groups, observes peer interactions, scaffolds challenging concepts with probing questions, and ensures active participation without lecturing...",
-      "student_activities": "Students actively execute the chosen activity (e.g., conducting mock council session, exploratory school-walk survey, analyzing Sri Lankan community issues, or solving civic challenges in groups) using assigned roles...",
-      "learning_teaching_method": "Active Student-Centered Investigation / Simulation / Drama / School-Walk",
-      "learning_teaching_aids": "Worksheets, roleplay cue cards, chart papers, colored markers",
+      "teacher_activities": "The teacher guides the groups as they transition from analysis to structuring their findings, ensuring all 50 students are actively participating through assigned roles like Chart Lead and Timekeeper. The teacher scaffolds the task by asking, 'How does the service provided by a preschool teacher directly elevate the living conditions of working parents in our society?'",
+      "student_activities": "Working collaboratively on chart paper, the groups construct a comprehensive 'Social Need Audit Table' mapping specific Sri Lankan professions (e.g., healthcare workers, engineers, beauticians) against the community needs they fulfill and their resulting contribution to social development. The Creative Director and Scribe organize the visual layout while team members debate the societal impact.",
+      "learning_teaching_method": "Collaborative Social Need Audit Table Construction",
+      "learning_teaching_aids": "Chart paper, colored markers, and textbook reference summaries on social progression.",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 15,
       "other": ""
     },
     {
       "step_number": 3,
-      "teacher_activities": "Teacher moderates student presentations, facilitates constructive peer review, and synthesizes key student discoveries directly against the period's learning outcomes...",
-      "student_activities": "Spokespersons present group solutions or roleplay outcomes; class peers ask questions, provide constructive feedback, and summarize key takeaways in their notebooks...",
-      "learning_teaching_method": "Spokesperson Presentation & Plenary Synthesis",
-      "learning_teaching_aids": "Student output posters, whiteboard, peer assessment checklist",
+      "teacher_activities": "The teacher moderates a rapid 5-minute gallery rotation where groups examine neighboring audit charts, prompting them to observe similarities across industrial, agricultural, and service sectors. The teacher provides immediate verbal reinforcement on accurate identifications of social progress.",
+      "student_activities": "Student teams briefly review adjacent charts displayed on the classroom walls, noting different occupational impacts identified by peers. The Spokespersons prepare to summarize their primary audit discovery for the whole-class synthesis.",
+      "learning_teaching_method": "Peer Gallery Review and Synthesis",
+      "learning_teaching_aids": "Completed chart paper audit tables displayed across classroom walls.",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 5,
       "other": ""
     }
   ],
-  "summary": "Consolidation and synthesis of key concepts...",
-  "assessment_and_feedback_whole_lesson": "Final closure formative assessment criteria...",
-  "post_activity": "5-minute in-class assignment: Five-minute in-class assignment or concluding task... Students create a shared civic artifact (e.g., poster, diagram, or public information message) summarizing their group's findings on how all employments bring about social development.",
+  "summary": "In a 2-minute synthesis, student representatives highlight that social progression cannot be achieved by one or two occupations alone, recognizing that equal development across agriculture, industry, and service sectors is essential for national advancement.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted by observing group engagement during the audit table construction and checking whether student explanations clearly link specific employments to the fulfillment of societal needs and social development.",
+  "post_activity": "Students engage in a 5-minute active in-class evaluation called the 'Occupational Impact Chain Relay'. Each of the 9 groups receives a slip with a different Sri Lankan job title and must rapidly link it on their mini-whiteboards or notebooks to a specific social need fulfilled and a corresponding social development outcome, instantly holding up their completed chain for peer verification and teacher validation.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
-  "attachments": [],
+  "attachments": [
+    "Sri Lankan Occupational Vignette Cards",
+    "Social Need Audit Template Structure."
+  ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 1,
   "total_periods": 1,
-  "selected_activity": "Activity: Station Jigsaw Synthesis Matrix: Competency Level 8.6.3\nApproach: Students use station jigsaw synthesis matrix to explore 'Explains that all employments bring about social development.'. Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.\nExpected output: A group civic proposal, diagram, or public information message.\nGrouping: 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "Station Jigsaw Synthesis Matrix: Competency Level 8.6.3",
+  "selected_activity": "Activity: Sri Lankan Occupational Case Inquiry and Social Need Audit\nApproach: Students examine short case vignettes highlighting essential community workers in Sri Lanka (such as municipal waste collectors, cooperative society managers, and preschool teachers). They conduct an evidence-based inquiry into how these roles contribute to societal welfare.\nStudent task: Groups analyze a written or chalkboard-presented scenario about a disruption in a local public service or employment sector. They investigate the social consequences, identifying how that employment meets community needs and underpins continuous social progress.\nTeacher facilitation: Acts as a resource guide, posing probing questions about community reliance on different professions, and assists groups in maintaining tight time management during the 30-minute session.\nExpected output: A structured audit table on chart paper detailing the social needs fulfilled by various professions and their development impact.\nGrouping: 9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead",
+  "selected_activity_title": "Sri Lankan Occupational Case Inquiry and Social Need Audit",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_1",
-      "title": "Station Jigsaw Synthesis Matrix: Competency Level 8.6.3",
-      "pedagogy_type": "Collaborative Design",
-      "description": "Students use station jigsaw synthesis matrix to explore 'Explains that all employments bring about social development.'. Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "id": "option_2",
+      "title": "Sri Lankan Occupational Case Inquiry and Social Need Audit",
+      "pedagogy_type": "Case Inquiry",
+      "description": "Students examine short case vignettes highlighting essential community workers in Sri Lanka (such as municipal waste collectors, cooperative society managers, and preschool teachers). They conduct an evidence-based inquiry into how these roles contribute to societal welfare.",
       "learning_outcomes_addressed": [
         "Explains that all employments bring about social development.",
         "Explains that all employments contribute to fulfilling social needs."
       ],
-      "student_action_summary": "Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "student_action_summary": "Groups analyze a written or chalkboard-presented scenario about a disruption in a local public service or employment sector. They investigate the social consequences, identifying how that employment meets community needs and underpins continuous social progress.",
+      "teacher_facilitation_summary": "Acts as a resource guide, posing probing questions about community reliance on different professions, and assists groups in maintaining tight time management during the 30-minute session.",
+      "student_grouping": "9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A group civic proposal, diagram, or public information message.",
-      "creative_assessment_preview": "Groups give one-sentence feedback connecting a peer proposal to the outcome.",
-      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
+      "expected_student_output": "A structured audit table on chart paper detailing the social needs fulfilled by various professions and their development impact.",
+      "creative_assessment_preview": "30-Second Tableau: Groups freeze into a silent tableau representing a specific profession contributing to social development, while peers guess the employment and its core social benefit.",
+      "low_resource_alternative": "Write case study questions directly on the chalkboard for groups to copy and analyze in student notebooks."
     }
   ],
   "outcome_allocation": {

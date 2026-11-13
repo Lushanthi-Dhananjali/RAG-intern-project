@@ -2,75 +2,75 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 1 of 3)",
-  "competence": "Uses the public services that are for the betterment of the people effectively",
+  "competence": "Works with awareness of duties and rights and in making use of public services effectively.",
   "competence_level": "8.1.4",
-  "lesson": "Explains the importance of the citizens fulfilling duties and rights related to: Community Scenario Jigsaw: Balancing Citizen Rights and Duties",
+  "lesson": "Explains the importance of the citizens fulfilling duties and rights related to: The Community Park Debate: Balancing Freedoms and Responsibilities",
   "unique_learning_outcome": [
     "Explains the importance of the citizens fulfilling duties and rights related to"
   ],
-  "the_entrance": "5-minute introduction: The teacher enters the classroom holding a local electricity bill and a damaged public bus seat photograph, displaying them on the chalkboard to spark immediate curiosity. The teacher launches the session with a probing question: 'When we demand the right to uninterrupted electricity and public transport, what responsibilities do we carry as citizens?' The 30 students, organized into 6 teams of 5 with assigned roles (Leader, Scribe, Timekeeper, Presenter, Investigator), immediately engage in a rapid 2-minute table talk. Team scribes note down initial thoughts on how claiming rights without paying bills or protecting property harms society, preparing them to dive into the jigsaw activity.",
+  "the_entrance": "5-minute introduction: The teacher initiates the session by displaying a photograph of a neglected local park in Gampaha strewn with litter alongside an image of a vibrant community playground, posing the launch challenge: 'How does our enjoyment of the right to public recreation depend entirely on our fulfillment of community duties?' As student groups buzz with initial ideas, the teacher invites designated spokespersons to share how personal choices impact shared public spaces, successfully bridging prior experiences with the upcoming simulated Pradeshiya Sabha consultation.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "The teacher circulates among the 6 student groups, distributing distinct local community scenarios written on task cards regarding public services like water supply, railway transport, and local libraries. As a facilitator, the teacher poses scaffolding questions such as, 'Examine what happens in your assigned village scenario when citizens claim the right to clean water but neglect timely bill payments or pipe maintenance.' The teacher observes group interactions, ensuring that every student actively contributes and that the Civic Investigators verify textbook facts regarding public service duties.",
-      "student_activities": "Students collaborate in their assigned groups of 5 to read their designated local scenario from the task sheet. The Leader guides the discussion, the Scribe notes down the points of conflict between citizen rights and civic duties, and the Timekeeper manages the 15-minute pacing. The group analyzes how utilizing public services requires a balance of enjoying rights and fulfilling responsibilities such as economic usage and property protection.",
-      "learning_teaching_method": "Community Scenario Jigsaw Investigation",
-      "learning_teaching_aids": "Chalkboard scenario prompts, Student Notebooks, Task Sheets",
+      "teacher_activities": "The teacher circulates among the nine student groups acting as a neutral facilitator, distributing simulated Pradeshiya Sabha case briefs outlining local park maintenance issues in Gampaha. The teacher scaffolds group preparation by asking probing questions such as 'What specific rights do residents claim when visiting the park, and what corresponding duties must they uphold to protect public property?'",
+      "student_activities": "Students organize into 9 collaborative teams, assigning internal roles including leaders, scribes, timekeepers, and presenters to examine their scenario cards. Team members debate the friction between wanting unrestricted recreational freedom and facing broken benches, litter, and damaged public amenities, recording their initial viewpoints on task sheets.",
+      "learning_teaching_method": "Simulated Council Briefing & Role Assignment",
+      "learning_teaching_aids": "Role Cards, Scenario Fact Sheets, Student Notebooks, Whiteboard",
       "assessment_and_feedback": "",
       "time_minutes": 15,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "The teacher guides teams to synthesize their findings onto large chart paper to create a 'Rights-Duties Balance Chart'. The teacher moderates the room, prompting presenters with targeted inquiries: 'How does fulfilling your responsibility toward this public service increase overall community efficiency?' The teacher provides formative feedback on how well groups linked their scenario solutions to the core concepts of public service preservation.",
-      "student_activities": "Working together, group members use color markers to map out their analyzed scenarios onto chart paper under the headings of 'Citizen Rights' and 'Corresponding Duties'. The Spokesperson prepares the group's key arguments and solutions for societal wellbeing, while other members review the chart for clarity and factual accuracy before displaying it around the classroom.",
-      "learning_teaching_method": "Rights-Duties Balance Chart Synthesis",
-      "learning_teaching_aids": "Chart Paper, Color Markers, Whiteboard",
+      "teacher_activities": "The teacher monitors small group negotiations, guiding students to connect their arguments to civic textbook concepts regarding the interdependence of rights and responsibilities. The teacher moderates the synthesis process, prompting teams to justify why fulfilling upkeep duties directly enhances service efficiency and community well-being.",
+      "student_activities": "Collaborating intensively, students synthesize their arguments into a drafted 'Community Code of Conduct' poster on chart paper. Spokespersons and creative directors outline balanced rules that protect citizens' rights to high-quality public recreation while mandating responsible behaviors such as proper waste disposal and economic use of park facilities.",
+      "learning_teaching_method": "Pradeshiya Sabha Deliberation & Code Drafting",
+      "learning_teaching_aids": "Chart Paper, Colored Markers, Civic Textbook Excerpts",
       "assessment_and_feedback": "",
       "time_minutes": 15,
       "other": ""
     }
   ],
-  "summary": "In a 2-minute whole-class synthesis, the teacher invites spokespersons to highlight key discoveries: citizens must realize that enjoying high-quality public services is inseparable from duties such as paying bills on time, protecting public property, and maintaining positive attitudes toward community resources.",
-  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted by observing active group collaboration, assessing the accuracy and depth of the 'Rights-Duties Balance Chart', and evaluating how well students articulate the connection between citizen rights and responsibilities in Sri Lankan public services.",
-  "post_activity": "Rapid Team Quiz / Buzzer Board Challenge: The teacher poses 2 fast conceptual dilemma questions on the chalkboard regarding citizens' rights and duties in public service usage. Teams quickly discuss and write their answers on mini-whiteboards or notebooks, holding them up simultaneously for an energetic 5-minute in-class evaluation check.",
+  "summary": "In this 2-minute synthesis, student representatives highlight that individual rights in public spaces like community parks cannot exist without citizen-led duties such as property protection, careful use, and timely civic cooperation.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted through observation of active collaboration during the simulated council debate and evaluation of the drafted 'Community Code of Conduct' posters based on clarity of balanced rights and duties, accuracy of civic concepts, and equitable team participation.",
+  "post_activity": "5-minute in-class assignment: Students participate in a Statement Display & Justified Standpoint Vote where the teacher posts two contrasting community declarations on the board ('Parks are free spaces for personal enjoyment without civic rules' vs. 'Enjoyment of park amenities requires strict adherence to upkeep duties'). Each student places a colored sticky dot under their chosen standpoint and writes a 2-minute justification in their notebook explaining why fulfilling responsibilities sustains public service quality.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
   "attachments": [
-    "Community Scenario Task Cards",
-    "Rights-Duties Balance Chart Template",
-    "Electricity and Water Bill Samples."
+    "Simulated Pradeshiya Sabha Scenario Briefs",
+    "Role Cards",
+    "Community Code of Conduct Poster Templates."
   ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 1,
   "total_periods": 3,
-  "selected_activity": "Activity: Community Scenario Jigsaw: Balancing Citizen Rights and Duties\nApproach: Students investigate local Sri Lankan community scenarios to analyze how exercising a right (such as freedom of speech or using public amenities) requires a corresponding duty (such as respecting public property and community harmony).\nStudent task: Each group reads a distinct local scenario provided on the chalkboard, analyzes the conflict between rights and duties, and debates the importance of fulfilling both for societal wellbeing.\nTeacher facilitation: The teacher acts as a timekeeper and facilitator, prompting groups with guiding questions about what happens when rights are claimed without fulfilling duties in a village or town setting.\nExpected output: A summarized 'Rights-Duties Balance Chart' on chart paper detailing the analyzed scenarios.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks are arranged into 6 islands to accommodate all 30 students actively with zero bystanders.",
-  "selected_activity_title": "Community Scenario Jigsaw: Balancing Citizen Rights and Duties",
+  "selected_activity": "Activity: The Community Park Debate: Balancing Freedoms and Responsibilities\nApproach: Students enact a simulated Pradeshiya Sabha community consultation in Gampaha where residents discuss the use and upkeep of a local public park.\nStudent task: Students take on roles of local residents and council members to deliberate on the importance of exercising recreational rights responsibly while fulfilling upkeep duties.\nTeacher facilitation: The teacher sets the stage, acts as the neutral moderator, manages time checkpoints, and prompts students to explain why duty fulfillment is essential for sustaining community rights.\nExpected output: A drafted 'Community Code of Conduct' poster outlining balanced rights and duties for local parks.\nGrouping: 9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead",
+  "selected_activity_title": "The Community Park Debate: Balancing Freedoms and Responsibilities",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_1",
-      "title": "Community Scenario Jigsaw: Balancing Citizen Rights and Duties",
-      "pedagogy_type": "Case Inquiry",
-      "description": "Students investigate local Sri Lankan community scenarios to analyze how exercising a right (such as freedom of speech or using public amenities) requires a corresponding duty (such as respecting public property and community harmony).",
+      "id": "option_2",
+      "title": "The Community Park Debate: Balancing Freedoms and Responsibilities",
+      "pedagogy_type": "Roleplay",
+      "description": "Students enact a simulated Pradeshiya Sabha community consultation in Gampaha where residents discuss the use and upkeep of a local public park.",
       "learning_outcomes_addressed": [
         "Explains the importance of the citizens fulfilling duties and rights related to"
       ],
-      "student_action_summary": "Each group reads a distinct local scenario provided on the chalkboard, analyzes the conflict between rights and duties, and debates the importance of fulfilling both for societal wellbeing.",
-      "teacher_facilitation_summary": "The teacher acts as a timekeeper and facilitator, prompting groups with guiding questions about what happens when rights are claimed without fulfilling duties in a village or town setting.",
-      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks are arranged into 6 islands to accommodate all 30 students actively with zero bystanders.",
+      "student_action_summary": "Students take on roles of local residents and council members to deliberate on the importance of exercising recreational rights responsibly while fulfilling upkeep duties.",
+      "teacher_facilitation_summary": "The teacher sets the stage, acts as the neutral moderator, manages time checkpoints, and prompts students to explain why duty fulfillment is essential for sustaining community rights.",
+      "student_grouping": "9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A summarized 'Rights-Duties Balance Chart' on chart paper detailing the analyzed scenarios.",
-      "creative_assessment_preview": "Pass-the-Chalk: Each group's spokesperson writes one core reason why duties must accompany rights on the chalkboard within a 5-minute rapid relay.",
-      "low_resource_alternative": "Use student notebooks exclusively to draw the balance matrix instead of chart paper."
+      "expected_student_output": "A drafted 'Community Code of Conduct' poster outlining balanced rights and duties for local parks.",
+      "creative_assessment_preview": "Pass-the-Chalk Exit Slip: One student from each group writes a single key takeaway regarding civic duties on the chalkboard before leaving.",
+      "low_resource_alternative": "Write the Code of Conduct directly into student notebooks as a shared group manifesto."
     }
   ],
   "outcome_allocation": {

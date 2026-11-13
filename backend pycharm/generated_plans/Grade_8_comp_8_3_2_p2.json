@@ -2,74 +2,84 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 2 of 3)",
-  "competence": "Explains with examples that Sri Lanka as a multicultural society and understands global multicultural features.",
+  "competence": "Explains with examples that Sri Lanka as a multicultural society.",
   "competence_level": "8.3.2",
-  "lesson": "Present information about the multicultural features of other countries: World Stage Spotlight: Interactive Country Briefing Presentations",
+  "lesson": "Present information about the multicultural features of other countries: Cross-Border Case Inquiry: Global Diversity Models",
   "unique_learning_outcome": [
     "Present information about the multicultural features of other countries."
   ],
-  "the_entrance": "5-minute introduction: The teacher activates the classroom by setting the global stage, transforming the room into a United Nations cultural summit. The teacher challenges each of the 6 student groups to act as international cultural attachés representing India, the United States, Great Britain, Canada, Singapore, and South Africa. The teacher prompts students with the challenge question: 'How do diverse nations maintain harmony while embracing multiple languages, religions, and traditions?' Students eagerly assemble in their teams of five, assigning roles such as Leader, Scribe, Timekeeper, Spokesperson, and Civic Investigator, and review their assigned country file notes in their student notebooks.",
+  "the_entrance": "5-minute introduction: The teacher launches the period by writing three global case study titles on the chalkboard—India, Malaysia, and Mauritius—and challenges the 9 classroom groups with the prompt: 'What makes these nations function harmoniously despite having multiple languages and religions?' Students actively respond in their groups by discussing prior knowledge of foreign cultural festivals and sharing observations from international media.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "The teacher circulates among the 6 collaborative teams, acting as a facilitator rather than a lecturer. The teacher prompts the Scribes and Leaders with scaffolding questions: 'What are the main linguistic groups in your assigned country, and how do their coexistence practices mirror or differ from Sri Lanka?' The teacher ensures equitable participation so every student contributes facts on demographics, official languages, and peace-building mechanisms.",
-      "student_activities": "Students collaborate intensely in their groups of five to synthesize textbook facts regarding their assigned foreign country's multicultural characteristics. The Scribe records key demographic data and coexistence practices onto chart paper while the Civic Investigator cross-checks accuracy against textbook references. The team outlines a structured 2-minute briefing highlighting how mutual trust and collective conscience sustain peace in their assigned nation.",
-      "learning_teaching_method": "International Attaché Briefing Preparation",
-      "learning_teaching_aids": "Chart paper, colored markers, student notebooks, and textbook multicultural society fact extracts.",
+      "teacher_activities": "The teacher circulates among the 9 groups, directing student scribes and civic investigators to analyze the chalkboard text regarding official language policies and educational integration in foreign nations, asking probing questions such as 'How are minority languages accommodated in their public schools?'",
+      "student_activities": "Group members assign roles (Scribe, Leader, Investigator) to examine the chalkboard narratives, noting key governance features of multiculturalism in India and Malaysia into their notebooks while discussing mutual trust.",
+      "learning_teaching_method": "Case Evidence Gathering",
+      "learning_teaching_aids": "Chalkboard narrative descriptions, Student Notebooks, Pens",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "Acting as a facilitator, the teacher moves between groups to observe chart layout designs, challenging teams to connect foreign governance models back to Sri Lanka's multicultural fabric with prompts like 'What parallels do you observe with our own national celebrations?'",
+      "student_activities": "Collaborating intensively, the creative directors and presenters synthesize their findings onto chart paper to build a structured 'Case Inquiry Matrix' comparing linguistic and religious policies across the assigned countries.",
+      "learning_teaching_method": "Collaborative Matrix Synthesis",
+      "learning_teaching_aids": "Chart Paper, Colored Markers",
       "assessment_and_feedback": "",
       "time_minutes": 15,
       "other": ""
     },
     {
-      "step_number": 2,
-      "teacher_activities": "The teacher moderates the fast-paced 2-minute presentations, ensuring strict timekeeping and respectful peer listening across all groups. As each Spokesperson presents, the teacher records common global multicultural themes—such as bilingualism, religious freedom, and cooperative governance—on the chalkboard.",
-      "student_activities": "The designated Spokesperson from each team delivers a dynamic, structured 2-minute oral presentation while displaying their group's chart paper poster to the class. Remaining team members support with chalkboard diagrams or quick reference pointers. Peer groups actively listen, note down comparative global features in their student notebooks, and prepare constructive questions for the speakers.",
-      "learning_teaching_method": "World Stage Fast-Paced Country Briefing Presentations",
-      "learning_teaching_aids": "Completed chart paper briefing posters, chalkboard, and colored chalk.",
+      "step_number": 3,
+      "teacher_activities": "The teacher moderates a quick rotational check, prompting timekeepers and spokespersons to observe neighboring group matrices and verify accuracy against textbook facts on global multicultural societies.",
+      "student_activities": "Spokespersons briefly share key insights from their matrices with adjacent groups, identifying common threads in global diversity management and mutual respect.",
+      "learning_teaching_method": "Peer Gallery Reflection",
+      "learning_teaching_aids": "Completed Chart Papers mounted on desks",
       "assessment_and_feedback": "",
-      "time_minutes": 15,
+      "time_minutes": 5,
       "other": ""
     }
   ],
-  "summary": "The teacher leads a 2-minute synthesis connecting student discoveries, emphasizing that like Sri Lanka, nations worldwide thrive on multiculturalism through mutual trust, shared civic responsibility, and respect for linguistic and religious diversity.",
-  "assessment_and_feedback_whole_lesson": "Formative evaluation is based on group collaboration quality, the historical and factual accuracy of the presentation charts, the clarity and engagement of the Spokesperson's oral delivery, and active peer participation during the global briefing session.",
-  "post_activity": "Students engage in a 5-minute interactive 'Global Cultural Key Ring' exchange. Each student is given a small paper tag cut from scrap paper and quickly writes down one inspiring coexistence practice learned from another country's presentation (e.g., 'respecting bilingual education in Canada' or 'religious harmony in India'). Students rapidly pass their tags to their left-hand peer in a circle formation, reading and discussing the received global insight with their bench partner before the teacher summarizes the shared international values.",
+  "summary": "In this 2-minute synthesis, students consolidate their discoveries, recognizing that successful multicultural nations worldwide rely on mutual trust, linguistic accommodation, and collective civic consciousness to minimize conflict and foster sustainable peace.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted through observation of group engagement during matrix construction, accuracy of comparative foreign policy facts recorded on chart papers, and constructive peer feedback during the gallery reflection.",
+  "post_activity": "Students engage in a 5-minute interactive in-class activity called 'Global Mosaic Cross-Check'. Each group appoints their spokesperson to stand up and deliver a 30-second rapid-fire flash statement detailing one unique institutional feature of multiculturalism from their assigned country (e.g., India's multilingual administration), while other groups cross-check the fact against their notebooks for accuracy and relevance.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
   "attachments": [
-    "World Stage Briefing Task Cards",
-    "Country Profile Reference Sheets"
+    "Chalkboard Narrative Prompts on Global Diversity",
+    "Case Inquiry Matrix Templates"
   ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 2,
   "total_periods": 3,
-  "selected_activity": "Activity: World Stage Spotlight: Interactive Country Briefing Presentations\nApproach: Teams assume the role of international cultural attachés presenting concise, structured briefings on the multicultural features of assigned foreign countries to their peers.\nStudent task: Groups synthesize knowledge regarding a specific country's multicultural demographics, official languages, and harmonious coexistence practices, preparing a 2-minute oral presentation supported by chalkboard diagrams and chart notes.\nTeacher facilitation: Supervises preparation time, ensures equitable role participation among all group members, moderates the fast-paced 2-minute presentations, and summarizes common global themes on the chalkboard.\nExpected output: A structured briefing chart on chart paper and a 2-minute oral presentation delivered by the designated Spokesperson.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. All 30 students collaborate in 6 islands.",
-  "selected_activity_title": "World Stage Spotlight: Interactive Country Briefing Presentations",
+  "selected_activity": "Activity: Cross-Border Case Inquiry: Global Diversity Models\nApproach: Students investigate specific global case studies highlighting how other nations celebrate linguistic, religious, and ethnic diversity, extracting key lessons for global citizenship.\nStudent task: Groups analyze short narrative descriptions written on the chalkboard regarding multicultural governance in nations like Malaysia, Mauritius, or India. They investigate key features such as official language policies, multicultural festivals, and educational integration, summarizing their insights onto chart paper.\nTeacher facilitation: The teacher circulates the 9 classroom islands as a facilitator, guiding students with prompts: 'What similarities do you see between this country's approach and Sri Lanka's multicultural fabric?' and 'How is diversity reflected in their public institutions?' The teacher keeps strict time for the 30-minute activity.\nExpected output: A collaborative 'Case Inquiry Matrix' comparing multicultural features of selected foreign countries.\nGrouping: 9 teams (4 groups of 5, 5 groups of 6) arranged into 9 classroom islands. Roles distributed: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead. Zero bystanders; all 50 students participate actively.",
+  "selected_activity_title": "Cross-Border Case Inquiry: Global Diversity Models",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_3",
-      "title": "World Stage Spotlight: Interactive Country Briefing Presentations",
-      "pedagogy_type": "Structured Collaborative Presentation",
-      "description": "Teams assume the role of international cultural attachés presenting concise, structured briefings on the multicultural features of assigned foreign countries to their peers.",
+      "id": "option_2",
+      "title": "Cross-Border Case Inquiry: Global Diversity Models",
+      "pedagogy_type": "Case Inquiry",
+      "description": "Students investigate specific global case studies highlighting how other nations celebrate linguistic, religious, and ethnic diversity, extracting key lessons for global citizenship.",
       "learning_outcomes_addressed": [
         "Present information about the multicultural features of other countries."
       ],
-      "student_action_summary": "Groups synthesize knowledge regarding a specific country's multicultural demographics, official languages, and harmonious coexistence practices, preparing a 2-minute oral presentation supported by chalkboard diagrams and chart notes.",
-      "teacher_facilitation_summary": "Supervises preparation time, ensures equitable role participation among all group members, moderates the fast-paced 2-minute presentations, and summarizes common global themes on the chalkboard.",
-      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. All 30 students collaborate in 6 islands.",
+      "student_action_summary": "Groups analyze short narrative descriptions written on the chalkboard regarding multicultural governance in nations like Malaysia, Mauritius, or India. They investigate key features such as official language policies, multicultural festivals, and educational integration, summarizing their insights onto chart paper.",
+      "teacher_facilitation_summary": "The teacher circulates the 9 classroom islands as a facilitator, guiding students with prompts: 'What similarities do you see between this country's approach and Sri Lanka's multicultural fabric?' and 'How is diversity reflected in their public institutions?' The teacher keeps strict time for the 30-minute activity.",
+      "student_grouping": "9 teams (4 groups of 5, 5 groups of 6) arranged into 9 classroom islands. Roles distributed: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead. Zero bystanders; all 50 students participate actively.",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A structured briefing chart on chart paper and a 2-minute oral presentation delivered by the designated Spokesperson.",
-      "creative_assessment_preview": "Statue Tableau: Teams freeze in a silent 10-second living statue pose that creatively symbolizes the national symbol or multicultural harmony of the country they presented.",
-      "low_resource_alternative": "Presentations are conducted as 'desk briefings' where the Spokesperson reads out key findings from student notebooks without using chart paper."
+      "expected_student_output": "A collaborative 'Case Inquiry Matrix' comparing multicultural features of selected foreign countries.",
+      "creative_assessment_preview": "Exit Slip: Each student writes down one takeaway on a slip of paper regarding a foreign country's multicultural feature before leaving their desk.",
+      "low_resource_alternative": "Students analyze chalkboard-written case summaries and construct comparison tables directly in their notebooks."
     }
   ],
   "outcome_allocation": {

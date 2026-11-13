@@ -4,76 +4,80 @@
   "time_allocation": "40 Minutes (Period 1 of 2)",
   "competence": "Develops leadership qualities, identifying the need of leadership",
   "competence_level": "8.2.4",
-  "lesson": "Names the democratic leadership qualities in leadership: School Prefect Election Debate and Value Audit",
+  "lesson": "Names the democratic leadership qualities in leadership: Democratic Qualities Role-Card Carousel",
   "unique_learning_outcome": [
     "Names the democratic leadership qualities in leadership.",
     "Explains the need of moral leadership for the wellbeing of society.",
     "Explains the term leadership briefly."
   ],
-  "the_entrance": "The teacher steps into the classroom acting as the Returning Officer for an upcoming provincial school prefect election, writing 'Power vs. Moral Authority' on the chalkboard. The teacher launches a 5-minute motivational challenge by asking: 'When choosing a school captain for our sports meet or prefect board, do we look for someone who simply gives orders, or someone who listens, tolerates others' ideas, and leads with honesty?' Students immediately turn to their table groups of five, buzzing with rapid reactions, sharing personal experiences of school sports captains and club leaders who inspired them through fairness rather than strict authority, and appointing their team roles.",
+  "the_entrance": "The teacher enters the classroom and launches a 5-minute energetic motivational hook by projecting a short real-world scenario on the chalkboard: organizing a tsunami disaster relief camp in a coastal Sri Lankan village versus managing a school sports meet. The teacher acts as facilitator, posing the challenge: 'Imagine a leader who issues commands without listening versus one who consults everyone; which path builds true community harmony?' Students in their groups of 5 to 6 instantly brainstorm contrasting styles, shouting out brief observations on authority versus teamwork while the timekeeper notes initial definitions of leadership in student notebooks.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "The teacher acts as a facilitator, circulating among the six student groups as they examine simulated manifestos from a Sri Lankan provincial school election. The teacher prompts inquiry by asking: 'How do these candidate pledges demonstrate listening to others and maintaining interpersonal relations?' The teacher scaffolds discussions on the basic definition of leadership by prompting groups to distinguish between guiding a group toward common goals versus exercising autocratic control.",
-      "student_activities": "Students collaborate in their teams of five, assigning roles such as Leader, Scribe, Timekeeper, Spokesperson, and Civic Investigator. They analyze the candidate manifesto cards, debate the meaning of leadership based on textbook concepts, and list concrete examples of how leaders guide family, school, and community groups toward common objectives.",
-      "learning_teaching_method": "Manifesto Evidence Audit and Leadership Definition Inquiry",
-      "learning_teaching_aids": "Simulated candidate manifesto task cards, student notebooks, colored markers, whiteboard",
+      "teacher_activities": "The teacher circulates among the 9 student groups, handing out distinct role-cards and guiding them to analyze the difference between autocratic orders and democratic participation. The facilitator prompts teams with probing questions: 'How does listening to others and maintaining equity help resolve conflicts in this Poson zone planning?' The teacher observes collaboration, ensuring every role—from scribe to spokesperson—actively contributes to script development.",
+      "student_activities": "Students collaborate in their assigned groups of 5 and 6, reading their specific role-card scenario and assigning internal roles like leader, scribe, timekeeper, and spokesperson. The team drafts a 1-minute micro-scenario dialogue highlighting moral and democratic leadership qualities such as tolerance, honesty, and self-confidence, while the scribe records key talking points.",
+      "learning_teaching_method": "Scenario Investigation & Collaborative Rehearsal",
+      "learning_teaching_aids": "Role-cards depicting local Sri Lankan contexts (Poson zone organizing, school prefect board meeting), student notebooks, pens",
       "assessment_and_feedback": "",
       "time_minutes": 15,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "The teacher moderates the room as a School Development Society committee meeting, guiding groups to synthesize their findings. The teacher asks probing questions to deepen understanding: 'Why is moral leadership essential for social betterment and good governance in our society?' The teacher observes group interactions, ensuring every student contributes to identifying democratic traits such as equity, steadiness, and self-confidence.",
-      "student_activities": "Students engage in a simulated committee debate discussing what moral leadership means for societal harmony. Working together, they filter through qualities like humility, honesty, helping others, and far-sightedness, and synthesize their group consensus onto a newly drafted 'Code of Moral Leadership' poster using chart paper.",
-      "learning_teaching_method": "Mock Society Assembly and Moral Value Mapping",
-      "learning_teaching_aids": "Chart paper, marker pens, textbook reference excerpts on democratic leadership qualities",
+      "teacher_activities": "The teacher acts as a moderator, managing the 1-minute roleplay presentations from selected groups and inviting peer feedback on democratic qualities observed. The teacher scaffolds the synthesis by asking the civic investigator to check textbook concepts against the enactments and writes core democratic traits like 'impartiality', 'humility', and 'dedication' on the chalkboard.",
+      "student_activities": "Group spokespersons perform their 1-minute roleplay enactments with creative freeze-frame staging, demonstrating both autocratic failure and democratic success. The remaining groups evaluate the performance, use their chart paper to list identified democratic leadership qualities, and explain the need for moral leadership in achieving societal well-being.",
+      "learning_teaching_method": "Roleplay Enactment & Plenary Synthesis",
+      "learning_teaching_aids": "Chart paper, colored markers, chalkboard",
       "assessment_and_feedback": "",
       "time_minutes": 15,
       "other": ""
     }
   ],
-  "summary": "In a 2-minute plenary synthesis, the teacher invites spokespersons to highlight key discoveries: leadership is guiding a group toward common goals, moral leadership is indispensable for good governance and community wellbeing, and democratic qualities such as active listening, equity, and honesty form the bedrock of exemplary leadership.",
-  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted through observation of active group participation, analysis of the accuracy of democratic leadership qualities listed on the 'Code of Moral Leadership' posters, and peer feedback during the committee simulation.",
-  "post_activity": "5-minute in-class assignment: Rapid Team Buzzer Challenge: The teacher poses 2 fast conceptual dilemma questions on Sri Lankan school leadership scenarios (e.g., 'Identify one democratic quality missing if a prefect ignores minority opinions in club meetings'). Teams rapidly consult for 60 seconds and present their answer cards, earning instant peer evaluation and teacher feedback.",
+  "summary": "In a 2-minute teacher-moderated synthesis, students summarize that leadership is guiding a group toward a common goal, and that moral and democratic leadership qualities—such as listening, equity, and honesty—are vital for social betterment and good governance in Sri Lankan society.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation based on group participation, accuracy in identifying democratic leadership qualities from role-cards, clarity of the short definition of leadership, and peer feedback during roleplay presentations.",
+  "post_activity": "Students engage in a 5-minute in-class 'Democratic Trait Match-up Grid' challenge. Working in their 9 teams, members rapidly review their chart papers and race to write down three distinct democratic leadership qualities (e.g., foresight, friendliness, helping others) and one sentence explaining why moral leadership ensures societal well-being. The teacher circulates to check responses instantly, awarding verbal commendations to the fastest and most accurate teams.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
   "attachments": [
-    "Simulated Candidate Manifesto Task Cards",
-    "Code of Moral Leadership Poster Templates"
+    "Role-cards (Poson zone",
+    "sports meet",
+    "school prefect committee)",
+    "chart paper",
+    "markers",
+    "chalkboard"
   ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 1,
   "total_periods": 2,
-  "selected_activity": "Activity: School Prefect Election Debate and Value Audit\nApproach: Students simulate a school development society meeting to evaluate candidates, distinguishing between ordinary power and true democratic moral leadership.\nStudent task: Groups analyze candidate manifestos from a simulated Sri Lankan provincial school election, roleplay a discussion on what leadership means, and list essential moral and democratic qualities required for societal harmony.\nTeacher facilitation: Teacher acts as the returning officer, outlines the 30-minute framework on the chalkboard, and guides students to connect candidate integrity directly to community wellbeing.\nExpected output: A summarized 'Code of Moral Leadership' poster drafted on chart paper by each group.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. All 30 students participate actively via structured cooperative roles.",
-  "selected_activity_title": "School Prefect Election Debate and Value Audit",
+  "selected_activity": "Activity: Democratic Qualities Role-Card Carousel\nApproach: Students enact micro-scenarios reflecting school and community settings in Sri Lanka to contrast autocratic actions with democratic and moral leadership practices.\nStudent task: Each team receives a role card depicting a local scenario (e.g., organizing a Poson zone or school sports meet). They create a brief roleplay showing how democratic leadership qualities and moral values ensure community harmony.\nTeacher facilitation: Teacher sets up the activity parameters, assigns scenarios, monitors time for group rehearsal, and facilitates a structured plenary reflection on the definition of leadership.\nExpected output: A performed 1-minute roleplay enactment and a written summary on chart paper outlining leadership terms and moral imperatives.\nGrouping: 9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead. Total 50 students partitioned seamlessly.",
+  "selected_activity_title": "Democratic Qualities Role-Card Carousel",
   "custom_teacher_activity": null,
   "activity_options": [
     {
       "id": "option_2",
-      "title": "School Prefect Election Debate and Value Audit",
-      "pedagogy_type": "Roleplay / Case Inquiry",
-      "description": "Students simulate a school development society meeting to evaluate candidates, distinguishing between ordinary power and true democratic moral leadership.",
+      "title": "Democratic Qualities Role-Card Carousel",
+      "pedagogy_type": "Roleplay & Attribute Mapping",
+      "description": "Students enact micro-scenarios reflecting school and community settings in Sri Lanka to contrast autocratic actions with democratic and moral leadership practices.",
       "learning_outcomes_addressed": [
         "Names the democratic leadership qualities in leadership.",
         "Explains the need of moral leadership for the wellbeing of society.",
         "Explains the term leadership briefly."
       ],
-      "student_action_summary": "Groups analyze candidate manifestos from a simulated Sri Lankan provincial school election, roleplay a discussion on what leadership means, and list essential moral and democratic qualities required for societal harmony.",
-      "teacher_facilitation_summary": "Teacher acts as the returning officer, outlines the 30-minute framework on the chalkboard, and guides students to connect candidate integrity directly to community wellbeing.",
-      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. All 30 students participate actively via structured cooperative roles.",
+      "student_action_summary": "Each team receives a role card depicting a local scenario (e.g., organizing a Poson zone or school sports meet). They create a brief roleplay showing how democratic leadership qualities and moral values ensure community harmony.",
+      "teacher_facilitation_summary": "Teacher sets up the activity parameters, assigns scenarios, monitors time for group rehearsal, and facilitates a structured plenary reflection on the definition of leadership.",
+      "student_grouping": "9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead. Total 50 students partitioned seamlessly.",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A summarized 'Code of Moral Leadership' poster drafted on chart paper by each group.",
-      "creative_assessment_preview": "Exit Slip: Students write down one sentence explaining why moral leadership is needed for society on a scrap paper before leaving.",
-      "low_resource_alternative": "Write the 'Code of Moral Leadership' directly into student notebooks instead of chart paper."
+      "expected_student_output": "A performed 1-minute roleplay enactment and a written summary on chart paper outlining leadership terms and moral imperatives.",
+      "creative_assessment_preview": "Statue/Tableau: Groups freeze in a posture representing 'moral leadership' for 10 seconds while the teacher evaluates alignment.",
+      "low_resource_alternative": "Instead of acting out physical roleplays, students perform a dramatic dialogue reading sitting at their desks using notebook scripts."
     }
   ],
   "outcome_allocation": {

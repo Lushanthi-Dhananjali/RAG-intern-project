@@ -2,86 +2,77 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 2 of 2)",
-  "competence": "Develops leadership qualities, identifying the need of leadership for social betterment",
+  "competence": "Develops leadership qualities, identifying the need of leadership for social betterment and good governance",
   "competence_level": "8.2.4",
-  "lesson": "Expresses the importance of developing democratic leadership qualities: The Community Harmony Consensus Jigsaw",
+  "lesson": "Expresses the importance of developing democratic leadership qualities: The Community Council Policy Jigsaw",
   "unique_learning_outcome": [
     "Expresses the importance of developing democratic leadership qualities.",
     "Presents qualities to be developed as a follower for the wellbeing of the society."
   ],
-  "the_entrance": "5-minute introduction: The teacher displays a vivid photograph on the chalkboard depicting a multi-ethnic Sri Lankan school wildlife club conducting a shramadana campaign, led cooperatively by a student president and active supporting members. The teacher launches the period with an engaging challenge prompt: 'Look at how both the club leader and the supporting members work side by side; what makes this partnership essential for community harmony and good governance?' Students in their pre-assigned home groups of five quickly discuss the prompt, with Student Leaders guiding quick sharing and Scribes noting down initial ideas on how follower cooperation shapes successful leadership.",
+  "the_entrance": "The teacher initiates a 5-minute energetic hook by displaying a scenario card depicting a proposed community water-tank project under a local Pradeshiya Sabha where a previous project stalled due to poor followership and autocratic leadership. The teacher challenges the 50 students across 9 desk islands with the prompt: 'How can balancing democratic leadership traits like active listening with dedicated, constructive followership rescue this community initiative?' Student groups immediately appoint their Timekeepers and Civic Investigators, buzzing with preliminary ideas on how mutual trust between leaders and citizens ensures social betterment.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "The teacher acts as a facilitator, directing home group members to split into temporary expert teams focusing on either democratic leader qualities (such as tolerance, active listening, and fairness) or responsible follower qualities (such as accountability, respectful dissent, and trust). The teacher circulates among the groups, providing investigative prompts regarding school clubs and youth councils, and scaffolding students to link follower duties directly to public welfare.",
-      "student_activities": "Students disperse into their assigned expert stations to analyze textbook scenarios about democratic decision-making in Sri Lankan community organizations. Civil Investigators check textbook facts while Secretaries record specific accountability and leadership traits required to prevent autocratic behavior.",
-      "learning_teaching_method": "Jigsaw Expert Investigation Phase",
-      "learning_teaching_aids": "Expert Station Task Cards, Student Notebooks, Textbooks",
-      "assessment_and_feedback": "",
-      "time_minutes": 10,
-      "other": ""
-    },
-    {
-      "step_number": 2,
-      "teacher_activities": "The teacher manages the transition back to home groups using a chalkboard countdown and guides students to synthesize their expert findings into a unified framework. The teacher prompts groups with probing questions such as: 'How does a follower guide a leader toward proper democratic goals without causing conflict?'",
-      "student_activities": "Expert members reconvene in their original home groups of five and take turns presenting their findings to one another. Together, the team collaborates dynamically to draft a comprehensive 'Pledge of Democratic Partnership' poster on chart paper, mapping out mutual duties of leaders and followers.",
-      "learning_teaching_method": "Home Group Synthesis and Jigsaw Exchange",
-      "learning_teaching_aids": "Chart Paper, Color Markers, Chalkboard Countdown Timer",
+      "teacher_activities": "The teacher circulates among the 9 desk islands, acting as a facilitator to guide groups as they dissect specific segments of local governance scenarios. The teacher asks probing scaffolding questions such as, 'How does tolerating differing viewpoints during a village meeting prevent community conflict?' and ensures that Scribes and Facilitators actively engage every member of the 5-member and 6-member teams.",
+      "student_activities": "Students collaborate in their assigned groups, examining their specific segment of the community council policy scenario. Scribes record team arguments regarding democratic qualities like equity, steadiness, and foresight, while Civic Investigators cross-reference findings with textbook guidelines on leader-follower relationships.",
+      "learning_teaching_method": "Jigsaw Expert Group Investigation & Scenario Dissection",
+      "learning_teaching_aids": "Pradeshiya Sabha Jigsaw Task Cards, Student Notebooks, Colored Markers, Chalkboard",
       "assessment_and_feedback": "",
       "time_minutes": 15,
       "other": ""
     },
     {
-      "step_number": 3,
-      "teacher_activities": "The teacher facilitates a fast-paced gallery walk by instructing groups to exchange posters for peer review, moderating constructive feedback on clarity and civic depth. The teacher highlights exemplary models of follower accountability displayed across the room.",
-      "student_activities": "Spokespersons and Timekeepers display their team's 'Pledge of Democratic Partnership' on the classroom wall and review neighboring posters using sticky notes to add constructive comments on democratic balance.",
-      "learning_teaching_method": "Gallery Walk and Peer Evaluation",
-      "learning_teaching_aids": "Completed Partnership Posters, Sticky Notes",
+      "step_number": 2,
+      "teacher_activities": "The teacher monitors the room to ensure adherence to the 30-minute developmental timeline, prompting Creative Directors and Chart Leads to finalize their visual designs. The teacher evaluates group synthesis by asking, 'What specific duty does a follower have when guiding a leader toward a proper common goal without seeking personal benefits?'",
+      "student_activities": "Teams consolidate their fragmented expert findings into a structured 'Code of Conduct for Democratic Leaders and Followers'. Creative Directors organize the visual layout on chart paper, while Spokespersons rehearse their group's resolution defending the necessity of mutual respect and moral leadership in local institutions.",
+      "learning_teaching_method": "Collaborative Synthesis & Action Guide Consolidation",
+      "learning_teaching_aids": "Large Chart Paper, Chart Lead's Visual Layout Templates, Spokesperson Presentation Cards",
       "assessment_and_feedback": "",
-      "time_minutes": 5,
+      "time_minutes": 15,
       "other": ""
     }
   ],
-  "summary": "In a 2-minute synthesis, students conclude that democratic leadership and responsible followerhood are mutually dependent pillars necessary for maintaining peace, fairness, and good governance in Sri Lankan society.",
-  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted through observation of active collaboration during the jigsaw exchange, evaluation of the depth of content on the 'Pledge of Democratic Partnership' posters, and accuracy in identifying the interplay between leader qualities and follower responsibilities.",
-  "post_activity": "5-minute in-class assignment: Statement Display & Justified Standpoint Vote: The teacher writes an authentic Sri Lankan societal statement on the chalkboard: 'A good follower should always obey blindly without questioning the leader.' Students immediately vote 'Agree' or 'Disagree' by raising colored cards and standing up. Selected student spokespersons rapidly justify their standpoint, explaining why respectful dissent and active follower accountability are vital for democratic leadership.",
+  "summary": "In a 2-minute synthesis, the teacher and students consolidate core discoveries: democratic leadership qualities such as humility, honesty, and fairness—coupled with faithful, constructive followership—are essential for effective local governance, family harmony, and overall societal well-being.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted through observation of active group participation, evaluation of the completed 'Code of Conduct' chart papers for accuracy against syllabus content, and peer feedback during Spokesperson presentations verifying student mastery of democratic leadership and followership duties.",
+  "post_activity": "To conclude the lesson within a 5-minute in-class window, students participate in 'The Democratic Policy Relay'. Each of the 9 desk islands receives a blank sentence-strip where they must rapidly draft a two-line rhyming verse or policy statement expressing either a core democratic leadership quality or a vital follower duty (e.g., 'A leader listens with a steady heart, / A follower supports right from the start'). The Spokesperson from each group reads their completed strip aloud while the teacher and peers provide immediate verbal validation, ensuring a vibrant, creative closure.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
   "attachments": [
-    "Jigsaw Expert Station Task Cards",
-    "Pledge of Democratic Partnership Chart Templates"
+    "Pradeshiya Sabha Jigsaw Task Cards",
+    "Chart Paper",
+    "Colored Markers"
   ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 2,
   "total_periods": 2,
-  "selected_activity": "Activity: The Community Harmony Consensus Jigsaw\nApproach: The classroom is divided to examine different pillars of democratic coexistence in Sri Lankan society, such as multi-ethnic school clubs, shramadana societies, and youth councils. Through a structured jigsaw exchange, students synthesize why democratic leadership and responsible followerhood are interdependent for societal peace.\nStudent task: Initial home groups split up so members can investigate specific aspects of follower qualities (e.g., accountability, respectful dissent, cooperation) versus leader qualities (e.g., empathy, delegation). They reconvene in their original teams of 5 to synthesize a comprehensive 'Pledge of Democratic Partnership' on chart paper.\nTeacher facilitation: The teacher monitors noise levels, manages transitions between the investigation phase and the synthesis phase using chalkboard countdowns, and guides students to link follower qualities directly to public welfare.\nExpected output: A collaboratively drafted 'Pledge of Democratic Partnership' poster outlining key responsibilities of both leaders and followers.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
-  "selected_activity_title": "The Community Harmony Consensus Jigsaw",
+  "selected_activity": "Activity: The Community Council Policy Jigsaw\nApproach: Students rotate or redistribute expertise within teams to synthesize how democratic leadership and proactive followership jointly resolve issues in local contexts such as a Pradeshiya Sabha community project.\nStudent task: Teams dissect specific segments of local governance scenarios, analyze the reciprocal relationship between leaders and followers, and consolidate their findings into a structured action guide.\nTeacher facilitation: Monitors group collaboration across the 9 desk islands, ensuring all 50 students actively contribute through their designated roles and managing the strict 30-minute developmental timeline.\nExpected output: A synthesized 'Code of Conduct for Democratic Leaders and Followers' written on chart paper.\nGrouping: 9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead",
+  "selected_activity_title": "The Community Council Policy Jigsaw",
   "custom_teacher_activity": null,
   "activity_options": [
     {
       "id": "option_2",
-      "title": "The Community Harmony Consensus Jigsaw",
-      "pedagogy_type": "Station Jigsaw & Consensus Building",
-      "description": "The classroom is divided to examine different pillars of democratic coexistence in Sri Lankan society, such as multi-ethnic school clubs, shramadana societies, and youth councils. Through a structured jigsaw exchange, students synthesize why democratic leadership and responsible followerhood are interdependent for societal peace.",
+      "title": "The Community Council Policy Jigsaw",
+      "pedagogy_type": "Station Jigsaw / Collaborative Synthesis",
+      "description": "Students rotate or redistribute expertise within teams to synthesize how democratic leadership and proactive followership jointly resolve issues in local contexts such as a Pradeshiya Sabha community project.",
       "learning_outcomes_addressed": [
         "Expresses the importance of developing democratic leadership qualities.",
         "Presents qualities to be developed as a follower for the wellbeing of the society."
       ],
-      "student_action_summary": "Initial home groups split up so members can investigate specific aspects of follower qualities (e.g., accountability, respectful dissent, cooperation) versus leader qualities (e.g., empathy, delegation). They reconvene in their original teams of 5 to synthesize a comprehensive 'Pledge of Democratic Partnership' on chart paper.",
-      "teacher_facilitation_summary": "The teacher monitors noise levels, manages transitions between the investigation phase and the synthesis phase using chalkboard countdowns, and guides students to link follower qualities directly to public welfare.",
-      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
+      "student_action_summary": "Teams dissect specific segments of local governance scenarios, analyze the reciprocal relationship between leaders and followers, and consolidate their findings into a structured action guide.",
+      "teacher_facilitation_summary": "Monitors group collaboration across the 9 desk islands, ensuring all 50 students actively contribute through their designated roles and managing the strict 30-minute developmental timeline.",
+      "student_grouping": "9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead",
       "required_materials": [
-        "Chalkboard",
+        "Chart Paper",
         "Student Notebooks",
-        "Chart Paper"
+        "Chalkboard"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A collaboratively drafted 'Pledge of Democratic Partnership' poster outlining key responsibilities of both leaders and followers.",
-      "creative_assessment_preview": "Statue/Tableau Review: In the final 5 minutes, each group forms a 30-second frozen tableau depicting either a constructive democratic follower or an inclusive leader, while the rest of the class guesses the specific quality being portrayed.",
-      "low_resource_alternative": "Use student notebooks for drafting the pledge instead of chart paper, and have groups read out their concluding statements sequentially."
+      "expected_student_output": "A synthesized 'Code of Conduct for Democratic Leaders and Followers' written on chart paper.",
+      "creative_assessment_preview": "Statue/Tableau Freeze: Groups form a 10-second silent physical statue representing 'Cooperative Followership supporting Democratic Leadership' evaluated by peers.",
+      "low_resource_alternative": "Use chalkboard sections assigned to each team to pool synthesized points instead of using chart paper."
     }
   ],
   "outcome_allocation": {

@@ -2,77 +2,88 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 2 of 2)",
-  "competence": "Investigates the nature, historical evolution, and contemporary significance of public services to appreciate their vital role in community development and citizen welfare.",
+  "competence": "Investigates public services and understands their historical need, timely importance, and evolution for community development",
   "competence_level": "8.1.1",
-  "lesson": "Presents views appreciating the importance of public services of the times: Historical Evolution Timeline Walk: Tracing Public Services in Sri Lanka",
+  "lesson": "Presents views appreciating the importance of public services of the times: The Community Service Case Inquiry: Evaluating Past and Present Impact",
   "unique_learning_outcome": [
     "Presents views appreciating the importance of public services of the times.",
     "Investigates information on the beginning and progress of public services."
   ],
-  "the_entrance": "5-minute introduction: The teacher circulates among the six student groups, displaying an archival photograph of an ancient royal irrigation sluice from the Anuradhapura period alongside a photograph of a modern railway train on the upcountry line. The teacher launches the period with a guiding prompt: 'Look at how our ancestors engineered water management and health networks centuries ago, and how these evolved into our railways and hospitals today; discuss in your teams how these early milestones shaped our daily survival.' Students actively engage in their groups of five, assigning roles such as Leader, Scribe, Timekeeper, Spokesperson, and Civic Investigator, and share initial observations on how historical state initiatives laid the groundwork for contemporary community welfare.",
+  "the_entrance": "5-minute introduction: The teacher writes two contrasting chalkboard prompts: 'Grandfather's journey to the nearest rural dispensary in 1950' versus 'Accessing the local Pradeshiya Sabha water supply and health clinic today.' Facilitating from the center, the teacher challenges the 7 student groups with the launch prompt: 'Imagine walking five miles for a single drop of clean water or medical help—how did our ancestors' struggles shape the robust public utilities we rely on today?' Student teams immediately huddle with their designated Leaders and Scribes, reviewing prior notebook entries on Anuradhapura era medicinal gardens and modern infrastructure to share initial emotional reflections on the hardships overcome by past generations.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "The teacher acts as a facilitator, writing foundational historical data points on the chalkboard covering the Anuradhapura medicinal gardens, British-era railway expansions, and Dr. C.W.W. Kannangara's 1945 Free Education Act. The teacher circulates among the six teams, asking probing questions such as 'How did the transition from royal patronage to institutionalized government services change the accessibility for ordinary citizens?' and scaffolding group discussions on chronological progress.",
-      "student_activities": "Working collaboratively in six island groups, students examine the chalkboard milestones and record data points on their chart paper. The Scribe logs the chronological evolution while the Civic Investigator cross-references textbook facts about colonial transport and post-independence public services, structuring a comprehensive historical progress chart.",
-      "learning_teaching_method": "Historical Milestone Data Mapping",
-      "learning_teaching_aids": "Chalkboard historical data points, student notebooks, colored markers, and blank chart paper sheets.",
+      "teacher_activities": "The teacher circulates among the 7 groups, acting as an investigative guide while students examine the historical backdrop of rural electrification and local water boards. The facilitator prompts the Civic Investigators and Secretaries with scaffolding questions: 'What specific administrative hurdles did early village councils face when establishing the first local dispensaries?' The teacher ensures every team member participates in extracting facts from the textbook regarding state and provincial council responsibilities.",
+      "student_activities": "Civic Investigators and Scribes lead their teams in analyzing chalkboard case prompts regarding the evolution of local Pradeshiya Sabha projects. Group members actively debate the historical difficulties communities experienced before these public services arrived, noting down key milestones from ancient irrigation and hospital setups to modern municipal utility expansions.",
+      "learning_teaching_method": "Historical Case Evidence Gathering",
+      "learning_teaching_aids": "Chalkboard case prompts, Student Notebooks, historical timeline reference cards on Sri Lankan public utilities",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "The teacher moves dynamically across the classroom islands, observing group collaboration and moderating discussions as students construct comparative matrices. When a group struggles to connect past hardships with present benefits, the teacher offers probing facilitation: 'How does the absence of profit-making in public services guarantee equal access for low-income families compared to private enterprises?' The teacher verifies that timekeepers are pacing the 15-minute creation of the chart paper deliverables.",
+      "student_activities": "Working collaboratively on chart paper, the 7 student groups synthesize their findings into a structured case evaluation matrix comparing pre-service hardships with current public service benefits. Timekeepers monitor the 15-minute pacing while Presenters and Secretaries collaborate to draft compelling arguments highlighting the non-profit and equitable nature of modern community services.",
+      "learning_teaching_method": "Collaborative Evaluation Matrix Construction",
+      "learning_teaching_aids": "Chart Paper, Colored Markers, Student Notebooks",
       "assessment_and_feedback": "",
       "time_minutes": 15,
       "other": ""
     },
     {
-      "step_number": 2,
-      "teacher_activities": "The teacher moderates the room as a facilitator, observing group interactions and prompting the Spokespersons to refine their arguments regarding the timely importance of public services. The teacher asks targeted questions: 'What persuasive talking points can you present to show why these evolving services remain indispensable to modern Sri Lankan society?'",
-      "student_activities": "Group Spokespersons present their structured timeline charts and articulate persuasive talking points defending the enduring value of public services against rising human needs and technological developments. Team members actively evaluate peer presentations, debating how historical shifts from ancient irrigation to modern telecommunications secure social equity and living standards.",
-      "learning_teaching_method": "Timeline Walk Synthesis and Persuasive Presentation",
-      "learning_teaching_aids": "Completed group historical progress charts, marker pens, and presentation workspace.",
+      "step_number": 3,
+      "teacher_activities": "The teacher acts as a supportive moderator, inviting selected Spokespersons to share summary highlights of their charts while challenging the class to evaluate the societal impact. The facilitator reinforces key takeaways regarding public service features—such as continuous operation and legal frameworks—ensuring all 35 students remain actively engaged.",
+      "student_activities": "Spokespersons deliver concise 30-second advocacy pitches summarizing their group's evaluation matrix to the rest of the class. The remaining students act as evaluative peers, nodding in agreement or raising factual inquiries checked by their team's Civic Investigators.",
+      "learning_teaching_method": "Advocacy Pitch Synthesis",
+      "learning_teaching_aids": "Chart Paper display sheets, Whiteboard markers",
       "assessment_and_feedback": "",
-      "time_minutes": 15,
+      "time_minutes": 5,
       "other": ""
     }
   ],
-  "summary": "In a 2-minute synthesis, the teacher invites student representatives to highlight the core discoveries of the timeline walk, emphasizing how public services evolved from ancient royal and colonial initiatives into universal state provisions like free education and healthcare that continuously elevate community living standards.",
-  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted through observation of active group collaboration, accuracy of historical milestone mapping on chart papers, the depth of persuasive reasoning during presentations, and peer critique against the NIE competency criteria.",
-  "post_activity": "5-minute in-class assignment: Statement Display & Justified Standpoint Vote: The teacher displays a compelling civic statement on the chalkboard: 'Ancient royal public services were merely charitable acts, whereas modern public services are essential legal rights for every Sri Lankan citizen.' Students individually take 3 minutes to write their Agree/Disagree vote with a two-sentence justification in their notebooks, followed by a rapid 2-minute popcorn sharing session where selected students defend their standpoints.",
+  "summary": "In this 40-minute session, students successfully investigated the historical evolution of Sri Lankan public services from ancient times to the modern era and formulated reasoned appreciation arguments regarding their timely importance and community impact.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation is based on group collaboration, the historical accuracy of the chart paper case evaluation matrices, the depth of comparative reasoning between past hardships and present utility benefits, and peer advocacy pitch clarity.",
+  "post_activity": "5-minute in-class assignment: Pass-the-Parcel Concept Challenge: The teacher circulates a traditional wooden marker (the parcel) while traditional classroom drumming rhythm plays softly for 30 seconds. When the teacher stops the rhythm, the student holding the marker must immediately draw a Dilemma Card from the teacher's basket—such as 'A rural village petitioning for a new community water tank'—and instantly voice a one-minute reasoned appreciation argument highlighting why this public service is vital for raising local living standards, evaluated directly by class peers.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
   "attachments": [
-    "Archival timeline reference cards",
-    "chalkboard data point guides",
-    "and chart paper assessment rubric"
+    "Chalkboard case prompt templates",
+    "historical evolution reference cards",
+    "chart paper",
+    "colored markers"
   ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 2,
   "total_periods": 2,
-  "selected_activity": "Activity: Historical Evolution Timeline Walk: Tracing Public Services in Sri Lanka\nApproach: Students investigate the historical origins and chronological progress of essential public services in Sri Lanka, mapping milestones from ancient irrigation and royal postal systems to modern health and transport services on chart paper.\nStudent task: Working across 6 island groups, students analyze chalkboard-listed historical data points detailing the evolution of Sri Lankan public services (e.g., ancient postal relay systems to modern telecommunications). They collaborate to structure a chronological progress chart, identifying key turning points and formulating persuasive talking points to present why these services remain vital to modern citizens.\nTeacher facilitation: The teacher acts as a facilitator and timekeeper, writing the primary historical milestones on the chalkboard, prompting groups with guiding questions regarding how early services transformed into modern state obligations, and managing the 30-minute pacing.\nExpected output: A historical progress chart depicting the timeline and significance of Sri Lankan public services.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "Historical Evolution Timeline Walk: Tracing Public Services in Sri Lanka",
+  "selected_activity": "Activity: The Community Service Case Inquiry: Evaluating Past and Present Impact\nApproach: Student groups examine real-world local scenarios reflecting the establishment and progression of community public utilities like rural electrification, water supply boards, and local dispensaries in Sri Lanka. They investigate the historical difficulties communities faced before these services arrived and formulate reasoned appreciation arguments.\nStudent task: Civic Investigators review localized case prompts written on the chalkboard regarding the establishment of a local Pradeshiya Sabha water project or post office. The team debates the transformation in citizens' quality of life, drafts evaluation points on chart paper, and prepares an advocacy pitch.\nTeacher facilitation: The teacher monitors group discussions across the 7 islands, ensuring equitable role rotation and offering guiding prompts like: 'Compare how your grandparents accessed this service versus how you access it today.'\nExpected output: A case evaluation matrix on chart paper comparing pre-service hardships with current public service benefits.\nGrouping: 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+  "selected_activity_title": "The Community Service Case Inquiry: Evaluating Past and Present Impact",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_1",
-      "title": "Historical Evolution Timeline Walk: Tracing Public Services in Sri Lanka",
-      "pedagogy_type": "Evidence Analysis and Timeline Reconstruction",
-      "description": "Students investigate the historical origins and chronological progress of essential public services in Sri Lanka, mapping milestones from ancient irrigation and royal postal systems to modern health and transport services on chart paper.",
+      "id": "option_2",
+      "title": "The Community Service Case Inquiry: Evaluating Past and Present Impact",
+      "pedagogy_type": "Case Inquiry & Structured Problem-Solving",
+      "description": "Student groups examine real-world local scenarios reflecting the establishment and progression of community public utilities like rural electrification, water supply boards, and local dispensaries in Sri Lanka. They investigate the historical difficulties communities faced before these services arrived and formulate reasoned appreciation arguments.",
       "learning_outcomes_addressed": [
         "Presents views appreciating the importance of public services of the times.",
         "Investigates information on the beginning and progress of public services."
       ],
-      "student_action_summary": "Working across 6 island groups, students analyze chalkboard-listed historical data points detailing the evolution of Sri Lankan public services (e.g., ancient postal relay systems to modern telecommunications). They collaborate to structure a chronological progress chart, identifying key turning points and formulating persuasive talking points to present why these services remain vital to modern citizens.",
-      "teacher_facilitation_summary": "The teacher acts as a facilitator and timekeeper, writing the primary historical milestones on the chalkboard, prompting groups with guiding questions regarding how early services transformed into modern state obligations, and managing the 30-minute pacing.",
-      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "student_action_summary": "Civic Investigators review localized case prompts written on the chalkboard regarding the establishment of a local Pradeshiya Sabha water project or post office. The team debates the transformation in citizens' quality of life, drafts evaluation points on chart paper, and prepares an advocacy pitch.",
+      "teacher_facilitation_summary": "The teacher monitors group discussions across the 7 islands, ensuring equitable role rotation and offering guiding prompts like: 'Compare how your grandparents accessed this service versus how you access it today.'",
+      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A historical progress chart depicting the timeline and significance of Sri Lankan public services.",
-      "creative_assessment_preview": "Pass-the-Parcel Quiz: A small paper ball is passed around while music or clapping plays; when it stops, the student holding it must state one historical milestone or one reason why public services are important today.",
-      "low_resource_alternative": "If chart paper is unavailable, groups draft their historical timeline directly onto two consecutive pages of their student notebooks and share findings orally."
+      "expected_student_output": "A case evaluation matrix on chart paper comparing pre-service hardships with current public service benefits.",
+      "creative_assessment_preview": "1-Minute Exit Ticket: Each student writes down one sentence in their notebook expressing deep appreciation for a specific historical public service and hands it to the teacher.",
+      "low_resource_alternative": "Cases written directly onto the chalkboard for simultaneous viewing by all 7 groups, recording analysis in notebooks."
     }
   ],
   "outcome_allocation": {

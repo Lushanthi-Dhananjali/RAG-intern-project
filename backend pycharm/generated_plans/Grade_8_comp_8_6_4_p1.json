@@ -2,83 +2,86 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 1 of 2)",
-  "competence": "Broad curriculum competency standard in plain English",
+  "competence": "Inquires the importance of trained labour for national productivity and economic development",
   "competence_level": "8.6.4",
-  "lesson": "Explains the fact that the productivity of labour depends on the training: Public Issue Tree / Cause-Effect Diagram: Competency Level 8.6.4",
+  "lesson": "Explains the fact that the productivity of labour depends on the training: Vocational Training Station Jigsaw",
   "unique_learning_outcome": [
     "Explains the fact that the productivity of labour depends on the training.",
     "Explains the need of getting the training related to one’s field of work as a worker."
   ],
-  "the_entrance": "5-minute introduction: Teacher introduces an authentic Sri Lankan real-life situation, dilemma, or stimulus question connecting prior knowledge directly to this period's activity; students discuss and respond enthusiastically.",
+  "the_entrance": "5-minute introduction: The teacher launches the 40-minute session by displaying two contrasting photographs on the chalkboard: a traditional paddy farmer harvesting manually and an agricultural machine operator using modern Sri Lankan agrarian technology. The teacher acts as a facilitator, challenging the 50 students with the prompt: 'Why does the machine operator complete three acres in a single day while manual harvesting takes a week, and how does specialized training transform a common worker into a high-productivity professional?' Students assemble into their 9 pre-assigned cooperative teams (four groups of 5, five groups of 6), appointing Leaders, Scribes, Timekeepers, Spokespersons, Civic Investigators, and Chart Leads. Team members eagerly discuss prior experiences with local village workshops, technical colleges, and agrarian service centers, connecting skill acquisition directly to earning higher salaries and boosting national production.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "Teacher explains the concept of labour and its importance in Sri Lankan society, highlighting the need for trained labour to increase productivity. Teacher distributes task assignment cards, role description sheets, and inquiry scenario prompts.",
-      "student_activities": "Students arrange themselves in assigned group roles, examine the inquiry prompt concerning 'Explains the fact that the productivity of labour depends on the training', and prepare materials for their investigation.",
-      "learning_teaching_method": "Task Orientation & Guided Inquiry Launch",
-      "learning_teaching_aids": "Task assignment cards, role description sheets, inquiry scenario prompts",
+      "teacher_activities": "The teacher circulates among the 9 desk islands, distributing specialized station task cards that assign groups to investigate agricultural training (Groups 1-3), technical mechanical training (Groups 4-6), or tourism service sector training (Groups 7-9). The teacher prompts students with scaffolding questions: 'What specific knowledge and attitudes separate an untrained laborer from a certified vocational professional in your assigned sector?'",
+      "student_activities": "Students collaborate intensely within their groups, assigning roles to review textbook definitions of physical versus mental labor and skilled versus unskilled labor. The Scribe records core arguments while the Civic Investigator cross-references textbook facts about how knowledge, attitude, and skill acquisition directly determine worker productivity and salary benefits.",
+      "learning_teaching_method": "Sector Expert Station Formation",
+      "learning_teaching_aids": "Station Task Cards, Student Notebooks, Textbook Excerpts on Skilled Labour",
       "assessment_and_feedback": "",
       "time_minutes": 10,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "Teacher circulates among student teams as facilitator, observes group dynamics, asks probing scaffolding questions, and ensures full participation without lecturing.",
-      "student_activities": "Students actively execute the chosen activity in their teams, analyzing Sri Lankan real-world scenarios, negotiating ideas, and creating their team artifact.",
-      "learning_teaching_method": "Active Student-Centered Investigation",
-      "learning_teaching_aids": "Worksheets, scenario cards, chart papers, colored markers",
+      "teacher_activities": "Acting as a neutral moderator, the teacher guides the 9 teams as they synthesize their sector findings into a structured comparative matrix on chart paper. The teacher asks probing questions to ensure students explicitly link specialized vocational training to enhanced output quality and local/foreign job market demand.",
+      "student_activities": "Team members debate and consolidate their findings onto chart paper, creating a Consensus Matrix comparing training requirements, productivity outputs, and economic benefits across agriculture, technical trades, and service industries. The Spokesperson and Chart Lead coordinate the visual layout to clearly illustrate why getting training related to one's field of work is essential.",
+      "learning_teaching_method": "Jigsaw Synthesis and Cross-Sector Analysis",
+      "learning_teaching_aids": "Chart Paper, Colored Markers, Chalkboard",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 15,
       "other": ""
     },
     {
       "step_number": 3,
-      "teacher_activities": "Teacher moderates student team presentations, facilitates constructive peer review, and synthesizes key student discoveries directly against the period's learning outcomes.",
-      "student_activities": "Spokespersons present group solutions to the class; peers ask questions, provide constructive feedback, and summarize key takeaways in their notebooks.",
-      "learning_teaching_method": "Spokesperson Presentation & Plenary Synthesis",
-      "learning_teaching_aids": "Student output posters, whiteboard, peer assessment checklist",
+      "teacher_activities": "The teacher facilitates a rapid 5-minute gallery rotation where teams inspect neighboring charts, prompting students to identify common threads regarding the importance of vocational training institutions like the Vocational Training Authority.",
+      "student_activities": "Students review peer charts displayed around the classroom, with Timekeepers managing the rotation pace and Spokespersons briefly defending their team's conclusions regarding labor productivity and training.",
+      "learning_teaching_method": "Consensus Showcase and Gallery Walk",
+      "learning_teaching_aids": "Completed Consensus Matrix Charts displayed on classroom walls",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 5,
       "other": ""
     }
   ],
-  "summary": "Concrete 2-minute synthesis of core student discoveries and curriculum principles from this period's activity.",
-  "assessment_and_feedback_whole_lesson": "3-minute formative feedback criteria and constructive teacher affirmation during the closing check.",
-  "post_activity": "5-minute in-class assignment: Creative 5-minute in-class assignment (e.g., rapid team mini-quiz, 2-line rhyming verse challenge, quick concept sketch, pass-the-parcel concept ball, or statement display vote).",
+  "summary": "In a 2-minute synthesis, the teacher and students consolidate core discoveries: labor productivity is not merely about physical effort but is fundamentally driven by specialized vocational training, education, and positive workplace attitudes, ensuring higher quality output and strong demand in both local and foreign job markets.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted by observing active participation in the jigsaw group collaboration, assessing the accuracy and depth of the Consensus Matrix charts, and evaluating student explanations regarding the direct correlation between vocational training and labor productivity.",
+  "post_activity": "Students engage in a 5-minute Statement Display & Justified Standpoint Vote. The teacher posts two contrasting societal statements on the chalkboard: Statement A ('Any worker can achieve maximum productivity through natural physical strength alone without formal training') and Statement B ('Specialized vocational training is the essential foundation that multiplies a worker's productivity and career advancement'). Students quickly position themselves under their chosen statement and, within their teams, the Spokesperson delivers a 30-second justified standpoint using concrete evidence from the lesson's jigsaw activity, proving why Statement B is factually correct.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
-  "attachments": [],
+  "attachments": [
+    "Vocational Training Station Task Cards",
+    "Consensus Matrix Template"
+  ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 1,
   "total_periods": 2,
-  "selected_activity": "Activity: Public Issue Tree / Cause-Effect Diagram: Competency Level 8.6.4\nApproach: Students use public issue tree / cause-effect diagram to explore 'Explains the fact that the productivity of labour depends on the training.'. Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.\nExpected output: A group civic proposal, diagram, or public information message.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "Public Issue Tree / Cause-Effect Diagram: Competency Level 8.6.4",
+  "selected_activity": "Activity: Vocational Training Station Jigsaw\nApproach: Students collaborate in a cooperative jigsaw structure across 9 teams to analyze different facets of labor productivity, specifically focusing on agricultural, technical, and service sector training requirements in Sri Lanka.\nStudent task: Each of the 9 groups becomes 'experts' on a specific sub-topic regarding labor training (e.g., Group 1-3: Agricultural training for paddy farmers; Groups 4-6: Technical training for mechanics; Groups 7-9: Service training for tourism guides). They synthesize findings and prepare a consensus matrix on chart paper.\nTeacher facilitation: The teacher orchestrates the station rotations across the 9 desk islands, ensures equal participation among all 50 students, manages strict time blocks, and guides students to connect training directly to enhanced workplace productivity.\nExpected output: A collaborative Consensus Matrix chart comparing training needs and productivity outcomes across three major Sri Lankan economic sectors.\nGrouping: 9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead",
+  "selected_activity_title": "Vocational Training Station Jigsaw",
   "custom_teacher_activity": null,
   "activity_options": [
     {
       "id": "option_3",
-      "title": "Public Issue Tree / Cause-Effect Diagram: Competency Level 8.6.4",
-      "pedagogy_type": "Collaborative Design",
-      "description": "Students use public issue tree / cause-effect diagram to explore 'Explains the fact that the productivity of labour depends on the training.'. Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "title": "Vocational Training Station Jigsaw",
+      "pedagogy_type": "Station Jigsaw",
+      "description": "Students collaborate in a cooperative jigsaw structure across 9 teams to analyze different facets of labor productivity, specifically focusing on agricultural, technical, and service sector training requirements in Sri Lanka.",
       "learning_outcomes_addressed": [
         "Explains the fact that the productivity of labour depends on the training.",
         "Explains the need of getting the training related to one’s field of work as a worker."
       ],
-      "student_action_summary": "Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "student_action_summary": "Each of the 9 groups becomes 'experts' on a specific sub-topic regarding labor training (e.g., Group 1-3: Agricultural training for paddy farmers; Groups 4-6: Technical training for mechanics; Groups 7-9: Service training for tourism guides). They synthesize findings and prepare a consensus matrix on chart paper.",
+      "teacher_facilitation_summary": "The teacher orchestrates the station rotations across the 9 desk islands, ensures equal participation among all 50 students, manages strict time blocks, and guides students to connect training directly to enhanced workplace productivity.",
+      "student_grouping": "9 teams (4 groups of 5, 5 groups of 6) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A group civic proposal, diagram, or public information message.",
-      "creative_assessment_preview": "Groups give one-sentence feedback connecting a peer proposal to the outcome.",
-      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
+      "expected_student_output": "A collaborative Consensus Matrix chart comparing training needs and productivity outcomes across three major Sri Lankan economic sectors.",
+      "creative_assessment_preview": "Tableau / Living Statue: Groups form a 30-second silent frozen statue depicting a trained worker operating efficiently, which the rest of the class interprets.",
+      "low_resource_alternative": "Conduct a chalkboard-based sharing round where each group writes their key jigsaw takeaway directly on the board."
     }
   ],
   "outcome_allocation": {

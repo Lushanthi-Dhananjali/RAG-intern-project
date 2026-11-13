@@ -2,9 +2,9 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 1 of 1)",
-  "competence": "Adapts to democratic features and principles observed within the family and school environments to foster social harmony and cooperative living.",
+  "competence": "Adapts to the democratic features seen in the family and in school",
   "competence_level": "8.2.1",
-  "lesson": "Names the democratic features in a family: The Living Charters: Drafting Family and Classroom Democratic Pacts",
+  "lesson": "Names the democratic features in a family: Dual-Sphere Case Study Audit",
   "unique_learning_outcome": [
     "Names the democratic features in a family.",
     "Describes the democratic features in a school.",
@@ -12,54 +12,63 @@
     "Explains the importance of working in the school society adapting the democratic values.",
     "Expresses the importance of developing features of a democratic life as a member of a family."
   ],
-  "the_entrance": "5-minute introduction: The teacher enters and writes two contrasting Sri Lankan scenarios on the chalkboard: Scenario A: 'A father decides alone without consulting anyone to sell ancestral paddy land and distribute weekend household chores only to his daughters.' Scenario B: 'A family gathers for tea to discuss household budget adjustments, letting school-going children share opinions on chore allocation and exam preparation schedules.' The teacher asks the class: 'In which scenario do members feel valued, protected, and motivated, and why?' Students quickly converse in their pairs and identify that Scenario B reflects fairness, mutual respect, and listening to everyone's voice. The teacher uses this response to bridge directly into the lesson topic, explaining that democracy is not just an electoral system for national parliament, but a practical daily living pattern that begins in the home and classroom.",
+  "the_entrance": "5-minute introduction: The teacher launches the lesson by writing two contrasting conversation snippets on the chalkboard: one from a village household planning a festival via consensus, and another from a provincial school sports committee deciding on event rules. The teacher poses the opening inquiry challenge: 'As you examine these two settings from our daily Sri Lankan life, what specific democratic behaviors can you spot, and how do they keep our homes and schools peaceful?' Students eagerly turn to their assigned teams of 5 or 6, appointing their Scribes and Civic Investigators, and immediately begin scanning the board notes to identify initial indicators of shared decision-making and mutual tolerance.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "The teacher divides the class into 6 structured constituent assemblies of 5 members and sets the mission: draft a 'Twin Living Charter' comprising 5 binding clauses for a Democratic Family and 5 clauses for a Democratic School Society. The teacher circulates actively among groups, acting as Assembly Speaker, challenging assemblies with targeted scaffolding questions: 'How does your family charter ensure gender equality when sharing kitchen work or gardening?' and 'How does your school society clause safeguard shy or minority students during class club elections?' The teacher monitors group progress at 5-minute intervals, ensuring every student assumes their assigned civic role.",
-      "student_activities": "In their assemblies, the Leader guides the consensus process while the Civic Investigator cross-references democratic principles from Grade 8 textbook concepts (such as collective mealtime discussion, tolerating diverse viewpoints, and respecting parental leadership). The Scribe records negotiated clauses onto chart paper under two columns: 'Democratic Family Charter' (e.g., shared chore rotation, respectful consultation during major decisions like family ceremonies, listening without interruption) and 'Democratic School Society Charter' (e.g., rotated monitor roles, fair grievance redress, adherence to agreed rules). The Timekeeper tracks pacing while members vigorously defend real-life Sri Lankan examples.",
-      "learning_teaching_method": "Miniature Constituent Assembly Deliberation & Clause Drafting",
-      "learning_teaching_aids": "Chart paper sheets, marker pens, student notebooks, and chalkboard summary prompts.",
+      "teacher_activities": "The teacher circulates among the 9 student groups, facilitating the reading of the dual case study vignettes inscribed on the board. The teacher prompts the groups with targeted questions: 'Look closely at how the family reached a decision on land purchase versus how the school sports committee handled rule selection; what common democratic traits link them?' The teacher scaffolds struggling teams by drawing their attention to minority opinion tolerance and collective consultation.",
+      "student_activities": "Working collaboratively in their groups, students read and analyze the two case scenarios. The Team Leader guides the discussion while the Scribe records identified traits such as active listening, sharing household responsibilities, and respecting school traditions. The Civic Investigator cross-references these findings with textbook definitions of democratic family life.",
+      "learning_teaching_method": "Bilateral Case Vignette Audit",
+      "learning_teaching_aids": "Chalkboard case study text, student notebooks, colored marker pens",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "The teacher acts as a resource guide, moving from group to group to observe how teams structure their comparative matrices. The teacher asks probing facilitation questions: 'How does respecting your parents' leadership in family decisions strengthen household wellbeing compared to following school rules?' The teacher ensures that every student, including Scribes and Presenters, actively contributes to drafting the matrix columns.",
+      "student_activities": "Students synthesize their earlier observations onto chart paper, creating a two-column comparative matrix titled 'Family vs. School Democratic Features and Their Wellbeing Impacts'. The Creative Director coordinates the visual layout, while team members debate how adopting democratic values in school society fosters unity, discipline, and mutual cooperation among peers.",
+      "learning_teaching_method": "Comparative Matrix Construction",
+      "learning_teaching_aids": "Chart paper, chalk, student notebooks",
       "assessment_and_feedback": "",
       "time_minutes": 15,
       "other": ""
     },
     {
-      "step_number": 2,
-      "teacher_activities": "The teacher directs assemblies to affix their 'Twin Democratic Charter' posters across classroom walls and moderates an interactive ratification session. The teacher prompts peer reviewers to interrogate how each clause promotes collective wellbeing rather than individual selfishness, asking: 'If a family member refuses to respect the majority decision regarding household tasks, how does your charter resolve this democratically?' The teacher synthesizes key themes on the chalkboard, highlighting tolerance, active listening, and co-existence as foundational tenets of Sri Lankan civil society.",
-      "student_activities": "The Spokesperson of each assembly presents two flagship clauses (one family clause and one school clause) along with concrete justifications demonstrating how these practices secure family peace and school harmony. Civic Investigators and peers from other groups offer constructive feedback or raise realistic dilemmas (such as managing disagreements during school literary association elections). Students record peer-endorsed clauses in their notebooks, evaluating how democratic mechanisms prevent tyranny, eliminate domestic discord, and cultivate responsible followership and leadership.",
-      "learning_teaching_method": "Charter Ratification, Cross-Examination & Civic Defense",
-      "learning_teaching_aids": "Displayed chart paper pacts, chalkboard rubric, and student civic notebooks.",
+      "step_number": 3,
+      "teacher_activities": "The teacher moderates a rapid 5-minute gallery walk, inviting Spokespersons to briefly highlight one unique democratic feature discovered in their assigned case study. The teacher provides immediate formative reinforcement by highlighting how well students linked family wellbeing to democratic practices.",
+      "student_activities": "Spokespersons present their group matrices while peers circulate briefly to inspect neighboring team charts. Students evaluate the accuracy of the listed democratic features and offer respectful peer feedback on how family consensus-building parallels school committee decisions.",
+      "learning_teaching_method": "Gallery Walk & Defense",
+      "learning_teaching_aids": "Completed chart papers displayed around the classroom",
       "assessment_and_feedback": "",
-      "time_minutes": 15,
+      "time_minutes": 5,
       "other": ""
     }
   ],
-  "summary": "The teacher synthesizes the lesson by reviewing student charters: democratic features in the family—such as taking collective decisions during meal preparations or family events, tolerating differing views, respecting parental guidance, and sharing chores equitably—build strong emotional security and mutual trust. Similarly, practicing student voice, abiding by shared rules, and respecting elected leaders in school societies train youth to be fair, disciplined, and proactive democratic citizens in Sri Lanka.",
-  "assessment_and_feedback_whole_lesson": "Formative evaluation is based on three observable indicators: 1) Accurate naming and categorization of at least four democratic practices within home and school settings on chart posters; 2) Justification of how democratic problem-solving enhances personal and familial wellbeing; 3) Active collaborative adherence to assembly roles (listening, turn-taking, and reasoned consensus without dominating peers). Constructive spoken feedback is provided highlighting groups that articulated gender-neutral chore distribution and inclusive school governance.",
-  "post_activity": "5-minute in-class assignment: Rapid Team Buzzer Board Challenge: The teacher poses two Sri Lankan dilemma scenarios on the chalkboard: Dilemma 1: 'Kasun's family plans to renovate their ancestral home. Kasun insists his opinion must override his elder sister's suggestion without holding a family discussion. Which democratic family feature is violated, and what should be done?' Dilemma 2: 'In Grade 8B's Environment Society, the committee president selects festival decorations without consulting members. What democratic school feature is neglected, and how does it harm group cooperation?' Assembly spokespersons have 60 seconds to confer, write their rapid 2-sentence democratic verdict on mini-boards or notebook slips, and hold them up simultaneously. The teacher reviews responses on the spot, commending accurate citations of dialogue, consensus, and respect for collective opinion.",
+  "summary": "In this 2-minute synthesis, the class consolidates that democracy is both a system of administration and a daily way of living. Students conclude that practicing consensus, listening to elders and teachers, respecting majority views, and sharing responsibilities directly strengthens family security, emotional wellbeing, and school society harmony.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted through observation of small-group collaboration, accuracy of the comparative matrix charts, and the quality of peer explanations regarding the importance of democratic values in both family and school environments.",
+  "post_activity": "Students engage in a 5-minute 'Democratic Verse & Value Recitation' in pairs. Each pair composes and recites a 2-line rhyming verse summarizing a core democratic feature of family or school life (e.g., 'When we listen to mother and father's voice, household peace is our best choice!'). The teacher listens to spontaneous pairs across the room and provides instant formative praise.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
   "attachments": [
-    "Twin Democratic Charter Task Guidelines",
-    "Rubric for Civic Deliberation",
-    "and Dilemma Scenario Prompt Cards."
+    "Chalkboard case study vignettes",
+    "comparative matrix chart templates"
   ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 1,
   "total_periods": 1,
-  "selected_activity": "Activity: The Living Charters: Drafting Family and Classroom Democratic Pacts\nApproach: Operating as miniature constituent assemblies, teams draft two complementary codes of conduct: a 'Democratic Family Charter' and a 'Democratic School Society Charter'. They negotiate core values such as open dialogue, equality among siblings, student voice, and shared leadership, defending how these practices build responsible citizens.\nStudent task: Students discuss their real-life experiences in Sri Lankan households and classrooms, identify key democratic values, and negotiate 5 binding clauses for family life (e.g., respecting younger siblings' views, collective mealtime discussions) and 5 for school society (e.g., rotated leadership, fair grievance redress). They write these onto chart paper with practical rationales.\nTeacher facilitation: Acts as Assembly Speaker: scaffolds consensus by asking, 'Does your family charter allow fair distribution of chores regardless of gender?' and 'How does following agreed school society rules protect minority student voices?' Tracks time at 5-minute intervals.\nExpected output: A finalized 'Twin Democratic Charter' poster displaying actionable rules and explanatory notes linking each democratic rule to personal and collective wellbeing.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks arranged into 6 islands.",
-  "selected_activity_title": "The Living Charters: Drafting Family and Classroom Democratic Pacts",
+  "selected_activity": "Activity: Dual-Sphere Case Study Audit\nApproach: Students examine short real-life vignettes of Sri Lankan households and provincial schools to audit democratic behaviors, analyzing the direct impact of democratic values on community wellbeing and school society unity.\nStudent task: The teacher writes two short case studies on the chalkboard (one about a Grama Niladhari division family holding a consensus meeting, another about a school sports meet committee). The 9 teams analyze the cases, identifying democratic traits, debating their outcomes on wellbeing, and drafting a comparative findings matrix.\nTeacher facilitation: Teacher guides inquiry by directing groups to look for evidence of equality, freedom of expression, and mutual respect in the texts, ensuring all 50 students actively contribute through their designated roles.\nExpected output: A comparative chart showing 'Family vs. School Democratic Features and Their Wellbeing Impacts'.\nGrouping: 9 teams (4 groups of 5, 5 groups of 6) covering 50 students. Roles distributed per team: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead.",
+  "selected_activity_title": "Dual-Sphere Case Study Audit",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_3",
-      "title": "The Living Charters: Drafting Family and Classroom Democratic Pacts",
-      "pedagogy_type": "Creative Design & Consensus Workshop",
-      "description": "Operating as miniature constituent assemblies, teams draft two complementary codes of conduct: a 'Democratic Family Charter' and a 'Democratic School Society Charter'. They negotiate core values such as open dialogue, equality among siblings, student voice, and shared leadership, defending how these practices build responsible citizens.",
+      "id": "option_2",
+      "title": "Dual-Sphere Case Study Audit",
+      "pedagogy_type": "Case Inquiry & Evidence Analysis",
+      "description": "Students examine short real-life vignettes of Sri Lankan households and provincial schools to audit democratic behaviors, analyzing the direct impact of democratic values on community wellbeing and school society unity.",
       "learning_outcomes_addressed": [
         "Names the democratic features in a family.",
         "Describes the democratic features in a school.",
@@ -67,18 +76,18 @@
         "Explains the importance of working in the school society adapting the democratic values.",
         "Expresses the importance of developing features of a democratic life as a member of a family."
       ],
-      "student_action_summary": "Students discuss their real-life experiences in Sri Lankan households and classrooms, identify key democratic values, and negotiate 5 binding clauses for family life (e.g., respecting younger siblings' views, collective mealtime discussions) and 5 for school society (e.g., rotated leadership, fair grievance redress). They write these onto chart paper with practical rationales.",
-      "teacher_facilitation_summary": "Acts as Assembly Speaker: scaffolds consensus by asking, 'Does your family charter allow fair distribution of chores regardless of gender?' and 'How does following agreed school society rules protect minority student voices?' Tracks time at 5-minute intervals.",
-      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks arranged into 6 islands.",
+      "student_action_summary": "The teacher writes two short case studies on the chalkboard (one about a Grama Niladhari division family holding a consensus meeting, another about a school sports meet committee). The 9 teams analyze the cases, identifying democratic traits, debating their outcomes on wellbeing, and drafting a comparative findings matrix.",
+      "teacher_facilitation_summary": "Teacher guides inquiry by directing groups to look for evidence of equality, freedom of expression, and mutual respect in the texts, ensuring all 50 students actively contribute through their designated roles.",
+      "student_grouping": "9 teams (4 groups of 5, 5 groups of 6) covering 50 students. Roles distributed per team: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer, Creative Director / Chart Lead.",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A finalized 'Twin Democratic Charter' poster displaying actionable rules and explanatory notes linking each democratic rule to personal and collective wellbeing.",
-      "creative_assessment_preview": "Pledge & Rationale Whip-Around: In 5 minutes, each team's spokesperson reads aloud their team's strongest charter clause, and an inquirer from another team states in one sentence why that clause safeguards wellbeing.",
-      "low_resource_alternative": "Students draft charters into their individual notebooks, with the spokesperson transcribing their group's top two clauses onto allocated chalkboard columns."
+      "expected_student_output": "A comparative chart showing 'Family vs. School Democratic Features and Their Wellbeing Impacts'.",
+      "creative_assessment_preview": "Pass-the-Parcel Quiz: A notebook is passed around a designated team; when music stops, the student writes one benefit of democratic family life on the chalkboard.",
+      "low_resource_alternative": "Groups record their comparative audit entirely inside their student notebooks instead of chart paper."
     }
   ],
   "outcome_allocation": {
