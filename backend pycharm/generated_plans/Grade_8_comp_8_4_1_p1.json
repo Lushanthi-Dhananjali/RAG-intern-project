@@ -2,87 +2,89 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 1 of 2)",
-  "competence": "Contributes to minimize accidents and disasters by identifying them and supporting institutional relief measures",
+  "competence": "Contributes to minimize accidents and disasters by identifying them and understanding support institutions",
   "competence_level": "8.4.1",
-  "lesson": "Names disasters and accidents: Institutional Support Web Simulation",
+  "lesson": "Names disasters and accidents: Thematic Station Jigsaw & Infographic Wall: Competency Level 8.4.1",
   "unique_learning_outcome": [
     "Names disasters and accidents",
     "Names the institutions that can support in disasters and accidents.",
     "Explains the causes for disasters and accidents."
   ],
-  "the_entrance": "5-minute introduction: The teacher greets the 40 students partitioned into 8 teams of 5 and displays a chalkboard sketch showing common local incidents (e.g., floods, road accidents, factory fires). The teacher asks students to share personal or heard experiences regarding who responds during such crises. Students briefly discuss in pairs and popcorn-answer to connect prior knowledge of everyday emergencies to the day's topic. The teacher directly transitions into introducing the Institutional Support Web Simulation activity, ensuring all assigned roles (Leader, Scribe, Timekeeper, Spokesperson, Civic Investigator) are clear.",
+  "the_entrance": "The teacher organizes the 30 students into 6 teams of 5, assigning roles (Leader, Scribe, Timekeeper, Spokesperson, Civic Investigator). The teacher projects or holds up striking newspaper clippings and photographs of recent Sri Lankan environmental events (such as heavy monsoon floods in the Kelani River basin and landslide risks in the Central Province) as a motivational hook. The teacher challenges each team: 'Look at these real-world images from our island. Within your groups, quickly discuss what specific disaster or accident is depicted, what triggered it, and which state institution would rush to help. You have 5 minutes to record your initial ideas.' Students actively collaborate within their teams, assigning roles, examining the visual prompts, and noting down initial disaster categories and helper institutions in their notebooks.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "The teacher distributes task cue cards to the 8 teams detailing specific disasters and accidents (e.g., floods, landslides, fires, road accidents). The teacher explains how to map causes and frontline institutions and instructs students to assume their assigned roles (Leader/Facilitator, Scribe/Secretary, Timekeeper/Logistics, Spokesperson/Presenter, Civic Investigator/Inquirer).",
-      "student_activities": "Students inspect the task cue cards within their groups of 5. The Leader organizes the discussion, the Timekeeper sets the pacing, the Civic Investigator reviews textbook accuracy regarding causes, and the Scribe prepares the chart layout.",
-      "learning_teaching_method": "Guided Inquiry & Setup",
-      "learning_teaching_aids": "Chalkboard, Student Notebooks, Task cue cards",
+      "teacher_activities": "The teacher acts as a facilitator, setting up three distinct classroom thematic stations ('Natural Disasters and Triggers', 'Human-Induced Disasters', and 'Emergency Support Institutions') around the room. The teacher circulates among the 6 teams, providing investigative task prompts, observing interactions, and asking probing questions such as 'How does uncontrolled sand mining or deforestation in our hill country worsen natural floods and landslides?'",
+      "student_activities": "Students disperse to their assigned starting stations within their teams. Working collaboratively, the Leader guides the discussion, the Scribe records key definitions and causes from the task sheets, and the Civic Investigator checks facts against textbook guidelines, exploring concepts like earthquakes, tsunamis, river sand mining, and improper waste disposal.",
+      "learning_teaching_method": "Thematic Station Exploration",
+      "learning_teaching_aids": "Station Task Cards, Chart Paper, Colored Markers, Textbook Extracts",
       "assessment_and_feedback": "",
       "time_minutes": 10,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "The teacher monitors teamwork across all 8 groups, ensuring active participation without bystanders, and guides groups to accurately connect disaster types with exact institutional support agencies (e.g., Police, Disaster Management Centre, Hospitals, Fire Brigade).",
-      "student_activities": "Teams actively execute the Institutional Support Web Simulation on chart paper. The Scribe records findings, the Civic Investigator cross-checks textbook facts about natural vs human-induced disaster causes, and the Leader ensures all members contribute.",
-      "learning_teaching_method": "Group Investigation & Production",
-      "learning_teaching_aids": "Chart Paper, Student Notebooks, Chalkboard",
+      "teacher_activities": "The teacher monitors the room as expert representatives from each station return to their home groups to share and teach their findings. The teacher scaffolds student discussions by asking, 'Have you clearly linked the disaster type to the exact institution—such as the Disaster Management Centre, Police, or Fire Brigade—that responds to it?'",
+      "student_activities": "In their home groups of 5, students take turns presenting what they learned at their respective stations. The Spokesperson and Scribe synthesize the shared information, ensuring that all three target outcomes—naming disasters/accidents, explaining their causes (natural vs. human activity), and naming supporting institutions—are fully integrated.",
+      "learning_teaching_method": "Home Group Jigsaw Synthesis",
+      "learning_teaching_aids": "Chart Paper, Student Notebooks, Marker Pens",
       "assessment_and_feedback": "",
       "time_minutes": 15,
       "other": ""
     },
     {
       "step_number": 3,
-      "teacher_activities": "The teacher coordinates brief floor presentations from group spokespersons and facilitates constructive peer feedback and cross-review between teams.",
-      "student_activities": "The Spokesperson from each team presents their group's institutional support web chart. Other students listen, ask clarifying questions, and provide peer feedback on causes and agency roles.",
-      "learning_teaching_method": "Presentation & Cross-Review",
-      "learning_teaching_aids": "Completed chart papers, Whiteboard/Chalkboard",
+      "teacher_activities": "The teacher facilitates the final consolidation phase by instructing teams to finalize their structured visual layouts on chart paper. The teacher guides time management and ensures every team member contributes to drafting the summary poster.",
+      "student_activities": "Team members collaborate rapidly to co-create a mini 'Civic Action Infographic Poster' on their chart paper, sketching icons for disasters, listing human causes like forest destruction, and identifying key support hotlines and institutions like hospitals and the Police Department.",
+      "learning_teaching_method": "Infographic Wall Co-Creation",
+      "learning_teaching_aids": "Large Chart Paper, Colored Markers",
       "assessment_and_feedback": "",
       "time_minutes": 5,
       "other": ""
     }
   ],
-  "summary": "The teacher consolidates the key learnings of Period 1 by summarizing that accidents and disasters (both natural and human-induced) can occur anywhere and at any time, requiring vigilance, identification of root causes, and immediate linkage to competent support institutions like the Disaster Management Centre, police, and hospitals.",
-  "assessment_and_feedback_whole_lesson": "Formative evaluation based on group collaboration, accuracy of identifying disasters and their causes, and correct matching of support institutions during the simulation presentations.",
-  "post_activity": "5-minute in-class assignment: Each student completes a short exit response explaining one finding about “Names disasters and accidents” using evidence or an example from Institutional Support Web Simulation. The teacher reviews responses for an accurate link to the period outcome.",
+  "summary": "Students successfully explored thematic stations to identify natural and human-induced disasters, analyzed direct causes such as sand mining and deforestation in Sri Lanka, and mapped out essential response institutions like the Disaster Management Centre and hospitals.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted through continuous observation of group collaboration, verification of accurate terminology in student notebooks, and evaluation of the co-created infographic posters against NIE syllabus requirements for accuracy in naming disasters and support institutions.",
+  "post_activity": "Students engage in a 5-minute interactive in-class activity called the 'Rapid Disaster-Institution Relay'. Without using paper slips or taking homework home, each of the 6 teams stands up in sequential order. Team 1 names a disaster (e.g., 'Floods in Colombo'), Team 2 names its human or natural cause (e.g., 'improper reclamation of low lands'), and Team 3 instantly names the supporting institution (e.g., 'Disaster Management Centre'), rotating through all teams twice within the 5-minute window for high-energy formative evaluation.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
   "attachments": [
-    "Task cue cards for 8 groups detailing distinct accident/disaster scenarios and chart papers for web mapping."
+    "Station Task Cards",
+    "Newspaper Clippings on Sri Lankan Disasters",
+    "Chart Papers"
   ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 1,
   "total_periods": 2,
-  "selected_activity": "Activity: Institutional Support Web Simulation\nApproach: Students participate in a structural simulation connecting specific accident/disaster types with the exact frontline agencies and community-level institutions that provide emergency support.\nStudent task: Students construct a web diagram linking common accidents and natural disasters to local emergency institutions, analyzing the direct causes behind each incident.\nTeacher facilitation: The teacher acts as a central coordinator, guiding groups to evaluate the underlying causes of accidents and ensuring every student performs their designated role within the 40-student classroom layout.\nExpected output: An institutional support web chart detailing causes and responder networks\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
-  "selected_activity_title": "Institutional Support Web Simulation",
+  "selected_activity": "Activity: Thematic Station Jigsaw & Infographic Wall: Competency Level 8.4.1\nApproach: Students explore teacher-designated board or discussion stations about 'Names disasters and accidents'. Home groups reassemble to teach peers and synthesize key ideas.\nStudent task: Explore station prompts, return to home groups to teach peers, and co-create a summary. Standard class layout (30 students): Desks arranged into 6 teams (6 teams (6 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 30 students using 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 6 teams, facilitating role execution and formatively checking progress.\nExpected output: Synthesized Civic Action Infographic Poster.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+  "selected_activity_title": "Thematic Station Jigsaw & Infographic Wall: Competency Level 8.4.1",
   "custom_teacher_activity": null,
   "activity_options": [
     {
       "id": "option_2",
-      "title": "Institutional Support Web Simulation",
-      "pedagogy_type": "Simulation",
-      "description": "Students participate in a structural simulation connecting specific accident/disaster types with the exact frontline agencies and community-level institutions that provide emergency support.",
+      "title": "Thematic Station Jigsaw & Infographic Wall: Competency Level 8.4.1",
+      "pedagogy_type": "Station Jigsaw / Collaborative Design",
+      "description": "Students explore teacher-designated board or discussion stations about 'Names disasters and accidents'. Home groups reassemble to teach peers and synthesize key ideas.",
       "learning_outcomes_addressed": [
         "Names disasters and accidents",
         "Names the institutions that can support in disasters and accidents.",
         "Explains the causes for disasters and accidents."
       ],
-      "student_action_summary": "Students construct a web diagram linking common accidents and natural disasters to local emergency institutions, analyzing the direct causes behind each incident.",
-      "teacher_facilitation_summary": "The teacher acts as a central coordinator, guiding groups to evaluate the underlying causes of accidents and ensuring every student performs their designated role within the 40-student classroom layout.",
-      "student_grouping": "8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
+      "student_action_summary": "Explore station prompts, return to home groups to teach peers, and co-create a summary. Standard class layout (30 students): Desks arranged into 6 teams (6 teams (6 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "teacher_facilitation_summary": "Organizes all 30 students using 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 6 teams, facilitating role execution and formatively checking progress.",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "An institutional support web chart detailing causes and responder networks",
-      "creative_assessment_preview": "Exit Ticket Slip: Each student writes down one disaster cause and one supporting institution on a scrap paper slip before leaving their desk island.",
-      "low_resource_alternative": "Draw the institutional support web directly inside student notebooks using colored pens or pencils."
+      "expected_student_output": "Synthesized Civic Action Infographic Poster.",
+      "creative_assessment_preview": "2-Line Rhyming Slogan: Groups chant a summary of their core takeaway.",
+      "low_resource_alternative": "Use notebook pages pinned to desks as station hubs."
     }
   ],
   "outcome_allocation": {
@@ -96,5 +98,6 @@
       "Shows the measures to be taken to avoid accidents.",
       "Suggests measures to minimize the damages caused by accidents and disasters."
     ]
-  }
+  },
+  "filename": "Grade_8_comp_8_4_1_p1.json"
 }
