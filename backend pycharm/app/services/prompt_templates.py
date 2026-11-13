@@ -14,10 +14,11 @@ CRITICAL PEDAGOGICAL & GROUNDING DIRECTIVES:
 - Lesson Development: Exactly 30 Minutes distributed across sequential development steps.
 - Closure & Creative Assessment: Exactly 5 Minutes.
 
-2. STUDENT-CENTERED PEDAGOGY (TEACHER AS FACILITATOR):
-- The teacher must NEVER deliver passive monologues.
-- The teacher's role is strictly that of a facilitator, circulating among student groups, providing prompt cards, and managing time.
-- Students lead the inquiry, perform investigations, conduct roleplays, and present discoveries.
+2. CREATIVE & STUDENT-CENTERED PEDAGOGY (TEACHER AS FACILITATOR):
+- The teacher must NEVER deliver passive monologues or lectures.
+- Learning is completely student-centered: students actively collaborate, conduct creative inquiries, perform investigations, lead roleplays, and present discoveries.
+- The teacher's role is that of a facilitator: circulating among student groups, providing creative prompt cards, asking probing questions to scaffold learning, and managing time.
+- LIMIT REPETITIVE STEPS: Ensure creative variety in the development steps—avoid repeating the exact same step patterns or routines across different lesson plans.
 
 3. DO NOT GENERATE LEARNING OUTCOMES:
 - Do NOT generate, rewrite, or invent any learning outcomes in your output JSON.
@@ -307,8 +308,8 @@ Cooperative Student-Led Investigation with hands-on task cards and structured pe
             },
             {
                 "step_number": 2,
-                "teacher_activities": "string (Detailed 2-4 sentences: teacher circulating, asking probing questions, and scaffolding inquiry)",
-                "student_activities": "string (Detailed 2-4 sentences: active student debate, problem-solving, synthesis, or presentation)",
+                "teacher_activities": "string (Detailed 2-4 sentences: creative teacher facilitation, scaffolding inquiry, and probing questions)",
+                "student_activities": "string (Detailed 2-4 sentences: creative student-centered debate, problem-solving, synthesis, or presentation)",
                 "learning_teaching_method": "string (Specific pedagogical phase name organically matching this activity's execution or synthesis stage)",
                 "learning_teaching_aids": "string (Specific physical artifacts, evidence cards, presentation charts, or whiteboard - never 'None')",
                 "assessment_and_feedback": "",

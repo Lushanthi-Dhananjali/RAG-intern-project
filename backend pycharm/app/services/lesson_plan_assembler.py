@@ -112,18 +112,20 @@ CURRICULUM GROUNDING & REQUIREMENTS:
 - Target Outcomes: Address these specific outcomes through active student work:
 {outcomes_formatted}
 - Lesson Topic: {lesson_topic}
-- DYNAMIC ACTIVITY-BASED DEVELOPMENT STEP DESIGN:
-  * Do NOT use a rigid or fixed step template. Create steps dynamically and organically based on the nature of the selected activity '{clean_act_desc}', the target outcomes, and the provided TIG and Textbook facts.
+- DYNAMIC & CREATIVE ACTIVITY-BASED DEVELOPMENT STEP DESIGN:
+  * Do NOT use a rigid or fixed step template. Create steps dynamically and creatively based on the nature of the selected activity '{clean_act_desc}', the target outcomes, and the provided TIG and Textbook facts.
   * Different activities demand completely different structures and phases:
     - A debate, mock trial, or negotiation may have 2 deep phases (e.g. 10m preparation + 20m structured debate/rebuttal, or 15m + 15m).
     - An inquiry investigation, experiment, or case study may have 3 phases (e.g. 5m setup + 15m evidence gathering + 10m synthesis/defense).
     - A multi-station workshop, gallery walk, or jigsaw may have 3 or 4 phases (e.g. 5m + 10m + 10m + 5m).
   * Determine the step count (2, 3, or 4 steps) and duration of each step to best suit the activity.
   * Every step's 'time_minutes' MUST be a clean multiple of 5 (e.g. 5, 10, 15, 20) and the sum across all steps MUST strictly equal exactly 30 minutes. Do NOT default to a fixed time allocation across all lessons.
-- STRICT ANTI-COPY MANDATE:
+- STRICT ANTI-REPETITION & ANTI-COPY MANDATE FOR DEVELOPMENT STEPS:
+  * LIMIT REPETITIVE STEPS: DO NOT repeat the exact same step patterns or routines across lesson plans!
+  * Structure steps organically around '{clean_act_desc}': vary student actions and outputs (e.g. live simulation dialogues, chalkboard mapping, dilemma solving, peer cross-examination, interactive trials).
   * DO NOT copy, quote, or echo instruction sentences, headings, or activity summary paragraphs into your JSON fields!
   * DO NOT repeat the same sentences across different steps!
-  * Write original, detailed classroom dialogue, teacher facilitation questions, and student collaborative tasks.
+  * Write original, creative classroom dialogue, teacher facilitation questions, and student collaborative tasks.
   * In 'learning_teaching_method', name a meaningful pedagogical phase derived from the activity (e.g. "Case Evidence Analysis", "Mock Assembly Deliberation", "Community Map Reconstruction"). NEVER output generic "Step 1", "Step 2" numbers!
   * In 'learning_teaching_aids', list specific concrete materials (sheets, task cards, chart paper, markers, whiteboard) for EVERY step. NEVER leave this field empty (\"\") or output "None"!
   * In 'assessment_and_feedback', leave it empty (\"\") as full assessment is in 'assessment_and_feedback_whole_lesson'."""
@@ -136,10 +138,10 @@ Your task is to assemble an innovative, highly engaging, student-centered single
 
 STRICT PEDAGOGICAL & 40-MINUTE STRUCTURAL LAWS:
 1. Total Duration: EXACTLY 40 minutes (5m Entrance + 30m Development + 5m Closure/Assessment).
-2. STUDENT-CENTERED PEDAGOGY (TEACHER AS FACILITATOR):
-   - The teacher must NEVER deliver passive monologues or lengthy lectures.
-   - The teacher's role is strictly that of a FACILITATOR: circulating among student groups, providing investigative task prompts, observing interactions, asking probing questions to scaffold learning, and moderating peer feedback.
-   - Students are at the center: actively collaborating in small groups, conducting roleplays or investigations, exploring Sri Lankan real-world scenarios, presenting solutions, and evaluating peers without passive bystanders.
+2. CREATIVE & STUDENT-CENTERED PEDAGOGY (TEACHER AS FACILITATOR):
+   - Learning is strictly student-centered: students actively collaborate in small groups, lead creative inquiries, conduct roleplays, explore real-world Sri Lankan scenarios, debate, and present innovative solutions.
+   - The teacher's role is strictly that of a FACILITATOR: circulating among student groups, providing creative investigative prompts, observing interactions, asking probing questions to scaffold learning, and moderating peer feedback (never delivering passive monologues or lectures).
+   - Both teacher facilitation and student actions must be creative, dynamic, and unique to '{lesson_topic}' and '{clean_act_desc}'.
 3. AUTHENTIC SRI LANKAN CONTEXT & CURRICULUM GROUNDING:
    - Ground all scenarios, investigations, roleplays, and discussions in real Sri Lankan situations and the factual concepts from the provided textbook and Teacher Guide context.
 4. DYNAMIC ALIGNMENT WITH CHOSEN ACTIVITY & ALLOCATED OUTCOMES:
@@ -149,12 +151,13 @@ STRICT PEDAGOGICAL & 40-MINUTE STRUCTURAL LAWS:
    - Ground dynamically in the retrieved NIE learning outcome(s), the selected activity, relevant textbook details, and Teacher Instructional Guide (TIG) guidelines.
    - Design an active motivational hook connecting student prior knowledge and enthusiasm to launch the chosen activity towards achieving the target learning outcomes.
    - Explicitly detail both teacher facilitation actions (launch prompt / challenge scenario) and student collaborative responses.
-6. Lesson Development Steps (CLEAN MULTIPLES OF 5, TOTAL = EXACTLY 30 MINUTES):
+6. Creative Lesson Development Steps (CLEAN MULTIPLES OF 5, TOTAL = EXACTLY 30 MINUTES):
    - Every single step's 'time_minutes' MUST be a clean multiple of 5 (e.g. 5, 10, 15, 20). NEVER use non-multiples of 5 like 7, 8, 12, 13, 14, 17, 22!
    - Determine the step count (2, 3, or 4 steps) and duration of each step organically to match the activity:
      * Valid configurations: 15m + 15m = 30m, 5m + 15m + 10m = 30m, 10m + 15m + 5m = 30m, 5m + 20m + 5m = 30m, 5m + 10m + 10m + 5m = 30m, etc.
    - Do NOT default to a fixed time or equal split on every lesson. Time allocation must reflect the actual depth of each step's tasks.
    - The total across all development steps must sum to exactly 30 minutes.
+   - Both teacher facilitation and student-centered tasks must be creative, varied, and dynamically adapted to '{clean_act_desc}'.
 {step_assessment_rule}
 7. Creative In-Class Assignment ('post_activity', time: exactly 5 minutes total):
 {assignment_directive}
@@ -174,7 +177,8 @@ CRITICAL ANTI-BOILERPLATE MANDATE:
 - DO NOT copy placeholder text or output generic descriptions like "(e.g., ...)".
 - DO NOT output identical text across different periods or lesson plans.
 - Provide rich, concrete, creative details describing actual Sri Lankan classroom dialogues, specific task cards, specific physical artifacts, and dynamic student collaboration.
-- Each development step must be detailed (3-5 sentences describing concrete student actions and teacher facilitation).
+- Each development step must be detailed (3-5 sentences describing creative student-centered actions and creative teacher facilitation).
+- LIMIT REPETITIVE STEPS: Vary the development step flow, teacher prompts, and student outputs across plans—avoid repeating the same step template over and over.
 - The 'the_entrance' MUST be an engaging 5-minute motivational hook grounded in the target learning outcomes, selected activity, textbook details, and Teacher Guide (TIG), detailing both teacher launch actions and student active responses.
 - The 'post_activity' MUST be a brand-new, highly creative 5-minute in-class active evaluation or creative verse/task uniquely invented for '{lesson_topic}' (using traditional formats only as inspiration, never fixed to a period number or repeated from earlier plans).
 
@@ -192,8 +196,8 @@ CRITICAL ANTI-BOILERPLATE MANDATE:
       "time_minutes": 15,
       "learning_teaching_method": "string (Specific pedagogical phase name organically matching this activity's first stage)",
       "learning_teaching_aids": "string (Specific physical classroom materials and task sheets used in this step)",
-      "teacher_activities": "string (Detailed 2-4 sentences: teacher facilitation, inquiry prompts, and scaffolding questions)",
-      "student_activities": "string (Detailed 2-4 sentences: active student collaboration, investigative tasks, and discussions)",
+      "teacher_activities": "string (Detailed 2-4 sentences: creative teacher facilitation, step-specific inquiry prompts, and scaffolding questions)",
+      "student_activities": "string (Detailed 2-4 sentences: creative student-centered collaboration, investigative tasks, and discussions)",
       "assessment_and_feedback": ""
     }},
     {{
@@ -201,8 +205,8 @@ CRITICAL ANTI-BOILERPLATE MANDATE:
       "time_minutes": 15,
       "learning_teaching_method": "string (Specific pedagogical phase name organically matching this activity's execution or presentation)",
       "learning_teaching_aids": "string (Specific physical artifacts, evidence cards, presentation charts, or whiteboard)",
-      "teacher_activities": "string (Detailed 2-4 sentences: teacher observing, guiding, asking probing questions, or moderating)",
-      "student_activities": "string (Detailed 2-4 sentences: active student debate, problem-solving, synthesis, or peer evaluation)",
+      "teacher_activities": "string (Detailed 2-4 sentences: creative teacher facilitation, moderating, or probing group reasoning)",
+      "student_activities": "string (Detailed 2-4 sentences: creative student-centered debate, problem-solving, synthesis, or evaluation)",
       "assessment_and_feedback": ""
     }}
   ],

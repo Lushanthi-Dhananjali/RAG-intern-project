@@ -52,17 +52,18 @@ Your job is NOT to replace their idea, but to scaffold it cleanly into the offic
 
 PEDAGOGICAL PACING MANDATE (Total: 40 Minutes):
 1. The Entrance (exactly 5 mins): Ground dynamically in the retrieved NIE learning outcomes, the teacher's custom activity, textbook details, and Teacher Instructional Guide (TIG). Design an active motivational hook connecting student prior knowledge to launch the activity towards achieving the target learning outcomes. Detail both teacher challenge prompt and student active responses.
-2. Lesson Development Steps (CLEAN MULTIPLES OF 5, TOTAL = EXACTLY 30 MINUTES):
+2. Creative Lesson Development Steps (CLEAN MULTIPLES OF 5, TOTAL = EXACTLY 30 MINUTES):
    - Fully integrate the teacher's custom idea: "{teacher_custom_activity}".
-   - Teacher acts strictly as FACILITATOR: circulating, scaffolding, asking probing questions, never lecturing.
+   - CREATIVE & STUDENT-CENTERED PEDAGOGY (TEACHER AS FACILITATOR): Learning is completely student-centered; the teacher acts as a facilitator, scaffolding learning, providing creative prompts, and asking probing questions (never delivering monologues or lectures).
+   - LIMIT REPETITIVE STEPS: Ensure creative variety in the development steps—avoid repeating the exact same step patterns or routines across different lesson plans.
    - Ground scenarios and tasks in authentic Sri Lankan context (schools, local governance, communities, cultural traditions).
    - Every step's duration MUST be a clean multiple of 5 (e.g. 5, 10, 15, 20 mins). Sum MUST equal exactly 30 minutes.
    - Determine step count (2, 3, or 4 steps) and duration of each step organically to suit the teacher's custom activity:
      * Examples: 15m + 15m = 30m, 5m + 15m + 10m = 30m, 10m + 15m + 5m = 30m, 5m + 20m + 5m = 30m, or 5m + 10m + 10m + 5m = 30m.
    - Do NOT default to a fixed 10+10+10 or fixed step structure across all lessons. Time allocation must reflect the actual depth of each step's tasks.
-   - DYNAMIC STEP STRUCTURING:
-     * Structure the sequence, pedagogical method names, and tasks organically around "{teacher_custom_activity}", the target learning outcomes, and the curriculum context.
-     * Every step must detail student active participation and teacher facilitation.
+   - DYNAMIC & CREATIVE STEP STRUCTURING:
+     * Structure the sequence, pedagogical method names, and creative tasks organically around "{teacher_custom_activity}", the target learning outcomes, and the curriculum context.
+     * Every step must detail creative student active participation and step-specific teacher facilitation.
    - STRICT ANTI-COPY MANDATE:
      * DO NOT copy, quote, or echo instruction sentences or headings into your JSON fields!
      * DO NOT repeat the same sentences across different steps!
@@ -86,7 +87,8 @@ CRITICAL ANTI-BOILERPLATE MANDATE:
 - DO NOT output identical text across different periods or lesson plans.
 - Seamlessly integrate the teacher's custom pedagogical concept: "{teacher_custom_activity}".
 - Provide rich, concrete, creative details describing actual Sri Lankan classroom dialogues, specific task cards, specific physical artifacts, and dynamic student collaboration.
-- Each development step must be detailed (3-5 sentences describing concrete student actions and teacher facilitation).
+- Each development step must be detailed (3-5 sentences describing creative student-centered actions and creative teacher facilitation).
+- LIMIT REPETITIVE STEPS: Vary the development step flow, teacher prompts, and student outputs across plans—avoid repeating the same step template over and over.
 - The 'the_entrance' MUST be an engaging 5-minute motivational hook grounded in the learning outcomes, the teacher's custom activity, textbook details, and Teacher Guide (TIG).
 - The 'post_activity' MUST be a brand-new, highly creative 5-minute in-class active evaluation or creative verse/task uniquely invented for '{lesson_topic}' (using traditional formats only as inspiration, never fixed to a period number or repeated from earlier plans).
 
@@ -104,8 +106,8 @@ CRITICAL ANTI-BOILERPLATE MANDATE:
       "time_minutes": 15,
       "learning_teaching_method": "string (Specific pedagogical phase name organically matching this activity's first stage)",
       "learning_teaching_aids": "string (Specific physical classroom materials and task sheets used in this step)",
-      "teacher_activities": "string (Detailed 2-4 sentences: teacher facilitation, inquiry prompts, and scaffolding questions)",
-      "student_activities": "string (Detailed 2-4 sentences: active student collaboration, investigative tasks, and discussions)",
+      "teacher_activities": "string (Detailed 2-4 sentences: creative teacher facilitation, step-specific inquiry prompts, and scaffolding questions)",
+      "student_activities": "string (Detailed 2-4 sentences: creative student-centered collaboration, investigative tasks, and discussions)",
       "assessment_and_feedback": ""
     }},
     {{
@@ -113,8 +115,8 @@ CRITICAL ANTI-BOILERPLATE MANDATE:
       "time_minutes": 15,
       "learning_teaching_method": "string (Specific pedagogical phase name organically matching this activity's execution or presentation)",
       "learning_teaching_aids": "string (Specific physical artifacts, evidence cards, presentation charts, or whiteboard)",
-      "teacher_activities": "string (Detailed 2-4 sentences: teacher observing, guiding, asking probing questions, or moderating)",
-      "student_activities": "string (Detailed 2-4 sentences: active student debate, problem-solving, synthesis, or evaluation)",
+      "teacher_activities": "string (Detailed 2-4 sentences: creative teacher facilitation, moderating, or probing group reasoning)",
+      "student_activities": "string (Detailed 2-4 sentences: creative student-centered debate, problem-solving, synthesis, or evaluation)",
       "assessment_and_feedback": ""
     }}
   ],

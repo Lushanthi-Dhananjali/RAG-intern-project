@@ -2,88 +2,76 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 2 of 2)",
-  "competence": "Investigates public services and understands their historical need, timely importance, and evolution for community development",
+  "competence": "Demonstrates understanding of public services and evaluates their historical evolution and modern community importance",
   "competence_level": "8.1.1",
-  "lesson": "Presents views appreciating the importance of public services of the times: The Community Service Case Inquiry: Evaluating Past and Present Impact",
+  "lesson": "Presents views appreciating the importance of public services of the times: The Heritage vs. Modernity Case Audit: Evaluating Public Service...",
   "unique_learning_outcome": [
     "Presents views appreciating the importance of public services of the times.",
     "Investigates information on the beginning and progress of public services."
   ],
-  "the_entrance": "5-minute introduction: The teacher writes two contrasting chalkboard prompts: 'Grandfather's journey to the nearest rural dispensary in 1950' versus 'Accessing the local Pradeshiya Sabha water supply and health clinic today.' Facilitating from the center, the teacher challenges the 7 student groups with the launch prompt: 'Imagine walking five miles for a single drop of clean water or medical help—how did our ancestors' struggles shape the robust public utilities we rely on today?' Student teams immediately huddle with their designated Leaders and Scribes, reviewing prior notebook entries on Anuradhapura era medicinal gardens and modern infrastructure to share initial emotional reflections on the hardships overcome by past generations.",
+  "the_entrance": "The teacher launches the 5-minute motivational hook by displaying two striking visual contrasts on the chalkboard: an illustration of ancient Anuradhapura medicinal gardens (Osu Uyan) alongside a photograph of a modern digitized hospital management portal. Challenging the 35 students divided into 7 teams of 5, the teacher poses the inquiry prompt: 'How did our ancestors maintain community health and communication centuries ago, and why are today's automated public systems vital for our expanding society?' Group leaders immediately coordinate with their scribes to list three major differences in student notebooks, while civic investigators challenge team assumptions about speed and accessibility, priming the classroom for the Heritage vs. Modernity Case Audit.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "The teacher circulates among the 7 groups, acting as an investigative guide while students examine the historical backdrop of rural electrification and local water boards. The facilitator prompts the Civic Investigators and Secretaries with scaffolding questions: 'What specific administrative hurdles did early village councils face when establishing the first local dispensaries?' The teacher ensures every team member participates in extracting facts from the textbook regarding state and provincial council responsibilities.",
-      "student_activities": "Civic Investigators and Scribes lead their teams in analyzing chalkboard case prompts regarding the evolution of local Pradeshiya Sabha projects. Group members actively debate the historical difficulties communities experienced before these public services arrived, noting down key milestones from ancient irrigation and hospital setups to modern municipal utility expansions.",
-      "learning_teaching_method": "Historical Case Evidence Gathering",
-      "learning_teaching_aids": "Chalkboard case prompts, Student Notebooks, historical timeline reference cards on Sri Lankan public utilities",
-      "assessment_and_feedback": "",
-      "time_minutes": 10,
-      "other": ""
-    },
-    {
-      "step_number": 2,
-      "teacher_activities": "The teacher moves dynamically across the classroom islands, observing group collaboration and moderating discussions as students construct comparative matrices. When a group struggles to connect past hardships with present benefits, the teacher offers probing facilitation: 'How does the absence of profit-making in public services guarantee equal access for low-income families compared to private enterprises?' The teacher verifies that timekeepers are pacing the 15-minute creation of the chart paper deliverables.",
-      "student_activities": "Working collaboratively on chart paper, the 7 student groups synthesize their findings into a structured case evaluation matrix comparing pre-service hardships with current public service benefits. Timekeepers monitor the 15-minute pacing while Presenters and Secretaries collaborate to draft compelling arguments highlighting the non-profit and equitable nature of modern community services.",
-      "learning_teaching_method": "Collaborative Evaluation Matrix Construction",
-      "learning_teaching_aids": "Chart Paper, Colored Markers, Student Notebooks",
+      "teacher_activities": "The teacher facilitates critical thinking by posting comparative evaluation criteria on the chalkboard—focusing on speed, accessibility, scale, and community welfare. Circulating among the 7 teams, the teacher prompts student groups to examine how administrative methods evolved from ancient royal decrees and manual postal runners to modern digital infrastructure, asking probing scaffolding questions about how technological progress directly impacts daily citizen convenience.",
+      "student_activities": "Students actively collaborate in their designated teams of 5, assigning roles such as Leader, Scribe, Timekeeper, Spokesperson, and Civic Investigator. They analyze their assigned comparative scenario, investigating the technological and administrative transformations over time, and begin drafting their findings on chart paper.",
+      "learning_teaching_method": "Comparative Historical Case Audit",
+      "learning_teaching_aids": "Chart paper, colored markers, traditional versus modern public service comparison prompt cards (Postal mail vs. Online tracking, Ancient irrigation tanks vs. Modern water boards).",
       "assessment_and_feedback": "",
       "time_minutes": 15,
       "other": ""
     },
     {
-      "step_number": 3,
-      "teacher_activities": "The teacher acts as a supportive moderator, inviting selected Spokespersons to share summary highlights of their charts while challenging the class to evaluate the societal impact. The facilitator reinforces key takeaways regarding public service features—such as continuous operation and legal frameworks—ensuring all 35 students remain actively engaged.",
-      "student_activities": "Spokespersons deliver concise 30-second advocacy pitches summarizing their group's evaluation matrix to the rest of the class. The remaining students act as evaluative peers, nodding in agreement or raising factual inquiries checked by their team's Civic Investigators.",
-      "learning_teaching_method": "Advocacy Pitch Synthesis",
-      "learning_teaching_aids": "Chart Paper display sheets, Whiteboard markers",
+      "step_number": 2,
+      "teacher_activities": "The teacher moderates the rapid presentation round, ensuring that all 7 teams successfully articulate their findings and structured oral defense statements. The teacher provides immediate formative feedback on how well teams connected historical administrative milestones to current public appreciation and community welfare.",
+      "student_activities": "The Spokesperson for each team steps forward to present their completed 'Progress Audit Brief' on chart paper, outlining the historical evolution and modern importance of their assigned public service. Meanwhile, the remaining team members utilize their civic investigator notes to support the presentation and engage in respectful peer questioning across groups.",
+      "learning_teaching_method": "Progress Audit Brief Presentation and Defense",
+      "learning_teaching_aids": "Completed chart paper 'Progress Audit Briefs', whiteboard for scoring criteria, presenter podium area.",
       "assessment_and_feedback": "",
-      "time_minutes": 5,
+      "time_minutes": 15,
       "other": ""
     }
   ],
-  "summary": "In this 40-minute session, students successfully investigated the historical evolution of Sri Lankan public services from ancient times to the modern era and formulated reasoned appreciation arguments regarding their timely importance and community impact.",
-  "assessment_and_feedback_whole_lesson": "Formative evaluation is based on group collaboration, the historical accuracy of the chart paper case evaluation matrices, the depth of comparative reasoning between past hardships and present utility benefits, and peer advocacy pitch clarity.",
-  "post_activity": "5-minute in-class assignment: Pass-the-Parcel Concept Challenge: The teacher circulates a traditional wooden marker (the parcel) while traditional classroom drumming rhythm plays softly for 30 seconds. When the teacher stops the rhythm, the student holding the marker must immediately draw a Dilemma Card from the teacher's basket—such as 'A rural village petitioning for a new community water tank'—and instantly voice a one-minute reasoned appreciation argument highlighting why this public service is vital for raising local living standards, evaluated directly by class peers.",
+  "summary": "In a rapid 2-minute synthesis, the teacher and students consolidate core discoveries, highlighting that public services have continuously adapted from ancient Sri Lankan irrigation and health systems to modern digital networks, all aimed at enhancing community living standards and social security.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted through observation of active group collaboration, the depth of historical and modern analysis in the chart briefs, and the clarity of structured oral defense statements appreciating public services.",
+  "post_activity": "5-minute in-class assignment: To conclude the lesson within 5 active minutes, the teacher conducts a 'Stand-and-State Appreciation Roll' where each of the 7 teams stands up in quick succession to voice one powerful 15-second impromptu statement appreciating a modern public service compared to its historical roots, evaluated instantly by peer applause and teacher affirmation.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
   "attachments": [
-    "Chalkboard case prompt templates",
-    "historical evolution reference cards",
-    "chart paper",
-    "colored markers"
+    "Comparative Evaluation Criteria Chart",
+    "Service Evolution Prompt Cards."
   ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 2,
   "total_periods": 2,
-  "selected_activity": "Activity: The Community Service Case Inquiry: Evaluating Past and Present Impact\nApproach: Student groups examine real-world local scenarios reflecting the establishment and progression of community public utilities like rural electrification, water supply boards, and local dispensaries in Sri Lanka. They investigate the historical difficulties communities faced before these services arrived and formulate reasoned appreciation arguments.\nStudent task: Civic Investigators review localized case prompts written on the chalkboard regarding the establishment of a local Pradeshiya Sabha water project or post office. The team debates the transformation in citizens' quality of life, drafts evaluation points on chart paper, and prepares an advocacy pitch.\nTeacher facilitation: The teacher monitors group discussions across the 7 islands, ensuring equitable role rotation and offering guiding prompts like: 'Compare how your grandparents accessed this service versus how you access it today.'\nExpected output: A case evaluation matrix on chart paper comparing pre-service hardships with current public service benefits.\nGrouping: 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "The Community Service Case Inquiry: Evaluating Past and Present Impact",
+  "selected_activity": "Activity: The Heritage vs. Modernity Case Audit: Evaluating Public Service Progress\nApproach: Teams conduct a comparative audit of traditional versus modern public service delivery in Sri Lanka (e.g., manual postal letters versus digital tracking, ancient irrigation tanks versus modern water boards). They investigate the progression trajectory and formulate structured oral defense statements appreciating these services.\nStudent task: Students critically analyze comparative scenarios of past and present public services, investigating the technological and administrative improvements over time and preparing a formal appreciation brief for presentation.\nTeacher facilitation: The teacher facilitates critical thinking by posting comparative evaluation criteria on the chalkboard and prompting students to connect historical progress directly to community welfare and public appreciation.\nExpected output: A 'Progress Audit Brief' on chart paper outlining the transformation of a specific public service and presenting well-reasoned views appreciating its modern importance.\nGrouping: 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
+  "selected_activity_title": "The Heritage vs. Modernity Case Audit: Evaluating Public Service Progress",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_2",
-      "title": "The Community Service Case Inquiry: Evaluating Past and Present Impact",
-      "pedagogy_type": "Case Inquiry & Structured Problem-Solving",
-      "description": "Student groups examine real-world local scenarios reflecting the establishment and progression of community public utilities like rural electrification, water supply boards, and local dispensaries in Sri Lanka. They investigate the historical difficulties communities faced before these services arrived and formulate reasoned appreciation arguments.",
+      "id": "option_3",
+      "title": "The Heritage vs. Modernity Case Audit: Evaluating Public Service Progress",
+      "pedagogy_type": "Case Inquiry & Comparative Audit",
+      "description": "Teams conduct a comparative audit of traditional versus modern public service delivery in Sri Lanka (e.g., manual postal letters versus digital tracking, ancient irrigation tanks versus modern water boards). They investigate the progression trajectory and formulate structured oral defense statements appreciating these services.",
       "learning_outcomes_addressed": [
         "Presents views appreciating the importance of public services of the times.",
         "Investigates information on the beginning and progress of public services."
       ],
-      "student_action_summary": "Civic Investigators review localized case prompts written on the chalkboard regarding the establishment of a local Pradeshiya Sabha water project or post office. The team debates the transformation in citizens' quality of life, drafts evaluation points on chart paper, and prepares an advocacy pitch.",
-      "teacher_facilitation_summary": "The teacher monitors group discussions across the 7 islands, ensuring equitable role rotation and offering guiding prompts like: 'Compare how your grandparents accessed this service versus how you access it today.'",
-      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "student_action_summary": "Students critically analyze comparative scenarios of past and present public services, investigating the technological and administrative improvements over time and preparing a formal appreciation brief for presentation.",
+      "teacher_facilitation_summary": "The teacher facilitates critical thinking by posting comparative evaluation criteria on the chalkboard and prompting students to connect historical progress directly to community welfare and public appreciation.",
+      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A case evaluation matrix on chart paper comparing pre-service hardships with current public service benefits.",
-      "creative_assessment_preview": "1-Minute Exit Ticket: Each student writes down one sentence in their notebook expressing deep appreciation for a specific historical public service and hands it to the teacher.",
-      "low_resource_alternative": "Cases written directly onto the chalkboard for simultaneous viewing by all 7 groups, recording analysis in notebooks."
+      "expected_student_output": "A 'Progress Audit Brief' on chart paper outlining the transformation of a specific public service and presenting well-reasoned views appreciating its modern importance.",
+      "creative_assessment_preview": "A 5-minute 'One-Sentence Exit Ticket' written in student notebooks, summarizing why the historical progression of public services matters to citizens today.",
+      "low_resource_alternative": "Writing the audit briefs directly inside student notebooks and having spokespersons read them out from their seats."
     }
   ],
   "outcome_allocation": {
