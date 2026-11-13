@@ -2,67 +2,76 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 2 of 3)",
-  "competence": "Broad curriculum competency standard",
+  "competence": "Investigates problems and challenges faced in personal and public life to develop positive reactions and problem-solving skills.",
   "competence_level": "8.5.1",
-  "lesson": "Explains the importance of being watchfull regarding the problems and challenges faced in day-to-day life: Teacher Activity: show video",
+  "lesson": "Explains the importance of being watchfull regarding the problems and challenges faced in day-to-day life: Day-to-Day Life Challenge Simulation & Impact Chain",
   "unique_learning_outcome": [
     "Explains the importance of being watchfull regarding the problems and challenges faced in day-to-day life."
   ],
-  "the_entrance": "5-minute introduction: The teacher begins by asking students to share a recent situation where they had to be watchful to overcome a problem or challenge. Students share their experiences, and the teacher connects these everyday scenarios to the importance of being watchful in day-to-day life. The teacher then shows a video that illustrates the concept, sparking class discussion and setting the stage for the lesson.",
+  "the_entrance": "The teacher launches the 5-minute entrance by displaying a striking photograph on the chalkboard of an overflowing municipal waste bin near a Colombo school gate alongside a cracked public water pipe. The teacher issues the challenge prompt: 'Look at these two everyday community sights in Sri Lanka; why do minor issues like a small water leak or uncollected garbage suddenly turn into massive public health crises if ignored?' Students in their 6 groups of 5 actively buzz with ideas, with Leaders and Scribes quickly noting down initial thoughts in their notebooks about whether citizens noticed the signs early enough or ignored them.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "Teacher introduces the concept of being watchful and shows the video.",
-      "student_activities": "Students watch the video and take notes on key points.",
-      "learning_teaching_method": "Presentation",
-      "learning_teaching_aids": "Video, student notebooks",
+      "teacher_activities": "The teacher circulates among the 6 island desk arrangements acting as a facilitator, distributing scenario cards depicting everyday situations like delayed CTB bus scheduling or clogged drainage channels during the monsoon. The teacher prompts critical thinking by asking, 'What early warning signs were present in this scenario, and what happened because people failed to observe them in time?' The teacher guides the Timekeepers and Scribes to ensure all group members contribute their viewpoints.",
+      "student_activities": "Working in collaborative teams of 5, students read their assigned Sri Lankan community scenario card and debate the initial triggers of the problem. The Civic Investigator checks facts against daily experiences while the Scribe records the early symptoms on rough notes, identifying precisely what citizens failed to notice or act upon.",
+      "learning_teaching_method": "Community Scenario Analysis & Root Cause Investigation",
+      "learning_teaching_aids": "Realistic Sri Lankan community scenario cards, Chart paper, Colored markers, Student notebooks",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
-      "other": "Formative check: Teacher circulates around the room to monitor student understanding and engagement."
+      "time_minutes": 15,
+      "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "Teacher facilitates a class discussion on the importance of being watchful in day-to-day life, using the video and student notes as prompts.",
-      "student_activities": "Students participate in the class discussion, sharing their own experiences and insights.",
-      "learning_teaching_method": "Guided Inquiry",
-      "learning_teaching_aids": "Chalkboard, chart paper",
+      "teacher_activities": "The teacher moves between groups to observe the construction of the cause-and-effect diagrams, scaffolding student analysis with probing questions such as: 'How does early watchfulness alter the final outcome in this impact chain compared to ignoring the warning signs?' The teacher moderates the pacing to ensure every group prepares their Spokesperson for a concise presentation.",
+      "student_activities": "Group members collaborate intensely to draw a sequential 'Impact Chain' diagram on chart paper, mapping the trajectory from an unnoticed minor issue to a major community challenge, contrasted with an alternate branch showing the positive impact of early watchfulness. The Spokesperson and Presenter rehearse how they will explain the diagram's logic to the rest of the classroom.",
+      "learning_teaching_method": "Impact Chain Mapping & Collaborative Synthesis",
+      "learning_teaching_aids": "Large chart paper, Marker pens, Chalkboard summary template",
       "assessment_and_feedback": "",
-      "time_minutes": 20,
-      "other": "Formative check: Teacher encourages students to connect their own experiences to the concept and facilitates peer-to-peer discussion."
+      "time_minutes": 15,
+      "other": ""
     }
   ],
-  "summary": "Consolidation and synthesis of key concepts: Students will summarize the importance of being watchful in day-to-day life, connecting their own experiences to the video and class discussion.",
-  "assessment_and_feedback_whole_lesson": "Formative assessment criteria: Student participation in class discussion, ability to connect personal experiences to the concept, and understanding of the importance of being watchful in day-to-day life.",
-  "post_activity": "In-class assignment: Students will write a short reflection (5 minutes) on how they can apply the concept of being watchful in their daily lives, considering the video and class discussion.",
+  "summary": "In a 2-minute plenary synthesis, the teacher invites Spokespersons to highlight key discoveries, reinforcing that proactive watchfulness and early identification of minor issues in daily Sri Lankan life prevent severe personal and public crises.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted through observation of small group collaboration, accuracy of the impact chain logic mapping, and the clarity with which groups articulate the vital importance of being watchful toward day-to-day challenges.",
+  "post_activity": "Rapid Team Dilemma Showdown: In a fast-paced 5-minute in-class evaluation, the teacher reads two rapid-fire situational dilemmas regarding school and community life in Sri Lanka. Each group uses a mini whiteboard or notebook sheet to write down a one-sentence verdict explaining how watchfulness resolves the challenge before time runs out, receiving immediate verbal feedback and peer appraisal from the teacher facilitator.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
-  "attachments": [],
+  "attachments": [
+    "Community Scenario Cards (Irregular Waste Collection",
+    "Public Transport Delays",
+    "Water Leakage)",
+    "Impact Chain Chart Templates"
+  ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 2,
   "total_periods": 3,
-  "selected_activity": "show video",
-  "selected_activity_title": "Teacher Activity: show video",
-  "custom_teacher_activity": "show video",
+  "selected_activity": "Activity: Day-to-Day Life Challenge Simulation & Impact Chain\nApproach: Students participate in a structured simulation tracking real-life Sri Lankan challenges (such as irregular waste collection or public transport delays) to analyze why early watchfulness prevents minor issues from becoming major crises.\nStudent task: Each of the 6 groups receives a realistic community scenario card based on local Sri Lankan experiences. Group members analyze the scenario step-by-step to map out a cause-and-effect 'Impact Chain' on chart paper, demonstrating what happens when citizens are watchful versus when they ignore emerging problems.\nTeacher facilitation: The teacher acts as a timekeeper and facilitator, circulating among the 6 island desk arrangements to prompt critical thinking with questions like: 'What could have been noticed earlier to prevent this problem from escalating?'\nExpected output: A completed 'Impact Chain' diagram on chart paper explaining the value of watchfulness in daily life challenges.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Classroom desks are set up in 6 islands so all 30 students fulfill their specific rotating roles.",
+  "selected_activity_title": "Day-to-Day Life Challenge Simulation & Impact Chain",
+  "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "teacher_custom_activity_p2",
-      "title": "Teacher Activity: show video",
-      "description": "show video",
-      "pedagogy_type": "Presentation",
-      "student_grouping": "Adaptive Grouping (35 students)",
-      "student_action_summary": "Students watch the video and take notes on key points.",
-      "teacher_facilitation_summary": "Teacher introduces the concept of being watchful and shows the video.",
-      "required_materials": [
-        "Video, student notebooks"
-      ],
-      "expected_student_output": "In-class assignment: Students will write a short reflection (5 minutes) on how they can apply the concept of being watchful in their daily lives, considering the video and class discussion.",
-      "creative_assessment_preview": "Formative assessment criteria: Student participation in class discussion, ability to connect personal experiences to the concept, and understanding of the importance of being watchful in day-to-day life.",
+      "id": "option_1",
+      "title": "Day-to-Day Life Challenge Simulation & Impact Chain",
+      "pedagogy_type": "Simulation / Impact Chain Analysis",
+      "description": "Students participate in a structured simulation tracking real-life Sri Lankan challenges (such as irregular waste collection or public transport delays) to analyze why early watchfulness prevents minor issues from becoming major crises.",
       "learning_outcomes_addressed": [
         "Explains the importance of being watchfull regarding the problems and challenges faced in day-to-day life."
-      ]
+      ],
+      "student_action_summary": "Each of the 6 groups receives a realistic community scenario card based on local Sri Lankan experiences. Group members analyze the scenario step-by-step to map out a cause-and-effect 'Impact Chain' on chart paper, demonstrating what happens when citizens are watchful versus when they ignore emerging problems.",
+      "teacher_facilitation_summary": "The teacher acts as a timekeeper and facilitator, circulating among the 6 island desk arrangements to prompt critical thinking with questions like: 'What could have been noticed earlier to prevent this problem from escalating?'",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Classroom desks are set up in 6 islands so all 30 students fulfill their specific rotating roles.",
+      "required_materials": [
+        "Chart Paper",
+        "Student Notebooks",
+        "Chalkboard"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "A completed 'Impact Chain' diagram on chart paper explaining the value of watchfulness in daily life challenges.",
+      "creative_assessment_preview": "30-Second 'Before and After' Tableau: Groups freeze into two postures—one showing an unwatchful community ignoring a growing problem, and the second showing an alert community tackling it early.",
+      "low_resource_alternative": "Use student notebooks instead of chart paper to draw the impact chain individually and share verbally within the group island."
     }
   ],
   "outcome_allocation": {

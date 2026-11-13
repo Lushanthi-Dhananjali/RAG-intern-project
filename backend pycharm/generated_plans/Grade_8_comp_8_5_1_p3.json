@@ -2,71 +2,74 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 3 of 3)",
-  "competence": "Broad curriculum competency standard",
+  "competence": "Demonstrates the capacity to investigate problems and challenges in day-to-day life and develops resilience to face them successfully",
   "competence_level": "8.5.1",
-  "lesson": "Expresses the ability to face problems in day-to-day life should be developed: Citizen-Officer Deliberation Roleplay: Competency Level 8.5.1",
+  "lesson": "Expresses the ability to face problems in day-to-day life should be developed: Problem-Solving Jigsaw Stations",
   "unique_learning_outcome": [
     "Expresses the ability to face problems in day-to-day life should be developed."
   ],
-  "the_entrance": "5-minute introduction: The teacher writes or reads “Expresses the ability to face problems in day-to-day life should be developed” and asks students to name one example they have seen in everyday life. Students share brief responses; the teacher connects their examples to Citizen-Officer Deliberation Roleplay: Competency Level 8.5.1 and explains how it will help them explore this period's outcome.",
+  "the_entrance": "5-minute introduction: The teacher launches the final period by challenging the six seated groups with a high-energy buzzer prompt: 'Imagine the CTB bus is delayed by an hour right before your term test, or your neighborhood faces sudden water cuts—how do you transform panic into a step-by-step action plan?' As the Spokespersons and Leaders respond with initial coping thoughts, the teacher introduces the 'Problem-Solving Jigsaw Stations' challenge, urging teams to prepare for multi-station rotations where they will synthesize practical, resilient solutions for real Sri Lankan daily hurdles.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "Teacher organizes students into structured inquiry teams and introduces the task scenario.",
-      "student_activities": "Students review task cards, assume collaborative group roles, and begin investigations.",
-      "learning_teaching_method": "Guided Inquiry",
-      "learning_teaching_aids": "Task cards and activity prompts",
+      "teacher_activities": "The teacher facilitates the classroom setup by assigning each of the six groups to one of three thematic stations focusing on daily Sri Lankan hurdles: public transport delays, school canteen waste management, and neighborhood water scarcity. While circulating, the teacher poses probing questions such as, 'What is the exact gap between your expected condition and this crisis?' and ensures every student contributes to brainstorming immediate coping mechanisms versus long-term solutions.",
+      "student_activities": "Students collaborate in their teams of five, utilizing assigned roles (Leader, Scribe, Timekeeper, Spokesperson, Civic Investigator) to examine their station's specific scenario card. The Scribe records root causes and coping strategies on their chart paper, while the Civic Investigator cross-references textbook principles on problem analysis to ensure proposed solutions are realistic and constructive.",
+      "learning_teaching_method": "Thematic Station Investigation and Root-Cause Mapping",
+      "learning_teaching_aids": "Station Task Cards, Student Notebooks, Markers, Chart Paper",
       "assessment_and_feedback": "",
       "time_minutes": 15,
-      "other": "Group formation"
+      "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "Teacher moderates student presentations, highlights key points, and addresses misconceptions.",
-      "student_activities": "Student spokespersons present findings, compare observations, and note feedback.",
-      "learning_teaching_method": "Presentation & Synthesis",
-      "learning_teaching_aids": "Presentation charts and whiteboard",
+      "teacher_activities": "The teacher acts as a timekeeper and moderator, signaling the rotation of groups every few minutes so peer groups can review, critique, and build upon neighboring teams' findings. The teacher prompts students to evaluate emotional resilience alongside practical steps, asking, 'How does maintaining positive mental power help you execute this alternative solution effectively?'",
+      "student_activities": "Groups rotate or review incoming peer summaries, actively discussing how different daily challenges require adaptable problem-facing skills. The Spokesperson and Presenter synthesize the multi-faceted strategies onto a master board or unified chart, while team members debate the feasibility of each proposed alternative for personal and social life.",
+      "learning_teaching_method": "Jigsaw Rotation and Multi-Faceted Strategy Synthesis",
+      "learning_teaching_aids": "Station Chart Papers, Colored Chalk, Whiteboard",
       "assessment_and_feedback": "",
       "time_minutes": 15,
-      "other": "Class presentation"
+      "other": ""
     }
   ],
-  "summary": "Consolidation and synthesis of key concepts: Students reflect on their roleplay experience and how it relates to real-life problems and challenges.",
-  "assessment_and_feedback_whole_lesson": "Final closure formative assessment criteria: Students' roleplay decisions and reasons are evaluated for understanding of the importance of facing problems and challenges in day-to-day life.",
-  "post_activity": "5-minute in-class assignment: Each student completes a short exit response explaining one finding about “Expresses the ability to face problems in day-to-day life should be developed” using evidence or an example from Citizen-Officer Deliberation Roleplay: Competency Level 8.5.1. The teacher reviews responses for an accurate link to the period outcome.",
+  "summary": "In a 2-minute synthesis, the teacher and students consolidate that facing daily life challenges successfully requires identifying root causes, remaining emotionally resilient, and applying creative alternatives rather than yielding to panic or helplessness.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted through observation of active group collaboration during station rotations, evaluation of the depth and clarity of the synthesized Jigsaw Charts, and checking whether students accurately articulate the importance of developing personal strength and positive mental attitude to overcome everyday Sri Lankan civic hurdles.",
+  "post_activity": "5-minute in-class assignment: Pass-the-Parcel Concept Challenge: Students pass a traditional woven shuttle or prompt token around the classroom while traditional music plays briefly; when the music stops, the student holding the token draws a rapid Dilemma Card from the teacher's box (e.g., managing household budget cuts or resolving a school group project conflict). The student has 30 seconds to verbalize an immediate coping action and a long-term problem-solving strategy, while classmates use a quick thumbs-up or thumbs-down consensus to evaluate whether the response demonstrates true personal resilience.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
-  "attachments": [],
+  "attachments": [
+    "Station Task Cards (Transport, Canteen Waste, Water Scarcity)",
+    "Jigsaw Synthesis Chart Templates"
+  ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 3,
   "total_periods": 3,
-  "selected_activity": "Activity: Citizen-Officer Deliberation Roleplay: Competency Level 8.5.1\nApproach: Students use citizen-officer deliberation roleplay to explore 'Expresses the ability to face problems in day-to-day life should be developed.'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.\nExpected output: A short role-based civic decision and its reasons.\nGrouping: 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "Citizen-Officer Deliberation Roleplay: Competency Level 8.5.1",
+  "selected_activity": "Activity: Problem-Solving Jigsaw Stations\nApproach: Students rotate through thematic learning stations addressing different daily life hurdles in Sri Lankan contexts (e.g., public transport delays, school canteen waste management, neighborhood water scarcity) to synthesize diverse problem-facing strategies.\nStudent task: Each group investigates a specific daily life hurdle assigned to their station, identifies immediate coping mechanisms versus long-term solutions, and synthesizes their findings onto chart paper.\nTeacher facilitation: The teacher monitors station timing, signals group rotations every 8 minutes, and poses guiding questions to help students articulate resilience and structured problem-facing skills.\nExpected output: A synthesized Jigsaw Chart outlining multi-faceted approaches to overcoming common civic and daily life disruptions.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
+  "selected_activity_title": "Problem-Solving Jigsaw Stations",
   "custom_teacher_activity": null,
   "activity_options": [
     {
       "id": "option_2",
-      "title": "Citizen-Officer Deliberation Roleplay: Competency Level 8.5.1",
-      "pedagogy_type": "Simulation / Roleplay",
-      "description": "Students use citizen-officer deliberation roleplay to explore 'Expresses the ability to face problems in day-to-day life should be developed.'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "title": "Problem-Solving Jigsaw Stations",
+      "pedagogy_type": "Station Jigsaw",
+      "description": "Students rotate through thematic learning stations addressing different daily life hurdles in Sri Lankan contexts (e.g., public transport delays, school canteen waste management, neighborhood water scarcity) to synthesize diverse problem-facing strategies.",
       "learning_outcomes_addressed": [
         "Expresses the ability to face problems in day-to-day life should be developed."
       ],
-      "student_action_summary": "Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "student_action_summary": "Each group investigates a specific daily life hurdle assigned to their station, identifies immediate coping mechanisms versus long-term solutions, and synthesizes their findings onto chart paper.",
+      "teacher_facilitation_summary": "The teacher monitors station timing, signals group rotations every 8 minutes, and poses guiding questions to help students articulate resilience and structured problem-facing skills.",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
       "required_materials": [
-        "Chalkboard",
+        "Chart Paper",
         "Student Notebooks",
-        "Chart Paper"
+        "Chalkboard"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A short role-based civic decision and its reasons.",
-      "creative_assessment_preview": "Students state one role responsibility and explain how it supported the decision.",
-      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
+      "expected_student_output": "A synthesized Jigsaw Chart outlining multi-faceted approaches to overcoming common civic and daily life disruptions.",
+      "creative_assessment_preview": "Silent Exit Ticket Slip: Each student writes down one personal commitment to face a daily problem constructively on a scrap piece of paper before leaving.",
+      "low_resource_alternative": "Station prompts are written directly on the chalkboard sections, and students record their synthesized Jigsaw findings in their student notebooks."
     }
   ],
   "outcome_allocation": {

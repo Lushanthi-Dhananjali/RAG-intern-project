@@ -2,81 +2,75 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 2 of 2)",
-  "competence": "8.4.5",
+  "competence": "Contributes to minimize dangers caused by chemicals through safe handling practices and preventive measures in daily life.",
   "competence_level": "8.4.5",
-  "lesson": "Shows the measures to be taken to avoid accidents caused by chemicals: Public Issue Tree / Cause-Effect Diagram: Competency Level 8.4.5",
+  "lesson": "Shows the measures to be taken to avoid accidents caused by chemicals: Scenario-Based Incident Investigation and Root-Cause Audit",
   "unique_learning_outcome": [
     "Shows the measures to be taken to avoid accidents caused by chemicals."
   ],
-  "the_entrance": "5-minute introduction: Launch & Investigation Setup",
+  "the_entrance": "5-minute introduction: The teacher steps into the classroom holding a sealed container of agricultural weedicide and a kitchen bottle of liquid drain cleaner, placing them side by side on the teacher's desk with a warning sign. The teacher launches the session with an engaging inquiry prompt: 'Imagine a busy morning in a village home in Anuradhapura where household detergents and agricultural chemicals are stored on the same unlocked low shelf. Yesterday, a toddler nearly reached for an unlabelled bottle. How can our investigative audit uncover the root causes of such near-misses and establish fail-safe prevention measures?' Students immediately form their six designated collaborative teams of five, appointing their Scribes and Civic Investigators to examine the challenge and prepare for the root-cause audit task.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "Introduces the specific real-world Sri Lankan dilemma or scenario for 'Shows the measures to be taken to avoid accidents caused by chemicals' and presents concrete inquiry task cards/materials. Assigns active group roles. Students examine the prompt, divide responsibilities, and formulate inquiry questions.",
-      "student_activities": "Examine the prompt, divide responsibilities, and formulate inquiry questions.",
-      "learning_teaching_method": "Dilemma Introduction & Role Allocation",
-      "learning_teaching_aids": "Student task cards, Sri Lankan scenario briefs, role badges",
+      "teacher_activities": "The teacher circulates among the six desk islands, acting strictly as a facilitator rather than lecturing. The teacher distributes distinct scenario cards—such as mixing sanitation acid with bleach or storing pesticides near food sacks—and asks probing scaffolding questions: 'What specific storage violation triggered this hazard? How might proper labeling and segregation prevent this?'",
+      "student_activities": "Students collaborate actively in their groups of five, assigning roles to dissect the provided scenario. The Scribe records the timeline of the mishap, while the Civic Investigator cross-references textbook safety rules regarding chemical storage and child-proofing, identifying all underlying safety lapses.",
+      "learning_teaching_method": "Scenario Evidence Analysis and Hazard Dissection",
+      "learning_teaching_aids": "Printed Incident Scenario Cards detailing local chemical mishaps, student notebooks, colored markers, and Chart Paper.",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 15,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "Circulates across 8 teams, facilitating role execution and formatively checking progress. Asks probing questions to scaffold learning without lecturing.",
-      "student_activities": "Students negotiate a solution, create a shared civic artifact, and review another group's proposal.",
-      "learning_teaching_method": "Active Collaborative Deep-Dive / Simulation",
-      "learning_teaching_aids": "Chart paper, markers, public issue tree diagram templates, cause-effect diagram materials",
+      "teacher_activities": "The teacher guides teams as they transition from identifying hazards to formulating preventive measures. The teacher prompts group presenters: 'Does your safety guide clearly show how to dilute chemicals properly and keep protective gear like gloves and masks ready?'",
+      "student_activities": "Group members synthesize their findings into an investigative audit poster highlighting three concrete accident-avoidance measures (e.g., dedicated locked storage, mandatory bilingual labeling, and personal protective equipment use). The Spokesperson rehearses the group's key recommendations for peer sharing.",
+      "learning_teaching_method": "Investigative Audit Poster Design and Solution Synthesis",
+      "learning_teaching_aids": "Chart Paper, marker pens, and textbook safety reference charts.",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
-      "other": ""
-    },
-    {
-      "step_number": 3,
-      "teacher_activities": "Group spokespersons present their civic findings or artifacts; peer teams evaluate using clear criteria and offer feedback. Teacher synthesizes discoveries against the learning outcomes.",
-      "student_activities": "Group spokespersons present their civic findings or artifacts; peer teams evaluate using clear criteria and offer feedback.",
-      "learning_teaching_method": "Spokesperson Sharing, Peer Critique & Plenary Consolidation",
-      "learning_teaching_aids": "Presentations, evaluation criteria, feedback forms",
-      "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 15,
       "other": ""
     }
   ],
-  "summary": "This lesson plan uses the Public Issue Tree / Cause-Effect Diagram to help students in Sri Lanka develop competency level 8.4.5, which involves showing measures to be taken to avoid accidents caused by chemicals. The lesson is structured into three progressive steps, with specific teacher and student activities, learning and teaching methods, and aids. The lesson aims to equip students with the skills to identify and prevent accidents caused by chemicals, and to promote civic engagement and problem-solving in a real-world context.",
-  "assessment_and_feedback_whole_lesson": "Teacher assessment and feedback throughout the lesson, peer evaluation during the group sharing and presentation, and a final review of the learning outcomes to assess student understanding and mastery.",
-  "post_activity": "5-minute in-class assignment: Students will be able to explain the measures to be taken to avoid accidents caused by chemicals and demonstrate their understanding through a shared civic artifact or public information message.",
+  "summary": "In a 2-minute synthesis, representatives from across the groups highlight that avoiding chemical accidents requires strict adherence to secure storage away from children, keeping original labels intact, using protective gear, and never storing chemicals near food items.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted by observing group collaboration, verifying the accuracy of accident-avoidance measures displayed on the audit posters, and assessing students' ability to explain practical safety protocols during team presentations.",
+  "post_activity": "Concept Drawing and Hazard-Sign Quick Sketch Challenge: In a fast-paced 5-minute in-class activity, each of the six groups rapidly sketches and labels a brand-new safety emblem on a single sheet of paper illustrating a crucial avoidance measure (such as wearing rubber gloves when handling sanitation chemicals or installing high wall brackets for home pesticide storage). The teacher moderates a quick 1-minute gallery review where teams hold up their sketches for peer verification.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
-  "attachments": [],
+  "attachments": [
+    "Incident Scenario Cards",
+    "Safety Guidelines Reference Sheet",
+    "Chart Paper and Markers."
+  ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 2,
   "total_periods": 2,
-  "selected_activity": "Activity: Public Issue Tree / Cause-Effect Diagram: Competency Level 8.4.5\nApproach: Students use public issue tree / cause-effect diagram to explore 'Shows the measures to be taken to avoid accidents caused by chemicals.'. Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.\nExpected output: A group civic proposal, diagram, or public information message.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "Public Issue Tree / Cause-Effect Diagram: Competency Level 8.4.5",
+  "selected_activity": "Activity: Scenario-Based Incident Investigation and Root-Cause Audit\nApproach: Students conduct a guided investigative audit of a simulated chemical mishandling scenario typical of a Sri Lankan rural or urban household, identifying underlying risks and generating concrete avoidance strategies.\nStudent task: Teams examine a provided textual scenario of a kitchen or agricultural chemical mishap, dissecting the sequence of events to pinpoint safety violations and formulating a step-by-step avoidance guide for local families.\nTeacher facilitation: Supervises group investigations by circulating across the 6 desk islands, offering guiding prompts on proper chemical segregation, dilution, and storage away from children, while managing strict time intervals.\nExpected output: An investigative audit poster highlighting hazard points and corresponding accident-avoidance measures.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
+  "selected_activity_title": "Scenario-Based Incident Investigation and Root-Cause Audit",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_3",
-      "title": "Public Issue Tree / Cause-Effect Diagram: Competency Level 8.4.5",
-      "pedagogy_type": "Collaborative Design",
-      "description": "Students use public issue tree / cause-effect diagram to explore 'Shows the measures to be taken to avoid accidents caused by chemicals.'. Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "id": "option_2",
+      "title": "Scenario-Based Incident Investigation and Root-Cause Audit",
+      "pedagogy_type": "Case Inquiry",
+      "description": "Students conduct a guided investigative audit of a simulated chemical mishandling scenario typical of a Sri Lankan rural or urban household, identifying underlying risks and generating concrete avoidance strategies.",
       "learning_outcomes_addressed": [
         "Shows the measures to be taken to avoid accidents caused by chemicals."
       ],
-      "student_action_summary": "Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "student_action_summary": "Teams examine a provided textual scenario of a kitchen or agricultural chemical mishap, dissecting the sequence of events to pinpoint safety violations and formulating a step-by-step avoidance guide for local families.",
+      "teacher_facilitation_summary": "Supervises group investigations by circulating across the 6 desk islands, offering guiding prompts on proper chemical segregation, dilution, and storage away from children, while managing strict time intervals.",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A group civic proposal, diagram, or public information message.",
-      "creative_assessment_preview": "Groups give one-sentence feedback connecting a peer proposal to the outcome.",
-      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
+      "expected_student_output": "An investigative audit poster highlighting hazard points and corresponding accident-avoidance measures.",
+      "creative_assessment_preview": "Exit Slip Pass: Every student writes one crucial avoidance measure on a scrap page and deposits it in the Secretary's notebook before leaving their desk island.",
+      "low_resource_alternative": "Conduct the audit entirely on chalkboard-drawn templates where groups contribute sequentially using notebook notes."
     }
   ],
   "outcome_allocation": {

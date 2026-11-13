@@ -1,0 +1,88 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 1 of 2)",
+  "competence": "Contributes to sustainable development by practicing a sustainable life style.",
+  "competence_level": "8.4.6",
+  "lesson": "Explains the need of getting used to a sustainable consumption style in fulfilling day to day needs: Supermarket vs. Pola Case Inquiry: The Cost of Consumerism",
+  "unique_learning_outcome": [
+    "Explains the need of getting used to a sustainable consumption style in fulfilling day to day needs.",
+    "Explains what is meant by a sustainable life style."
+  ],
+  "the_entrance": "The teacher enters the classroom holding two contrasting shopping artifacts: a brightly branded single-use plastic bag filled with imported processed items and a traditional woven cloth bag (pola bag) containing loose local vegetables from a village market. The teacher launches the 5-minute motivational hook by asking the class: 'If both bags carry vegetables for tonight's meal, why is the hidden price tag of the plastic-wrapped option costing our future generations much more than money?' Students immediately turn to their groups of five, buzzing with ideas about plastic pollution versus traditional eco-friendly habits. Group leaders prompt their teams to share personal weekend visits to local Sunday 'polas' versus supermarkets, setting up an active inquiry into consumer choices.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "The teacher circulates among the six student groups acting as a resource guide, prompting members to examine the economic and environmental trade-offs listed in the task sheets. The teacher asks probing questions such as: 'How do excessive packaging and impulse buying in modern supermarkets affect both your family budget and local natural resources?' and ensures that every student actively contributes to recording data on their group's chart paper.",
+      "student_activities": "Students collaborate intensely in their assigned groups of five, assigning roles such as Leader, Scribe, Timekeeper, Spokesperson, and Civic Investigator. They analyze the comparative case study between buying goods packaged in single-use plastics at a modern supermarket versus buying loose local produce with cloth bags at a traditional village 'pola'. The Scribe records long-term impacts on day-to-day needs, while the Civic Investigator cross-checks textbook facts regarding sustainable resource preservation.",
+      "learning_teaching_method": "Comparative Case Evidence Analysis",
+      "learning_teaching_aids": "Case Study Task Sheets, Supermarket Receipt Samples vs. Village Pola Price Lists, Chart Paper, Colored Markers",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "The teacher observes team interactions, moderates peer discussions, and scaffolds learning by asking groups to refine their logic on why sustainable consumption prevents resource depletion. The teacher guides the Spokespersons on how to structure their upcoming presentations clearly and keeps strict time for the completion of the 3-part argument charts.",
+      "student_activities": "Student groups synthesize their findings into a structured 3-part argument chart mapping out the necessity of sustainable consumption. Team members debate whether modern convenience outweighs the depletion of limited natural resources for future generations. The Spokesperson and Scribe finalize the persuasive presentation points, readying their evidence to prove why adopting a sustainable lifestyle is essential for Sri Lankan society.",
+      "learning_teaching_method": "Collaborative Argument Synthesis and Persuasive Mapping",
+      "learning_teaching_aids": "Whiteboard, Group Chart Papers, Marker Pens, Textbook Excerpts on Sustainable Development",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    }
+  ],
+  "summary": "In a 2-minute synthesis, student representatives highlight core discoveries: modern consumerism creates excessive waste and drains limited resources, whereas traditional 'pola' habits and cloth bags embody affordable, sustainable living that preserves nature for future generations.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation is based on group collaboration, accuracy in identifying sustainable consumption needs from the case study, clarity of the 3-part argument chart, and active participation of all team roles during the comparative inquiry.",
+  "post_activity": "5-minute in-class assignment: Creative Rhyming Poem and Recitation Challenge: In their groups of 5, students have 4 minutes to compose a 4-line traditional Sri Lankan rhythm verse (Kavi format) or rhyming couplet summarizing the core value of sustainable consumption and avoiding consumerist waste. One group member proudly recites their verse to the class, followed by immediate peer applause and a 1-minute teacher-moderated feedback check.",
+  "information_sources": [
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
+  ],
+  "attachments": [
+    "Supermarket vs. Pola Comparative Case Inquiry Handout",
+    "3-Part Argument Chart Template",
+    "Student Role Cards."
+  ],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 1,
+  "total_periods": 2,
+  "selected_activity": "Activity: Supermarket vs. Pola Case Inquiry: The Cost of Consumerism\nApproach: Students analyze a comparative case study between buying goods packaged in single-use plastics at a modern supermarket versus buying loose local produce with cloth bags at a traditional village 'pola'. They evaluate how consumer choices impact personal expenses and environmental sustainability.\nStudent task: Groups analyze the two shopping models, list the long-term impacts of each on day-to-day needs, and build a persuasive presentation explaining why adopting a sustainable consumption style is essential.\nTeacher facilitation: The teacher acts as a resource guide, prompting students to connect purchasing habits with resource preservation and keeping strict time for the 30-minute task sequence.\nExpected output: A 3-part argument chart mapping out the necessity of sustainable consumption.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks are arranged into 6 islands to accommodate all 30 students actively with zero bystanders.",
+  "selected_activity_title": "Supermarket vs. Pola Case Inquiry: The Cost of Consumerism",
+  "custom_teacher_activity": null,
+  "activity_options": [
+    {
+      "id": "option_3",
+      "title": "Supermarket vs. Pola Case Inquiry: The Cost of Consumerism",
+      "pedagogy_type": "Case Inquiry",
+      "description": "Students analyze a comparative case study between buying goods packaged in single-use plastics at a modern supermarket versus buying loose local produce with cloth bags at a traditional village 'pola'. They evaluate how consumer choices impact personal expenses and environmental sustainability.",
+      "learning_outcomes_addressed": [
+        "Explains the need of getting used to a sustainable consumption style in fulfilling day to day needs.",
+        "Explains what is meant by a sustainable life style."
+      ],
+      "student_action_summary": "Groups analyze the two shopping models, list the long-term impacts of each on day-to-day needs, and build a persuasive presentation explaining why adopting a sustainable consumption style is essential.",
+      "teacher_facilitation_summary": "The teacher acts as a resource guide, prompting students to connect purchasing habits with resource preservation and keeping strict time for the 30-minute task sequence.",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks are arranged into 6 islands to accommodate all 30 students actively with zero bystanders.",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks",
+        "Chart Paper"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "A 3-part argument chart mapping out the necessity of sustainable consumption.",
+      "creative_assessment_preview": "Choral Summary: The class reads aloud a 3-line rhyming slogan summarizing sustainable lifestyles created collaboratively on the chalkboard.",
+      "low_resource_alternative": "If chart paper is unavailable, groups summarize their case analysis in their notebooks and present key findings from their seats."
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "Explains the need of getting used to a sustainable consumption style in fulfilling day to day needs.",
+      "Explains what is meant by a sustainable life style."
+    ],
+    "2": [
+      "Expresses views accepting that the practice of such a consumption style contributes to sustainable development."
+    ]
+  },
+  "filename": "Grade_8_comp_8_4_6_p1.json"
+}

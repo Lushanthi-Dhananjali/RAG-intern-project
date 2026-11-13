@@ -2,73 +2,77 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 1 of 1)",
-  "competence": "Broad curriculum competency standard",
+  "competence": "Works intelligently in disaster situations.",
   "competence_level": "8.4.2",
-  "lesson": "Emphasises the need for acting according to the situations in disasters: Competency 8.4.2 Civic Systems Analysis: Competency Level 8.4.2",
+  "lesson": "Emphasises the need for acting according to the situations in disasters: Protection Priority Jigsaw Matrix",
   "unique_learning_outcome": [
     "Emphasises the need for acting according to the situations in disasters.",
     "Explains the importance of working to protect self as well as others at disasters."
   ],
-  "the_entrance": "5-minute introduction: The teacher explains the importance of working to protect self as well as others at disasters. Students are asked to think about a recent disaster and how they would act in that situation. The teacher then presents a classroom example about 'Emphasises the need for acting according to the situations in disasters.' and asks students to analyze its key features and agree on a supported conclusion.",
+  "the_entrance": "The teacher facilitates a 5-minute motivational hook by displaying a local newspaper photograph of a recent flood and landslide warning issued by the Disaster Management Centre and NBRO in Sri Lanka. The teacher launches the challenge prompt: 'If you receive an amber warning for heavy rains and rising river levels in your village, what immediate decisions keep your family safe without panicking?' Students in their 6 groups of 5 actively discuss the scenario, with Timekeepers noting immediate responses and Leaders sharing initial safety instincts.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "Teacher organizes students into structured inquiry teams and introduces the task scenario.",
-      "student_activities": "Students review task cards, assume collaborative group roles, and begin investigations.",
-      "learning_teaching_method": "Guided Inquiry",
-      "learning_teaching_aids": "Task cards and activity prompts",
+      "teacher_activities": "The teacher circulates among the 6 groups acting as a facilitator, providing investigative task prompts regarding flood warnings versus landslide warnings. The teacher asks probing scaffold questions such as: 'How does patience and avoiding oversensitivity prevent chaos during an evacuation order?' The teacher monitors role rotation among Leaders, Scribes, Timekeepers, Spokespersons, and Civic Investigators.",
+      "student_activities": "Students divide sub-topics of disaster response within their groups, examining situations such as avoiding entering damaged disaster zones, informing relevant institutions like the Police or Fire Brigade immediately, and following safety advice from the Meteorological Department. Scribes record team findings on task sheets while Civic Investigators check facts against textbook guidelines.",
+      "learning_teaching_method": "Cooperative Jigsaw Investigation",
+      "learning_teaching_aids": "Task sheets with Sri Lankan disaster scenarios, student notebooks, colored markers",
       "assessment_and_feedback": "",
       "time_minutes": 15,
-      "other": "Group formation"
+      "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "Teacher moderates student presentations, highlights key points, and addresses misconceptions.",
-      "student_activities": "Student spokespersons present findings, compare observations, and note feedback.",
-      "learning_teaching_method": "Presentation & Synthesis",
-      "learning_teaching_aids": "Presentation charts and whiteboard",
+      "teacher_activities": "The teacher guides groups as they synthesize individual expert findings into a unified matrix, moderating peer feedback across islands. The teacher prompts students to evaluate the balance between protecting oneself and providing first aid or rescuing neighbors safely. On the chalkboard, the teacher draws the framework layout to help groups structure their visual displays.",
+      "student_activities": "Spokespersons and group members collaborate to draw and complete the Protection Priority Jigsaw Matrix on chart paper, categorizing actions by situational urgency and mutual protection principles. Timekeepers monitor the 15-minute synthesis phase, ensuring every member contributes arguments on why contacting proper authorities like the Geological Survey and Mines Bureau or local hospitals is vital.",
+      "learning_teaching_method": "Consensus Matrix Assembly and Plenary Synthesis",
+      "learning_teaching_aids": "Chart paper, chalkboard, colored markers, institutional contact list reference cards",
       "assessment_and_feedback": "",
       "time_minutes": 15,
-      "other": "Class presentation"
+      "other": ""
     }
   ],
-  "summary": "Consolidation and synthesis of key concepts: Students summarize their group analysis and supported conclusion.",
-  "assessment_and_feedback_whole_lesson": "Formative assessment: Teacher checks understanding and provides feedback throughout the lesson.",
-  "post_activity": "5-minute in-class assignment: Five-minute in-class assignment: Students write a short reflection on what they learned about acting according to the situations in disasters.",
+  "summary": "In a 2-minute synthesis, the teacher and students review the core discoveries on disaster preparedness, emphasizing that acting with patience, following institutional announcements from the Disaster Management Centre, and balancing self-protection with aiding others are essential for minimizing risks.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted by assessing group matrix charts for clarity, accuracy regarding Sri Lankan institutional roles, and the integration of protective priority measures for both self and community.",
+  "post_activity": "5-minute in-class assignment: Statement Display & Justified Standpoint Vote: The teacher displays two contrasting Sri Lankan societal statements on the chalkboard regarding disaster response ('Entering a recently flooded area immediately to salvage property is brave' vs. 'Waiting for official NBRO clearance and avoiding disaster sites is intelligent'). Each of the 6 student groups silently casts a ballot token into a designated box and the Spokesperson instantly defends their group's standpoint in a 60-second rapid verdict moderated by the teacher.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
-  "attachments": [],
+  "attachments": [
+    "Sri Lankan Disaster Scenario Task Cards",
+    "Protection Priority Jigsaw Matrix Chart Templates",
+    "Institutional Contact List Reference Sheets."
+  ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 1,
   "total_periods": 1,
-  "selected_activity": "Activity: Competency 8.4.2 Civic Systems Analysis: Competency Level 8.4.2\nApproach: Students work with a teacher-presented classroom example about 'Emphasises the need for acting according to the situations in disasters.' to analyze a teacher-presented civic example, identify its key features, and agree on a supported conclusion, without leaving the classroom.\nStudent task: Analyze a teacher-presented civic example, identify its key features, and agree on a supported conclusion. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.\nExpected output: A group analysis with a supported conclusion.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "Competency 8.4.2 Civic Systems Analysis: Competency Level 8.4.2",
+  "selected_activity": "Activity: Protection Priority Jigsaw Matrix\nApproach: Student teams use a cooperative jigsaw approach to analyze different dimensions of disaster preparedness in Sri Lanka, categorizing actions based on situational urgency and mutual protection principles.\nStudent task: Teams divide sub-topics of disaster response (e.g., flood warning vs. landslide warning, protecting oneself vs. rescuing neighbors). Members synthesize their findings and assemble a consensus matrix on chart paper.\nTeacher facilitation: Monitors group collaboration across the 6 islands, ensures smooth rotation of roles among all 30 students, provides time warnings, and conducts a plenary synthesis using the chalkboard.\nExpected output: A completed consensus matrix chart categorizing disaster actions by situational appropriateness and protective impact.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
+  "selected_activity_title": "Protection Priority Jigsaw Matrix",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_2",
-      "title": "Competency 8.4.2 Civic Systems Analysis: Competency Level 8.4.2",
-      "pedagogy_type": "Field Investigation / School Walk",
-      "description": "Students work with a teacher-presented classroom example about 'Emphasises the need for acting according to the situations in disasters.' to analyze a teacher-presented civic example, identify its key features, and agree on a supported conclusion, without leaving the classroom.",
+      "id": "option_3",
+      "title": "Protection Priority Jigsaw Matrix",
+      "pedagogy_type": "Jigsaw",
+      "description": "Student teams use a cooperative jigsaw approach to analyze different dimensions of disaster preparedness in Sri Lanka, categorizing actions based on situational urgency and mutual protection principles.",
       "learning_outcomes_addressed": [
         "Emphasises the need for acting according to the situations in disasters.",
         "Explains the importance of working to protect self as well as others at disasters."
       ],
-      "student_action_summary": "Analyze a teacher-presented civic example, identify its key features, and agree on a supported conclusion. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "student_action_summary": "Teams divide sub-topics of disaster response (e.g., flood warning vs. landslide warning, protecting oneself vs. rescuing neighbors). Members synthesize their findings and assemble a consensus matrix on chart paper.",
+      "teacher_facilitation_summary": "Monitors group collaboration across the 6 islands, ensures smooth rotation of roles among all 30 students, provides time warnings, and conducts a plenary synthesis using the chalkboard.",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A group analysis with a supported conclusion.",
-      "creative_assessment_preview": "Each group explains one part of its civic systems analysis and links it to the outcome.",
-      "low_resource_alternative": "Use a spoken teacher prompt and oral group responses if writing materials are unavailable."
+      "expected_student_output": "A completed consensus matrix chart categorizing disaster actions by situational appropriateness and protective impact.",
+      "creative_assessment_preview": "Pass-the-Parcel Quiz: A notebook is passed rapidly among students for 60 seconds; when time stops, the student holding it must state one reason why acting according to the situation is vital.",
+      "low_resource_alternative": "Construct the consensus matrix directly on the chalkboard as a whole-class shared activity led by group spokespersons."
     }
   ],
   "outcome_allocation": {
@@ -76,5 +80,6 @@
       "Emphasises the need for acting according to the situations in disasters.",
       "Explains the importance of working to protect self as well as others at disasters."
     ]
-  }
+  },
+  "filename": "Grade_8_comp_8_4_2_p1.json"
 }

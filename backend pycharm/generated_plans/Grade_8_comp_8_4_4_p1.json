@@ -2,89 +2,81 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 1 of 2)",
-  "competence": "Contributes to minimizing road accidents by following road rules.",
+  "competence": "Contributes to minimizing road accidents by following road rules and understanding railway safety hazards.",
   "competence_level": "8.4.4",
-  "lesson": "Explains causes for railway accidents: Road & Rail Hazard Mapping & Sign Interpretation",
+  "lesson": "Explains causes for railway accidents: Emergency Response & Signalling Simulation",
   "unique_learning_outcome": [
     "Explains causes for railway accidents.",
     "Explains how to react at a road or railway accident.",
     "Explains reasons for road accidents.",
     "Explains road rules using signs and signals."
   ],
-  "the_entrance": "5-minute introduction: The teacher greets the 40 students and draws two distinct scenarios on the chalkboard: a car ignoring a traffic signal and pedestrians walking dangerously near a railway track. The teacher asks students to share personal observations of near-misses on roads or railways. Students respond by discussing everyday experiences with reckless driving and unguarded railway crossings. The teacher connects these real-life observations to the core topic of road and rail hazard mapping, introducing the 8 group islands and assigning roles (Leader, Scribe, Timekeeper, Spokesperson, Civic Investigator) to prepare students for the structured inquiry activity.",
+  "the_entrance": "5-minute introduction: The teacher enters the classroom holding a red warning flag and a railway crossing symbol card, immediately projecting an authentic Sri Lankan railway sound effect clip (train horn) for 15 seconds. The teacher launches the session with a probing question: 'Imagine you are near the unprotected Polgahawela railway crossing and a motorist ignores the flashing red warning lights—what causes such dangerous reckless behavior, and how must witnesses react immediately?' Students excitedly break into their 6 designated groups of 5, assigning internal roles (Leader, Scribe, Timekeeper, Spokesperson, Civic Investigator), and begin debating immediate bystander safety protocols based on everyday commuter experiences across the Kelani Valley railway line.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "The teacher explains the task, distributes prompt instructions to the 8 groups, and outlines the roles of the Leader, Scribe, Timekeeper, Spokesperson, and Civic Investigator. The teacher sets up the 8 island desks and acts as a timekeeper.",
-      "student_activities": "Students organize themselves into 8 teams of 5, assign their specific roles, inspect the chalkboard sign scenarios, and clarify task requirements with their group members.",
-      "learning_teaching_method": "Guided Inquiry & Setup",
-      "learning_teaching_aids": "Chalkboard-drawn sign scenarios, Student Notebooks",
-      "assessment_and_feedback": "",
-      "time_minutes": 10,
-      "other": ""
-    },
-    {
-      "step_number": 2,
-      "teacher_activities": "The teacher circulates among the 8 islands, posing guiding questions about why railway gate crossings are breached and prompting deeper critical thinking regarding root causes of road and rail accidents.",
-      "student_activities": "Teams actively investigate root causes of local road and railway accidents. Scribes record findings, Civic Investigators check facts against textbook scenarios, Leaders maintain focus, and Timekeepers monitor the 15-minute pacing to produce a collaborative cause-and-effect chart on chart paper.",
-      "learning_teaching_method": "Group Investigation & Production",
-      "learning_teaching_aids": "Chart Paper, Student Notebooks, Chalkboard",
+      "teacher_activities": "The teacher circulates among the 6 student groups, distributing specific railway and road hazard prompt cards detailing common Sri Lankan incidents such as walking on tracks with earphones or driving across unguarded crossings. The teacher acts as a facilitator, asking probing questions: 'Look at the textbook factors like technical faults and absent gates—which of these contributed most to recent tragic commuter collisions, and what road rules were violated?' The teacher observes group interactions, ensuring every student participates and guiding the Civic Investigators to check facts against the official textbook content.",
+      "student_activities": "Working collaboratively in their groups of 5, students analyze their assigned accident scenario card. The Scribe records the root causes of railway and road accidents while the Leader ensures discussion stays focused. The Civic Investigator reviews textbook evidence regarding police, government, and driver responsibilities to identify exact rule violations, preparing a comprehensive breakdown of causes.",
+      "learning_teaching_method": "Investigative Case Scenario Workshop",
+      "learning_teaching_aids": "Chart paper, colored markers, railway accident factor prompt cards, student notebooks",
       "assessment_and_feedback": "",
       "time_minutes": 15,
       "other": ""
     },
     {
-      "step_number": 3,
-      "teacher_activities": "The teacher coordinates the floor for spokesperson presentations and facilitates structured peer feedback between the 8 teams.",
-      "student_activities": "Spokespersons present their group's resolution and chart findings to the whole class. Civic Investigators and peers from other groups challenge assumptions and provide constructive feedback on sign interpretations and accident causes.",
-      "learning_teaching_method": "Presentation & Cross-Review",
-      "learning_teaching_aids": "Chart Paper displayed on classroom walls",
+      "step_number": 2,
+      "teacher_activities": "The teacher guides the groups as safety director, monitoring time pacing and providing constructive feedback on the accuracy of emergency reaction protocols. The teacher prompts the Spokespersons: 'Show us how your group would signal oncoming traffic and alert emergency services immediately following a railway crossing collision.' The teacher moderates peer observations and highlights correct hand signal usage on the chalkboard.",
+      "student_activities": "Group members design and enact a 2-minute emergency response simulation. Taking on roles of witnesses, motorists, and emergency coordinators, students demonstrate proper hand signals to warn oncoming traffic, outline emergency call procedures, and explain the underlying causes of the simulated accident. The Spokesperson presents the group's safety resolution while the Timekeeper manages their rehearsal schedule.",
+      "learning_teaching_method": "Simulation Design and Enactment",
+      "learning_teaching_aids": "Handmade red and green signal flags, chalkboard, student notebooks",
       "assessment_and_feedback": "",
-      "time_minutes": 5,
+      "time_minutes": 15,
       "other": ""
     }
   ],
-  "summary": "The teacher consolidates the key findings from all 8 groups, emphasizing that road and railway accidents stem from avoidable human errors such as ignoring signs, excessive speed, and walking on tracks, reinforcing the vital role of civic responsibility in prevention.",
-  "assessment_and_feedback_whole_lesson": "Evaluated through active group collaboration, effective execution of assigned team roles, accuracy of the cause-and-effect charts, and insightful peer feedback during presentations.",
-  "post_activity": "Each student independently writes down two primary causes of railway accidents and one specific rule for safe road crossing in their student notebooks within 5 minutes, submitting them to the teacher as an exit ticket.",
+  "summary": "In a 2-minute synthesis, student representatives consolidate discoveries on the primary causes of Sri Lankan railway and road accidents, emphasizing that avoiding track walking, respecting crossing gates, and obeying signal rules are critical community responsibilities.",
+  "assessment_and_feedback_whole_lesson": "Formative feedback is evaluated based on group participation, accuracy in identifying railway and road accident causes, correct demonstration of emergency reaction protocols, and proper application of road rules and signals during the simulation.",
+  "post_activity": "5-minute in-class assignment: As an in-class active evaluation, the class engages in a Rapid Team Buzzer Showdown where each of the 6 groups faces two rapid conceptual dilemma questions on railway safety signs and emergency reactions projected on the chalkboard, requiring their Spokesperson to answer within 30 seconds to earn points.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
   "attachments": [
-    "Chalkboard sign illustrations and group chart paper templates."
+    "Railway crossing hazard prompt cards",
+    "handmade signal flags",
+    "chalkboard summary template"
   ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 1,
   "total_periods": 2,
-  "selected_activity": "Activity: Road & Rail Hazard Mapping & Sign Interpretation\nApproach: Students investigate root causes of local road and railway accidents through structured evidence inquiry. They analyze specific traffic signs and signals to explain how compliance prevents disasters.\nStudent task: Students examine chalkboard-drawn sign scenarios and debate primary triggers of road and rail accidents, recording findings on chart paper.\nTeacher facilitation: The teacher acts as a timekeeper and facilitator, posing guiding questions about why railway gate crossings are breached and circulating among the 8 islands to prompt deeper critical thinking.\nExpected output: A collaborative cause-and-effect chart mapping road and railway accident triggers alongside explained sign meanings.\nGrouping: 8 teams (8 groups of 5). Roles assigned: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks are arranged into 8 islands for 40 students ensuring zero bystanders.",
-  "selected_activity_title": "Road & Rail Hazard Mapping & Sign Interpretation",
+  "selected_activity": "Activity: Emergency Response & Signalling Simulation\nApproach: Students simulate immediate reaction protocols for a simulated railway crossing incident or a busy road junction collision common in Sri Lankan commuter routes, integrating proper hand signals and warning signs.\nStudent task: Groups design and enact a 2-minute simulation demonstrating what witnesses must do immediately following a road or railway accident (e.g., alerting authorities, warning oncoming traffic using signals) and explain the underlying causes.\nTeacher facilitation: Acts as timekeeper and safety director, guiding groups on realistic emergency procedures and ensuring all students actively participate through defined role rotation.\nExpected output: A performed safety simulation sequence supported by a chalkboard summary of road rules and accident causes.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks are arranged into 6 islands to ensure zero bystanders.",
+  "selected_activity_title": "Emergency Response & Signalling Simulation",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_1",
-      "title": "Road & Rail Hazard Mapping & Sign Interpretation",
-      "pedagogy_type": "Case Inquiry",
-      "description": "Students investigate root causes of local road and railway accidents through structured evidence inquiry. They analyze specific traffic signs and signals to explain how compliance prevents disasters.",
+      "id": "option_2",
+      "title": "Emergency Response & Signalling Simulation",
+      "pedagogy_type": "Simulation & Roleplay",
+      "description": "Students simulate immediate reaction protocols for a simulated railway crossing incident or a busy road junction collision common in Sri Lankan commuter routes, integrating proper hand signals and warning signs.",
       "learning_outcomes_addressed": [
         "Explains causes for railway accidents.",
         "Explains how to react at a road or railway accident.",
         "Explains reasons for road accidents.",
         "Explains road rules using signs and signals."
       ],
-      "student_action_summary": "Students examine chalkboard-drawn sign scenarios and debate primary triggers of road and rail accidents, recording findings on chart paper.",
-      "teacher_facilitation_summary": "The teacher acts as a timekeeper and facilitator, posing guiding questions about why railway gate crossings are breached and circulating among the 8 islands to prompt deeper critical thinking.",
-      "student_grouping": "8 teams (8 groups of 5). Roles assigned: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks are arranged into 8 islands for 40 students ensuring zero bystanders.",
+      "student_action_summary": "Groups design and enact a 2-minute simulation demonstrating what witnesses must do immediately following a road or railway accident (e.g., alerting authorities, warning oncoming traffic using signals) and explain the underlying causes.",
+      "teacher_facilitation_summary": "Acts as timekeeper and safety director, guiding groups on realistic emergency procedures and ensuring all students actively participate through defined role rotation.",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks are arranged into 6 islands to ensure zero bystanders.",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A collaborative cause-and-effect chart mapping road and railway accident triggers alongside explained sign meanings.",
-      "creative_assessment_preview": "3-2-1 Exit Slip: Each student writes 3 causes of road/rail accidents, 2 correct sign meanings, and 1 immediate reaction step during an accident on a slip of paper.",
-      "low_resource_alternative": "Use student notebooks exclusively for mapping causes and signs if chart paper is unavailable."
+      "expected_student_output": "A performed safety simulation sequence supported by a chalkboard summary of road rules and accident causes.",
+      "creative_assessment_preview": "30-Second Tableau: Groups freeze into a static posture representing correct immediate reaction at an accident scene, while selected inquirers explain the rule being displayed.",
+      "low_resource_alternative": "Conduct tabletop miniature simulations using notebook sketches instead of physical staging if space is restricted."
     }
   ],
   "outcome_allocation": {
@@ -99,5 +91,6 @@
       "Shows the measures to be followed avoid railway accidents.",
       "Shows with example the preventive measures for accidents."
     ]
-  }
+  },
+  "filename": "Grade_8_comp_8_4_4_p1.json"
 }

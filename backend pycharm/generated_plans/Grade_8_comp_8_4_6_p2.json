@@ -2,81 +2,76 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 2 of 2)",
-  "competence": "Broad curriculum competency standard in plain English",
+  "competence": "Contributes to sustainable development by practicing a sustainable life style.",
   "competence_level": "8.4.6",
-  "lesson": "Expresses views accepting that the practice of such a consumption style contributes to sustainable development: Station Jigsaw Synthesis Matrix: Competency Level 8.4.6",
+  "lesson": "Expresses views accepting that the practice of such a consumption style contributes to sustainable development: The Sustainable Future Matrix: Consensus Building Workshop",
   "unique_learning_outcome": [
     "Expresses views accepting that the practice of such a consumption style contributes to sustainable development."
   ],
-  "the_entrance": "5-minute introduction: As we explore the concept of sustainable consumption, let's reflect on our daily habits and how they impact our environment. Can you think of one simple change you could make to reduce your waste?",
+  "the_entrance": "5-minute introduction: The teacher launches the session by displaying a large chalkboard collage contrasting imported single-use plastic household items with traditional Sri Lankan clay and reed alternatives. Holding up a polythene-wrapped snack packet alongside a locally woven basket, the teacher poses the motivational challenge: 'When we choose our daily groceries in Pettah market or our village fair, are we consuming for today's temporary comfort or investing in Sri Lanka's long-term national economy?' Students in their assigned groups of five immediately activate their prior knowledge from Period 1, sparking brief table-side discussions among the Leader, Scribe, and Civic Investigator to identify immediate economic and ecological trade-offs visible in everyday Sri Lankan households.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "Teacher introduces the Sri Lankan real-world scenario, clarifies group objectives, and distributes task cards and role assignments as a facilitator.",
-      "student_activities": "Students arrange into collaborative groups, review inquiry task cards, assign group roles, and formulate investigative questions.",
-      "learning_teaching_method": "Task Orientation & Guided Inquiry Launch",
-      "learning_teaching_aids": "Inquiry task cards, role sheets, scenario prompts",
+      "teacher_activities": "The teacher circulates among the six student groups, acting strictly as a facilitator while teams analyze four distinct household scenarios involving local unpackaged goods versus imported packaged alternatives. The teacher prompts deeper critical thinking by asking, 'How does choosing locally manufactured clay pots over imported non-stick pans reduce our national debt and protect groundwater resources?' and ensures that the Timekeeper and Scribe keep all five group members actively contributing to the chart work.",
+      "student_activities": "Assigned group roles go into immediate action: the Leader guides the debate on short-term convenience versus long-term sustainability, the Scribe records key arguments on chart paper, the Civic Investigator cross-checks claims with textbook principles, and the Spokesperson organizes the matrix categories. Students collaboratively weigh the economic and environmental impacts, charting out concrete justifications for sustainable consumption in Sri Lankan households.",
+      "learning_teaching_method": "Collaborative Matrix Analysis & Scenario Evaluation",
+      "learning_teaching_aids": "Chart paper, colored markers, and household scenario task cards detailing Sri Lankan purchasing dilemmas",
       "assessment_and_feedback": "",
-      "time_minutes": 5,
-      "other": "Group formation and role distribution"
+      "time_minutes": 15,
+      "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "Teacher actively circulates among student groups, facilitates inquiry, scaffolds complex civic concepts with probing questions, and ensures active participation.",
-      "student_activities": "Students collaborate actively in assigned roles to execute the investigation/simulation, analyzing Sri Lankan community situations without passive spectators.",
-      "learning_teaching_method": "Active Student-Centered Investigation / Simulation",
-      "learning_teaching_aids": "Activity worksheets, observation sheets, chart paper, markers",
+      "teacher_activities": "The teacher moderates the room as groups finalize their consensus statements supporting sustainable consumption and prepares teams for rapid peer review. Walking between tables, the teacher asks probing questions such as: 'Does your collective statement clearly prove that practicing sustainable consumption lightens the country's economic burden?' and guides students to refine their arguments into powerful civic declarations.",
+      "student_activities": "The Spokesperson reads out the group's finalized consensus statement accepting sustainable consumption as a driver of national development while team members defend their matrix ratings against peer inquiries. Students actively evaluate neighboring group findings, noting alternative perspectives on how individual household habits shape national self-sufficiency and environmental preservation across Sri Lanka.",
+      "learning_teaching_method": "Consensus Formulation & Gallery Defense",
+      "learning_teaching_aids": "Completed Consensus Impact Matrix charts, chalkboard, and chalk",
       "assessment_and_feedback": "",
       "time_minutes": 15,
-      "other": "Active collaborative investigation"
-    },
-    {
-      "step_number": 3,
-      "teacher_activities": "Teacher moderates student spokesperson presentations, facilitates constructive peer evaluation, and synthesizes key student findings against syllabus outcomes.",
-      "student_activities": "Group spokespersons present findings and solutions; peers evaluate presentations using criteria and note constructive feedback.",
-      "learning_teaching_method": "Spokesperson Presentation, Peer Review & Plenary Synthesis",
-      "learning_teaching_aids": "Student presentation charts, whiteboard",
-      "assessment_and_feedback": "",
-      "time_minutes": 10,
-      "other": "Plenary presentation and synthesis"
+      "other": ""
     }
   ],
-  "summary": "Students will create a shared civic proposal and diagram to express their views on the impact of consumption styles on sustainable development.",
-  "assessment_and_feedback_whole_lesson": "Formative feedback criteria: Does the group's proposal demonstrate an understanding of the concept of sustainable consumption? Is the proposal well-organized and easy to follow?",
-  "post_activity": "5-minute in-class assignment: In-class quiz: Can you recall the main points of the group's proposal and how it relates to sustainable development?",
+  "summary": "In a rapid 2-minute synthesis, student representatives highlight that choosing local, durable, and minimal-waste products directly prevents personal and national economic burdens. The class concludes that embracing sustainable consumption is a vital civic duty that safeguards Sri Lanka's future development.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted through observation of active group collaboration, the logical depth of the completed Consensus Impact Matrix charts, and the clarity of student justifications regarding how sustainable consumption contributes to national development.",
+  "post_activity": "Students engage in a 5-minute Statement Display & Justified Standpoint Vote. The teacher posts three distinct Sri Lankan consumer declarations around the room (e.g., 'Buying local goods is only about saving money, not national development'). Students use their personal notebooks to write a 3-sentence justified standpoint accepting or refuting one statement based on today's matrix workshop, and two volunteer Spokespersons read their stances aloud for instant peer validation.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
-  "attachments": [],
+  "attachments": [
+    "Household scenario task cards",
+    "blank chart paper",
+    "colored markers",
+    "and Consensus Impact Matrix grading rubric."
+  ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 2,
   "total_periods": 2,
-  "selected_activity": "Activity: Station Jigsaw Synthesis Matrix: Competency Level 8.4.6\nApproach: Students use station jigsaw synthesis matrix to explore 'Expresses views accepting that the practice of such a consumption style contributes to sustainable development.'. Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.\nExpected output: A group civic proposal, diagram, or public information message.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "Station Jigsaw Synthesis Matrix: Competency Level 8.4.6",
+  "selected_activity": "Activity: The Sustainable Future Matrix: Consensus Building Workshop\nApproach: Students engage in a consensus-building matrix activity to weigh short-term consumer conveniences against long-term national sustainability benefits in the context of Sri Lankan households.\nStudent task: Groups analyze four common household scenarios in Sri Lanka (e.g., purchasing imported packaged goods vs. local unpackaged items) and fill out a consensus matrix on chart paper, explicitly formulating collective statements that accept sustainable consumption as a driver of national development.\nTeacher facilitation: The teacher facilitates group discussions by asking probing questions regarding economic and environmental trade-offs, ensuring all five assigned roles actively participate within the 30-minute timeframe.\nExpected output: A completed 'Consensus Impact Matrix' chart displaying justified views on sustainable development.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+  "selected_activity_title": "The Sustainable Future Matrix: Consensus Building Workshop",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_1",
-      "title": "Station Jigsaw Synthesis Matrix: Competency Level 8.4.6",
-      "pedagogy_type": "Collaborative Design",
-      "description": "Students use station jigsaw synthesis matrix to explore 'Expresses views accepting that the practice of such a consumption style contributes to sustainable development.'. Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "id": "option_2",
+      "title": "The Sustainable Future Matrix: Consensus Building Workshop",
+      "pedagogy_type": "Problem-Solving / Consensus Matrix",
+      "description": "Students engage in a consensus-building matrix activity to weigh short-term consumer conveniences against long-term national sustainability benefits in the context of Sri Lankan households.",
       "learning_outcomes_addressed": [
         "Expresses views accepting that the practice of such a consumption style contributes to sustainable development."
       ],
-      "student_action_summary": "Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "student_action_summary": "Groups analyze four common household scenarios in Sri Lanka (e.g., purchasing imported packaged goods vs. local unpackaged items) and fill out a consensus matrix on chart paper, explicitly formulating collective statements that accept sustainable consumption as a driver of national development.",
+      "teacher_facilitation_summary": "The teacher facilitates group discussions by asking probing questions regarding economic and environmental trade-offs, ensuring all five assigned roles actively participate within the 30-minute timeframe.",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A group civic proposal, diagram, or public information message.",
-      "creative_assessment_preview": "Groups give one-sentence feedback connecting a peer proposal to the outcome.",
-      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
+      "expected_student_output": "A completed 'Consensus Impact Matrix' chart displaying justified views on sustainable development.",
+      "creative_assessment_preview": "A 5-minute 'Silent Stand-Up Vote' where students physically stand up to endorse or offer verbal reflections on specific sustainable lifestyle pledges written on the chalkboard.",
+      "low_resource_alternative": "Draw the consensus matrix directly on the chalkboard or individual student notebooks."
     }
   ],
   "outcome_allocation": {

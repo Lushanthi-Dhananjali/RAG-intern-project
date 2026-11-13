@@ -425,7 +425,7 @@ class LessonPlanMlService(ILessonPlanMlService):
                 if saved_post and saved_post not in accumulated_assignments:
                     accumulated_assignments.append(saved_post)
 
-        for recent_post in get_recent_post_activities(limit=3):
+        for recent_post in get_recent_post_activities(limit=5):
             if recent_post and recent_post not in accumulated_assignments:
                 accumulated_assignments.append(recent_post)
 

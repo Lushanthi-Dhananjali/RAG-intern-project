@@ -2,9 +2,9 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 1 of 1)",
-  "competence": "Broad curriculum competency standard",
+  "competence": "Demonstrates civic responsibility by understanding disaster prevention, safety awareness, and avoiding accidents caused by bad habits and unsafe substances.",
   "competence_level": "8.4.3",
-  "lesson": "Identifies accidents caused by food and drugs highlights the importance of protection: Community Observation Checklist & Mapping: Competency Level 8.4.3",
+  "lesson": "Identifies accidents caused by food and drugs highlights the importance of protection: Bad Habits & Disaster Prevention Roleplay",
   "unique_learning_outcome": [
     "Identifies accidents caused by food and drugs highlights the importance of protection.",
     "Explains the importance of being alert about the situations where accidents and disasters might happen.",
@@ -13,60 +13,66 @@
     "Expresses the importance of getting rid of bad habits for the prevention of accidents and disasters.",
     "Suggests suitable preventive measures for accidents and disasters."
   ],
-  "the_entrance": "Detailed 5-minute introduction: teacher and student actions linking prior knowledge to this period topic and activity... Students are introduced to the concept of accidents caused by food and drugs, and the importance of protection is highlighted. The teacher explains the scenario and distributes the community observation checklist & mapping materials.",
+  "the_entrance": "5-minute introduction: The teacher launches the 40-minute session by holding up two prop items in front of the classroom: an unlabelled medicine bottle found in a kitchen cupboard and an expired snack packet bought from an unattended roadside boutique. The teacher poses the investigative hook: 'In our Sri Lankan homes and school environments, how can a simple bad habit or an unverified food and drug choice turn into a major domestic emergency?' Students in their 6 groups of 5 brainstorm rapidly for 2 minutes, with the Timekeepers noting initial hazards on scrap paper and Spokespersons sharing rapid observations about careless consumption habits.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "Teacher explains the scenario, distributes the community observation checklist & mapping materials, and assigns student roles (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer).",
-      "student_activities": "Students arrange into cooperative groups, assign designated roles, review inquiry cards, and begin collaborative planning...",
-      "learning_teaching_method": "Task Orientation & Guided Inquiry Launch",
-      "learning_teaching_aids": "Task assignment cards, role description sheets, inquiry scenario prompts",
+      "teacher_activities": "The teacher circulates among the 6 groups as a facilitator, distributing unique scenario prompt cards depicting common Sri Lankan domestic situations involving careless medicine storage, street food contamination, or hazardous storage of household chemicals. The teacher asks probing scaffolding questions: 'What specific bad habit triggered this accident, and how could heightened alertness have prevented it?'",
+      "student_activities": "Students collaborate in their assigned groups of 5, assigning roles (Leader, Scribe, Timekeeper, Spokesperson, Civic Investigator). The Scribe records the underlying causes of the accident on chart paper, while the group collaboratively drafts a 3-minute situational skit outlining the incident and the corrective safety rule.",
+      "learning_teaching_method": "Scenario Investigation & Script Drafting",
+      "learning_teaching_aids": "Student Notebooks, Chart Paper, Marker Pens, Scenario Prompt Cards",
       "assessment_and_feedback": "",
       "time_minutes": 10,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "Teacher circulates as facilitator among groups, observes peer interactions, scaffolds challenging concepts with probing questions, and ensures active participation without lecturing...",
-      "student_activities": "Students actively execute the chosen activity (e.g., conducting mock council session, exploratory school-walk survey, analyzing Sri Lankan community issues, or solving civic challenges in groups) using assigned roles...",
-      "learning_teaching_method": "Active Student-Centered Investigation / Simulation / Drama / School-Walk",
-      "learning_teaching_aids": "Worksheets, roleplay cue cards, chart papers, colored markers",
+      "teacher_activities": "The teacher acts as a moderator and timekeeper, guiding the orderly presentation of each group's dramatic roleplay without interrupting student flow. After each 3-minute performance, the teacher prompts the wider class with critical inquiry questions regarding the preventive measures demonstrated.",
+      "student_activities": "Each group enacts their situational skit in front of the classroom, vividly demonstrating how bad habits or unmonitored food and drug consumption cause accidents, followed immediately by a revised safe-practice ending. The Civic Investigator in each group ensures all textbook safety guidelines regarding drug and food precautions are accurately represented in the dialogue.",
+      "learning_teaching_method": "Dramatic Roleplay Enactment & Safety Resolution",
+      "learning_teaching_aids": "Chalkboard, Student Role Cards, Group Chart Summaries",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 15,
       "other": ""
     },
     {
       "step_number": 3,
-      "teacher_activities": "Teacher moderates student presentations, facilitates constructive peer review, and synthesizes key student discoveries directly against the period's learning outcomes...",
-      "student_activities": "Spokespersons present group solutions or roleplay outcomes; class peers ask questions, provide constructive feedback, and summarize key takeaways in their notebooks...",
-      "learning_teaching_method": "Spokesperson Presentation & Plenary Synthesis",
-      "learning_teaching_aids": "Student output posters, whiteboard, peer assessment checklist",
+      "teacher_activities": "The teacher facilitates a whole-class summary discussion, drawing connections between everyday bad habits, food/drug safety, and sustainable community disaster prevention as outlined in the TIG syllabus. The teacher records key student-generated preventive rules on the chalkboard.",
+      "student_activities": "Students actively participate in synthesizing the core lessons by copying the finalized list of preventive measures into their notebooks and discussing how they can act as responsible citizens in their homes and schools to eliminate accident risks.",
+      "learning_teaching_method": "Reflective Synthesis & Preventive Action Planning",
+      "learning_teaching_aids": "Chalkboard, Student Notebooks",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 5,
       "other": ""
     }
   ],
-  "summary": "Consolidation and synthesis of key concepts...",
-  "assessment_and_feedback_whole_lesson": "Final closure formative assessment criteria...",
-  "post_activity": "5-minute in-class assignment: Five-minute in-class assignment or concluding task... Students are asked to create a short poem or song highlighting the importance of protection from accidents caused by food and drugs.",
+  "summary": "Students successfully recognized that accidents are frequently caused by avoidable human bad habits, unmonitored food consumption, and improper drug handling. Through collaborative roleplay and guided inquiry, they established that heightened alertness, responsible personal habits, and proactive safety measures are essential duties of a Sri Lankan citizen to minimize domestic and community disasters.",
+  "assessment_and_feedback_whole_lesson": "Formatively evaluated through group participation during roleplay execution, accuracy of safety measures identified in chart presentations, active peer critique during scenario enactments, and the completeness of preventive action notes recorded in student notebooks.",
+  "post_activity": "As a 5-minute in-class active evaluation, the class participates in a 'Breaking News Bulletin' format. The teacher calls upon random groups to act as television news reporters delivering a 60-second emergency bulletin summarizing one key accident hazard caused by food/drugs or bad habits, immediately followed by an eyewitness report detailing the correct preventive measure to safeguard the community.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
-  "attachments": [],
+  "attachments": [
+    "Scenario Prompt Cards (Domestic drug safety",
+    "street food hygiene",
+    "chemical storage hazards)",
+    "Chart Paper",
+    "Marker Pens."
+  ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 1,
   "total_periods": 1,
-  "selected_activity": "Activity: Community Observation Checklist & Mapping: Competency Level 8.4.3\nApproach: Students use community observation checklist & mapping to explore 'Identifies accidents caused by food and drugs highlights the importance of protection.'. Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.\nExpected output: An evidence record with one supported conclusion.\nGrouping: 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "Community Observation Checklist & Mapping: Competency Level 8.4.3",
+  "selected_activity": "Activity: Bad Habits & Disaster Prevention Roleplay\nApproach: Students enact short, realistic scenarios depicting how everyday bad habits and unmonitored food or drug consumption cause domestic or school accidents in Sri Lanka. They then roleplay corrective interventions and safety rules.\nStudent task: Students rehearse and perform a 3-minute situational skit demonstrating a common accident caused by bad habits or unsafe food/drug handling, followed by a revised safe-practice ending.\nTeacher facilitation: The teacher guides the groups on time management, ensuring every student has a role in the enactment, and facilitates a brief reflection on the importance of alertness and prevention.\nExpected output: A short dramatic roleplay enactment and a written summary of preventive measures in student notebooks.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Total 30 students participating actively.",
+  "selected_activity_title": "Bad Habits & Disaster Prevention Roleplay",
   "custom_teacher_activity": null,
   "activity_options": [
     {
       "id": "option_2",
-      "title": "Community Observation Checklist & Mapping: Competency Level 8.4.3",
-      "pedagogy_type": "Observation / Evidence Inquiry",
-      "description": "Students use community observation checklist & mapping to explore 'Identifies accidents caused by food and drugs highlights the importance of protection.'. Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "title": "Bad Habits & Disaster Prevention Roleplay",
+      "pedagogy_type": "Roleplay",
+      "description": "Students enact short, realistic scenarios depicting how everyday bad habits and unmonitored food or drug consumption cause domestic or school accidents in Sri Lanka. They then roleplay corrective interventions and safety rules.",
       "learning_outcomes_addressed": [
         "Identifies accidents caused by food and drugs highlights the importance of protection.",
         "Explains the importance of being alert about the situations where accidents and disasters might happen.",
@@ -75,18 +81,17 @@
         "Expresses the importance of getting rid of bad habits for the prevention of accidents and disasters.",
         "Suggests suitable preventive measures for accidents and disasters."
       ],
-      "student_action_summary": "Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "student_action_summary": "Students rehearse and perform a 3-minute situational skit demonstrating a common accident caused by bad habits or unsafe food/drug handling, followed by a revised safe-practice ending.",
+      "teacher_facilitation_summary": "The teacher guides the groups on time management, ensuring every student has a role in the enactment, and facilitates a brief reflection on the importance of alertness and prevention.",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Total 30 students participating actively.",
       "required_materials": [
         "Chalkboard",
-        "Student Notebooks",
-        "Chart Paper"
+        "Student Notebooks"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "An evidence record with one supported conclusion.",
-      "creative_assessment_preview": "A paired evidence check: name one observation and the outcome it supports.",
-      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
+      "expected_student_output": "A short dramatic roleplay enactment and a written summary of preventive measures in student notebooks.",
+      "creative_assessment_preview": "Exit Slip: Students write down one specific preventive measure against a situational accident on a slip of paper before leaving the room.",
+      "low_resource_alternative": "Static Tableau: Instead of full movement roleplay, groups freeze in a posture showing an accident cause, then shift into a posture showing the safe preventive action."
     }
   ],
   "outcome_allocation": {
@@ -98,5 +103,6 @@
       "Expresses the importance of getting rid of bad habits for the prevention of accidents and disasters.",
       "Suggests suitable preventive measures for accidents and disasters."
     ]
-  }
+  },
+  "filename": "Grade_8_comp_8_4_3_p1.json"
 }

@@ -2,91 +2,85 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 1 of 3)",
-  "competence": "8.5.2",
+  "competence": "Faces challenges and problems successfully in personal and social life through critical thinking and creative alternatives.",
   "competence_level": "8.5.2",
-  "lesson": "Explains that facing problems is common, relevant to life: Citizen-Officer Deliberation Roleplay: Competency Level 8.5.2",
+  "lesson": "Explains that facing problems is common, relevant to life: Life-Cycle Problem Jigsaw Audit",
   "unique_learning_outcome": [
     "Explains that facing problems is common, relevant to life."
   ],
-  "the_entrance": "5-minute introduction: Activity: Citizen-Officer Deliberation Roleplay: Competency Level 8.5.2",
+  "the_entrance": "The teacher steps into the classroom holding three distinct props: a school bag, an office ledger notebook, and a walking cane. The teacher launches the 5-minute hook by asking the class: 'Do you think a Grade 8 student, a working tea factory manager in Nuwara Eliya, and an elderly villager all face the exact same worries in a day?' Students buzz with contrasting views in their 6 groups of 5. The teacher guides them to realize that across every age in Sri Lankan society, challenges are an unavoidable thread of human life. The teacher introduces the Life-Cycle Problem Jigsaw Audit challenge to map these universal hurdles across student life, working youth, and elders.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "Scenario Introduction",
-      "student_activities": "Students read the scenario and discuss among themselves",
-      "learning_teaching_method": "Scenario Analysis & Role Allocation",
-      "learning_teaching_aids": "Role cards, scenario cards, and scenario description",
+      "teacher_activities": "The teacher circulates among the 6 group islands, assigning two teams to investigate school-going student hurdles (e.g., transport to rural schools, exam pressures), two teams to examine working youth challenges (e.g., finding employment, balancing household finances), and two teams to look at elder life hurdles (e.g., health care access, loneliness). The teacher acts as a facilitator, prompting the Civic Investigators and Scribes with questions such as: 'What makes this specific hurdle relevant only to this life stage, or is it common?'",
+      "student_activities": "Students organize themselves within their teams of 5, assigning roles (Leader, Scribe, Timekeeper, Spokesperson, Civic Investigator). They examine their assigned life stage in Sri Lankan society, listing everyday problems faced at school, in local fields or offices, and at home in their notebooks.",
+      "learning_teaching_method": "Jigsaw Expert Group Initialization & Contextual Mapping",
+      "learning_teaching_aids": "Task cards detailing Sri Lankan life stages (Student Life, Working Youth, Elders), Student Notebooks, and Colored Markers.",
       "assessment_and_feedback": "",
-      "time_minutes": 5,
+      "time_minutes": 10,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "Role Allocation",
-      "student_activities": "Students take civic roles and respond to the scenario",
-      "learning_teaching_method": "Mock Assembly Debate Round 1",
-      "learning_teaching_aids": "Role cards, scenario cards, and scenario description",
+      "teacher_activities": "The teacher moves between groups to moderate the jigsaw exchange, ensuring that students compare how problems shift across age brackets while remaining a universal part of existence. The teacher asks probing questions: 'How does the rabbit and tortoise analogy from our textbook apply when comparing a school child's problem with an adult's problem?'",
+      "student_activities": "Students synthesize their findings onto chart paper, creating a three-column matrix comparing student life, working youth, and elder hurdles in Sri Lanka. The Spokespersons and Scribes collaborate to link these hurdles to the core concept that facing problems is a natural, common, and relevant feature of human life-cycles.",
+      "learning_teaching_method": "Cross-Stage Synthesis & Comparative Analysis",
+      "learning_teaching_aids": "Chart paper, marker pens, and textbook reference extracts on relativity of problems (e.g., rabbit and tortoise analogy).",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 15,
       "other": ""
     },
     {
       "step_number": 3,
-      "teacher_activities": "Debate and Discussion",
-      "student_activities": "Students take turns presenting their views and responding to each other",
-      "learning_teaching_method": "Interactive Station Jigsaw Audit",
-      "learning_teaching_aids": "Role cards, scenario cards, and scenario description",
-      "assessment_and_feedback": "",
-      "time_minutes": 10,
-      "other": ""
-    },
-    {
-      "step_number": 4,
-      "teacher_activities": "Decision Making",
-      "student_activities": "Students agree on a reasoned decision and present their findings",
-      "learning_teaching_method": "Community Problem Tree Mapping",
-      "learning_teaching_aids": "Role cards, scenario cards, and scenario description",
+      "teacher_activities": "The teacher facilitates a rapid 5-minute gallery walk where teams rotate to inspect neighboring charts, inviting the Civic Investigators to defend their findings against textbook facts.",
+      "student_activities": "Students walk past the chart displays, examine how other groups audited different life stages, and use their notebooks to jot down one new insight about the universality of problems across Sri Lankan society.",
+      "learning_teaching_method": "Plenary Island Gallery Walk & Defense",
+      "learning_teaching_aids": "Chart paper summaries displayed on classroom walls and chalkboard.",
       "assessment_and_feedback": "",
       "time_minutes": 5,
       "other": ""
     }
   ],
-  "summary": "This lesson plan is designed to help students develop their problem-solving skills by engaging in a citizen-officer deliberation roleplay. The students will take on civic roles and respond to a shared scenario, and then agree on a reasoned decision. The lesson will be facilitated by the teacher, who will circulate across the 8 teams, facilitating role execution and formatively checking progress. The expected output is a short role-based civic decision and its reasons.",
-  "assessment_and_feedback_whole_lesson": "The teacher will assess the students' understanding of the scenario and their ability to work together to reach a decision. The teacher will also provide feedback to the students on their participation and engagement in the roleplay.",
-  "post_activity": "5-minute in-class assignment: The students will reflect on their experience and what they learned from the roleplay. They will also discuss the importance of facing problems and finding creative solutions in real-life situations.",
+  "summary": "In this 30-minute development phase, students successfully used a jigsaw audit to examine student life, working youth, and elder stages in Sri Lanka. They discovered that while specific problems are relative to age and situation, facing problems is an entirely common, unavoidable, and relevant aspect of human existence and personal growth.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted through observation of active role rotation within groups of 5, the accuracy of the life-cycle matrix on chart paper, and the depth of student participation in explaining that problems are common and relevant to life.",
+  "post_activity": "5-minute in-class assignment: Creative Rhyming Verses: In their 6 groups of 5, students have exactly 4 minutes to compose a 4-line rhyming verse (in Sinhala, Tamil, or English) that encapsulates how problems appear at every stage of life from childhood to old age. In the final minute, group Spokespersons recite their verses aloud to the class, demonstrating that facing problems is a universal human experience.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
-  "attachments": [],
+  "attachments": [
+    "Life-cycle stage task cards",
+    "chart papers",
+    "colored markers."
+  ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 1,
   "total_periods": 3,
-  "selected_activity": "Activity: Citizen-Officer Deliberation Roleplay: Competency Level 8.5.2\nApproach: Students use citizen-officer deliberation roleplay to explore 'Explains that facing problems is common, relevant to life.'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.\nExpected output: A short role-based civic decision and its reasons.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "Citizen-Officer Deliberation Roleplay: Competency Level 8.5.2",
+  "selected_activity": "Activity: Life-Cycle Problem Jigsaw Audit\nApproach: Students use a jigsaw approach to analyze different life stages in Sri Lanka (student life, working youth, elders) to discover that facing problems is a universal, unavoidable aspect of human existence and personal growth.\nStudent task: Teams examine different life phases typical in Sri Lankan society, identifying typical everyday hurdles faced at school, in farms or offices, and at home. They synthesize their findings to prove that problems are relevant and common to all stages of life.\nTeacher facilitation: Monitors the 6 group islands, ensures role rotation is active among all 30 students without bystanders, and keeps time strictly managed for the 30-minute period.\nExpected output: A synchronized chart paper summary linking life stages to common life problems.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
+  "selected_activity_title": "Life-Cycle Problem Jigsaw Audit",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_1",
-      "title": "Citizen-Officer Deliberation Roleplay: Competency Level 8.5.2",
-      "pedagogy_type": "Simulation / Roleplay",
-      "description": "Students use citizen-officer deliberation roleplay to explore 'Explains that facing problems is common, relevant to life.'. Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "id": "option_2",
+      "title": "Life-Cycle Problem Jigsaw Audit",
+      "pedagogy_type": "Station Jigsaw / Evidence Analysis",
+      "description": "Students use a jigsaw approach to analyze different life stages in Sri Lanka (student life, working youth, elders) to discover that facing problems is a universal, unavoidable aspect of human existence and personal growth.",
       "learning_outcomes_addressed": [
         "Explains that facing problems is common, relevant to life."
       ],
-      "student_action_summary": "Students take civic roles, respond to a shared scenario, and agree on a reasoned decision. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "student_action_summary": "Teams examine different life phases typical in Sri Lankan society, identifying typical everyday hurdles faced at school, in farms or offices, and at home. They synthesize their findings to prove that problems are relevant and common to all stages of life.",
+      "teacher_facilitation_summary": "Monitors the 6 group islands, ensures role rotation is active among all 30 students without bystanders, and keeps time strictly managed for the 30-minute period.",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A short role-based civic decision and its reasons.",
-      "creative_assessment_preview": "Students state one role responsibility and explain how it supported the decision.",
-      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
+      "expected_student_output": "A synchronized chart paper summary linking life stages to common life problems.",
+      "creative_assessment_preview": "A 5-minute 'Exit Ticket Statement' where every student writes down one universal truth about facing problems and hands it in.",
+      "low_resource_alternative": "Writing summaries directly into student notebooks instead of chart paper."
     }
   ],
   "outcome_allocation": {

@@ -87,6 +87,8 @@ def build_single_period_assembly_prompt(
     is_civic_education = subject.strip().casefold() == "civic education"
     assignment_directive = build_creative_assignment_directive(
         lesson_topic=lesson_topic,
+        period_outcomes=period_outcomes,
+        chosen_activity=chosen_strategy_description,
         previous_assignments=previous_assignments,
     )
 

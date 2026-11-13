@@ -45,40 +45,108 @@ CRITICAL PEDAGOGICAL & GROUNDING DIRECTIVES:
 LEARN_5E_SYSTEM_PROMPT = LEARN_PRACTICE_TEACHING_PROMPT
 
 
+def extract_clean_assignment_title(text: str) -> str:
+    """Extracts a concise, readable assignment title from previous raw plan text."""
+    if not text:
+        return ""
+    m = re.search(r"['\"]([^'\"]{3,60})['\"]", text)
+    if m:
+        return m.group(1).strip()
+    if ":" in text[:60]:
+        return text[:text.find(":")].strip()
+    return text[:50].strip()
+
+
 def build_creative_assignment_directive(
     lesson_topic: str,
+    period_outcomes: Optional[List[str]] = None,
+    chosen_activity: Optional[str] = None,
     previous_assignments: Optional[List[str]] = None,
 ) -> str:
     """
-    Builds open-ended creative assignment instructions using existing formats strictly
-    as inspiration while pushing the LLM to invent brand-new formats and creative verses.
+    Builds open-ended creative assignment instructions grounded in the period's
+    learning outcomes and chosen activity, using the 6 classic examples as RAG
+    inspiration while balancing them with brand-new creative assignments and creative verses.
     """
-    prev_block = ""
     cleaned_prev = [p.strip() for p in (previous_assignments or []) if p and p.strip()]
-    if cleaned_prev:
-        items = "\n".join(f"     * {p[:180]}" for p in cleaned_prev[:4])
+
+    # Extract concise summaries of recent assignments to avoid few-shot prompt contamination
+    recent_titles = []
+    for p in cleaned_prev[:5]:
+        t = extract_clean_assignment_title(p)
+        if t and t not in recent_titles:
+            recent_titles.append(t)
+
+    # Detect recently overused mechanics from previous assignment texts
+    all_prev_text = " ".join(cleaned_prev[:5]).lower()
+    used_spoken_relay = any(k in all_prev_text for k in ["relay", "standoff", "shout", "loudly", "word-web"])
+    used_slip_exchange = any(k in all_prev_text for k in ["slip", "badge", "cutout", "tag", "coin box", "key ring"])
+    used_poem = any(k in all_prev_text for k in ["poem", "verse", "rhyme", "couplet", "chant"])
+    used_drawing = any(k in all_prev_text for k in ["drawing", "sketch", "emblem", "diagram", "draw"])
+    used_quiz = any(k in all_prev_text for k in ["quiz", "buzzer", "trivia"])
+    used_parcel = any(k in all_prev_text for k in ["parcel", "pass-the-parcel", "prompt ball"])
+    used_vote = any(k in all_prev_text for k in ["standpoint vote", "display statement", "show-of-hands", "agree/disagree"])
+
+    # Identify which classic modes are fresh (unused recently)
+    fresh_modes = []
+    if not used_poem:
+        fresh_modes.append("Creative Rhyming Poem / Verses (pairs or groups compose & recite 2-4 lines summarizing the core value, duty, or concept)")
+    if not used_drawing:
+        fresh_modes.append("Concept Drawing / Quick Sketch Challenge (rapidly sketch a symbol, emblem, hazard map, or visual flowchart)")
+    if not used_quiz:
+        fresh_modes.append("Rapid Team Quiz / Buzzer Showdown (2 fast conceptual dilemma questions on the board/buzzer)")
+    if not used_parcel:
+        fresh_modes.append("Pass-the-Parcel Concept Challenge (passing a prompt item; holder tackles a real-world dilemma card)")
+    if not used_vote:
+        fresh_modes.append("Statement Display & Justified Standpoint Vote (display a Sri Lankan societal statement; students vote & justify)")
+    fresh_modes.append("Brand-New Creative Extension (uniquely invented to conclude the chosen activity)")
+
+    fresh_modes_text = "\n".join(f"       * {m}" for m in fresh_modes)
+
+    prev_block = ""
+    if recent_titles:
+        titles_str = ", ".join(f"'{t}'" for t in recent_titles)
+        prohibitions = []
+        if used_spoken_relay:
+            prohibitions.append("Do NOT produce another spoken team relay, shouting rotation, or verbal standoff.")
+        if used_slip_exchange:
+            prohibitions.append("Do NOT repeat paper-slip, badge, or cutout exchange mechanics.")
+        prohibitions.append("Do NOT start with repetitive boilerplate like 'Students engage in a 5-minute interactive in-class activity called...' and do NOT write 'Without using paper slips' or 'Instead of paper slips'.")
+        prohibitions_str = " ".join(prohibitions)
+
         prev_block = (
-            "\n   - STRICT ANTI-REPETITION MANDATE — DO NOT REPEAT ANY OF THESE RECENT ASSIGNMENTS OR THEIR UNDERLYING MECHANIC:\n"
-            f"{items}\n"
-            "     You MUST choose a genuinely DIFFERENT interaction mode and activity mechanic from the ones above—"
-            "never just change object or theme names while keeping the same mechanic!"
+            f"\n   - STRICT ANTI-REPETITION MANDATE (PREVIOUS ASSIGNMENTS TO AVOID):\n"
+            f"     * Recent lesson plans already used: {titles_str}.\n"
+            f"     * {prohibitions_str}\n"
+            f"     * You MUST choose a genuinely DIFFERENT interaction style from the fresh modes below!"
         )
+
+    outcomes_summary = "; ".join(o.strip() for o in (period_outcomes or []) if o and o.strip())
+    outcomes_line = (
+        f"   - DIRECT LINK TO LEARNING OUTCOMES: Explicitly evaluate students on these specific outcome(s): {outcomes_summary}\n"
+        if outcomes_summary
+        else ""
+    )
+    activity_summary = (chosen_activity or "").strip().splitlines()[0][:200] if chosen_activity else ""
+    activity_line = (
+        f"   - DIRECT EXTENSION OF CHOSEN ACTIVITY: Seamlessly conclude or evaluate the lesson's main activity ('{activity_summary}').\n"
+        if activity_summary
+        else ""
+    )
 
     return (
         f"   - Must be an original, highly engaging 5-minute active in-class evaluation check directly addressing '{lesson_topic}', "
-        "the period's learning outcomes, and grounded in the authentic Sri Lankan context (NOT take-home homework).\n"
-        "   - BALANCED VARIETY & CREATIVE INNOVATION MANDATE:\n"
-        "     * NEVER fix or assign any specific assignment type to a period number.\n"
-        "     * You may freely choose and creatively adapt any of the classic 5-minute assignment examples "
-        "(quiz, pass-the-parcel, drawing, poem, display statement, small competition) when it fits the lesson well, "
-        "OR invent a BRAND-NEW, original 5-minute interactive assignment or creative verse/version uniquely tailored to "
-        "this lesson's topic, learning outcomes, and chosen activity.\n"
-        "     * Balance BOTH: do not rely solely on the 6 examples, and do not avoid them either—mix classic examples "
-        "(freshly tailored to the topic) with brand-new creative formats across lessons.\n"
-        "     * Prioritize true variety in student interaction mode (oral/verse, visual sketch, fast quiz/game, tactile/movement, "
-        "statement debate, or a newly invented format)—do not repeat the same underlying mechanic across lessons."
+        "grounded in the authentic Sri Lankan context (NOT take-home homework).\n"
+        f"{outcomes_line}"
+        f"{activity_line}"
+        "   - BALANCED VARIETY & CREATIVE VERSES MANDATE (NEVER PERIOD-LOCKED):\n"
+        "     * Balance classic formats (quiz, pass-the-parcel, drawing, poem, display statement, small competition) "
+        "with brand-new creative formats and creative verses—do NOT repeat the same interaction format across lessons.\n"
+        f"     * RECOMMENDED FRESH MODES FOR THIS LESSON (Choose one that best fits this lesson's activity and outcomes):\n"
+        f"{fresh_modes_text}\n"
+        "     * Write a concrete 5-minute activity detailing exact teacher action, student interaction, and immediate feedback."
         f"{prev_block}\n"
-        "   - Describe the concrete prompt, active student interaction, and immediate teacher feedback achievable within 5 minutes."
+        "   - Achievable within strictly 5 minutes in-class."
     )
 
 

@@ -40,6 +40,8 @@ def build_mode_b_scaffolding_prompt(
 
     assignment_directive = build_creative_assignment_directive(
         lesson_topic=lesson_topic,
+        period_outcomes=period_outcomes,
+        chosen_activity=teacher_custom_activity,
         previous_assignments=previous_assignments,
     )
 

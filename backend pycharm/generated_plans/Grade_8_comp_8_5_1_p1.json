@@ -1,0 +1,98 @@
+{
+  "grade": "Grade 8",
+  "subject": "Civic Education",
+  "time_allocation": "40 Minutes (Period 1 of 3)",
+  "competence": "Investigates problems and challenges faced in day-to-day life and develops problem-solving capabilities",
+  "competence_level": "8.5.1",
+  "lesson": "Defines problems and challenges simply: School Community Challenge Mapping",
+  "unique_learning_outcome": [
+    "Defines problems and challenges simply."
+  ],
+  "the_entrance": "5-minute introduction: The teacher walks into the classroom holding two contrasting visual scenario cards depicting a pristine school canteen and a congested, littered canteen queue during the interval bell. Launching the motivational hook, the teacher asks the class: 'Observe these two sketches of our school grounds; what is the exact gap between how our school canteen operates today and how we expect it to function smoothly?' Students in their 6 designated groups of 5 immediately turn to their table partners, pointing out issues like overcrowding, delayed meal times, and scattered lunch wrappers, quickly recognizing that this gap represents a daily school challenge.",
+  "lesson_development_steps": [
+    {
+      "step_number": 1,
+      "teacher_activities": "The teacher circulates among the 6 groups, distributing prompt slips detailing common school friction points such as waste management behind the assembly hall and library textbook shortages. The teacher acts strictly as a facilitator, asking probing questions like 'Who is directly impacted by this condition, and what is the expected condition we desire?'",
+      "student_activities": "Team Leaders guide their groups of 5 to inspect their assigned school difficulty, while Scribes record initial observations. Civic Investigators check facts against daily school experiences, and Timekeepers monitor the 10-minute audit window to ensure every group member contributes.",
+      "learning_teaching_method": "Collaborative School Environment Audit",
+      "learning_teaching_aids": "Student Notebooks, Chalkboard, Pre-printed School Challenge Prompt Slips",
+      "assessment_and_feedback": "",
+      "time_minutes": 10,
+      "other": ""
+    },
+    {
+      "step_number": 2,
+      "teacher_activities": "The teacher moves between tables to observe group discussions, scaffolding students to apply the formal definition where a problem is the difference between an existing condition and an expected condition. The teacher prompts groups to discard vague complaints and write objective, simplified challenge statements.",
+      "student_activities": "Working together on chart paper, the Scribes and Facilitators synthesize their audit findings into a structured problem definition formula: Existing Condition minus Expected Condition equals Defined Challenge. Spokespersons draft the final challenge sentences onto the chart paper.",
+      "learning_teaching_method": "Structured Challenge Framing and Gap Analysis",
+      "learning_teaching_aids": "Chart Paper, Colored Markers, Textbook Chapter 5 Reference Excerpts",
+      "assessment_and_feedback": "",
+      "time_minutes": 15,
+      "other": ""
+    },
+    {
+      "step_number": 3,
+      "teacher_activities": "The teacher guides a rapid 5-minute gallery rotation where teams view neighboring charts, moderating constructive peer feedback and validating whether the challenges are defined simply and objectively.",
+      "student_activities": "Spokespersons and Timekeepers rotate to adjacent tables to review peer challenge maps, using sticky notes or verbal comments to verify if the problem definitions clearly identify who is affected and why it matters.",
+      "learning_teaching_method": "Inter-Group Gallery Walk and Peer Verification",
+      "learning_teaching_aids": "Completed Chart Papers, Classroom Wall Space",
+      "assessment_and_feedback": "",
+      "time_minutes": 5,
+      "other": ""
+    }
+  ],
+  "summary": "In this 2-minute synthesis, students collectively concluded that a civic challenge is never just a random annoyance, but a measurable gap between an existing undesirable condition and an expected standard. Through collaborative mapping, the class recognized that defining problems simply using objective criteria is the essential first step toward finding meaningful solutions in school and community life.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted continuously through teacher observation of group facilitation, adherence to objective problem-framing language, and the accuracy of the completed chart papers in defining school challenges simply.",
+  "post_activity": "The class engages in a 5-minute rapid-fire 'Pass-the-Challenge-Token' activity. The teacher hands a wooden token to Team 1, whose Spokesperson must instantly define a newly drawn school challenge card in one simple sentence using the 'existing vs expected' formula, before passing the token to the next team within 45 seconds.",
+  "information_sources": [
+    "grade_8_civic_teacher_guide.pdf",
+    "grade_8_civic_textbook.pdf"
+  ],
+  "attachments": [
+    "School Challenge Prompt Slips",
+    "Chart Paper and Marker Sets",
+    "Textbook Reference Excerpts"
+  ],
+  "entrance_duration_minutes": 5,
+  "assignment_duration_minutes": 5,
+  "period_number": 1,
+  "total_periods": 3,
+  "selected_activity": "Activity: School Community Challenge Mapping\nApproach: Students inspect common challenges within their school environment, such as waste management or canteen queue congestion, and frame them as structured civic challenges.\nStudent task: Students recall and analyze a specific school-level difficulty, debate its impact on students and teachers, and write down a concise definition of the challenge.\nTeacher facilitation: The teacher prompts students to use objective descriptive language, maintains time boundaries for the 30-minute activity, and invites brief inter-group sharing.\nExpected output: A completed chart paper outlining the school challenge definition, who is affected, and why it matters.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Classroom desks are set up in 6 islands so all 30 students fulfill their specific rotating roles.",
+  "selected_activity_title": "School Community Challenge Mapping",
+  "custom_teacher_activity": null,
+  "activity_options": [
+    {
+      "id": "option_3",
+      "title": "School Community Challenge Mapping",
+      "pedagogy_type": "Observation & Evidence Analysis",
+      "description": "Students inspect common challenges within their school environment, such as waste management or canteen queue congestion, and frame them as structured civic challenges.",
+      "learning_outcomes_addressed": [
+        "Defines problems and challenges simply."
+      ],
+      "student_action_summary": "Students recall and analyze a specific school-level difficulty, debate its impact on students and teachers, and write down a concise definition of the challenge.",
+      "teacher_facilitation_summary": "The teacher prompts students to use objective descriptive language, maintains time boundaries for the 30-minute activity, and invites brief inter-group sharing.",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Classroom desks are set up in 6 islands so all 30 students fulfill their specific rotating roles.",
+      "required_materials": [
+        "Chalkboard",
+        "Student Notebooks",
+        "Chart Paper"
+      ],
+      "approximate_duration_minutes": 30,
+      "expected_student_output": "A completed chart paper outlining the school challenge definition, who is affected, and why it matters.",
+      "creative_assessment_preview": "Pass-the-Chalkboard: One member from each group runs to the chalkboard to write one word that captures the essence of their defined problem.",
+      "low_resource_alternative": "Groups write their final challenge definition directly on the chalkboard section allocated to them."
+    }
+  ],
+  "outcome_allocation": {
+    "1": [
+      "Defines problems and challenges simply."
+    ],
+    "2": [
+      "Explains the importance of being watchfull regarding the problems and challenges faced in day-to-day life."
+    ],
+    "3": [
+      "Expresses the ability to face problems in day-to-day life should be developed."
+    ]
+  },
+  "filename": "Grade_8_comp_8_5_1_p1.json"
+}

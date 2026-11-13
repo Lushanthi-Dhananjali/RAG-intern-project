@@ -2,75 +2,79 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 2 of 2)",
-  "competence": "Broad curriculum competency standard",
+  "competence": "Contributes to minimizing road accidents by following road rules.",
   "competence_level": "8.4.4",
-  "lesson": "Presents information about road accidents and disasters caused at present: Consensus Problem-Solving Carousel: Competency Level 8.4.4",
+  "lesson": "Presents information about road accidents and disasters caused at present: Sri Lankan Accident Data Audit & Prevention Charting",
   "unique_learning_outcome": [
     "Presents information about road accidents and disasters caused at present.",
     "Shows the measures to be followed avoid railway accidents.",
     "Shows with example the preventive measures for accidents."
   ],
-  "the_entrance": "5-minute introduction: The teacher begins by asking students to reflect on their prior knowledge about road accidents and disasters. Students share their thoughts and experiences, and the teacher connects this to the topic of the lesson. The teacher then distributes the task cards and explains the activity, and students inspect the tasks. The teacher leads directly into the selected activity.",
+  "the_entrance": "5-minute introduction: The teacher circulates the six desk islands and displays a flashcard depicting a busy railway crossing near Maradana alongside a statistical chart of Sri Lankan road fatalities from the textbook. The teacher launches the session with the inquiry prompt: 'Examine how sudden commuter rushes and negligence at unprotected railway gates or expressway bus lanes trigger severe national disasters. What immediate data audit patterns do you notice?' Group leaders immediately delegate roles while scribes pull out notebooks to prepare for the transit safety audit task.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "Teacher facilitates and explains task, circulates across 7 teams, facilitating role execution and formatively checking progress.",
-      "student_activities": "Students negotiate a solution, create a shared civic artifact, and review another group's proposal.",
-      "learning_teaching_method": "Guided Inquiry",
-      "learning_teaching_aids": "Task cards and worksheets",
+      "teacher_activities": "The teacher facilitates group inquiries by moving among the six desk islands, offering probing questions about collision trends on Southern Expressway and commuter train routes. The teacher scaffolds the analysis by asking facilitators how passenger safety data connects to societal welfare burdens for the disabled.",
+      "student_activities": "Students collaborate in their assigned teams of five, reviewing authentic Sri Lankan transit case studies and data tables. The scribe records statistical trends of fatal and minor accidents while the civic investigator checks data consistency against textbook records.",
+      "learning_teaching_method": "Case Evidence Investigation and Data Auditing",
+      "learning_teaching_aids": "Police accident statistics sheets, textbook statistical data tables (2010-2015), colored markers, and blank chart paper.",
       "assessment_and_feedback": "",
       "time_minutes": 15,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "Teacher coordinates peer presentations, facilitates role execution and formatively checks progress.",
-      "student_activities": "Students present group findings, and peers provide feedback.",
-      "learning_teaching_method": "Presentation & Synthesis",
-      "learning_teaching_aids": "Charts and whiteboard",
+      "teacher_activities": "The teacher acts as a process moderator, observing team interactions and prompting timekeepers to ensure equitable participation across all roles. The teacher challenges spokespersons to articulate clear, actionable preventive rules for both road and railway safety.",
+      "student_activities": "Group members synthesize their audit findings onto chart paper, mapping out concrete preventative measures for railway crossings and road discipline. The spokesperson prepares a 60-second summary of their safety audit chart, while teammates verify that all NIE learning outcomes are addressed.",
+      "learning_teaching_method": "Preventative Strategy Mapping and Peer Synthesis",
+      "learning_teaching_aids": "Completed draft notes, chart paper, colored pens, and whiteboard for presentation structuring.",
       "assessment_and_feedback": "",
       "time_minutes": 15,
       "other": ""
     }
   ],
-  "summary": "Consolidation and synthesis of key concepts...",
-  "assessment_and_feedback_whole_lesson": "Final closure formative assessment criteria...",
-  "post_activity": "5-minute in-class assignment: Five-minute in-class assignment or concluding task: Students write a short paragraph summarizing the main points discussed during the lesson and what they learned about road accidents and disasters.",
+  "summary": "In a 2-minute synthesis, student representatives highlight core discoveries regarding current Sri Lankan accident data trends, emphasizing the critical need for strict obedience at railway level crossings and adherence to road safety signals to prevent loss of valuable human capital.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation is conducted through observation of active group collaboration, accuracy of statistical auditing, clarity of preventative measures depicted on charts, and peer critique during the transit safety audit presentations.",
+  "post_activity": "As a 5-minute in-class active evaluation called the Transit Safety Verdict Panel, each group's spokesperson takes a 60-second turn presenting one key preventative measure for railway or road accidents directly derived from their chart. The teacher and peers immediately provide constructive verbal feedback on feasibility within the Sri Lankan transport network.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
-  "attachments": [],
+  "attachments": [
+    "Sri Lankan Transit Case Studies",
+    "Statistical Data Audit Sheets",
+    "and Charting Templates."
+  ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 2,
   "total_periods": 2,
-  "selected_activity": "Activity: Consensus Problem-Solving Carousel: Competency Level 8.4.4\nApproach: Students use consensus problem-solving carousel to explore 'Presents information about road accidents and disasters caused at present.'. Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.\nExpected output: A group civic proposal, diagram, or public information message.\nGrouping: 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "Consensus Problem-Solving Carousel: Competency Level 8.4.4",
+  "selected_activity": "Activity: Sri Lankan Accident Data Audit & Prevention Charting\nApproach: Students investigate realistic contemporary road and railway accident scenarios in Sri Lanka, auditing causes and constructing preventative safety guidelines on chart paper.\nStudent task: Each of the 6 groups analyzes a specific Sri Lankan transit case study (e.g., crowded bus routes on the Southern Expressway, railway crossings in Maradana or Polgahawela), identifies current disaster impacts, and maps out concrete preventive measures using chart paper and markers.\nTeacher facilitation: Acts as facilitator and timekeeper, moving between the 6 desk islands to prompt deeper inquiry into railway gate safety and road discipline, ensuring all student roles are actively executed.\nExpected output: A completed 'Transit Safety Audit & Prevention' chart displaying statistical disaster trends and preventative rules for roads and railways.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks arranged into 6 islands to ensure zero bystanders.",
+  "selected_activity_title": "Sri Lankan Accident Data Audit & Prevention Charting",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_2",
-      "title": "Consensus Problem-Solving Carousel: Competency Level 8.4.4",
-      "pedagogy_type": "Collaborative Design",
-      "description": "Students use consensus problem-solving carousel to explore 'Presents information about road accidents and disasters caused at present.'. Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "id": "option_1",
+      "title": "Sri Lankan Accident Data Audit & Prevention Charting",
+      "pedagogy_type": "Case Inquiry / Evidence Audit",
+      "description": "Students investigate realistic contemporary road and railway accident scenarios in Sri Lanka, auditing causes and constructing preventative safety guidelines on chart paper.",
       "learning_outcomes_addressed": [
         "Presents information about road accidents and disasters caused at present.",
         "Shows the measures to be followed avoid railway accidents.",
         "Shows with example the preventive measures for accidents."
       ],
-      "student_action_summary": "Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (35 students): Desks arranged into 7 teams (7 teams (7 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 35 students using 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 7 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "student_action_summary": "Each of the 6 groups analyzes a specific Sri Lankan transit case study (e.g., crowded bus routes on the Southern Expressway, railway crossings in Maradana or Polgahawela), identifies current disaster impacts, and maps out concrete preventive measures using chart paper and markers.",
+      "teacher_facilitation_summary": "Acts as facilitator and timekeeper, moving between the 6 desk islands to prompt deeper inquiry into railway gate safety and road discipline, ensuring all student roles are actively executed.",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks arranged into 6 islands to ensure zero bystanders.",
       "required_materials": [
-        "Chalkboard",
+        "Chart Paper",
         "Student Notebooks",
-        "Chart Paper"
+        "Chalkboard"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A group civic proposal, diagram, or public information message.",
-      "creative_assessment_preview": "Groups give one-sentence feedback connecting a peer proposal to the outcome.",
-      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
+      "expected_student_output": "A completed 'Transit Safety Audit & Prevention' chart displaying statistical disaster trends and preventative rules for roads and railways.",
+      "creative_assessment_preview": "A 5-minute 'Pass-the-Chalk' relay where each group sends their Spokesperson to the board to quickly write one distinct railway or road accident prevention rule within 30 seconds.",
+      "low_resource_alternative": "Groups draw their prevention matrices directly into their Student Notebooks instead of using chart paper, sharing findings through verbal summaries."
     }
   ],
   "outcome_allocation": {

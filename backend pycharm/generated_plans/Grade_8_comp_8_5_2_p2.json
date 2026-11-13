@@ -2,91 +2,85 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 2 of 3)",
-  "competence": "8.5.2",
+  "competence": "Faces challenges and problems successfully in personal and civic life.",
   "competence_level": "8.5.2",
-  "lesson": "Explains the need of searching for solutions creatively for any challenge or problem for success in life: Citizen Charter / Wall Newspaper Poster: Competency Level 8.5.2",
+  "lesson": "Explains the need of searching for solutions creatively for any challenge or problem for success in life: Sri Lankan Case Inquiry: Overcoming School Co-curricular Hurdles",
   "unique_learning_outcome": [
     "Explains the need of searching for solutions creatively for any challenge or problem for success in life."
   ],
-  "the_entrance": "5-minute introduction: Explains the need of searching for solutions creatively for any challenge or problem for success in life.",
+  "the_entrance": "The teacher launches a 5-minute motivational hook by displaying a photograph of a rural Sri Lankan school playground makeshift sports meet on the chalkboard. The facilitator asks the class: 'Imagine your annual sports meet is tomorrow, but the running track is flooded and javelins are broken—how do we save the event without spending any money?' Students in their 6 groups immediately buzz, with Leaders directing quick brainstorming while Secretaries note initial ideas. The teacher prompts them to realize that ordinary challenges require extraordinary, creative thinking rather than giving up, seamlessly setting the stage for the case inquiry.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "Scenario Analysis & Role Allocation",
-      "student_activities": "Students negotiate a solution, create a shared civic artifact, and review another group's proposal.",
-      "learning_teaching_method": "Role-Play",
-      "learning_teaching_aids": "Role cards, scenario cards, and civic artifacts",
+      "teacher_activities": "The facilitator circulates among the 6 student groups, distributing the case narrative about the rural school's sports meet struggles. The teacher asks probing questions such as 'What specific financial and material obstacles did the students face initially?' and ensures that every group member reads and engages with the text.",
+      "student_activities": "Students work collaboratively in their assigned groups of five. The Timekeeper monitors the pacing while the Scribe and Civic Investigator review the narrative text, highlighting the exact resource shortages and listing them in their notebooks.",
+      "learning_teaching_method": "Case Evidence Reading & Initial Obstacle Mapping",
+      "learning_teaching_aids": "Printed case narrative handouts on rural school hurdles, student notebooks, colored markers",
       "assessment_and_feedback": "",
-      "time_minutes": 5,
+      "time_minutes": 10,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "Mock Assembly Debate Round 1",
-      "student_activities": "Students debate and negotiate the solution with other groups",
-      "learning_teaching_method": "Debate",
-      "learning_teaching_aids": "Debate cards, scenario cards, and civic artifacts",
+      "teacher_activities": "Acting as a facilitator, the teacher moves between groups to observe how they convert identified obstacles into creative alternatives. The teacher scaffolds thinking by asking: 'How did the students use local community resources and recycled materials instead of expensive imported sports equipment?'",
+      "student_activities": "Group members engage in active discussion to design a structured 'Problem-to-Creative-Solution' inquiry matrix on chart paper. The Leader ensures all voices are heard, the Spokesperson helps organize the final points, and the Scribe draws the grid mapping each hurdle to an innovative, low-cost local remedy.",
+      "learning_teaching_method": "Creative Solution Formulation & Matrix Synthesis",
+      "learning_teaching_aids": "Large chart paper, markers, textbook reference excerpts",
       "assessment_and_feedback": "",
-      "time_minutes": 10,
+      "time_minutes": 15,
       "other": ""
     },
     {
       "step_number": 3,
-      "teacher_activities": "Interactive Station Jigsaw Audit",
-      "student_activities": "Students review and audit another group's proposal and provide feedback",
-      "learning_teaching_method": "Jigsaw",
-      "learning_teaching_aids": "Jigsaw cards, scenario cards, and civic artifacts",
-      "assessment_and_feedback": "",
-      "time_minutes": 10,
-      "other": ""
-    },
-    {
-      "step_number": 4,
-      "teacher_activities": "Community Problem Tree Mapping",
-      "student_activities": "Students create a shared civic artifact and present it to the class",
-      "learning_teaching_method": "Brainstorming",
-      "learning_teaching_aids": "Brainstorming cards, scenario cards, and civic artifacts",
+      "teacher_activities": "The facilitator moderates a quick gallery walk where teams display their charts on desks for peer review. The teacher asks the Inquirer from each group to point out the most striking creative adaptation discovered in their matrix.",
+      "student_activities": "Students observe neighboring group charts, comparing their problem-solving strategies and noting how creative thinking ensures success despite limited resources. Spokespersons briefly highlight one unique creative solution discovered by their team.",
+      "learning_teaching_method": "Gallery Walk & Peer Evidence Verification",
+      "learning_teaching_aids": "Completed chart paper matrices, chalkboard",
       "assessment_and_feedback": "",
       "time_minutes": 5,
       "other": ""
     }
   ],
-  "summary": "In this lesson, students will learn to explain the need of searching for solutions creatively for any challenge or problem for success in life. They will negotiate a solution, create a shared civic artifact, and review another group's proposal. The lesson will be conducted through role-play, debate, and jigsaw activities.",
-  "assessment_and_feedback_whole_lesson": "Students will be assessed based on their participation and engagement in the activities, as well as the quality of their shared civic artifact and presentation.",
-  "post_activity": "5-minute in-class assignment: Students will reflect on their learning and share their thoughts with the class.",
+  "summary": "In a 2-minute synthesis, the teacher and students conclude that facing hurdles is a normal part of life, but achieving success depends entirely on our willingness to seek out creative, resourceful solutions rather than surrendering to failure.",
+  "assessment_and_feedback_whole_lesson": "Formative evaluation is based on active group collaboration, the accuracy and depth of the Problem-to-Creative-Solution inquiry matrix, and how clearly students explain the necessity of creative problem-solving during peer discussions.",
+  "post_activity": "Students participate in a 5-minute 'Statement Display & Justified Standpoint Vote' where the teacher posts two contrasting viewpoints on the board: 'Statement A: We must wait for government funds to fix school problems' versus 'Statement B: Creative local resourcefulness is the key to overcoming school and life hurdles.' Each group rapidly deliberates for 2 minutes, holds up a colored card indicating their chosen standpoint, and the Spokesperson gives a 30-second justification explaining why creative problem-solving leads to true success.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
-  "attachments": [],
+  "attachments": [
+    "Printed case study narrative handouts",
+    "chart paper",
+    "colored markers."
+  ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 2,
   "total_periods": 3,
-  "selected_activity": "Activity: Citizen Charter / Wall Newspaper Poster: Competency Level 8.5.2\nApproach: Students use citizen charter / wall newspaper poster to explore 'Explains the need of searching for solutions creatively for any challenge or problem for success in life.'. Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.\nExpected output: A group civic proposal, diagram, or public information message.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "Citizen Charter / Wall Newspaper Poster: Competency Level 8.5.2",
+  "selected_activity": "Activity: Sri Lankan Case Inquiry: Overcoming School Co-curricular Hurdles\nApproach: Students analyze a real-world case study about a rural Sri Lankan school struggling to organize an annual sports meet due to a lack of funds and damaged equipment. Through guided inquiry, they unpack why creative problem-solving is essential to turn this failure into a successful school event.\nStudent task: Teams review a short written narrative about how students in a remote school used recycled materials and local community talent to substitute for missing sports equipment. Scribes record the key creative breakthroughs while Inquirers examine how this led to ultimate success.\nTeacher facilitation: Supervises the 6 islands, guiding students to connect the case study directly to the necessity of creative adaptation in personal and civic life. Manages strict 5-minute pacing intervals for reading, discussion, and synthesis.\nExpected output: A structured 'Problem-to-Creative-Solution' inquiry matrix drawn on chart paper.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
+  "selected_activity_title": "Sri Lankan Case Inquiry: Overcoming School Co-curricular Hurdles",
   "custom_teacher_activity": null,
   "activity_options": [
     {
       "id": "option_2",
-      "title": "Citizen Charter / Wall Newspaper Poster: Competency Level 8.5.2",
-      "pedagogy_type": "Collaborative Design",
-      "description": "Students use citizen charter / wall newspaper poster to explore 'Explains the need of searching for solutions creatively for any challenge or problem for success in life.'. Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "title": "Sri Lankan Case Inquiry: Overcoming School Co-curricular Hurdles",
+      "pedagogy_type": "Case Inquiry",
+      "description": "Students analyze a real-world case study about a rural Sri Lankan school struggling to organize an annual sports meet due to a lack of funds and damaged equipment. Through guided inquiry, they unpack why creative problem-solving is essential to turn this failure into a successful school event.",
       "learning_outcomes_addressed": [
         "Explains the need of searching for solutions creatively for any challenge or problem for success in life."
       ],
-      "student_action_summary": "Students negotiate a solution, create a shared civic artifact, and review another group's proposal. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "student_action_summary": "Teams review a short written narrative about how students in a remote school used recycled materials and local community talent to substitute for missing sports equipment. Scribes record the key creative breakthroughs while Inquirers examine how this led to ultimate success.",
+      "teacher_facilitation_summary": "Supervises the 6 islands, guiding students to connect the case study directly to the necessity of creative adaptation in personal and civic life. Manages strict 5-minute pacing intervals for reading, discussion, and synthesis.",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A group civic proposal, diagram, or public information message.",
-      "creative_assessment_preview": "Groups give one-sentence feedback connecting a peer proposal to the outcome.",
-      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
+      "expected_student_output": "A structured 'Problem-to-Creative-Solution' inquiry matrix drawn on chart paper.",
+      "creative_assessment_preview": "Exit Ticket Rhyme: Each student writes a single 2-line rhyming couplet on a scrap of paper summarizing why creative solutions lead to success before handing it in.",
+      "low_resource_alternative": "Write the case study directly on the chalkboard for the whole class to read instead of distributing written hand-outs."
     }
   ],
   "outcome_allocation": {

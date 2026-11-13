@@ -2,83 +2,77 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 1 of 2)",
-  "competence": "8.4.5",
+  "competence": "Contributes to minimize dangers caused by chemicals.",
   "competence_level": "8.4.5",
-  "lesson": "Explains the accidents that can be caused by the use of chemicals: Public Service Case Study & Dilemma Cards: Competency Level 8.4.5",
+  "lesson": "Explains the accidents that can be caused by the use of chemicals: Station Jigsaw: Chemical Hazards and Emergency Action Stations",
   "unique_learning_outcome": [
     "Explains the accidents that can be caused by the use of chemicals.",
     "Explains the measures to be taken at accident caused by chemicals."
   ],
-  "the_entrance": "5-minute introduction: Launch & Investigation Setup",
+  "the_entrance": "5-minute introduction: The teacher initiates the session by displaying a mock agricultural insecticide bottle and an unlabeled household detergent container on the demonstration desk. The teacher poses a gripping launch prompt: 'Imagine walking into our village store or school science lab and noticing a leaking container next to drinking water bottles—what invisible dangers surround us?' Students in their assigned groups of five actively examine the objects, brainstorm prior observations from home gardens or agricultural fields in Sri Lanka, and share quick initial reactions with their group leaders.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "Introduces the specific real-world Sri Lankan dilemma or scenario for 'Explains the accidents that can be caused by the use of chemicals: Public Service Case Study & Dilemma Cards: Competency Level 8.4.5', presents concrete inquiry task cards/materials, and assigns active group roles. Circulates among teams, asking probing questions to scaffold learning without lecturing. 'What are some real-world scenarios where chemicals are used? How might chemical use lead to accidents?'",
-      "student_activities": "Examine the prompt, divide responsibilities, and formulate inquiry questions. 'What are some possible causes for accidents due to chemical use?'",
-      "learning_teaching_method": "Dilemma Framing & Evidence Prep",
-      "learning_teaching_aids": "Public Service Case Study & Dilemma Cards, blank paper, and pens",
+      "teacher_activities": "The teacher circulates among the six student groups, facilitating the investigation of different chemical accident scenarios. When groups struggle, the teacher scaffolds learning with probing prompts such as 'What protective equipment was missing when handling this pesticide?' or 'Why is storing chemicals near food dangerous?'",
+      "student_activities": "Students collaborate in their teams, analyzing their assigned scenario card detailing real-world Sri Lankan contexts like home gardening or factory storage. The scribe records root causes such as unprotected storing, missing labels, or lack of dilution, while the civic investigator checks facts against textbook poisoning statistics.",
+      "learning_teaching_method": "Station Investigation and Root Cause Mapping",
+      "learning_teaching_aids": "Station Task Sheets, Scenario Cards (Agricultural Leaks, Kitchen Acid Mixing, School Lab Spills), Colored Markers, Chart Paper",
       "assessment_and_feedback": "",
-      "time_minutes": 5,
+      "time_minutes": 15,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "Circulates across 8 teams, facilitating role execution and formatively checking progress. 'What have you found so far? What are some possible consequences of chemical accidents?'",
-      "student_activities": "Inspect the provided scenario or accessible surroundings, record evidence, and compare findings. 'What are some measures that can be taken to avoid accidents caused by chemicals?'",
-      "learning_teaching_method": "Active Collaborative Deep-Dive / Simulation",
-      "learning_teaching_aids": "Public Service Case Study & Dilemma Cards, blank paper, and pens",
-      "assessment_and_feedback": "",
-      "time_minutes": 10,
-      "other": ""
-    },
-    {
-      "step_number": 3,
-      "teacher_activities": "Group spokespersons present their civic findings or artifacts; peer teams evaluate using clear criteria and offer feedback; teacher synthesizes discoveries against the learning outcomes. 'What did you learn from your group's findings? How do your findings relate to the learning outcomes?'",
-      "student_activities": "Present findings, evaluate using clear criteria, and offer feedback. 'What did you learn from your group's findings? How do your findings relate to the learning outcomes?'",
-      "learning_teaching_method": "Spokesperson Sharing, Peer Critique & Plenary Consolidation",
-      "learning_teaching_aids": "Presentation charts created during Public Service Case Study & Dilemma Cards: Competency Level 8.4.5, whiteboard, peer review criteria sheets",
+      "teacher_activities": "The teacher acts as moderator, managing station transitions and guiding student spokespersons to clearly explain their findings without taking over the presentation. The teacher poses targeted questions on immediate first aid to ensure thorough coverage of emergency measures.",
+      "student_activities": "Spokespersons and team members rotate or present their findings on chemical accident causes and urgent first aid measures to the wider class. The teams actively contribute insights to assemble a unified Jigsaw Summary Chart on the whiteboard, comparing notes on hospital statistics and proper medical responses.",
+      "learning_teaching_method": "Jigsaw Pooling and Emergency Action Synthesis",
+      "learning_teaching_aids": "Jigsaw Summary Chart Template, Whiteboard, Group Presentation Boards",
       "assessment_and_feedback": "",
       "time_minutes": 15,
       "other": ""
     }
   ],
-  "summary": "This lesson plan focuses on the competency level 8.4.5, where students explore the accidents that can be caused by the use of chemicals. The lesson is designed to be a progressive multi-stage step blueprint, with 3 steps. Each step represents a distinct progressive phase of the activity. The teacher facilitation and student activities are designed to scaffold learning without lecturing. The expected output is an evidence record with one supported conclusion. The grouping is 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "assessment_and_feedback_whole_lesson": "As students, there are times for you to use chemicals in school laboratories for experiment. Incorrect and careless use of chemicals can cause harm to our health and even death. Given below is a Table showing statistics related to hazards caused to people by poisoning with chemical pesticides. 2005 2004 Cause for accident No. deathNo. hospitalized No. deathNo. hospitalized 127016910128116644 Poisoning pesticides 2301745622616978 Poisoning chemicals used at home Sauce: Reports of medical statistics",
-  "post_activity": "5-minute in-class assignment: Assemble the final, validated LEARN lesson plan JSON now.",
+  "summary": "The class synthesizes how careless handling of chemicals in homes, farms, and school laboratories leads to severe poisoning and health hazards. Students reaffirm that identifying causes—such as unlabelled containers or lack of safety gear—and applying prompt first aid are vital community duties.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted through observation of small group collaborations, evaluation of the completeness of the Jigsaw Summary Charts, and students' ability to accurately explain chemical accident causes and immediate emergency first aid measures.",
+  "post_activity": "Students participate in a 5-minute 'Rapid Emergency Safety Pitch' where each group is handed a flashcard depicting a sudden chemical spill emergency in a Sri Lankan village. Within their teams, students formulate a 60-second spoken safety broadcast detailing the exact cause and the two immediate emergency steps to take, which the spokesperson delivers with urgency to the class.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
-  "attachments": [],
+  "attachments": [
+    "Station Task Sheets",
+    "Scenario Cards",
+    "Jigsaw Summary Chart Template"
+  ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 1,
   "total_periods": 2,
-  "selected_activity": "Activity: Public Service Case Study & Dilemma Cards: Competency Level 8.4.5\nApproach: Students use public service case study & dilemma cards to explore 'Explains the accidents that can be caused by the use of chemicals.'. Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nStudent task: Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.\nTeacher facilitation: Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.\nExpected output: An evidence record with one supported conclusion.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
-  "selected_activity_title": "Public Service Case Study & Dilemma Cards: Competency Level 8.4.5",
+  "selected_activity": "Activity: Station Jigsaw: Chemical Hazards and Emergency Action Stations\nApproach: The classroom is divided into focus zones where different chemical accident scenarios (e.g., school laboratory spills, home kitchen acid/detergent mixing, agricultural storage leaks) are analyzed. Teams synthesize causes and emergency measures through collaborative jigsaw pooling.\nStudent task: Each of the 6 teams investigates a specific chemical accident sub-topic assigned by the teacher. After 15 minutes of collaborative analysis on chart paper, team spokespersons rotate or share their findings with the wider class to assemble a complete picture of chemical hazards and emergency measures.\nTeacher facilitation: Manages station transitions and timekeeping, posing prompt questions to struggling groups (e.g., 'What protective equipment was missing?' or 'What immediate first aid is required for skin contact with chemicals?').\nExpected output: A synthesized Jigsaw Summary Chart mapping out chemical accident types, root causes, and urgent safety measures.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
+  "selected_activity_title": "Station Jigsaw: Chemical Hazards and Emergency Action Stations",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_2",
-      "title": "Public Service Case Study & Dilemma Cards: Competency Level 8.4.5",
-      "pedagogy_type": "Observation / Evidence Inquiry",
-      "description": "Students use public service case study & dilemma cards to explore 'Explains the accidents that can be caused by the use of chemicals.'. Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
+      "id": "option_3",
+      "title": "Station Jigsaw: Chemical Hazards and Emergency Action Stations",
+      "pedagogy_type": "Station Jigsaw",
+      "description": "The classroom is divided into focus zones where different chemical accident scenarios (e.g., school laboratory spills, home kitchen acid/detergent mixing, agricultural storage leaks) are analyzed. Teams synthesize causes and emergency measures through collaborative jigsaw pooling.",
       "learning_outcomes_addressed": [
         "Explains the accidents that can be caused by the use of chemicals.",
         "Explains the measures to be taken at accident caused by chemicals."
       ],
-      "student_action_summary": "Students inspect the provided scenario or accessible surroundings, record evidence, and compare findings. Standard class layout (40 students): Desks arranged into 8 teams (8 teams (8 groups of 5)), with students rotating responsibilities (Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer) without bystanders.",
-      "teacher_facilitation_summary": "Organizes all 40 students using 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. and monitors progress with outcome-focused prompts and time checks. Circulates across 8 teams, facilitating role execution and formatively checking progress.",
-      "student_grouping": "8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer.",
+      "student_action_summary": "Each of the 6 teams investigates a specific chemical accident sub-topic assigned by the teacher. After 15 minutes of collaborative analysis on chart paper, team spokespersons rotate or share their findings with the wider class to assemble a complete picture of chemical hazards and emergency measures.",
+      "teacher_facilitation_summary": "Manages station transitions and timekeeping, posing prompt questions to struggling groups (e.g., 'What protective equipment was missing?' or 'What immediate first aid is required for skin contact with chemicals?').",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "An evidence record with one supported conclusion.",
-      "creative_assessment_preview": "A paired evidence check: name one observation and the outcome it supports.",
-      "low_resource_alternative": "Use spoken prompts and notebook pages if printed or display materials are unavailable."
+      "expected_student_output": "A synthesized Jigsaw Summary Chart mapping out chemical accident types, root causes, and urgent safety measures.",
+      "creative_assessment_preview": "Exit Slip Rhyme: Each student writes a two-line rhyming couplet in their notebook summarizing a key safety rule regarding chemical accidents before leaving their seat.",
+      "low_resource_alternative": "Verbal Jigsaw where student representatives present findings orally to neighboring groups without chart paper."
     }
   ],
   "outcome_allocation": {

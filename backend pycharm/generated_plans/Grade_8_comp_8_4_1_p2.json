@@ -2,89 +2,78 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 2 of 2)",
-  "competence": "Contributes to minimize accidents and disasters by identifying them and following institutional instructions for safety",
+  "competence": "Contributes to minimize accidents and disasters by identifying them and following institutional safety protocols.",
   "competence_level": "8.4.1",
-  "lesson": "Explains the importance of following instructions given by the institutions that provide support in disasters and accidents: Community Safety Action Plan Workshop",
+  "lesson": "Explains the importance of following instructions given by the institutions that provide support in disasters and accidents: Community Resilience Blueprint & Creative Pitch",
   "unique_learning_outcome": [
     "Explains the importance of following instructions given by the institutions that provide support in disasters and accidents.",
     "Shows the measures to be taken to avoid accidents.",
     "Suggests measures to minimize the damages caused by accidents and disasters."
   ],
-  "the_entrance": "5-minute introduction: The teacher welcomes the class and briefly reviews Period 1's findings on disaster identification. The teacher connects everyday safety awareness to the role of specialized institutions (such as the Disaster Management Centre, Police, and Fire Service). Students recall past experiences or news about emergencies, sharing why heeding official warnings is critical. The teacher introduces the Community Safety Action Plan Workshop activity, dividing the 40 students into 8 teams of 5 and instructing them to assume assigned roles (Leader/Facilitator, Scribe/Secretary, Timekeeper & Logistics, Spokesperson/Presenter, Civic Investigator/Inquirer).",
+  "the_entrance": "The teacher facilitates a fast-paced 5-minute motivational hook by displaying a local news clipping of a coastal flood warning in Kalutara and asking students: 'If the Disaster Management Centre sends an evacuation alert via SMS, why might ignoring it lead to catastrophe?' Students in their 6 desk groups brainstorm for 60 seconds and appoint their Spokespersons to shout out quick real-world risks, immediately connecting prior knowledge of disaster institutions to the community blueprint task.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "The teacher distributes task cards and chart paper to the 8 teams, explaining the parameters of the Community Safety Action Plan. The teacher ensures every student understands their specific role and monitors the initial brainstorming phase.",
-      "student_activities": "Students inspect the task prompts in their 8 groups. The Leader guides the discussion, the Scribe records initial ideas, the Timekeeper monitors the pacing, the Civic Investigator checks textbook facts, and all members contribute disaster prevention measures.",
-      "learning_teaching_method": "Guided Inquiry & Task Setup",
-      "learning_teaching_aids": "Task cards and Student Notebooks",
-      "assessment_and_feedback": "",
-      "time_minutes": 10,
-      "other": ""
-    },
-    {
-      "step_number": 2,
-      "teacher_activities": "The teacher guides teams as they design their comprehensive community safety action plans, encouraging them to highlight why following institutional instructions is vital during emergencies and synthesizing preventive measures.",
-      "student_activities": "Teams actively collaborate to draft and structure their community safety action plan poster on chart paper. The Scribe writes down the finalized points while the Spokesperson prepares the group's presentation strategy without any bystanders.",
-      "learning_teaching_method": "Group Investigation & Production",
-      "learning_teaching_aids": "Chart Paper and Chalkboard",
+      "teacher_activities": "The teacher acts as a facilitator, circulating among the 6 desk islands to monitor group progress. The teacher prompts students with scaffolding questions such as: 'What specific safety rules should your community follow before the Disaster Management Centre or Police issue an emergency alert?' and ensures every student is actively participating.",
+      "student_activities": "Students work in collaborative groups of 5, assigning roles such as Leader, Scribe, Timekeeper, Spokesperson, and Civic Investigator. They analyze their assigned Sri Lankan regional hazard scenario and draft the first two sections of their Community Resilience Blueprint on chart paper: Accident Prevention Rules and Institutional Instructions to Follow from bodies like the Police, Fire Brigade, and DMC.",
+      "learning_teaching_method": "Collaborative Disaster Mitigation Task Force Mapping",
+      "learning_teaching_aids": "Chart paper, colored markers, Sri Lankan regional hazard scenario task cards (e.g., Kaduwela road junction vs. Nilwala river flood belt)",
       "assessment_and_feedback": "",
       "time_minutes": 15,
       "other": ""
     },
     {
-      "step_number": 3,
-      "teacher_activities": "The teacher coordinates brief group presentations and moderates respectful peer feedback between the 8 teams.",
-      "student_activities": "Spokespersons present their group's resolution and action plan highlights to the class. Civic Investigators and peers ask clarifying questions and provide constructive feedback on the feasibility of the safety measures.",
-      "learning_teaching_method": "Presentation & Cross-Review",
-      "learning_teaching_aids": "Completed Chart Paper Posters displayed on walls",
+      "step_number": 2,
+      "teacher_activities": "The teacher observes team interactions, providing formative prompts on how to effectively illustrate damage minimization steps. The teacher moderates the timing and guides groups to refine their persuasive arguments regarding why adhering to institutional instructions saves lives.",
+      "student_activities": "Groups finalize the third section of their blueprint focusing on damage minimization measures, such as giving proper first aid, taking victims to hospitals immediately, and avoiding panic. The Spokesperson and team members rehearse a compelling 1-minute pitch summarizing their blueprint for the upcoming gallery walk.",
+      "learning_teaching_method": "Blueprint Synthesis & 60-Second Creative Pitch Rehearsal",
+      "learning_teaching_aids": "Completed chart paper blueprints, whiteboard for pacing, presentation cue cards",
       "assessment_and_feedback": "",
-      "time_minutes": 5,
+      "time_minutes": 15,
       "other": ""
     }
   ],
-  "summary": "Consolidation and synthesis of key concepts regarding the importance of adhering to institutional instructions during accidents and disasters, emphasizing community preparedness and damage mitigation.",
-  "assessment_and_feedback_whole_lesson": "Final formative assessment evaluating the accuracy of the community safety action plans, correct identification of support institutions, and active participation across all assigned group roles.",
-  "post_activity": "Each student writes a 5-minute individual 'Community Safety Pledge' in their notebooks, stating one personal commitment to follow instructions given by disaster management institutions and one way to help minimize accident damages.",
+  "summary": "In a 2-minute synthesis, the teacher invites two Civic Investigators to share how following institutional directives from the Police and Disaster Management Centre prevents loss of life and property during Sri Lankan emergencies.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted through observation of group collaboration, accuracy of institutional protocols in the blueprint, and the clarity of damage minimization measures presented by student spokespersons.",
+  "post_activity": "As an in-class active evaluation, each group collaborates to compose and recite a 4-line rhyming verse (kavi style) summarizing the core message of following institutional disaster instructions and avoiding accidents, which is shared aloud with the class within 5 minutes.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
   "attachments": [
-    "Task cards detailing institutional safety instructions",
-    "chart paper",
-    "and student notebooks."
+    "Sri Lankan regional hazard scenario task cards",
+    "Community Resilience Blueprint evaluation rubric."
   ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 2,
   "total_periods": 2,
-  "selected_activity": "Activity: Community Safety Action Plan Workshop\nApproach: Teams act as local disaster management committees to design an action plan focusing on institutional instructions and damage mitigation. They synthesize preventive measures into a community pledge.\nStudent task: Groups brainstorm and structure a comprehensive community safety action plan, highlighting why following institutional instructions is vital during emergencies.\nTeacher facilitation: The teacher monitors group progress, ensuring all five roles are actively contributing to the formulation of the action plan.\nExpected output: A finalized community safety action plan poster displayed for peer review.\nGrouping: 8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
-  "selected_activity_title": "Community Safety Action Plan Workshop",
+  "selected_activity": "Activity: Community Resilience Blueprint & Creative Pitch\nApproach: Teams act as specialized disaster mitigation task forces assigned to design a creative 'Community Resilience Blueprint' for a Sri Lankan neighborhood prone to common accidents (such as road junctions or coastal flood belts). The blueprint synthesizes proactive measures to avoid mishaps and protocols to minimize post-disaster damages.\nStudent task: Groups collaboratively draft a visual blueprint on chart paper featuring three sections: Accident Prevention Rules, Institutional Instructions to Follow (Police/DMC/Fire Brigade), and Damage Minimization Steps. Timekeepers manage the 30-minute allocation while Presenters rehearse a 1-minute pitch.\nTeacher facilitation: The teacher circulates among the 6 desk islands, keeping time milestones visible on the chalkboard and prompting groups to ensure their mitigation strategies are realistic for local Sri Lankan community contexts.\nExpected output: A finalized Community Resilience Blueprint poster ready for gallery walk display.\nGrouping: 6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
+  "selected_activity_title": "Community Resilience Blueprint & Creative Pitch",
   "custom_teacher_activity": null,
   "activity_options": [
     {
       "id": "option_3",
-      "title": "Community Safety Action Plan Workshop",
-      "pedagogy_type": "Problem-Solving",
-      "description": "Teams act as local disaster management committees to design an action plan focusing on institutional instructions and damage mitigation. They synthesize preventive measures into a community pledge.",
+      "title": "Community Resilience Blueprint & Creative Pitch",
+      "pedagogy_type": "Creative Design",
+      "description": "Teams act as specialized disaster mitigation task forces assigned to design a creative 'Community Resilience Blueprint' for a Sri Lankan neighborhood prone to common accidents (such as road junctions or coastal flood belts). The blueprint synthesizes proactive measures to avoid mishaps and protocols to minimize post-disaster damages.",
       "learning_outcomes_addressed": [
         "Explains the importance of following instructions given by the institutions that provide support in disasters and accidents.",
         "Shows the measures to be taken to avoid accidents.",
         "Suggests measures to minimize the damages caused by accidents and disasters."
       ],
-      "student_action_summary": "Groups brainstorm and structure a comprehensive community safety action plan, highlighting why following institutional instructions is vital during emergencies.",
-      "teacher_facilitation_summary": "The teacher monitors group progress, ensuring all five roles are actively contributing to the formulation of the action plan.",
-      "student_grouping": "8 teams (8 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
+      "student_action_summary": "Groups collaboratively draft a visual blueprint on chart paper featuring three sections: Accident Prevention Rules, Institutional Instructions to Follow (Police/DMC/Fire Brigade), and Damage Minimization Steps. Timekeepers manage the 30-minute allocation while Presenters rehearse a 1-minute pitch.",
+      "teacher_facilitation_summary": "The teacher circulates among the 6 desk islands, keeping time milestones visible on the chalkboard and prompting groups to ensure their mitigation strategies are realistic for local Sri Lankan community contexts.",
+      "student_grouping": "6 teams (6 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer",
       "required_materials": [
-        "Chart Paper",
+        "Chalkboard",
         "Student Notebooks",
-        "Chalkboard"
+        "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A finalized community safety action plan poster displayed for peer review.",
-      "creative_assessment_preview": "A 1-minute group rhyme or slogan presentation summarizing institutional instructions for safety.",
-      "low_resource_alternative": "Draft the action plan collaboratively on the chalkboard sections allocated to each group."
+      "expected_student_output": "A finalized Community Resilience Blueprint poster ready for gallery walk display.",
+      "creative_assessment_preview": "A 5-minute 'Exit Ticket Rhyme': Each group composes a two-line rhyming slogan in Sinhala, Tamil, or English summarizing why following support institution instructions reduces accident damage.",
+      "low_resource_alternative": "Students draft the blueprint schema in their notebooks and present key ideas orally."
     }
   ],
   "outcome_allocation": {
@@ -98,5 +87,6 @@
       "Shows the measures to be taken to avoid accidents.",
       "Suggests measures to minimize the damages caused by accidents and disasters."
     ]
-  }
+  },
+  "filename": "Grade_8_comp_8_4_1_p2.json"
 }
