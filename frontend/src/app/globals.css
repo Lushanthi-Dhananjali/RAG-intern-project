@@ -7,6 +7,40 @@ body {
   min-height: 100vh;
 }
 
+@media print {
+  .lesson-development-print-table {
+    overflow: visible !important;
+  }
+
+  .lesson-development-print-table table {
+    width: 100% !important;
+    table-layout: fixed !important;
+  }
+
+  .lesson-development-print-table th,
+  .lesson-development-print-table td {
+    min-width: 0 !important;
+    padding: 4px 3px !important;
+    font-size: 8pt !important;
+    overflow-wrap: anywhere;
+  }
+
+  .lesson-development-print-table .lesson-step-time {
+    width: 42px !important;
+    min-width: 42px !important;
+    white-space: nowrap;
+  }
+
+  .lesson-development-print-table thead {
+    display: table-header-group;
+  }
+
+  .lesson-development-print-table tr {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
 /* Custom Scrollbar for Streaming Log Console */
 ::-webkit-scrollbar {
   width: 8px;

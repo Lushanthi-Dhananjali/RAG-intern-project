@@ -786,7 +786,7 @@ export default function LessonPlanViewer({
           </span>
         </div>
 
-        <div style={{ border: '1px solid #cbd5e1', borderRadius: '10px', overflowX: 'auto', backgroundColor: '#ffffff' }}>
+        <div className="lesson-development-print-table" style={{ border: '1px solid #cbd5e1', borderRadius: '10px', overflowX: 'auto', backgroundColor: '#ffffff' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '12px' }}>
             <thead style={{ backgroundColor: '#f1f5f9', borderBottom: '1px solid #cbd5e1' }}>
               <tr>
@@ -796,7 +796,7 @@ export default function LessonPlanViewer({
                 <th style={{ padding: '10px 10px', minWidth: '110px', borderRight: '1px solid #e2e8f0', fontWeight: '700', color: '#334155', textTransform: 'uppercase', fontSize: '11px' }}>Method</th>
                 <th style={{ padding: '10px 10px', minWidth: '110px', borderRight: '1px solid #e2e8f0', fontWeight: '700', color: '#334155', textTransform: 'uppercase', fontSize: '11px' }}>Aids</th>
                 {!isCivicPlan && <th style={{ padding: '10px 10px', minWidth: '120px', borderRight: '1px solid #e2e8f0', fontWeight: '700', color: '#334155', textTransform: 'uppercase', fontSize: '11px' }}>Assessment & Feedback</th>}
-                <th style={{ padding: '10px 8px', width: '56px', textAlign: 'center', borderRight: '1px solid #e2e8f0', fontWeight: '700', color: '#334155', textTransform: 'uppercase', fontSize: '11px' }}>Time</th>
+                <th className="lesson-step-time" style={{ padding: '10px 8px', width: '56px', textAlign: 'center', borderRight: '1px solid #e2e8f0', fontWeight: '700', color: '#334155', textTransform: 'uppercase', fontSize: '11px' }}>Time</th>
                 <th style={{ padding: '10px 8px', width: '60px', fontWeight: '700', color: '#334155', textTransform: 'uppercase', fontSize: '11px' }}>Other</th>
               </tr>
             </thead>
@@ -823,7 +823,7 @@ export default function LessonPlanViewer({
                   {!isCivicPlan && <td style={{ padding: '10px 10px', borderRight: '1px solid #e2e8f0', color: '#475569', fontSize: '11px' }}>
                     {step.assessment_and_feedback}
                   </td>}
-                  <td style={{ padding: '10px 8px', textAlign: 'center', borderRight: '1px solid #e2e8f0', fontWeight: '700', fontFamily: 'monospace', color: '#0f172a' }}>
+                  <td className="lesson-step-time" style={{ padding: '10px 8px', textAlign: 'center', borderRight: '1px solid #e2e8f0', fontWeight: '700', fontFamily: 'monospace', color: '#0f172a' }}>
                     {step.time_minutes}m
                   </td>
                   <td style={{ padding: '10px 8px', color: '#64748b', fontSize: '11px' }}>
