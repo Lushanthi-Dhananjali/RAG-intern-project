@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { FactCheckReport, AlignmentReport } from '@/services/lessonPlanApi';
+import { FactCheckReport, AlignmentReport, exportPlanDocx, exportPlanPdf, downloadFileBlob } from '@/services/lessonPlanApi';
 
 export interface LessonDevelopmentStep {
   step_number: number;
@@ -120,6 +120,39 @@ export default function LessonPlanViewer({
 
   const handlePrint = () => {
     window.print();
+  };
+
+  const [exportingDocx, setExportingDocx] = useState(false);
+  const [exportingPdf, setExportingPdf] = useState(false);
+
+  const handleExportDocx = async () => {
+    try {
+      setExportingDocx(true);
+      const blob = await exportPlanDocx(plan);
+      const comp = plan.competence_level ? `comp_${plan.competence_level}` : 'plan';
+      const period = plan.period_number ? `_p${plan.period_number}` : '';
+      const safeName = `LessonPlan_${plan.grade || 'Grade8'}_${comp}${period}.docx`.replace(/[^\w.-]/g, '_');
+      downloadFileBlob(blob, safeName);
+    } catch (err: any) {
+      alert(`Failed to export Word document: ${err.message || err}`);
+    } finally {
+      setExportingDocx(false);
+    }
+  };
+
+  const handleExportPdf = async () => {
+    try {
+      setExportingPdf(true);
+      const blob = await exportPlanPdf(plan);
+      const comp = plan.competence_level ? `comp_${plan.competence_level}` : 'plan';
+      const period = plan.period_number ? `_p${plan.period_number}` : '';
+      const safeName = `LessonPlan_${plan.grade || 'Grade8'}_${comp}${period}.pdf`.replace(/[^\w.-]/g, '_');
+      downloadFileBlob(blob, safeName);
+    } catch (err: any) {
+      alert(`Failed to export PDF document: ${err.message || err}`);
+    } finally {
+      setExportingPdf(false);
+    }
   };
 
   return (
@@ -338,6 +371,54 @@ export default function LessonPlanViewer({
               </button>
             </div>
           )}
+
+          <button
+            type="button"
+            onClick={handleExportDocx}
+            disabled={exportingDocx}
+            style={{
+              padding: '7px 12px',
+              fontSize: '12px',
+              fontWeight: '700',
+              color: '#1e40af',
+              backgroundColor: '#eff6ff',
+              border: '1px solid #bfdbfe',
+              borderRadius: '8px',
+              cursor: exportingDocx ? 'wait' : 'pointer',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              transition: 'all 0.2s',
+            }}
+            title="Download editable Microsoft Word document (.docx)"
+          >
+            <span>📄</span>
+            <span>{exportingDocx ? 'Exporting...' : 'Word (.docx)'}</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={handleExportPdf}
+            disabled={exportingPdf}
+            style={{
+              padding: '7px 12px',
+              fontSize: '12px',
+              fontWeight: '700',
+              color: '#b91c1c',
+              backgroundColor: '#fef2f2',
+              border: '1px solid #fecaca',
+              borderRadius: '8px',
+              cursor: exportingPdf ? 'wait' : 'pointer',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              transition: 'all 0.2s',
+            }}
+            title="Download direct Adobe PDF (.pdf)"
+          >
+            <span>📥</span>
+            <span>{exportingPdf ? 'Exporting...' : 'Direct PDF'}</span>
+          </button>
 
           <button
             type="button"

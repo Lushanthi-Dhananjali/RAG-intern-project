@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { LessonPlanSchemaDto } from "@/types/lessonPlan";
+import { exportPlanDocx, exportPlanPdf, downloadFileBlob } from "@/services/lessonPlanApi";
 
 interface MultiPeriodPlanViewerProps {
   plans: LessonPlanSchemaDto[];
@@ -19,6 +20,38 @@ export default function MultiPeriodPlanViewer({
   const [activeTab, setActiveTab] = useState<number>(0);
   const [viewMode, setViewMode] = useState<"tabs" | "accordion">("tabs");
   const [openAccordions, setOpenAccordions] = useState<Record<number, boolean>>({ 0: true });
+  const [exportingAllDocx, setExportingAllDocx] = useState(false);
+  const [exportingAllPdf, setExportingAllPdf] = useState(false);
+
+  const handleExportAllDocx = async () => {
+    try {
+      setExportingAllDocx(true);
+      const blob = await exportPlanDocx({ lesson_plans: plans });
+      const firstPlan = plans[0] || {};
+      const comp = firstPlan.competence_level ? `comp_${firstPlan.competence_level}` : 'plans';
+      const safeName = `LessonPlans_AllPeriods_${firstPlan.grade || 'Grade8'}_${comp}.docx`.replace(/[^\w.-]/g, '_');
+      downloadFileBlob(blob, safeName);
+    } catch (err: any) {
+      alert(`Failed to export all periods to Word: ${err.message || err}`);
+    } finally {
+      setExportingAllDocx(false);
+    }
+  };
+
+  const handleExportAllPdf = async () => {
+    try {
+      setExportingAllPdf(true);
+      const blob = await exportPlanPdf({ lesson_plans: plans });
+      const firstPlan = plans[0] || {};
+      const comp = firstPlan.competence_level ? `comp_${firstPlan.competence_level}` : 'plans';
+      const safeName = `LessonPlans_AllPeriods_${firstPlan.grade || 'Grade8'}_${comp}.pdf`.replace(/[^\w.-]/g, '_');
+      downloadFileBlob(blob, safeName);
+    } catch (err: any) {
+      alert(`Failed to export all periods to PDF: ${err.message || err}`);
+    } finally {
+      setExportingAllPdf(false);
+    }
+  };
 
   if (!plans || plans.length === 0) {
     return null;
@@ -82,6 +115,28 @@ export default function MultiPeriodPlanViewer({
               </button>
             </div>
           )}
+
+          <button
+            type="button"
+            onClick={handleExportAllDocx}
+            disabled={exportingAllDocx}
+            className="px-3 py-1.5 rounded-xl border border-blue-200 bg-blue-50 text-xs font-bold text-blue-700 hover:bg-blue-100 transition-colors shadow-2xs inline-flex items-center gap-1.5"
+            title="Download all periods combined in an editable Word document (.docx)"
+          >
+            <span>📄</span>
+            <span>{exportingAllDocx ? "Exporting..." : "All (Word)"}</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={handleExportAllPdf}
+            disabled={exportingAllPdf}
+            className="px-3 py-1.5 rounded-xl border border-rose-200 bg-rose-50 text-xs font-bold text-rose-700 hover:bg-rose-100 transition-colors shadow-2xs inline-flex items-center gap-1.5"
+            title="Download all periods combined in a clean Adobe PDF (.pdf)"
+          >
+            <span>📥</span>
+            <span>{exportingAllPdf ? "Exporting..." : "All (PDF)"}</span>
+          </button>
 
           <button
             type="button"

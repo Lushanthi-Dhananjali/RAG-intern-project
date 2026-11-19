@@ -678,3 +678,74 @@ export async function saveGeneratedPlan(
 
   return response.json();
 }
+
+// =====================================================================
+// EXPORT APIS (WORD .DOCX & ADOBE PDF)
+// =====================================================================
+
+export async function exportPlanDocx(plan: any): Promise<Blob> {
+  const response = await fetch(`${API_BASE_URL}/api/v1/export/docx`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(plan),
+  });
+
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({}));
+    throw new Error(errorData.detail || `Failed to export Word document (${response.status})`);
+  }
+
+  return response.blob();
+}
+
+export async function exportPlanPdf(plan: any): Promise<Blob> {
+  const response = await fetch(`${API_BASE_URL}/api/v1/export/pdf`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(plan),
+  });
+
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({}));
+    throw new Error(errorData.detail || `Failed to export PDF document (${response.status})`);
+  }
+
+  return response.blob();
+}
+
+export async function exportSavedPlanDocx(filename: string): Promise<Blob> {
+  const response = await fetch(`${API_BASE_URL}/api/v1/export/saved/${encodeURIComponent(filename)}/docx`, {
+    method: 'GET',
+  });
+
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({}));
+    throw new Error(errorData.detail || `Failed to export saved Word document (${response.status})`);
+  }
+
+  return response.blob();
+}
+
+export async function exportSavedPlanPdf(filename: string): Promise<Blob> {
+  const response = await fetch(`${API_BASE_URL}/api/v1/export/saved/${encodeURIComponent(filename)}/pdf`, {
+    method: 'GET',
+  });
+
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({}));
+    throw new Error(errorData.detail || `Failed to export saved PDF document (${response.status})`);
+  }
+
+  return response.blob();
+}
+
+export function downloadFileBlob(blob: Blob, filename: string): void {
+  const url = window.URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  window.URL.revokeObjectURL(url);
+}

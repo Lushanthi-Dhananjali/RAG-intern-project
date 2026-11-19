@@ -869,6 +869,19 @@ except Exception as e:
 
 
 # =====================================================================
+# EXPORT ROUTERS (WORD DOCX & PDF)
+# =====================================================================
+try:
+    from app.api.v1.endpoints.export import router as export_router
+    app.include_router(export_router, prefix="/api/v1/export")
+    app.include_router(export_router, prefix="/api/export")
+    logger.info("Successfully mounted Export router (/api/v1/export and /api/export)")
+except Exception as e:
+    logger.warning("Could not include export router: %s", e)
+
+
+
+# =====================================================================
 # SERVER RUNNER
 # =====================================================================
 if __name__ == "__main__":

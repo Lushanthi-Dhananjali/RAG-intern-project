@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { LessonPlanDto } from '@/services/lessonPlanApi';
+import { LessonPlanDto, exportSavedPlanDocx, exportSavedPlanPdf, downloadFileBlob } from '@/services/lessonPlanApi';
 
 interface LessonPlanDetailModalProps {
   isOpen: boolean;
@@ -36,6 +36,35 @@ export default function LessonPlanDetailModal({
     window.print();
   };
 
+  const [exportingDocx, setExportingDocx] = useState(false);
+  const [exportingPdf, setExportingPdf] = useState(false);
+
+  const handleExportDocx = async () => {
+    try {
+      setExportingDocx(true);
+      const blob = await exportSavedPlanDocx(filename);
+      const outName = `${filename.replace(/\.json$/i, '')}.docx`;
+      downloadFileBlob(blob, outName);
+    } catch (err: any) {
+      alert(`Failed to export Word document: ${err.message || err}`);
+    } finally {
+      setExportingDocx(false);
+    }
+  };
+
+  const handleExportPdf = async () => {
+    try {
+      setExportingPdf(true);
+      const blob = await exportSavedPlanPdf(filename);
+      const outName = `${filename.replace(/\.json$/i, '')}.pdf`;
+      downloadFileBlob(blob, outName);
+    } catch (err: any) {
+      alert(`Failed to export PDF: ${err.message || err}`);
+    } finally {
+      setExportingPdf(false);
+    }
+  };
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-900/70 backdrop-blur-xs overflow-y-auto">
       <div className="relative bg-white rounded-2xl max-w-4xl w-full max-h-[92vh] flex flex-col shadow-2xl border border-slate-200 animate-in fade-in zoom-in-95 duration-150 my-auto">
@@ -56,6 +85,24 @@ export default function LessonPlanDetailModal({
           </div>
 
           <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={handleExportDocx}
+              disabled={exportingDocx}
+              className="px-3 py-1.5 text-xs font-bold text-blue-700 bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-xl transition-colors shadow-2xs inline-flex items-center gap-1.5"
+              title="Download editable Word document (.docx)"
+            >
+              📄 {exportingDocx ? 'Exporting...' : 'Word (.docx)'}
+            </button>
+            <button
+              type="button"
+              onClick={handleExportPdf}
+              disabled={exportingPdf}
+              className="px-3 py-1.5 text-xs font-bold text-rose-700 bg-rose-50 hover:bg-rose-100 border border-rose-200 rounded-xl transition-colors shadow-2xs inline-flex items-center gap-1.5"
+              title="Download direct Adobe PDF (.pdf)"
+            >
+              📥 {exportingPdf ? 'Exporting...' : 'Direct PDF'}
+            </button>
             <button
               type="button"
               onClick={handlePrint}
