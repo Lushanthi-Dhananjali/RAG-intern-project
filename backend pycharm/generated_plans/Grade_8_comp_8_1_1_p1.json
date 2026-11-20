@@ -2,77 +2,78 @@
   "grade": "Grade 8",
   "subject": "Civic Education",
   "time_allocation": "40 Minutes (Period 1 of 2)",
-  "competence": "Understands the nature, importance, and evolution of public services in Sri Lanka for community development",
+  "competence": "Investigates public services, their necessity, common features, and historical evolution to understand their role in community welfare.",
   "competence_level": "8.1.1",
-  "lesson": "Identifies the public services: Community Service Mapping & Feature Audit",
+  "lesson": "Identifies the public services: The Village Hub Simulation",
   "unique_learning_outcome": [
     "Identifies the public services.",
     "Explains the common features related to public services.",
     "Explains the need of public services."
   ],
-  "the_entrance": "5-minute introduction: The teacher launches the session by projecting an image of a bustling Sri Lankan village junction featuring a post office, local hospital, and a regional water board office. The teacher poses a high-energy challenge: 'Imagine Siriwardhana Village overnight without its water board, postal network, or health clinic; how would daily life grind to a halt?' Students in their 7 desk islands immediately turn to their table groups, sparking rapid discussions on how these institutions support families, sparking an enthusiastic linkage to public services.",
+  "the_entrance": "5-minute introduction: The teacher ignites the session by displaying flashcards of local community touchpoints—a rural post office, a Divisional Secretariat office, and a government hospital—asking students to imagine a day without them. The teacher prompts, 'If your family needed a birth certificate or urgent medical care and there were no government offices, how would our village function?' Students in their 7 table groups buzz excitedly, sharing quick personal experiences of visiting local public institutions with their parents, while designated Timekeepers note down initial thoughts on their notebooks.",
   "lesson_development_steps": [
     {
       "step_number": 1,
-      "teacher_activities": "The teacher acts as a facilitator and timekeeper, circulating among the 7 desk islands to distribute the village profiles. The teacher poses probing scaffolded questions such as 'Who maintains this service and who benefits from it?' and checks pacing at the 10-minute mark.",
-      "student_activities": "Students work collaboratively in their assigned groups of 5 to read and analyze the profile of Siriwardhana Village. Group leaders guide discussions while scribes list every mentioned public service, ensuring all members contribute their thoughts on local institutions like the hospital and post office.",
-      "learning_teaching_method": "Community Profile Investigation & Service Identification",
-      "learning_teaching_aids": "Printed Siriwardhana Village Profile Case Sheets, Colored Markers, Notebooks",
+      "teacher_activities": "The teacher acts as a facilitator, distributing different station role cards to the 7 groups representing various public service touchpoints in Sri Lanka. As students begin their roleplay, the teacher circulates among the groups, prompting them with questions like: 'What specific service is your desk providing to the citizen?' and 'How does this service assist families who cannot afford private alternatives?'",
+      "student_activities": "Students take on designated roles within their groups, simulating citizen interactions at public service desks such as health, postal, and civil registration. The Scribe records the types of services encountered while the Civic Investigator checks service details against textbook concepts, ensuring all members actively participate in mapping out the touchpoints.",
+      "learning_teaching_method": "Divisional Secretariat Roleplay and Touchpoint Mapping",
+      "learning_teaching_aids": "Task sheets, role cards (Citizen, Health Officer, Postal Clerk, Civil Registrar), and markers",
       "assessment_and_feedback": "",
       "time_minutes": 15,
       "other": ""
     },
     {
       "step_number": 2,
-      "teacher_activities": "The teacher circulates the classroom to moderate peer interactions, encouraging civic investigators to challenge initial assumptions about service funding and accessibility. The teacher prompts groups to connect their findings to non-profit intent and universal access.",
-      "student_activities": "Groups extract three shared operational features—such as state-funded, non-profit, and accessible to all—and debate why these services are indispensable for daily community life. Spokespersons and scribes collaborate to sketch a comprehensive 'Community Service & Need Chart' on chart paper.",
-      "learning_teaching_method": "Feature Audit and Collaborative Charting",
-      "learning_teaching_aids": "Large Chart Paper, Felt Pens, Textbook Excerpts on Public Service Features",
+      "teacher_activities": "The teacher guides the groups to analyze the common features and underlying needs of the public services they just simulated, prompting them to consider funding sources and accessibility. The teacher moderates cross-group discussions by asking, 'Why is it crucial that these services operate without a profit motive and remain open to every citizen equally?'",
+      "student_activities": "Group members collaborate intensely to synthesize their roleplay findings onto chart paper, listing common features (such as non-profit intent and universal access) and formulating bullet points explaining why these services are essential for community welfare and social security. The Spokesperson prepares the group's final resolution for presentation.",
+      "learning_teaching_method": "Collaborative Feature Analysis and Necessity Synthesis",
+      "learning_teaching_aids": "Chart paper, colored markers, and student textbooks",
       "assessment_and_feedback": "",
       "time_minutes": 15,
       "other": ""
     }
   ],
-  "summary": "In a 2-minute plenary wrap-up, student representatives highlight that public services like hospitals and water boards are non-profit, state-supported institutions universally accessible to all citizens to satisfy essential community needs.",
-  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted through observation of small group collaboration, checking the accuracy of extracted service features on the chart paper, and evaluating the clarity of group explanations regarding why public services are indispensable.",
-  "post_activity": "Each of the 7 table groups engages in a 5-minute 'Feature Match Blitz' where they receive three flash cards containing unique institutional traits and must rapidly categorize them under 'Universal Access', 'Non-Profit Objective', or 'State-Funded Support', holding up their consensus board for instant peer review and teacher feedback.",
+  "summary": "The teacher leads a 2-minute plenary where group spokespersons highlight key discoveries, confirming that public services are government-backed institutions established to fulfill daily communal needs, ensure equal access for all citizens, and uplift living standards across Sri Lanka without profit motives.",
+  "assessment_and_feedback_whole_lesson": "Formative assessment is conducted continuously through teacher observation of group collaborations, accuracy of the roleplay summary logs, and the depth of student explanations regarding the common features and necessity of public services.",
+  "post_activity": "Students engage in a 5-minute in-class creative challenge called the 'Service Pillars Quick-Sketch & Match'. Each group receives a small blank index card where they must rapidly sketch a simple icon representing a public service feature (such as universal access or non-profit motive) and link it with a one-sentence necessity statement. As time is called, groups flash their cards upward for a rapid peer-verification check moderated by the teacher.",
   "information_sources": [
     "grade_8_civic_teacher_guide.pdf",
     "grade_8_civic_textbook.pdf"
   ],
   "attachments": [
-    "Community Service Feature Checklist"
+    "Divisional Secretariat Roleplay Station Cards",
+    "Public Service Feature Checklist Sheets"
   ],
   "entrance_duration_minutes": 5,
   "assignment_duration_minutes": 5,
   "period_number": 1,
   "total_periods": 2,
-  "selected_activity": "Activity: Community Service Mapping & Feature Audit\nApproach: Students investigate a hypothetical Sri Lankan village scenario to identify essential public services, categorize their common operational features, and debate why these services are indispensable for daily community life.\nStudent task: Groups analyze a written community profile of 'Siriwardhana Village', list all mentioned public services (e.g., post office, hospital, water board), extract three shared features (e.g., state-funded, non-profit, accessible to all), and sketch a community chart explaining why each is necessary.\nTeacher facilitation: The teacher acts as a facilitator and timekeeper, walking between the 7 desk islands to prompt critical thinking with questions like: 'Who maintains this service and who benefits from it?' Time checks are given at 10-minute intervals.\nExpected output: A collaborative 'Community Service & Need Chart' drawn on chart paper.\nGrouping: 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. All 35 students are actively engaged.",
-  "selected_activity_title": "Community Service Mapping & Feature Audit",
+  "selected_activity": "Activity: The Village Hub Simulation\nApproach: Students participate in a guided simulation representing a busy divisional secretariat day in Sri Lanka, where they encounter various public service touchpoints and experience firsthand why these services are established.\nStudent task: Students roleplay citizens visiting different public desks (health, postal, civil registration) set up across the 7 classroom islands. They map out the services utilized, list their common features (such as being funded by public revenue and serving all citizens equally), and formulate arguments explaining the necessity of these services for community welfare.\nTeacher facilitation: The teacher manages classroom flow, sounds a gentle chime for transition phases, and prompts groups with guiding questions regarding service features and community reliance.\nExpected output: A roleplay summary log written on chart paper outlining service categories, common features, and necessity statements.\nGrouping: 7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks arranged in 7 islands to accommodate all 35 students actively participating.",
+  "selected_activity_title": "The Village Hub Simulation",
   "custom_teacher_activity": null,
   "activity_options": [
     {
-      "id": "option_1",
-      "title": "Community Service Mapping & Feature Audit",
-      "pedagogy_type": "Case Inquiry",
-      "description": "Students investigate a hypothetical Sri Lankan village scenario to identify essential public services, categorize their common operational features, and debate why these services are indispensable for daily community life.",
+      "id": "option_2",
+      "title": "The Village Hub Simulation",
+      "pedagogy_type": "Simulation / Roleplay",
+      "description": "Students participate in a guided simulation representing a busy divisional secretariat day in Sri Lanka, where they encounter various public service touchpoints and experience firsthand why these services are established.",
       "learning_outcomes_addressed": [
         "Identifies the public services.",
         "Explains the common features related to public services.",
         "Explains the need of public services."
       ],
-      "student_action_summary": "Groups analyze a written community profile of 'Siriwardhana Village', list all mentioned public services (e.g., post office, hospital, water board), extract three shared features (e.g., state-funded, non-profit, accessible to all), and sketch a community chart explaining why each is necessary.",
-      "teacher_facilitation_summary": "The teacher acts as a facilitator and timekeeper, walking between the 7 desk islands to prompt critical thinking with questions like: 'Who maintains this service and who benefits from it?' Time checks are given at 10-minute intervals.",
-      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. All 35 students are actively engaged.",
+      "student_action_summary": "Students roleplay citizens visiting different public desks (health, postal, civil registration) set up across the 7 classroom islands. They map out the services utilized, list their common features (such as being funded by public revenue and serving all citizens equally), and formulate arguments explaining the necessity of these services for community welfare.",
+      "teacher_facilitation_summary": "The teacher manages classroom flow, sounds a gentle chime for transition phases, and prompts groups with guiding questions regarding service features and community reliance.",
+      "student_grouping": "7 teams (7 groups of 5) with assigned roles: Leader / Facilitator, Scribe / Secretary, Timekeeper & Logistics, Spokesperson / Presenter, Civic Investigator / Inquirer. Desks arranged in 7 islands to accommodate all 35 students actively participating.",
       "required_materials": [
         "Chalkboard",
         "Student Notebooks",
         "Chart Paper"
       ],
       "approximate_duration_minutes": 30,
-      "expected_student_output": "A collaborative 'Community Service & Need Chart' drawn on chart paper.",
-      "creative_assessment_preview": "Pass-the-Chalk Quiz: One student from each group runs to the board to write one public service feature within 30 seconds.",
-      "low_resource_alternative": "Groups use Student Notebooks exclusively to draft their lists and explanations without chart paper."
+      "expected_student_output": "A roleplay summary log written on chart paper outlining service categories, common features, and necessity statements.",
+      "creative_assessment_preview": "Exit Slip Rhyme: Each group collaborates to write a two-line rhyming couplet summarizing why public services are needed before leaving.",
+      "low_resource_alternative": "Roleplay is conducted entirely through seated desk discussions using notebooks to record service interactions."
     }
   ],
   "outcome_allocation": {
